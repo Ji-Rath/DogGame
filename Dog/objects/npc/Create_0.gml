@@ -5,7 +5,7 @@
 
 interact_key = noone;
 
-text = ["bitch","I hate you"];
+text = ["Bruh","Sicko Mode"];
 
 
 

@@ -1,6 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+
+/*
 if(instance_exists(obj_textbox))
 {
 	if (sprite_index = hspritewalk) or (sprite_index = hspriterun)
@@ -22,6 +24,9 @@ if(instance_exists(obj_textbox))
 	exit;	
 	
 }
+*/
+
+//Remove player if in battle room
 if (room = battle)
 {
 	instance_destroy();
@@ -29,11 +34,16 @@ if (room = battle)
 	BattleManager.actioninput = bind_action;
 	
 }
+
+/*
 if (instance_exists(oFade))
 {
 	exit;
 	
 }
+*/
+
+//If enemy collides with player, go to battle scene
 if (place_meeting(x,y,oEnemy))
 {
 	//var enemyplace = instance_place(x,y,oEnemy);
@@ -50,6 +60,7 @@ if (place_meeting(x,y,oEnemy))
 		}
 		
 	}
+	/*
 	else
 	{
 		if (battlewarp = noone)
@@ -60,9 +71,11 @@ if (place_meeting(x,y,oEnemy))
 		}
 		
 	}
+	*/
 	
 }
 
+//Boolean variables to see if a key is pressed
 key_left = keyboard_check(bind_left);
 key_leftreleased = keyboard_check_released(bind_left);
 
@@ -81,7 +94,7 @@ key_baction = keyboard_check(bind_baction);
 
 
 
-
+/*
 if (hsp != 0)
 {
 	hmoving = true
@@ -98,8 +111,10 @@ else
 {
 	vmoving = false
 }
+*/
 
-if (hmoving = true)
+//Point sprite in right/left direction
+if (hsp != 0)
 {
 	image_xscale = sign(hsp)*scale;
 
@@ -107,7 +122,9 @@ if (hmoving = true)
 
 
 
+//Animations
 
+/*
 if ((key_leftreleased) or (key_rightreleased)) and (vmove = 0)
 {
 	sprite_index = hsprite;
@@ -149,6 +166,51 @@ else if (vmove > 0)
 	sprite_index = spritedownwalk;
 			
 }
+*/
+
+
+//Change to walk up/down if moving vertically
+if (vmove > 0)
+{
+	sprite_index = spritedownwalk;
+	
+	//Sprinting Anim
+	if(key_baction)
+	{
+		sprite_index = spritedownrun
+	}
+			
+} else if (vmove < 0)
+{
+	sprite_index = spriteupwalk;
+	
+	//Sprinting Anim
+	if(key_baction)
+	{
+		sprite_index = spriteuprun
+	}
+}
+
+//Change to walk right/left if moving horizonally
+if (hmove != 0)
+{
+	sprite_index = hspritewalk
+	
+	//Sprinting Anim
+	if(key_baction)
+	{
+		sprite_index = hspriterun
+	}
+		
+}
+
+//Animate sprite if moving
+if(hsp != 0 || vsp != 0) {
+	image_speed = 1;
+} else {
+	image_speed = 0;
+	image_index = 4; //The only position in every sprite where the player is idle
+}
 
 
 
@@ -156,28 +218,25 @@ else if (vmove > 0)
 
 
 
-
+//Sprint button makes player walk faster
 if (key_baction)
 {
-	walksp = 8;
-	
+	walkspd = 8; 
 }
 else
 {
-	walksp = 3;
-	
+	walkspd = 3;
 }
 
 
-
+//If player is in the normal state, update movement variables
 if (state = paddlerstates.normal)
 {
 	
 	hmove = key_right - key_left;
 	vmove = key_down-key_up;
-	
-	hsp = hmove*walksp;
-	vsp = vmove*walksp;
+	hsp = hmove*walkspd;
+	vsp = vmove*walkspd;
 	
 	movement_collision();
 	
@@ -185,9 +244,10 @@ if (state = paddlerstates.normal)
 	
 }
 
+
 radius = 50;
 
-
+//For a future NPC interaction, maybe, wait what is going on now. 
 input_interact = keyboard_check_pressed(bind_action);
 if (input_interact)
 {

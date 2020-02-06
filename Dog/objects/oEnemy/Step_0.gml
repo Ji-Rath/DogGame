@@ -37,7 +37,7 @@ if (state = estates.idle)
 	
 	var playerdist = point_distance(x,y,oDogPaddler.x,oDogPaddler.y);
 	
-	if (playerdist < detectrange) and (oDogPaddler.key_baction) and ((oDogPaddler.hmoving) or (oDogPaddler.vmoving))
+	if (playerdist < detectrange) and (oDogPaddler.key_baction) and ((oDogPaddler.hmove != 0) or (oDogPaddler.vmove != 0))
 	{
 		
 		state = estates.alert
@@ -69,7 +69,7 @@ else if (state = estates.wander)
 	
 	var playerdist = point_distance(x,y,oDogPaddler.x,oDogPaddler.y);
 	
-	if (playerdist < detectrange) and (oDogPaddler.key_baction) and ((oDogPaddler.hmoving) or (oDogPaddler.vmoving))
+	if (playerdist < detectrange) and (oDogPaddler.key_baction) and ((oDogPaddler.hmove != 0) or (oDogPaddler.vmove != 0))
 	{
 		
 		state = estates.alert
