@@ -27,6 +27,7 @@ if(instance_exists(obj_textbox))
 */
 
 //Remove player if in battle room
+/*
 if (room = battle)
 {
 	instance_destroy();
@@ -34,6 +35,7 @@ if (room = battle)
 	BattleManager.actioninput = bind_action;
 	
 }
+*/
 
 /*
 if (instance_exists(oFade))
@@ -49,7 +51,7 @@ if (place_meeting(x,y,oEnemy))
 	//var enemyplace = instance_place(x,y,oEnemy);
 	
 	
-	
+	//Go to battle scene if enemy is alert
 	if (oEnemy.state == estates.aggro) or (oEnemy.state == estates.alert)
 	{
 		if (battlewarp = noone)

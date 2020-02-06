@@ -3,11 +3,15 @@
 enemyvariablereset();
 
 
+/*
+//If going to battle scene, exit?
 if (instance_exists(Paddler.battlewarp))
 {
 	exit;
 }
+*/
 
+//If enemy is in aggro, walk faster
 if (state = estates.aggro)
 {
 	walksp = 4;
@@ -18,6 +22,14 @@ else
 	
 }
 
+//If player is in range, and if the player is moving, go aggro
+var playerdist = point_distance(x,y,oDogPaddler.x,oDogPaddler.y);
+if (playerdist < detectrange && ((oDogPaddler.hmove != 0) || (oDogPaddler.vmove != 0)))
+{
+	state = estates.alert
+}
+
+//IDLE STATE
 if (state = estates.idle)
 {
 	Enemy_detect_normal();
@@ -35,19 +47,8 @@ if (state = estates.idle)
 		wanderdiry = choose (-1,0,1)
 	}
 	
-	var playerdist = point_distance(x,y,oDogPaddler.x,oDogPaddler.y);
-	
-	if (playerdist < detectrange) and (oDogPaddler.key_baction) and ((oDogPaddler.hmove != 0) or (oDogPaddler.vmove != 0))
-	{
-		
-		state = estates.alert
-		
-		
-	}
-	
-	
-	
 }
+//WANDER STATE
 else if (state = estates.wander)
 {
 	Enemy_Walk();
@@ -65,25 +66,16 @@ else if (state = estates.wander)
 		
 	}
 	
-	
-	
-	var playerdist = point_distance(x,y,oDogPaddler.x,oDogPaddler.y);
-	
-	if (playerdist < detectrange) and (oDogPaddler.key_baction) and ((oDogPaddler.hmove != 0) or (oDogPaddler.vmove != 0))
-	{
-		
-		state = estates.alert
-
-		
-	}
-	
 }
+//ALERT STATE
 else if (state = estates.alert)
 {
 	sprite_index = spritealert;
 	
 	movement_collision();	
 	var secs = 0.2;
+	
+	//Create alert sign
 	if (myalertsign = noone)
 	{
 		myalertsign = instance_create_layer(x,y-100,"effects",alertsign);
@@ -91,6 +83,7 @@ else if (state = estates.alert)
 	}
 	alertcount += 1;
 	
+	//After a set time, go to aggro state
 	if (alertcount > secs*60)
 	{
 		state = estates.aggro;
@@ -98,8 +91,9 @@ else if (state = estates.alert)
 		myalertsign = noone;
 		
 	}
-	var playerdist = point_distance(x,y,oDogPaddler.x,oDogPaddler.y);
 	
+	/*
+	var playerdist = point_distance(x,y,oDogPaddler.x,oDogPaddler.y);
 	if (playerdist > detectrange)
 	{
 		
@@ -108,8 +102,10 @@ else if (state = estates.alert)
 		myalertsign = noone;
 		sprite_index = choose(spritedown,spriteup,hsprite);
 	}
+	*/
 	
 }
+//AGGRO STATE
 else if (state = estates.aggro)
 {
 	Enemy_Run();
