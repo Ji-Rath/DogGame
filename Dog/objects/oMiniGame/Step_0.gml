@@ -6,8 +6,14 @@ if(timer[0] > 0)
 }
 else if (timer[0] != -1)
 {
-    ds_list_add(Instances, instance_create_layer(room_width/4,room_height/2,"Instances",oPlayerBoob));
-    ds_list_add(Instances, instance_create_layer(room_width/1.5,room_height/2,"Instances",oEnemyCrabArm));
+    //Switch to the specified minigame
+    switch(GameType)
+    {
+        case Game.CrabAttack:
+            ds_list_add(Instances, instance_create_layer(room_width/4,room_height/2,"Instances",oPlayerBoob));
+            ds_list_add(Instances, instance_create_layer(room_width/1.5,room_height/2,"Instances",oEnemyCrabArm));
+        break;
+    }
     timer[0] = -1;
     timer[1] = 4*60;
 }

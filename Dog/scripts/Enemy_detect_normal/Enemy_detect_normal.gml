@@ -1,5 +1,5 @@
 var disttowards = point_distance(x,y,oDogPaddler.x,oDogPaddler.y);
-var i = 300;
+var i = detectrange;
 if (disttowards < i )
 {
 	

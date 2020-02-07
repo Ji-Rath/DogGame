@@ -4,7 +4,7 @@ Paddler = oDogPaddler;
 codename = noone;
 hsp = 0;
 vsp = 0;
-walksp = 0;
+WalkSpd = 0;
 hmove = 0;         
 vmove = 0;
 wanderdirx = 0;
@@ -28,6 +28,8 @@ myalertsign = noone;
 detectrange = 350;
 
 BattleObject = oEnemyBattleParent;
+
+Health = 10;
 
 
 hsprite = sEnemydefault;

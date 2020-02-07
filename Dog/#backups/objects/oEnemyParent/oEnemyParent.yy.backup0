@@ -1,0 +1,97 @@
+// 2020-02-07 15:51:51
+#event properties (no comments/etc. here are saved)
+parent_index = -1;
+sprite_index = sEnemydefault;
+uses_physics = false;
+persistent = true;
+
+#event create Insert description here
+// You can write your code in this editor
+Paddler = oDogPaddler;
+codename = noone;
+hsp = 0;
+vsp = 0;
+WalkSpd = 0;
+hmove = 0;         
+vmove = 0;
+wanderdirx = 0;
+wanderdiry = 0;
+enum estates
+{
+	idle,
+	wander,
+	alert,
+	aggro,
+	
+}
+
+state = estates.idle;
+
+idlecount = 0;
+wandercount = 0;
+alertcount = 0;
+
+myalertsign = noone;
+detectrange = 350;
+
+BattleObject = oEnemyBattleParent;
+
+Health = 10;
+
+
+hsprite = sEnemydefault;
+hspritewalk = sEnemywalk;
+hspriterun = sEnemyrun;
+spriteup = sEnemyup;
+spriteupwalk = sEnemywalk;
+spriteuprun = sEnemyrun;
+spritedown = sEnemydown;
+spritedownwalk = sEnemywalk;
+spritedownrun = sEnemyrun;
+spritealert = sEnemyalert;
+
+
+scale = 0.5;
+image_xscale = scale;
+image_yscale = scale;
+
+
+#event step Insert description here
+// You can write your code in this editor
+enemyvariablereset();
+
+//If in battle room, turn invisible
+//visible = !(room == battle);
+
+if(Health <= 0)
+{
+	visible = false;
+}
+
+//Only move if visible
+if(room != battle)
+{
+	switch(state)
+	{
+		case estates.idle: EnemyIdle(); break;
+		case estates.wander: EnemyWander(); break;
+		case estates.alert: EnemyAlert(); break;
+		case estates.aggro: EnemyAggro(); break;
+	}
+}
+else 
+{
+	hsp = 0;
+	vsp = 0;
+}
+
+//Assign attacker
+if (place_meeting(x,y,oDogPaddler))
+{
+	oDogPaddler.Attacker = BattleObject;
+}
+
+#event draw_gui Insert description here
+// You can write your code in this editor
+
+//draw_text(0,0,"sigh - " +string(alertcount))

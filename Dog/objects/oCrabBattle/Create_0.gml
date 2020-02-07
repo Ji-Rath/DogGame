@@ -7,3 +7,5 @@ TextDuring = ["My right claw is a lot stronger than my left", "You don't stand a
 AttackDamage = 3;
 Health = 10;
 Name = "Crab"
+
+EnemyAttacks = [Game.CrabAttack];

@@ -1,0 +1,14 @@
+// 2020-02-07 08:57:15
+#event properties (no comments/etc. here are saved)
+parent_index = -1;
+sprite_index = sDogpaddler;
+uses_physics = false;
+
+#event create Insert description here
+// You can write your code in this editor
+movementvariables();
+
+#event step Insert description here
+// You can write your code in this editor
+movement_collision();
+vsp += grv;

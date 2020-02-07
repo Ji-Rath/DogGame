@@ -1,0 +1,17 @@
+// 2020-02-07 08:39:37
+#event properties (no comments/etc. here are saved)
+parent_index = oEnemyBattleParent;
+sprite_index = sCrabfightidle;
+uses_physics = false;
+
+#event create Insert description here
+// You can write your code in this editor
+image_index = 30;
+
+TextIntro = ["SICKO MODE", "YOU GONNA GET CRABBED ON", "CAUGHT BETWEEN A CRAB, AND A HARD PLACE"];
+TextDuring = ["My right claw is a lot stronger than my left", "You don't stand a chance"]
+AttackDamage = 3;
+Health = 10;
+Name = "Crab"
+
+EnemyAttacks = [Game.CrabAttack];

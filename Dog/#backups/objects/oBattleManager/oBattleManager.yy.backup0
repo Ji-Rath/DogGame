@@ -1,0 +1,132 @@
+// 2020-02-07 15:50:52
+#event properties (no comments/etc. here are saved)
+parent_index = -1;
+uses_physics = false;
+
+#event create Insert description here
+// You can write your code in this editor
+
+box = spr_battlebox;
+gui_width = display_get_gui_width();
+gui_height = display_get_gui_height();
+textcol = 0;
+text = "";
+actioninput = ord("X");
+
+Enemy = oEnemyBattleParent;
+
+BattleStage = 0;
+BattleStageEnd = false;
+
+DPstat = sDPstatnormal;
+DPhpx = 315
+DPhpy = 535
+DPoffy = 630
+
+textcol = c_black;
+
+text_height = string_height("A");
+
+//Create Enemy Object
+instance_create_layer(640,390,"Instances",oDogPaddler.Attacker);
+
+
+//INTRO TEXT - BATTLE STAGE 0
+var FirstText = string(Enemy.Name) + " has attacked!"
+var EnemyTextIntro = Enemy.TextIntro[random_range(0,array_length_1d(Enemy.TextIntro))];
+
+
+var BattleText = instance_create_layer(x,y,"text",oBattleTextBox); 
+BattleText.text = [FirstText,EnemyTextIntro];
+
+
+
+#event step
+
+//If the current battle stage is done, transition to the next one.
+if(BattleStageEnd)
+{
+	
+	if(Enemy == noone)
+	{
+		fadeout(room0,c_black,0.05);
+		exit;
+	} else
+	{
+		Enemy.Health -= 5;
+	}
+	
+	BattleStage++;
+	if(BattleStage > 3)
+	{
+		BattleStage = 1;
+	}
+	
+	//Check enemy and player health
+	if(global.phealth <= 0)
+	{
+		var BattleText = instance_create_layer(x,y,"text",oBattleTextBox);
+		BattleText.text = ["You lose!"];
+	}
+	
+	if(Enemy.Health <= 0)
+	{
+		var BattleText = instance_create_layer(x,y,"text",oBattleTextBox);
+		BattleText.text = ["You Win!"];
+		Enemy = noone;
+		with(oEnemyParent)
+		{
+			if place_meeting(x,y,oDogPaddler)
+			{
+				Health = 0;
+			}
+		}
+	}
+	else 
+	{
+		switch(BattleStage)
+		{
+			case 1:
+				//ENEMY ATTACK, SEND OVER THE SPECIFIED MINI GAME
+				var MiniGame = instance_create_layer(0,0,"GameManager",oMiniGame);
+				MiniGame.GameType = Enemy.EnemyAttacks[random_range(0,array_length_1d(Enemy.EnemyAttacks))]
+			break;
+			
+			case 2:
+				//PLAYER ATTACK
+				var BattleText = instance_create_layer(x,y,"text",oBattleTextBox);
+				BattleText.text = ["(You Attack)"];
+			break;
+			
+			case 3:
+				//CHATTER BEFORE LOOP
+				var BattleText = instance_create_layer(x,y,"text",oBattleTextBox);
+				var EnemyTextDuring = Enemy.TextDuring[random_range(0,array_length_1d(Enemy.TextDuring))];
+				BattleText.text = [EnemyTextDuring];
+			break;
+		}
+	}
+	
+	
+	BattleStageEnd = false;
+}
+
+#event draw_gui Insert description here
+// You can write your code in this editor
+draw_set_color(c_black)
+//draw_text(0,0,"LEVEL "+ string(global.plevel)+"  HP - "+string(global.phealth)+"  PP - "+string(global.pp))
+
+draw_sprite(DPstat,0,0,0)
+var c = textcol;
+draw_text_ext_color(DPhpx,DPhpy,global.phealth,text_height,100,c,c,c,c,1)
+draw_text_ext_color(DPhpx+1,DPhpy,global.phealth,text_height,100,c,c,c,c,1)
+
+draw_text_ext_color(DPhpx,DPoffy,global.pp,text_height,100,c,c,c,c,1)
+draw_text_ext_color(DPhpx+1,DPoffy,global.pp,text_height,100,c,c,c,c,1)
+
+
+/*
+draw_sprite(box,0,0,0)
+var c = textcol;
+draw_text_color(140,60,string(enemyname) + " has attacked!",c,c,c,c,1)
+draw_text_color(140+1,60,string(enemyname) + " has attacked!",c,c,c,c,1)

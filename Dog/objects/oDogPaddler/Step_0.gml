@@ -1,24 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-
-//If enemy collides with player, go to battle scene
-if (place_meeting(x,y,oEnemyParent))
-{
-	//var enemyplace = instance_place(x,y,oEnemy);
-	
-	
-	//Go to battle scene if enemy is alert
-	if (oEnemyParent.state == estates.aggro)
-	{
-		if (battlewarp = noone)
-		{
-			fadeout(battle, c_maroon, 0.05);
-		}
-		
-	}
-	
-}
+//Turn invisible when in battle
+//visible = !(room == battle);
 
 //Boolean variables to see if a key is pressed
 key_left = keyboard_check(bind_left);
