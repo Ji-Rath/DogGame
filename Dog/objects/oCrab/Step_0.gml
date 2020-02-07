@@ -19,7 +19,5 @@ hp = 10;
 if (place_meeting(x,y,oDogPaddler))
 {
 	oDogPaddler.attacker = oCrab;
-	
-	
 }
 
