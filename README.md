@@ -3,6 +3,7 @@
 Developers:
 - Gareth #1,
 - Gareth #2,
-- Andy
+- Andi
+- Josh
   
-Download latest version: [Here](GameDownload/Dog-latest.zip)
+Download latest version: [Here](https://github.com/Ji-Rath/DogGame/releases)
