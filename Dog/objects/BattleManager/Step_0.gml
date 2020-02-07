@@ -15,10 +15,13 @@ if (enemy = oCrab)
 }
 
 
-if (count = 20)
+//After 1/2 second, render text
+if (count = 30)
 {
 	var textbuffer = string(enemyname) + " has attacked!"
-	text = [textbuffer]
-	create_battlebox(text);	
-	
+	EnemyTextIntro = array_length_2d(enemy.TextIntro,choose(array_height_2d(enemy.TextIntro)-1));
+	//text = [textbuffer, "THIS IS A TEST", "THIS IS COOL!"]
+	//create_battlebox(text);	
+	var BattleText = instance_create_layer(x,y,"text",oBattleBox);
+	BattleText.text = [textbuffer,EnemyText];
 }

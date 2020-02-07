@@ -2,18 +2,8 @@
     "id": "e41d4359-c02f-42be-a4a1-c5ed01d19080",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "obj_battlebox",
+    "name": "oBattleBox",
     "eventList": [
-        {
-            "id": "d39a54de-9a15-4305-8bec-68ea271809a5",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 64,
-            "eventtype": 8,
-            "m_owner": "e41d4359-c02f-42be-a4a1-c5ed01d19080"
-        },
         {
             "id": "6b0558b6-7e8e-4a9f-85ea-d75fda8a5029",
             "modelName": "GMEvent",
@@ -42,6 +32,16 @@
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 11,
             "eventtype": 7,
+            "m_owner": "e41d4359-c02f-42be-a4a1-c5ed01d19080"
+        },
+        {
+            "id": "d39a54de-9a15-4305-8bec-68ea271809a5",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 64,
+            "eventtype": 8,
             "m_owner": "e41d4359-c02f-42be-a4a1-c5ed01d19080"
         }
     ],

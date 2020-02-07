@@ -52,13 +52,14 @@ if (place_meeting(x,y,oEnemy))
 	
 	
 	//Go to battle scene if enemy is alert
-	if (oEnemy.state == estates.aggro) or (oEnemy.state == estates.alert)
+	if (oEnemy.state == estates.aggro)
 	{
 		if (battlewarp = noone)
 		{
-			battlewarp = instance_create_layer(x,y,"effects",oWarp);
-			battlewarp.target = battle;
-			battlewarp.warpcolor = c_red;
+			fadeout(battle, c_maroon, 0.05);
+			//battlewarp = instance_create_layer(x,y,"effects",oWarp);
+			//battlewarp.target = battle;
+			//battlewarp.warpcolor = c_red;
 		}
 		
 	}

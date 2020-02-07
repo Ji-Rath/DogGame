@@ -24,7 +24,7 @@ else
 
 //If player is in range, and if the player is moving, go aggro
 var playerdist = point_distance(x,y,oDogPaddler.x,oDogPaddler.y);
-if (playerdist < detectrange && ((oDogPaddler.hmove != 0) || (oDogPaddler.vmove != 0)))
+if (playerdist < detectrange && state != estates.aggro)
 {
 	state = estates.alert
 }
@@ -73,7 +73,7 @@ else if (state = estates.alert)
 	sprite_index = spritealert;
 	
 	movement_collision();	
-	var secs = 0.2;
+	//var secs = 0.2;
 	
 	//Create alert sign
 	if (myalertsign = noone)
@@ -81,9 +81,11 @@ else if (state = estates.alert)
 		myalertsign = instance_create_layer(x,y-100,"effects",alertsign);
 		myalertsign.myuser = id;
 	}
-	alertcount += 1;
 	
 	//After a set time, go to aggro state
+	/*
+	alertcount += 1;
+	
 	if (alertcount > secs*60)
 	{
 		state = estates.aggro;
@@ -92,7 +94,6 @@ else if (state = estates.alert)
 		
 	}
 	
-	/*
 	var playerdist = point_distance(x,y,oDogPaddler.x,oDogPaddler.y);
 	if (playerdist > detectrange)
 	{

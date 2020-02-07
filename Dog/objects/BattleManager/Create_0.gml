@@ -10,7 +10,7 @@ gui_height = display_get_gui_height();
 textcol = 0;
 text = "";
 count = 0;
-actioninput = noone;
+actioninput = ord("X");
 
 
 DPstat = sDPstatnormal;

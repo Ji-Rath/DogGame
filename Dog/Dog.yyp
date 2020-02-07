@@ -762,7 +762,7 @@
             "Key": "e41d4359-c02f-42be-a4a1-c5ed01d19080",
             "Value": {
                 "id": "f4bf7a86-9f0e-4644-bc82-791f2c14eadf",
-                "resourcePath": "objects\\obj_battlebox\\obj_battlebox.yy",
+                "resourcePath": "objects/oBattleBox/oBattleBox.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -860,6 +860,30 @@
                 "id": "4d8762f7-7b1a-47e1-92f2-6c279903369f",
                 "resourcePath": "fonts\\fnt_stats\\fnt_stats.yy",
                 "resourceType": "GMFont"
+            }
+        },
+        {
+            "Key": "73c58316-74b0-3a8f-6d80-de7ba08afefa",
+            "Value": {
+                "id": "4759bcd5-4ac6-9593-e025-ca8e36bbf816",
+                "resourcePath": "views\\73c58316-74b0-3a8f-6d80-de7ba08afefa.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "e8b742cc-2863-0653-8f50-28acc96f9d11",
+            "Value": {
+                "id": "1b32f70c-9dee-c8bc-a7fa-8e1d3c8d3c67",
+                "resourcePath": "objects\\oPlayerMini\\oPlayerMini.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "704165d5-a417-6e1a-cf91-543927b6d57d",
+            "Value": {
+                "id": "7ef38792-f303-1a71-63b1-5bc213b3044d",
+                "resourcePath": "objects\\oEnemyMini\\oEnemyMini.yy",
+                "resourceType": "GMObject"
             }
         }
     ],
