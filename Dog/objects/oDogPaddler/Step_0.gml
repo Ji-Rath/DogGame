@@ -2,79 +2,21 @@
 // You can write your code in this editor
 
 
-/*
-if(instance_exists(obj_textbox))
-{
-	if (sprite_index = hspritewalk) or (sprite_index = hspriterun)
-	{
-		sprite_index = hsprite;
-		
-	}
-	else if (sprite_index = spriteupwalk) or (sprite_index = spriteuprun)
-	{
-		sprite_index = spriteup;
-		
-	}
-	else if (sprite_index = spritedownwalk) or (sprite_index = spritedownrun)
-	{
-		sprite_index = spritedown;
-		
-	}
-	
-	exit;	
-	
-}
-*/
-
-//Remove player if in battle room
-/*
-if (room = battle)
-{
-	instance_destroy();
-	BattleManager.enemy = attacker;
-	BattleManager.actioninput = bind_action;
-	
-}
-*/
-
-/*
-if (instance_exists(oFade))
-{
-	exit;
-	
-}
-*/
-
 //If enemy collides with player, go to battle scene
-if (place_meeting(x,y,oEnemy))
+if (place_meeting(x,y,oEnemyParent))
 {
 	//var enemyplace = instance_place(x,y,oEnemy);
 	
 	
 	//Go to battle scene if enemy is alert
-	if (oEnemy.state == estates.aggro)
+	if (oEnemyParent.state == estates.aggro)
 	{
 		if (battlewarp = noone)
 		{
 			fadeout(battle, c_maroon, 0.05);
-			//battlewarp = instance_create_layer(x,y,"effects",oWarp);
-			//battlewarp.target = battle;
-			//battlewarp.warpcolor = c_red;
 		}
 		
 	}
-	/*
-	else
-	{
-		if (battlewarp = noone)
-		{
-			battlewarp = instance_create_layer(x,y,"effects",oWarp);
-			battlewarp.target = battle;
-			battlewarp.warpcolor = c_aqua;
-		}
-		
-	}
-	*/
 	
 }
 
@@ -95,27 +37,6 @@ key_action = keyboard_check_pressed(bind_action);
 key_baction = keyboard_check(bind_baction);
 
 
-
-
-/*
-if (hsp != 0)
-{
-	hmoving = true
-}
-else
-{
-	hmoving = false
-}
-if (vsp != 0)
-{
-	vmoving = true;
-}
-else
-{
-	vmoving = false
-}
-*/
-
 //Point sprite in right/left direction
 if (hsp != 0)
 {
@@ -126,50 +47,6 @@ if (hsp != 0)
 
 
 //Animations
-
-/*
-if ((key_leftreleased) or (key_rightreleased)) and (vmove = 0)
-{
-	sprite_index = hsprite;
-	
-}
-else if (key_upreleased)  and (hmove = 0)
-{
-	sprite_index = spriteup;
-}
-else if (key_downreleased) and (hmove = 0)
-{
-	sprite_index = spritedown;
-}
-else if (key_baction) and (hmoving = true)
-{
-	sprite_index = hspriterun;
-		
-}
-else if (hmove != 0)
-{
-	sprite_index = hspritewalk
-		
-}
-else if (key_baction) and (vmoving = true) and (vmove < 0)
-{
-	sprite_index = spriteuprun;
-}
-else if (vmove < 0)
-{
-	sprite_index = spriteupwalk;
-			
-}
-else if (key_baction) and (vmoving = true)
-{
-	sprite_index = spritedownrun;
-}
-else if (vmove > 0)
-{
-	sprite_index = spritedownwalk;
-			
-}
-*/
 
 
 //Change to walk up/down if moving vertically

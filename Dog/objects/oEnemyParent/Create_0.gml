@@ -27,6 +27,8 @@ alertcount = 0;
 myalertsign = noone;
 detectrange = 350;
 
+BattleObject = oEnemyBattleParent;
+
 
 hsprite = sEnemydefault;
 hspritewalk = sEnemywalk;

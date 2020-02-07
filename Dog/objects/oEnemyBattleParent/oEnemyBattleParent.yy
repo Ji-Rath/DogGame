@@ -1,10 +1,19 @@
 {
-    "id": "e8b742cc-2863-0653-8f50-28acc96f9d11",
+    "id": "ae01f48b-c631-e08e-b9f5-03e01e5a7520",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "oPlayerMini",
+    "name": "oEnemyBattleParent",
     "eventList": [
-        
+        {
+            "id": "900e18f2-7f95-751e-359b-0a9b17bf0ebc",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "eventtype": 0,
+            "enumb": 0,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "m_owner": "ae01f48b-c631-e08e-b9f5-03e01e5a7520"
+        }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,

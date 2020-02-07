@@ -10,7 +10,7 @@ vmove = 0;
 scale = 0.5;
 battlewarp = noone;
 
-attacker = noone;
+Attacker = noone;
 
 //Set scale of player
 image_yscale = scale;

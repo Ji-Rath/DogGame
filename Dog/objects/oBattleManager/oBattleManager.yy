@@ -2,7 +2,7 @@
     "id": "1b0b06fc-3fc3-452f-99b1-aa6511271a05",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "BattleManager",
+    "name": "oBattleManager",
     "eventList": [
         {
             "id": "0b2c4a00-6160-4ecf-942c-758643ecd2e1",
@@ -15,23 +15,13 @@
             "m_owner": "1b0b06fc-3fc3-452f-99b1-aa6511271a05"
         },
         {
-            "id": "7671926d-01b9-42dd-a40a-229446f3517c",
+            "id": "3a50189b-591d-4e4d-24f3-04f2bb1e0d90",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
             "eventtype": 3,
-            "m_owner": "1b0b06fc-3fc3-452f-99b1-aa6511271a05"
-        },
-        {
-            "id": "7466f0a2-cb1f-45a7-bc85-13f346fc26de",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
+            "enumb": 0,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 11,
-            "eventtype": 7,
             "m_owner": "1b0b06fc-3fc3-452f-99b1-aa6511271a05"
         },
         {

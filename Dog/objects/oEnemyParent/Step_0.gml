@@ -3,14 +3,6 @@
 enemyvariablereset();
 
 
-/*
-//If going to battle scene, exit?
-if (instance_exists(Paddler.battlewarp))
-{
-	exit;
-}
-*/
-
 //If enemy is in aggro, walk faster
 if (state = estates.aggro)
 {
@@ -24,6 +16,7 @@ else
 
 //If player is in range, and if the player is moving, go aggro
 var playerdist = point_distance(x,y,oDogPaddler.x,oDogPaddler.y);
+
 if (playerdist < detectrange && state != estates.aggro)
 {
 	state = estates.alert
@@ -82,29 +75,6 @@ else if (state = estates.alert)
 		myalertsign.myuser = id;
 	}
 	
-	//After a set time, go to aggro state
-	/*
-	alertcount += 1;
-	
-	if (alertcount > secs*60)
-	{
-		state = estates.aggro;
-		instance_destroy(myalertsign);
-		myalertsign = noone;
-		
-	}
-	
-	var playerdist = point_distance(x,y,oDogPaddler.x,oDogPaddler.y);
-	if (playerdist > detectrange)
-	{
-		
-		state = estates.idle;
-		instance_destroy(myalertsign);
-		myalertsign = noone;
-		sprite_index = choose(spritedown,spriteup,hsprite);
-	}
-	*/
-	
 }
 //AGGRO STATE
 else if (state = estates.aggro)
@@ -158,4 +128,10 @@ else if (state = estates.aggro)
 		
 		}
 	}
+}
+
+//Assign attacker
+if (place_meeting(x,y,oDogPaddler))
+{
+	oDogPaddler.Attacker = BattleObject;
 }

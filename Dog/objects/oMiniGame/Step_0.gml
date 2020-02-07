@@ -24,5 +24,5 @@ else if (timer[1] != -1)
         instance_destroy(ds_list_find_value(Instances,i));
     }
     instance_destroy();
-    timer[1] = -1;
+    oBattleManager.BattleStageEnd = true;
 }

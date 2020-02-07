@@ -8,7 +8,7 @@
         "215fff17-a3d7-9b65-c2e8-909b2f23239c"
     ],
     "filterType": "GMObject",
-    "folderName": "CONCEPT",
+    "folderName": "TestMiniGame",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

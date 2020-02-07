@@ -8,10 +8,17 @@ if (keyboard_check_pressed(interact_key))
 		page ++;//event_perform(ev_other,ev_user1);
 		counter = 0;
 		
-	}else
+	}
+	else
 	{
+		//When there is no more text, move on to the next battle stage
+		
+		//1 - ENEMY ATTACK
+		//2 - PLAYER ATTACK
+		//3 - TEXT CHATTER, END
+		
+		oBattleManager.BattleStageEnd = true;
 		instance_destroy();
-		instance_create_layer(0,0,"GameManager",oMiniGame);
 	}
 	
 	
