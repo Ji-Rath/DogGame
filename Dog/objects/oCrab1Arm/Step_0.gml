@@ -1,5 +1,7 @@
 
 var TimerReady = (timer[0] <= 0 && timer[0] != -1)
+
+//State machine
 switch(State)
 {
     case Crab1State.Setup:
@@ -14,6 +16,7 @@ switch(State)
     
     case Crab1State.Signal:
         sprite_index = sMiniGameCrab1Signal;
+        image_speed = 0.75;
         Spd = 0;
         if(TimerReady)
         {

@@ -1,0 +1,12 @@
+// 2020-02-07 19:51:57
+#event properties (no comments/etc. here are saved)
+parent_index = -1;
+sprite_index = sNpc;
+uses_physics = false;
+
+#event create Insert description here
+// You can write your code in this editor
+
+text = ["Yo Man hows it going?","Its going pretty sicko mode, how about you?","Meh","Ive had better days"];
+portrait = [sEnemyalert,sDogpaddlerface,sEnemyup];
+portrait_index = [0,1,0,2]

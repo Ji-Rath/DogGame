@@ -1,0 +1,12 @@
+// 2020-02-07 19:52:11
+#event properties (no comments/etc. here are saved)
+parent_index = -1;
+uses_physics = false;
+
+#event create
+
+interact_key = noone;
+
+text = [];
+portrait = [];
+portrait_index = [];

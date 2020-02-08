@@ -1,4 +1,4 @@
-// 2020-02-07 16:22:35
+// 2020-02-07 19:52:43
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 sprite_index = sDogpaddler;
@@ -19,6 +19,7 @@ scale = 0.5;
 battlewarp = noone;
 
 Attacker = noone;
+BattleAttacker = noone;
 
 //Set scale of player
 image_yscale = scale;
@@ -176,12 +177,9 @@ if (input_interact)
 {
 	var inst = collision_rectangle(x-radius,y-radius,x+radius,y+radius,npc,false,false);
 	
-	if (inst!= noone)
+	if (inst != noone)
 	{
-		with (inst)
-		{
-			create_textbox(text,id)
-		}
+		create_textbox(inst.text,inst.id)
 	}
 	
 	

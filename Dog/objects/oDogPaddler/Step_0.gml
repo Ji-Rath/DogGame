@@ -115,14 +115,11 @@ radius = 50;
 input_interact = keyboard_check_pressed(bind_action);
 if (input_interact)
 {
-	var inst = collision_rectangle(x-radius,y-radius,x+radius,y+radius,npc,false,false);
+	var inst = collision_rectangle(x-radius,y-radius,x+radius,y+radius,oNPC,false,false);
 	
-	if (inst!= noone)
+	if (inst != noone)
 	{
-		with (inst)
-		{
-			create_textbox(text,id)
-		}
+		create_textbox(inst.text,inst.id)
 	}
 	
 	

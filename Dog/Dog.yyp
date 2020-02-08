@@ -898,7 +898,7 @@
             "Key": "daaec725-5f22-463b-a580-f634dcfb751c",
             "Value": {
                 "id": "c55c1b29-b99a-4fd4-9304-dce061443369",
-                "resourcePath": "objects\\npc\\npc.yy",
+                "resourcePath": "objects/oNPC/oNPC.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -1051,6 +1051,14 @@
             "Value": {
                 "id": "72583053-4af5-5897-11f9-2b386d60e2d9",
                 "resourcePath": "objects\\oCrab1Player\\oCrab1Player.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "41180335-7b0d-9336-59b6-8185b4f56b6b",
+            "Value": {
+                "id": "ea90b3b7-5022-4e0b-fcee-795c8de82fb7",
+                "resourcePath": "objects\\oNPCParent\\oNPCParent.yy",
                 "resourceType": "GMObject"
             }
         }
