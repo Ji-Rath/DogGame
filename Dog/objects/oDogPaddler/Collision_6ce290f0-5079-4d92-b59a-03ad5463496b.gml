@@ -7,5 +7,7 @@
 if (other.state == estates.aggro && other.visible = true)
 {
 	fadeout(battle, c_maroon, 0.05);
+	BattleAttacker = other.BattleObject;
+	Attacker = other;
 }
 	

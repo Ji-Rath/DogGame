@@ -13,6 +13,11 @@ else if (timer[0] != -1)
             ds_list_add(Instances, instance_create_layer(room_width/4,room_height/2,"Instances",oPlayerBoob));
             ds_list_add(Instances, instance_create_layer(room_width/1.5,room_height/2,"Instances",oEnemyCrabArm));
         break;
+        
+        case Game.Crab1:
+            ds_list_add(Instances, instance_create_layer(room_width/2,room_height/2+50,"Instances",oCrab1Arm));
+            ds_list_add(Instances, instance_create_layer(room_width/2,room_height/2-50,"Instances",oCrab1Player));
+        break;
     }
     timer[0] = -1;
     timer[1] = 4*60;
@@ -31,4 +36,9 @@ else if (timer[1] != -1)
     }
     instance_destroy();
     oBattleManager.BattleStageEnd = true;
+    
+    if(!Success)
+    {
+        global.phealth -= 5;
+    }
 }

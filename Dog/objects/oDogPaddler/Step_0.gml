@@ -2,7 +2,7 @@
 // You can write your code in this editor
 
 //Turn invisible when in battle
-//visible = !(room == battle);
+visible = !(room == battle);
 
 //Boolean variables to see if a key is pressed
 key_left = keyboard_check(bind_left);

@@ -11,6 +11,7 @@ scale = 0.5;
 battlewarp = noone;
 
 Attacker = noone;
+BattleAttacker = noone;
 
 //Set scale of player
 image_yscale = scale;

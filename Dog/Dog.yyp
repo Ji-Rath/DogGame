@@ -50,7 +50,7 @@
             "Key": "028e2de4-42db-4d48-84dd-236b07ef52aa",
             "Value": {
                 "id": "a72d9e1e-1261-4caa-b302-771f9dfb2189",
-                "resourcePath": "objects\/oEnemyParent\/oEnemyParent.yy",
+                "resourcePath": "objects/oEnemyParent/oEnemyParent.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -194,7 +194,7 @@
             "Key": "1b0b06fc-3fc3-452f-99b1-aa6511271a05",
             "Value": {
                 "id": "ae4ae7db-7ae9-4e3b-b6fb-1ce952bd3d7a",
-                "resourcePath": "objects\/oBattleManager\/oBattleManager.yy",
+                "resourcePath": "objects/oBattleManager/oBattleManager.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -399,6 +399,14 @@
             }
         },
         {
+            "Key": "560e2c42-cd01-4261-8513-c0a9733e7994",
+            "Value": {
+                "id": "31f23a36-b794-4318-bacd-a92cc74c669f",
+                "resourcePath": "sprites\\sMiniGameCrab1PlayerRun\\sMiniGameCrab1PlayerRun.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "58603641-0023-4c2d-8803-fff5a03c9e6c",
             "Value": {
                 "id": "c701d4e0-43f0-46b1-8e38-7b7db83c6dee",
@@ -452,6 +460,14 @@
                 "id": "dfade009-0144-48ec-96ef-82589180f67c",
                 "resourcePath": "objects\\oCrab\\oCrab.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "6cfb4198-af83-4471-81e1-f290ea79698a",
+            "Value": {
+                "id": "e4d3f213-fbf7-49c9-b6bb-9b6af1080b02",
+                "resourcePath": "views\\6cfb4198-af83-4471-81e1-f290ea79698a.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -511,6 +527,14 @@
             }
         },
         {
+            "Key": "81edeef3-cf1c-4268-9b36-80c94f4b24e7",
+            "Value": {
+                "id": "c0beff2a-7d6f-42ee-b019-c43521e14212",
+                "resourcePath": "sprites\\sMiniGameCrab1Setup\\sMiniGameCrab1Setup.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "82e408c0-d9dd-46b1-ab7e-258e5e027ed6",
             "Value": {
                 "id": "9961cd5c-2859-46d5-9a7d-21381c25cf02",
@@ -540,6 +564,14 @@
                 "id": "757c1d6d-e725-4148-8ed1-b300e3784f3f",
                 "resourcePath": "views\\854b5b74-1628-4941-8359-52258039f468.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "8746176b-a8ba-41dc-8dd3-c0a5ee21bdb9",
+            "Value": {
+                "id": "363ba1c7-ad70-44b5-ab68-c43fbe43ead2",
+                "resourcePath": "sprites\\sMiniGameCrab1Bite\\sMiniGameCrab1Bite.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -583,6 +615,14 @@
             }
         },
         {
+            "Key": "96b0c331-fed8-4140-90a6-113bda1c211d",
+            "Value": {
+                "id": "1653274e-d585-4b6a-87dd-aa78ac3ec6c5",
+                "resourcePath": "sprites\\sMiniGameCrab1PlayerJump\\sMiniGameCrab1PlayerJump.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "98f83f6d-5e63-05c6-5ddc-261159d1b3c9",
             "Value": {
                 "id": "f0bc4187-1efa-bfd8-ddf0-2f083e80a86d",
@@ -612,6 +652,14 @@
                 "id": "3b279567-ae1c-4085-a72a-2c695080600e",
                 "resourcePath": "fonts\\fnt_debug\\fnt_debug.yy",
                 "resourceType": "GMFont"
+            }
+        },
+        {
+            "Key": "9c8dca8d-d08d-4627-afc3-7ed6f2d58b11",
+            "Value": {
+                "id": "18e9233e-8890-401b-9272-5988c8fe5642",
+                "resourcePath": "views\\9c8dca8d-d08d-4627-afc3-7ed6f2d58b11.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -767,6 +815,14 @@
             }
         },
         {
+            "Key": "be5808ae-f28b-408e-b9fd-2b0d8a95dab7",
+            "Value": {
+                "id": "873c71a0-5d62-47dc-8f8c-bf496d9a6a78",
+                "resourcePath": "sprites\\sMiniGameCrab1Signal\\sMiniGameCrab1Signal.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "c24b1e84-a457-6136-e600-71dc9553bc85",
             "Value": {
                 "id": "c7ad9ab8-179d-9319-ed70-85e8b1624086",
@@ -874,7 +930,7 @@
             "Key": "e41d4359-c02f-42be-a4a1-c5ed01d19080",
             "Value": {
                 "id": "f4bf7a86-9f0e-4644-bc82-791f2c14eadf",
-                "resourcePath": "objects\/oBattleTextBox\/oBattleTextBox.yy",
+                "resourcePath": "objects/oBattleTextBox/oBattleTextBox.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -972,6 +1028,30 @@
                 "id": "4d8762f7-7b1a-47e1-92f2-6c279903369f",
                 "resourcePath": "fonts\\fnt_stats\\fnt_stats.yy",
                 "resourceType": "GMFont"
+            }
+        },
+        {
+            "Key": "4f8c8d7e-5901-c887-cfbf-88cd135bcbc1",
+            "Value": {
+                "id": "76ff834e-e1b1-496e-d09c-d33199b0a351",
+                "resourcePath": "views\\4f8c8d7e-5901-c887-cfbf-88cd135bcbc1.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "fcdf7f5b-7244-4bdf-50bb-f8cdb1d52e30",
+            "Value": {
+                "id": "7aca3ce4-d972-0bd6-839c-1538108008fa",
+                "resourcePath": "objects\\oCrab1Arm\\oCrab1Arm.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "bf948d7b-6832-10ba-a8bc-52736ecab14d",
+            "Value": {
+                "id": "72583053-4af5-5897-11f9-2b386d60e2d9",
+                "resourcePath": "objects\\oCrab1Player\\oCrab1Player.yy",
+                "resourceType": "GMObject"
             }
         }
     ],

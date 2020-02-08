@@ -1,4 +1,4 @@
-// 2020-02-07 15:51:17
+// 2020-02-07 16:27:06
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 sprite_index = sEnemydefault;
@@ -60,11 +60,11 @@ image_yscale = scale;
 // You can write your code in this editor
 enemyvariablereset();
 
-//If in battle room, turn invisible
-//visible = !(room == battle);
+//If in battle room or dead, turn invisible
+visible = !((room == battle) || (Health <= 0));
 
 //Only move if visible
-if(room != battle)
+if(visible)
 {
 	switch(state)
 	{
@@ -78,13 +78,6 @@ else
 {
 	hsp = 0;
 	vsp = 0;
-}
-
-//Assign attacker
-if (place_meeting(x,y,oDogPaddler))
-{
-	oDogPaddler.Attacker = BattleObject;
-}
 
 #event draw_gui Insert description here
 // You can write your code in this editor

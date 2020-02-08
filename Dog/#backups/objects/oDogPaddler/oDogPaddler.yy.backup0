@@ -1,4 +1,4 @@
-// 2020-02-07 15:54:18
+// 2020-02-07 16:22:42
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 sprite_index = sDogpaddler;
@@ -19,6 +19,7 @@ scale = 0.5;
 battlewarp = noone;
 
 Attacker = noone;
+BattleAttacker = noone;
 
 //Set scale of player
 image_yscale = scale;
@@ -61,7 +62,7 @@ spritedownrun = sDogpaddlerdownrun;
 // You can write your code in this editor
 
 //Turn invisible when in battle
-//visible = !(room == battle);
+visible = !(room == battle);
 
 //Boolean variables to see if a key is pressed
 key_left = keyboard_check(bind_left);
@@ -196,6 +197,8 @@ if (input_interact)
 if (other.state == estates.aggro && other.visible = true)
 {
 	fadeout(battle, c_maroon, 0.05);
+	BattleAttacker = other.BattleObject;
+	Attacker = other;
 }
 	
 

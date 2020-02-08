@@ -8,7 +8,8 @@ textcol = 0;
 text = "";
 actioninput = ord("X");
 
-Enemy = oEnemyBattleParent;
+Enemy = oDogPaddler.BattleAttacker;
+OriginalEnemy = oDogPaddler.Attacker;
 
 BattleStage = 0;
 BattleStageEnd = false;
@@ -22,8 +23,10 @@ textcol = c_black;
 
 text_height = string_height("A");
 
+Success = false;
+
 //Create Enemy Object
-instance_create_layer(640,390,"Instances",oDogPaddler.Attacker);
+instance_create_layer(640,390,"Instances",oDogPaddler.BattleAttacker);
 
 
 //INTRO TEXT - BATTLE STAGE 0

@@ -2,16 +2,11 @@
 // You can write your code in this editor
 enemyvariablereset();
 
-//If in battle room, turn invisible
-//visible = !(room == battle);
-
-if(Health <= 0)
-{
-	visible = false;
-}
+//If in battle room or dead, turn invisible
+visible = !((room == battle) || (Health <= 0));
 
 //Only move if visible
-if(room != battle)
+if(visible)
 {
 	switch(state)
 	{
@@ -25,10 +20,4 @@ else
 {
 	hsp = 0;
 	vsp = 0;
-}
-
-//Assign attacker
-if (place_meeting(x,y,oDogPaddler))
-{
-	oDogPaddler.Attacker = BattleObject;
 }

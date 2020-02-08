@@ -7,9 +7,6 @@ if(BattleStageEnd)
 	{
 		fadeout(room0,c_black,0.05);
 		exit;
-	} else
-	{
-		Enemy.Health -= 5;
 	}
 	
 	BattleStage++;
@@ -30,13 +27,7 @@ if(BattleStageEnd)
 		var BattleText = instance_create_layer(x,y,"text",oBattleTextBox);
 		BattleText.text = ["You Win!"];
 		Enemy = noone;
-		with(oEnemyParent)
-		{
-			if place_meeting(x,y,oDogPaddler)
-			{
-				Health = 0;
-			}
-		}
+		OriginalEnemy.Health = 0;
 	}
 	else 
 	{
@@ -51,7 +42,15 @@ if(BattleStageEnd)
 			case 2:
 				//PLAYER ATTACK
 				var BattleText = instance_create_layer(x,y,"text",oBattleTextBox);
-				BattleText.text = ["(You Attack)"];
+				BattleText.text = choose(["(You punched the "+Enemy.Name+")"],["(You swung at the "+Enemy.Name+")"]);
+				Enemy.Health -= 3;
+				
+				if(irandom(8) = 0)
+				{
+					BattleText.text = ["You ate the crab :o"]
+					Enemy.Health = 0;
+					global.phealth += 50;
+				}
 			break;
 			
 			case 3:

@@ -1,0 +1,59 @@
+// 2020-02-07 18:15:27
+#event properties (no comments/etc. here are saved)
+parent_index = -1;
+uses_physics = false;
+
+#event create
+
+//Setup crab arm state
+enum Crab1State
+{
+    Setup,
+    Signal,
+    Attack
+}
+State = Crab1State.Setup;
+
+
+//Timer setup
+timer[0] = random_range(0.5,2)*60;
+
+Spd = 1.5;
+
+#event step
+
+var TimerReady = (timer[0] <= 0 && timer[0] != -1)
+switch(State)
+{
+    case Crab1State.Setup:
+        sprite_index = sMiniGameCrab1Setup;
+        //When setup timer is done, go to signal state
+        if(TimerReady)
+        {
+            State = Crab1State.Signal;
+            timer[0] = 0.25*60; //Amount of time to react
+        }
+    break;
+    
+    case Crab1State.Signal:
+        sprite_index = sMiniGameCrab1Signal;
+        Spd = 0;
+        if(TimerReady)
+        {
+            State = Crab1State.Attack;
+        }
+    break;
+    
+    case Crab1State.Attack:
+        Spd = 0;
+        sprite_index = sMiniGameCrab1Bite;
+    break;
+}
+
+move_towards_point(oCrab1Player.x,y,Spd);
+
+//Timer management
+if(timer[0] > 0)
+{
+    timer[0] -= 1;
+}

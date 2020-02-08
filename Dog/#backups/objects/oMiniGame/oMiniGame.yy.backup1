@@ -1,4 +1,4 @@
-// 2020-02-07 08:37:30
+// 2020-02-07 18:44:57
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 uses_physics = false;
@@ -12,9 +12,12 @@ timer[1] = -1 //MiniGame time
 //Instances to destroy after the minigame
 Instances = ds_list_create();
 
+Success = false;
+
 enum Game
 {
-    CrabAttack
+    CrabAttack,
+    Crab1
 }
 
 
@@ -27,11 +30,17 @@ if(timer[0] > 0)
 }
 else if (timer[0] != -1)
 {
+    //Switch to the specified minigame
     switch(GameType)
     {
         case Game.CrabAttack:
             ds_list_add(Instances, instance_create_layer(room_width/4,room_height/2,"Instances",oPlayerBoob));
             ds_list_add(Instances, instance_create_layer(room_width/1.5,room_height/2,"Instances",oEnemyCrabArm));
+        break;
+        
+        case Game.Crab1:
+            ds_list_add(Instances, instance_create_layer(room_width/2,room_height/2+50,"Instances",oCrab1Arm));
+            ds_list_add(Instances, instance_create_layer(room_width/2,room_height/2-50,"Instances",oCrab1Player));
         break;
     }
     timer[0] = -1;
@@ -51,11 +60,16 @@ else if (timer[1] != -1)
     }
     instance_destroy();
     oBattleManager.BattleStageEnd = true;
+    
+    if(!Success)
+    {
+        global.phealth -= 5;
+    }
 }
 
 #event draw
 
 //Draw MiniGame Boundries
 draw_set_color(c_ltgray);
-draw_rectangle(room_width/2+400,room_height/2+400,room_width/2-400,room_height/2-400,false)
+draw_roundrect(room_width/2+400,room_height/2+200,room_width/2-400,room_height/2-200,false)
 draw_set_color(c_white);

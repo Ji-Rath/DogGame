@@ -1,4 +1,4 @@
-// 2020-02-07 08:39:37
+// 2020-02-07 17:51:15
 #event properties (no comments/etc. here are saved)
 parent_index = oEnemyBattleParent;
 sprite_index = sCrabfightidle;
@@ -14,4 +14,4 @@ AttackDamage = 3;
 Health = 10;
 Name = "Crab"
 
-EnemyAttacks = [Game.CrabAttack];
+EnemyAttacks = [Game.Crab1];
