@@ -1,4 +1,4 @@
-// 2020-02-07 19:54:53
+// 2020-02-08 10:46:46
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 uses_physics = false;
@@ -7,5 +7,7 @@ uses_physics = false;
 
 interact_key = noone;
 
-text = [];
-portrait = [];
+Text = [];
+Face = [];
+FaceIndex = [];
+TextCooldown = false;

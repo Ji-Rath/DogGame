@@ -1,5 +1,7 @@
 
 interact_key = noone;
 
-text = [];
-portrait = [];
+Text = [];
+Face = [];
+FaceIndex = [];
+TextCooldown = false;

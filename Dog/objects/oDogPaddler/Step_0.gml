@@ -103,24 +103,29 @@ if (state = paddlerstates.normal)
 	vsp = vmove*walkspd;
 	
 	movement_collision();
-	
-	
-	
 }
 
 
 radius = 50;
 
 //For a future NPC interaction, maybe, wait what is going on now. 
-input_interact = keyboard_check_pressed(bind_action);
-if (input_interact)
+KeyInteract = keyboard_check_pressed(bind_action);
+if (KeyInteract)
 {
-	var inst = collision_rectangle(x-radius,y-radius,x+radius,y+radius,oNPC,false,false);
-	
-	if (inst != noone)
+	var inst = collision_rectangle(x-radius,y-radius,x+radius,y+radius,oNPCParent,false,false);
+	if(inst != noone)
 	{
-		create_textbox(inst.text,inst.id)
+		//If player is currently not in dialogue
+		if(!inst.TextCooldown)
+		{
+			if (inst != noone)
+			{
+				create_textbox(inst.Text,inst.id);
+			}
+		}
+		if(!instance_exists(obj_textbox))
+		{
+			inst.TextCooldown = false;
+		}
 	}
-	
-	
 }

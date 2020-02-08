@@ -1,43 +1,27 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-box = spr_dialoguebox;
-frame = spr_portraitframe;
-portrait = sDogpaddlerface;
-box_width = sprite_get_width(box);
-box_height = sprite_get_width(box);
-port_width = sprite_get_width(portrait);
-port_height = sprite_get_width(portrait);
-gui_width = display_get_gui_width()
-gui_height = display_get_gui_height()
-global.game_width = gui_width
-global.game_height = gui_height
-display_set_gui_size(global.game_width,global.game_height);
+Text = []; //Array of text
+Page = 0; //Counter for current page
+TextPos = 0; //Text position
+Face = []; //Array of sprites
+FaceIndex = []; //Array of indexes for each sprite
+Speaker = noone; //NPC object that is speaking
 
+TextMaxWidth = 500;
 
-port_x = (global.game_width - box_width - port_width)*0.5;
-port_y = (global.game_height*0.98)-port_height;
-box_x = port_x + port_width;
-box_y = port_y;
-portrait_index = 1;
+KeyInteract = oDogPaddler.bind_action;
 
-counter = 0;
-text[0] = ""
-page = 0;
-interact_key = oDogPaddler.bind_action;
+//Draw dialogue positions
+var GUIWidth = display_get_gui_width();
+var GUIHeight = display_get_gui_height();
+var PortraitWidth = sprite_get_width(spr_portraitframe);
+var BoxWidth = sprite_get_width(spr_dialoguebox);
+var BoxHeight = sprite_get_height(spr_dialoguebox);
 
-
-text_col = c_black;
-
-x_buffer = 30;
-y_buffer = 30;
-text_x = box_x +  x_buffer;
-text_y = box_y +  y_buffer;
-
-
-font = fnt_dialogue;
-draw_set_font(font)
-
-text_max_width = box_width - (2*x_buffer);
-text_height = string_height("A");
-
+BoxX = GUIWidth/2+PortraitWidth/2;
+BoxY = GUIHeight-BoxHeight/2;
+FaceX = GUIWidth/2-BoxWidth/2;
+FaceY = GUIHeight-BoxHeight/2;
+TextX = GUIWidth/2-BoxWidth/2+125;
+TextY = GUIHeight-(BoxHeight/2)*1.5;

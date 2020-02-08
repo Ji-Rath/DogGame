@@ -26,8 +26,6 @@ enum paddlerstates
 }
 state = paddlerstates.normal;
 
-
-
 //Key bindings
 bind_left = vk_left;
 bind_right = vk_right;

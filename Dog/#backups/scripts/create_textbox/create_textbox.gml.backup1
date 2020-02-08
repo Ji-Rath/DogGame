@@ -1,3 +1,4 @@
+// 2020-02-08 10:17:53
 ///@description create_textbox
 ///@arg text
 ///@arg speakers
@@ -11,6 +12,5 @@ if(!instance_exists(obj_textbox))
 	
 	TextBox.Text = Text;
 	TextBox.Face = Speaker.Face;
-	TextBox.Speaker = Speaker;
 	TextBox.FaceIndex = Speaker.FaceIndex;
 }

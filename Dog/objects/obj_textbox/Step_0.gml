@@ -1,17 +1,18 @@
 /// @description Insert description here
 // You can write your code in this editor
-if (keyboard_check_pressed(interact_key))
+
+//If interact key pressed, go to next page, or destroy if empty
+if (keyboard_check_pressed(KeyInteract))
 {
 	
-	if (page < array_length_1d(text)-1)
+	if (Page < array_length_1d(Text)-1)
 	{
-		page ++;event_perform(ev_other,ev_user1);
-		
-	}else
-	{
-		
-		instance_destroy();
+		Page ++;
+		TextPos = 0;
 	}
-	
-	
+	else
+	{
+		instance_destroy();
+		Speaker.TextCooldown = true;
+	}
 }

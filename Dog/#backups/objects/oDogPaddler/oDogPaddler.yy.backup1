@@ -1,4 +1,4 @@
-// 2020-02-07 19:52:43
+// 2020-02-08 11:04:34
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 sprite_index = sDogpaddler;
@@ -33,8 +33,6 @@ enum paddlerstates
 	
 }
 state = paddlerstates.normal;
-
-
 
 //Key bindings
 bind_left = vk_left;
@@ -163,26 +161,29 @@ if (state = paddlerstates.normal)
 	vsp = vmove*walkspd;
 	
 	movement_collision();
-	
-	
-	
 }
 
 
 radius = 50;
 
 //For a future NPC interaction, maybe, wait what is going on now. 
-input_interact = keyboard_check_pressed(bind_action);
-if (input_interact)
+KeyInteract = keyboard_check_pressed(bind_action);
+if (KeyInteract)
 {
-	var inst = collision_rectangle(x-radius,y-radius,x+radius,y+radius,npc,false,false);
+	var inst = collision_rectangle(x-radius,y-radius,x+radius,y+radius,oNPCParent,false,false);
 	
-	if (inst != noone)
+	//If player is currently not in dialogue
+	if(!inst.TextCooldown)
 	{
-		create_textbox(inst.text,inst.id)
+		if (inst != noone)
+		{
+			create_textbox(inst.Text,inst.id);
+		}
 	}
-	
-	
+	if(!instance_exists(obj_textbox))
+	{
+		inst.TextCooldown = false;
+	}
 }
 
 #event collision:oEnemyParent Insert description here
