@@ -1,4 +1,4 @@
-// 2020-02-07 18:42:28
+// 2020-02-08 14:56:32
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 uses_physics = false;
@@ -6,32 +6,42 @@ uses_physics = false;
 #event create Insert description here
 // You can write your code in this editor
 
-box = spr_battlebox;
+box = sBattleBox;
 gui_width = display_get_gui_width();
 gui_height = display_get_gui_height();
 textcol = 0;
 text = "";
 actioninput = ord("X");
 
+//Assign enemy objects to variables
 Enemy = oDogPaddler.BattleAttacker;
 OriginalEnemy = oDogPaddler.Attacker;
 
+//Create variables to keep track of battle stage
 BattleStage = 0;
 BattleStageEnd = false;
 
+//
 DPstat = sDPstatnormal;
 DPhpx = 315
 DPhpy = 535
 DPoffy = 630
 
-textcol = c_black;
-
 text_height = string_height("A");
 
-Success = false;
 
 //Create Enemy Object
 instance_create_layer(640,390,"Instances",oDogPaddler.BattleAttacker);
+
+//Create BattleMenu variables
+enum BattleMenu
+{
+    Attack,
+    Bag,
+    Defend,
+    Book
+}
+BattleSelect = BattleMenu.Attack;
 
 
 //INTRO TEXT - BATTLE STAGE 0
@@ -87,17 +97,7 @@ if(BattleStageEnd)
 			break;
 			
 			case 2:
-				//PLAYER ATTACK
-				var BattleText = instance_create_layer(x,y,"text",oBattleTextBox);
-				BattleText.text = choose(["(You punched the "+Enemy.Name+")"],["(You swung at the "+Enemy.Name+")"]);
-				Enemy.Health -= 3;
-				
-				if(irandom(8) = 0)
-				{
-					BattleText.text = ["You ate the crab :o"]
-					Enemy.Health = 0;
-					global.phealth += 50;
-				}
+				BattleMenuCreate();
 			break;
 			
 			case 3:

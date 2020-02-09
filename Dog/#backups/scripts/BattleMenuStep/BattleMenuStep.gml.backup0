@@ -1,0 +1,22 @@
+// 2020-02-08 14:30:56
+
+
+
+switch(BattleSelect)
+{
+    case BattleMenu.Attack:
+        
+    break;
+    
+    case BattleMenu.Bag:
+        
+    break;
+    
+    case BattleMenu.Defend:
+        
+    break;
+    
+    case BattleMenu.Book:
+        
+    break;
+}

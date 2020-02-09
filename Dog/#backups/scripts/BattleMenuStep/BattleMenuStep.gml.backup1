@@ -1,0 +1,30 @@
+// 2020-02-08 14:28:20
+
+enum BattleMenu
+{
+    Attack,
+    Bag,
+    Defend,
+    Book
+}
+
+BattleSelect = BattleMenu.Attack;
+
+switch(BattleSelect)
+{
+    case BattleMenu.Attack:
+    
+    break;
+    
+    case BattleMenu.Bag:
+    
+    break;
+    
+    case BattleMenu.Defend:
+    
+    break;
+    
+    case BattleMenu.Book:
+    
+    break;
+}

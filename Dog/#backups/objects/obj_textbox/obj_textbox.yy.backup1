@@ -1,4 +1,4 @@
-// 2020-02-08 10:45:40
+// 2020-02-08 11:03:40
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 uses_physics = false;
@@ -11,6 +11,7 @@ Page = 0; //Counter for current page
 TextPos = 0; //Text position
 Face = []; //Array of sprites
 FaceIndex = []; //Array of indexes for each sprite
+Speaker = noone; //NPC object that is speaking
 
 TextMaxWidth = 500;
 
@@ -46,6 +47,7 @@ if (keyboard_check_pressed(KeyInteract))
 	else
 	{
 		instance_destroy();
+		Speaker.TextCooldown = true;
 	}
 }
 #event draw_gui Insert description here

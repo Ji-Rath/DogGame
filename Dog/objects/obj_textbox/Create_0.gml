@@ -15,9 +15,9 @@ KeyInteract = oDogPaddler.bind_action;
 //Draw dialogue positions
 var GUIWidth = display_get_gui_width();
 var GUIHeight = display_get_gui_height();
-var PortraitWidth = sprite_get_width(spr_portraitframe);
-var BoxWidth = sprite_get_width(spr_dialoguebox);
-var BoxHeight = sprite_get_height(spr_dialoguebox);
+var PortraitWidth = sprite_get_width(sPortraitFrame);
+var BoxWidth = sprite_get_width(sDialogueBox);
+var BoxHeight = sprite_get_height(sDialogueBox);
 
 BoxX = GUIWidth/2+PortraitWidth/2;
 BoxY = GUIHeight-BoxHeight/2;

@@ -2,7 +2,7 @@
     "id": "62203f29-292e-404d-862d-8cca789a5f27",
     "modelName": "GMSprite",
     "mvc": "1.12",
-    "name": "sNpc",
+    "name": "sNPC",
     "For3D": false,
     "HTile": false,
     "VTile": false,

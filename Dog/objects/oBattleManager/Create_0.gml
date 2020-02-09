@@ -1,32 +1,42 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-box = spr_battlebox;
+box = sBattleBox;
 gui_width = display_get_gui_width();
 gui_height = display_get_gui_height();
 textcol = 0;
 text = "";
 actioninput = ord("X");
 
+//Assign enemy objects to variables
 Enemy = oDogPaddler.BattleAttacker;
 OriginalEnemy = oDogPaddler.Attacker;
 
+//Create variables to keep track of battle stage
 BattleStage = 0;
 BattleStageEnd = false;
 
+//
 DPstat = sDPstatnormal;
 DPhpx = 315
 DPhpy = 535
 DPoffy = 630
 
-textcol = c_black;
-
 text_height = string_height("A");
 
-Success = false;
 
 //Create Enemy Object
 instance_create_layer(640,390,"Instances",oDogPaddler.BattleAttacker);
+
+//Create BattleMenu variables
+enum BattleMenu
+{
+    Attack,
+    Bag,
+    Defend,
+    Book
+}
+BattleSelect = BattleMenu.Attack;
 
 
 //INTRO TEXT - BATTLE STAGE 0

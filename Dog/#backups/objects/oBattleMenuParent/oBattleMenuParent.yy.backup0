@@ -1,0 +1,70 @@
+// 2020-02-08 18:27:13
+#event properties (no comments/etc. here are saved)
+parent_index = -1;
+mask_index = sBattleIcons;
+uses_physics = false;
+
+#event create
+
+SpriteIndex = 0;
+Selected = false;
+IsHovering = false;
+ItemMouseHover = false;
+ItemMouseHoverSelect = 0;
+
+//Contents of button
+Contents = ds_list_create();
+
+#event mouse_left_press
+
+//Swap selected option
+Selected = !Selected;
+
+#event step
+
+for(i=0;i<ds_list_size(Contents);i++)
+{
+    var XPos = x+100
+    var YPos = y-250+(i*75);
+    ItemMouseHover = (point_in_rectangle(mouse_x, mouse_y, XPos-32, YPos-32, XPos+32, YPos+32));
+    //If mouse is hovered over item, save item and end loop
+    if(ItemMouseHover)
+    {
+        ItemMouseHoverSelect = i;
+        i = ds_list_size(Contents)
+    }
+}
+
+#event mouse_enter
+
+IsHovering = true;
+
+#event mouse_leave
+
+IsHovering = false;
+
+#event draw
+
+//Draw icon
+draw_sprite(sBattleIcons,SpriteIndex,x,y);
+
+//Draw interface
+if(Selected)
+{
+    draw_sprite(sBattleMenu1,0,x,y);
+    
+    //Draw Contents
+    for(i=0;i<ds_list_size(Contents);i++)
+    {
+        //Draw available contents
+        draw_sprite(ItemContent[ds_list_find_value(Contents,i),2],0,x+100,y-250+(i*75));
+    }
+    
+    if(ItemMouseHover)
+    {
+        draw_sprite(sBattleMenu2,0,x,y);
+        draw_set_font(fnt_stats);
+        draw_text(x+80,y-470,ItemContent[ds_list_find_value(Contents,ItemMouseHoverSelect),0]);
+        draw_text(x+80,y-420,ItemContent[ds_list_find_value(Contents,ItemMouseHoverSelect),1]);
+    }
+}
