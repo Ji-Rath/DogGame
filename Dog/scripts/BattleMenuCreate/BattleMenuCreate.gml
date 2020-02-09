@@ -1,6 +1,6 @@
 
 
-instance_create_layer(room_width/2,room_height-100,"Instances",oBattleMenuAttack);
-//instance_create_layer(x,y,"instances",oBattleMenuBag);
-//instance_create_layer(x,y,"instances",oBattleMenuDefend);
-//instance_create_layer(x,y,"instances",oBattleMenuBook);
+instance_create_layer(room_width/2-150,room_height-100,"GUI",oBattleMenuAttack);
+instance_create_layer(room_width/2-50,room_height-100,"GUI",oBattleMenuBag);
+instance_create_layer(room_width/2+50,room_height-100,"GUI",oBattleMenuDefend);
+instance_create_layer(room_width/2+150,room_height-100,"GUI",oBattleMenuBook);

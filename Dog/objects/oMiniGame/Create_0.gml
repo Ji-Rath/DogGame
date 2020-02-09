@@ -11,5 +11,6 @@ Success = false;
 enum Game
 {
     CrabAttack,
-    Crab1
+    Crab1,
+    GlovesOff
 }

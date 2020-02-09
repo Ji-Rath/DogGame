@@ -47,3 +47,9 @@ var EnemyTextIntro = Enemy.TextIntro[random_range(0,array_length_1d(Enemy.TextIn
 var BattleText = instance_create_layer(x,y,"text",oBattleTextBox); 
 BattleText.text = [FirstText,EnemyTextIntro];
 
+//Create BattleMenu
+instance_create_layer(room_width/2-150,room_height-100,"GUI",oBattleMenuAttack);
+instance_create_layer(room_width/2-50,room_height-100,"GUI",oBattleMenuBag);
+instance_create_layer(room_width/2+50,room_height-100,"GUI",oBattleMenuDefend);
+instance_create_layer(room_width/2+150,room_height-100,"GUI",oBattleMenuBook);
+

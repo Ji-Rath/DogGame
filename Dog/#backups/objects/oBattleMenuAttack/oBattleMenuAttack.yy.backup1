@@ -1,4 +1,4 @@
-// 2020-02-08 18:16:51
+// 2020-02-08 18:52:19
 #event properties (no comments/etc. here are saved)
 parent_index = oBattleMenuParent;
 uses_physics = false;
@@ -7,19 +7,13 @@ uses_physics = false;
 
 event_inherited();
 
-enum Item
-{
-    GlovesOff,
-    Punch
-}
-
 ItemContent[Item.GlovesOff,0] = "Gloves Off"; //Sprite of item
 ItemContent[Item.GlovesOff,1] = "Its Time"; //Description of item
 ItemContent[Item.GlovesOff,2] = sEnemyalert; //Sprite of item
 
 ItemContent[Item.Punch,0] = "Big Penny"; //Sprite of item
 ItemContent[Item.Punch,1] = "Throw a big punch"; //Description of item
-ItemContent[Item.Punch,2] = sEnemyalert; //Sprite of item
+ItemContent[Item.Punch,2] = sEnemydown; //Sprite of item
 
 SpriteIndex = 0;
 

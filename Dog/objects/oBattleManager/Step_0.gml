@@ -40,7 +40,10 @@ if(BattleStageEnd)
 			break;
 			
 			case 2:
-				BattleMenuCreate();
+				with(oBattleMenuParent)
+				{
+					visible = true;
+				}
 			break;
 			
 			case 3:

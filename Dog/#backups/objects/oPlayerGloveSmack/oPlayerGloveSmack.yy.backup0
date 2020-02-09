@@ -1,0 +1,92 @@
+// 2020-02-08 22:35:30
+#event properties (no comments/etc. here are saved)
+parent_index = -1;
+uses_physics = false;
+
+#event create
+
+State = 0;
+AnimIndex = 0;
+AnimSprite = [sMiniGamePlayerGloveAnim1,sMiniGamePlayerGloveAnim2]
+SpriteIndex = 0;
+AnimSwitch = 0;
+ButtonIndex = 0;
+
+#event step
+
+switch(State)
+{
+    case 0:
+        
+        //Once one animation is done, go to next
+        if (AnimIndex > sprite_get_number(AnimSprite[SpriteIndex]))
+        {
+            //Once animations are done, go to next state
+            if(SpriteIndex < array_length_1d(AnimSprite)-1)
+            {
+                SpriteIndex++;
+            }
+            else
+            {
+                State++;
+            }
+            AnimIndex = 0;
+        }
+        //Increment animation
+        AnimIndex += 0.5;
+        
+    break;
+    
+    case 1:
+        //Action part
+        if(keyboard_check_pressed(vk_space))
+        {
+            AnimIndex = 1;
+            with(oBattleManager)
+            {
+                Enemy.Health -= 3;
+            }
+        }
+        if(keyboard_check_released(vk_space))
+        {
+            AnimIndex = 0;
+            AnimSwitch = choose(0,1);
+        }
+    break;
+}
+
+ButtonIndex += 0.25;
+
+
+
+#event draw
+
+switch(State)
+{
+    case 0:
+        draw_sprite(AnimSprite[SpriteIndex],AnimIndex,x,y);
+    break;
+    
+    case 1:
+        var XEnemyPos, PlayerScale;
+        if(AnimSwitch == 0)
+        {
+            XEnemyPos = -100;
+            PlayerScale = 1;
+        }
+        else 
+        {
+            XEnemyPos = 100;
+            PlayerScale = -1;
+        }
+        var EnemySprite;
+        with(oBattleManager.Enemy)
+        {
+            EnemySprite = sprite_index
+        }
+        draw_sprite_ext(EnemySprite,0,x+XEnemyPos,y,0.5,0.5,0,c_white,1);
+        draw_sprite_ext(sMiniGamePlayerGlovePlayer,AnimIndex,x,y,PlayerScale,1,0,c_white,1);
+        draw_sprite(sMiniGamePlayerGloveButton,ButtonIndex,x,y-300);
+    break;
+}
+

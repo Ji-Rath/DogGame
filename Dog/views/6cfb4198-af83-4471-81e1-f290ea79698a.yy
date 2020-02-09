@@ -5,7 +5,8 @@
     "name": "6cfb4198-af83-4471-81e1-f290ea79698a",
     "children": [
         "9c8dca8d-d08d-4627-afc3-7ed6f2d58b11",
-        "31c2797e-2c3a-4040-a2b2-2c9fbecb1050"
+        "31c2797e-2c3a-4040-a2b2-2c9fbecb1050",
+        "5f2e64a2-927a-42bb-96a5-c327e3c4214f"
     ],
     "filterType": "GMSprite",
     "folderName": "MiniGame",

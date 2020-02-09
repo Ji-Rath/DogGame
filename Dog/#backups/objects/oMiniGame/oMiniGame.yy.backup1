@@ -1,4 +1,4 @@
-// 2020-02-07 18:44:57
+// 2020-02-08 22:14:41
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 uses_physics = false;
@@ -17,7 +17,8 @@ Success = false;
 enum Game
 {
     CrabAttack,
-    Crab1
+    Crab1,
+    GlovesOff
 }
 
 
@@ -30,6 +31,8 @@ if(timer[0] > 0)
 }
 else if (timer[0] != -1)
 {
+    timer[0] = -1;
+    timer[1] = 4*60;
     //Switch to the specified minigame
     switch(GameType)
     {
@@ -42,9 +45,12 @@ else if (timer[0] != -1)
             ds_list_add(Instances, instance_create_layer(room_width/2,room_height/2+50,"Instances",oCrab1Arm));
             ds_list_add(Instances, instance_create_layer(room_width/2,room_height/2-50,"Instances",oCrab1Player));
         break;
+        
+        case Game.GlovesOff:
+            ds_list_add(Instances, instance_create_layer(room_width/2,room_height/2,"Instances",oPlayerGloveSmack));
+            timer[1] = 10*60;
+        break;
     }
-    timer[0] = -1;
-    timer[1] = 4*60;
 }
 
 //End of minigame
@@ -56,7 +62,11 @@ else if (timer[1] != -1)
 {
     for(var i=0;i<ds_list_size(Instances);i++)
     {
-        instance_destroy(ds_list_find_value(Instances,i));
+        var Instance = ds_list_find_value(Instances,i);
+        if(instance_exists(Instance))
+        {
+            instance_destroy(Instance);
+        }
     }
     instance_destroy();
     oBattleManager.BattleStageEnd = true;
@@ -71,5 +81,5 @@ else if (timer[1] != -1)
 
 //Draw MiniGame Boundries
 draw_set_color(c_ltgray);
-draw_roundrect(room_width/2+400,room_height/2+200,room_width/2-400,room_height/2-200,false)
+draw_roundrect(room_width/2+500,room_height/2+250,room_width/2-500,room_height/2-250,false)
 draw_set_color(c_white);

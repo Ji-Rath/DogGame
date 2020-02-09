@@ -263,6 +263,14 @@
             }
         },
         {
+            "Key": "25e0c04f-56c0-1e39-63f8-4e12cd256361",
+            "Value": {
+                "id": "6888fe7d-bf04-bda6-9b14-bcabfe4156e4",
+                "resourcePath": "views\\25e0c04f-56c0-1e39-63f8-4e12cd256361.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "276eca1f-7c97-6d56-9164-ae38aac241a2",
             "Value": {
                 "id": "7db3e746-d5d8-b59a-4b4e-ac7cf53453db",
@@ -383,6 +391,14 @@
             }
         },
         {
+            "Key": "4b042d1c-0a47-4330-a7e6-53b032cc8910",
+            "Value": {
+                "id": "5c293b84-b2c8-431e-bfe4-3887474b0382",
+                "resourcePath": "sprites\\sMiniGamePlayerGloveAnim2\\sMiniGamePlayerGloveAnim2.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "4d825294-a2a9-fe72-34e5-4caf3bcb0a78",
             "Value": {
                 "id": "512d26ac-d582-34a6-ac80-f58a5250e0eb",
@@ -463,6 +479,14 @@
             }
         },
         {
+            "Key": "5807c14a-e137-a123-2b78-d375ed59da5c",
+            "Value": {
+                "id": "6153b6db-6e3b-9842-7fb6-5a28bd7d3a1d",
+                "resourcePath": "objects\\oBattleMenuDefend\\oBattleMenuDefend.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "58603641-0023-4c2d-8803-fff5a03c9e6c",
             "Value": {
                 "id": "c701d4e0-43f0-46b1-8e38-7b7db83c6dee",
@@ -476,6 +500,14 @@
                 "id": "830c2475-62cd-4e63-a73c-63d76b5a5c78",
                 "resourcePath": "fonts\\fnt_battle\\fnt_battle.yy",
                 "resourceType": "GMFont"
+            }
+        },
+        {
+            "Key": "5f2e64a2-927a-42bb-96a5-c327e3c4214f",
+            "Value": {
+                "id": "b166f839-ef84-4eea-af4d-ea2b2c6c2265",
+                "resourcePath": "views\\5f2e64a2-927a-42bb-96a5-c327e3c4214f.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -527,6 +559,14 @@
             }
         },
         {
+            "Key": "6bb221e3-fad7-a8a6-4bc1-fc0562d60258",
+            "Value": {
+                "id": "b8a53e10-f069-6c57-6df6-bb92c8c2e0f7",
+                "resourcePath": "objects\\oPlayerGloveSmack\\oPlayerGloveSmack.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "6cfb4198-af83-4471-81e1-f290ea79698a",
             "Value": {
                 "id": "e4d3f213-fbf7-49c9-b6bb-9b6af1080b02",
@@ -556,6 +596,14 @@
                 "id": "4759bcd5-4ac6-9593-e025-ca8e36bbf816",
                 "resourcePath": "views\\73c58316-74b0-3a8f-6d80-de7ba08afefa.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "78a5192c-e1da-4a86-8bbc-38d9d47d69fb",
+            "Value": {
+                "id": "9142c7ca-ee03-4edd-a524-125f005f2b53",
+                "resourcePath": "sprites\\sMiniGamePlayerGloveButton\\sMiniGamePlayerGloveButton.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -951,6 +999,14 @@
             }
         },
         {
+            "Key": "cf5734c5-d36e-4310-86ed-5e3cae74c968",
+            "Value": {
+                "id": "0027a8a3-573b-43c3-8dbf-834d22e3fb1e",
+                "resourcePath": "sprites\\sMiniGamePlayerGlovePlayer\\sMiniGamePlayerGlovePlayer.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "d31294ce-64cb-45e3-aae9-83895d682f9c",
             "Value": {
                 "id": "89f63488-4173-4f06-adc8-c6e353961c7d",
@@ -975,6 +1031,14 @@
             }
         },
         {
+            "Key": "d9833d81-8d72-de1a-7f25-bbe2a68dd784",
+            "Value": {
+                "id": "91d95410-1714-d411-54d4-f170093b4f40",
+                "resourcePath": "objects\\oBattleMenuBook\\oBattleMenuBook.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "da7b91cd-25e4-4059-8150-71a182cbd55a",
             "Value": {
                 "id": "028ebdac-31de-4ff1-9f76-e051725bdf34",
@@ -996,6 +1060,14 @@
                 "id": "599ac8c9-95f6-4f94-8031-7bf74a872031",
                 "resourcePath": "scripts\\movementvariables\\movementvariables.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "de5f5e2b-4774-425f-8f19-66a07c02e937",
+            "Value": {
+                "id": "e1267f1a-54ab-4a75-962d-edc5a53beeb1",
+                "resourcePath": "sprites\\sMiniGamePlayerGloveAnim1\\sMiniGamePlayerGloveAnim1.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -1108,6 +1180,14 @@
                 "id": "faa9f2c0-956a-4b4e-8c8e-6dfcdd9f5a0a",
                 "resourcePath": "views\\f74a7680-bbe4-414e-9330-967215dbf3e4.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "f7b07bf4-3cd4-6e44-ef0c-1bcb80a05a23",
+            "Value": {
+                "id": "e60c6f80-c4aa-95f8-6f0e-773c90b7e884",
+                "resourcePath": "objects\\oBattleMenuBag\\oBattleMenuBag.yy",
+                "resourceType": "GMObject"
             }
         },
         {

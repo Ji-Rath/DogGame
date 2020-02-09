@@ -1,4 +1,4 @@
-// 2020-02-08 14:30:49
+// 2020-02-08 22:38:36
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 uses_physics = false;
@@ -6,7 +6,7 @@ uses_physics = false;
 #event create Insert description here
 // You can write your code in this editor
 
-box = spr_battlebox;
+box = sBattleBox;
 gui_width = display_get_gui_width();
 gui_height = display_get_gui_height();
 textcol = 0;
@@ -51,6 +51,12 @@ var EnemyTextIntro = Enemy.TextIntro[random_range(0,array_length_1d(Enemy.TextIn
 
 var BattleText = instance_create_layer(x,y,"text",oBattleTextBox); 
 BattleText.text = [FirstText,EnemyTextIntro];
+
+//Create BattleMenu
+instance_create_layer(room_width/2-150,room_height-100,"GUI",oBattleMenuAttack);
+instance_create_layer(room_width/2-50,room_height-100,"GUI",oBattleMenuBag);
+instance_create_layer(room_width/2+50,room_height-100,"GUI",oBattleMenuDefend);
+instance_create_layer(room_width/2+150,room_height-100,"GUI",oBattleMenuBook);
 
 
 

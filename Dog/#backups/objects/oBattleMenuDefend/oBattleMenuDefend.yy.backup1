@@ -1,0 +1,10 @@
+// 2020-02-08 18:57:50
+#event properties (no comments/etc. here are saved)
+parent_index = oBattleMenuParent;
+uses_physics = false;
+
+#event create
+
+event_inherited();
+
+SpriteIndex = 2;

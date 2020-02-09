@@ -1,12 +1,6 @@
 
 event_inherited();
 
-enum Item
-{
-    GlovesOff,
-    Punch
-}
-
 ItemContent[Item.GlovesOff,0] = "Gloves Off"; //Sprite of item
 ItemContent[Item.GlovesOff,1] = "Its Time"; //Description of item
 ItemContent[Item.GlovesOff,2] = sEnemyalert; //Sprite of item
