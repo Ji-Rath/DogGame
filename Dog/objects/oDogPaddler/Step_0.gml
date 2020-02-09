@@ -41,7 +41,7 @@ if (vmove > 0)
 	//Sprinting Anim
 	if(key_baction)
 	{
-		sprite_index = spritedownrun
+		sprite_index = spritedownrun;
 	}
 			
 } else if (vmove < 0)
@@ -51,21 +51,20 @@ if (vmove > 0)
 	//Sprinting Anim
 	if(key_baction)
 	{
-		sprite_index = spriteuprun
+		sprite_index = spriteuprun;
 	}
 }
 
 //Change to walk right/left if moving horizonally
 if (hmove != 0)
 {
-	sprite_index = hspritewalk
+	sprite_index = hspritewalk;
 	
 	//Sprinting Anim
 	if(key_baction)
 	{
-		sprite_index = hspriterun
+		sprite_index = hspriterun;
 	}
-		
 }
 
 //Animate sprite if moving
@@ -74,6 +73,20 @@ if(hsp != 0 || vsp != 0) {
 } else {
 	image_speed = 0;
 	image_index = 4; //The only position in every sprite where the player is idle
+	
+	//Switch to idle when standing still
+	if(sprite_index == hspriterun)
+	{
+		sprite_index = hspritewalk;
+	}
+	if(sprite_index == spriteuprun)
+	{
+		sprite_index = spriteupwalk;
+	}
+	if(sprite_index == spritedownrun)
+	{
+		sprite_index = spritedownwalk;
+	}
 }
 
 
@@ -98,7 +111,7 @@ if (state = paddlerstates.normal)
 {
 	
 	hmove = key_right - key_left;
-	vmove = key_down-key_up;
+	vmove = key_down - key_up;
 	hsp = hmove*walkspd;
 	vsp = vmove*walkspd;
 	

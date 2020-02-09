@@ -23,7 +23,7 @@ else if (timer[0] != -1)
         
         case Game.GlovesOff:
             ds_list_add(Instances, instance_create_layer(room_width/2,room_height/2,"Instances",oPlayerGloveSmack));
-            timer[1] = 8*60;
+            timer[1] = 6*60;
         break;
     }
 }
