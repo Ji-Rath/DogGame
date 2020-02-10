@@ -1,9 +1,9 @@
-// 2020-02-07 16:27:08
+// 2020-02-10 11:35:20
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 sprite_index = sEnemydefault;
-uses_physics = false;
 persistent = true;
+uses_physics = false;
 
 #event create Insert description here
 // You can write your code in this editor
@@ -58,7 +58,7 @@ image_yscale = scale;
 
 #event step Insert description here
 // You can write your code in this editor
-enemyvariablereset();
+scrMoveCollision();
 
 //If in battle room or dead, turn invisible
 visible = !((room == battle) || (Health <= 0));
@@ -68,10 +68,10 @@ if(visible)
 {
 	switch(state)
 	{
-		case estates.idle: EnemyIdle(); break;
-		case estates.wander: EnemyWander(); break;
-		case estates.alert: EnemyAlert(); break;
-		case estates.aggro: EnemyAggro(); break;
+		case estates.idle: scrEnemyIdle(); break;
+		case estates.wander: scrEnemyWander(); break;
+		case estates.alert: scrEnemyAlert(); break;
+		case estates.aggro: scrEnemyAggro(); break;
 	}
 }
 else 

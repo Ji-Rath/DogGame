@@ -115,7 +115,7 @@ if (state = paddlerstates.normal)
 	hsp = hmove*walkspd;
 	vsp = vmove*walkspd;
 	
-	movement_collision();
+	scrMoveCollision();
 }
 
 
@@ -133,10 +133,10 @@ if (KeyInteract)
 		{
 			if (inst != noone)
 			{
-				create_textbox(inst.Text,inst.id);
+				scrCreateTextBox(inst.Text,inst.id);
 			}
 		}
-		if(!instance_exists(obj_textbox))
+		if(!instance_exists(oTextBox))
 		{
 			inst.TextCooldown = false;
 		}

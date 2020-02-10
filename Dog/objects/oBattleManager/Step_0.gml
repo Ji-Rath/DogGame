@@ -5,7 +5,7 @@ if(BattleStageEnd)
 	
 	if(Enemy == noone)
 	{
-		fadeout(room0,c_black,0.05);
+		scrFadeout(room0,c_black,0.05);
 		exit;
 	}
 	

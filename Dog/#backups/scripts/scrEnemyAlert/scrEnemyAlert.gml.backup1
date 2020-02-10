@@ -1,0 +1,10 @@
+// 2020-02-10 11:34:56
+sprite_index = spritealert;
+
+//Create alert sign
+if (myalertsign = noone)
+{
+	myalertsign = instance_create_layer(x,y-100,"effects",alertsign);
+	myalertsign.myuser = id;
+}
+	

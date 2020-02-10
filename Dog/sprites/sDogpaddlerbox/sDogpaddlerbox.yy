@@ -2,7 +2,7 @@
     "id": "1330eda0-0a50-455a-8260-6b4e3cf6fd72",
     "modelName": "GMSprite",
     "mvc": "1.12",
-    "name": "sDogpaddlerbox",
+    "name": "sDogpaddlerBox",
     "For3D": false,
     "HTile": false,
     "VTile": false,

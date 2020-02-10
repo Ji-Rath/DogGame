@@ -36,13 +36,11 @@ bind_baction = ord("Z");
 
 //Assigning sprites to variables
 hsprite = sDogpaddler;
-hspritewalk = sDogpaddlerwalk;
-hspriterun = sDogpaddlerrun;
-spriteup = sDogpaddlerup;
-spriteupwalk = sDogpaddlerupwalk;
-spriteuprun = sDogpaddleruprun;
-spritedown = sDogpaddlerdown;
-spritedownwalk = sDogpaddlerdownwalk;
-spritedownrun = sDogpaddlerdownrun;
+hspritewalk = sDogpaddlerWalk;
+hspriterun = sDogpaddlerRun;
+spriteupwalk = sDogpaddlerWalkUp;
+spriteuprun = sDogpaddlerRunUp;
+spritedownwalk = sDogpaddlerWalkDown;
+spritedownrun = sDogpaddlerRunDown;
 
 

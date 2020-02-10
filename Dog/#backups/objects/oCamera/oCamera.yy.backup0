@@ -1,0 +1,69 @@
+// 2020-02-10 11:28:00
+#event properties (no comments/etc. here are saved)
+parent_index = -1;
+uses_physics = false;
+
+#event create
+cam = view_camera[0];
+follow = oDogPaddler
+
+view_w_half = camera_get_view_width(cam) * 0.5;
+view_h_half = camera_get_view_height(cam) * 0.5;
+xTo = xstart;
+yTo = ystart;
+
+hsp = 0;
+vsp = 0;
+
+
+
+enum camstates
+{
+	followplayer,
+	matchmob,
+	swoop,
+	pause
+}
+
+
+state = camstates.followplayer;
+
+
+shake_length = 0;
+shake_magnitude = 0;
+shake_remain = 0;
+
+
+#event step
+
+
+ 
+//update position
+
+if (instance_exists(follow))
+{
+	xTo = follow.x;
+	yTo = follow.y;
+}
+
+//update object position
+x += (xTo - x) / 4;
+y += (yTo - y) / 7;
+
+//update camera view
+camera_set_view_pos(cam,x-view_w_half,y-view_h_half);
+		
+x += random_range(-shake_remain,shake_remain);
+y += random_range(-shake_remain,shake_remain);
+shake_remain = max(0,shake_remain-((1/shake_length)*shake_magnitude));
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		

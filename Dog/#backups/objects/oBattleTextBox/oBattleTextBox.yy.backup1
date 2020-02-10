@@ -1,4 +1,4 @@
-// 2020-02-08 09:50:51
+// 2020-02-08 14:57:08
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 uses_physics = false;
@@ -6,7 +6,7 @@ uses_physics = false;
 #event create Insert description here
 // You can write your code in this editor
 
-box = spr_battlebox;
+box = sBattleBox;
 
 
 box_width = sprite_get_width(box);

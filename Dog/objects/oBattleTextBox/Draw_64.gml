@@ -5,7 +5,7 @@
 draw_sprite(box,0,0,0);
 
 //Text appear effect
-var text_wrapped = string_wrap(text[page],text_max_width);
+var text_wrapped = scrStringWrap(text[page],text_max_width);
 var str_len = string_length(text_wrapped);
 if (counter<str_len)
 {

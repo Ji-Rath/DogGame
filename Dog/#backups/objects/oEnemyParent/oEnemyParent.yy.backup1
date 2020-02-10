@@ -1,9 +1,9 @@
-// 2020-02-07 16:27:06
+// 2020-02-10 11:29:01
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 sprite_index = sEnemydefault;
-uses_physics = false;
 persistent = true;
+uses_physics = false;
 
 #event create Insert description here
 // You can write your code in this editor
@@ -68,16 +68,17 @@ if(visible)
 {
 	switch(state)
 	{
-		case estates.idle: EnemyIdle(); break;
-		case estates.wander: EnemyWander(); break;
-		case estates.alert: EnemyAlert(); break;
-		case estates.aggro: EnemyAggro(); break;
+		case estates.idle: scrEnemyIdle(); break;
+		case estates.wander: scrEnemyWander(); break;
+		case estates.alert: scrEnemyAlert(); break;
+		case estates.aggro: scrEnemyAggro(); break;
 	}
 }
 else 
 {
 	hsp = 0;
 	vsp = 0;
+}
 
 #event draw_gui Insert description here
 // You can write your code in this editor

@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-enemyvariablereset();
+scrMoveCollision();
 
 //If in battle room or dead, turn invisible
 visible = !((room == battle) || (Health <= 0));
@@ -10,10 +10,10 @@ if(visible)
 {
 	switch(state)
 	{
-		case estates.idle: EnemyIdle(); break;
-		case estates.wander: EnemyWander(); break;
-		case estates.alert: EnemyAlert(); break;
-		case estates.aggro: EnemyAggro(); break;
+		case estates.idle: scrEnemyIdle(); break;
+		case estates.wander: scrEnemyWander(); break;
+		case estates.alert: scrEnemyAlert(); break;
+		case estates.aggro: scrEnemyAggro(); break;
 	}
 }
 else 
