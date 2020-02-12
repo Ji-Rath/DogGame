@@ -8,8 +8,7 @@
         "a4979045-845e-4aac-92ee-b31f4531a8c9",
         "1e17fe67-4883-4532-b2dd-e2f43471b285",
         "daaec725-5f22-463b-a580-f634dcfb751c",
-        "41180335-7b0d-9336-59b6-8185b4f56b6b",
-        "0268a3eb-cf64-4c62-a5ef-2dbf80bb9047"
+        "41180335-7b0d-9336-59b6-8185b4f56b6b"
     ],
     "filterType": "GMObject",
     "folderName": "MainScene",

@@ -1,0 +1,26 @@
+// 2020-02-11 09:00:17
+#event properties (no comments/etc. here are saved)
+parent_index = -1;
+sprite_index = sAlert;
+uses_physics = false;
+
+#event create Insert description here
+// You can write your code in this editor
+myuser = noone;
+timer[0] = 0.25*60; // 1/4 of a second till death
+
+#event step Insert description here
+// You can write your code in this editor
+x = myuser.x;
+y = myuser.y - 100;
+
+if(timer[0] > 0)
+{
+    timer[0] -= 1;
+}
+else
+{
+    myuser.state = estates.aggro;
+    myuser.myalertsign = noone;
+    instance_destroy();
+}

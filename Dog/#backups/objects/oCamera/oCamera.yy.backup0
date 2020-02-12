@@ -1,37 +1,34 @@
-// 2020-02-10 11:28:00
+// 2020-02-11 09:29:17
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 uses_physics = false;
 
 #event create
-cam = view_camera[0];
-follow = oDogPaddler
+Camera = view_camera[0];
+Follow = oDogPaddler
 
-view_w_half = camera_get_view_width(cam) * 0.5;
-view_h_half = camera_get_view_height(cam) * 0.5;
-xTo = xstart;
-yTo = ystart;
+ViewWidthHalf = camera_get_view_width(Camera) * 0.5;
+ViewHeightHalf = camera_get_view_height(Camera) * 0.5;
+XDestination = xstart;
+YDestination = ystart;
 
-hsp = 0;
-vsp = 0;
+HSpeed = 0;
+VSpeed = 0;
 
 
 
-enum camstates
+enum CameraState
 {
-	followplayer,
-	matchmob,
-	swoop,
-	pause
+	FollowPlayer,
 }
 
 
-state = camstates.followplayer;
+State = CameraState.FollowPlayer;
 
 
-shake_length = 0;
-shake_magnitude = 0;
-shake_remain = 0;
+ShakeLength = 0;
+ShakeMagnitude = 0;
+ShakeRemain = 0;
 
 
 #event step
@@ -40,22 +37,22 @@ shake_remain = 0;
  
 //update position
 
-if (instance_exists(follow))
+if (instance_exists(Follow))
 {
-	xTo = follow.x;
-	yTo = follow.y;
+	XDestination = Follow.x;
+	YDestination = Follow.y;
 }
 
 //update object position
-x += (xTo - x) / 4;
-y += (yTo - y) / 7;
+x += (XDestination - x) / 4;
+y += (YDestination - y) / 7;
 
 //update camera view
-camera_set_view_pos(cam,x-view_w_half,y-view_h_half);
+camera_set_view_pos(Camera,x-ViewWidthHalf,y-ViewHeightHalf);
 		
-x += random_range(-shake_remain,shake_remain);
-y += random_range(-shake_remain,shake_remain);
-shake_remain = max(0,shake_remain-((1/shake_length)*shake_magnitude));
+x += random_range(-ShakeRemain,ShakeRemain);
+y += random_range(-ShakeRemain,ShakeRemain);
+ShakeRemain = max(0,ShakeRemain-((1/ShakeLength)*ShakeMagnitude));
 		
 		
 		

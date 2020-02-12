@@ -1,10 +1,11 @@
-// 2020-02-10 11:38:17
-sprite_index = spritealert;
+// 2020-02-12 10:37:51
 
-//Create alert sign
-if (myalertsign = noone)
+sprite_index = SAlert;
+HSpeed = 0;
+VSpeed = 0;
+
+if(TimerEnded)
 {
-	myalertsign = instance_create_layer(x,y-100,"effects",oAlertSign);
-	myalertsign.myuser = id;
+	State = estates.Aggro;
 }
 	

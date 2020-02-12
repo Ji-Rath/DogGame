@@ -1,4 +1,4 @@
-// 2020-02-10 11:35:20
+// 2020-02-12 10:45:33
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 sprite_index = sEnemydefault;
@@ -7,80 +7,97 @@ uses_physics = false;
 
 #event create Insert description here
 // You can write your code in this editor
-Paddler = oDogPaddler;
-codename = noone;
-hsp = 0;
-vsp = 0;
+
+//Initialize basic variables
+HSpeed = 0;
+VSpeed = 0;
 WalkSpd = 0;
-hmove = 0;         
-vmove = 0;
-wanderdirx = 0;
-wanderdiry = 0;
+WanderDirectionX = 0;
+WanderDirectionY = 0;
+DetectRange = 350;
+Health = 10;
+TimerEnded = false;
+
+//Initialize state
 enum estates
 {
-	idle,
-	wander,
-	alert,
-	aggro,
+	Idle,
+	Wander,
+	Alert,
+	Aggro,
 	
 }
+State = estates.Idle;
 
-state = estates.idle;
-
-idlecount = 0;
-wandercount = 0;
-alertcount = 0;
-
-myalertsign = noone;
-detectrange = 350;
-
+//Get battleobject of enemy
 BattleObject = oEnemyBattleParent;
 
-Health = 10;
+
+//Set sprites for object
+SIdle = sEnemydefault;
+SWalk = sEnemywalk;
+SRun = sEnemyrun;
+SWalkUp = sEnemywalk;
+SRunUp = sEnemyrun;
+SWalkDown = sEnemywalk;
+SRunDown = sEnemyrun;
+SAlert = sEnemyalert;
+
+//Timer
+timer[0] = 3*60;
 
 
-hsprite = sEnemydefault;
-hspritewalk = sEnemywalk;
-hspriterun = sEnemyrun;
-spriteup = sEnemyup;
-spriteupwalk = sEnemywalk;
-spriteuprun = sEnemyrun;
-spritedown = sEnemydown;
-spritedownwalk = sEnemywalk;
-spritedownrun = sEnemyrun;
-spritealert = sEnemyalert;
-
-
-scale = 0.5;
-image_xscale = scale;
-image_yscale = scale;
+//Shrink enemy
+Scale = 0.5;
+image_xscale = Scale;
+image_yscale = Scale;
 
 
 #event step Insert description here
 // You can write your code in this editor
-scrMoveCollision();
 
 //If in battle room or dead, turn invisible
-visible = !((room == battle) || (Health <= 0));
+visible = !((room == rmBattle) || (Health <= 0));
 
 //Only move if visible
 if(visible)
 {
-	switch(state)
+	TimerEnded = (timer[0] <= 0);
+	//State machine
+	switch(State)
 	{
-		case estates.idle: scrEnemyIdle(); break;
-		case estates.wander: scrEnemyWander(); break;
-		case estates.alert: scrEnemyAlert(); break;
-		case estates.aggro: scrEnemyAggro(); break;
+		case estates.Idle: scrEnemyIdle(); break;
+		case estates.Wander: scrEnemyWander(); break;
+		case estates.Alert: scrEnemyAlert(); break;
+		case estates.Aggro: scrEnemyAggro(); break;
 	}
 }
 else 
 {
-	hsp = 0;
-	vsp = 0;
+	HSpeed = 0;
+	VSpeed = 0;
 }
 
-#event draw_gui Insert description here
+
+//Decrease timer
+if(timer[0] > 0)
+{
+	timer[0] -= 1;
+}
+
+//Movement collision
+scrMoveCollision();
+
+
+#event draw Insert description here
 // You can write your code in this editor
+
+draw_self();
+
+//Draw alert sign if alert
+if(State = estates.Alert)
+{
+	draw_sprite(sAlert,0,x,y-100);
+}
 
 //draw_text(0,0,"sigh - " +string(alertcount))

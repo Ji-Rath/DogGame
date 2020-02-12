@@ -1,6 +1,6 @@
 
 {
-    "name": "battle",
+    "name": "rmBattle",
     "id": "23cc6560-9c87-4b7e-a4a1-9b0b989e3056",
     "creationCodeFile": "",
     "inheritCode": false,

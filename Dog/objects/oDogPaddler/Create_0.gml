@@ -2,20 +2,20 @@
 // You can write your code in this editor
 
 //Initialize basic variables
-hsp = 0;
-vsp = 0;
-walkspd = 3;
+HSpeed = 0;
+VSpeed = 0;
+WalkSpd = 3;
 hmove = 0;
 vmove = 0;
-scale = 0.5;
 battlewarp = noone;
 
 Attacker = noone;
 BattleAttacker = noone;
 
 //Set scale of player
-image_yscale = scale;
-image_xscale = scale;
+Scale = 0.5;
+image_yscale = Scale;
+image_xscale = Scale;
 
 //Create State machine
 enum paddlerstates
@@ -35,12 +35,11 @@ bind_action = ord("X");
 bind_baction = ord("Z");
 
 //Assigning sprites to variables
-hsprite = sDogpaddler;
-hspritewalk = sDogpaddlerWalk;
-hspriterun = sDogpaddlerRun;
-spriteupwalk = sDogpaddlerWalkUp;
-spriteuprun = sDogpaddlerRunUp;
-spritedownwalk = sDogpaddlerWalkDown;
-spritedownrun = sDogpaddlerRunDown;
+SWalk = sDogpaddlerWalk;
+SRun = sDogpaddlerRun;
+SWalkUp = sDogpaddlerWalkUp;
+SRunUp = sDogpaddlerRunUp;
+SWalkDown = sDogpaddlerWalkDown;
+SRunDown = sDogpaddlerRunDown;
 
 

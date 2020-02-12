@@ -1,9 +1,10 @@
-sprite_index = spritealert;
 
-//Create alert sign
-if (myalertsign = noone)
+sprite_index = SAlert;
+HSpeed = 0;
+VSpeed = 0;
+
+if(TimerEnded)
 {
-	myalertsign = instance_create_layer(x,y-100,"effects",oAlertSign);
-	myalertsign.myuser = id;
+	State = estates.Aggro;
 }
 	

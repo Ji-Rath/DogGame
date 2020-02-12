@@ -2,7 +2,7 @@
 // You can write your code in this editor
 
 //Turn invisible when in battle
-visible = !(room == battle);
+visible = !(room == rmBattle);
 
 //Boolean variables to see if a key is pressed
 key_left = keyboard_check(bind_left);
@@ -20,72 +20,25 @@ key_upreleased = keyboard_check_released(bind_up);
 key_action = keyboard_check_pressed(bind_action);
 key_baction = keyboard_check(bind_baction);
 
-
-//Point sprite in right/left direction
-if (hsp != 0)
-{
-	image_xscale = sign(hsp)*scale;
-
-}
-
-
-
-//Animations
-
-
-//Change to walk up/down if moving vertically
-if (vmove > 0)
-{
-	sprite_index = spritedownwalk;
-	
-	//Sprinting Anim
-	if(key_baction)
-	{
-		sprite_index = spritedownrun;
-	}
-			
-} else if (vmove < 0)
-{
-	sprite_index = spriteupwalk;
-	
-	//Sprinting Anim
-	if(key_baction)
-	{
-		sprite_index = spriteuprun;
-	}
-}
-
-//Change to walk right/left if moving horizonally
-if (hmove != 0)
-{
-	sprite_index = hspritewalk;
-	
-	//Sprinting Anim
-	if(key_baction)
-	{
-		sprite_index = hspriterun;
-	}
-}
-
 //Animate sprite if moving
-if(hsp != 0 || vsp != 0) {
+if(HSpeed != 0 || VSpeed != 0) {
 	image_speed = 1;
 } else {
 	image_speed = 0;
 	image_index = 4; //The only position in every sprite where the player is idle
 	
 	//Switch to idle when standing still
-	if(sprite_index == hspriterun)
+	if(sprite_index == SRun)
 	{
-		sprite_index = hspritewalk;
+		sprite_index = SWalk;
 	}
-	if(sprite_index == spriteuprun)
+	if(sprite_index == SRunUp)
 	{
-		sprite_index = spriteupwalk;
+		sprite_index = SWalkUp;
 	}
-	if(sprite_index == spritedownrun)
+	if(sprite_index == SRunDown)
 	{
-		sprite_index = spritedownwalk;
+		sprite_index = SWalkDown;
 	}
 }
 
@@ -95,14 +48,16 @@ if(hsp != 0 || vsp != 0) {
 
 
 
-//Sprint button makes player walk faster
+//Set speed and animation while walking/running
 if (key_baction)
 {
-	walkspd = 8; 
+	WalkSpd = 8;
+	scrRun()
 }
 else
 {
-	walkspd = 3;
+	WalkSpd = 3;
+	scrWalk()
 }
 
 
@@ -112,8 +67,8 @@ if (state = paddlerstates.normal)
 	
 	hmove = key_right - key_left;
 	vmove = key_down - key_up;
-	hsp = hmove*walkspd;
-	vsp = vmove*walkspd;
+	HSpeed = hmove*WalkSpd;
+	VSpeed = vmove*WalkSpd;
 	
 	scrMoveCollision();
 }
@@ -136,6 +91,7 @@ if (KeyInteract)
 				scrCreateTextBox(inst.Text,inst.id);
 			}
 		}
+		//System to prevent textbox from showing up unintentionally
 		if(!instance_exists(oTextBox))
 		{
 			inst.TextCooldown = false;

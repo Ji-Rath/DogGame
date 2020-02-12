@@ -1,28 +1,25 @@
-cam = view_camera[0];
-follow = oDogPaddler
+Camera = view_camera[0];
+Follow = oDogPaddler
 
-view_w_half = camera_get_view_width(cam) * 0.5;
-view_h_half = camera_get_view_height(cam) * 0.5;
-xTo = xstart;
-yTo = ystart;
+ViewWidthHalf = camera_get_view_width(Camera) * 0.5;
+ViewHeightHalf = camera_get_view_height(Camera) * 0.5;
+XDestination = xstart;
+YDestination = ystart;
 
-hsp = 0;
-vsp = 0;
+HSpeed = 0;
+VSpeed = 0;
 
 
 
-enum camstates
+enum CameraState
 {
-	followplayer,
-	matchmob,
-	swoop,
-	pause
+	FollowPlayer,
 }
 
 
-state = camstates.followplayer;
+State = CameraState.FollowPlayer;
 
 
-shake_length = 0;
-shake_magnitude = 0;
-shake_remain = 0;
+ShakeLength = 0;
+ShakeMagnitude = 0;
+ShakeRemain = 0;

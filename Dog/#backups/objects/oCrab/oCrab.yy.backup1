@@ -1,0 +1,27 @@
+// 2020-02-11 08:39:26
+#event properties (no comments/etc. here are saved)
+parent_index = oEnemyParent;
+sprite_index = sCrab;
+mask_index = sCrab;
+persistent = true;
+uses_physics = false;
+
+#event create Insert description here
+// You can write your code in this editor
+event_inherited();
+
+BattleObject = oCrabBattle;
+
+
+#event step Insert description here
+// You can write your code in this editor
+event_inherited();
+SWalk = sCrabWalk;
+SRun = sCrabRun;
+SWalkUp = sCrabWalk;
+SRunUp = sCrabRun;
+SWalkDown = sCrabWalk;
+SRunDown = sCrabRun;
+SAlert = sCrabAlert;
+
+

@@ -1,0 +1,15 @@
+// 2020-02-12 08:43:34
+if (HSpeed != 0)
+{
+	image_xscale = sign(HSpeed);
+	sprite_index = SWalk;
+}
+else if (VSpeed < 0)
+{
+	sprite_index = SWalkUp;
+	
+}
+else if (VSpeed > 0)
+{
+	sprite_index = SWalkDown;
+}

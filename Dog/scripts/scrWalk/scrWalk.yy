@@ -1,8 +1,8 @@
 {
-    "id": "d399bf08-762c-4622-85e8-109b2c159338",
+    "id": "431e1163-0330-470d-9db4-060a9b2aa1ed",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "scrEnemyRun",
+    "name": "scrWalk",
     "IsCompatibility": false,
     "IsDnD": false
 }

@@ -1,19 +1,18 @@
-// 2020-02-10 11:33:58
-
-walksp = 2;
+// 2020-02-12 10:46:05
 
 //Turn to alert if player in range
 scrEnemyDetect();
 
-hsp = 0;
-vsp = 0;
-scrMoveCollision();
-idlecount += 1;
-var secs = 3;
+//Set speed to 0
+HSpeed = 0;
+VSpeed = 0;
+sprite_index = SIdle;
 
-if (idlecount > secs*60)
+//Wander in a random direction if timer reaches 0
+if (TimerEnded)
 {
-	state = estates.wander;
-	wanderdirx = choose(-1,1)
-	wanderdiry = choose (-1,0,1)
+	State = estates.Wander;
+	WanderDirectionX = choose(-1,1,0);
+	WanderDirectionY = choose(-1,1,0);
+	timer[0] = choose(1,2,3)*60;
 }

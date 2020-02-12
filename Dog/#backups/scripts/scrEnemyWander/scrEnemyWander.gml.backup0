@@ -1,22 +1,22 @@
-// 2020-02-10 11:34:48
-scrEnemyWalk();
+// 2020-02-12 10:58:33
+
+scrWalk();
 scrEnemyDetect();
 
-walksp = 2;
-hsp = wanderdirx*walksp;
-vsp = wanderdiry*walksp;
-wandercount += 1;
-var secs = 1;
-if (wandercount > secs*60)
+WalkSpd = 2;
+HSpeed = WanderDirectionX*WalkSpd;
+VSpeed = WanderDirectionY*WalkSpd;
+
+
+
+if (TimerEnded)
 {
-	state = estates.idle;
-	sprite_index = choose(spritedown,spriteup,hsprite);
-	
+	State = estates.Idle;
+	timer[0] = choose(1,2,3)*60;
 }
 
-var playerdist = point_distance(x,y,oDogPaddler.x,oDogPaddler.y);
-
-if (playerdist < detectrange)
+if(distance_to_object(oDogPaddler) < DetectRange)
 {
-	state = estates.alert
+	State = estates.Alert;
+	timer[0] = 0.5*60;
 }

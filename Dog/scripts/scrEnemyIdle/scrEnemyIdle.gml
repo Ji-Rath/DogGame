@@ -1,17 +1,23 @@
 
-walksp = 2;
-
 //Turn to alert if player in range
 scrEnemyDetect();
 
-hsp = 0;
-vsp = 0;
-idlecount += 1;
-var secs = 3;
+//Set speed to 0
+HSpeed = 0;
+VSpeed = 0;
+sprite_index = SIdle;
 
-if (idlecount > secs*60)
+//Wander in a random direction if timer reaches 0
+if (TimerEnded)
 {
-	state = estates.wander;
-	wanderdirx = choose(-1,1)
-	wanderdiry = choose (-1,0,1)
+	State = estates.Wander;
+	WanderDirectionX = choose(-1,1,0);
+	WanderDirectionY = choose(-1,1,0);
+	timer[0] = choose(1,2,3)*60;
+}
+
+if(distance_to_object(oDogPaddler) < DetectRange)
+{
+	State = estates.Alert;
+	timer[0] = 0.5*60;
 }

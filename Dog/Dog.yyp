@@ -39,14 +39,6 @@
             }
         },
         {
-            "Key": "0268a3eb-cf64-4c62-a5ef-2dbf80bb9047",
-            "Value": {
-                "id": "3175f31a-8003-4bd9-9eee-6a84e74333b3",
-                "resourcePath": "objects\/oAlertSign\/oAlertSign.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "028e2de4-42db-4d48-84dd-236b07ef52aa",
             "Value": {
                 "id": "a72d9e1e-1261-4caa-b302-771f9dfb2189",
@@ -258,7 +250,7 @@
             "Key": "23cc6560-9c87-4b7e-a4a1-9b0b989e3056",
             "Value": {
                 "id": "52559516-5183-44ff-af89-2689727fb722",
-                "resourcePath": "rooms\\battle\\battle.yy",
+                "resourcePath": "rooms\\rmBattle\\rmBattle.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -346,7 +338,7 @@
             "Key": "431e1163-0330-470d-9db4-060a9b2aa1ed",
             "Value": {
                 "id": "03edf491-a0d4-4829-b751-0c3a7ff5463a",
-                "resourcePath": "scripts\/scrEnemyWalk\/scrEnemyWalk.yy",
+                "resourcePath": "scripts\/scrWalk\/scrWalk.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -524,6 +516,14 @@
                 "id": "876b365f-8b4d-4d94-8241-1755e18d4fac",
                 "resourcePath": "sprites\\sNPC\\sNPC.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "62e7ff8f-5e3e-4486-81fd-7b2b219dddec",
+            "Value": {
+                "id": "57dc53ff-01a4-4cee-8d82-a2713d574c15",
+                "resourcePath": "tilesets\\tsWall\\tsWall.yy",
+                "resourceType": "GMTileSet"
             }
         },
         {
@@ -738,7 +738,7 @@
             "Key": "9229fe20-a43b-49f5-b810-ec7b3546b3fc",
             "Value": {
                 "id": "f9623513-9f79-43aa-83ac-7093aa8adaca",
-                "resourcePath": "rooms\\room0\\room0.yy",
+                "resourcePath": "rooms\\rmTest\\rmTest.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -1002,7 +1002,7 @@
             "Key": "d399bf08-762c-4622-85e8-109b2c159338",
             "Value": {
                 "id": "e18cd195-aa2e-495e-97e1-380f49d64c6f",
-                "resourcePath": "scripts\/scrEnemyRun\/scrEnemyRun.yy",
+                "resourcePath": "scripts\/scrRun\/scrRun.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -1228,9 +1228,9 @@
         "d399bf08-762c-4622-85e8-109b2c159338",
         "117f0b7a-7b29-42d3-86f8-2900a1c906f7",
         "b6b7d335-4e3f-a7ea-8256-818672ed4a16",
+        "98f83f6d-5e63-05c6-5ddc-261159d1b3c9",
         "8b4bb2d1-2cd7-9875-f653-62221291941f",
         "bd6494ce-f580-6bca-bb89-bb0f17a00585",
-        "98f83f6d-5e63-05c6-5ddc-261159d1b3c9",
         "f6e8c564-4e5c-4266-8b2d-0f8948f93666",
         "e4a77cef-6cb5-c0fc-64d1-a50ecf55708d",
         "3a8ceacf-8c1b-42c2-ba22-b8acef9e300d",

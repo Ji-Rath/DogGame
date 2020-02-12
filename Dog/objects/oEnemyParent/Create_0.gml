@@ -1,49 +1,46 @@
 /// @description Insert description here
 // You can write your code in this editor
-Paddler = oDogPaddler;
-codename = noone;
-hsp = 0;
-vsp = 0;
+
+//Initialize basic variables
+HSpeed = 0;
+VSpeed = 0;
 WalkSpd = 0;
-hmove = 0;         
-vmove = 0;
-wanderdirx = 0;
-wanderdiry = 0;
+WanderDirectionX = 0;
+WanderDirectionY = 0;
+DetectRange = 350;
+Health = 10;
+TimerEnded = false;
+
+//Initialize state
 enum estates
 {
-	idle,
-	wander,
-	alert,
-	aggro,
+	Idle,
+	Wander,
+	Alert,
+	Aggro,
 	
 }
+State = estates.Idle;
 
-state = estates.idle;
-
-idlecount = 0;
-wandercount = 0;
-alertcount = 0;
-
-myalertsign = noone;
-detectrange = 350;
-
+//Get battleobject of enemy
 BattleObject = oEnemyBattleParent;
 
-Health = 10;
+
+//Set sprites for object
+SIdle = sEnemydefault;
+SWalk = sEnemywalk;
+SRun = sEnemyrun;
+SWalkUp = sEnemywalk;
+SRunUp = sEnemyrun;
+SWalkDown = sEnemywalk;
+SRunDown = sEnemyrun;
+SAlert = sEnemyalert;
+
+//Timer
+timer[0] = 3*60;
 
 
-hsprite = sEnemydefault;
-hspritewalk = sEnemywalk;
-hspriterun = sEnemyrun;
-spriteup = sEnemyup;
-spriteupwalk = sEnemywalk;
-spriteuprun = sEnemyrun;
-spritedown = sEnemydown;
-spritedownwalk = sEnemywalk;
-spritedownrun = sEnemyrun;
-spritealert = sEnemyalert;
-
-
-scale = 0.5;
-image_xscale = scale;
-image_yscale = scale;
+//Shrink enemy
+Scale = 0.5;
+image_xscale = Scale;
+image_yscale = Scale;

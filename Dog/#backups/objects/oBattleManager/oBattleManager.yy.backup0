@@ -1,4 +1,4 @@
-// 2020-02-10 11:36:24
+// 2020-02-12 10:55:20
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 uses_physics = false;
@@ -68,7 +68,7 @@ if(BattleStageEnd)
 	
 	if(Enemy == noone)
 	{
-		scrFadeout(room0,c_black,0.05);
+		scrFadeout(rmTest,c_black,0.05);
 		exit;
 	}
 	

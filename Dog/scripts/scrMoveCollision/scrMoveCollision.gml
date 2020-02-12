@@ -1,27 +1,55 @@
-if (place_meeting(x+hsp,y,oWall))
+
+var tilemap = layer_tilemap_get_id("Collision");
+var bbox_side;
+ 
+//Tilemap X Collision
+if(HSpeed > 0)
 {
-	while (!place_meeting(x+sign(hsp),y,oWall))
+	bbox_side = bbox_right;
+}
+else 
+{
+	bbox_side = bbox_left;
+}
+if(tilemap_get_at_pixel(tilemap,bbox_side+HSpeed,bbox_top) != 0) || (tilemap_get_at_pixel(tilemap,bbox_side+HSpeed,bbox_bottom) != 0)
+{
+	if(HSpeed > 0)
 	{
-		x = x+sign(hsp);
-		
+		x = x - (bbox_side % 32) + 31;
 	}
-	hsp = 0;
+	else 
+	{
+		x = x - (bbox_side % 32);
+	}
+	HSpeed = 0;
 }
 
 
-if (place_meeting(x,y+vsp,oWall))
+//Tilemap Y Collision
+if(VSpeed > 0)
 {
-	while (!place_meeting(x,y+sign(vsp),oWall))
+	bbox_side = bbox_bottom;
+}
+else 
+{
+	bbox_side = bbox_top;
+}
+if(tilemap_get_at_pixel(tilemap,bbox_left,bbox_side+VSpeed) != 0) || (tilemap_get_at_pixel(tilemap,bbox_right,bbox_side+VSpeed) != 0)
+{
+	if(VSpeed > 0)
 	{
-		y = y+sign(vsp);
-		
+		y = y - (bbox_side % 32) + 31;
 	}
-	vsp = 0;
+	else 
+	{
+		y = y - (bbox_side % 32);
+	}
+	VSpeed = 0;
 }
 
 
 if(visible)
 {
-	x += hsp;
-	y += vsp;
+	x += HSpeed;
+	y += VSpeed;
 }

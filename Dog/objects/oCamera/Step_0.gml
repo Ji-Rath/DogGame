@@ -3,22 +3,22 @@
  
 //update position
 
-if (instance_exists(follow))
+if (instance_exists(Follow))
 {
-	xTo = follow.x;
-	yTo = follow.y;
+	XDestination = Follow.x;
+	YDestination = Follow.y;
 }
 
 //update object position
-x += (xTo - x) / 4;
-y += (yTo - y) / 7;
+x += (XDestination - x) / 4;
+y += (YDestination - y) / 7;
 
 //update camera view
-camera_set_view_pos(cam,x-view_w_half,y-view_h_half);
+camera_set_view_pos(Camera,x-ViewWidthHalf,y-ViewHeightHalf);
 		
-x += random_range(-shake_remain,shake_remain);
-y += random_range(-shake_remain,shake_remain);
-shake_remain = max(0,shake_remain-((1/shake_length)*shake_magnitude));
+x += random_range(-ShakeRemain,ShakeRemain);
+y += random_range(-ShakeRemain,ShakeRemain);
+ShakeRemain = max(0,ShakeRemain-((1/ShakeLength)*ShakeMagnitude));
 		
 		
 		
