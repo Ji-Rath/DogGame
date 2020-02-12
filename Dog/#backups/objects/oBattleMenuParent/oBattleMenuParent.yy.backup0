@@ -1,4 +1,4 @@
-// 2020-02-08 22:39:44
+// 2020-02-12 12:14:59
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 mask_index = sBattleIcons;
@@ -29,9 +29,12 @@ enum BattleState
 //Contents of button
 Contents = ds_list_create();
 
+//Start invisible
+visible = false;
+
 #event step
 
-if(visible)
+if(visible && Selected)
 {
     for(i=0;i<ds_list_size(Contents);i++)
     {
@@ -63,10 +66,13 @@ if(visible)
                         
                     break;
                 }
-                with(oBattleMenuParent)
+                if(Action != noone)
                 {
-                    visible = false;
-                    Selected = false;
+                    with(oBattleMenuParent)
+                    {
+                        visible = false;
+                        Selected = false;
+                    }
                 }
                 
             }

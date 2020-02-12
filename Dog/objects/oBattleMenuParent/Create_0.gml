@@ -21,3 +21,6 @@ enum BattleState
 
 //Contents of button
 Contents = ds_list_create();
+
+//Start invisible
+visible = false;

@@ -1,5 +1,5 @@
 
-if(visible)
+if(visible && Selected)
 {
     for(i=0;i<ds_list_size(Contents);i++)
     {
@@ -31,10 +31,13 @@ if(visible)
                         
                     break;
                 }
-                with(oBattleMenuParent)
+                if(Action != noone)
                 {
-                    visible = false;
-                    Selected = false;
+                    with(oBattleMenuParent)
+                    {
+                        visible = false;
+                        Selected = false;
+                    }
                 }
                 
             }

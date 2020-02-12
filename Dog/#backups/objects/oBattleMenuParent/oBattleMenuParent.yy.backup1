@@ -1,4 +1,4 @@
-// 2020-02-08 22:39:25
+// 2020-02-12 12:14:15
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 mask_index = sBattleIcons;
@@ -29,44 +29,53 @@ enum BattleState
 //Contents of button
 Contents = ds_list_create();
 
+//Start invisible
+visible = false;
+
 #event step
 
-for(i=0;i<ds_list_size(Contents);i++)
+if(visible)
 {
-    var XPos = x+100
-    var YPos = y-250+(i*75);
-    ItemMouseHover = (point_in_rectangle(mouse_x, mouse_y, XPos-32, YPos-32, XPos+32, YPos+32));
-    //If mouse is hovered over item, save item and end loop
-    if(ItemMouseHover)
+    for(i=0;i<ds_list_size(Contents);i++)
     {
-        ItemMouseHoverSelect = i;
-        i = ds_list_size(Contents);
-        
-        if(mouse_check_button_pressed(mb_left))
+        var XPos = x+100
+        var YPos = y-250+(i*75);
+        ItemMouseHover = (point_in_rectangle(mouse_x, mouse_y, XPos-32, YPos-32, XPos+32, YPos+32));
+        //If mouse is hovered over item, save item and end loop
+        if(ItemMouseHover)
         {
-            //Do Action based on item selected
-            var Action = ds_list_find_value(Contents,ItemMouseHoverSelect);
-            switch(Action)
-            {
-                case Item.GlovesOff:
-                    var MiniGame = instance_create_layer(0,0,"GameManager",oMiniGame);
-				    MiniGame.GameType = Game.GlovesOff;
-                break;
-                
-                case Item.Punch:
-                    
-                break;
-                
-                case Item.Hamburger:
-                    
-                break;
-            }
-            with(oBattleMenuParent)
-            {
-                visible = false;
-                Selected = false;
-            }
+            ItemMouseHoverSelect = i;
+            i = ds_list_size(Contents);
             
+            if(mouse_check_button_pressed(mb_left))
+            {
+                //Do Action based on item selected
+                var Action = ds_list_find_value(Contents,ItemMouseHoverSelect);
+                switch(Action)
+                {
+                    case Item.GlovesOff:
+                        var MiniGame = instance_create_layer(0,0,"GameManager",oMiniGame);
+    				    MiniGame.GameType = Game.GlovesOff;
+                    break;
+                    
+                    case Item.Punch:
+                        
+                    break;
+                    
+                    case Item.Hamburger:
+                        
+                    break;
+                }
+                if(Action != noone)
+                {
+                    with(oBattleMenuParent)
+                    {
+                        visible = false;
+                        Selected = false;
+                    }
+                }
+                
+            }
         }
     }
 }

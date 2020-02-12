@@ -29,7 +29,7 @@ switch(State)
             AnimIndex = 1;
             with(oBattleManager)
             {
-                Enemy.Health -= 3;
+                Enemy.Health -= 0.5;
             }
         }
         if(keyboard_check_released(vk_space))
