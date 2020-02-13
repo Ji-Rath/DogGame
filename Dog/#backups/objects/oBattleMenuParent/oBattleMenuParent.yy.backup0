@@ -1,4 +1,4 @@
-// 2020-02-12 12:14:59
+// 2020-02-13 16:02:35
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 mask_index = sBattleIcons;
@@ -63,7 +63,9 @@ if(visible && Selected)
                     break;
                     
                     case Item.Hamburger:
-                        
+                        global.phealth += 10;
+                        var BattleText = instance_create_layer(x,y,"text",oBattleTextBox);
+        				BattleText.text = ["You eat the tasty burger."];
                     break;
                 }
                 if(Action != noone)
@@ -73,6 +75,7 @@ if(visible && Selected)
                         visible = false;
                         Selected = false;
                     }
+                    oBattleManager.visible = false;
                 }
                 
             }
@@ -104,7 +107,11 @@ IsHovering = true;
 
 IsHovering = false;
 
-#event draw
+#event draw_gui
+
+//Set Fonts/Color
+draw_set_font(fnt_battle);
+draw_set_color(c_black);
 
 //Draw icon
 draw_sprite(sBattleIcons,SpriteIndex,x,y);

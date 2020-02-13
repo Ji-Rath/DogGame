@@ -1,4 +1,4 @@
-// 2020-02-12 22:29:41
+// 2020-02-13 00:14:49
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 sprite_index = sDogpaddler;
@@ -13,8 +13,6 @@ uses_physics = false;
 HSpeed = 0;
 VSpeed = 0;
 WalkSpd = 3;
-hmove = 0;
-vmove = 0;
 battlewarp = noone;
 
 Attacker = noone;
@@ -40,9 +38,6 @@ SWalkUp = sDogpaddlerWalkUp;
 SRunUp = sDogpaddlerRunUp;
 SWalkDown = sDogpaddlerWalkDown;
 SRunDown = sDogpaddlerRunDown;
-
-
-
 
 #event step Insert description here
 // You can write your code in this editor
@@ -72,7 +67,8 @@ if(HSpeed != 0 || VSpeed != 0) {
 	}
 }
 
-
+//Set depth
+depth = -y;
 
 
 
@@ -94,11 +90,10 @@ else
 //If player is in the normal state, update movement variables
 if (state = paddlerstates.normal)
 {
-	
-	hmove = global.KeyRight - global.KeyLeft;
-	vmove = global.KeyDown - global.KeyUp;
-	HSpeed = hmove*WalkSpd;
-	VSpeed = vmove*WalkSpd;
+	var HMove = global.KeyRight - global.KeyLeft;
+	var VMove = global.KeyDown - global.KeyUp;
+	HSpeed = HMove*WalkSpd;
+	VSpeed = VMove*WalkSpd;
 	
 	scrMoveCollision();
 }

@@ -5,8 +5,6 @@
 HSpeed = 0;
 VSpeed = 0;
 WalkSpd = 3;
-hmove = 0;
-vmove = 0;
 battlewarp = noone;
 
 Attacker = noone;
@@ -32,5 +30,3 @@ SWalkUp = sDogpaddlerWalkUp;
 SRunUp = sDogpaddlerRunUp;
 SWalkDown = sDogpaddlerWalkDown;
 SRunDown = sDogpaddlerRunDown;
-
-

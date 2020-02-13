@@ -24,10 +24,9 @@ if (TextPos<StringLength)
 
 //Draw text
 var substr = string_copy(TextWrapped,1,TextPos);
-var c = c_black
+draw_set_color(c_black);
 draw_set_font(fnt_dialogue);
-draw_text_color(TextX,TextY,substr,c,c,c,c,1);
-draw_text_color(TextX+1,TextY,substr,c,c,c,c,1);
+draw_text(TextX,TextY,substr);
 
 //draw_text_color(text_x+1,text_y+1,substr,c,c,c,c,1)
 //draw_text_color(text_x,text_y+1,substr,c,c,c,c,1)

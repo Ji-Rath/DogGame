@@ -44,6 +44,8 @@ if(BattleStageEnd)
 				{
 					visible = true;
 				}
+				BattleTimer = BattleTimerInit*60;
+				oBattleManager.visible = true;
 			break;
 			
 			case 3:
@@ -57,4 +59,20 @@ if(BattleStageEnd)
 	
 	
 	BattleStageEnd = false;
+}
+
+//Reduce battle timer, and end turn if at 0
+if(BattleTimer > 0)
+{
+	BattleTimer -= 1;
+	if (visible && BattleTimer <= 0)
+	{
+		BattleStageEnd = true;
+		with(oBattleMenuParent)
+        {
+            visible = false;
+            Selected = false;
+        }
+        oBattleManager.visible = false;
+	}
 }

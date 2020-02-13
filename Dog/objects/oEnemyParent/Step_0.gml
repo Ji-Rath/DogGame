@@ -32,3 +32,6 @@ if(timer[0] > 0)
 
 //Movement collision
 scrMoveCollision();
+
+//Depth
+depth = -y;

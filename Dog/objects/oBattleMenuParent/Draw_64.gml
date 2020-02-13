@@ -1,4 +1,8 @@
 
+//Set Fonts/Color
+draw_set_font(fnt_battle);
+draw_set_color(c_black);
+
 //Draw icon
 draw_sprite(sBattleIcons,SpriteIndex,x,y);
 

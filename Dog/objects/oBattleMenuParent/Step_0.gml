@@ -28,7 +28,9 @@ if(visible && Selected)
                     break;
                     
                     case Item.Hamburger:
-                        
+                        global.phealth += 10;
+                        var BattleText = instance_create_layer(x,y,"text",oBattleTextBox);
+        				BattleText.text = ["You eat the tasty burger."];
                     break;
                 }
                 if(Action != noone)
@@ -38,6 +40,7 @@ if(visible && Selected)
                         visible = false;
                         Selected = false;
                     }
+                    oBattleManager.visible = false;
                 }
                 
             }

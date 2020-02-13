@@ -1,4 +1,4 @@
-// 2020-02-12 22:46:01
+// 2020-02-13 08:21:34
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 uses_physics = false;
@@ -44,7 +44,6 @@ text_height = string_height("A");
 // You can write your code in this editor
 if (global.KeyInteract)
 {
-	show_debug_message(string(global.KeyInteract));
 	if (page < array_length_1d(text)-1)
 	{
 		page ++;
@@ -67,6 +66,10 @@ if (global.KeyInteract)
 
 #event draw_gui Insert description here
 // You can write your code in this editor
+
+//Set font/cololr
+draw_set_color(c_black);
+draw_set_font(fnt_battle);
 
 //Draw box
 draw_sprite(box,0,0,0);

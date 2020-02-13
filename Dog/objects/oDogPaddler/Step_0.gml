@@ -26,7 +26,8 @@ if(HSpeed != 0 || VSpeed != 0) {
 	}
 }
 
-
+//Set depth
+depth = -y;
 
 
 
@@ -48,11 +49,10 @@ else
 //If player is in the normal state, update movement variables
 if (state = paddlerstates.normal)
 {
-	
-	hmove = global.KeyRight - global.KeyLeft;
-	vmove = global.KeyDown - global.KeyUp;
-	HSpeed = hmove*WalkSpd;
-	VSpeed = vmove*WalkSpd;
+	var HMove = global.KeyRight - global.KeyLeft;
+	var VMove = global.KeyDown - global.KeyUp;
+	HSpeed = HMove*WalkSpd;
+	VSpeed = VMove*WalkSpd;
 	
 	scrMoveCollision();
 }

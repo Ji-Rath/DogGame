@@ -10,4 +10,3 @@ SWalkDown = sCrabWalk;
 SRunDown = sCrabRun;
 SAlert = sCrabAlert;
 
-

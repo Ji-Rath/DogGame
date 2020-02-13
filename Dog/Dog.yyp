@@ -271,6 +271,14 @@
             }
         },
         {
+            "Key": "2638a3fd-a360-19c1-2285-32d794f4eda9",
+            "Value": {
+                "id": "2af63ac5-3202-9ffa-6117-4dbcb2a8b625",
+                "resourcePath": "objects\\oKeybinds\\oKeybinds.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "276eca1f-7c97-6d56-9164-ae38aac241a2",
             "Value": {
                 "id": "7db3e746-d5d8-b59a-4b4e-ac7cf53453db",
@@ -500,6 +508,22 @@
                 "id": "b166f839-ef84-4eea-af4d-ea2b2c6c2265",
                 "resourcePath": "views\\5f2e64a2-927a-42bb-96a5-c327e3c4214f.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "5fa264e7-3728-44ac-95a4-764f140a129b",
+            "Value": {
+                "id": "d72adb13-95a5-43c5-9e42-a73ba258aef7",
+                "resourcePath": "sprites\\sBattleTimer\\sBattleTimer.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "60bedc1a-3071-4937-ad93-3c7273b80c7e",
+            "Value": {
+                "id": "0fa9a0be-9a4a-441a-ac07-14e64ab30dbc",
+                "resourcePath": "sprites\\sGUIPlayerInfo\\sGUIPlayerInfo.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -1220,14 +1244,6 @@
                 "id": "4d8762f7-7b1a-47e1-92f2-6c279903369f",
                 "resourcePath": "fonts\\fnt_stats\\fnt_stats.yy",
                 "resourceType": "GMFont"
-            }
-        },
-        {
-            "Key": "2638a3fd-a360-19c1-2285-32d794f4eda9",
-            "Value": {
-                "id": "2af63ac5-3202-9ffa-6117-4dbcb2a8b625",
-                "resourcePath": "objects\\oKeybinds\\oKeybinds.yy",
-                "resourceType": "GMObject"
             }
         }
     ],

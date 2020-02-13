@@ -1,4 +1,4 @@
-// 2020-02-12 10:46:48
+// 2020-02-13 00:08:28
 #event properties (no comments/etc. here are saved)
 parent_index = oEnemyParent;
 sprite_index = sCrab;
@@ -24,5 +24,4 @@ SRunUp = sCrabRun;
 SWalkDown = sCrabWalk;
 SRunDown = sCrabRun;
 SAlert = sCrabAlert;
-
 

@@ -18,9 +18,9 @@ BattleStageEnd = false;
 
 //
 DPstat = sDPstatnormal;
-DPhpx = 315
-DPhpy = 535
-DPoffy = 630
+DPhpx = 170
+DPhpy = 17
+DPoffy = 50
 
 text_height = string_height("A");
 
@@ -43,7 +43,6 @@ BattleSelect = BattleMenu.Attack;
 var FirstText = string(Enemy.Name) + " has attacked!"
 var EnemyTextIntro = Enemy.TextIntro[random_range(0,array_length_1d(Enemy.TextIntro))];
 
-
 var BattleText = instance_create_layer(x,y,"text",oBattleTextBox); 
 BattleText.text = [FirstText,EnemyTextIntro];
 
@@ -53,3 +52,7 @@ instance_create_layer(room_width/2-50,room_height-100,"GUI",oBattleMenuBag);
 instance_create_layer(room_width/2+50,room_height-100,"GUI",oBattleMenuDefend);
 instance_create_layer(room_width/2+150,room_height-100,"GUI",oBattleMenuBook);
 
+//Timer Bar Width
+BarWidth = 400;
+BattleTimer = 100;
+BattleTimerInit = 15;
