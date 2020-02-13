@@ -1,4 +1,4 @@
-// 2020-02-08 14:57:08
+// 2020-02-12 22:46:01
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 uses_physics = false;
@@ -23,7 +23,6 @@ display_set_gui_size(global.game_width,global.game_height);
 counter = 0;
 text = [];
 page = 0;
-interact_key = oBattleManager.actioninput;
 
 
 text_col = c_black;
@@ -43,9 +42,9 @@ text_height = string_height("A");
 
 #event step Insert description here
 // You can write your code in this editor
-if (keyboard_check_pressed(interact_key))
+if (global.KeyInteract)
 {
-	
+	show_debug_message(string(global.KeyInteract));
 	if (page < array_length_1d(text)-1)
 	{
 		page ++;
@@ -73,7 +72,7 @@ if (keyboard_check_pressed(interact_key))
 draw_sprite(box,0,0,0);
 
 //Text appear effect
-var text_wrapped = string_wrap(text[page],text_max_width);
+var text_wrapped = scrStringWrap(text[page],text_max_width);
 var str_len = string_length(text_wrapped);
 if (counter<str_len)
 {

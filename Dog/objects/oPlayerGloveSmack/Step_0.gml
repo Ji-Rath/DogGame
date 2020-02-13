@@ -24,18 +24,18 @@ switch(State)
     
     case 1:
         //Action part
-        if(keyboard_check_pressed(vk_space))
+        if(global.KeyInteract)
         {
             AnimIndex = 1;
+            AnimSwitch = choose(0,1);
             with(oBattleManager)
             {
-                Enemy.Health -= 0.5;
+                Enemy.Health -= 0.3;
             }
         }
-        if(keyboard_check_released(vk_space))
+        if(global.KeyInteractRelease)
         {
             AnimIndex = 0;
-            AnimSwitch = choose(0,1);
         }
     break;
 }

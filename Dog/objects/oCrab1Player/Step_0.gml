@@ -4,7 +4,7 @@ switch(State)
 {
     case Crab1PlayerState.Running:
         sprite_index = sMiniGameCrab1PlayerRun;
-        if(keyboard_check_pressed(vk_space) && oCrab1Arm.State != Crab1State.Attack)
+        if(global.KeyInteract && oCrab1Arm.State != Crab1State.Attack)
         {
             timer[0] = 0.3*60; //Time until failed jump
             State = Crab1PlayerState.Jumping;

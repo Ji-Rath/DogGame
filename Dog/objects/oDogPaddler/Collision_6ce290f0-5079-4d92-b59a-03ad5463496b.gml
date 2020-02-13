@@ -10,4 +10,3 @@ if (other.State == estates.Aggro && other.visible = true)
 	BattleAttacker = other.BattleObject;
 	Attacker = other;
 }
-	

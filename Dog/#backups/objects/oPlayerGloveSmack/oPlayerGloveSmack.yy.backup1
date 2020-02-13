@@ -1,6 +1,7 @@
-// 2020-02-12 12:20:49
+// 2020-02-12 22:54:27
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
+persistent = true;
 uses_physics = false;
 
 #event create
@@ -39,18 +40,18 @@ switch(State)
     
     case 1:
         //Action part
-        if(keyboard_check_pressed(vk_space))
+        if(global.KeyInteract)
         {
             AnimIndex = 1;
+            AnimSwitch = choose(0,1);
             with(oBattleManager)
             {
-                Enemy.Health -= 3;
+                Enemy.Health -= 0.3;
             }
         }
-        if(keyboard_check_released(vk_space))
+        if(global.KeyInteractRelease)
         {
             AnimIndex = 0;
-            AnimSwitch = choose(0,1);
         }
     break;
 }

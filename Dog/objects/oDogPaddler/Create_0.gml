@@ -22,17 +22,8 @@ enum paddlerstates
 {
 	normal,
 	
-	
 }
 state = paddlerstates.normal;
-
-//Key bindings
-bind_left = vk_left;
-bind_right = vk_right;
-bind_down = vk_down;
-bind_up = vk_up;
-bind_action = ord("X");
-bind_baction = ord("Z");
 
 //Assigning sprites to variables
 SWalk = sDogpaddlerWalk;

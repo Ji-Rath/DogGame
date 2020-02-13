@@ -4,22 +4,6 @@
 //Turn invisible when in battle
 visible = !(room == rmBattle);
 
-//Boolean variables to see if a key is pressed
-key_left = keyboard_check(bind_left);
-key_leftreleased = keyboard_check_released(bind_left);
-
-key_right = keyboard_check(bind_right);
-key_rightreleased = keyboard_check_released(bind_right);
-
-key_down = keyboard_check(bind_down);
-key_downreleased = keyboard_check_released(bind_down);
-
-key_up = keyboard_check(bind_up);
-key_upreleased = keyboard_check_released(bind_up);
-
-key_action = keyboard_check_pressed(bind_action);
-key_baction = keyboard_check(bind_baction);
-
 //Animate sprite if moving
 if(HSpeed != 0 || VSpeed != 0) {
 	image_speed = 1;
@@ -49,7 +33,7 @@ if(HSpeed != 0 || VSpeed != 0) {
 
 
 //Set speed and animation while walking/running
-if (key_baction)
+if (global.KeySprint)
 {
 	WalkSpd = 8;
 	scrRun()
@@ -65,8 +49,8 @@ else
 if (state = paddlerstates.normal)
 {
 	
-	hmove = key_right - key_left;
-	vmove = key_down - key_up;
+	hmove = global.KeyRight - global.KeyLeft;
+	vmove = global.KeyDown - global.KeyUp;
 	HSpeed = hmove*WalkSpd;
 	VSpeed = vmove*WalkSpd;
 	
@@ -77,8 +61,7 @@ if (state = paddlerstates.normal)
 radius = 50;
 
 //For a future NPC interaction, maybe, wait what is going on now. 
-KeyInteract = keyboard_check_pressed(bind_action);
-if (KeyInteract)
+if (global.KeyInteract)
 {
 	var inst = collision_rectangle(x-radius,y-radius,x+radius,y+radius,oNPCParent,false,false);
 	if(inst != noone)

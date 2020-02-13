@@ -18,7 +18,6 @@ display_set_gui_size(global.game_width,global.game_height);
 counter = 0;
 text = [];
 page = 0;
-interact_key = oBattleManager.actioninput;
 
 
 text_col = c_black;

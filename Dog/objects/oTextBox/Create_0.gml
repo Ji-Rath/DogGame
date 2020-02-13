@@ -10,8 +10,6 @@ Speaker = noone; //NPC object that is speaking
 
 TextMaxWidth = 500;
 
-KeyInteract = oDogPaddler.bind_action;
-
 //Draw dialogue positions
 var GUIWidth = display_get_gui_width();
 var GUIHeight = display_get_gui_height();
