@@ -53,13 +53,19 @@ switch(State)
         if(Success)
         {
             sprite_index = sMiniGameCrab1PlayerJump;
-            oMiniGame.Success = true;
+        }
+        else
+        {
+            if(!HitPlayer)
+            {
+                global.phealth -= 10;
+                HitPlayer = true;
+            }
         }
     break;
 }
 
 move_towards_point(MoveX,y,Spd);
-
 
 for(i=0;i<array_length_1d(timer);i++)
 {

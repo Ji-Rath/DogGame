@@ -1,4 +1,4 @@
-// 2020-02-08 22:52:16
+// 2020-02-13 18:02:53
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 uses_physics = false;
@@ -11,8 +11,6 @@ timer[1] = -1 //MiniGame time
 
 //Instances to destroy after the minigame
 Instances = ds_list_create();
-
-Success = false;
 
 enum Game
 {
@@ -48,7 +46,6 @@ else if (timer[0] != -1)
         
         case Game.GlovesOff:
             ds_list_add(Instances, instance_create_layer(room_width/2,room_height/2,"Instances",oPlayerGloveSmack));
-            timer[1] = 6*60;
         break;
     }
 }
@@ -70,11 +67,6 @@ else if (timer[1] != -1)
     }
     instance_destroy();
     oBattleManager.BattleStageEnd = true;
-    
-    if(!Success)
-    {
-        global.phealth -= 5;
-    }
 }
 
 #event draw

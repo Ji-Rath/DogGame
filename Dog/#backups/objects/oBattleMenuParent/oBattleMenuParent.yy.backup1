@@ -1,4 +1,4 @@
-// 2020-02-13 15:34:31
+// 2020-02-13 18:31:12
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 mask_index = sBattleIcons;
@@ -75,6 +75,8 @@ if(visible && Selected)
                         visible = false;
                         Selected = false;
                     }
+                    oBattleManager.visible = false;
+                    BattleTimer = 0;
                 }
                 
             }

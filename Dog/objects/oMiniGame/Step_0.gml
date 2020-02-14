@@ -42,11 +42,12 @@ else if (timer[1] != -1)
             instance_destroy(Instance);
         }
     }
+    with(oBattleManager)
+    {
+        global.phealth = ceil(global.phealth);
+        global.pp = ceil(global.pp);
+        Enemy.Health = ceil(Enemy.Health);
+    }
     instance_destroy();
     oBattleManager.BattleStageEnd = true;
-    
-    if(!Success)
-    {
-        global.phealth -= 5;
-    }
 }

@@ -41,6 +41,7 @@ if(visible && Selected)
                         Selected = false;
                     }
                     oBattleManager.visible = false;
+                    oBattleManager.BattleTimer = 0;
                 }
                 
             }

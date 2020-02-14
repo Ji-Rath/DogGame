@@ -1,4 +1,4 @@
-// 2020-02-13 01:02:54
+// 2020-02-13 18:11:21
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 uses_physics = false;
@@ -11,8 +11,6 @@ timer[1] = -1 //MiniGame time
 
 //Instances to destroy after the minigame
 Instances = ds_list_create();
-
-Success = false;
 
 enum Game
 {
@@ -67,13 +65,14 @@ else if (timer[1] != -1)
             instance_destroy(Instance);
         }
     }
+    with(oBattleManager)
+    {
+        global.phealth = ceil(global.phealth);
+        global.pp = ceil(global.pp);
+        Enemy.Health = ceil(Enemy.Health);
+    }
     instance_destroy();
     oBattleManager.BattleStageEnd = true;
-    
-    if(!Success)
-    {
-        global.phealth -= 5;
-    }
 }
 
 #event draw

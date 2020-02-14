@@ -4,12 +4,8 @@
 box = sBattleBox;
 gui_width = display_get_gui_width();
 gui_height = display_get_gui_height();
-textcol = 0;
-text = "";
-actioninput = ord("X");
 
 //Assign enemy objects to variables
-Enemy = oDogPaddler.BattleAttacker;
 OriginalEnemy = oDogPaddler.Attacker;
 
 //Create variables to keep track of battle stage
@@ -26,7 +22,7 @@ text_height = string_height("A");
 
 
 //Create Enemy Object
-instance_create_layer(640,390,"Instances",oDogPaddler.BattleAttacker);
+Enemy = instance_create_layer(640,390,"Instances",oDogPaddler.BattleAttacker);
 
 //Create BattleMenu variables
 enum BattleMenu
@@ -54,5 +50,12 @@ instance_create_layer(room_width/2+150,room_height-100,"GUI",oBattleMenuBook);
 
 //Timer Bar Width
 BarWidth = 400;
-BattleTimer = 100;
+BattleTimer = 0;
 BattleTimerInit = 15;
+
+//Update stats effect
+UpdateStats = false;
+DrawPlayerHealth = global.phealth;
+DrawPlayerPP = global.pp;
+DrawEnemyHealth = Enemy.Health;
+timer[0] = -1;

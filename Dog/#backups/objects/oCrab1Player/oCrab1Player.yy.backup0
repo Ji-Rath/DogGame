@@ -1,4 +1,4 @@
-// 2020-02-12 22:28:17
+// 2020-02-13 18:09:12
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 uses_physics = false;
@@ -24,6 +24,8 @@ timer[0] = -1;
 timer[1] = 1;
 
 Spd = 1;
+
+HitPlayer = false;
 
 #event step
 
@@ -81,13 +83,19 @@ switch(State)
         if(Success)
         {
             sprite_index = sMiniGameCrab1PlayerJump;
-            oMiniGame.Success = true;
+        }
+        else
+        {
+            if(!HitPlayer)
+            {
+                global.phealth -= 10;
+                HitPlayer = true;
+            }
         }
     break;
 }
 
 move_towards_point(MoveX,y,Spd);
-
 
 for(i=0;i<array_length_1d(timer);i++)
 {

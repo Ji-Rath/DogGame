@@ -10,19 +10,19 @@ if(BattleStageEnd)
 	}
 	
 	BattleStage++;
-	if(BattleStage > 3)
+	if(BattleStage > 5)
 	{
 		BattleStage = 1;
 	}
 	
 	//Check enemy and player health
-	if(global.phealth <= 0)
+	if(DrawPlayerHealth <= 0)
 	{
 		var BattleText = instance_create_layer(x,y,"text",oBattleTextBox);
 		BattleText.text = ["You lose!"];
 	}
 	
-	if(Enemy.Health <= 0)
+	if(DrawEnemyHealth <= 0)
 	{
 		var BattleText = instance_create_layer(x,y,"text",oBattleTextBox);
 		BattleText.text = ["You Win!"];
@@ -40,32 +40,41 @@ if(BattleStageEnd)
 			break;
 			
 			case 2:
+				timer[0] = 0.5*60;
+				visible = true;
+			break;
+			
+			case 3:
+				//Player turn
 				with(oBattleMenuParent)
 				{
 					visible = true;
 				}
 				BattleTimer = BattleTimerInit*60;
-				oBattleManager.visible = true;
 			break;
 			
-			case 3:
+			case 4:
+				timer[0] = 0.5*60;
+				visible = true;
+			break;
+			
+			case 5:
 				//CHATTER BEFORE LOOP
+				visible = false;
 				var BattleText = instance_create_layer(x,y,"text",oBattleTextBox);
 				var EnemyTextDuring = Enemy.TextDuring[random_range(0,array_length_1d(Enemy.TextDuring))];
 				BattleText.text = [EnemyTextDuring];
 			break;
 		}
 	}
-	
-	
 	BattleStageEnd = false;
 }
 
 //Reduce battle timer, and end turn if at 0
-if(BattleTimer > 0)
+if(BattleTimer > 0 && visible && BattleStage == 3)
 {
 	BattleTimer -= 1;
-	if (visible && BattleTimer <= 0)
+	if (BattleTimer <= 0)
 	{
 		BattleStageEnd = true;
 		with(oBattleMenuParent)
@@ -73,6 +82,74 @@ if(BattleTimer > 0)
             visible = false;
             Selected = false;
         }
-        oBattleManager.visible = false;
+        visible = false;
+	}
+}
+
+if(UpdateStats)
+{
+	var Check = 0;
+	var Increment = 0.25;
+	if(DrawPlayerHealth > global.phealth)
+	{
+		DrawPlayerHealth -= Increment;
+	}
+	if(DrawPlayerHealth < global.phealth)
+	{
+		DrawPlayerHealth += Increment;
+	}
+	if(DrawPlayerHealth = global.phealth)
+	{
+		Check++;
+	}
+	
+	if(DrawPlayerPP > global.pp)
+	{
+		DrawPlayerPP -= Increment;
+	}
+	if(DrawPlayerPP < global.pp)
+	{
+		DrawPlayerPP += Increment;
+	}
+	if(DrawPlayerPP = global.pp)
+	{
+		Check++;
+	}
+	
+	if(DrawEnemyHealth > Enemy.Health)
+	{
+		DrawEnemyHealth -= Increment;
+	}
+	if(DrawEnemyHealth < Enemy.Health)
+	{
+		DrawEnemyHealth += Increment;
+	}
+	if(DrawEnemyHealth = Enemy.Health)
+	{
+		Check++;
+	}
+	
+	if(Check == 3 && timer[0] == -1)
+	{
+		timer[0] = 0.5*60;
+	}
+}
+
+//timer management
+if(timer[0] > 0)
+{
+	timer[0] -= 1;
+}
+else if(timer[0] != -1)
+{
+	timer[0] = -1;
+	if(UpdateStats)
+	{
+		UpdateStats = false;
+		BattleStageEnd = true;
+	}
+	else
+	{
+		UpdateStats = true;
 	}
 }

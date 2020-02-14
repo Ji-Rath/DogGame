@@ -20,11 +20,10 @@ switch(State)
         var EnemySprite, Enemy;
         with(oBattleManager.Enemy)
         {
-            EnemySprite = sprite_index
+            EnemySprite = sprite_index;
             Enemy = id;
         }
         draw_sprite_ext(EnemySprite,0,x+XEnemyPos,y,0.5,0.5,0,c_white,1);
-        draw_healthbar(x+XEnemyPos-60,y-40,x+XEnemyPos+60,y-55,Enemy.Health*10,c_gray,c_red,c_red,0,true,false);
         draw_sprite_ext(sMiniGamePlayerGlovePlayer,AnimIndex,x,y,PlayerScale,1,0,c_white,1);
         draw_sprite(sMiniGamePlayerGloveButton,ButtonIndex,x,y-300);
     break;

@@ -6,8 +6,6 @@ timer[1] = -1 //MiniGame time
 //Instances to destroy after the minigame
 Instances = ds_list_create();
 
-Success = false;
-
 enum Game
 {
     CrabAttack,

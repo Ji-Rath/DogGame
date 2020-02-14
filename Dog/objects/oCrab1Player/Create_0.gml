@@ -18,3 +18,5 @@ timer[0] = -1;
 timer[1] = 1;
 
 Spd = 1;
+
+HitPlayer = false;

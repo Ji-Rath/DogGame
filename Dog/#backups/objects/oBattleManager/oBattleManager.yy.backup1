@@ -1,4 +1,4 @@
-// 2020-02-13 17:20:06
+// 2020-02-13 18:35:16
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 visible = false;
@@ -10,12 +10,8 @@ uses_physics = false;
 box = sBattleBox;
 gui_width = display_get_gui_width();
 gui_height = display_get_gui_height();
-textcol = 0;
-text = "";
-actioninput = ord("X");
 
 //Assign enemy objects to variables
-Enemy = oDogPaddler.BattleAttacker;
 OriginalEnemy = oDogPaddler.Attacker;
 
 //Create variables to keep track of battle stage
@@ -32,7 +28,7 @@ text_height = string_height("A");
 
 
 //Create Enemy Object
-instance_create_layer(640,390,"Instances",oDogPaddler.BattleAttacker);
+Enemy = instance_create_layer(640,390,"Instances",oDogPaddler.BattleAttacker);
 
 //Create BattleMenu variables
 enum BattleMenu
@@ -60,8 +56,15 @@ instance_create_layer(room_width/2+150,room_height-100,"GUI",oBattleMenuBook);
 
 //Timer Bar Width
 BarWidth = 400;
-BattleTimer = 100;
+BattleTimer = 0;
 BattleTimerInit = 15;
+
+//Update stats effect
+UpdateStats = false;
+DrawPlayerHealth = global.phealth;
+DrawPlayerPP = global.pp;
+DrawEnemyHealth = Enemy.Health;
+timer[0] = -1;
 
 #event step
 
@@ -76,7 +79,7 @@ if(BattleStageEnd)
 	}
 	
 	BattleStage++;
-	if(BattleStage > 3)
+	if(BattleStage > 5)
 	{
 		BattleStage = 1;
 	}
@@ -106,32 +109,41 @@ if(BattleStageEnd)
 			break;
 			
 			case 2:
+				timer[0] = 0.5*60;
+				visible = true;
+			break;
+			
+			case 3:
+				//Player turn
 				with(oBattleMenuParent)
 				{
 					visible = true;
 				}
 				BattleTimer = BattleTimerInit*60;
-				oBattleManager.visible = true;
 			break;
 			
-			case 3:
+			case 4:
+				timer[0] = 0.5*60;
+				visible = true;
+			break;
+			
+			case 5:
 				//CHATTER BEFORE LOOP
+				visible = false;
 				var BattleText = instance_create_layer(x,y,"text",oBattleTextBox);
 				var EnemyTextDuring = Enemy.TextDuring[random_range(0,array_length_1d(Enemy.TextDuring))];
 				BattleText.text = [EnemyTextDuring];
 			break;
 		}
 	}
-	
-	
 	BattleStageEnd = false;
 }
 
 //Reduce battle timer, and end turn if at 0
-if(BattleTimer > 0)
+if(BattleTimer > 0 && visible && BattleStage == 3)
 {
 	BattleTimer -= 1;
-	if (visible && BattleTimer <= 0)
+	if (BattleTimer <= 0)
 	{
 		BattleStageEnd = true;
 		with(oBattleMenuParent)
@@ -139,14 +151,82 @@ if(BattleTimer > 0)
             visible = false;
             Selected = false;
         }
-        oBattleManager.visible = false;
+        visible = false;
+	}
+}
+
+if(UpdateStats)
+{
+	var Check = 0;
+	var Increment = 0.25;
+	if(DrawPlayerHealth > global.phealth)
+	{
+		DrawPlayerHealth -= Increment;
+	}
+	if(DrawPlayerHealth < global.phealth)
+	{
+		DrawPlayerHealth += Increment;
+	}
+	if(DrawPlayerHealth = global.phealth)
+	{
+		Check++;
+	}
+	
+	if(DrawPlayerPP > global.pp)
+	{
+		DrawPlayerPP -= Increment;
+	}
+	if(DrawPlayerPP < global.pp)
+	{
+		DrawPlayerPP += Increment;
+	}
+	if(DrawPlayerPP = global.pp)
+	{
+		Check++;
+	}
+	
+	if(DrawEnemyHealth > Enemy.Health)
+	{
+		DrawEnemyHealth -= Increment;
+	}
+	if(DrawEnemyHealth < Enemy.Health)
+	{
+		DrawEnemyHealth += Increment;
+	}
+	if(DrawEnemyHealth = Enemy.Health)
+	{
+		Check++;
+	}
+	
+	if(Check == 3 && timer[0] == -1)
+	{
+		timer[0] = 0.5*60;
+	}
+}
+
+//timer management
+if(timer[0] > 0)
+{
+	timer[0] -= 1;
+}
+else if(timer[0] != -1)
+{
+	timer[0] = -1;
+	if(UpdateStats)
+	{
+		UpdateStats = false;
+		BattleStageEnd = true;
+	}
+	else
+	{
+		UpdateStats = true;
 	}
 }
 
 #event draw_gui Insert description here
 // You can write your code in this editor
 
-if(BattleStage == 2)
+if(visible)
 {
 	var GUIWidth = display_get_gui_width();
 	var GUIHeight = display_get_gui_height();
@@ -159,18 +239,22 @@ if(BattleStage == 2)
 	draw_sprite(sGUIPlayerInfo,0,50,50);
 	
 	//Draw player status
-	draw_text(50+DPhpx,50+DPhpy,global.phealth);
-	draw_text(50+DPhpx,50+DPhpy+DPoffy,global.pp);
+	draw_text(50+DPhpx,50+DPhpy,round(DrawPlayerHealth));
+	draw_text(50+DPhpx,50+DPhpy+DPoffy,round(DrawPlayerPP));
 	
-	var TimerPosX = GUIWidth/2;
-	var TimerPosY = GUIHeight/1.25;
-	var BarHeight = 20;
-	
-	draw_sprite(sBattleTimer,0,TimerPosX-BarWidth/2-100,TimerPosY);
-	draw_set_color(c_black);
-	draw_rectangle(TimerPosX-BarWidth/2,TimerPosY+BarHeight/2,TimerPosX+BarWidth/2,TimerPosY-BarHeight/2,false);
-	draw_set_color(c_red);
-	var BattleTimerNum = ((BattleTimer/60/BattleTimerInit)*BarWidth);
-	draw_rectangle(TimerPosX-BarWidth/2,TimerPosY+BarHeight/2,TimerPosX-BarWidth/2+BattleTimerNum,TimerPosY-BarHeight/2,false);
+	//Draw battle timer
+	if(BattleTimer > 0)
+	{
+		var TimerPosX = GUIWidth/2;
+		var TimerPosY = GUIHeight/1.25;
+		var BarHeight = 20;
+		
+		draw_sprite(sBattleTimer,0,TimerPosX-BarWidth/2-100,TimerPosY);
+		draw_set_color(c_black);
+		draw_rectangle(TimerPosX-BarWidth/2,TimerPosY+BarHeight/2,TimerPosX+BarWidth/2,TimerPosY-BarHeight/2,false);
+		draw_set_color(c_red);
+		var BattleTimerNum = ((BattleTimer/60/BattleTimerInit)*BarWidth);
+		draw_rectangle(TimerPosX-BarWidth/2,TimerPosY+BarHeight/2,TimerPosX-BarWidth/2+BattleTimerNum,TimerPosY-BarHeight/2,false);
+	}
 }
 
