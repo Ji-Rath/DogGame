@@ -6,22 +6,25 @@ if(visible)
 	var GUIWidth = display_get_gui_width();
 	var GUIHeight = display_get_gui_height();
 	
+	var PortraitX = 50+choose(Shake[0],-Shake[0]);
+	var PortraitY = 50;
+	
 	//Set color/font
 	draw_set_color(c_white);
 	draw_set_font(fnt_stats);
 	
 	//Draw player portrait
-	draw_sprite(sGUIPlayerInfo,0,50,50);
+	draw_sprite(sGUIPlayerInfo,0,PortraitX,PortraitY);
 	
 	//Draw player status
-	draw_text(50+DPhpx,50+DPhpy,round(DrawPlayerHealth));
-	draw_text(50+DPhpx,50+DPhpy+DPoffy,round(DrawPlayerPP));
+	draw_text(PortraitX+DPhpx,PortraitY+DPhpy,round(DrawPlayerHealth));
+	draw_text(PortraitX+DPhpx,PortraitY+DPhpy+DPoffy,round(DrawPlayerPP));
 	
 	//Draw battle timer
 	if(BattleTimer > 0)
 	{
 		var TimerPosX = GUIWidth/2;
-		var TimerPosY = GUIHeight/1.25;
+		var TimerPosY = GUIHeight/1.3;
 		var BarHeight = 20;
 		
 		draw_sprite(sBattleTimer,0,TimerPosX-BarWidth/2-100,TimerPosY);

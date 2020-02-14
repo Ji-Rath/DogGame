@@ -24,3 +24,7 @@ Contents = ds_list_create();
 
 //Start invisible
 visible = false;
+
+//Rotation
+RotValue = 0;
+Rot = 0;

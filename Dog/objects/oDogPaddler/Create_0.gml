@@ -30,3 +30,5 @@ SWalkUp = sDogpaddlerWalkUp;
 SRunUp = sDogpaddlerRunUp;
 SWalkDown = sDogpaddlerWalkDown;
 SRunDown = sDogpaddlerRunDown;
+
+show_debug_message(string(id));

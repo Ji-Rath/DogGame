@@ -1,4 +1,4 @@
-// 2020-02-13 18:37:27
+// 2020-02-13 19:50:05
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 visible = false;
@@ -65,6 +65,13 @@ DrawPlayerHealth = global.phealth;
 DrawPlayerPP = global.pp;
 DrawEnemyHealth = Enemy.Health;
 timer[0] = -1;
+
+//Shake effect
+for(i=0;i<2;i++)
+{
+	Shake[i] = 0;
+}
+
 
 #event step
 
@@ -221,6 +228,23 @@ else if(timer[0] != -1)
 	{
 		UpdateStats = true;
 	}
+	if(DrawPlayerHealth > global.phealth)
+	{
+		Shake[0] = 8;
+	}
+	if(DrawEnemyHealth > Enemy.Health)
+	{
+		Shake[1] = 10;
+	}
+}
+
+//Shake effect
+for(i=0;i<array_length_1d(Shake);i++)
+{
+	if(Shake[i] > 0)
+	{
+		Shake[i] /= 1.075;
+	}
 }
 
 #event draw_gui Insert description here
@@ -231,22 +255,25 @@ if(visible)
 	var GUIWidth = display_get_gui_width();
 	var GUIHeight = display_get_gui_height();
 	
+	var PortraitX = 50+choose(Shake[0],-Shake[0]);
+	var PortraitY = 50;
+	
 	//Set color/font
 	draw_set_color(c_white);
 	draw_set_font(fnt_stats);
 	
 	//Draw player portrait
-	draw_sprite(sGUIPlayerInfo,0,50,50);
+	draw_sprite(sGUIPlayerInfo,0,PortraitX,PortraitY);
 	
 	//Draw player status
-	draw_text(50+DPhpx,50+DPhpy,round(DrawPlayerHealth));
-	draw_text(50+DPhpx,50+DPhpy+DPoffy,round(DrawPlayerPP));
+	draw_text(PortraitX+DPhpx,PortraitY+DPhpy,round(DrawPlayerHealth));
+	draw_text(PortraitX+DPhpx,PortraitY+DPhpy+DPoffy,round(DrawPlayerPP));
 	
 	//Draw battle timer
 	if(BattleTimer > 0)
 	{
 		var TimerPosX = GUIWidth/2;
-		var TimerPosY = GUIHeight/1.25;
+		var TimerPosY = GUIHeight/1.3;
 		var BarHeight = 20;
 		
 		draw_sprite(sBattleTimer,0,TimerPosX-BarWidth/2-100,TimerPosY);

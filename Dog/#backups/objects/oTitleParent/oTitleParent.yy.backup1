@@ -1,0 +1,27 @@
+// 2020-02-13 20:47:26
+#event properties (no comments/etc. here are saved)
+parent_index = -1;
+uses_physics = false;
+
+#event create
+
+Target = 0; //Room target
+Fades = true; //To fade or not to fade
+Text = "";
+
+#event mouse_left_press
+
+if(Fades)
+{
+    scrFadeout(Target,c_black,0.2);
+}
+else
+{
+    room_goto(Target);
+}
+
+#event draw
+
+draw_set_font(fnt_dialogue);
+draw_set_halign(fa_left);
+draw_text(x,y,Text);

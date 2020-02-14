@@ -1,4 +1,4 @@
-// 2020-02-13 00:13:14
+// 2020-02-13 21:04:11
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 sprite_index = sDogpaddler;
@@ -39,8 +39,7 @@ SRunUp = sDogpaddlerRunUp;
 SWalkDown = sDogpaddlerWalkDown;
 SRunDown = sDogpaddlerRunDown;
 
-//Set depth
-depth = -y;
+show_debug_message(string(id));
 
 #event step Insert description here
 // You can write your code in this editor
@@ -70,7 +69,8 @@ if(HSpeed != 0 || VSpeed != 0) {
 	}
 }
 
-
+//Set depth
+depth = -y;
 
 
 
@@ -107,7 +107,7 @@ radius = 50;
 if (global.KeyInteract)
 {
 	var inst = collision_rectangle(x-radius,y-radius,x+radius,y+radius,oNPCParent,false,false);
-	if(inst != noone)
+	if(inst == oNPCParent)
 	{
 		//If player is currently not in dialogue
 		if(!inst.TextCooldown)
@@ -123,6 +123,17 @@ if (global.KeyInteract)
 			inst.TextCooldown = false;
 		}
 	}
+	if(inst == oSaveGame)
+	{
+		show_debug_message("Game Saved!");
+		scrSaveGame();
+	}
+	
+}
+
+if(keyboard_check_pressed(vk_escape))
+{
+	room_goto(rmTitle);
 }
 
 #event collision:oEnemyParent Insert description here

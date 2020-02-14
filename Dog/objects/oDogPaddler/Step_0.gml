@@ -64,7 +64,7 @@ radius = 50;
 if (global.KeyInteract)
 {
 	var inst = collision_rectangle(x-radius,y-radius,x+radius,y+radius,oNPCParent,false,false);
-	if(inst != noone)
+	if(inst == oNPCParent)
 	{
 		//If player is currently not in dialogue
 		if(!inst.TextCooldown)
@@ -80,4 +80,15 @@ if (global.KeyInteract)
 			inst.TextCooldown = false;
 		}
 	}
+	if(inst == oSaveGame)
+	{
+		show_debug_message("Game Saved!");
+		scrGameSave();
+	}
+	
+}
+
+if(keyboard_check_pressed(vk_escape))
+{
+	room_goto(rmTitle);
 }

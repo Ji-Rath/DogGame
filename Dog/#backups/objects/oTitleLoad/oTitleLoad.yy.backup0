@@ -1,0 +1,17 @@
+// 2020-02-13 21:04:34
+#event properties (no comments/etc. here are saved)
+parent_index = oTitleParent;
+sprite_index = sAlert;
+mask_index = sAlert;
+uses_physics = false;
+
+#event create
+
+event_inherited();
+Text = "Load Game";
+Target = rmTest;
+
+
+#event mouse_left_press
+
+scrGameLoad();

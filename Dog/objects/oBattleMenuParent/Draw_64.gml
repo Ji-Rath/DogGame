@@ -2,9 +2,17 @@
 //Set Fonts/Color
 draw_set_font(fnt_battle);
 draw_set_color(c_black);
+var CanScale = (IsHovering || Selected)
+var Scale = 1;
+if(CanScale)
+{
+    Scale *= 1.25;
+}
+
+
 
 //Draw icon
-draw_sprite(sBattleIcons,SpriteIndex,x,y);
+draw_sprite_ext(sBattleIcons,SpriteIndex,x,y,Scale,Scale,RotValue*25,c_white,1);
 
 //Draw interface
 if(Selected)

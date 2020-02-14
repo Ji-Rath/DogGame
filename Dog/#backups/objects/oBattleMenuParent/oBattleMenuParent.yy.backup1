@@ -1,4 +1,4 @@
-// 2020-02-13 18:31:12
+// 2020-02-13 20:16:23
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 mask_index = sBattleIcons;
@@ -32,10 +32,21 @@ Contents = ds_list_create();
 //Start invisible
 visible = false;
 
+//Rotation
+RotValue = 0;
+Rot = 0;
+
 #event step
 
 if(visible && Selected)
 {
+    Rot += (2*pi)/120
+    RotValue = sin(Rot);
+    if(Rot > 2*pi)
+    {
+        Rot = 0;
+    }
+    
     for(i=0;i<ds_list_size(Contents);i++)
     {
         var XPos = x+100
@@ -76,12 +87,16 @@ if(visible && Selected)
                         Selected = false;
                     }
                     oBattleManager.visible = false;
-                    BattleTimer = 0;
+                    oBattleManager.BattleTimer = 0;
                 }
                 
             }
         }
     }
+}
+else
+{
+    Rot = 0;
 }
 
 
@@ -113,9 +128,17 @@ IsHovering = false;
 //Set Fonts/Color
 draw_set_font(fnt_battle);
 draw_set_color(c_black);
+var CanScale = (IsHovering || Selected)
+var Scale = 1;
+if(CanScale)
+{
+    Scale *= 1.25;
+}
+
+
 
 //Draw icon
-draw_sprite(sBattleIcons,SpriteIndex,x,y);
+draw_sprite_ext(sBattleIcons,SpriteIndex,x,y,Scale,Scale,RotValue*25,c_white,1);
 
 //Draw interface
 if(Selected)

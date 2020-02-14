@@ -1,6 +1,13 @@
 
 if(visible && Selected)
 {
+    Rot += (2*pi)/120
+    RotValue = sin(Rot);
+    if(Rot > 2*pi)
+    {
+        Rot = 0;
+    }
+    
     for(i=0;i<ds_list_size(Contents);i++)
     {
         var XPos = x+100
@@ -47,4 +54,9 @@ if(visible && Selected)
             }
         }
     }
+}
+else
+{
+    Rot = 0;
+    RotValue = 0;
 }

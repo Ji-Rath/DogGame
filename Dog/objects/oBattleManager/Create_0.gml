@@ -59,3 +59,9 @@ DrawPlayerHealth = global.phealth;
 DrawPlayerPP = global.pp;
 DrawEnemyHealth = Enemy.Health;
 timer[0] = -1;
+
+//Shake effect
+for(i=0;i<2;i++)
+{
+	Shake[i] = 0;
+}

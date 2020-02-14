@@ -152,4 +152,21 @@ else if(timer[0] != -1)
 	{
 		UpdateStats = true;
 	}
+	if(DrawPlayerHealth > global.phealth)
+	{
+		Shake[0] = 8;
+	}
+	if(DrawEnemyHealth > Enemy.Health)
+	{
+		Shake[1] = 10;
+	}
+}
+
+//Shake effect
+for(i=0;i<array_length_1d(Shake);i++)
+{
+	if(Shake[i] > 0)
+	{
+		Shake[i] /= 1.075;
+	}
 }

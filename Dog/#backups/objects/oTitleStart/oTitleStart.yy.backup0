@@ -1,0 +1,10 @@
+// 2020-02-13 20:51:13
+#event properties (no comments/etc. here are saved)
+parent_index = oTitleParent;
+uses_physics = false;
+
+#event create
+
+event_inherited();
+Text = "Start";
+Target = rmTest;
