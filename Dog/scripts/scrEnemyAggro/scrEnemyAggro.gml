@@ -6,8 +6,8 @@ WalkSpd = 4;
 scrRun();
 
 //Get player direction in x and y directions
-var PlayerDirectionX = sign(oDogPaddler.x-x);
-var PlayerDirectionY = sign(oDogPaddler.y-y);
+var PlayerDirectionX = sign(floor((oDogPaddler.x-x)/4)*4);
+var PlayerDirectionY = sign(floor((oDogPaddler.y-y)/4)*4);
 
 
 //If enemy is out of range + buffer, go to idle
@@ -17,6 +17,8 @@ if (PlayerDistance > (DetectRange+Buffer))
 {
 	State = estates.Idle;
 	timer[0] = choose(1,2,3)*60;
+	HSpeed = 0;
+	VSpeed = 0;
 }
 
 //Follow player 

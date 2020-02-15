@@ -31,4 +31,13 @@ SRunUp = sDogpaddlerRunUp;
 SWalkDown = sDogpaddlerWalkDown;
 SRunDown = sDogpaddlerRunDown;
 
-show_debug_message(string(id));
+//Load Variables from ds map if available
+var SaveVal = ds_map_find_value(oAreaStats.SaveState,"PlayerX");
+if(SaveVal != undefined)
+{
+	x = ds_map_find_value(oAreaStats.SaveState,"PlayerX");
+	y = ds_map_find_value(oAreaStats.SaveState,"PlayerY");
+}
+
+//Load Player Stats
+scrPlayerStats();

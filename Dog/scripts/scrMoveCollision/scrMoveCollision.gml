@@ -1,5 +1,5 @@
 
-if(room != rmBattle)
+if(room != rmBattle && !instance_exists(oCutScene))
 {
 	var tilemap = layer_tilemap_get_id("Collision");
 	var bbox_side;
@@ -55,4 +55,9 @@ if(room != rmBattle)
 		x += HSpeed;
 		y += VSpeed;
 	}
+}
+else
+{
+	HSpeed = 0;
+	VSpeed = 0;
 }

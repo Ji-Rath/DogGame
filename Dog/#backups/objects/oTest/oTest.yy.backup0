@@ -1,0 +1,44 @@
+// 2020-02-14 23:28:19
+#event properties (no comments/etc. here are saved)
+parent_index = -1;
+sprite_index = sDogpaddlerface;
+uses_physics = false;
+
+#event create
+
+path = path_start(path0,3,false,true);
+Scale = 0.5;
+image_xscale = Scale;
+image_yscale = Scale;
+
+SWalk = sDogpaddlerWalk;
+SRun = sDogpaddlerRun;
+SWalkUp = sDogpaddlerWalkUp;
+SRunUp = sDogpaddlerRunUp;
+SWalkDown = sDogpaddlerWalkDown;
+SRunDown = sDogpaddlerRunDown;
+
+OldX = x;
+OldY = y;
+
+#event step
+
+//Split direction into x and y values
+HSpeed = cos(degtorad(direction))*path_get_speed(path0,path_position);
+VSpeed = -sin(degtorad(direction))*path_get_speed(path0,path_position);
+
+//Walk animtion
+scrWalk();
+
+//Get X Change and Y Change to calculate image speed
+var MoveX = x-OldX
+if(MoveX != 0)
+{
+    OldX = x;
+}
+var MoveY = y-OldY
+if(MoveY != 0)
+{
+    MoveY = y;
+}
+image_speed = (MoveX || MoveY);

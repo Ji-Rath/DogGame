@@ -1,8 +1,7 @@
-// 2020-02-13 00:05:54
+// 2020-02-15 00:49:18
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 sprite_index = sEnemydefault;
-persistent = true;
 uses_physics = false;
 
 #event create Insert description here
@@ -52,6 +51,8 @@ Scale = 0.5;
 image_xscale = Scale;
 image_yscale = Scale;
 
+//Key
+Key = room_get_name(room)+"Enemy"+string(x)+string(y);
 
 #event step Insert description here
 // You can write your code in this editor
@@ -59,8 +60,8 @@ image_yscale = Scale;
 //If in battle room or dead, turn invisible
 visible = !((room == rmBattle) || (Health <= 0));
 
-//Only move if visible
-if(visible)
+//Only move if visible and not in a cutscene
+if(visible && instance_exists(oDogPaddler) && !instance_exists(oCutScene))
 {
 	TimerEnded = (timer[0] <= 0);
 	//State machine
@@ -71,6 +72,11 @@ if(visible)
 		case estates.Alert: scrEnemyAlert(); break;
 		case estates.Aggro: scrEnemyAggro(); break;
 	}
+	//Decrease timer
+	if(timer[0] > 0)
+	{
+		timer[0] -= 1;
+	}
 }
 else 
 {
@@ -78,15 +84,16 @@ else
 	VSpeed = 0;
 }
 
-
-//Decrease timer
-if(timer[0] > 0)
+//Go to idle if not moving
+if(HSpeed == 0 && VSpeed == 0)
 {
-	timer[0] -= 1;
+	sprite_index = SIdle;
 }
 
 //Movement collision
 scrMoveCollision();
+
+
 
 //Depth
 depth = -y;

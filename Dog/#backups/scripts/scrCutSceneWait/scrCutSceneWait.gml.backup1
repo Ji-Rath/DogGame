@@ -1,0 +1,9 @@
+// 2020-02-14 22:23:08
+
+Timer++;
+
+if(Timer > argument0)
+{
+    Timer = 0;
+    scrCutSceneEnd();
+}

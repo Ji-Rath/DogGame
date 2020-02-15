@@ -1,0 +1,27 @@
+// 2020-02-15 01:18:58
+#event properties (no comments/etc. here are saved)
+parent_index = -1;
+sprite_index = sAlert;
+uses_physics = false;
+
+#event create
+
+CutScene = //A group of scenes
+[
+    [scrCutSceneMove, instance_find(oDogPaddler,0), 3, 1440, 1152, false],
+    [scrCutSceneWait, 1],
+    [scrCutSceneMove, instance_find(oCrab,0), 3, 1540, 1152, false],
+    [scrCutSceneTextBox, ["Hey its a crab", "look ok we get it, u were bullied as a kid, i really dont care"],[sDogpaddlerface,sCrab],[0,0]],
+    [scrCutSceneWait, 0.5],
+    [scrCutSceneBattle, oCrab],
+    [scrCutSceneFinish]
+];
+
+#event collision:oDogPaddler
+
+if(!instance_exists(oCutScene))
+{
+    var Scene = instance_create_layer(0,0,"Control",oCutScene);
+    Scene.CutScene = CutScene;
+    instance_destroy();
+}

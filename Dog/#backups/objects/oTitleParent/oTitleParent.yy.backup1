@@ -1,4 +1,4 @@
-// 2020-02-13 20:47:26
+// 2020-02-13 20:50:40
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 uses_physics = false;
@@ -23,5 +23,6 @@ else
 #event draw
 
 draw_set_font(fnt_dialogue);
+draw_set_color(c_black);
 draw_set_halign(fa_left);
 draw_text(x,y,Text);

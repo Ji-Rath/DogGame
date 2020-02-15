@@ -30,7 +30,7 @@ switch(State)
             AnimSwitch = choose(0,1);
             with(oBattleManager)
             {
-                Enemy.Health -= 0.3;
+                EnemyBattle.Health -= 1;
             }
         }
         if(global.KeyInteractRelease)

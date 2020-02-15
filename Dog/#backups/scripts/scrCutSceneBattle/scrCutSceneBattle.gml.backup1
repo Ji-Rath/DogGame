@@ -1,0 +1,7 @@
+// 2020-02-14 23:35:09
+var Enemy = argument0;
+
+scrGameSave("TempSave");
+scrFadeout(rmBattle, c_maroon, 0.025);
+oAreaStats.EnemyBattle = Enemy.BattleObject;
+oAreaStats.EnemyKey = Enemy.Key;

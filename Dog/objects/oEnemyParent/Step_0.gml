@@ -4,8 +4,8 @@
 //If in battle room or dead, turn invisible
 visible = !((room == rmBattle) || (Health <= 0));
 
-//Only move if visible
-if(visible)
+//Only move if visible and not in a cutscene
+if(visible && instance_exists(oDogPaddler) && !instance_exists(oCutScene))
 {
 	TimerEnded = (timer[0] <= 0);
 	//State machine
@@ -16,6 +16,11 @@ if(visible)
 		case estates.Alert: scrEnemyAlert(); break;
 		case estates.Aggro: scrEnemyAggro(); break;
 	}
+	//Decrease timer
+	if(timer[0] > 0)
+	{
+		timer[0] -= 1;
+	}
 }
 else 
 {
@@ -23,15 +28,16 @@ else
 	VSpeed = 0;
 }
 
-
-//Decrease timer
-if(timer[0] > 0)
+//Go to idle if not moving
+if(HSpeed == 0 && VSpeed == 0)
 {
-	timer[0] -= 1;
+	sprite_index = SIdle;
 }
 
 //Movement collision
 scrMoveCollision();
+
+
 
 //Depth
 depth = -y;

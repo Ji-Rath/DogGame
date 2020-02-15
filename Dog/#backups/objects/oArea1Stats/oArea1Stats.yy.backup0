@@ -1,8 +1,10 @@
-// 2020-02-10 11:27:02
+// 2020-02-14 10:06:51
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 uses_physics = false;
 
 #event other_room_start Insert description here
 // You can write your code in this editor
+
+global.load = false;
 scrPlayerStats();

@@ -1,4 +1,4 @@
-// 2020-02-13 20:16:57
+// 2020-02-14 17:32:24
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 mask_index = sBattleIcons;
@@ -40,7 +40,7 @@ Rot = 0;
 
 if(visible && Selected)
 {
-    Rot += (2*pi)/120
+    Rot += (2*pi)/120;
     RotValue = sin(Rot);
     if(Rot > 2*pi)
     {

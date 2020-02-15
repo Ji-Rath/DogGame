@@ -1,0 +1,13 @@
+// 2020-02-14 22:28:52
+///@description create_textbox
+///@arg text
+///@arg speakers
+
+
+if(!instance_exists(oTextBox))
+{
+	var TextBox = instance_create_layer(0,0,"Text",oTextBox);
+	TextBox.Text = argument[0];
+	TextBox.Face = argument[1];
+	TextBox.FaceIndex = argument[2];
+}

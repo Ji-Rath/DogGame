@@ -5,14 +5,15 @@ box = sBattleBox;
 gui_width = display_get_gui_width();
 gui_height = display_get_gui_height();
 
-//Assign enemy objects to variables
-OriginalEnemy = oDogPaddler.Attacker;
+//Assign enemy objects to variables and store unique id
+EnemyBattle = oAreaStats.EnemyBattle;
+EnemyKey = oAreaStats.EnemyKey;
 
 //Create variables to keep track of battle stage
 BattleStage = 0;
 BattleStageEnd = false;
 
-//
+//Portait position
 DPstat = sDPstatnormal;
 DPhpx = 170
 DPhpy = 17
@@ -22,7 +23,7 @@ text_height = string_height("A");
 
 
 //Create Enemy Object
-Enemy = instance_create_layer(640,390,"Instances",oDogPaddler.BattleAttacker);
+EnemyBattle = instance_create_layer(640,390,"Instances",EnemyBattle);
 
 //Create BattleMenu variables
 enum BattleMenu
@@ -36,8 +37,8 @@ BattleSelect = BattleMenu.Attack;
 
 
 //INTRO TEXT - BATTLE STAGE 0
-var FirstText = string(Enemy.Name) + " has attacked!"
-var EnemyTextIntro = Enemy.TextIntro[random_range(0,array_length_1d(Enemy.TextIntro))];
+var FirstText = string(EnemyBattle.Name) + " has attacked!"
+var EnemyTextIntro = EnemyBattle.TextIntro[random_range(0,array_length_1d(EnemyBattle.TextIntro))];
 
 var BattleText = instance_create_layer(x,y,"text",oBattleTextBox); 
 BattleText.text = [FirstText,EnemyTextIntro];
@@ -57,7 +58,7 @@ BattleTimerInit = 15;
 UpdateStats = false;
 DrawPlayerHealth = global.phealth;
 DrawPlayerPP = global.pp;
-DrawEnemyHealth = Enemy.Health;
+DrawEnemyHealth = EnemyBattle.Health;
 timer[0] = -1;
 
 //Shake effect

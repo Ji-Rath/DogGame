@@ -1,0 +1,40 @@
+// 2020-02-15 00:26:46
+#event properties (no comments/etc. here are saved)
+parent_index = -1;
+uses_physics = false;
+
+#event create
+
+CurrentScene = 0; //Current scene
+CutScene = //A group of scenes
+[
+    [scrCutSceneMove, instance_find(oDogPaddler,0), 3, 800, 416, false],
+    [scrCutSceneWait, 1],
+    [scrCutSceneMove, instance_find(oCrab,0), 3, 896, 416, false],
+    [scrCutSceneTextBox, ["Hey its a crab", "look ok we get it, u were bullied as a kid, i really dont care"],[sDogpaddlerface,sCrab],[0,0]],
+    [scrCutSceneWait, 0.5],
+    [scrCutSceneBattle, oCrab],
+    [scrCutSceneFinish]
+];
+
+
+Timer = 0;
+CreatedBox = false;
+
+#event step
+/// @description;
+
+SelectedCutScene = CutScene[CurrentScene]; //Get current array scene
+
+//Execute script based on arguments 
+var Length = array_length_1d(SelectedCutScene)-1;
+switch(Length)
+{
+    case 0: script_execute(SelectedCutScene[0]) break;
+    case 1: script_execute(SelectedCutScene[0],SelectedCutScene[1]) break;
+    case 2: script_execute(SelectedCutScene[0],SelectedCutScene[1],SelectedCutScene[2]) break;
+    case 3: script_execute(SelectedCutScene[0],SelectedCutScene[1],SelectedCutScene[2],SelectedCutScene[3]) break;
+    case 4: script_execute(SelectedCutScene[0],SelectedCutScene[1],SelectedCutScene[2],SelectedCutScene[3],SelectedCutScene[4]) break;
+    case 5: script_execute(SelectedCutScene[0],SelectedCutScene[1],SelectedCutScene[2],SelectedCutScene[3],SelectedCutScene[4],SelectedCutScene[5]) break;
+}
+

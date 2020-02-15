@@ -64,28 +64,20 @@ radius = 50;
 if (global.KeyInteract)
 {
 	var inst = collision_rectangle(x-radius,y-radius,x+radius,y+radius,oNPCParent,false,false);
-	if(inst == oNPCParent)
+	if(inst != noone)
 	{
 		//If player is currently not in dialogue
 		if(!inst.TextCooldown)
 		{
-			if (inst != noone)
-			{
-				scrCreateTextBox(inst.Text,inst.id);
-			}
+			scrCreateTextBox(inst.Text,inst.Face,inst.FaceIndex);
 		}
-		//System to prevent textbox from showing up unintentionally
-		if(!instance_exists(oTextBox))
-		{
-			inst.TextCooldown = false;
-		}
-	}
-	if(inst == oSaveGame)
-	{
-		show_debug_message("Game Saved!");
-		scrGameSave();
 	}
 	
+	if(place_meeting(x,y,oSaveGame))
+	{
+		scrGameSave("Save1");
+		show_debug_message("Game Saved!");
+	}
 }
 
 if(keyboard_check_pressed(vk_escape))

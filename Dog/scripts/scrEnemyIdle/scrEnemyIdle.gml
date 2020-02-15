@@ -5,7 +5,6 @@ scrEnemyDetect();
 //Set speed to 0
 HSpeed = 0;
 VSpeed = 0;
-sprite_index = SIdle;
 
 //Wander in a random direction if timer reaches 0
 if (TimerEnded)

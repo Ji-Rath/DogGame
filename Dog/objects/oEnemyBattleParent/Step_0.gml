@@ -1,2 +1,2 @@
 
-visible = !(instance_exists(oMiniGame));
+//visible = !(instance_exists(oMiniGame));

@@ -3,9 +3,22 @@
 if(BattleStageEnd)
 {
 	
-	if(Enemy == noone)
+	if(EnemyBattle == noone)
 	{
-		scrFadeout(rmTest,c_black,0.05);
+		scrGameLoad("TempSave.sav");
+		var EnemyGrid = ds_grid_create(0,0);
+		var Room = ds_map_find_value(oAreaStats.SaveState,"Room");
+		ds_grid_read(EnemyGrid,ds_map_find_value(oAreaStats.SaveState,Room+"Enemy"));
+		for(i=0;i<ds_grid_height(EnemyGrid);i++)
+		{
+			if(ds_grid_get(EnemyGrid,0,i) == EnemyKey)
+			{
+				ds_grid_set(EnemyGrid,3,i,0);
+				i = ds_grid_height(EnemyGrid);
+			}
+		}
+		ds_map_replace(oAreaStats.SaveState,Room+"Enemy",ds_grid_write(EnemyGrid));
+		scrFadeout(asset_get_index(Room),c_black,0.05);
 		exit;
 	}
 	
@@ -26,8 +39,7 @@ if(BattleStageEnd)
 	{
 		var BattleText = instance_create_layer(x,y,"text",oBattleTextBox);
 		BattleText.text = ["You Win!"];
-		Enemy = noone;
-		OriginalEnemy.Health = 0;
+		EnemyBattle = noone;
 	}
 	else 
 	{
@@ -36,7 +48,7 @@ if(BattleStageEnd)
 			case 1:
 				//ENEMY ATTACK, SEND OVER THE SPECIFIED MINI GAME
 				var MiniGame = instance_create_layer(0,0,"GameManager",oMiniGame);
-				MiniGame.GameType = Enemy.EnemyAttacks[random_range(0,array_length_1d(Enemy.EnemyAttacks))]
+				MiniGame.GameType = EnemyBattle.EnemyAttacks[random_range(0,array_length_1d(EnemyBattle.EnemyAttacks))]
 			break;
 			
 			case 2:
@@ -62,7 +74,7 @@ if(BattleStageEnd)
 				//CHATTER BEFORE LOOP
 				visible = false;
 				var BattleText = instance_create_layer(x,y,"text",oBattleTextBox);
-				var EnemyTextDuring = Enemy.TextDuring[random_range(0,array_length_1d(Enemy.TextDuring))];
+				var EnemyTextDuring = EnemyBattle.TextDuring[random_range(0,array_length_1d(EnemyBattle.TextDuring))];
 				BattleText.text = [EnemyTextDuring];
 			break;
 		}
@@ -116,15 +128,15 @@ if(UpdateStats)
 		Check++;
 	}
 	
-	if(DrawEnemyHealth > Enemy.Health)
+	if(DrawEnemyHealth > EnemyBattle.Health)
 	{
 		DrawEnemyHealth -= Increment;
 	}
-	if(DrawEnemyHealth < Enemy.Health)
+	if(DrawEnemyHealth < EnemyBattle.Health)
 	{
 		DrawEnemyHealth += Increment;
 	}
-	if(DrawEnemyHealth = Enemy.Health)
+	if(DrawEnemyHealth = EnemyBattle.Health)
 	{
 		Check++;
 	}
@@ -156,7 +168,7 @@ else if(timer[0] != -1)
 	{
 		Shake[0] = 8;
 	}
-	if(DrawEnemyHealth > Enemy.Health)
+	if(DrawEnemyHealth > EnemyBattle.Health)
 	{
 		Shake[1] = 10;
 	}

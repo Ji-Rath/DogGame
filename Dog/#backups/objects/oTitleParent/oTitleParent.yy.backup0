@@ -1,6 +1,7 @@
-// 2020-02-13 20:50:40
+// 2020-02-14 16:58:24
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
+mask_index = sAlert;
 uses_physics = false;
 
 #event create
@@ -13,7 +14,7 @@ Text = "";
 
 if(Fades)
 {
-    scrFadeout(Target,c_black,0.2);
+    scrFadeout(Target,c_black,0.05);
 }
 else
 {

@@ -1,7 +1,7 @@
 
 if(visible && Selected)
 {
-    Rot += (2*pi)/120
+    Rot += (2*pi)/120;
     RotValue = sin(Rot);
     if(Rot > 2*pi)
     {

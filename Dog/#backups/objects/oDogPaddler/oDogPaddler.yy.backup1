@@ -1,9 +1,8 @@
-// 2020-02-13 21:04:11
+// 2020-02-15 00:50:54
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 sprite_index = sDogpaddler;
 mask_index = sDogpaddlerBox;
-persistent = true;
 uses_physics = false;
 
 #event create Insert description here
@@ -39,7 +38,16 @@ SRunUp = sDogpaddlerRunUp;
 SWalkDown = sDogpaddlerWalkDown;
 SRunDown = sDogpaddlerRunDown;
 
-show_debug_message(string(id));
+//Load Variables from ds map if available
+var SaveVal = ds_map_find_value(oAreaStats.SaveState,"PlayerX");
+if(SaveVal != undefined)
+{
+	x = ds_map_find_value(oAreaStats.SaveState,"PlayerX");
+	y = ds_map_find_value(oAreaStats.SaveState,"PlayerY");
+}
+
+//Load Player Stats
+scrPlayerStats();
 
 #event step Insert description here
 // You can write your code in this editor
@@ -107,15 +115,12 @@ radius = 50;
 if (global.KeyInteract)
 {
 	var inst = collision_rectangle(x-radius,y-radius,x+radius,y+radius,oNPCParent,false,false);
-	if(inst == oNPCParent)
+	if(inst != noone)
 	{
 		//If player is currently not in dialogue
 		if(!inst.TextCooldown)
 		{
-			if (inst != noone)
-			{
-				scrCreateTextBox(inst.Text,inst.id);
-			}
+			scrCreateTextBox(inst.Text,inst.Face,inst.FaceIndex);
 		}
 		//System to prevent textbox from showing up unintentionally
 		if(!instance_exists(oTextBox))
@@ -123,12 +128,12 @@ if (global.KeyInteract)
 			inst.TextCooldown = false;
 		}
 	}
-	if(inst == oSaveGame)
-	{
-		show_debug_message("Game Saved!");
-		scrSaveGame();
-	}
 	
+	if(place_meeting(x,y,oSaveGame))
+	{
+		scrGameSave("Save1");
+		show_debug_message("Game Saved!");
+	}
 }
 
 if(keyboard_check_pressed(vk_escape))
@@ -144,7 +149,8 @@ if(keyboard_check_pressed(vk_escape))
 //Go to battle scene if enemy is alert
 if (other.State == estates.Aggro && other.visible = true)
 {
+	scrGameSave("TempSave");
 	scrFadeout(rmBattle, c_maroon, 0.05);
-	BattleAttacker = other.BattleObject;
-	Attacker = other;
+	oAreaStats.EnemyBattle = other.BattleObject;
+	oAreaStats.EnemyKey = other.Key;
 }

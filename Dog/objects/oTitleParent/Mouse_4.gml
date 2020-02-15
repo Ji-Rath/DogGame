@@ -1,7 +1,7 @@
 
 if(Fades)
 {
-    scrFadeout(Target,c_black,0.2);
+    scrFadeout(Target,c_black,0.05);
 }
 else
 {

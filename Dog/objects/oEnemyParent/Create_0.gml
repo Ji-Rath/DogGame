@@ -44,3 +44,6 @@ timer[0] = 3*60;
 Scale = 0.5;
 image_xscale = Scale;
 image_yscale = Scale;
+
+//Key
+Key = room_get_name(room)+"Enemy"+string(x)+string(y);
