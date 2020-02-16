@@ -1,4 +1,4 @@
-// 2020-02-15 01:17:49
+// 2020-02-15 11:03:58
 #event properties (no comments/etc. here are saved)
 parent_index = oTitleParent;
 sprite_index = sAlert;
@@ -8,5 +8,10 @@ uses_physics = false;
 #event create
 
 event_inherited();
-Text = "Start";
-Target = rm;
+Text = "New Game";
+Target = rmLoad;
+
+#event mouse_left_press
+
+event_inherited();
+oAreaStats.LoadGame = true;

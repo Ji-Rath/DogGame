@@ -2,6 +2,6 @@
 var Enemy = argument0;
 
 scrGameSave("TempSave.sav");
-scrFadeout(rmBattle, c_maroon, 0.025);
+scrFadeout(rmBattle, c_maroon, 0.05);
 oAreaStats.EnemyBattle = Enemy.BattleObject;
 oAreaStats.EnemyKey = Enemy.Key;

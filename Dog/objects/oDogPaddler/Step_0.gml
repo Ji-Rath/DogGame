@@ -75,7 +75,7 @@ if (global.KeyInteract)
 	
 	if(place_meeting(x,y,oSaveGame))
 	{
-		scrGameSave("Save1");
+		scrGameSave(oAreaStats.CurrentSave);
 		show_debug_message("Game Saved!");
 	}
 }

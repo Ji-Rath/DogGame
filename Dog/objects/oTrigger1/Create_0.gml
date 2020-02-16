@@ -1,3 +1,4 @@
+event_inherited();
 
 CutScene = //A group of scenes
 [
@@ -9,3 +10,5 @@ CutScene = //A group of scenes
     [scrCutSceneBattle, oCrab],
     [scrCutSceneFinish]
 ];
+
+OnlyUse = true;

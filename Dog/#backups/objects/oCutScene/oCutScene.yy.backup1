@@ -1,4 +1,4 @@
-// 2020-02-15 00:26:46
+// 2020-02-15 00:27:02
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 uses_physics = false;
@@ -6,16 +6,7 @@ uses_physics = false;
 #event create
 
 CurrentScene = 0; //Current scene
-CutScene = //A group of scenes
-[
-    [scrCutSceneMove, instance_find(oDogPaddler,0), 3, 800, 416, false],
-    [scrCutSceneWait, 1],
-    [scrCutSceneMove, instance_find(oCrab,0), 3, 896, 416, false],
-    [scrCutSceneTextBox, ["Hey its a crab", "look ok we get it, u were bullied as a kid, i really dont care"],[sDogpaddlerface,sCrab],[0,0]],
-    [scrCutSceneWait, 0.5],
-    [scrCutSceneBattle, oCrab],
-    [scrCutSceneFinish]
-];
+CutScene = 0;
 
 
 Timer = 0;

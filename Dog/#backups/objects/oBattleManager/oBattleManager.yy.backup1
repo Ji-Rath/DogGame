@@ -1,4 +1,4 @@
-// 2020-02-15 01:24:08
+// 2020-02-15 10:53:51
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 visible = false;
@@ -58,7 +58,7 @@ instance_create_layer(room_width/2+150,room_height-100,"GUI",oBattleMenuBook);
 //Timer Bar Width
 BarWidth = 400;
 BattleTimer = 0;
-BattleTimerInit = 15;
+BattleTimerInit = 20;
 
 //Update stats effect
 UpdateStats = false;
@@ -79,46 +79,23 @@ for(i=0;i<2;i++)
 //If the current battle stage is done, transition to the next one.
 if(BattleStageEnd)
 {
-	
-	if(EnemyBattle == noone)
-	{
-		scrGameLoad("TempSave.sav");
-		var EnemyGrid = ds_grid_create(0,0);
-		var Room = ds_map_find_value(oAreaStats.SaveState,"Room");
-		ds_grid_read(EnemyGrid,ds_map_find_value(oAreaStats.SaveState,Room+"Enemy"));
-		for(i=0;i<ds_grid_height(EnemyGrid);i++)
-		{
-			if(ds_grid_get(EnemyGrid,0,i) == EnemyKey)
-			{
-				ds_grid_set(EnemyGrid,3,i,0);
-				i = ds_grid_height(EnemyGrid);
-			}
-		}
-		ds_map_replace(oAreaStats.SaveState,Room+"Enemy",ds_grid_write(EnemyGrid));
-		scrFadeout(Room,c_black,0.05);
-		exit;
-	}
-	
 	BattleStage++;
-	if(BattleStage > 5)
+	if(BattleStage == 6)
 	{
 		BattleStage = 1;
 	}
 	
 	//Check enemy and player health
-	if(DrawPlayerHealth <= 0)
+	if(DrawPlayerHealth <= 0 && BattleStage < 6)
 	{
-		var BattleText = instance_create_layer(x,y,"text",oBattleTextBox);
-		BattleText.text = ["You lose!"];
+		BattleStage = 9;
 	}
 	
-	if(DrawEnemyHealth <= 0)
+	if(DrawEnemyHealth <= 0 && BattleStage < 6)
 	{
-		var BattleText = instance_create_layer(x,y,"text",oBattleTextBox);
-		BattleText.text = ["You Win!"];
-		EnemyBattle = noone;
+		BattleStage = 7;
 	}
-	else 
+	
 	{
 		switch(BattleStage)
 		{
@@ -154,6 +131,34 @@ if(BattleStageEnd)
 				var EnemyTextDuring = EnemyBattle.TextDuring[random_range(0,array_length_1d(EnemyBattle.TextDuring))];
 				BattleText.text = [EnemyTextDuring];
 			break;
+			
+			case 7:
+				var BattleText = instance_create_layer(x,y,"text",oBattleTextBox);
+				BattleText.text = ["You Win!"];
+			break;
+			
+			case 8:
+				//PLAYER WINS
+				scrGameLoad("TempSave.sav");
+				var EnemyGrid = ds_grid_create(0,0);
+				var Room = ds_map_find_value(oAreaStats.SaveState,"Room");
+				ds_grid_read(EnemyGrid,ds_map_find_value(oAreaStats.SaveState,Room+"Enemy"));
+				for(i=0;i<ds_grid_height(EnemyGrid);i++)
+				{
+					if(ds_grid_get(EnemyGrid,0,i) == EnemyKey)
+					{
+						ds_grid_set(EnemyGrid,3,i,0);
+						i = ds_grid_height(EnemyGrid);
+					}
+				}
+				ds_map_replace(oAreaStats.SaveState,Room+"Enemy",ds_grid_write(EnemyGrid));
+				scrFadeout(asset_get_index(Room),c_black,0.05);
+			break;
+			
+			case 9:
+				//PLAYER LOSES
+				scrFadeout(rmGameOver,c_red,0.01);
+			break;
 		}
 	}
 	BattleStageEnd = false;
@@ -168,7 +173,7 @@ if(BattleTimer > 0 && visible && BattleStage == 3)
 		BattleStageEnd = true;
 		with(oBattleMenuParent)
         {
-            visible = false;
+            //visible = false;
             Selected = false;
         }
         visible = false;

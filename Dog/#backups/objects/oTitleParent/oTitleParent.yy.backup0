@@ -1,4 +1,4 @@
-// 2020-02-14 16:58:24
+// 2020-02-15 10:44:50
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 mask_index = sAlert;
@@ -6,9 +6,8 @@ uses_physics = false;
 
 #event create
 
-Target = 0; //Room target
 Fades = true; //To fade or not to fade
-Text = "";
+Color = c_black;
 
 #event mouse_left_press
 
@@ -24,6 +23,8 @@ else
 #event draw
 
 draw_set_font(fnt_dialogue);
-draw_set_color(c_black);
+draw_set_color(Color);
 draw_set_halign(fa_left);
-draw_text(x,y,Text);
+draw_set_valign(fa_center);
+draw_text(x-(16*image_xscale),y,Text);
+draw_set_valign(fa_top);

@@ -1,4 +1,4 @@
 
 event_inherited();
-Text = "Start";
-Target = rmSceneBeach;
+Text = "New Game";
+Target = rmLoad;

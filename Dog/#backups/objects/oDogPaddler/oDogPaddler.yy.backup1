@@ -1,4 +1,4 @@
-// 2020-02-15 00:50:54
+// 2020-02-15 10:47:21
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 sprite_index = sDogpaddler;
@@ -122,16 +122,11 @@ if (global.KeyInteract)
 		{
 			scrCreateTextBox(inst.Text,inst.Face,inst.FaceIndex);
 		}
-		//System to prevent textbox from showing up unintentionally
-		if(!instance_exists(oTextBox))
-		{
-			inst.TextCooldown = false;
-		}
 	}
 	
 	if(place_meeting(x,y,oSaveGame))
 	{
-		scrGameSave("Save1");
+		scrGameSave(oAreaStats.SaveName);
 		show_debug_message("Game Saved!");
 	}
 }

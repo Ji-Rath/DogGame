@@ -52,7 +52,7 @@ instance_create_layer(room_width/2+150,room_height-100,"GUI",oBattleMenuBook);
 //Timer Bar Width
 BarWidth = 400;
 BattleTimer = 0;
-BattleTimerInit = 15;
+BattleTimerInit = 20;
 
 //Update stats effect
 UpdateStats = false;

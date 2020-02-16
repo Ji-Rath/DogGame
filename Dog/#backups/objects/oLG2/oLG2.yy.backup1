@@ -1,0 +1,33 @@
+// 2020-02-15 10:36:26
+#event properties (no comments/etc. here are saved)
+parent_index = oLGParent;
+sprite_index = sAlert;
+mask_index = sAlert;
+uses_physics = false;
+
+#event create
+
+Text = "Save 2";
+SaveName = "Save2";
+event_inherited();
+
+
+scrGameLoad(SaveName);
+var Room = ds_map_find_value(oAreaStats.SaveState,"Room");
+if(Room != undefined && room_get_name(room) != Room)
+{
+    Text += "- "+Room;
+}
+else
+{
+    Text += "- None"
+}
+
+
+#event mouse_left_press
+
+var Room = ds_map_find_value(oAreaStats.SaveState,"Room");
+if(Room != undefined && room_get_name(room) != Room)
+{
+    scrFadeout(asset_get_index(Room),c_black,0.05);
+}

@@ -1,4 +1,4 @@
-// 2020-02-14 16:58:55
+// 2020-02-15 11:04:02
 #event properties (no comments/etc. here are saved)
 parent_index = oTitleParent;
 sprite_index = sAlert;
@@ -9,13 +9,9 @@ uses_physics = false;
 
 event_inherited();
 Text = "Load Game";
-
+Target = rmLoad;
 
 #event mouse_left_press
 
-scrGameLoad("Save1");
-var Room = ds_map_find_value(oAreaStats.SaveState,"Room");
-if(Room != undefined && room_get_name(room) != Room)
-{
-    scrFadeout(asset_get_index(Room),c_black,0.05);
-}
+event_inherited();
+oAreaStats.LoadGame = true;

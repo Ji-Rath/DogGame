@@ -1,0 +1,26 @@
+// 2020-02-15 11:33:08
+#event properties (no comments/etc. here are saved)
+parent_index = -1;
+sprite_index = sAlert;
+uses_physics = false;
+
+#event create
+
+Key = room_get_name(room)+"Trigger"+string(x)+string(y);
+
+visible = false;
+
+CutScene = []; //A group of scenes
+
+OnlyUse = false; //Should the trigger only be used once?
+Used = false; //Has the trigger been used already?
+
+#event collision:oDogPaddler
+
+if(!instance_exists(oCutScene) && !Used)
+{
+    var Scene = instance_create_layer(0,0,"Control",oCutScene);
+    Scene.CutScene = CutScene;
+    if(OnlyUse)
+        Used = true;
+}

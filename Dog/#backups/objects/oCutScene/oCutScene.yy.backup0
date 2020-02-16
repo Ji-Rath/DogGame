@@ -1,4 +1,4 @@
-// 2020-02-15 00:27:02
+// 2020-02-15 11:18:44
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 uses_physics = false;
@@ -11,6 +11,9 @@ CutScene = 0;
 
 Timer = 0;
 CreatedBox = false;
+
+OldX = 0;
+OldY = 0;
 
 #event step
 /// @description;

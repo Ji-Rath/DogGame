@@ -25,6 +25,6 @@ Contents = ds_list_create();
 //Start invisible
 visible = false;
 
-//Rotation
+//Rotation when icon selected
 RotValue = 0;
 Rot = 0;

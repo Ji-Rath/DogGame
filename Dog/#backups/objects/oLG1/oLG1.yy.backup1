@@ -1,0 +1,12 @@
+// 2020-02-15 10:36:59
+#event properties (no comments/etc. here are saved)
+parent_index = oLGParent;
+sprite_index = sAlert;
+mask_index = sAlert;
+uses_physics = false;
+
+#event create
+
+Text = "Save 1";
+SaveName = "Save1";
+event_inherited();

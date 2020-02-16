@@ -1,2 +1,3 @@
 
-CurrentScene++;
+with(oCutScene)
+    CurrentScene++;

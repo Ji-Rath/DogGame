@@ -1,3 +1,4 @@
-// 2020-02-14 22:20:53
+// 2020-02-15 11:26:30
 
-CurrentScene++;
+with(oCutScene)
+    CurrentScene++;

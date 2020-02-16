@@ -1,4 +1,4 @@
-// 2020-02-14 17:32:24
+// 2020-02-15 09:27:09
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 mask_index = sBattleIcons;
@@ -32,11 +32,12 @@ Contents = ds_list_create();
 //Start invisible
 visible = false;
 
-//Rotation
+//Rotation when icon selected
 RotValue = 0;
 Rot = 0;
 
 #event step
+
 
 if(visible && Selected)
 {

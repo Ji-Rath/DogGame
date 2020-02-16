@@ -1,0 +1,17 @@
+// 2020-02-15 10:41:22
+#event properties (no comments/etc. here are saved)
+parent_index = oTitleParent;
+uses_physics = false;
+
+
+#event create
+
+event_inherited();
+Title = "Back"
+Target = rmTitle;
+
+#event mouse_left_press
+
+event_inherited();
+
+ds_map_clear(oAreaStats.SaveState);
