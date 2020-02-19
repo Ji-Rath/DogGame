@@ -1,4 +1,4 @@
-// 2020-02-15 10:53:51
+// 2020-02-19 11:56:32
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 visible = false;
@@ -96,70 +96,68 @@ if(BattleStageEnd)
 		BattleStage = 7;
 	}
 	
+	switch(BattleStage)
 	{
-		switch(BattleStage)
-		{
-			case 1:
-				//ENEMY ATTACK, SEND OVER THE SPECIFIED MINI GAME
-				var MiniGame = instance_create_layer(0,0,"GameManager",oMiniGame);
-				MiniGame.GameType = EnemyBattle.EnemyAttacks[random_range(0,array_length_1d(EnemyBattle.EnemyAttacks))]
-			break;
-			
-			case 2:
-				timer[0] = 0.5*60;
+		case 1:
+			//ENEMY ATTACK, SEND OVER THE SPECIFIED MINI GAME
+			var MiniGame = instance_create_layer(0,0,"GameManager",oMiniGame);
+			MiniGame.GameType = EnemyBattle.EnemyAttacks[random_range(0,array_length_1d(EnemyBattle.EnemyAttacks))]
+		break;
+		
+		case 2:
+			timer[0] = 0.5*60;
+			visible = true;
+		break;
+		
+		case 3:
+			//Player turn
+			with(oBattleMenuParent)
+			{
 				visible = true;
-			break;
-			
-			case 3:
-				//Player turn
-				with(oBattleMenuParent)
+			}
+			BattleTimer = BattleTimerInit*60;
+		break;
+		
+		case 4:
+			timer[0] = 0.5*60;
+			visible = true;
+		break;
+		
+		case 5:
+			//CHATTER BEFORE LOOP
+			visible = false;
+			var BattleText = instance_create_layer(x,y,"text",oBattleTextBox);
+			var EnemyTextDuring = EnemyBattle.TextDuring[random_range(0,array_length_1d(EnemyBattle.TextDuring))];
+			BattleText.text = [EnemyTextDuring];
+		break;
+		
+		case 7:
+			var BattleText = instance_create_layer(x,y,"text",oBattleTextBox);
+			BattleText.text = ["You Win!"];
+		break;
+		
+		case 8:
+			//PLAYER WINS
+			var Room = ds_map_find_value(oAreaStats.SaveState,"Room");
+			var EnemyGrid = ds_grid_create(0,0);
+			ds_grid_read(EnemyGrid, ds_map_find_value(oAreaStats.SaveState,Room+"Enemy"));
+			for(i=0;i<ds_grid_height(EnemyGrid);i++)
+			{
+				if(ds_grid_get(EnemyGrid,0,i) == EnemyKey)
 				{
-					visible = true;
+					ds_grid_set(EnemyGrid,3,i,0);
+					i = ds_grid_height(EnemyGrid);
 				}
-				BattleTimer = BattleTimerInit*60;
-			break;
-			
-			case 4:
-				timer[0] = 0.5*60;
-				visible = true;
-			break;
-			
-			case 5:
-				//CHATTER BEFORE LOOP
-				visible = false;
-				var BattleText = instance_create_layer(x,y,"text",oBattleTextBox);
-				var EnemyTextDuring = EnemyBattle.TextDuring[random_range(0,array_length_1d(EnemyBattle.TextDuring))];
-				BattleText.text = [EnemyTextDuring];
-			break;
-			
-			case 7:
-				var BattleText = instance_create_layer(x,y,"text",oBattleTextBox);
-				BattleText.text = ["You Win!"];
-			break;
-			
-			case 8:
-				//PLAYER WINS
-				scrGameLoad("TempSave.sav");
-				var EnemyGrid = ds_grid_create(0,0);
-				var Room = ds_map_find_value(oAreaStats.SaveState,"Room");
-				ds_grid_read(EnemyGrid,ds_map_find_value(oAreaStats.SaveState,Room+"Enemy"));
-				for(i=0;i<ds_grid_height(EnemyGrid);i++)
-				{
-					if(ds_grid_get(EnemyGrid,0,i) == EnemyKey)
-					{
-						ds_grid_set(EnemyGrid,3,i,0);
-						i = ds_grid_height(EnemyGrid);
-					}
-				}
-				ds_map_replace(oAreaStats.SaveState,Room+"Enemy",ds_grid_write(EnemyGrid));
-				scrFadeout(asset_get_index(Room),c_black,0.05);
-			break;
-			
-			case 9:
-				//PLAYER LOSES
-				scrFadeout(rmGameOver,c_red,0.01);
-			break;
-		}
+			}
+			ds_map_replace(oAreaStats.SaveState,Room+"Enemy",ds_grid_write(EnemyGrid));
+			scrGameSave("TempSave");
+			scrFadeout(asset_get_index(Room),c_black,0.05);
+		break;
+		
+		case 9:
+			//PLAYER LOSES
+			scrFadeout(rmGameOver,c_red,0.01);
+		break;
 	}
 	BattleStageEnd = false;
 }

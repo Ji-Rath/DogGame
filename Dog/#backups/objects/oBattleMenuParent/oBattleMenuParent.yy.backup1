@@ -1,4 +1,4 @@
-// 2020-02-15 09:25:00
+// 2020-02-19 11:48:56
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 mask_index = sBattleIcons;
@@ -15,8 +15,8 @@ ItemMouseHoverSelect = 0;
 enum Item
 {
     GlovesOff,
-    Punch,
-    Hamburger
+    Hamburger,
+    LastItem
 }
 
 enum BattleState
@@ -36,31 +36,30 @@ visible = false;
 RotValue = 0;
 Rot = 0;
 
-//Smooth Disappear/Appear Effect
-YPosValue = 0;
-YPosEffect = 0;
+//Get item name, script, and amount
+scrItems();
+
+
+
+//Add available items to ds list
+for(i=0;i<Item.LastItem;i++)
+{
+    if(i != Item.LastItem)
+    {
+        var GroupCheck = ItemDescription[i];
+        if(GroupCheck[3] == ItemIndex)
+        {
+            ds_list_add(Contents,i);
+        }
+    }
+}
 
 #event step
 
-YPosEffect = sin(YPosValue);
-
-if(oBattleManager.visible && visible)
-{
-    if(YPosEffect != 1)
-    {
-        YPosValue += (2*pi)/120
-    }
-}
-else
-{
-    if(YPosEffect != 0)
-    {
-        YPosValue -= (2*pi)/120
-    }
-}
 
 if(visible && Selected)
 {
+    //Rotate effect
     Rot += (2*pi)/120;
     RotValue = sin(Rot);
     if(Rot > 2*pi)
@@ -68,6 +67,9 @@ if(visible && Selected)
         Rot = 0;
     }
     
+    
+    
+    //If player clicks on one of the buttons
     for(i=0;i<ds_list_size(Contents);i++)
     {
         var XPos = x+100
@@ -76,40 +78,29 @@ if(visible && Selected)
         //If mouse is hovered over item, save item and end loop
         if(ItemMouseHover)
         {
-            ItemMouseHoverSelect = i;
+            //End for loop
+            ItemMouseHoverSelect = ds_list_find_value(Contents,i);
             i = ds_list_size(Contents);
             
             if(mouse_check_button_pressed(mb_left))
             {
                 //Do Action based on item selected
-                var Action = ds_list_find_value(Contents,ItemMouseHoverSelect);
-                switch(Action)
+                var ContentArray = ItemContent[ItemMouseHoverSelect];
+                var Len = array_length_1d(ContentArray)-1;
+                switch(Len)
                 {
-                    case Item.GlovesOff:
-                        var MiniGame = instance_create_layer(0,0,"GameManager",oMiniGame);
-    				    MiniGame.GameType = Game.GlovesOff;
-                    break;
-                    
-                    case Item.Punch:
-                        
-                    break;
-                    
-                    case Item.Hamburger:
-                        global.phealth += 10;
-                        var BattleText = instance_create_layer(x,y,"text",oBattleTextBox);
-        				BattleText.text = ["You eat the tasty burger."];
-                    break;
+                    case 0: script_execute(ContentArray[0]); break;
+                    case 1: script_execute(ContentArray[0],ContentArray[1]); break;
+                    case 2: script_execute(ContentArray[0],ContentArray[1],ContentArray[2]); break;
+                    case 3: script_execute(ContentArray[0],ContentArray[1],ContentArray[2],ContentArray[3]); break;
                 }
-                if(Action != noone)
+                with(oBattleMenuParent)
                 {
-                    with(oBattleMenuParent)
-                    {
-                        visible = false;
-                        Selected = false;
-                    }
-                    oBattleManager.visible = false;
-                    oBattleManager.BattleTimer = 0;
+                    visible = false;
+                    Selected = false;
                 }
+                oBattleManager.visible = false;
+                oBattleManager.BattleTimer = 0;
                 
             }
         }
@@ -160,7 +151,7 @@ if(CanScale)
 
 
 //Draw icon
-draw_sprite_ext(sBattleIcons,SpriteIndex,x,y+100-(YPosEffect*100),Scale,Scale,RotValue*25,c_white,1);
+draw_sprite_ext(sBattleIcons,SpriteIndex,x,y,Scale,Scale,RotValue*25,c_white,1);
 
 //Draw interface
 if(Selected)
@@ -171,14 +162,26 @@ if(Selected)
     for(i=0;i<ds_list_size(Contents);i++)
     {
         //Draw available contents
-        draw_sprite(ItemContent[ds_list_find_value(Contents,i),2],0,x+100,y-250+(i*75));
+        var ArrayIndex = ds_list_find_value(Contents,i);
+        var DescArray = ItemDescription[ArrayIndex];
+        var ItemCount = ds_map_find_value(oAreaStats.Items, ArrayIndex);
+        if(ItemCount)
+        {
+            draw_sprite(DescArray[2],0,x+100,y-250+(i*75));
+            if(ItemCount > 1)
+            {
+                draw_text(x+100,y-250+(i*75),ItemCount);
+            }
+        }
+        
     }
     
     if(ItemMouseHover)
     {
+        var DescArray = ItemDescription[ItemMouseHoverSelect];
         draw_sprite(sBattleMenu2,0,x,y);
         draw_set_font(fnt_stats);
-        draw_text(x+80,y-470,ItemContent[ds_list_find_value(Contents,ItemMouseHoverSelect),0]);
-        draw_text(x+80,y-420,ItemContent[ds_list_find_value(Contents,ItemMouseHoverSelect),1]);
+        draw_text(x+80,y-470,DescArray[0]);
+        draw_text(x+80,y-420,DescArray[1]);
     }
 }

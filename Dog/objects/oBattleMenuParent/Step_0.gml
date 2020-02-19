@@ -2,6 +2,7 @@
 
 if(visible && Selected)
 {
+    //Rotate effect
     Rot += (2*pi)/120;
     RotValue = sin(Rot);
     if(Rot > 2*pi)
@@ -9,6 +10,9 @@ if(visible && Selected)
         Rot = 0;
     }
     
+    
+    
+    //If player clicks on one of the buttons
     for(i=0;i<ds_list_size(Contents);i++)
     {
         var XPos = x+100
@@ -17,40 +21,29 @@ if(visible && Selected)
         //If mouse is hovered over item, save item and end loop
         if(ItemMouseHover)
         {
-            ItemMouseHoverSelect = i;
+            //End for loop
+            ItemMouseHoverSelect = ds_list_find_value(Contents,i);
             i = ds_list_size(Contents);
             
             if(mouse_check_button_pressed(mb_left))
             {
                 //Do Action based on item selected
-                var Action = ds_list_find_value(Contents,ItemMouseHoverSelect);
-                switch(Action)
+                var ContentArray = ItemContent[ItemMouseHoverSelect];
+                var Len = array_length_1d(ContentArray)-1;
+                switch(Len)
                 {
-                    case Item.GlovesOff:
-                        var MiniGame = instance_create_layer(0,0,"GameManager",oMiniGame);
-    				    MiniGame.GameType = Game.GlovesOff;
-                    break;
-                    
-                    case Item.Punch:
-                        
-                    break;
-                    
-                    case Item.Hamburger:
-                        global.phealth += 10;
-                        var BattleText = instance_create_layer(x,y,"text",oBattleTextBox);
-        				BattleText.text = ["You eat the tasty burger."];
-                    break;
+                    case 0: script_execute(ContentArray[0]); break;
+                    case 1: script_execute(ContentArray[0],ContentArray[1]); break;
+                    case 2: script_execute(ContentArray[0],ContentArray[1],ContentArray[2]); break;
+                    case 3: script_execute(ContentArray[0],ContentArray[1],ContentArray[2],ContentArray[3]); break;
                 }
-                if(Action != noone)
+                with(oBattleMenuParent)
                 {
-                    with(oBattleMenuParent)
-                    {
-                        visible = false;
-                        Selected = false;
-                    }
-                    oBattleManager.visible = false;
-                    oBattleManager.BattleTimer = 0;
+                    visible = false;
+                    Selected = false;
                 }
+                oBattleManager.visible = false;
+                oBattleManager.BattleTimer = 0;
                 
             }
         }

@@ -20,6 +20,7 @@ with(oEnemyParent)
     }
 }
 
+//Check triggers and update the ones that were already used
 with(oTriggerParent)
 {
     var GridString = ds_map_find_value(oAreaStats.SaveState,room_get_name(room)+"Trigger");

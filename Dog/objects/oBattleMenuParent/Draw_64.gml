@@ -23,14 +23,26 @@ if(Selected)
     for(i=0;i<ds_list_size(Contents);i++)
     {
         //Draw available contents
-        draw_sprite(ItemContent[ds_list_find_value(Contents,i),2],0,x+100,y-250+(i*75));
+        var ArrayIndex = ds_list_find_value(Contents,i);
+        var DescArray = ItemDescription[ArrayIndex];
+        var ItemCount = ds_map_find_value(oAreaStats.Items, ArrayIndex);
+        if(ItemCount)
+        {
+            draw_sprite(DescArray[2],0,x+100,y-250+(i*75));
+            if(ItemCount > 1)
+            {
+                draw_text(x+100,y-250+(i*75),ItemCount);
+            }
+        }
+        
     }
     
     if(ItemMouseHover)
     {
+        var DescArray = ItemDescription[ItemMouseHoverSelect];
         draw_sprite(sBattleMenu2,0,x,y);
         draw_set_font(fnt_stats);
-        draw_text(x+80,y-470,ItemContent[ds_list_find_value(Contents,ItemMouseHoverSelect),0]);
-        draw_text(x+80,y-420,ItemContent[ds_list_find_value(Contents,ItemMouseHoverSelect),1]);
+        draw_text(x+80,y-470,DescArray[0]);
+        draw_text(x+80,y-420,DescArray[1]);
     }
 }

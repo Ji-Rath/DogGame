@@ -61,10 +61,9 @@ if(BattleStageEnd)
 		
 		case 8:
 			//PLAYER WINS
-			scrGameLoad("TempSave.sav");
-			var EnemyGrid = ds_grid_create(0,0);
 			var Room = ds_map_find_value(oAreaStats.SaveState,"Room");
-			ds_grid_read(EnemyGrid,ds_map_find_value(oAreaStats.SaveState,Room+"Enemy"));
+			var EnemyGrid = ds_grid_create(0,0);
+			ds_grid_read(EnemyGrid, ds_map_find_value(oAreaStats.SaveState,Room+"Enemy"));
 			for(i=0;i<ds_grid_height(EnemyGrid);i++)
 			{
 				if(ds_grid_get(EnemyGrid,0,i) == EnemyKey)
@@ -75,6 +74,7 @@ if(BattleStageEnd)
 			}
 			ds_map_replace(oAreaStats.SaveState,Room+"Enemy",ds_grid_write(EnemyGrid));
 			scrFadeout(asset_get_index(Room),c_black,0.05);
+			scrGameSave("TempSave");
 		break;
 		
 		case 9:

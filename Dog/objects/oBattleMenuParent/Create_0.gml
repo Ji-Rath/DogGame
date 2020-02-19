@@ -8,8 +8,8 @@ ItemMouseHoverSelect = 0;
 enum Item
 {
     GlovesOff,
-    Punch,
-    Hamburger
+    Hamburger,
+    LastItem
 }
 
 enum BattleState
@@ -28,3 +28,21 @@ visible = false;
 //Rotation when icon selected
 RotValue = 0;
 Rot = 0;
+
+//Get item name, script, and amount
+scrItems();
+
+
+
+//Add available items to ds list
+for(i=0;i<Item.LastItem;i++)
+{
+    if(i != Item.LastItem)
+    {
+        var GroupCheck = ItemDescription[i];
+        if(GroupCheck[3] == ItemIndex)
+        {
+            ds_list_add(Contents,i);
+        }
+    }
+}

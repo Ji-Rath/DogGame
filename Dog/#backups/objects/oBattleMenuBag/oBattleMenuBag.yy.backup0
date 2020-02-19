@@ -1,4 +1,4 @@
-// 2020-02-08 21:22:24
+// 2020-02-18 08:26:37
 #event properties (no comments/etc. here are saved)
 parent_index = oBattleMenuParent;
 mask_index = sBattleIcons;
@@ -6,12 +6,7 @@ uses_physics = false;
 
 #event create
 
+ItemIndex = 1;
 event_inherited();
-
-ItemContent[Item.Hamburger,0] = "Hamburger"; //Sprite of item
-ItemContent[Item.Hamburger,1] = "A Delicious Snack"; //Description of item
-ItemContent[Item.Hamburger,2] = sEnemydown; //Sprite of item
-
-ds_list_add(Contents,Item.Hamburger);
-
 SpriteIndex = 1;
+

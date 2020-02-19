@@ -15,6 +15,9 @@ ds_map_replace(oAreaStats.SaveState,"PlayerLevel",global.plevel);
 //Save Room
 ds_map_replace(oAreaStats.SaveState,"Room",room_get_name(room));
 
+//Save Items
+ds_map_replace(oAreaStats.SaveState,"Items",ds_map_write(oAreaStats.Items));
+
 //Save Enemy State
 var Enemy = ds_grid_create(4,0);
 var KeyName = room_get_name(room)+"Enemy";
