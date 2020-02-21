@@ -1,11 +1,9 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-Text = []; //Array of text
+TextArray = []; //Array of text
 Page = 0; //Counter for curent page
 TextPos = 0; //Text position
-Face = []; //Array of sprites
-FaceIndex = []; //Array of indexes for each sprite
 
 TextMaxWidth = 500;
 

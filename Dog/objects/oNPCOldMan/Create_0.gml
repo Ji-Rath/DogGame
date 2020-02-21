@@ -5,11 +5,6 @@ event_inherited();
 
 WalkSpeed = 3;
 Speed = WalkSpeed;
-HSpeed = 0;
-VSpeed = 0;
-
-//Start path
-path_start(pathOldMan,Speed,path_action_restart,false);
 
 //Assigning sprites to variables
 SWalk = sOldManWalk;
@@ -22,23 +17,27 @@ SIdle = sOldMan;
 SIdleUp = sOldMan;
 SIdleDown = sOldMan;
 
-Text = ["Yo Man hows it going?","Its going pretty sicko mode, how about you?","Meh","Ive had better days"];
-Face = [sEnemyalert,sDogpaddlerface,sEnemyalert,sEnemyup];
-FaceIndex = [0,1,0,0];
+//Interact text
+Text = [
+    ["Yo Man hows it going?",sEnemyalert,0],
+    ["Its going pretty sicko mode, how about you?",sDogpaddlerface,1],
+    ["Meh",sEnemyalert,1],
+    ["Ive had better days",sEnemyalert,2]
+]
 
 var Player = instance_find(oDogPaddler,0);
 CSWarning = //A group of scenes
 [
+    [scrCutSceneCamera, id],
     [scrCutSceneEmote, id, sAlert],
     [scrCutSceneWait, 0.5],
-    [scrCutSceneCamera, id],
     [scrCutSceneMoveToObject, id, Speed, Player, 100],
     [scrCutSceneCamera, Player],
     [scrCutSceneWait, 0.5],
-    [scrCutSceneTextBox, ["Hey, where did you come from? There are some sicko mode crabs around"],[sOldMan],[0]],
+    [scrCutSceneTextBox, [["Hey, where did you come from? There are some sicko mode crabs around",sOldMan,0]]],
     [scrCutSceneEmote, Player, sAlert],
     [scrCutSceneWait, 0.5],
-    [scrCutSceneTextBox, ["Dont worry, I was born to fight them", "Dont say I didnt warn ya"],[sDogpaddlerface, sOldMan],[2,0]],
+    [scrCutSceneTextBox, [["Dont worry, I was born to fight them",sDogpaddlerface,2],["Dont say I didnt warn ya",sOldMan,0]]],
     [scrCutSceneFinish]
 ];
 

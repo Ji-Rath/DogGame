@@ -1,8 +1,8 @@
 {
-    "id": "d399bf08-762c-4622-85e8-109b2c159338",
+    "id": "ddc6b613-f0f6-4b44-26b7-a9888f43713f",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "scrRun",
+    "name": "scrCreateBattleBox",
     "IsCompatibility": false,
     "IsDnD": false
 }

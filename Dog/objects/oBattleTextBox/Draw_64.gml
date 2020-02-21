@@ -9,13 +9,13 @@ draw_set_font(fnt_battle);
 draw_sprite(box,0,0,0);
 
 //Text appear effect
-var text_wrapped = scrStringWrap(text[page],text_max_width);
+var text_wrapped = scrStringWrap(Text[Page],text_max_width);
 var str_len = string_length(text_wrapped);
-if (counter<str_len)
+if (Counter<str_len)
 {
-	counter++;
+	Counter++;
 }
-var substr = string_copy(text_wrapped,1,counter);
+var substr = string_copy(text_wrapped,1,Counter);
 
 
 //Draw text

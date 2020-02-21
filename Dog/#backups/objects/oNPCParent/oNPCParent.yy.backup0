@@ -1,4 +1,4 @@
-// 2020-02-19 16:16:28
+// 2020-02-21 10:25:59
 #event properties (no comments/etc. here are saved)
 parent_index = oDepthParent;
 uses_physics = false;
@@ -8,6 +8,7 @@ uses_physics = false;
 event_inherited();
 
 interact_key = noone;
+Key = room_get_name(room)+"Trigger"+string(x)+string(y);
 
 Text = [];
 Face = [];

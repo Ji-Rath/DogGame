@@ -4,9 +4,11 @@
 //If interact key pressed, go to next page, or destroy if empty
 if (global.KeyInteract && KeyWait == false)
 {
-	if(TextPos == string_length(Text[Page]))
+	var CurrentText = TextArray[Page];
+	var Text = CurrentText[0];
+	if(TextPos == string_length(Text))
 	{
-		if (Page < array_length_1d(Text)-1)
+		if (Page < array_length_1d(TextArray)-1)
 		{
 			Page ++;
 			TextPos = 0;
@@ -19,7 +21,7 @@ if (global.KeyInteract && KeyWait == false)
 	}
 	else
 	{
-		TextPos = string_length(Text[Page])
+		TextPos = string_length(Text)
 	}
 }
 else

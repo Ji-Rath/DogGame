@@ -49,14 +49,12 @@ if(BattleStageEnd)
 		case 5:
 			//CHATTER BEFORE LOOP
 			visible = false;
-			var BattleText = instance_create_layer(x,y,"text",oBattleTextBox);
-			var EnemyTextDuring = EnemyBattle.TextDuring[random_range(0,array_length_1d(EnemyBattle.TextDuring))];
-			BattleText.text = [EnemyTextDuring];
+			var EnemyText = EnemyBattle.TextDuring[random_range(0,array_length_1d(EnemyBattle.TextDuring))];
+			scrCreateBattleBox(EnemyText);
 		break;
 		
 		case 7:
-			var BattleText = instance_create_layer(x,y,"text",oBattleTextBox);
-			BattleText.text = ["You Win!"];
+			scrCreateBattleBox(["You Win!"]);
 		break;
 		
 		case 8:
@@ -64,6 +62,8 @@ if(BattleStageEnd)
 			var Room = ds_map_find_value(oAreaStats.SaveState,"Room");
 			var EnemyGrid = ds_grid_create(0,0);
 			ds_grid_read(EnemyGrid, ds_map_find_value(oAreaStats.SaveState,Room+"Enemy"));
+			
+			//Find enemy to delete from the room
 			for(i=0;i<ds_grid_height(EnemyGrid);i++)
 			{
 				if(ds_grid_get(EnemyGrid,0,i) == EnemyKey)

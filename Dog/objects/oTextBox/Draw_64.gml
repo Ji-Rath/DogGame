@@ -4,6 +4,11 @@
 //Draw textbox if not about to be destroyed
 if(Timer[0] == -1)
 {
+	var CurrentText = TextArray[Page];
+	var Face = CurrentText[1];
+	var Text = CurrentText[0];
+	var FaceIndex = CurrentText[2];
+	
 	//draw box
 	draw_sprite(sDialogueBox,0,BoxX,BoxY);
 	
@@ -14,11 +19,11 @@ if(Timer[0] == -1)
 	
 	
 	//draw portrait
-	draw_sprite(Face[Page],FaceIndex[Page],FaceX,FaceY);
+	draw_sprite(Face,FaceIndex,FaceX,FaceY);
 	
 	
 	//Text appear effect
-	var TextWrapped = scrStringWrap(Text[Page],TextMaxWidth);
+	var TextWrapped = scrStringWrap(Text,TextMaxWidth);
 	var StringLength = string_length(TextWrapped);
 	if (TextPos<StringLength)
 	{

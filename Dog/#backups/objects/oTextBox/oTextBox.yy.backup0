@@ -1,4 +1,4 @@
-// 2020-02-15 01:01:39
+// 2020-02-21 09:24:05
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 uses_physics = false;
@@ -6,11 +6,9 @@ uses_physics = false;
 #event create Insert description here
 // You can write your code in this editor
 
-Text = []; //Array of text
+TextArray = []; //Array of text
 Page = 0; //Counter for curent page
 TextPos = 0; //Text position
-Face = []; //Array of sprites
-FaceIndex = []; //Array of indexes for each sprite
 
 TextMaxWidth = 500;
 
@@ -38,9 +36,11 @@ KeyWait = true;
 //If interact key pressed, go to next page, or destroy if empty
 if (global.KeyInteract && KeyWait == false)
 {
-	if(TextPos == string_length(Text[Page]))
+	var CurrentText = TextArray[Page];
+	var Text = CurrentText[0];
+	if(TextPos == string_length(Text))
 	{
-		if (Page < array_length_1d(Text)-1)
+		if (Page < array_length_1d(TextArray)-1)
 		{
 			Page ++;
 			TextPos = 0;
@@ -53,7 +53,7 @@ if (global.KeyInteract && KeyWait == false)
 	}
 	else
 	{
-		TextPos = string_length(Text[Page])
+		TextPos = string_length(Text)
 	}
 }
 else
@@ -76,6 +76,11 @@ else if(Timer[0] != -1)
 //Draw textbox if not about to be destroyed
 if(Timer[0] == -1)
 {
+	var CurrentText = TextArray[Page];
+	var Face = CurrentText[1];
+	var Text = CurrentText[0];
+	var FaceIndex = CurrentText[2];
+	
 	//draw box
 	draw_sprite(sDialogueBox,0,BoxX,BoxY);
 	
@@ -86,11 +91,11 @@ if(Timer[0] == -1)
 	
 	
 	//draw portrait
-	draw_sprite(Face[Page],FaceIndex[Page],FaceX,FaceY);
+	draw_sprite(Face,FaceIndex,FaceX,FaceY);
 	
 	
 	//Text appear effect
-	var TextWrapped = scrStringWrap(Text[Page],TextMaxWidth);
+	var TextWrapped = scrStringWrap(Text,TextMaxWidth);
 	var StringLength = string_length(TextWrapped);
 	if (TextPos<StringLength)
 	{

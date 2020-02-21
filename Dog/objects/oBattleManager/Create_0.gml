@@ -37,11 +37,8 @@ BattleSelect = BattleMenu.Attack;
 
 
 //INTRO TEXT - BATTLE STAGE 0
-var FirstText = string(EnemyBattle.Name) + " has attacked!"
-var EnemyTextIntro = EnemyBattle.TextIntro[random_range(0,array_length_1d(EnemyBattle.TextIntro))];
-
-var BattleText = instance_create_layer(x,y,"text",oBattleTextBox); 
-BattleText.text = [FirstText,EnemyTextIntro];
+var FirstText = "A "+string(EnemyBattle.Name) + " has attacked!";
+scrCreateBattleBox([FirstText]);
 
 //Create BattleMenu
 instance_create_layer(room_width/2-150,room_height-100,"GUI",oBattleMenuAttack);

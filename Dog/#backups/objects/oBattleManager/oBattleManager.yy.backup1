@@ -1,4 +1,4 @@
-// 2020-02-19 11:56:32
+// 2020-02-21 15:37:20
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 visible = false;
@@ -43,11 +43,8 @@ BattleSelect = BattleMenu.Attack;
 
 
 //INTRO TEXT - BATTLE STAGE 0
-var FirstText = string(EnemyBattle.Name) + " has attacked!"
-var EnemyTextIntro = EnemyBattle.TextIntro[random_range(0,array_length_1d(EnemyBattle.TextIntro))];
-
-var BattleText = instance_create_layer(x,y,"text",oBattleTextBox); 
-BattleText.text = [FirstText,EnemyTextIntro];
+var FirstText = "A "+string(EnemyBattle.Name) + " has attacked!";
+scrCreateBattleBox([FirstText]);
 
 //Create BattleMenu
 instance_create_layer(room_width/2-150,room_height-100,"GUI",oBattleMenuAttack);
@@ -126,14 +123,12 @@ if(BattleStageEnd)
 		case 5:
 			//CHATTER BEFORE LOOP
 			visible = false;
-			var BattleText = instance_create_layer(x,y,"text",oBattleTextBox);
-			var EnemyTextDuring = EnemyBattle.TextDuring[random_range(0,array_length_1d(EnemyBattle.TextDuring))];
-			BattleText.text = [EnemyTextDuring];
+			var EnemyText = EnemyBattle.TextDuring[random_range(0,array_length_1d(EnemyBattle.TextDuring))];
+			scrCreateBattleBox(EnemyText);
 		break;
 		
 		case 7:
-			var BattleText = instance_create_layer(x,y,"text",oBattleTextBox);
-			BattleText.text = ["You Win!"];
+			scrCreateBattleBox(["You Win!"]);
 		break;
 		
 		case 8:
@@ -150,8 +145,8 @@ if(BattleStageEnd)
 				}
 			}
 			ds_map_replace(oAreaStats.SaveState,Room+"Enemy",ds_grid_write(EnemyGrid));
-			scrGameSave("TempSave");
 			scrFadeout(asset_get_index(Room),c_black,0.05);
+			scrGameSave("TempSave");
 		break;
 		
 		case 9:

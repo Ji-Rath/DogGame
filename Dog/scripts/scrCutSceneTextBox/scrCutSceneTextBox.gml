@@ -7,6 +7,6 @@ if(!instance_exists(oTextBox) && CreatedBox)
 }
 else
 {
-    scrCreateTextBox(argument0,argument1,argument2);
+    scrCreateTextBox(argument0);
     CreatedBox = true;
 }

@@ -39,7 +39,7 @@ if (global.KeyInteract && !instance_exists(oCutScene))
 		//If player is currently not in dialogue
 		if(!inst.TextCooldown)
 		{
-			scrCreateTextBox(inst.Text,inst.Face,inst.FaceIndex);
+			scrCreateTextBox(inst.TextArray);
 		}
 	}
 	

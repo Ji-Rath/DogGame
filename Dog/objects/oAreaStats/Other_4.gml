@@ -37,3 +37,20 @@ with(oTriggerParent)
         }
     }
 }
+//Check NPC's and update the ones that were already used
+with(oNPCParent)
+{
+    var GridString = ds_map_find_value(oAreaStats.SaveState,room_get_name(room)+"Trigger");
+    if(GridString != undefined)
+    {
+        var Grid = ds_grid_create(0,0);
+        ds_grid_read(Grid,GridString);
+        for(i=0;i<ds_grid_height(Grid);i++)
+        {
+            if (ds_grid_get(Grid,0,i) == Key)
+            {
+                Used = ds_grid_get(Grid,1,i);
+            }
+        }
+    }
+}

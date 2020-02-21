@@ -2,9 +2,6 @@
 //Update speed
 Speed = WalkSpeed*1.5;
 
-//Run animation
-scrRun();
-
 //Get player direction in x and y directions
 var PlayerDirectionX = sign(floor((oDogPaddler.x-x)/4)*4);
 var PlayerDirectionY = sign(floor((oDogPaddler.y-y)/4)*4);

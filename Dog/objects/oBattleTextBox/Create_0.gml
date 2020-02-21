@@ -15,9 +15,10 @@ display_set_gui_size(global.game_width,global.game_height);
 
 
 
-counter = 0;
-text = [];
-page = 0;
+Counter = 0;
+Text = [""];
+TextQueue = ds_queue_create();
+Page = 0;
 
 
 text_col = c_black;

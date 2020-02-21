@@ -1,4 +1,4 @@
-// 2020-02-14 22:55:00
+// 2020-02-14 22:55:43
 
 
 if(!instance_exists(oTextBox) && CreatedBox)
@@ -6,5 +6,8 @@ if(!instance_exists(oTextBox) && CreatedBox)
     scrCutSceneEnd();
     CreatedBox = false;
 }
-scrCreateTextBox(argument0,argument1,argument2);
-CreatedBox = true;
+else
+{
+    scrCreateTextBox(argument0,argument1,argument2);
+    CreatedBox = true;
+}

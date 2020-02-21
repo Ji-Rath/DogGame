@@ -1,8 +1,12 @@
+/// @param Text
+/// @param Health
+var Health = argument0, Text = argument1;
 
-var BattleText = instance_create_layer(x,y,"text",oBattleTextBox);
-var Text = argument1;
+//Create Battle TextBox
+scrCreateBattleBox(Text);
 
-global.phealth += argument0;
-BattleText.text = [Text];
+//Change player health
+global.phealth += Health;
 
-ds_map_replace(ItemAmount, ItemMouseHoverSelect, ds_map_find_value(ItemAmount, ItemMouseHoverSelect)-1);
+//Update item amount
+ds_map_replace(oAreaStats.Items, ItemMouseHoverSelect, ds_map_find_value(oAreaStats.Items, ItemMouseHoverSelect)-1);

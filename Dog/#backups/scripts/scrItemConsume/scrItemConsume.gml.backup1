@@ -1,9 +1,14 @@
-// 2020-02-19 08:53:00
+// 2020-02-21 11:28:00
+/// @param Text
+/// @param Health
+#args  Health, Text
 
+//Create Battle TextBox
 var BattleText = instance_create_layer(x,y,"text",oBattleTextBox);
-var Text = argument1;
-
-global.phealth += argument0;
 BattleText.text = [Text];
 
-ds_map_replace(ItemAmount, ) -= 1;
+//Change player health
+global.phealth += Health;
+
+//Update item amount
+ds_map_replace(oAreaStats.Items, ItemMouseHoverSelect, ds_map_find_value(oAreaStats.Items, ItemMouseHoverSelect)-1);

@@ -1,4 +1,4 @@
-// 2020-02-21 00:50:08
+// 2020-02-21 00:52:26
 #event properties (no comments/etc. here are saved)
 parent_index = oDepthParent;
 sprite_index = sDogpaddlerIdle;
@@ -74,6 +74,11 @@ if (state = paddlerstates.normal)
 	var VMove = global.KeyDown - global.KeyUp;
 	HSpeed = HMove*Speed;
 	VSpeed = VMove*Speed;
+	if(instance_exists(oCutScene))
+	{
+		HSpeed = 0;
+		VSpeed = 0;
+	}
 	scrPathSpeed();
 	
 	scrMoveCollision();

@@ -1,4 +1,4 @@
-// 2020-02-19 11:39:09
+// 2020-02-21 10:37:21
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 persistent = true;
@@ -7,6 +7,8 @@ uses_physics = false;
 #event create 
 
 SaveState = ds_map_create();
+
+Items = ds_map_create();
 
 //Battle Stage Variables
 Enemy = noone;
@@ -41,6 +43,22 @@ with(oEnemyParent)
 
 //Check triggers and update the ones that were already used
 with(oTriggerParent)
+{
+    var GridString = ds_map_find_value(oAreaStats.SaveState,room_get_name(room)+"Trigger");
+    if(GridString != undefined)
+    {
+        var Grid = ds_grid_create(0,0);
+        ds_grid_read(Grid,GridString);
+        for(i=0;i<ds_grid_height(Grid);i++)
+        {
+            if (ds_grid_get(Grid,0,i) == Key)
+            {
+                Used = ds_grid_get(Grid,1,i);
+            }
+        }
+    }
+}
+with(oNPCParent)
 {
     var GridString = ds_map_find_value(oAreaStats.SaveState,room_get_name(room)+"Trigger");
     if(GridString != undefined)

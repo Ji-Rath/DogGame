@@ -1,0 +1,13 @@
+// 2020-02-21 15:27:42
+/// @param TextArray
+#args TextArray
+
+if(!instance_exists(oBattleTextBox))
+{
+    var ObjectText = instance_create_layer(0,0,"text",oBattleTextBox);
+    ObjectText.Text = TextArray;
+}
+else 
+{
+    ds_queue_enqueue(oBattleTextBox.TextQueue,TextArray);
+}

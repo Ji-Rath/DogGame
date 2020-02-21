@@ -1,10 +1,7 @@
-// 2020-02-20 22:46:51
+// 2020-02-21 09:17:26
 
 //Update speed
 Speed = WalkSpeed*1.5;
-
-//Run animation
-scrRun();
 
 //Get player direction in x and y directions
 var PlayerDirectionX = sign(floor((oDogPaddler.x-x)/4)*4);

@@ -1,4 +1,4 @@
-// 2020-02-13 08:21:34
+// 2020-02-21 15:26:52
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 uses_physics = false;
@@ -20,9 +20,10 @@ display_set_gui_size(global.game_width,global.game_height);
 
 
 
-counter = 0;
-text = [];
-page = 0;
+Counter = 0;
+Text = [""];
+TextQueue = ds_queue_create();
+Page = 0;
 
 
 text_col = c_black;
@@ -44,30 +45,31 @@ text_height = string_height("A");
 // You can write your code in this editor
 if (global.KeyInteract)
 {
-	if (page < array_length_1d(text)-1)
+	if (Page < (array_length_1d(Text)-1))
 	{
-		page ++;
-		counter = 0;
+		Page ++;
+		Counter = 0;
 	}
 	else
 	{
-		//When there is no more text, move on to the next battle stage
-		
-		//1 - ENEMY ATTACK
-		//2 - PLAYER ATTACK
-		//3 - TEXT CHATTER, END
-		
-		oBattleManager.BattleStageEnd = true;
-		instance_destroy();
+		if(!ds_queue_empty(TextQueue))
+		{
+			Text = ds_queue_dequeue(TextQueue);
+			Page = 0;
+		}
+		else
+		{
+			//When there is no more text, move on to the next battle stage
+			oBattleManager.BattleStageEnd = true;
+			instance_destroy();
+		}
 	}
-	
-	
 }
 
 #event draw_gui Insert description here
 // You can write your code in this editor
 
-//Set font/cololr
+//Set font/color
 draw_set_color(c_black);
 draw_set_font(fnt_battle);
 
@@ -75,24 +77,15 @@ draw_set_font(fnt_battle);
 draw_sprite(box,0,0,0);
 
 //Text appear effect
-var text_wrapped = scrStringWrap(text[page],text_max_width);
+show_debug_message(string(Page));
+var text_wrapped = scrStringWrap(Text[Page],text_max_width);
 var str_len = string_length(text_wrapped);
-if (counter<str_len)
+if (Counter<str_len)
 {
-	counter++;
+	Counter++;
 }
-var substr = string_copy(text_wrapped,1,counter);
+var substr = string_copy(text_wrapped,1,Counter);
 
 
 //Draw text
-var c = text_col
-draw_text_color(text_x,text_y,substr,c,c,c,c,1)
-draw_text_color(text_x+1,text_y,substr,c,c,c,c,1)
-
-//draw_text_color(text_x+1,text_y+1,substr,c,c,c,c,1)
-//draw_text_color(text_x,text_y+1,substr,c,c,c,c,1)
-/*
-draw_text_ext_color(text_x+1,text_y,text,text_height,text_max_width,c,c,c,c,1)
-draw_text_ext_color(text_x+1,text_y+1,text,text_height,text_max_width,c,c,c,c,1)
-draw_text_ext_color(text_x,text_y+1,text,text_height,text_max_width,c,c,c,c,1)
-*/
+draw_text(text_x,text_y,substr)

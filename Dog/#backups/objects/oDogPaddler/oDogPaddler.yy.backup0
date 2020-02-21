@@ -1,4 +1,4 @@
-// 2020-02-21 00:52:26
+// 2020-02-21 09:18:26
 #event properties (no comments/etc. here are saved)
 parent_index = oDepthParent;
 sprite_index = sDogpaddlerIdle;
@@ -96,7 +96,7 @@ if (global.KeyInteract && !instance_exists(oCutScene))
 		//If player is currently not in dialogue
 		if(!inst.TextCooldown)
 		{
-			scrCreateTextBox(inst.Text,inst.Face,inst.FaceIndex);
+			scrCreateTextBox(inst.TextArray);
 		}
 	}
 	

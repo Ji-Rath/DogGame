@@ -1,7 +1,7 @@
-// 2020-02-20 22:45:30
+// 2020-02-20 22:46:51
 
 //Update speed
-Speed = WalkSpeed*2;
+Speed = WalkSpeed*1.5;
 
 //Run animation
 scrRun();

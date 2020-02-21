@@ -1,4 +1,4 @@
-// 2020-02-19 16:11:37
+// 2020-02-19 16:16:28
 #event properties (no comments/etc. here are saved)
 parent_index = oDepthParent;
 uses_physics = false;
@@ -16,6 +16,3 @@ TextCooldown = false;
 
 HSpeed = 0;
 VSpeed = 0;
-
-OldX = 0;
-OldY = 0;
