@@ -1,4 +1,4 @@
-// 2020-02-15 09:41:49
+// 2020-02-15 11:33:08
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 sprite_index = sAlert;
@@ -7,6 +7,8 @@ uses_physics = false;
 #event create
 
 Key = room_get_name(room)+"Trigger"+string(x)+string(y);
+
+visible = false;
 
 CutScene = []; //A group of scenes
 

@@ -1,5 +1,6 @@
-// 2020-02-10 11:39:21
-/// @desc fade (room, fadecolor, fadespeed, x, y)
+// 2020-02-19 15:14:48
+/// @func scrFadeOut(room, fadecolor, fadespeed)
+/// @desc Fade into a different room
 /// @arg room
 /// @arg fadecolor
 /// @arg fadespeed

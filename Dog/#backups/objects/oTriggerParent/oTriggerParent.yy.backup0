@@ -1,4 +1,4 @@
-// 2020-02-15 11:33:08
+// 2020-02-19 15:10:10
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 sprite_index = sAlert;
@@ -19,8 +19,7 @@ Used = false; //Has the trigger been used already?
 
 if(!instance_exists(oCutScene) && !Used)
 {
-    var Scene = instance_create_layer(0,0,"Control",oCutScene);
-    Scene.CutScene = CutScene;
+    scrCreateCutScene(CutScene);
     if(OnlyUse)
         Used = true;
 }

@@ -18,21 +18,4 @@ with(Object)
     {
         path_start(Path,Speed,path_action_stop,true);
     }
-    
-    //Get X Change and Y Change to calculate image speed
-    var MoveX = x-other.OldX
-    if(MoveX != 0)
-    {
-        other.OldX = x;
-    }
-    var MoveY = y-other.OldY
-    if(MoveY != 0)
-    {
-        MoveY = y;
-    }
-    image_speed = (MoveX || MoveY);
-    
-    //Split direction into x and y values
-    HSpeed = cos(degtorad(direction))*path_get_speed(Path,path_position);
-    VSpeed = -sin(degtorad(direction))*path_get_speed(Path,path_position);
 }

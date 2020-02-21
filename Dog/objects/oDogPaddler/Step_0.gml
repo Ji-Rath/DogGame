@@ -1,49 +1,13 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-//Turn invisible when in battle
-visible = !(room == rmBattle);
-
-//Animate sprite if moving
-if(HSpeed != 0 || VSpeed != 0) {
-	image_speed = 1;
-} else {
-	image_speed = 0;
-	image_index = 4; //The only position in every sprite where the player is idle
-	
-	//Switch to idle when standing still
-	if(sprite_index == SRun)
-	{
-		sprite_index = SWalk;
-	}
-	if(sprite_index == SRunUp)
-	{
-		sprite_index = SWalkUp;
-	}
-	if(sprite_index == SRunDown)
-	{
-		sprite_index = SWalkDown;
-	}
-}
-
-//Set depth
-depth = -y;
-
-
-
-
 
 //Set speed and animation while walking/running
-if (global.KeySprint)
-{
-	WalkSpd = 8;
-	scrRun()
-}
+scrWalk();
+if(global.KeySprint)
+	Speed = WalkSpeed*2;
 else
-{
-	WalkSpd = 3;
-	scrWalk()
-}
+	Speed = WalkSpeed;
 
 
 //If player is in the normal state, update movement variables
@@ -51,18 +15,24 @@ if (state = paddlerstates.normal)
 {
 	var HMove = global.KeyRight - global.KeyLeft;
 	var VMove = global.KeyDown - global.KeyUp;
-	HSpeed = HMove*WalkSpd;
-	VSpeed = VMove*WalkSpd;
+	HSpeed = HMove*Speed;
+	VSpeed = VMove*Speed;
+	if(instance_exists(oCutScene))
+	{
+		HSpeed = 0;
+		VSpeed = 0;
+	}
+	scrPathSpeed();
 	
 	scrMoveCollision();
 }
 
 
-radius = 50;
 
-//For a future NPC interaction, maybe, wait what is going on now. 
-if (global.KeyInteract)
+//NPC INTERACTION
+if (global.KeyInteract && !instance_exists(oCutScene))
 {
+	var radius = 50;
 	var inst = collision_rectangle(x-radius,y-radius,x+radius,y+radius,oNPCParent,false,false);
 	if(inst != noone)
 	{
@@ -76,11 +46,16 @@ if (global.KeyInteract)
 	if(place_meeting(x,y,oSaveGame))
 	{
 		scrGameSave(oAreaStats.CurrentSave);
-		show_debug_message("Game Saved!");
 	}
 }
 
+//TESTING EVENTS
 if(keyboard_check_pressed(vk_escape))
 {
 	room_goto(rmTitle);
+}
+
+if(keyboard_check_pressed(ord("Q")))
+{
+	instance_create_layer(x,y-15,"Instances",oEmote);
 }

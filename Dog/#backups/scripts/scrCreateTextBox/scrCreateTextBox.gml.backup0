@@ -1,4 +1,4 @@
-// 2020-02-15 00:51:21
+// 2020-02-19 21:28:46
 ///@description create_textbox
 ///@arg Text
 ///@arg FaceSprites
@@ -7,7 +7,7 @@
 
 if(!instance_exists(oTextBox))
 {
-	var TextBox = instance_create_layer(0,0,"Text",oTextBox);
+	var TextBox = instance_create_layer(0,0,"Control",oTextBox);
 	TextBox.Text = argument[0];
 	TextBox.Face = argument[1];
 	TextBox.FaceIndex = argument[2];

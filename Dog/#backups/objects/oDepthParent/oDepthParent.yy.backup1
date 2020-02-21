@@ -1,0 +1,8 @@
+// 2020-02-19 12:14:18
+#event properties (no comments/etc. here are saved)
+parent_index = -1;
+uses_physics = false;
+
+#event draw
+
+draw_self();

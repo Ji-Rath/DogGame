@@ -1,13 +1,21 @@
-// 2020-02-08 10:46:45
+// 2020-02-19 16:11:37
 #event properties (no comments/etc. here are saved)
-parent_index = -1;
+parent_index = oDepthParent;
 uses_physics = false;
 
 #event create
+
+event_inherited();
 
 interact_key = noone;
 
 Text = [];
 Face = [];
 FaceIndex = [];
-TextCooldown = false'
+TextCooldown = false;
+
+HSpeed = 0;
+VSpeed = 0;
+
+OldX = 0;
+OldY = 0;

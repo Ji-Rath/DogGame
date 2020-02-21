@@ -1,6 +1,6 @@
 
 //Update speed
-WalkSpd = 4;
+Speed = WalkSpeed*1.5;
 
 //Run animation
 scrRun();
@@ -23,5 +23,5 @@ if (PlayerDistance > (DetectRange+Buffer))
 
 //Follow player 
 
-HSpeed = PlayerDirectionX*WalkSpd;
-VSpeed = PlayerDirectionY*WalkSpd;
+HSpeed = PlayerDirectionX*Speed;
+VSpeed = PlayerDirectionY*Speed;

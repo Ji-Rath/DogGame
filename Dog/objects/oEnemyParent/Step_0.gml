@@ -2,10 +2,13 @@
 // You can write your code in this editor
 
 //If in battle room or dead, turn invisible
-visible = !((room == rmBattle) || (Health <= 0));
+if(Health <= 0)
+{
+	instance_destroy();
+}
 
 //Only move if visible and not in a cutscene
-if(visible && instance_exists(oDogPaddler) && !instance_exists(oCutScene))
+if(!instance_exists(oCutScene))
 {
 	TimerEnded = (timer[0] <= 0);
 	//State machine
@@ -22,22 +25,9 @@ if(visible && instance_exists(oDogPaddler) && !instance_exists(oCutScene))
 		timer[0] -= 1;
 	}
 }
-else 
-{
-	HSpeed = 0;
-	VSpeed = 0;
-}
 
-//Go to idle if not moving
-if(HSpeed == 0 && VSpeed == 0)
-{
-	sprite_index = SIdle;
-}
-
-//Movement collision
+//Movement
+scrPathSpeed();
 scrMoveCollision();
+scrWalk();
 
-
-
-//Depth
-depth = -y;

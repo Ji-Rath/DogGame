@@ -9,15 +9,15 @@
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
-            "eventtype": 0,
-            "enumb": 0,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 0,
             "m_owner": "41180335-7b0d-9336-59b6-8185b4f56b6b"
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,
-    "parentObjectId": "00000000-0000-0000-0000-000000000000",
+    "parentObjectId": "df5c80e2-1e2e-9c37-0cf1-5a8fc5895006",
     "persistent": false,
     "physicsAngularDamping": 0.1,
     "physicsDensity": 0.5,

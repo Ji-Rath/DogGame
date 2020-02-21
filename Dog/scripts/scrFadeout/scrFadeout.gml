@@ -1,4 +1,5 @@
-/// @desc fade (room, fadecolor, fadespeed, x, y)
+/// @func scrFadeOut(room, fadecolor, fadespeed)
+/// @desc Fade into a different room
 /// @arg room
 /// @arg fadecolor
 /// @arg fadespeed

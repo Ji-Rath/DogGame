@@ -1,9 +1,9 @@
 
 scrEnemyDetect();
 
-WalkSpd = 2;
-HSpeed = WanderDirectionX*WalkSpd;
-VSpeed = WanderDirectionY*WalkSpd;
+Speed = WalkSpeed;
+HSpeed = WanderDirectionX*Speed;
+VSpeed = WanderDirectionY*Speed;
 
 //Movement animation
 scrWalk();

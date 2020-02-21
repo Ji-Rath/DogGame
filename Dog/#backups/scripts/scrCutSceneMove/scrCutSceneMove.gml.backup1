@@ -1,5 +1,11 @@
-// 2020-02-15 00:48:33
-
+// 2020-02-19 21:39:46
+/// @param Object
+/// @param Speed
+/// @param XDest
+/// @param YDest
+/// @param Relative
+/// @param DistanceFinish = 0
+/// @func scrCutSceneMove(Object, Speed, X, Y, Relative, DistanceFinish)
 #args Object, Speed, XDest, YDest, Relative
 
 if(Relative)
@@ -11,8 +17,9 @@ if(Relative)
 with(Object)
 {
     var Angle = point_direction(x,y,XDest,YDest);
+    var Distance = point_distance(x,y,XDest,YDest);
     
-    if(point_distance(x,y,XDest,YDest) > Speed)
+    if(Distance > Speed)
     {
         HSpeed = lengthdir_x(Speed, Angle);
         VSpeed = lengthdir_y(Speed, Angle);
@@ -31,6 +38,6 @@ with(Object)
             scrCutSceneEnd();
         }
     }
-
+    
     scrWalk();
 }

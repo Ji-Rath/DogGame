@@ -4,7 +4,7 @@
 //If enemy collides with player, go to battle scene
 
 //Go to battle scene if enemy is alert
-if (other.State == estates.Aggro && other.visible = true)
+if (other.State == estates.Aggro)
 {
 	scrGameSave("TempSave");
 	scrFadeout(rmBattle, c_maroon, 0.05);

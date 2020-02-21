@@ -1,10 +1,13 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+event_inherited();
+
 //Initialize basic variables
 HSpeed = 0;
 VSpeed = 0;
-WalkSpd = 0;
+Speed = 0;
+WalkSpeed = 3;
 WanderDirectionX = 0;
 WanderDirectionY = 0;
 DetectRange = 350;
@@ -28,12 +31,15 @@ BattleObject = oEnemyBattleParent;
 
 //Set sprites for object
 SIdle = sEnemydefault;
+SIdleUp = sEnemydefault;
+SIdleDown = sEnemydefault;
 SWalk = sEnemywalk;
-SRun = sEnemyrun;
 SWalkUp = sEnemywalk;
-SRunUp = sEnemyrun;
 SWalkDown = sEnemywalk;
+SRun = sEnemyrun;
+SRunUp = sEnemyrun;
 SRunDown = sEnemyrun;
+
 SAlert = sEnemyalert;
 
 //Timer

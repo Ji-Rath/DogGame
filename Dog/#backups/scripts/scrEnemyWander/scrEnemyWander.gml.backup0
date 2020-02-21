@@ -1,10 +1,10 @@
-// 2020-02-15 00:49:17
+// 2020-02-20 22:42:25
 
 scrEnemyDetect();
 
-WalkSpd = 2;
-HSpeed = WanderDirectionX*WalkSpd;
-VSpeed = WanderDirectionY*WalkSpd;
+Speed = WalkSpeed;
+HSpeed = WanderDirectionX*Speed;
+VSpeed = WanderDirectionY*Speed;
 
 //Movement animation
 scrWalk();

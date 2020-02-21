@@ -1,4 +1,4 @@
-// 2020-02-15 00:27:02
+// 2020-02-19 20:59:21
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 uses_physics = false;
@@ -11,6 +11,9 @@ CutScene = 0;
 
 Timer = 0;
 CreatedBox = false;
+
+OldX = 0;
+OldY = 0;
 
 #event step
 /// @description;
@@ -27,5 +30,7 @@ switch(Length)
     case 3: script_execute(SelectedCutScene[0],SelectedCutScene[1],SelectedCutScene[2],SelectedCutScene[3]) break;
     case 4: script_execute(SelectedCutScene[0],SelectedCutScene[1],SelectedCutScene[2],SelectedCutScene[3],SelectedCutScene[4]) break;
     case 5: script_execute(SelectedCutScene[0],SelectedCutScene[1],SelectedCutScene[2],SelectedCutScene[3],SelectedCutScene[4],SelectedCutScene[5]) break;
+    case 6: script_execute(SelectedCutScene[0],SelectedCutScene[1],SelectedCutScene[2],SelectedCutScene[3],SelectedCutScene[4],SelectedCutScene[5],SelectedCutScene[6]) break;
 }
 
+show_debug_message(string(Timer));

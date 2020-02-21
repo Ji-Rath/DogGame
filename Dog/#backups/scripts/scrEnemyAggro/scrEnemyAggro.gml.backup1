@@ -1,7 +1,7 @@
-// 2020-02-14 17:21:46
+// 2020-02-20 22:45:30
 
 //Update speed
-WalkSpd = 4;
+Speed = WalkSpeed*2;
 
 //Run animation
 scrRun();
@@ -18,9 +18,11 @@ if (PlayerDistance > (DetectRange+Buffer))
 {
 	State = estates.Idle;
 	timer[0] = choose(1,2,3)*60;
+	HSpeed = 0;
+	VSpeed = 0;
 }
 
 //Follow player 
 
-HSpeed = PlayerDirectionX*WalkSpd;
-VSpeed = PlayerDirectionY*WalkSpd;
+HSpeed = PlayerDirectionX*Speed;
+VSpeed = PlayerDirectionY*Speed;

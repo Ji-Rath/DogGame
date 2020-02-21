@@ -1,8 +1,14 @@
-// 2020-02-14 23:27:03
+// 2020-02-19 22:55:51
+/// @param Time = 0
+#args Time = 0
 
+//Turn time to miliseconds
+Time *= 60;
+
+//Increment time
 Timer++;
 
-if(Timer > argument0*60)
+if(Timer > Time)
 {
     Timer = 0;
     scrCutSceneEnd();

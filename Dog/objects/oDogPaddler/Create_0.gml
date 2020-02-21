@@ -1,10 +1,13 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+event_inherited();
+
 //Initialize basic variables
 HSpeed = 0;
 VSpeed = 0;
-WalkSpd = 3;
+Speed = 0;
+WalkSpeed = 3;
 battlewarp = noone;
 
 Attacker = noone;
@@ -30,6 +33,9 @@ SWalkUp = sDogpaddlerWalkUp;
 SRunUp = sDogpaddlerRunUp;
 SWalkDown = sDogpaddlerWalkDown;
 SRunDown = sDogpaddlerRunDown;
+SIdle = sDogpaddlerIdle;
+SIdleUp = sDogpaddlerIdleUp;
+SIdleDown = sDogpaddlerIdleDown;
 
 //Load Variables from ds map if available
 var SaveVal = ds_map_find_value(oAreaStats.SaveState,"PlayerX");

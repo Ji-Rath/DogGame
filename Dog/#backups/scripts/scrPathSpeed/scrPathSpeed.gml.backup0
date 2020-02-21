@@ -1,0 +1,8 @@
+// 2020-02-21 00:36:00
+
+//Split direction into x and y values
+if(path_index != -1)
+{
+    HSpeed = cos(degtorad(direction))*path_get_speed(path_index,path_position);
+    VSpeed = -sin(degtorad(direction))*path_get_speed(path_index,path_position);
+}

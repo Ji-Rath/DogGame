@@ -1,7 +1,8 @@
-// 2020-02-14 22:28:52
+// 2020-02-15 00:51:21
 ///@description create_textbox
-///@arg text
-///@arg speakers
+///@arg Text
+///@arg FaceSprites
+///@arg FaceIndexes
 
 
 if(!instance_exists(oTextBox))

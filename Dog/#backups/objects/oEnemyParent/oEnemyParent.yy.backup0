@@ -1,16 +1,19 @@
-// 2020-02-15 00:49:18
+// 2020-02-21 01:44:18
 #event properties (no comments/etc. here are saved)
-parent_index = -1;
+parent_index = oDepthParent;
 sprite_index = sEnemydefault;
 uses_physics = false;
 
 #event create Insert description here
 // You can write your code in this editor
 
+event_inherited();
+
 //Initialize basic variables
 HSpeed = 0;
 VSpeed = 0;
-WalkSpd = 0;
+Speed = 0;
+WalkSpeed = 3;
 WanderDirectionX = 0;
 WanderDirectionY = 0;
 DetectRange = 350;
@@ -34,12 +37,15 @@ BattleObject = oEnemyBattleParent;
 
 //Set sprites for object
 SIdle = sEnemydefault;
+SIdleUp = sEnemydefault;
+SIdleDown = sEnemydefault;
 SWalk = sEnemywalk;
-SRun = sEnemyrun;
 SWalkUp = sEnemywalk;
-SRunUp = sEnemyrun;
 SWalkDown = sEnemywalk;
+SRun = sEnemyrun;
+SRunUp = sEnemyrun;
 SRunDown = sEnemyrun;
+
 SAlert = sEnemyalert;
 
 //Timer
@@ -58,10 +64,13 @@ Key = room_get_name(room)+"Enemy"+string(x)+string(y);
 // You can write your code in this editor
 
 //If in battle room or dead, turn invisible
-visible = !((room == rmBattle) || (Health <= 0));
+if(Health <= 0)
+{
+	instance_destroy();
+}
 
 //Only move if visible and not in a cutscene
-if(visible && instance_exists(oDogPaddler) && !instance_exists(oCutScene))
+if(!instance_exists(oCutScene))
 {
 	TimerEnded = (timer[0] <= 0);
 	//State machine
@@ -78,25 +87,12 @@ if(visible && instance_exists(oDogPaddler) && !instance_exists(oCutScene))
 		timer[0] -= 1;
 	}
 }
-else 
-{
-	HSpeed = 0;
-	VSpeed = 0;
-}
 
-//Go to idle if not moving
-if(HSpeed == 0 && VSpeed == 0)
-{
-	sprite_index = SIdle;
-}
-
-//Movement collision
+//Movement
+scrPathSpeed();
 scrMoveCollision();
+scrWalk();
 
-
-
-//Depth
-depth = -y;
 
 
 #event draw Insert description here
