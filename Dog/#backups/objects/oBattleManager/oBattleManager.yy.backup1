@@ -1,4 +1,4 @@
-// 2020-02-21 15:37:20
+// 2020-02-22 13:26:24
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 visible = false;
@@ -136,6 +136,8 @@ if(BattleStageEnd)
 			var Room = ds_map_find_value(oAreaStats.SaveState,"Room");
 			var EnemyGrid = ds_grid_create(0,0);
 			ds_grid_read(EnemyGrid, ds_map_find_value(oAreaStats.SaveState,Room+"Enemy"));
+			
+			//Find enemy to delete from the room
 			for(i=0;i<ds_grid_height(EnemyGrid);i++)
 			{
 				if(ds_grid_get(EnemyGrid,0,i) == EnemyKey)
@@ -146,7 +148,6 @@ if(BattleStageEnd)
 			}
 			ds_map_replace(oAreaStats.SaveState,Room+"Enemy",ds_grid_write(EnemyGrid));
 			scrFadeout(asset_get_index(Room),c_black,0.05);
-			scrGameSave("TempSave");
 		break;
 		
 		case 9:

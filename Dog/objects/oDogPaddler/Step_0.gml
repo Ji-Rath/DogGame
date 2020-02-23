@@ -57,5 +57,5 @@ if(keyboard_check_pressed(vk_escape))
 
 if(keyboard_check_pressed(ord("Q")))
 {
-	instance_create_layer(x,y-15,"Instances",oEmote);
+	show_debug_message(string(instance_number(oEnemyParent)));
 }

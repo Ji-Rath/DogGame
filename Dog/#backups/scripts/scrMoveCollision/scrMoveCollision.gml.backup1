@@ -1,9 +1,7 @@
-// 2020-02-21 00:33:11
+// 2020-02-21 00:33:15
 ///@desc Prevent the specified object from moving into collision tiles. Then give the object speed otherwise.
 
 
-if(!instance_exists(oCutScene))
-{
 var tilemap = layer_tilemap_get_id("Collision");
 var bbox_side;
 

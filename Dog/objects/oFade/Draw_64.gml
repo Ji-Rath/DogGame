@@ -1,25 +1,34 @@
 /// @description Insert description here
 // You can write your code in this editor
-if (room != Target)
+if(Target != -1)
 {
-	image_alpha += FadeSpeed;
-	if (image_alpha == 1)
+	if (FadeIn)
 	{
-		//oDogPaddler.x = xx;
-		//oDogPaddler.y = yy;
-		room_goto(Target);
-	}
-	
-} 
-else 
-{
-	image_alpha -= FadeSpeed;
-	if (image_alpha < 0)
+		image_alpha += FadeSpeed;
+		if (image_alpha == 1)
+		{
+			room_goto(Target);
+			FadeIn = false;
+		}
+		
+	} 
+	else 
 	{
-		instance_destroy();
+		image_alpha -= FadeSpeed;
+		if (image_alpha < 0)
+		{
+			instance_destroy();
+		}
+		if(XDest != 0 && YDest != 0 && image_alpha > 0.75)
+		{
+			oDogPaddler.x = XDest;
+			oDogPaddler.y = YDest;
+			oDogPaddler.sprite_index = Sprite;
+			oDogPaddler.image_xscale = SpriteXScale;
+			oCamera.x = XDest;
+			oCamera.y = YDest;
+		}
 	}
-	
-	
 }
 
 draw_set_color(FadeColor);

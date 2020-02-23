@@ -22,7 +22,8 @@ repeat(InstCount)
     var Instance = ds_grid_get(DGrid,0,InstNumber);
     with(Instance)
     {
-        event_perform(ev_draw,0);
+        if(!Destroyed)
+            event_perform(ev_draw,0);
     }
     InstNumber++;
 }

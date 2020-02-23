@@ -1,7 +1,11 @@
-// 2020-02-19 12:14:18
+// 2020-02-19 12:36:53
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 uses_physics = false;
+
+#event create
+
+visible = false;
 
 #event draw
 

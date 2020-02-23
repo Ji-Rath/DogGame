@@ -1,4 +1,4 @@
-// 2020-02-11 09:28:59
+// 2020-02-22 10:38:42
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 uses_physics = false;
@@ -9,8 +9,10 @@ Follow = oDogPaddler
 
 ViewWidthHalf = camera_get_view_width(Camera) * 0.5;
 ViewHeightHalf = camera_get_view_height(Camera) * 0.5;
-XDestination = xstart;
-YDestination = ystart;
+
+camera_set_view_pos(Camera,oDogPaddler.x-ViewWidthHalf,oDogPaddler.y-ViewHeightHalf);
+XDestination = 0;
+YDestination = 0;
 
 HSpeed = 0;
 VSpeed = 0;
@@ -45,7 +47,7 @@ if (instance_exists(Follow))
 
 //update object position
 x += (XDestination - x) / 4;
-y += (YDestination - y) / 4;
+y += (YDestination - y) / 7;
 
 //update camera view
 camera_set_view_pos(Camera,x-ViewWidthHalf,y-ViewHeightHalf);

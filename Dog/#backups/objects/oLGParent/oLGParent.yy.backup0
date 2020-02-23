@@ -1,4 +1,4 @@
-// 2020-02-18 15:57:02
+// 2020-02-22 23:48:17
 #event properties (no comments/etc. here are saved)
 parent_index = oTitleParent;
 sprite_index = sAlert;
@@ -29,7 +29,7 @@ var Room = ds_map_find_value(oAreaStats.SaveState,"Room");
 if(oAreaStats.LoadGame = false)
 {
     ds_map_clear(oAreaStats.SaveState);
-    scrFadeout(rmSceneVillage,c_black,0.05);
+    scrFadeout(rmSceneBeach,c_black,0.05);
     oAreaStats.CurrentSave = SaveName;
 }
 else if(Room != undefined && room_get_name(room) != Room)

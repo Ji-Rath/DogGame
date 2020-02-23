@@ -7,14 +7,13 @@ with(oEnemyParent)
     {
         var Grid = ds_grid_create(0,0);
         ds_grid_read(Grid,GridString);
-        for(i=0;i<ds_grid_height(Grid);i++)
+        for(var i=0;i<ds_grid_height(Grid);i++)
         {
             if (ds_grid_get(Grid,0,i) == Key)
             {
                 x = ds_grid_get(Grid,1,i);
                 y = ds_grid_get(Grid,2,i);
                 Health = ds_grid_get(Grid,3,i);
-                i=ds_grid_height(Grid);
             }
         }
     }
@@ -28,7 +27,7 @@ with(oTriggerParent)
     {
         var Grid = ds_grid_create(0,0);
         ds_grid_read(Grid,GridString);
-        for(i=0;i<ds_grid_height(Grid);i++)
+        for(var i=0;i<ds_grid_height(Grid);i++)
         {
             if (ds_grid_get(Grid,0,i) == Key)
             {
@@ -45,7 +44,7 @@ with(oNPCParent)
     {
         var Grid = ds_grid_create(0,0);
         ds_grid_read(Grid,GridString);
-        for(i=0;i<ds_grid_height(Grid);i++)
+        for(var i=0;i<ds_grid_height(Grid);i++)
         {
             if (ds_grid_get(Grid,0,i) == Key)
             {

@@ -1,4 +1,4 @@
-// 2020-02-21 10:50:05
+// 2020-02-22 17:02:55
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 persistent = true;
@@ -28,14 +28,13 @@ with(oEnemyParent)
     {
         var Grid = ds_grid_create(0,0);
         ds_grid_read(Grid,GridString);
-        for(i=0;i<ds_grid_height(Grid);i++)
+        for(var i=0;i<ds_grid_height(Grid);i++)
         {
             if (ds_grid_get(Grid,0,i) == Key)
             {
                 x = ds_grid_get(Grid,1,i);
                 y = ds_grid_get(Grid,2,i);
                 Health = ds_grid_get(Grid,3,i);
-                i=ds_grid_height(Grid);
             }
         }
     }
@@ -49,7 +48,7 @@ with(oTriggerParent)
     {
         var Grid = ds_grid_create(0,0);
         ds_grid_read(Grid,GridString);
-        for(i=0;i<ds_grid_height(Grid);i++)
+        for(var i=0;i<ds_grid_height(Grid);i++)
         {
             if (ds_grid_get(Grid,0,i) == Key)
             {
@@ -66,7 +65,7 @@ with(oNPCParent)
     {
         var Grid = ds_grid_create(0,0);
         ds_grid_read(Grid,GridString);
-        for(i=0;i<ds_grid_height(Grid);i++)
+        for(var i=0;i<ds_grid_height(Grid);i++)
         {
             if (ds_grid_get(Grid,0,i) == Key)
             {
@@ -75,3 +74,10 @@ with(oNPCParent)
         }
     }
 }
+
+
+#event other_room_end
+
+//Save game if player is in main area
+if(room != rmTitle && room != rmLoad && room != rmGameOver)
+    scrGameSave("TempSave");

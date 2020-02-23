@@ -3,8 +3,11 @@ Follow = oDogPaddler
 
 ViewWidthHalf = camera_get_view_width(Camera) * 0.5;
 ViewHeightHalf = camera_get_view_height(Camera) * 0.5;
-XDestination = xstart;
-YDestination = ystart;
+x = oDogPaddler.x;
+y = oDogPaddler.y;
+camera_set_view_pos(Camera,oDogPaddler.x-ViewWidthHalf,oDogPaddler.y-ViewHeightHalf);
+XDestination = 0;
+YDestination = 0;
 
 HSpeed = 0;
 VSpeed = 0;

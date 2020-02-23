@@ -74,7 +74,6 @@ if(BattleStageEnd)
 			}
 			ds_map_replace(oAreaStats.SaveState,Room+"Enemy",ds_grid_write(EnemyGrid));
 			scrFadeout(asset_get_index(Room),c_black,0.05);
-			scrGameSave("TempSave");
 		break;
 		
 		case 9:

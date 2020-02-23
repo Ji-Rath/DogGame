@@ -1,4 +1,4 @@
-// 2020-02-21 10:37:21
+// 2020-02-22 13:26:38
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 persistent = true;
@@ -18,6 +18,12 @@ CurrentSave = "Save1";
 
 LoadGame = false;
 
+#event other_room_end
+
+//Save game if player is in main area
+if(room != rmTitle && room != rmLoad && room != rmGameOver)
+    scrGameSave("TempSave");
+
 #event other_room_start
 
 //Check enemies in the room and update their position with the pos on file
@@ -28,14 +34,15 @@ with(oEnemyParent)
     {
         var Grid = ds_grid_create(0,0);
         ds_grid_read(Grid,GridString);
-        for(i=0;i<ds_grid_height(Grid);i++)
+        for(var i=0;i<ds_grid_height(Grid);i++)
         {
             if (ds_grid_get(Grid,0,i) == Key)
             {
                 x = ds_grid_get(Grid,1,i);
                 y = ds_grid_get(Grid,2,i);
                 Health = ds_grid_get(Grid,3,i);
-                i=ds_grid_height(Grid);
+                i = ds_grid_height(Grid);
+                show_debug_message(string(Health));
             }
         }
     }
@@ -49,7 +56,7 @@ with(oTriggerParent)
     {
         var Grid = ds_grid_create(0,0);
         ds_grid_read(Grid,GridString);
-        for(i=0;i<ds_grid_height(Grid);i++)
+        for(var i=0;i<ds_grid_height(Grid);i++)
         {
             if (ds_grid_get(Grid,0,i) == Key)
             {
@@ -58,6 +65,7 @@ with(oTriggerParent)
         }
     }
 }
+//Check NPC's and update the ones that were already used
 with(oNPCParent)
 {
     var GridString = ds_map_find_value(oAreaStats.SaveState,room_get_name(room)+"Trigger");
@@ -65,7 +73,7 @@ with(oNPCParent)
     {
         var Grid = ds_grid_create(0,0);
         ds_grid_read(Grid,GridString);
-        for(i=0;i<ds_grid_height(Grid);i++)
+        for(var i=0;i<ds_grid_height(Grid);i++)
         {
             if (ds_grid_get(Grid,0,i) == Key)
             {

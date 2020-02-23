@@ -1,4 +1,7 @@
-///scrGameSave(SaveFile);
+/// @param SaveName
+/// @param Room = room
+var SaveName = argument[0];
+var Room = argument_count > 1 ? argument[1] : room;
 
 //Save Player position
 with(oDogPaddler)
@@ -13,14 +16,14 @@ ds_map_replace(oAreaStats.SaveState,"PlayerPP",global.pp);
 ds_map_replace(oAreaStats.SaveState,"PlayerLevel",global.plevel);
 
 //Save Room
-ds_map_replace(oAreaStats.SaveState,"Room",room_get_name(room));
+ds_map_replace(oAreaStats.SaveState,"Room",room_get_name(Room));
 
 //Save Items
 ds_map_replace(oAreaStats.SaveState,"Items",ds_map_write(oAreaStats.Items));
 
 //Save Enemy State
 var Enemy = ds_grid_create(4,0);
-var KeyName = room_get_name(room)+"Enemy";
+var KeyName = room_get_name(Room)+"Enemy";
 with(oEnemyParent)
 {
     ds_grid_resize(Enemy,ds_grid_width(Enemy),ds_grid_height(Enemy)+1);
@@ -34,7 +37,7 @@ ds_map_replace(oAreaStats.SaveState,KeyName,ds_grid_write(Enemy));
 
 //Save Trigger State
 var Trigger = ds_grid_create(2,0);
-var KeyName = room_get_name(room)+"Trigger";
+var KeyName = room_get_name(Room)+"Trigger";
 with(oTriggerParent)
 {
     ds_grid_resize(Trigger,ds_grid_width(Trigger),ds_grid_height(Trigger)+1);
@@ -54,5 +57,5 @@ ds_map_replace(oAreaStats.SaveState,KeyName,ds_grid_write(Trigger));
 //Save ds map to file
 var SaveText = ds_map_write(oAreaStats.SaveState);
 ini_open("GameSave.sav");
-ini_write_string("Saves",argument0,SaveText);
+ini_write_string("Saves",SaveName,SaveText);
 ini_close();

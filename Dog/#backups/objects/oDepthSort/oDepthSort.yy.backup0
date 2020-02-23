@@ -1,11 +1,13 @@
-// 2020-02-19 12:46:29
+// 2020-02-22 13:31:36
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
+persistent = true;
 uses_physics = false;
 
 #event create
 
 DepthGrid = ds_grid_create(0,0);
+Destroyed = false;
 
 #event draw
 
@@ -32,7 +34,8 @@ repeat(InstCount)
     var Instance = ds_grid_get(DGrid,0,InstNumber);
     with(Instance)
     {
-        event_perform(ev_draw,0);
+        if(!Destroyed)
+            event_perform(ev_draw,0);
     }
     InstNumber++;
 }

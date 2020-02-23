@@ -1,2 +1,3 @@
 
 visible = false;
+Destroyed = false;

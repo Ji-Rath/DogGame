@@ -1,4 +1,4 @@
-// 2020-02-10 11:32:42
+// 2020-02-23 00:09:06
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 persistent = true;
@@ -8,35 +8,46 @@ uses_physics = false;
 // You can write your code in this editor
 
 image_alpha = 0;
-Target = 0;
+Target = -1;
 FadeSpeed = 0;
-
-#event step Insert description here
-// You can write your code in this editor
+XDest = 0;
+YDest = 0;
+Sprite = 0;
+SpriteXScale = 0;
+FadeIn = true;
 
 
 #event draw_gui Insert description here
 // You can write your code in this editor
-if (room != Target)
+if(Target != -1)
 {
-	image_alpha += FadeSpeed;
-	if (image_alpha == 1)
+	if (FadeIn)
 	{
-		//oDogPaddler.x = xx;
-		//oDogPaddler.y = yy;
-		room_goto(Target);
-	}
-	
-} 
-else 
-{
-	image_alpha -= FadeSpeed;
-	if (image_alpha < 0)
+		image_alpha += FadeSpeed;
+		if (image_alpha == 1)
+		{
+			room_goto(Target);
+			FadeIn = false;
+		}
+		
+	} 
+	else 
 	{
-		instance_destroy();
+		image_alpha -= FadeSpeed;
+		if (image_alpha < 0)
+		{
+			instance_destroy();
+		}
+		if(XDest != 0 && YDest != 0 && image_alpha > 0.75)
+		{
+			oDogPaddler.x = XDest;
+			oDogPaddler.y = YDest;
+			oDogPaddler.sprite_index = Sprite;
+			oDogPaddler.image_xscale = SpriteXScale;
+			oCamera.x = XDest;
+			oCamera.y = YDest;
+		}
 	}
-	
-	
 }
 
 draw_set_color(FadeColor);

@@ -3,12 +3,10 @@
 
 //If in battle room or dead, turn invisible
 if(Health <= 0)
-{
-	instance_destroy();
-}
+	Destroyed = true;
 
 //Only move if visible and not in a cutscene
-if(!instance_exists(oCutScene))
+if(!instance_exists(oCutScene) && !Destroyed)
 {
 	TimerEnded = (timer[0] <= 0);
 	//State machine
@@ -24,6 +22,10 @@ if(!instance_exists(oCutScene))
 	{
 		timer[0] -= 1;
 	}
+}
+else
+{
+	State = estates.Idle;
 }
 
 //Movement

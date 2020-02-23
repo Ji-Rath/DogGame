@@ -1,4 +1,4 @@
-// 2020-02-15 10:44:41
+// 2020-02-22 23:33:42
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 mask_index = sAlert;
@@ -6,7 +6,6 @@ uses_physics = false;
 
 #event create
 
-Target = 0; //Room target
 Fades = true; //To fade or not to fade
 Color = c_black;
 

@@ -1,0 +1,9 @@
+// 2020-02-22 10:34:30
+#event properties (no comments/etc. here are saved)
+parent_index = -1;
+sprite_index = sBox;
+uses_physics = false;
+
+#event collision:oDogPaddler
+
+scrFadeout(Room, c_black, 0.05, XDest, YDest, other.sprite_index, other.image_xscale);

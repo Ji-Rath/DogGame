@@ -1,4 +1,4 @@
-// 2020-02-15 11:25:27
+// 2020-02-22 19:37:54
 #event properties (no comments/etc. here are saved)
 parent_index = oTriggerParent;
 sprite_index = sAlert;
@@ -11,7 +11,7 @@ CutScene = //A group of scenes
 [
     [scrCutScenePath, instance_find(oDogPaddler,0), pathBeachStart, 3],
     [scrCutSceneWait, 1],
-    [scrCutSceneTextBox, ["What a beautiful day it is outside", "I hope there are no crabs nearby"], [sDogpaddlerface,sDogpaddlerface], [0,1]],
+    [scrCutSceneTextBox, [["What a beautiful day it is outside",sDogpaddlerface,0],["I hope there are no crabs nearby",sDogpaddlerface,1]]],
     [scrCutSceneFinish]
 ];
 

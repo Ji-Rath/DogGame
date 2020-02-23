@@ -5,7 +5,7 @@ var Room = ds_map_find_value(oAreaStats.SaveState,"Room");
 if(oAreaStats.LoadGame = false)
 {
     ds_map_clear(oAreaStats.SaveState);
-    scrFadeout(rmSceneVillage,c_black,0.05);
+    scrFadeout(rmSceneBeach,c_black,0.05);
     oAreaStats.CurrentSave = SaveName;
 }
 else if(Room != undefined && room_get_name(room) != Room)
