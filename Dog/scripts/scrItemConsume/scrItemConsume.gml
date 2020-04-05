@@ -3,7 +3,7 @@
 var Health = argument0, Text = argument1;
 
 //Create Battle TextBox
-scrCreateBattleBox(Text);
+scrCreateBattleBox(Text, false);
 
 //Change player health
 global.phealth += Health;

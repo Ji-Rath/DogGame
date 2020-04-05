@@ -1,4 +1,4 @@
-// 2020-02-22 13:26:38
+// 2020-04-04 21:32:51
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 persistent = true;
@@ -18,12 +18,14 @@ CurrentSave = "Save1";
 
 LoadGame = false;
 
-#event other_room_end
+global.Debug = false;
 
-//Save game if player is in main area
-if(room != rmTitle && room != rmLoad && room != rmGameOver)
-    scrGameSave("TempSave");
+#event step
 
+if(keyboard_check_pressed(vk_f1))
+{
+    global.Debug = !global.Debug;
+}
 #event other_room_start
 
 //Check enemies in the room and update their position with the pos on file
@@ -41,8 +43,6 @@ with(oEnemyParent)
                 x = ds_grid_get(Grid,1,i);
                 y = ds_grid_get(Grid,2,i);
                 Health = ds_grid_get(Grid,3,i);
-                i = ds_grid_height(Grid);
-                show_debug_message(string(Health));
             }
         }
     }
@@ -82,3 +82,10 @@ with(oNPCParent)
         }
     }
 }
+
+
+#event other_room_end
+
+//Save game if player is in main area
+if(room != rmTitle && room != rmLoad && room != rmGameOver)
+    scrGameSave("TempSave");

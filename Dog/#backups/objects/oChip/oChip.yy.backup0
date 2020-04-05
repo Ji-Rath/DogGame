@@ -1,0 +1,43 @@
+// 2020-04-04 16:35:27
+#event properties (no comments/etc. here are saved)
+parent_index = -1;
+sprite_index = sChip;
+uses_physics = false;
+
+#event create
+
+friction = 0.2;
+Scale = choose(1,1.25,1.5);
+image_xscale = Scale;
+image_yscale = Scale;
+image_angle = random(360);
+
+#event step
+
+//Bounce off minigame boundaries
+if(speed > 0)
+{
+    if(y > room_height/2+250 || y < room_height/2-250)
+    {
+        direction = -direction;
+        image_angle = random(360);
+    }
+    if(x > room_width/2+500 || x < room_width/2-500)
+    {
+        direction = 180-direction;
+        image_angle = random(360);
+    }
+    image_angle += speed;
+    x += lengthdir_x(speed,direction);
+    y += lengthdir_y(speed,direction);
+    speed -= friction;
+}
+
+#event mouse_left_button
+
+global.phealth += 1;
+instance_destroy();
+
+#event draw
+
+draw_self();

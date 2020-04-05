@@ -1,5 +1,4 @@
 
-image_alpha = oMiniGame.OpenEffect;
 if(oMiniGame.timer[0] == -1)
 {
     var TimerReady = (timer[0] <= 0 && timer[0] != -1)
@@ -68,15 +67,8 @@ if(oMiniGame.timer[0] == -1)
         break;
     }
     
-    if(point_distance(x,y,MoveX,y) > Spd)
-    {
-        move_towards_point(MoveX,y,Spd);
-    }
-    else
-    {
-        x = MoveX;
-        speed = 0;
-    }
+    //Move player in random x-direction
+    x += clamp((MoveX-x)/2,0,3);
     
     for(i=0;i<array_length_1d(timer);i++)
     {

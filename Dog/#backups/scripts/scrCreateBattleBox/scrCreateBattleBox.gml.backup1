@@ -1,6 +1,6 @@
-// 2020-02-21 15:27:42
+// 2020-03-31 14:32:07
 /// @param TextArray
-#args TextArray
+#args TextArray, EndTurn = true
 
 if(!instance_exists(oBattleTextBox))
 {

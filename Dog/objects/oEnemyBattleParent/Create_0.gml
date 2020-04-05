@@ -6,3 +6,5 @@ AttackDamage = 0;
 Name = "";
 
 EnemyAttacks = [];
+
+HealthChanged = false;

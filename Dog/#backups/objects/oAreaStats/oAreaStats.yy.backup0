@@ -1,4 +1,4 @@
-// 2020-02-22 17:02:55
+// 2020-04-04 21:32:52
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 persistent = true;
@@ -17,6 +17,15 @@ EnemyKey = 0;
 CurrentSave = "Save1";
 
 LoadGame = false;
+
+global.Debug = false;
+
+#event step
+
+if(keyboard_check_pressed(vk_f1))
+{
+    global.Debug = !global.Debug;
+}
 
 #event other_room_start
 

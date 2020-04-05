@@ -1,0 +1,26 @@
+// 2020-04-03 19:24:38
+#event properties (no comments/etc. here are saved)
+parent_index = -1;
+uses_physics = false;
+
+#event create
+
+Opened = false;
+
+#event step
+
+if(oMiniGame.timer[0] == -1 && !Opened)
+{
+    repeat(20)
+    {
+        var Chip = instance_create_layer(x,y,"Instances",oChip);
+        Chip.speed = random_range(5,25);
+        Chip.direction = 90+random_range(-45,45);
+        ds_list_add(oMiniGame.Instances, Chip);
+    }
+    Opened = true;
+}
+
+#event draw
+
+draw_self();

@@ -17,7 +17,11 @@ if (global.KeyInteract)
 		else
 		{
 			//When there is no more text, move on to the next battle stage
-			oBattleManager.BattleStageEnd = true;
+			oBattleManager.BattleStageEnd = EndTurn;
+			if(!EndTurn)
+			{
+				oBattleManager.timer[0] = 0.5*60;
+			}
 			instance_destroy();
 		}
 	}

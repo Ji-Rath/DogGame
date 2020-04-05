@@ -26,13 +26,10 @@ if(Selected)
         var ArrayIndex = ds_list_find_value(Contents,i);
         var DescArray = ItemDescription[ArrayIndex];
         var ItemCount = ds_map_find_value(oAreaStats.Items, ArrayIndex);
-        if(ItemCount)
+        draw_sprite(DescArray[2],0,x+100,y-250+(i*75));
+        if(ItemCount > 1)
         {
-            draw_sprite(DescArray[2],0,x+100,y-250+(i*75));
-            if(ItemCount > 1)
-            {
-                draw_text(x+100,y-250+(i*75),ItemCount);
-            }
+            draw_text(x+100,y-250+(i*75),ItemCount);
         }
         
     }

@@ -10,6 +10,35 @@ if(visible && Selected)
         Rot = 0;
     }
     
+    //Go straight to attacking with attack button
+    if(ItemIndex == 0)
+    {
+        //Do Action based on item selected
+        ItemMouseHoverSelect = ds_list_find_value(Contents,0);
+        var ContentArray = ItemDescription[ItemMouseHoverSelect];
+        var ExecuteArray = ContentArray[4];
+        var Len = array_length_1d(ExecuteArray)-1;
+        show_debug_message("Item ID: "+string(ItemMouseHoverSelect));
+        switch(Len)
+        {
+            case 0: script_execute(ExecuteArray[0]); break;
+            case 1: script_execute(ExecuteArray[0],ExecuteArray[1]); break;
+            case 2: script_execute(ExecuteArray[0],ExecuteArray[1],ExecuteArray[2]); break;
+            case 3: script_execute(ExecuteArray[0],ExecuteArray[1],ExecuteArray[2],ExecuteArray[3]); break;
+            case 4: script_execute(ExecuteArray[0],ExecuteArray[1],ExecuteArray[2],ExecuteArray[3],ExecuteArray[4]); break;
+            case 5: script_execute(ExecuteArray[0],ExecuteArray[1],ExecuteArray[2],ExecuteArray[3],ExecuteArray[4],ExecuteArray[5]); break;
+        }
+        
+        with(oBattleMenuParent)
+        {
+            visible = false;
+            Selected = false;
+        }
+        oBattleManager.visible = false;
+        oBattleManager.BattleTimer = 0;
+        Selected = false;
+    }
+    
     
     
     //If player clicks on one of the buttons
@@ -28,15 +57,17 @@ if(visible && Selected)
             if(mouse_check_button_pressed(mb_left))
             {
                 //Do Action based on item selected
-                var ContentArray = ItemContent[ItemMouseHoverSelect];
-                var Len = array_length_1d(ContentArray)-1;
+                var ContentArray = ItemDescription[ItemMouseHoverSelect];
+                var ExecuteArray = ContentArray[4];
+                var Len = array_length_1d(ExecuteArray)-1;
                 switch(Len)
                 {
-                    case 0: script_execute(ContentArray[0]); break;
-                    case 1: script_execute(ContentArray[0],ContentArray[1]); break;
-                    case 2: script_execute(ContentArray[0],ContentArray[1],ContentArray[2]); break;
-                    case 3: script_execute(ContentArray[0],ContentArray[1],ContentArray[2],ContentArray[3]); break;
+                    case 0: script_execute(ExecuteArray[0]); break;
+                    case 1: script_execute(ExecuteArray[0],ExecuteArray[1]); break;
+                    case 2: script_execute(ExecuteArray[0],ExecuteArray[1],ExecuteArray[2]); break;
+                    case 3: script_execute(ExecuteArray[0],ExecuteArray[1],ExecuteArray[2],ExecuteArray[3]); break;
                 }
+                
                 with(oBattleMenuParent)
                 {
                     visible = false;
@@ -44,7 +75,7 @@ if(visible && Selected)
                 }
                 oBattleManager.visible = false;
                 oBattleManager.BattleTimer = 0;
-                
+                Selected = false;
             }
         }
     }

@@ -15,6 +15,7 @@ else
     }
     else
     {
+        //Destroy self and instances created for the minigame
         instance_destroy();
         for(var i=0;i<ds_list_size(Instances);i++)
         {
@@ -46,6 +47,7 @@ if(timer[1] > 0)
 }
 else if (timer[1] != -1)
 {
+    //Prevent decimals
     with(oBattleManager)
     {
         global.phealth = ceil(global.phealth);
@@ -53,6 +55,16 @@ else if (timer[1] != -1)
         EnemyBattle.Health = ceil(EnemyBattle.Health);
     }
     Destroy = true;
-    oBattleManager.BattleStageEnd = true;
+    if(EndTurn)
+    {
+        oBattleManager.BattleStageEnd = true;
+    }
+    else
+    {
+        oBattleManager.UpdateStats = true;
+        oBattleManager.visible = true;
+        oBattleMenuParent.visible = true;
+        oBattleManager.BattleTimer = oBattleManager.BattleTimerInit*60;
+    }
     timer[1] = -1;
 }

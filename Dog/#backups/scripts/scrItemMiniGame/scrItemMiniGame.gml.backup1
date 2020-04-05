@@ -1,8 +1,11 @@
-// 2020-02-18 08:57:16
-var MiniGame = instance_create_layer(0,0,"GameManager",oMiniGame);
-MiniGame.GameType = Game.GlovesOff;
+// 2020-04-03 18:34:04
+/// @param GameType
+/// @param Cost = 0
+/// @param ShowEnemy = false;
+#args GameType, Cost = 0, ShowEnemy = false, EndTurn = true;
 
-if(argument_count > 0)
-{
-    global.pp -= argument[1];
-}
+var MiniGame = instance_create_layer(0,0,"GameManager",oMiniGame);
+MiniGame.GameType = GameType;
+global.pp -= Cost;
+MiniGame.ShowEnemy = ShowEnemy;
+MiniGame.EndTurn = EndTurn;

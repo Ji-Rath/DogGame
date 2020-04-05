@@ -11,3 +11,5 @@ EnemyKey = 0;
 CurrentSave = "Save1";
 
 LoadGame = false;
+
+global.Debug = false;

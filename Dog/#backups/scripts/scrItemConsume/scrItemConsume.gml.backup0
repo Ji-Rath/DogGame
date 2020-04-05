@@ -1,10 +1,10 @@
-// 2020-02-21 15:29:34
+// 2020-03-31 14:33:26
 /// @param Text
 /// @param Health
 #args Health, Text
 
 //Create Battle TextBox
-scrCreateBattleBox(Text);
+scrCreateBattleBox(Text, false);
 
 //Change player health
 global.phealth += Health;

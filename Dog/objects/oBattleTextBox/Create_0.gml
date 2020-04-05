@@ -12,6 +12,7 @@ gui_height = display_get_gui_height()
 global.game_width = gui_width
 global.game_height = gui_height
 display_set_gui_size(global.game_width,global.game_height);
+EndTurn = true;
 
 
 

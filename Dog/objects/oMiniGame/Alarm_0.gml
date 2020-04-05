@@ -15,4 +15,12 @@ switch(GameType)
     case Game.GlovesOff:
         ds_list_add(Instances, instance_create_layer(room_width/2,room_height/2,"Instances",oPlayerGloveSmack));
     break;
+    
+    case Game.Chips: 
+        ds_list_add(Instances, instance_create_layer(room_width/2,room_height/2+200,"Instances",oChipBag));
+    break;
+    
+    case Game.PanAttack:
+        ds_list_add(Instances, instance_create_layer(room_width/2+300,room_height/2,"Instances",oPan));
+    break;
 }

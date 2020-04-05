@@ -1,4 +1,4 @@
-// 2020-02-21 15:26:52
+// 2020-03-31 14:32:42
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 uses_physics = false;
@@ -17,6 +17,7 @@ gui_height = display_get_gui_height()
 global.game_width = gui_width
 global.game_height = gui_height
 display_set_gui_size(global.game_width,global.game_height);
+EndTurn = true;
 
 
 
@@ -60,7 +61,7 @@ if (global.KeyInteract)
 		else
 		{
 			//When there is no more text, move on to the next battle stage
-			oBattleManager.BattleStageEnd = true;
+			oBattleManager.BattleStageEnd = EndTurn;
 			instance_destroy();
 		}
 	}
@@ -77,7 +78,6 @@ draw_set_font(fnt_battle);
 draw_sprite(box,0,0,0);
 
 //Text appear effect
-show_debug_message(string(Page));
 var text_wrapped = scrStringWrap(Text[Page],text_max_width);
 var str_len = string_length(text_wrapped);
 if (Counter<str_len)

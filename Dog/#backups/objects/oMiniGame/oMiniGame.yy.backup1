@@ -1,4 +1,4 @@
-// 2020-02-14 18:15:21
+// 2020-04-04 13:28:41
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 uses_physics = false;
@@ -16,12 +16,17 @@ Instances = ds_list_create();
 OpenEffect = 0;
 OpenFraction = 0;
 Destroy = false;
+ShowEnemy = false;
+EndTurn = true;
 
 enum Game
 {
     CrabAttack,
     Crab1,
-    GlovesOff
+    GlovesOff,
+    Hamburger,
+    Chips,
+    PanAttack
 }
 alarm[0] = 1;
 
@@ -42,6 +47,14 @@ switch(GameType)
     
     case Game.GlovesOff:
         ds_list_add(Instances, instance_create_layer(room_width/2,room_height/2,"Instances",oPlayerGloveSmack));
+    break;
+    
+    case Game.Chips: 
+        ds_list_add(Instances, instance_create_layer(room_width/2,room_height/2+200,"Instances",oChipBag));
+    break;
+    
+    case Game.PanAttack:
+        ds_list_add(Instances, instance_create_layer(room_width/2,room_height/2+200,"Instances",oPan));
     break;
 }
 
@@ -64,7 +77,16 @@ else
     }
     else
     {
+        //Destroy self and instances created for the minigame
         instance_destroy();
+        for(var i=0;i<ds_list_size(Instances);i++)
+        {
+            var Instance = ds_list_find_value(Instances,i);
+            if(instance_exists(Instance))
+            {
+                instance_destroy(Instance);
+            }
+        }
     }
 }
 OpenEffect = sin(OpenFraction);
@@ -87,14 +109,7 @@ if(timer[1] > 0)
 }
 else if (timer[1] != -1)
 {
-    for(var i=0;i<ds_list_size(Instances);i++)
-    {
-        var Instance = ds_list_find_value(Instances,i);
-        if(instance_exists(Instance))
-        {
-            instance_destroy(Instance);
-        }
-    }
+    //Prevent decimals
     with(oBattleManager)
     {
         global.phealth = ceil(global.phealth);
@@ -102,7 +117,17 @@ else if (timer[1] != -1)
         EnemyBattle.Health = ceil(EnemyBattle.Health);
     }
     Destroy = true;
-    oBattleManager.BattleStageEnd = true;
+    if(EndTurn)
+    {
+        oBattleManager.BattleStageEnd = true;
+    }
+    else
+    {
+        oBattleManager.UpdateStats = true;
+        oBattleManager.visible = true;
+        oBattleMenuParent.visible = true;
+        oBattleManager.BattleTimer = oBattleManager.BattleTimerInit*60;
+    }
     timer[1] = -1;
 }
 
@@ -112,3 +137,11 @@ else if (timer[1] != -1)
 draw_set_color(c_ltgray);
 draw_roundrect(room_width/2+500,room_height/2+(250*OpenEffect),room_width/2-500,room_height/2-(250*OpenEffect),false)
 draw_set_color(c_white);
+
+for(i=0;i<ds_list_size(Instances);i++)
+{
+    with(ds_list_find_value(Instances,i))
+    {
+        image_alpha = oMiniGame.OpenEffect;
+    }
+}

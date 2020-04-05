@@ -8,6 +8,7 @@ ItemMouseHoverSelect = 0;
 enum Item
 {
     GlovesOff,
+    PanAttack,
     Hamburger,
     LastItem
 }
@@ -40,7 +41,8 @@ for(i=0;i<Item.LastItem;i++)
     if(i != Item.LastItem)
     {
         var GroupCheck = ItemDescription[i];
-        if(GroupCheck[3] == ItemIndex)
+        var ItemCount = ds_map_find_value(oAreaStats.Items, i);
+        if(GroupCheck[3] == ItemIndex && ItemCount > 0)
         {
             ds_list_add(Contents,i);
         }

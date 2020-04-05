@@ -1,11 +1,10 @@
-// 2020-02-21 11:28:00
+// 2020-02-21 15:29:34
 /// @param Text
 /// @param Health
-#args  Health, Text
+#args Health, Text
 
 //Create Battle TextBox
-var BattleText = instance_create_layer(x,y,"text",oBattleTextBox);
-BattleText.text = [Text];
+scrCreateBattleBox(Text);
 
 //Change player health
 global.phealth += Health;

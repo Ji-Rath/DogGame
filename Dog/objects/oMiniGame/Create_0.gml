@@ -10,11 +10,16 @@ Instances = ds_list_create();
 OpenEffect = 0;
 OpenFraction = 0;
 Destroy = false;
+ShowEnemy = false;
+EndTurn = true;
 
 enum Game
 {
     CrabAttack,
     Crab1,
-    GlovesOff
+    GlovesOff,
+    Hamburger,
+    Chips,
+    PanAttack
 }
 alarm[0] = 1;

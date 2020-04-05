@@ -3,6 +3,7 @@
 if(BattleStageEnd)
 {
 	BattleStage++;
+	show_debug_message("BattleStage: "+string(BattleStage));
 	if(BattleStage == 6)
 	{
 		BattleStage = 1;
@@ -28,6 +29,7 @@ if(BattleStageEnd)
 		break;
 		
 		case 2:
+			//Update Stats
 			timer[0] = 0.5*60;
 			visible = true;
 		break;
@@ -42,6 +44,7 @@ if(BattleStageEnd)
 		break;
 		
 		case 4:
+			//Update Stats
 			timer[0] = 0.5*60;
 			visible = true;
 		break;
@@ -54,6 +57,7 @@ if(BattleStageEnd)
 		break;
 		
 		case 7:
+			//Victory Text
 			scrCreateBattleBox(["You Win!"]);
 		break;
 		
@@ -93,7 +97,7 @@ if(BattleTimer > 0 && visible && BattleStage == 3)
 		BattleStageEnd = true;
 		with(oBattleMenuParent)
         {
-            //visible = false;
+            visible = false;
             Selected = false;
         }
         visible = false;
@@ -160,7 +164,8 @@ else if(timer[0] != -1)
 	if(UpdateStats)
 	{
 		UpdateStats = false;
-		BattleStageEnd = true;
+		if(BattleStage == 2 || BattleStage == 4)
+			BattleStageEnd = true;
 	}
 	else
 	{

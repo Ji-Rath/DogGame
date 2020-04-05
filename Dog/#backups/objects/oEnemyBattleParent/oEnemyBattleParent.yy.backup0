@@ -1,4 +1,4 @@
-// 2020-02-15 00:04:38
+// 2020-04-04 14:04:56
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 uses_physics = false;
@@ -13,6 +13,8 @@ Name = "";
 
 EnemyAttacks = [];
 
+HealthChanged = false;
+
 #event step
 
 //visible = !(instance_exists(oMiniGame));
@@ -24,33 +26,46 @@ var XPos = x + choose(oBattleManager.Shake[1],-oBattleManager.Shake[1]);
 var YPos = y;
 var Alpha = 1;
 var Scale = 1;
+var YDivision = 1;
 
 if(instance_exists(oMiniGame))
 {
-    switch(oMiniGame.GameType)
+    if(oMiniGame.ShowEnemy)
     {
-        case Game.GlovesOff:
-            Scale = 1-(oMiniGame.OpenEffect/1.5);
-        break;
-        
-        default:
-            YPos = y + oMiniGame.OpenEffect*250;
-            Alpha = 1-(oMiniGame.OpenEffect/2);
-        break;
+        Scale = 1-(oMiniGame.OpenEffect/1.75);
+    }
+    else
+    {
+        YPos = y + oMiniGame.OpenEffect*250;
+        Alpha = 1-(oMiniGame.OpenEffect/2);
+    }
+    
+    if(instance_exists(oPan))
+    {
+        if(oPan.Hit)
+        {
+            YDivision = 2;
+        }
     }
 }
 
-draw_sprite_ext(sprite_index,image_index,XPos,YPos,Scale,Scale,0,c_white,Alpha);
+draw_sprite_ext(sprite_index,image_index,XPos,YPos,Scale,Scale/YDivision,0,c_white,Alpha);
 
+var HC = HealthChanged;
 
-
-var HealthChanged = false;
 with(oBattleManager)
 {
     if (EnemyBattle != noone && DrawEnemyHealth != EnemyBattle.Health)
     {
-        HealthChanged = true;
+        HC = true;
+    }
+    if(!UpdateStats)
+    {
+        HC = false;
     }
 }
+
+HealthChanged = HC;
+
 if((oBattleManager.visible) && HealthChanged)
-draw_healthbar(XPos-100,YPos-50,XPos+100,YPos-75,oBattleManager.DrawEnemyHealth*10,c_gray,c_red,c_red,0,true,false);
+    draw_healthbar(XPos-100,YPos-50,XPos+100,YPos-75,oBattleManager.DrawEnemyHealth*10,c_gray,c_red,c_red,0,true,false);

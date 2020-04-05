@@ -1,4 +1,4 @@
-// 2020-02-21 15:28:12
+// 2020-03-31 14:37:03
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 uses_physics = false;
@@ -17,6 +17,7 @@ gui_height = display_get_gui_height()
 global.game_width = gui_width
 global.game_height = gui_height
 display_set_gui_size(global.game_width,global.game_height);
+EndTurn = true;
 
 
 
@@ -60,7 +61,11 @@ if (global.KeyInteract)
 		else
 		{
 			//When there is no more text, move on to the next battle stage
-			oBattleManager.BattleStageEnd = true;
+			oBattleManager.BattleStageEnd = EndTurn;
+			if(!EndTurn)
+			{
+				oBattleManager.timer[0] = 0.5*60;
+			}
 			instance_destroy();
 		}
 	}

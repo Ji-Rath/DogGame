@@ -1,5 +1,4 @@
 
-image_alpha = oMiniGame.OpenEffect;
 if(oMiniGame.timer[0] == -1)
 {
     var TimerReady = (timer[0] <= 0 && timer[0] != -1)
@@ -37,15 +36,8 @@ if(oMiniGame.timer[0] == -1)
         break;
     }
     
-    if(point_distance(x,y,oCrab1Player.x,y) > Spd)
-    {
-        move_towards_point(oCrab1Player.x,y,Spd);
-    }
-    else
-    {
-        x = oCrab1Player.x
-        speed = 0;
-    }
+    //Move crab arm towards player x-pos
+    x += clamp((oCrab1Player.x-x)/2,0,2);
     
     //Timer management
     if(timer[0] > 0)
