@@ -1,4 +1,4 @@
-// 2020-04-05 00:59:00
+// 2020-04-05 09:47:55
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 sprite_index = sPan;
@@ -7,13 +7,9 @@ uses_physics = false;
 #event create Insert description here
 // You can write your code in this editor
 
-Hit = false;
-Grabbed = false;
+event_inherited();
 
-SpriteXOffset = sprite_get_xoffset(sprite_index);
-SpriteYOffset = sprite_get_yoffset(sprite_index);
-ObjectFixture = 0;
-
+//Default values for physics object
 Fixture = physics_fixture_create();
 physics_fixture_set_density(Fixture, 1);
 physics_fixture_set_restitution(Fixture, 0.1);
@@ -27,50 +23,23 @@ physics_fixture_add_point(Fixture, 94-SpriteXOffset, 80-SpriteYOffset);
 physics_fixture_add_point(Fixture, 7-SpriteXOffset, 80-SpriteYOffset);
 ObjectFixture = physics_fixture_bind(Fixture, self);
 physics_fixture_delete(Fixture);
-
-#event step Insert description here
-// You can write your code in this editor
-
-if(!Hit && Grabbed)
-{
-	physics_apply_impulse(x,y,mouse_x-x,mouse_y-y)
-}
 
 #event collision:oEnemyBattleParent Insert description here
 // You can write your code in this editor
 
+//Apply damage to enemy if the pan collides with the enemy
 if(!Hit)
 {
-	oEnemyBattleParent.Health -= 50//clamp(abs(phy_speed_y),2,4);
+	oEnemyBattleParent.Health -= clamp(abs(phy_speed_y),3,5);
 	Hit = true;
 }
 
-#event mouse_left_press
-
-Grabbed = true;
-
-physics_remove_fixture(self, ObjectFixture);
-
-Fixture = physics_fixture_create();
-physics_fixture_set_density(Fixture, 0.1);
-physics_fixture_set_restitution(Fixture, 0.1);
-physics_fixture_set_collision_group(Fixture, 0);
-physics_fixture_set_linear_damping(Fixture, 15);
-physics_fixture_set_angular_damping(Fixture, 15);
-physics_fixture_set_polygon_shape(Fixture);
-physics_fixture_add_point(Fixture, 7-SpriteXOffset, 47-SpriteYOffset); 
-physics_fixture_add_point(Fixture, 94-SpriteXOffset, 47-SpriteYOffset);
-physics_fixture_add_point(Fixture, 94-SpriteXOffset, 80-SpriteYOffset);
-physics_fixture_add_point(Fixture, 7-SpriteXOffset, 80-SpriteYOffset);
-ObjectFixture = physics_fixture_bind(Fixture, self);
-physics_fixture_delete(Fixture);
-
 #event mouse_global_left_release
 
-Grabbed = false;
-
+//Remove current fixture properties
 physics_remove_fixture(self, ObjectFixture);
 
+//Default values for physics object
 Fixture = physics_fixture_create();
 physics_fixture_set_density(Fixture, 1);
 physics_fixture_set_restitution(Fixture, 0.1);
@@ -84,13 +53,3 @@ physics_fixture_add_point(Fixture, 94-SpriteXOffset, 80-SpriteYOffset);
 physics_fixture_add_point(Fixture, 7-SpriteXOffset, 80-SpriteYOffset);
 ObjectFixture = physics_fixture_bind(Fixture, self);
 physics_fixture_delete(Fixture);
-
-#event draw
-
-draw_self();
-
-if(global.Debug)
-{
-	draw_set_color(c_red);
-	physics_draw_debug();
-}

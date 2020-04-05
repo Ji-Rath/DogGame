@@ -30,17 +30,12 @@ visible = false;
 RotValue = 0;
 Rot = 0;
 
-//Get item name, script, and amount
-scrItems();
-
-
-
 //Add available items to ds list
 for(i=0;i<Item.LastItem;i++)
 {
     if(i != Item.LastItem)
     {
-        var GroupCheck = ItemDescription[i];
+        var GroupCheck = oBattleManager.ItemDescription[i];
         var ItemCount = ds_map_find_value(oAreaStats.Items, i);
         if(GroupCheck[3] == ItemIndex && ItemCount > 0)
         {

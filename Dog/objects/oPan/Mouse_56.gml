@@ -1,8 +1,10 @@
 
-Grabbed = false;
+event_inherited();
 
+//Remove current fixture properties
 physics_remove_fixture(self, ObjectFixture);
 
+//Default values for physics object
 Fixture = physics_fixture_create();
 physics_fixture_set_density(Fixture, 1);
 physics_fixture_set_restitution(Fixture, 0.1);

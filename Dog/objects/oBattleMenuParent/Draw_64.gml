@@ -24,7 +24,7 @@ if(Selected)
     {
         //Draw available contents
         var ArrayIndex = ds_list_find_value(Contents,i);
-        var DescArray = ItemDescription[ArrayIndex];
+        var DescArray = oBattleManager.ItemDescription[ArrayIndex];
         var ItemCount = ds_map_find_value(oAreaStats.Items, ArrayIndex);
         draw_sprite(DescArray[2],0,x+100,y-250+(i*75));
         if(ItemCount > 1)
@@ -36,7 +36,7 @@ if(Selected)
     
     if(ItemMouseHover)
     {
-        var DescArray = ItemDescription[ItemMouseHoverSelect];
+        var DescArray = oBattleManager.ItemDescription[ItemMouseHoverSelect];
         draw_sprite(sBattleMenu2,0,x,y);
         draw_set_font(fnt_stats);
         draw_text(x+80,y-470,DescArray[0]);

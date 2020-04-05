@@ -1,4 +1,4 @@
-// 2020-04-03 19:19:29
+// 2020-04-05 13:08:10
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 mask_index = sBattleIcons;
@@ -37,17 +37,12 @@ visible = false;
 RotValue = 0;
 Rot = 0;
 
-//Get item name, script, and amount
-scrItems();
-
-
-
 //Add available items to ds list
 for(i=0;i<Item.LastItem;i++)
 {
     if(i != Item.LastItem)
     {
-        var GroupCheck = ItemDescription[i];
+        var GroupCheck = oBattleManager.ItemDescription[i];
         var ItemCount = ds_map_find_value(oAreaStats.Items, i);
         if(GroupCheck[3] == ItemIndex && ItemCount > 0)
         {
@@ -69,7 +64,7 @@ if(visible && Selected)
         Rot = 0;
     }
     
-    //Go straight to attacking with attack button
+    //Go straight to attacking with attack button (Can probably be optimized in the future)
     if(ItemIndex == 0)
     {
         //Do Action based on item selected
@@ -84,8 +79,8 @@ if(visible && Selected)
             case 1: script_execute(ExecuteArray[0],ExecuteArray[1]); break;
             case 2: script_execute(ExecuteArray[0],ExecuteArray[1],ExecuteArray[2]); break;
             case 3: script_execute(ExecuteArray[0],ExecuteArray[1],ExecuteArray[2],ExecuteArray[3]); break;
-            case 3: script_execute(ExecuteArray[0],ExecuteArray[1],ExecuteArray[2],ExecuteArray[3],ExecuteArray[4]); break;
-            case 3: script_execute(ExecuteArray[0],ExecuteArray[1],ExecuteArray[2],ExecuteArray[3],ExecuteArray[4],ExecuteArray[5]); break;
+            case 4: script_execute(ExecuteArray[0],ExecuteArray[1],ExecuteArray[2],ExecuteArray[3],ExecuteArray[4]); break;
+            case 5: script_execute(ExecuteArray[0],ExecuteArray[1],ExecuteArray[2],ExecuteArray[3],ExecuteArray[4],ExecuteArray[5]); break;
         }
         
         with(oBattleMenuParent)
@@ -96,6 +91,9 @@ if(visible && Selected)
         oBattleManager.visible = false;
         oBattleManager.BattleTimer = 0;
         Selected = false;
+        
+        //Increase rage
+        oBattleManager.RageMeter += 1;
     }
     
     
@@ -135,6 +133,9 @@ if(visible && Selected)
                 oBattleManager.visible = false;
                 oBattleManager.BattleTimer = 0;
                 Selected = false;
+                
+                //Increase Rage
+                oBattleManager.RageMeter += 1;
             }
         }
     }
@@ -196,7 +197,7 @@ if(Selected)
     {
         //Draw available contents
         var ArrayIndex = ds_list_find_value(Contents,i);
-        var DescArray = ItemDescription[ArrayIndex];
+        var DescArray = oBattleManager.ItemDescription[ArrayIndex];
         var ItemCount = ds_map_find_value(oAreaStats.Items, ArrayIndex);
         draw_sprite(DescArray[2],0,x+100,y-250+(i*75));
         if(ItemCount > 1)
@@ -208,7 +209,7 @@ if(Selected)
     
     if(ItemMouseHover)
     {
-        var DescArray = ItemDescription[ItemMouseHoverSelect];
+        var DescArray = oBattleManager.ItemDescription[ItemMouseHoverSelect];
         draw_sprite(sBattleMenu2,0,x,y);
         draw_set_font(fnt_stats);
         draw_text(x+80,y-470,DescArray[0]);

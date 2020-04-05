@@ -1,13 +1,9 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-Hit = false;
-Grabbed = false;
+event_inherited();
 
-SpriteXOffset = sprite_get_xoffset(sprite_index);
-SpriteYOffset = sprite_get_yoffset(sprite_index);
-ObjectFixture = 0;
-
+//Default values for physics object
 Fixture = physics_fixture_create();
 physics_fixture_set_density(Fixture, 1);
 physics_fixture_set_restitution(Fixture, 0.1);

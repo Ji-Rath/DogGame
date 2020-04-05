@@ -1,4 +1,57 @@
-// 2020-04-04 21:40:56
+// 2020-04-05 09:49:44
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 uses_physics = false;
+
+#event create
+
+Hit = false;
+Grabbed = false;
+
+SpriteXOffset = sprite_get_xoffset(sprite_index);
+SpriteYOffset = sprite_get_yoffset(sprite_index);
+ObjectFixture = 0;
+
+#event step Insert description here
+// You can write your code in this editor
+
+if(!Hit && Grabbed)
+{
+	physics_apply_impulse(x,y,mouse_x-x,mouse_y-y)
+}
+
+#event mouse_left_press
+
+Grabbed = true;
+
+physics_remove_fixture(self, ObjectFixture);
+
+Fixture = physics_fixture_create();
+physics_fixture_set_density(Fixture, 0.1);
+physics_fixture_set_restitution(Fixture, 0.1);
+physics_fixture_set_collision_group(Fixture, 0);
+physics_fixture_set_linear_damping(Fixture, 15);
+physics_fixture_set_angular_damping(Fixture, 15);
+physics_fixture_set_polygon_shape(Fixture);
+physics_fixture_add_point(Fixture, 7-SpriteXOffset, 47-SpriteYOffset); 
+physics_fixture_add_point(Fixture, 94-SpriteXOffset, 47-SpriteYOffset);
+physics_fixture_add_point(Fixture, 94-SpriteXOffset, 80-SpriteYOffset);
+physics_fixture_add_point(Fixture, 7-SpriteXOffset, 80-SpriteYOffset);
+ObjectFixture = physics_fixture_bind(Fixture, self);
+physics_fixture_delete(Fixture);
+
+#event mouse_global_left_release
+
+Grabbed = false;
+
+//Set default values in object
+
+#event draw
+
+draw_self();
+
+if(global.Debug)
+{
+	draw_set_color(c_red);
+	physics_draw_debug();
+}

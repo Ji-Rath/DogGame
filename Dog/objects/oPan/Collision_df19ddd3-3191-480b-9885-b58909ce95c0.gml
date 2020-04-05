@@ -1,8 +1,9 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+//Apply damage to enemy if the pan collides with the enemy
 if(!Hit)
 {
-	oEnemyBattleParent.Health = 0//clamp(abs(phy_speed_y),2,4);
+	oEnemyBattleParent.Health -= clamp(abs(phy_speed_y),3,5);
 	Hit = true;
 }

@@ -1,6 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+scrItems();
+
 box = sBattleBox;
 gui_width = display_get_gui_width();
 gui_height = display_get_gui_height();
@@ -63,3 +65,5 @@ for(i=0;i<2;i++)
 {
 	Shake[i] = 0;
 }
+
+RageMeter = 0;

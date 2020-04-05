@@ -8,7 +8,8 @@
         "f9bb1388-af81-0284-156e-b0d3968662e0",
         "1b0b06fc-3fc3-452f-99b1-aa6511271a05",
         "e41d4359-c02f-42be-a4a1-c5ed01d19080",
-        "15c61692-eb49-4196-b887-663e71ea5e1a"
+        "15c61692-eb49-4196-b887-663e71ea5e1a",
+        "82b55bfb-f3b2-e141-4ace-4007a22ffa47"
     ],
     "filterType": "GMObject",
     "folderName": "BattleScene",

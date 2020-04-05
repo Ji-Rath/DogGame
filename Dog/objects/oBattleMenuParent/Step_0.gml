@@ -10,12 +10,12 @@ if(visible && Selected)
         Rot = 0;
     }
     
-    //Go straight to attacking with attack button
+    //Go straight to attacking with attack button (Can probably be optimized in the future)
     if(ItemIndex == 0)
     {
         //Do Action based on item selected
         ItemMouseHoverSelect = ds_list_find_value(Contents,0);
-        var ContentArray = ItemDescription[ItemMouseHoverSelect];
+        var ContentArray = oBattleManager.ItemDescription[ItemMouseHoverSelect];
         var ExecuteArray = ContentArray[4];
         var Len = array_length_1d(ExecuteArray)-1;
         show_debug_message("Item ID: "+string(ItemMouseHoverSelect));
@@ -37,6 +37,9 @@ if(visible && Selected)
         oBattleManager.visible = false;
         oBattleManager.BattleTimer = 0;
         Selected = false;
+        
+        //Increase rage
+        oBattleManager.RageMeter += 1;
     }
     
     
@@ -57,7 +60,7 @@ if(visible && Selected)
             if(mouse_check_button_pressed(mb_left))
             {
                 //Do Action based on item selected
-                var ContentArray = ItemDescription[ItemMouseHoverSelect];
+                var ContentArray = oBattleManager.ItemDescription[ItemMouseHoverSelect];
                 var ExecuteArray = ContentArray[4];
                 var Len = array_length_1d(ExecuteArray)-1;
                 switch(Len)
@@ -76,6 +79,9 @@ if(visible && Selected)
                 oBattleManager.visible = false;
                 oBattleManager.BattleTimer = 0;
                 Selected = false;
+                
+                //Increase Rage
+                oBattleManager.RageMeter += 1;
             }
         }
     }
