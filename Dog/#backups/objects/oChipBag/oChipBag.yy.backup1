@@ -1,4 +1,4 @@
-// 2020-04-03 14:08:10
+// 2020-04-03 19:24:38
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 uses_physics = false;
@@ -11,7 +11,7 @@ Opened = false;
 
 if(oMiniGame.timer[0] == -1 && !Opened)
 {
-    repeat(30)
+    repeat(20)
     {
         var Chip = instance_create_layer(x,y,"Instances",oChip);
         Chip.speed = random_range(5,25);

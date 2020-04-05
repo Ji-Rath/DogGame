@@ -1,4 +1,4 @@
-// 2020-04-04 21:19:36
+// 2020-04-04 21:19:41
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 sprite_index = sMiniGameCrab1Setup;
@@ -61,7 +61,7 @@ if(oMiniGame.timer[0] == -1)
     }
     
     //Move crab arm towards player x-pos
-    x += clamp((oCrab1Player.x-x),0,2);
+    x += clamp((oCrab1Player.x-x)/2,0,2);
     
     //Timer management
     if(timer[0] > 0)

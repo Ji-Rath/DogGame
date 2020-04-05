@@ -1,4 +1,4 @@
-// 2020-04-03 19:15:43
+// 2020-04-05 01:25:55
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 visible = false;
@@ -132,7 +132,7 @@ if(BattleStageEnd)
 		
 		case 7:
 			//Victory Text
-			scrCreateBattleBox(["You Win!"]);
+			
 		break;
 		
 		case 8:

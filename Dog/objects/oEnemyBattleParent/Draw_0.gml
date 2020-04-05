@@ -27,7 +27,7 @@ if(instance_exists(oMiniGame))
     }
 }
 
-draw_sprite_ext(sprite_index,image_index,XPos,YPos,Scale,Scale/YDivision,0,c_white,Alpha);
+draw_sprite_ext(sprite_index,image_index,XPos,YPos,Scale,Scale/YDivision,Angle,c_white,Alpha);
 
 var HC = HealthChanged;
 

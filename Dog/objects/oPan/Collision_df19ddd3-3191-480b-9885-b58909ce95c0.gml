@@ -3,6 +3,6 @@
 
 if(!Hit)
 {
-	oEnemyBattleParent.Health -= clamp(abs(phy_speed_y),2,4);
+	oEnemyBattleParent.Health = 0//clamp(abs(phy_speed_y),2,4);
 	Hit = true;
 }

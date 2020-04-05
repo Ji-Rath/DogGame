@@ -58,7 +58,7 @@ if(BattleStageEnd)
 		
 		case 7:
 			//Victory Text
-			scrCreateBattleBox(["You Win!"]);
+			
 		break;
 		
 		case 8:

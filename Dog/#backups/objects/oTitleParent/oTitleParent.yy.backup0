@@ -1,6 +1,7 @@
-// 2020-02-22 23:41:12
+// 2020-04-05 01:14:01
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
+sprite_index = sAlert;
 mask_index = sAlert;
 uses_physics = false;
 

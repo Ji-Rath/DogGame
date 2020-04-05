@@ -1,4 +1,4 @@
-// 2020-04-04 21:19:28
+// 2020-04-04 21:19:45
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 sprite_index = sMiniGameCrab1PlayerRun;
@@ -99,7 +99,7 @@ if(oMiniGame.timer[0] == -1)
     }
     
     //Move player in random x-direction
-    x += clamp((MoveX-x),0,3);
+    x += clamp((MoveX-x)/2,0,3);
     
     for(i=0;i<array_length_1d(timer);i++)
     {

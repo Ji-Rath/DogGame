@@ -1,4 +1,4 @@
-// 2020-04-05 00:22:18
+// 2020-04-05 00:59:00
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 sprite_index = sPan;
@@ -35,12 +35,13 @@ if(!Hit && Grabbed)
 {
 	physics_apply_impulse(x,y,mouse_x-x,mouse_y-y)
 }
+
 #event collision:oEnemyBattleParent Insert description here
 // You can write your code in this editor
 
 if(!Hit)
 {
-	oEnemyBattleParent.Health -= clamp(abs(phy_speed_y),2,4);
+	oEnemyBattleParent.Health -= 50//clamp(abs(phy_speed_y),2,4);
 	Hit = true;
 }
 
@@ -54,8 +55,8 @@ Fixture = physics_fixture_create();
 physics_fixture_set_density(Fixture, 0.1);
 physics_fixture_set_restitution(Fixture, 0.1);
 physics_fixture_set_collision_group(Fixture, 0);
-physics_fixture_set_linear_damping(Fixture, 10);
-physics_fixture_set_angular_damping(Fixture, 10);
+physics_fixture_set_linear_damping(Fixture, 15);
+physics_fixture_set_angular_damping(Fixture, 15);
 physics_fixture_set_polygon_shape(Fixture);
 physics_fixture_add_point(Fixture, 7-SpriteXOffset, 47-SpriteYOffset); 
 physics_fixture_add_point(Fixture, 94-SpriteXOffset, 47-SpriteYOffset);
