@@ -33,3 +33,6 @@ scrPathSpeed();
 scrMoveCollision();
 scrWalk();
 
+XPrevious = x;
+YPrevious = y;
+

@@ -47,3 +47,6 @@ if(SaveVal != undefined)
 
 //Load Player Stats
 scrPlayerStats();
+
+XPrevious = x;
+YPrevious = y;

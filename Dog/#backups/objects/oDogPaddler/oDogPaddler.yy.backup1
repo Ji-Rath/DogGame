@@ -1,4 +1,4 @@
-// 2020-02-22 13:08:16
+// 2020-02-22 19:22:02
 #event properties (no comments/etc. here are saved)
 parent_index = oDepthParent;
 sprite_index = sDogpaddlerIdle;
@@ -45,11 +45,11 @@ SIdleUp = sDogpaddlerIdleUp;
 SIdleDown = sDogpaddlerIdleDown;
 
 //Load Variables from ds map if available
-var SaveVal = ds_map_find_value(oAreaStats.SaveState,room_get_name(room)+"PlayerX");
+var SaveVal = ds_map_find_value(oAreaStats.SaveState,"PlayerX");
 if(SaveVal != undefined)
 {
-	x = ds_map_find_value(oAreaStats.SaveState,room_get_name(room)+"PlayerX");
-	y = ds_map_find_value(oAreaStats.SaveState,room_get_name(room)+"PlayerY");
+	x = ds_map_find_value(oAreaStats.SaveState,"PlayerX");
+	y = ds_map_find_value(oAreaStats.SaveState,"PlayerY");
 }
 
 //Load Player Stats

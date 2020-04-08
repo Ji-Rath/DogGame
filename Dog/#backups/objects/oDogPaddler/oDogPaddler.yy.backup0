@@ -1,4 +1,4 @@
-// 2020-02-22 19:22:02
+// 2020-04-07 18:39:04
 #event properties (no comments/etc. here are saved)
 parent_index = oDepthParent;
 sprite_index = sDogpaddlerIdle;
@@ -54,6 +54,9 @@ if(SaveVal != undefined)
 
 //Load Player Stats
 scrPlayerStats();
+
+XPrevious = x;
+YPrevious = y;
 
 #event step Insert description here
 // You can write your code in this editor

@@ -1,4 +1,4 @@
-// 2020-02-21 11:12:48
+// 2020-04-07 18:52:49
 #event properties (no comments/etc. here are saved)
 parent_index = oNPCParent;
 sprite_index = sOldMan;
@@ -53,6 +53,9 @@ Used = false;
 Scale = 2;
 image_xscale = Scale;
 image_yscale = Scale;
+
+XPrevious = 0;
+YPrevious = 0;
 
 #event step
 

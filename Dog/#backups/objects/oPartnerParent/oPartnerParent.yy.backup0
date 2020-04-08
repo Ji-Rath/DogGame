@@ -1,0 +1,66 @@
+// 2020-04-07 18:50:12
+#event properties (no comments/etc. here are saved)
+parent_index = oDepthParent;
+uses_physics = false;
+
+#event create
+
+//Assigning sprites to variables
+SWalk = sDogpaddlerWalk;
+SRun = sDogpaddlerRun;
+SWalkUp = sDogpaddlerWalkUp;
+SRunUp = sDogpaddlerRunUp;
+SWalkDown = sDogpaddlerWalkDown;
+SRunDown = sDogpaddlerRunDown;
+SIdle = sDogpaddlerIdle;
+SIdleUp = sDogpaddlerIdleUp;
+SIdleDown = sDogpaddlerIdleDown;
+
+HSpeed = 0;
+VSpeed = 0;
+
+Speed = 0;
+WalkSpeed = 3;
+
+Distance = 32;
+Scale = 0.5;
+
+image_xscale = Scale;
+image_yscale = Scale;
+
+timer[0] = 1;
+
+event_inherited();
+
+XPrevious = x;
+YPrevious = y;
+
+
+#event step
+
+event_inherited();
+
+if(timer[0] > 0)
+{
+    timer[0] -= 1;
+}
+else
+{
+    Speed = WalkSpeed;
+    var Path = path_add();
+    if(mp_grid_path(global.AIGrid, Path, x, y, oDogPaddler.x, oDogPaddler.y, true))
+    {
+    	path_start(Path, Speed, path_action_stop, false);
+    }
+    timer[0] = 0.25*60;
+}
+
+if(distance_to_object(oDogPaddler) < Distance)
+{
+    path_end();
+    HSpeed = 0;
+    VSpeed = 0;
+}
+
+scrWalk();
+scrPathSpeed();

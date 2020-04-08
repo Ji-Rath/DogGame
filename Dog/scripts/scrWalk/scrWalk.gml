@@ -1,6 +1,6 @@
 
 //Set Walking/Running animation
-if (HSpeed != 0)
+if (abs(HSpeed) > 0.8)
 {
 	image_xscale = sign(HSpeed)*Scale;
 	if(abs(HSpeed) > WalkSpeed)

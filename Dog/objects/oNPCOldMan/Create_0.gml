@@ -46,3 +46,6 @@ Used = false;
 Scale = 2;
 image_xscale = Scale;
 image_yscale = Scale;
+
+XPrevious = 0;
+YPrevious = 0;

@@ -1,7 +1,13 @@
 
 //Update speed
 Speed = WalkSpeed*1.5;
+var Path = path_add();
+if(mp_grid_path(global.AIGrid, Path, x, y, oDogPaddler.x, oDogPaddler.y, true))
+{
+	path_start(Path, Speed, path_action_stop, false);
+}
 
+/*
 //Get player direction in x and y directions
 var PlayerDirectionX = sign(floor((oDogPaddler.x-x)/4)*4);
 var PlayerDirectionY = sign(floor((oDogPaddler.y-y)/4)*4);

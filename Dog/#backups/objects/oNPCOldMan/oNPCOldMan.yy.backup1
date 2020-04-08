@@ -1,4 +1,4 @@
-// 2020-02-21 11:11:14
+// 2020-02-21 11:12:48
 #event properties (no comments/etc. here are saved)
 parent_index = oNPCParent;
 sprite_index = sOldMan;
@@ -59,7 +59,7 @@ image_yscale = Scale;
 //Have NPC go to path if not in a cutscene
 if(path_index == -1 && !instance_exists(oCutScene))
 {
-    path_start(pathOldMan,Speed,path_action_restart,true);
+    path_start(pathOldMan,Speed*2,path_action_restart,true);
 }
 
 //Go to cutscene if player gets near

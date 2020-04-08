@@ -1,4 +1,4 @@
-// 2020-04-04 21:32:51
+// 2020-04-07 19:13:35
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 persistent = true;
@@ -26,7 +26,33 @@ if(keyboard_check_pressed(vk_f1))
 {
     global.Debug = !global.Debug;
 }
+
 #event other_room_start
+
+//Create AIGrid
+var CellWidth = 32;
+var CellHeight = 32;
+
+var CellCountW = room_width/CellWidth;
+var CellCountH = room_height/CellHeight;
+
+global.AIGrid = mp_grid_create(0, 0, CellCountW, CellCountH, CellWidth, CellHeight);
+
+var LayerID = layer_get_id("Collision");
+if(LayerID)
+{
+    var TileID = layer_tilemap_get_id(LayerID);
+    for(var i=0;i<tilemap_get_width(TileID);i++)
+    {
+        for(var j=0;j<tilemap_get_height(TileID);j++)
+        {
+            if(tilemap_get(TileID, i, j))
+            {
+                mp_grid_add_cell(global.AIGrid, i, j);
+            }
+        }
+    }
+}
 
 //Check enemies in the room and update their position with the pos on file
 with(oEnemyParent)
@@ -89,3 +115,8 @@ with(oNPCParent)
 //Save game if player is in main area
 if(room != rmTitle && room != rmLoad && room != rmGameOver)
     scrGameSave("TempSave");
+    
+#event draw
+
+if(global.Debug)
+    mp_grid_draw(global.AIGrid);

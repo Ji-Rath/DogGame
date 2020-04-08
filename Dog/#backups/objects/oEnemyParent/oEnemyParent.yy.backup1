@@ -1,4 +1,4 @@
-// 2020-02-22 13:32:05
+// 2020-02-22 21:41:46
 #event properties (no comments/etc. here are saved)
 parent_index = oDepthParent;
 sprite_index = sEnemydefault;
@@ -84,6 +84,10 @@ if(!instance_exists(oCutScene) && !Destroyed)
 	{
 		timer[0] -= 1;
 	}
+}
+else
+{
+	State = estates.Idle;
 }
 
 //Movement

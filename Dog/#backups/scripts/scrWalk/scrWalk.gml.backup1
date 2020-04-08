@@ -1,17 +1,17 @@
-// 2020-02-20 21:58:54
+// 2020-04-07 17:57:58
 
 //Set Walking/Running animation
-if (HSpeed != 0)
+if (abs(HSpeed) > 0.5)
 {
 	image_xscale = sign(HSpeed)*Scale;
-	if(abs(HSpeed > WalkSpeed))
+	if(abs(HSpeed) > WalkSpeed)
 		sprite_index = SRun;
 	else
 		sprite_index = SWalk;
 }
 else if (VSpeed < 0)
 {
-	if(abs(VSpeed > WalkSpeed))
+	if(abs(VSpeed) > WalkSpeed)
 		sprite_index = SRunUp;
 	else
 		sprite_index = SWalkUp;
@@ -19,7 +19,7 @@ else if (VSpeed < 0)
 }
 else if (VSpeed > 0)
 {
-	if(abs(VSpeed > WalkSpeed))
+	if(abs(VSpeed) > WalkSpeed)
 		sprite_index = SRunDown;
 	else
 		sprite_index = SWalkDown;

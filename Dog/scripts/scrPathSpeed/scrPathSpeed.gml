@@ -1,9 +1,33 @@
 
 //Split direction into x and y values
+
+//XPrevious = path_get_x(path_index,clamp(path_position-0.01,0,1));
+//YPrevious = path_get_y(path_index,clamp(path_position-0.01,0,1));
+
+//var Direction = point_direction(x,y,XPrevious,YPrevious);
+
+
 if(path_index != -1)
 {
-    var Dir = 180+point_direction(x,y,path_get_x(path_index,path_position-0.01),path_get_y(path_index,path_position-0.01));
+    HSpeed = x-XPrevious;
+    VSpeed = y-YPrevious;
+    XPrevious = x;
+    YPrevious = y;
+}
+
+
+
+/*
+if( ((abs(XPrevious)-abs(x)) > 0.5 || (abs(YPrevious)-abs(y)) > 0.5))
+{
+    var Dir = 180+point_direction(x,y,XPrevious,YPrevious);
     HSpeed = cos(degtorad(Dir))*WalkSpeed;
     VSpeed = -sin(degtorad(Dir))*WalkSpeed;
     //path_get_speed(path_index,path_position)
+}
+
+if(object_index == oPartnerParent)
+{
+    show_debug_message("XDist: "+string(abs(XPrevious)-abs(x)));
+    show_debug_message("YDist: "+string(abs(YPrevious)-abs(y`)));
 }

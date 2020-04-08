@@ -1,4 +1,4 @@
-// 2020-02-22 21:41:46
+// 2020-04-07 18:39:16
 #event properties (no comments/etc. here are saved)
 parent_index = oDepthParent;
 sprite_index = sEnemydefault;
@@ -94,6 +94,9 @@ else
 scrPathSpeed();
 scrMoveCollision();
 scrWalk();
+
+XPrevious = x;
+YPrevious = y;
 
 
 

@@ -1957,6 +1957,14 @@
                 "resourcePath": "objects\\oButtonRage\\oButtonRage.yy",
                 "resourceType": "GMObject"
             }
+        },
+        {
+            "Key": "2452f692-d25e-a2e5-895d-ef8a89530666",
+            "Value": {
+                "id": "313dcba4-45a8-523e-9b50-805864d0e92c",
+                "resourcePath": "objects\\oPartnerParent\\oPartnerParent.yy",
+                "resourceType": "GMObject"
+            }
         }
     ],
     "script_order": [
