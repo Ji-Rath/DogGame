@@ -1,4 +1,4 @@
-// 2020-02-22 21:41:46
+// 2020-05-22 19:29:53
 #event properties (no comments/etc. here are saved)
 parent_index = oDepthParent;
 sprite_index = sEnemydefault;
@@ -87,6 +87,12 @@ if(!instance_exists(oCutScene) && !Destroyed)
 }
 else
 {
+	if(State = estates.Aggro)
+	{
+		HSpeed = 0;
+		VSPeed = 0;
+		path_end();
+	}
 	State = estates.Idle;
 }
 
@@ -94,6 +100,9 @@ else
 scrPathSpeed();
 scrMoveCollision();
 scrWalk();
+
+XPrevious = x;
+YPrevious = y;
 
 
 

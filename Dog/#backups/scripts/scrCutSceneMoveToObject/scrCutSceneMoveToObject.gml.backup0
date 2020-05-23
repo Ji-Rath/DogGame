@@ -1,4 +1,4 @@
-// 2020-02-21 00:39:43
+// 2020-05-22 19:19:31
 /// @param Object
 /// @param Speed
 /// @param ObjectFollow
@@ -6,6 +6,29 @@
 /// @func scrCutSceneMove(Object, Speed, X, Y, Relative, DistanceFinish)
 #args Object, Speed, ObjectFollow, DistanceFinish = 0
 
+with(Object)
+{
+    if(path_index == -1)
+    {
+        var Path = path_add();
+        if(mp_grid_path(global.AIGrid, Path, x, y, ObjectFollow.x, ObjectFollow.y, true))
+        {
+        	path_start(Path, Speed, path_action_stop, false);
+        }
+    }
+    if(distance_to_object(ObjectFollow) < DistanceFinish)
+    {
+        path_end();
+        HSpeed = 0;
+        VSpeed = 0;
+        with(other)
+        {
+            scrCutSceneEnd();
+        }
+    }
+}
+
+/*
 with(Object)
 {
     var Angle = point_direction(x,y,ObjectFollow.x,ObjectFollow.y);

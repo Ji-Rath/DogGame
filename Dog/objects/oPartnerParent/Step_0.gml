@@ -7,13 +7,20 @@ if(timer[0] > 0)
 }
 else
 {
-    Speed = WalkSpeed;
+    if(point_distance(self.x, self.y, oDogPaddler.x, oDogPaddler.y) > 200)
+    {
+        Speed = WalkSpeed*2
+    }
+    else
+    {
+        Speed = WalkSpeed;
+    }
     var Path = path_add();
     if(mp_grid_path(global.AIGrid, Path, x, y, oDogPaddler.x, oDogPaddler.y, true))
     {
     	path_start(Path, Speed, path_action_stop, false);
     }
-    timer[0] = 0.25*60;
+    timer[0] = 0.2*60;
 }
 
 if(distance_to_object(oDogPaddler) < Distance)

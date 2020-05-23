@@ -25,6 +25,12 @@ if(!instance_exists(oCutScene) && !Destroyed)
 }
 else
 {
+	if(State = estates.Aggro)
+	{
+		HSpeed = 0;
+		VSpeed = 0;
+		path_end();
+	}
 	State = estates.Idle;
 }
 
