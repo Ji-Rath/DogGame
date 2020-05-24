@@ -20,6 +20,7 @@ enum Game
     GlovesOff,
     Hamburger,
     Chips,
-    PanAttack
+    PanAttack,
+    BroomAttack
 }
 alarm[0] = 1;

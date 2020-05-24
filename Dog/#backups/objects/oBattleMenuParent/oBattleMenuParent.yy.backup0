@@ -1,4 +1,4 @@
-// 2020-04-05 13:08:48
+// 2020-05-24 13:15:10
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 mask_index = sBattleIcons;
@@ -11,14 +11,6 @@ Selected = false;
 IsHovering = false;
 ItemMouseHover = false;
 ItemMouseHoverSelect = 0;
-
-enum Item
-{
-    GlovesOff,
-    PanAttack,
-    Hamburger,
-    LastItem
-}
 
 enum BattleState
 {
@@ -123,6 +115,8 @@ if(visible && Selected)
                     case 1: script_execute(ExecuteArray[0],ExecuteArray[1]); break;
                     case 2: script_execute(ExecuteArray[0],ExecuteArray[1],ExecuteArray[2]); break;
                     case 3: script_execute(ExecuteArray[0],ExecuteArray[1],ExecuteArray[2],ExecuteArray[3]); break;
+                    case 4: script_execute(ExecuteArray[0],ExecuteArray[1],ExecuteArray[2],ExecuteArray[3],ExecuteArray[4]); break;
+                    case 5: script_execute(ExecuteArray[0],ExecuteArray[1],ExecuteArray[2],ExecuteArray[3],ExecuteArray[4],ExecuteArray[5]); break;
                 }
                 
                 with(oBattleMenuParent)

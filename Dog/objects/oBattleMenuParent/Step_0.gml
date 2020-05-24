@@ -69,6 +69,8 @@ if(visible && Selected)
                     case 1: script_execute(ExecuteArray[0],ExecuteArray[1]); break;
                     case 2: script_execute(ExecuteArray[0],ExecuteArray[1],ExecuteArray[2]); break;
                     case 3: script_execute(ExecuteArray[0],ExecuteArray[1],ExecuteArray[2],ExecuteArray[3]); break;
+                    case 4: script_execute(ExecuteArray[0],ExecuteArray[1],ExecuteArray[2],ExecuteArray[3],ExecuteArray[4]); break;
+                    case 5: script_execute(ExecuteArray[0],ExecuteArray[1],ExecuteArray[2],ExecuteArray[3],ExecuteArray[4],ExecuteArray[5]); break;
                 }
                 
                 with(oBattleMenuParent)

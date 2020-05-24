@@ -23,4 +23,8 @@ switch(GameType)
     case Game.PanAttack:
         ds_list_add(Instances, instance_create_layer(room_width/2+300,room_height/2,"Instances",oPan));
     break;
+    
+    case Game.BroomAttack:
+        ds_list_add(Instances, instance_create_layer(room_width/2,room_height/2,"Instances",oBroom));
+    break;
 }

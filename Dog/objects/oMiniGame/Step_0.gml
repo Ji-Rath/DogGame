@@ -1,4 +1,5 @@
 
+//Minigame intro transition and outro effect
 if(!Destroy)
 {
     

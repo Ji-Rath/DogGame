@@ -1,7 +1,7 @@
 /// @param GameType
 /// @param Cost = 0
-/// @param ShowEnemy = false;
 /// @param EndTurn = true
+/// @param ShowEnemy = false;
 var GameType = argument[0];
 var Cost = argument_count > 1 ? argument[1] : 0;
 var EndTurn = argument_count > 2 ? argument[2] : true;

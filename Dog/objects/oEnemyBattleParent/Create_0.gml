@@ -12,3 +12,5 @@ HealthChanged = false;
 timer[0] = -1;
 Angle = 0;
 IsDead = false;
+
+Vulnerable = false;

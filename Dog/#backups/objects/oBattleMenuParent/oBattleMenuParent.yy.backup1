@@ -1,4 +1,4 @@
-// 2020-04-05 13:08:10
+// 2020-05-24 12:41:41
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 mask_index = sBattleIcons;
@@ -11,14 +11,6 @@ Selected = false;
 IsHovering = false;
 ItemMouseHover = false;
 ItemMouseHoverSelect = 0;
-
-enum Item
-{
-    GlovesOff,
-    PanAttack,
-    Hamburger,
-    LastItem
-}
 
 enum BattleState
 {
@@ -69,7 +61,7 @@ if(visible && Selected)
     {
         //Do Action based on item selected
         ItemMouseHoverSelect = ds_list_find_value(Contents,0);
-        var ContentArray = ItemDescription[ItemMouseHoverSelect];
+        var ContentArray = oBattleManager.ItemDescription[ItemMouseHoverSelect];
         var ExecuteArray = ContentArray[4];
         var Len = array_length_1d(ExecuteArray)-1;
         show_debug_message("Item ID: "+string(ItemMouseHoverSelect));
@@ -114,7 +106,7 @@ if(visible && Selected)
             if(mouse_check_button_pressed(mb_left))
             {
                 //Do Action based on item selected
-                var ContentArray = ItemDescription[ItemMouseHoverSelect];
+                var ContentArray = oBattleManager.ItemDescription[ItemMouseHoverSelect];
                 var ExecuteArray = ContentArray[4];
                 var Len = array_length_1d(ExecuteArray)-1;
                 switch(Len)

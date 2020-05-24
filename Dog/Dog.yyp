@@ -31,6 +31,14 @@
     },
     "resources": [
         {
+            "Key": "01d83e23-3f37-4ea6-b621-80ef27d3ddd1",
+            "Value": {
+                "id": "890275cc-661b-417a-8948-eebf7ec8495e",
+                "resourcePath": "sprites\\sBroom\\sBroom.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "01ecf6c0-bbbe-46e2-af74-dad1ff5bcfa9",
             "Value": {
                 "id": "44be66a7-7566-4f04-8ce4-7a68282c6af0",
@@ -372,6 +380,14 @@
                 "id": "52559516-5183-44ff-af89-2689727fb722",
                 "resourcePath": "rooms\\rmBattle\\rmBattle.yy",
                 "resourceType": "GMRoom"
+            }
+        },
+        {
+            "Key": "2452f692-d25e-a2e5-895d-ef8a89530666",
+            "Value": {
+                "id": "313dcba4-45a8-523e-9b50-805864d0e92c",
+                "resourcePath": "objects\\oPartnerParent\\oPartnerParent.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -1071,6 +1087,14 @@
             }
         },
         {
+            "Key": "82b55bfb-f3b2-e141-4ace-4007a22ffa47",
+            "Value": {
+                "id": "51ed789e-bf37-3fc4-4d72-27a2e1df7305",
+                "resourcePath": "objects\\oButtonRage\\oButtonRage.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "82e408c0-d9dd-46b1-ab7e-258e5e027ed6",
             "Value": {
                 "id": "9961cd5c-2859-46d5-9a7d-21381c25cf02",
@@ -1468,6 +1492,14 @@
                 "id": "0854dd94-c37d-5d15-019d-00ffec90df1a",
                 "resourcePath": "scripts/scrEnemyAggro/scrEnemyAggro.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "be539d58-7d69-4d4b-a442-3cd5aac09119",
+            "Value": {
+                "id": "c381b576-9113-457d-a087-91bf4afc74e7",
+                "resourcePath": "views\\be539d58-7d69-4d4b-a442-3cd5aac09119.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -1951,18 +1983,26 @@
             }
         },
         {
-            "Key": "82b55bfb-f3b2-e141-4ace-4007a22ffa47",
+            "Key": "161750b6-fb61-9148-0794-723081ab6075",
             "Value": {
-                "id": "51ed789e-bf37-3fc4-4d72-27a2e1df7305",
-                "resourcePath": "objects\\oButtonRage\\oButtonRage.yy",
+                "id": "a7d95817-19e6-6a2f-09e0-4ee60f71f835",
+                "resourcePath": "views\\161750b6-fb61-9148-0794-723081ab6075.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "f1a8999b-1553-1704-eee9-a1dc7c8bbee7",
+            "Value": {
+                "id": "21aa3957-de07-e149-ab12-33bd626eb7f3",
+                "resourcePath": "objects\\oBroom\\oBroom.yy",
                 "resourceType": "GMObject"
             }
         },
         {
-            "Key": "2452f692-d25e-a2e5-895d-ef8a89530666",
+            "Key": "fbcac3c0-0423-f21c-6747-29d4c120eaee",
             "Value": {
-                "id": "313dcba4-45a8-523e-9b50-805864d0e92c",
-                "resourcePath": "objects\\oPartnerParent\\oPartnerParent.yy",
+                "id": "01e94d40-4e8c-b5a0-c0b3-9817c5397721",
+                "resourcePath": "objects\\oBroomSmoke\\oBroomSmoke.yy",
                 "resourceType": "GMObject"
             }
         }

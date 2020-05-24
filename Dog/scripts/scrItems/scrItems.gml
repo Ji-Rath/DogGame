@@ -4,6 +4,15 @@
 //TYPE - 0 = Battle, 1 = Bag, 2 = Book
 var CurrentItem;
 
+enum Item
+{
+    GlovesOff,
+    PanAttack,
+    Hamburger,
+    BroomAttack,
+    LastItem
+}
+
 CurrentItem = Item.Hamburger;
 ItemExecute[CurrentItem] = [scrItemMiniGame, Game.Chips, 10, false];
 ItemDescription[CurrentItem] = ["Hamburger", "A delicious treat", sEnemyalert, 1, ItemExecute[CurrentItem]];
@@ -17,4 +26,9 @@ ds_map_add(oAreaStats.Items, CurrentItem, 0);
 CurrentItem = Item.PanAttack;
 ItemExecute[CurrentItem] = [scrItemMiniGame, Game.PanAttack, 10, true, true];
 ItemDescription[CurrentItem] = ["Pan","Metal Pan",sEnemydownrun, 0, ItemExecute[CurrentItem]];
+ds_map_add(oAreaStats.Items, CurrentItem, 1);
+
+CurrentItem = Item.BroomAttack;
+ItemExecute[CurrentItem] = [scrItemMiniGame, Game.BroomAttack, 5, false, false];
+ItemDescription[CurrentItem] = ["Broom","Metal Pan",sEnemydownrun, 2, ItemExecute[CurrentItem]];
 ds_map_add(oAreaStats.Items, CurrentItem, 1);

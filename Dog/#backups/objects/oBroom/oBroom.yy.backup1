@@ -1,0 +1,39 @@
+// 2020-05-24 13:29:05
+#event properties (no comments/etc. here are saved)
+parent_index = -1;
+uses_physics = false;
+
+
+#event create
+
+CurrentPosition = 0;
+Brushes = 0;
+
+
+#event step
+
+
+//Create smoke particles and count how many brushes the player did
+if(mouse_x > x && CurrentPosition != 1)
+{
+    CurrentPosition = 1;
+    Brushes++;
+}
+
+if(mouse_x < x && CurrentPosition != 0)
+{
+    CurrentPosition = 0;
+    Brushes++;
+}
+
+
+//If player was successful
+if(Brushes > 8 && !oEnemyBattleParent.Vulnerable)
+{
+    oMiniGame.timer[1] = 1;
+    oEnemyBattleParent.Vulnerable = true;
+}
+
+#event draw
+
+draw_sprite(sprite_index, CurrentPosition, x, y)

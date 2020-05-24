@@ -1,4 +1,4 @@
-// 2020-04-05 13:07:03
+// 2020-05-24 13:17:48
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 visible = false;
@@ -256,6 +256,11 @@ else if(timer[0] != -1)
 	if(DrawEnemyHealth > EnemyBattle.Health)
 	{
 		Shake[1] = 10;
+	}
+	
+	if(oEnemyBattleParent.Vulnerable && BattleStage == 4)
+	{
+		oEnemyBattleParent.Vulnerable = false;	
 	}
 }
 

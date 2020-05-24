@@ -1,4 +1,4 @@
-// 2020-04-05 10:53:37
+// 2020-05-24 13:17:28
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 visible = false;
@@ -6,6 +6,8 @@ uses_physics = false;
 
 #event create Insert description here
 // You can write your code in this editor
+
+scrItems();
 
 box = sBattleBox;
 gui_width = display_get_gui_width();
@@ -71,8 +73,6 @@ for(i=0;i<2;i++)
 }
 
 RageMeter = 0;
-
-scrItems();
 
 
 #event step

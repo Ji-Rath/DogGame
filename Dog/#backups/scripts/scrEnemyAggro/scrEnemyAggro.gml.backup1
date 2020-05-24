@@ -1,9 +1,9 @@
-// 2020-04-07 14:33:55
+// 2020-04-07 14:36:08
 
 //Update speed
 Speed = WalkSpeed*1.5;
 var Path = path_add();
-if(mp_grid_path(global.Grid, Path, x, y, oDogPaddler.x, oDogPaddler.y, true))
+if(mp_grid_path(global.AIGrid, Path, x, y, oDogPaddler.x, oDogPaddler.y, true))
 {
 	path_start(Path, Speed, path_action_stop, false);
 }

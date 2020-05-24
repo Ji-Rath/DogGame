@@ -25,7 +25,7 @@ if(!instance_exists(oCutScene) && !Destroyed)
 }
 else
 {
-	if(State = estates.Aggro)
+	if(State = estates.Aggro || State = estates.Wander)
 	{
 		HSpeed = 0;
 		VSpeed = 0;

@@ -1,8 +1,6 @@
-// 2020-04-03 18:34:23
+// 2020-05-24 13:13:19
 /// @param GameType
 /// @param Cost = 0
-/// @param ShowEnemy = false
-/// @param EndTurn = true;
 #args GameType, Cost = 0, EndTurn = true, ShowEnemy = false;
 
 var MiniGame = instance_create_layer(0,0,"GameManager",oMiniGame);

@@ -5,14 +5,6 @@ IsHovering = false;
 ItemMouseHover = false;
 ItemMouseHoverSelect = 0;
 
-enum Item
-{
-    GlovesOff,
-    PanAttack,
-    Hamburger,
-    LastItem
-}
-
 enum BattleState
 {
     Idle,

@@ -6,6 +6,7 @@ var Alpha = 1;
 var Scale = 1;
 var YDivision = 1;
 
+//Draw enemy if the minigame has the option enabled
 if(instance_exists(oMiniGame))
 {
     if(oMiniGame.ShowEnemy)
@@ -27,10 +28,11 @@ if(instance_exists(oMiniGame))
     }
 }
 
+//Draw enemy sprite at specified dimensions
 draw_sprite_ext(sprite_index,image_index,XPos,YPos,Scale,Scale/YDivision,Angle,c_white,Alpha);
 
+//Update enemy health on screen if it has changed
 var HC = HealthChanged;
-
 with(oBattleManager)
 {
     if (EnemyBattle != noone && DrawEnemyHealth != EnemyBattle.Health)
@@ -42,8 +44,9 @@ with(oBattleManager)
         HC = false;
     }
 }
-
 HealthChanged = HC;
 
+//Draw enemy health if it has changed
 if((oBattleManager.visible) && HealthChanged)
     draw_healthbar(XPos-100,YPos-50,XPos+100,YPos-75,oBattleManager.DrawEnemyHealth*10,c_gray,c_red,c_red,0,true,false);
+    

@@ -1,7 +1,7 @@
-// 2020-04-07 17:57:58
+// 2020-04-07 18:00:04
 
 //Set Walking/Running animation
-if (abs(HSpeed) > 0.5)
+if (abs(HSpeed) > 0.8)
 {
 	image_xscale = sign(HSpeed)*Scale;
 	if(abs(HSpeed) > WalkSpeed)

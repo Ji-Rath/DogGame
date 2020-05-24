@@ -179,6 +179,11 @@ else if(timer[0] != -1)
 	{
 		Shake[1] = 10;
 	}
+	
+	if(oEnemyBattleParent.Vulnerable && BattleStage == 4)
+	{
+		oEnemyBattleParent.Vulnerable = false;	
+	}
 }
 
 //Shake effect

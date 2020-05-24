@@ -1,4 +1,4 @@
-// 2020-04-05 09:56:02
+// 2020-05-24 13:30:58
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 uses_physics = false;
@@ -19,13 +19,17 @@ timer[0] = -1;
 Angle = 0;
 IsDead = false;
 
+Vulnerable = false;
+
 #event step
 
+//Delay death animation
 if(Health <= 0 && timer[0] == -1 && oBattleManager.BattleStage >= 6 && !IsDead && path_index == -1)
 {
     timer[0] = 1*60;
 }
 
+//Perform enemy death animation
 if(timer[0] > 0)
 {
     timer[0] -= 1;
@@ -36,15 +40,29 @@ else if(timer[0] != -1)
     timer[0] = -1;
 }
 
+//Show victory message
 if(path_position == 1 && !IsDead)
 {
     scrCreateBattleBox(["You Win!"]);
     IsDead = true;
 }
 
+//Spin enemy while death animation is running
 if(path_index != -1)
 {
     Angle += 20;
+}
+
+//If enemy is vulnerable, rotate enemy
+if(Vulnerable)
+{
+    if(Angle != 180)
+        Angle += 10;
+}
+else
+{
+    if(Angle != 0)
+        Angle -= 15;
 }
 
 #event draw
@@ -56,6 +74,7 @@ var Alpha = 1;
 var Scale = 1;
 var YDivision = 1;
 
+//Draw enemy if the minigame has the option enabled
 if(instance_exists(oMiniGame))
 {
     if(oMiniGame.ShowEnemy)
@@ -77,10 +96,11 @@ if(instance_exists(oMiniGame))
     }
 }
 
+//Draw enemy sprite at specified dimensions
 draw_sprite_ext(sprite_index,image_index,XPos,YPos,Scale,Scale/YDivision,Angle,c_white,Alpha);
 
+//Update enemy health on screen if it has changed
 var HC = HealthChanged;
-
 with(oBattleManager)
 {
     if (EnemyBattle != noone && DrawEnemyHealth != EnemyBattle.Health)
@@ -92,8 +112,9 @@ with(oBattleManager)
         HC = false;
     }
 }
-
 HealthChanged = HC;
 
+//Draw enemy health if it has changed
 if((oBattleManager.visible) && HealthChanged)
     draw_healthbar(XPos-100,YPos-50,XPos+100,YPos-75,oBattleManager.DrawEnemyHealth*10,c_gray,c_red,c_red,0,true,false);
+    
