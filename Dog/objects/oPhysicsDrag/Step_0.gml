@@ -4,4 +4,6 @@
 if(!Hit && Grabbed)
 {
 	physics_apply_impulse(x,y,mouse_x-x,mouse_y-y)
+	phy_position_x = mouse_x;
+	phy_position_y = mouse_y;
 }

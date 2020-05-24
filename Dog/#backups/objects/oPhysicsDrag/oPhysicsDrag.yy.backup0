@@ -1,4 +1,4 @@
-// 2020-04-05 09:49:49
+// 2020-05-24 14:11:01
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 uses_physics = false;
@@ -20,6 +20,8 @@ ObjectFixture = 0;
 if(!Hit && Grabbed)
 {
 	physics_apply_impulse(x,y,mouse_x-x,mouse_y-y)
+	phy_position_x = mouse_x;
+	phy_position_y = mouse_y;
 }
 
 #event mouse_left_press

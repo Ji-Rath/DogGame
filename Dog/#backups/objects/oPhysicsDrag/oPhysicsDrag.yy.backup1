@@ -1,4 +1,4 @@
-// 2020-04-05 09:49:44
+// 2020-05-24 14:10:56
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 uses_physics = false;
@@ -11,6 +11,8 @@ Grabbed = false;
 SpriteXOffset = sprite_get_xoffset(sprite_index);
 SpriteYOffset = sprite_get_yoffset(sprite_index);
 ObjectFixture = 0;
+
+//Set default values in object
 
 #event step Insert description here
 // You can write your code in this editor

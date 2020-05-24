@@ -2005,6 +2005,14 @@
                 "resourcePath": "objects\\oBroomSmoke\\oBroomSmoke.yy",
                 "resourceType": "GMObject"
             }
+        },
+        {
+            "Key": "c3c4d15c-2855-2020-7858-4830e5c03a98",
+            "Value": {
+                "id": "a230ecf7-5811-36f8-b9fc-983995e57558",
+                "resourcePath": "views\\c3c4d15c-2855-2020-7858-4830e5c03a98.yy",
+                "resourceType": "GMFolder"
+            }
         }
     ],
     "script_order": [
