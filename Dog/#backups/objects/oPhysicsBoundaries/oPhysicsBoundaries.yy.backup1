@@ -1,0 +1,20 @@
+// 2020-05-24 14:44:57
+#event properties (no comments/etc. here are saved)
+parent_index = -1;
+sprite_index = sBox;
+uses_physics = true;
+physics_density = 0;
+physics_restitution = 1;
+physics_collision_group = 0;
+physics_linear_damping = 1;
+physics_angular_damping = 1;
+physics_sensor = false;
+physics_start_awake = true;
+physics_kinematic = false;
+physics_shape = 1;
+physics_shape_data = "0,0;62,0;62,64;0,64";
+
+
+#event draw
+
+physics_world_draw_debug(phy_debug_render_shapes);

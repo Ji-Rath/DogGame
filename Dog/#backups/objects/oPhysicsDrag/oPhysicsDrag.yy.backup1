@@ -1,4 +1,4 @@
-// 2020-05-24 14:10:56
+// 2020-05-24 14:56:37
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 uses_physics = false;
@@ -20,6 +20,8 @@ ObjectFixture = 0;
 if(!Hit && Grabbed)
 {
 	physics_apply_impulse(x,y,mouse_x-x,mouse_y-y)
+	phy_position_x = mouse_x;
+	phy_position_y = mouse_y;
 }
 
 #event mouse_left_press
@@ -35,12 +37,7 @@ physics_fixture_set_collision_group(Fixture, 0);
 physics_fixture_set_linear_damping(Fixture, 15);
 physics_fixture_set_angular_damping(Fixture, 15);
 physics_fixture_set_polygon_shape(Fixture);
-physics_fixture_add_point(Fixture, 7-SpriteXOffset, 47-SpriteYOffset); 
-physics_fixture_add_point(Fixture, 94-SpriteXOffset, 47-SpriteYOffset);
-physics_fixture_add_point(Fixture, 94-SpriteXOffset, 80-SpriteYOffset);
-physics_fixture_add_point(Fixture, 7-SpriteXOffset, 80-SpriteYOffset);
-ObjectFixture = physics_fixture_bind(Fixture, self);
-physics_fixture_delete(Fixture);
+
 
 #event mouse_global_left_release
 

@@ -1,4 +1,4 @@
-// 2020-05-24 13:19:39
+// 2020-05-24 13:30:58
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 uses_physics = false;
@@ -57,12 +57,12 @@ if(path_index != -1)
 if(Vulnerable)
 {
     if(Angle != 180)
-        Angle += 5;
+        Angle += 10;
 }
 else
 {
     if(Angle != 0)
-        Angle -= 10;
+        Angle -= 15;
 }
 
 #event draw

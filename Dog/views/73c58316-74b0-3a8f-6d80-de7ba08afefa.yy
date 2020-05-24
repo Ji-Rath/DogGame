@@ -11,7 +11,8 @@
         "74cfe592-f29f-ea7e-6290-aef36cb3aae2",
         "5ba5ffac-a676-972f-de89-76dc0d1c108f",
         "161750b6-fb61-9148-0794-723081ab6075",
-        "c3c4d15c-2855-2020-7858-4830e5c03a98"
+        "c3c4d15c-2855-2020-7858-4830e5c03a98",
+        "40531c67-00b7-48f6-948a-64d4362f4bd2"
     ],
     "filterType": "GMObject",
     "folderName": "Minigame",

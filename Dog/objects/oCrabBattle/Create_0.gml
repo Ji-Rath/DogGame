@@ -18,4 +18,4 @@ AttackDamage = 3;
 Health = 10;
 Name = "Crab"
 
-EnemyAttacks = [Game.Crab1];
+EnemyAttacks = [Game.CrabWeigh];

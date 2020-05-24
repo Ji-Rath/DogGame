@@ -27,4 +27,10 @@ switch(GameType)
     case Game.BroomAttack:
         ds_list_add(Instances, instance_create_layer(room_width/2,room_height/2,"Instances",oBroom));
     break;
+    
+    case Game.CrabWeigh:
+        ds_list_add(Instances, instance_create_layer(room_width/2+200,room_height/2,"Instances",oCrabWeigh));
+        ds_list_add(Instances, instance_create_layer(room_width/2-200,room_height/2,"Instances",oCrabWeigh));
+        ds_list_add(Instances, instance_create_layer(room_width/2,room_height/2+200,"Instances",oCrabBalance));
+    break;
 }

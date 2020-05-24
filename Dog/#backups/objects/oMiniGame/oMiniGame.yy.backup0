@@ -1,4 +1,4 @@
-// 2020-05-24 13:01:46
+// 2020-05-24 14:52:09
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 uses_physics = false;
@@ -27,7 +27,8 @@ enum Game
     Hamburger,
     Chips,
     PanAttack,
-    BroomAttack
+    BroomAttack,
+    CrabWeigh
 }
 alarm[0] = 1;
 
@@ -60,6 +61,12 @@ switch(GameType)
     
     case Game.BroomAttack:
         ds_list_add(Instances, instance_create_layer(room_width/2,room_height/2,"Instances",oBroom));
+    break;
+    
+    case Game.CrabWeigh:
+        ds_list_add(Instances, instance_create_layer(room_width/2+200,room_height/2,"Instances",oCrabWeigh));
+        ds_list_add(Instances, instance_create_layer(room_width/2-200,room_height/2,"Instances",oCrabWeigh));
+        ds_list_add(Instances, instance_create_layer(room_width/2,room_height/2+200,"Instances",oCrabBalance));
     break;
 }
 

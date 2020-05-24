@@ -21,6 +21,7 @@ enum Game
     Hamburger,
     Chips,
     PanAttack,
-    BroomAttack
+    BroomAttack,
+    CrabWeigh
 }
 alarm[0] = 1;

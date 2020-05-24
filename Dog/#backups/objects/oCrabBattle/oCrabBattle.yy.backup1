@@ -1,4 +1,4 @@
-// 2020-02-21 11:38:16
+// 2020-04-01 00:33:25
 #event properties (no comments/etc. here are saved)
 parent_index = oEnemyBattleParent;
 sprite_index = sCrabfightidle;
@@ -6,6 +6,9 @@ uses_physics = false;
 
 #event create Insert description here
 // You can write your code in this editor
+
+event_inherited();
+
 image_index = 30;
 
 TextIntro = [
