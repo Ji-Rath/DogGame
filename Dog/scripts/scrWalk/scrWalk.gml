@@ -1,16 +1,17 @@
 
 //Set Walking/Running animation
+var Buffer = 0.25;
 if (abs(HSpeed) > 0.8)
 {
 	image_xscale = sign(HSpeed)*Scale;
-	if(abs(HSpeed) > WalkSpeed)
+	if(abs(HSpeed) > (WalkSpeed+Buffer))
 		sprite_index = SRun;
 	else
 		sprite_index = SWalk;
 }
 else if (VSpeed < 0)
 {
-	if(abs(VSpeed) > WalkSpeed)
+	if(abs(VSpeed) > (WalkSpeed+Buffer))
 		sprite_index = SRunUp;
 	else
 		sprite_index = SWalkUp;
@@ -18,7 +19,7 @@ else if (VSpeed < 0)
 }
 else if (VSpeed > 0)
 {
-	if(abs(VSpeed) > WalkSpeed)
+	if(abs(VSpeed) > (WalkSpeed+Buffer))
 		sprite_index = SRunDown;
 	else
 		sprite_index = SWalkDown;
