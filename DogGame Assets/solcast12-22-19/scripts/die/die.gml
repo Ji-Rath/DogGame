@@ -1,0 +1,1 @@
+oPlayer.phealth -= 6;

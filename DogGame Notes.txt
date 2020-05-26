@@ -1,0 +1,26 @@
+What I want to complete:
+
+Reorganize battle scene:
+- Battle Move: Randomized game to give the player a chance to attack the enemy?
+	If successful, deal damage to enemy.
+	After, go to enemy turn
+- Item Move: A predefined game to give the player a status effect?
+	If successful, give status effect and increase timer.
+	After, player gets another turn
+- Book move: A minigame to give a negative status effect to the enemy?
+	If successful, enemy becomes vulnerable.
+	After, player gets another turn
+
+Player Stats:
+
+HealthPoints: The current health of the character
+PowerPoints: Points to spend on ultimate move?
+Confidence?: Affects how strong the players attacks are
+
+
+Current Work:
+- Complete prototype of brooming minigame (DONE)
+- Implement food points
+- First pass of crab balance minigame (DONE)
+- 
+

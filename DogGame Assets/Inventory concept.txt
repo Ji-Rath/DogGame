@@ -1,0 +1,11 @@
+
+For the inventory system. Attempt to do a system similar to the cutscene system.
+
+- Create a general array that will store the name, description, and sprite
+ItemDescription[Item.Hamburger] = ["Hamburger","A delicious treat",sHamburger];
+
+- Create array that will store the script and arguments to execute
+ItemContent[Item.Hamburger] = [scrItemConsume,10]
+
+- Create one final array (ds_map) that will store the amount that the player has
+ItemAmount[Item.Hamburger] = 1
