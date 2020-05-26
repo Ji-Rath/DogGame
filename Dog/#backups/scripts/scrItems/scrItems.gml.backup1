@@ -1,4 +1,4 @@
-// 2020-05-24 13:09:29
+// 2020-05-25 21:48:38
 ///@desc Create item descriptions and set default amount
 
 //ItemDescription[] - (Name, Desc, Thumbnail, Type, Execute Script) (SCRIPT, ARGUMENTS) (AMOUNT)
@@ -31,5 +31,5 @@ ds_map_add(oAreaStats.Items, CurrentItem, 1);
 
 CurrentItem = Item.BroomAttack;
 ItemExecute[CurrentItem] = [scrItemMiniGame, Game.BroomAttack, 5, false, false];
-ItemDescription[CurrentItem] = ["Broom","Metal Pan",sEnemydownrun, 0, ItemExecute[CurrentItem]];
-ds_map_add(oAreaStats.Items, CurrentItem, 1);
+ItemDescription[CurrentItem] = ["Broom","Metal Pan",sEnemydownrun, 2, ItemExecute[CurrentItem]];
+ds_map_add(oAreaStats.Items, CurrenItem, 1);

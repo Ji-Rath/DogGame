@@ -1,12 +1,14 @@
-
-//Disable other Menu's
-with(oBattleMenuParent)
+if(visible)
 {
-    if(id != other.id)
+    //Disable other Menu's
+    with(oBattleMenuParent)
     {
-        Selected = false;
+        if(id != other.id)
+        {
+            Selected = false;
+        }
     }
+    
+    //Reverse clicked Menu State
+    Selected = !Selected;
 }
-
-//Reverse clicked Menu State
-Selected = !Selected;

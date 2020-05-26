@@ -104,6 +104,7 @@ if(BattleTimer > 0 && visible && BattleStage == 3)
 	}
 }
 
+//Update player stats visually if changed
 if(UpdateStats)
 {
 	var Check = 0;

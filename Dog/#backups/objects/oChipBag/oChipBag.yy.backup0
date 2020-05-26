@@ -1,4 +1,4 @@
-// 2020-04-05 00:36:23
+// 2020-05-25 23:57:06
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 sprite_index = sChipBag;
@@ -7,6 +7,7 @@ uses_physics = false;
 #event create
 
 Opened = false;
+Complete = false;
 
 #event step
 
@@ -20,6 +21,13 @@ if(oMiniGame.timer[0] == -1 && !Opened)
         ds_list_add(oMiniGame.Instances, Chip);
     }
     Opened = true;
+}
+
+//Finish minigame if player finishes early
+if(Opened && !Complete && instance_number(oChip) == 0)
+{
+    oMiniGame.timer[1] = 0.5*60;
+    Complete = true;
 }
 
 #event draw

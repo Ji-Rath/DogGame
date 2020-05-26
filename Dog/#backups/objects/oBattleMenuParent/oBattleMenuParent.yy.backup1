@@ -1,4 +1,4 @@
-// 2020-05-24 12:41:41
+// 2020-05-25 22:40:02
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 mask_index = sBattleIcons;
@@ -30,12 +30,14 @@ RotValue = 0;
 Rot = 0;
 
 //Add available items to ds list
-for(i=0;i<Item.LastItem;i++)
+for(var i=0;i<Item.LastItem;i++)
 {
     if(i != Item.LastItem)
     {
         var GroupCheck = oBattleManager.ItemDescription[i];
         var ItemCount = ds_map_find_value(oAreaStats.Items, i);
+        
+        //Check if ItemIndex matches with the looping item
         if(GroupCheck[3] == ItemIndex && ItemCount > 0)
         {
             ds_list_add(Contents,i);
@@ -115,6 +117,8 @@ if(visible && Selected)
                     case 1: script_execute(ExecuteArray[0],ExecuteArray[1]); break;
                     case 2: script_execute(ExecuteArray[0],ExecuteArray[1],ExecuteArray[2]); break;
                     case 3: script_execute(ExecuteArray[0],ExecuteArray[1],ExecuteArray[2],ExecuteArray[3]); break;
+                    case 4: script_execute(ExecuteArray[0],ExecuteArray[1],ExecuteArray[2],ExecuteArray[3],ExecuteArray[4]); break;
+                    case 5: script_execute(ExecuteArray[0],ExecuteArray[1],ExecuteArray[2],ExecuteArray[3],ExecuteArray[4],ExecuteArray[5]); break;
                 }
                 
                 with(oBattleMenuParent)
@@ -138,20 +142,27 @@ else
     RotValue = 0;
 }
 
-
-#event mouse_left_press
-
-//Disable other Menu's
-with(oBattleMenuParent)
+if(ItemIndex == 1)
 {
-    if(id != other.id)
-    {
-        Selected = false;
-    }
+    show_debug_message("List Size: "+string(ds_list_size(Contents)));
 }
 
-//Reverse clicked Menu State
-Selected = !Selected;
+
+#event mouse_left_press
+if(visible)
+{
+    //Disable other Menu's
+    with(oBattleMenuParent)
+    {
+        if(id != other.id)
+        {
+            Selected = false;
+        }
+    }
+    
+    //Reverse clicked Menu State
+    Selected = !Selected;
+}
 
 
 #event mouse_enter
@@ -188,6 +199,7 @@ if(Selected)
     for(i=0;i<ds_list_size(Contents);i++)
     {
         //Draw available contents
+        
         var ArrayIndex = ds_list_find_value(Contents,i);
         var DescArray = oBattleManager.ItemDescription[ArrayIndex];
         var ItemCount = ds_map_find_value(oAreaStats.Items, ArrayIndex);

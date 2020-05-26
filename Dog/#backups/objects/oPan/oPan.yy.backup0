@@ -1,4 +1,4 @@
-// 2020-05-24 14:57:54
+// 2020-05-25 23:54:15
 #event properties (no comments/etc. here are saved)
 parent_index = oPhysicsDrag;
 sprite_index = sPan;
@@ -25,6 +25,7 @@ physics_fixture_add_point(Fixture, 7-SpriteXOffset, 80-SpriteYOffset);
 ObjectFixture = physics_fixture_bind(Fixture, self);
 physics_fixture_delete(Fixture);
 
+
 #event collision:oEnemyBattleParent Insert description here
 // You can write your code in this editor
 
@@ -33,6 +34,7 @@ if(!Hit)
 {
 	oEnemyBattleParent.Health -= clamp(abs(phy_speed_y),3,5);
 	Hit = true;
+	oMiniGame.timer[1] = 0.5*60;
 }
 
 #event mouse_left_press

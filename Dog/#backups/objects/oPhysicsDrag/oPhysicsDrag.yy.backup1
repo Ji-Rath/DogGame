@@ -1,4 +1,4 @@
-// 2020-05-24 14:56:37
+// 2020-05-25 19:24:33
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 uses_physics = false;
@@ -31,11 +31,14 @@ Grabbed = true;
 physics_remove_fixture(self, ObjectFixture);
 
 Fixture = physics_fixture_create();
+/*
 physics_fixture_set_density(Fixture, 0.1);
 physics_fixture_set_restitution(Fixture, 0.1);
 physics_fixture_set_collision_group(Fixture, 0);
 physics_fixture_set_linear_damping(Fixture, 15);
 physics_fixture_set_angular_damping(Fixture, 15);
+physics_fixture_set_friction(Fixture,0.2);
+*/
 physics_fixture_set_polygon_shape(Fixture);
 
 

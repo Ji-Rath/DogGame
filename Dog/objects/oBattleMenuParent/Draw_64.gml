@@ -23,6 +23,7 @@ if(Selected)
     for(i=0;i<ds_list_size(Contents);i++)
     {
         //Draw available contents
+        
         var ArrayIndex = ds_list_find_value(Contents,i);
         var DescArray = oBattleManager.ItemDescription[ArrayIndex];
         var ItemCount = ds_map_find_value(oAreaStats.Items, ArrayIndex);

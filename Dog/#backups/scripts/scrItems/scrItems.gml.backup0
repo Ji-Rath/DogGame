@@ -1,4 +1,4 @@
-// 2020-05-24 13:10:14
+// 2020-05-25 21:51:20
 ///@desc Create item descriptions and set default amount
 
 //ItemDescription[] - (Name, Desc, Thumbnail, Type, Execute Script) (SCRIPT, ARGUMENTS) (AMOUNT)

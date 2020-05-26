@@ -1,4 +1,4 @@
-// 2020-05-24 13:30:58
+// 2020-05-24 15:01:25
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 uses_physics = false;
@@ -56,12 +56,12 @@ if(path_index != -1)
 //If enemy is vulnerable, rotate enemy
 if(Vulnerable)
 {
-    if(Angle != 180)
+    if(Angle != 180 && !IsDead)
         Angle += 10;
 }
 else
 {
-    if(Angle != 0)
+    if(Angle != 0 && !IsDead)
         Angle -= 15;
 }
 

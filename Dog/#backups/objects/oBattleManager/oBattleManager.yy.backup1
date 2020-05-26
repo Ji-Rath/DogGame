@@ -1,4 +1,4 @@
-// 2020-05-24 13:17:28
+// 2020-05-25 23:14:42
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 visible = false;
@@ -257,6 +257,11 @@ else if(timer[0] != -1)
 	{
 		Shake[1] = 10;
 	}
+	
+	if(oEnemyBattleParent.Vulnerable && BattleStage == 4)
+	{
+		oEnemyBattleParent.Vulnerable = false;	
+	}
 }
 
 //Shake effect
@@ -301,7 +306,7 @@ if(visible)
 		draw_set_color(c_black);
 		draw_rectangle(TimerPosX-BarWidth/2,TimerPosY+BarHeight/2,TimerPosX+BarWidth/2,TimerPosY-BarHeight/2,false);
 		draw_set_color(c_red);
-		var BattleTimerNum = ((BattleTimer/60/BattleTimerInit)*BarWidth);
+		var BattleTimerNum = ((round(BattleTimer/60/BattleTimerInit*16)/16)*BarWidth);
 		draw_rectangle(TimerPosX-BarWidth/2,TimerPosY+BarHeight/2,TimerPosX-BarWidth/2+BattleTimerNum,TimerPosY-BarHeight/2,false);
 	}
 }

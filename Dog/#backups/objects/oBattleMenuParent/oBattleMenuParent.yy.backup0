@@ -1,4 +1,4 @@
-// 2020-05-24 13:15:10
+// 2020-05-25 22:55:10
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 mask_index = sBattleIcons;
@@ -30,12 +30,14 @@ RotValue = 0;
 Rot = 0;
 
 //Add available items to ds list
-for(i=0;i<Item.LastItem;i++)
+for(var i=0;i<Item.LastItem;i++)
 {
     if(i != Item.LastItem)
     {
         var GroupCheck = oBattleManager.ItemDescription[i];
         var ItemCount = ds_map_find_value(oAreaStats.Items, i);
+        
+        //Check if ItemIndex matches with the looping item
         if(GroupCheck[3] == ItemIndex && ItemCount > 0)
         {
             ds_list_add(Contents,i);
@@ -142,18 +144,20 @@ else
 
 
 #event mouse_left_press
-
-//Disable other Menu's
-with(oBattleMenuParent)
+if(visible)
 {
-    if(id != other.id)
+    //Disable other Menu's
+    with(oBattleMenuParent)
     {
-        Selected = false;
+        if(id != other.id)
+        {
+            Selected = false;
+        }
     }
+    
+    //Reverse clicked Menu State
+    Selected = !Selected;
 }
-
-//Reverse clicked Menu State
-Selected = !Selected;
 
 
 #event mouse_enter
@@ -190,6 +194,7 @@ if(Selected)
     for(i=0;i<ds_list_size(Contents);i++)
     {
         //Draw available contents
+        
         var ArrayIndex = ds_list_find_value(Contents,i);
         var DescArray = oBattleManager.ItemDescription[ArrayIndex];
         var ItemCount = ds_map_find_value(oAreaStats.Items, ArrayIndex);

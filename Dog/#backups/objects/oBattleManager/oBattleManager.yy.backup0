@@ -1,4 +1,4 @@
-// 2020-05-24 13:17:48
+// 2020-05-25 23:28:43
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 visible = false;
@@ -182,6 +182,7 @@ if(BattleTimer > 0 && visible && BattleStage == 3)
 	}
 }
 
+//Update player stats visually if changed
 if(UpdateStats)
 {
 	var Check = 0;
@@ -306,7 +307,7 @@ if(visible)
 		draw_set_color(c_black);
 		draw_rectangle(TimerPosX-BarWidth/2,TimerPosY+BarHeight/2,TimerPosX+BarWidth/2,TimerPosY-BarHeight/2,false);
 		draw_set_color(c_red);
-		var BattleTimerNum = ((BattleTimer/60/BattleTimerInit)*BarWidth);
+		var BattleTimerNum = ((round(BattleTimer/60/BattleTimerInit*16)/16)*BarWidth);
 		draw_rectangle(TimerPosX-BarWidth/2,TimerPosY+BarHeight/2,TimerPosX-BarWidth/2+BattleTimerNum,TimerPosY-BarHeight/2,false);
 	}
 }

@@ -32,11 +32,11 @@ if(path_index != -1)
 //If enemy is vulnerable, rotate enemy
 if(Vulnerable)
 {
-    if(Angle != 180 && !IsDead)
+    if(Angle != 180 && Health > 0)
         Angle += 10;
 }
 else
 {
-    if(Angle != 0 && !IsDead)
+    if(Angle != 0 && Health > 0)
         Angle -= 15;
 }

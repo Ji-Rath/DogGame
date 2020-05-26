@@ -1,22 +1,25 @@
 
-CrabList = collision_line_list(x,y,x,y-500,oCrabWeigh,false,true,true,false);
-show_debug_message(string(CrabList));
+CrabCount = collision_line_list(x,y,x,y-1000,oCrabWeigh,false,true,CrabList,false);
 
-if(CrabList == instance_number(oCrabWeigh))
+var IsResting = true;
+with(oCrabWeigh)
 {
-    var IsResting = true;
-    with(oCrabWeigh)
+    if(abs(phy_angular_velocity) > 3 || Grabbed)
     {
-        if(round(phy_angular_velocity) != 0)
-        {
-            IsResting = false;
-        }
+        IsResting = false;
+        show_debug_message("Velocity: "+string(phy_angular_velocity));
     }
-    
-    //If minigame timer is over and player could not balance the crabs, deal damage
-    if(!IsResting && oMiniGame.timer[1] <= 0 && !Complete)
-    {
-        global.phealth -= 10;
-        Complete = true;
-    }
+}
+
+
+if(CrabCount == instance_number(oCrabWeigh) && IsResting && !Complete)
+{
+    oMiniGame.timer[1] = 0.5*60;
+    Complete = true;
+}
+//If minigame timer is over and player could not balance the crabs, deal damage
+if(oMiniGame.timer[1] <= 0 && oMiniGame.timer[1] != -1 && !Complete)
+{
+    global.phealth -= 10;
+    Complete = true;
 }
