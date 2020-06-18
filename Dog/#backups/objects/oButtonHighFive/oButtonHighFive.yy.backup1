@@ -1,6 +1,7 @@
-// 2020-06-18 01:22:51
+// 2020-06-18 01:54:03
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
+sprite_index = sNeedHand;
 uses_physics = false;
 
 #event create
@@ -8,14 +9,13 @@ uses_physics = false;
 scrAnimInit(Animation.Flip, AnimationIntro.Intro1);
 CanPlayAnim = true;
 image_speed = 0;
-sprite_index = sNeedHand;
 
 #event step
 
 scrAnimStep();
 
 //Make fist visible only when available and GUI is visible
-if(oBattleManager.RageMeter >= 3 && oBattleManager.visible)
+if(oBattleManager.RageMeter >= 3 && oBattleMenuParent.visible)
 {
     visible = true;
     if(CanPlayAnim)
@@ -29,6 +29,14 @@ else
     visible = false;
     CanPlayAnim = true;
 }
+
+#event mouse_enter
+
+IsHovering = true;
+
+#event mouse_leave
+
+IsHovering = false;
 
 #event mouse_left_release
 
@@ -56,4 +64,12 @@ if(visible)
 
 #event draw
 
+if(IsHovering)
+{
+    AnimScale *= 1.25;
+}
+
 scrAnimDraw();
+
+if(IsHovering)
+    AnimScale /= 1.25;

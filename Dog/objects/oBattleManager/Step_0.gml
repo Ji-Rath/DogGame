@@ -134,8 +134,16 @@ if(UpdateStats)
 	if(DrawEnemyHealth = EnemyBattle.Health)
 		Check++;
 	
+	//Check timer for changes
+	if(DrawTimer > BattleTimer)
+		DrawTimer -= Increment;
+	if(DrawTimer < BattleTimer)
+		DrawTimer -= Increment;
+	if(DrawTimer == BattleTimer)
+		Check++;
+	
 	//If all checks done, go to next phase
-	if(Check == 3 && timer[0] == -1)
+	if(Check == 4 && timer[0] == -1)
 		timer[0] = 0.5*60;
 }
 

@@ -1,4 +1,4 @@
-// 2020-06-17 19:34:24
+// 2020-06-18 02:03:59
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 visible = false;
@@ -61,9 +61,10 @@ BattleTimerInit = 20;
 
 //Update stats effect
 UpdateStats = false;
-DrawPlayerHealth = global.PlayerHealth;
+DrawPlayerHealth = global.PlayerHP;
 DrawPlayerPP = global.PlayerPP;
 DrawEnemyHealth = EnemyBattle.Health;
+DrawTimer = timer[0];
 timer[0] = -1;
 
 //Shake effect
@@ -189,19 +190,19 @@ if(UpdateStats)
 	var Increment = 0.25;
 	
 	//Check player health for changes
-	if(DrawPlayerHealth > global.phealth)
+	if(DrawPlayerHealth > global.PlayerHP)
 		DrawPlayerHealth -= Increment;
-	if(DrawPlayerHealth < global.phealth)
+	if(DrawPlayerHealth < global.PlayerHP)
 		DrawPlayerHealth += Increment;
-	if(DrawPlayerHealth = global.phealth)
+	if(DrawPlayerHealth = global.PlayerHP)
 		Check++;
 	
 	//Check player PP for changes
-	if(DrawPlayerPP > global.pp)
+	if(DrawPlayerPP > global.PlayerPP)
 		DrawPlayerPP -= Increment;
-	if(DrawPlayerPP < global.pp)
+	if(DrawPlayerPP < global.PlayerPP)
 		DrawPlayerPP += Increment;
-	if(DrawPlayerPP = global.pp)
+	if(DrawPlayerPP = global.PlayerPP)
 		Check++;
 	
 	//Check enemy health for changes
@@ -212,8 +213,16 @@ if(UpdateStats)
 	if(DrawEnemyHealth = EnemyBattle.Health)
 		Check++;
 	
+	//Check timer for changes
+	if(DrawTimer > BattleTimer)
+		DrawTimer -= Increment;
+	if(DrawTimer < BattleTimer)
+		DrawTimer -= Increment;
+	if(DrawTimer == BattleTimer)
+		Check++;
+	
 	//If all checks done, go to next phase
-	if(Check == 3 && timer[0] == -1)
+	if(Check == 4 && timer[0] == -1)
 		timer[0] = 0.5*60;
 }
 
@@ -235,7 +244,7 @@ else if(timer[0] != -1)
 	{
 		UpdateStats = true;
 	}
-	if(DrawPlayerHealth > global.phealth)
+	if(DrawPlayerHealth > global.PlayerHP)
 	{
 		Shake[0] = 8;
 	}

@@ -58,6 +58,7 @@ UpdateStats = false;
 DrawPlayerHealth = global.PlayerHP;
 DrawPlayerPP = global.PlayerPP;
 DrawEnemyHealth = EnemyBattle.Health;
+DrawTimer = BattleTimer;
 timer[0] = -1;
 
 //Shake effect
