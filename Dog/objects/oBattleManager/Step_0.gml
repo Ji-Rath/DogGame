@@ -109,49 +109,34 @@ if(UpdateStats)
 {
 	var Check = 0;
 	var Increment = 0.25;
-	if(DrawPlayerHealth > global.phealth)
-	{
+	
+	//Check player health for changes
+	if(DrawPlayerHealth > global.PlayerHP)
 		DrawPlayerHealth -= Increment;
-	}
-	if(DrawPlayerHealth < global.phealth)
-	{
+	if(DrawPlayerHealth < global.PlayerHP)
 		DrawPlayerHealth += Increment;
-	}
-	if(DrawPlayerHealth = global.phealth)
-	{
+	if(DrawPlayerHealth = global.PlayerHP)
 		Check++;
-	}
 	
-	if(DrawPlayerPP > global.pp)
-	{
+	//Check player PP for changes
+	if(DrawPlayerPP > global.PlayerPP)
 		DrawPlayerPP -= Increment;
-	}
-	if(DrawPlayerPP < global.pp)
-	{
+	if(DrawPlayerPP < global.PlayerPP)
 		DrawPlayerPP += Increment;
-	}
-	if(DrawPlayerPP = global.pp)
-	{
+	if(DrawPlayerPP = global.PlayerPP)
 		Check++;
-	}
 	
+	//Check enemy health for changes
 	if(DrawEnemyHealth > EnemyBattle.Health)
-	{
 		DrawEnemyHealth -= Increment;
-	}
 	if(DrawEnemyHealth < EnemyBattle.Health)
-	{
 		DrawEnemyHealth += Increment;
-	}
 	if(DrawEnemyHealth = EnemyBattle.Health)
-	{
 		Check++;
-	}
 	
+	//If all checks done, go to next phase
 	if(Check == 3 && timer[0] == -1)
-	{
 		timer[0] = 0.5*60;
-	}
 }
 
 //timer management
@@ -172,7 +157,7 @@ else if(timer[0] != -1)
 	{
 		UpdateStats = true;
 	}
-	if(DrawPlayerHealth > global.phealth)
+	if(DrawPlayerHealth > global.PlayerHP)
 	{
 		Shake[0] = 8;
 	}

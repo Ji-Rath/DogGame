@@ -51,8 +51,8 @@ else if (timer[1] != -1)
     //Prevent decimals
     with(oBattleManager)
     {
-        global.phealth = ceil(global.phealth);
-        global.pp = ceil(global.pp);
+        global.PlayerHP = ceil(global.PlayerHP);
+        global.PlayerPP = ceil(global.PlayerPP);
         EnemyBattle.Health = ceil(EnemyBattle.Health);
     }
     Destroy = true;

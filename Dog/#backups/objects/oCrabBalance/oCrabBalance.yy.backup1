@@ -1,4 +1,4 @@
-// 2020-05-25 23:53:37
+// 2020-06-17 16:22:52
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 sprite_index = sChipBag;
@@ -24,12 +24,16 @@ with(oCrabWeigh)
     }
 }
 
-
+//If the player successfully completed the minigame, end the minigame early
 if(CrabCount == instance_number(oCrabWeigh) && IsResting && !Complete)
 {
-    oMiniGame.timer[1] = 1*60;
+    oMiniGame.timer[1] = 0.5*60;
     Complete = true;
+    
+    var Icon = instance_create_layer(room_width/2, room_height/2, "Instances", oIconPopup);
+    Icon.Sprite = sCheckMark;
 }
+
 //If minigame timer is over and player could not balance the crabs, deal damage
 if(oMiniGame.timer[1] <= 0 && oMiniGame.timer[1] != -1 && !Complete)
 {

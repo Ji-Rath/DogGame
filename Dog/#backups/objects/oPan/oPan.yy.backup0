@@ -1,4 +1,4 @@
-// 2020-05-25 23:54:15
+// 2020-06-17 16:18:36
 #event properties (no comments/etc. here are saved)
 parent_index = oPhysicsDrag;
 sprite_index = sPan;
@@ -35,6 +35,9 @@ if(!Hit)
 	oEnemyBattleParent.Health -= clamp(abs(phy_speed_y),3,5);
 	Hit = true;
 	oMiniGame.timer[1] = 0.5*60;
+	
+	var Icon = instance_create_layer(room_width/2, room_height/2, "Instances", oIconPopup);
+    Icon.Sprite = sCheckMark;
 }
 
 #event mouse_left_press

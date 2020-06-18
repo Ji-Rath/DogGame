@@ -11,9 +11,9 @@ with(oDogPaddler)
 }
 
 //Save Player Stats
-ds_map_replace(oAreaStats.SaveState,"PlayerHealth",global.phealth);
-ds_map_replace(oAreaStats.SaveState,"PlayerPP",global.pp);
-ds_map_replace(oAreaStats.SaveState,"PlayerLevel",global.plevel);
+ds_map_replace(oAreaStats.SaveState,"PlayerHealth",global.PlayerHP);
+ds_map_replace(oAreaStats.SaveState,"PlayerPP",global.PlayerPP);
+ds_map_replace(oAreaStats.SaveState,"PlayerLevel",global.PlayerLevel);
 
 //Save Room
 ds_map_replace(oAreaStats.SaveState,"Room",room_get_name(Room));

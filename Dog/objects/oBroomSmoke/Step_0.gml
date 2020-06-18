@@ -1,5 +1,7 @@
 
-image_alpha -= 0.01;
+image_alpha -= 0.025;
+image_angle += 7;
+x += HSpeed;
 
 if(image_alpha < 0)
 {

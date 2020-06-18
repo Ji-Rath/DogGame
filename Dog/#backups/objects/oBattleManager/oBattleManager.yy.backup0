@@ -1,4 +1,4 @@
-// 2020-05-25 23:28:43
+// 2020-06-17 19:34:40
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 visible = false;
@@ -61,8 +61,8 @@ BattleTimerInit = 20;
 
 //Update stats effect
 UpdateStats = false;
-DrawPlayerHealth = global.phealth;
-DrawPlayerPP = global.pp;
+DrawPlayerHealth = global.PlayerHP;
+DrawPlayerPP = global.PlayerPP;
 DrawEnemyHealth = EnemyBattle.Health;
 timer[0] = -1;
 
@@ -187,49 +187,34 @@ if(UpdateStats)
 {
 	var Check = 0;
 	var Increment = 0.25;
+	
+	//Check player health for changes
 	if(DrawPlayerHealth > global.phealth)
-	{
 		DrawPlayerHealth -= Increment;
-	}
 	if(DrawPlayerHealth < global.phealth)
-	{
 		DrawPlayerHealth += Increment;
-	}
 	if(DrawPlayerHealth = global.phealth)
-	{
 		Check++;
-	}
 	
+	//Check player PP for changes
 	if(DrawPlayerPP > global.pp)
-	{
 		DrawPlayerPP -= Increment;
-	}
 	if(DrawPlayerPP < global.pp)
-	{
 		DrawPlayerPP += Increment;
-	}
 	if(DrawPlayerPP = global.pp)
-	{
 		Check++;
-	}
 	
+	//Check enemy health for changes
 	if(DrawEnemyHealth > EnemyBattle.Health)
-	{
 		DrawEnemyHealth -= Increment;
-	}
 	if(DrawEnemyHealth < EnemyBattle.Health)
-	{
 		DrawEnemyHealth += Increment;
-	}
 	if(DrawEnemyHealth = EnemyBattle.Health)
-	{
 		Check++;
-	}
 	
+	//If all checks done, go to next phase
 	if(Check == 3 && timer[0] == -1)
-	{
 		timer[0] = 0.5*60;
-	}
 }
 
 //timer management
@@ -291,6 +276,7 @@ if(visible)
 	
 	//Draw player portrait
 	draw_sprite(sGUIPlayerInfo,0,PortraitX,PortraitY);
+	draw_sprite(sGUIPlayerInfo,1,PortraitX,PortraitY+100);
 	
 	//Draw player status
 	draw_text(PortraitX+DPhpx,PortraitY+DPhpy,round(DrawPlayerHealth));

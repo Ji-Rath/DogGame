@@ -33,7 +33,7 @@ if(path_index != -1)
 if(Vulnerable)
 {
     if(Angle != 180 && Health > 0)
-        Angle += 10;
+        Angle += 5;
 }
 else
 {

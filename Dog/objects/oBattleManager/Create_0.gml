@@ -55,8 +55,8 @@ BattleTimerInit = 20;
 
 //Update stats effect
 UpdateStats = false;
-DrawPlayerHealth = global.phealth;
-DrawPlayerPP = global.pp;
+DrawPlayerHealth = global.PlayerHP;
+DrawPlayerPP = global.PlayerPP;
 DrawEnemyHealth = EnemyBattle.Health;
 timer[0] = -1;
 

@@ -1,4 +1,4 @@
-// 2020-05-25 23:09:52
+// 2020-06-17 19:38:32
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 uses_physics = false;
@@ -125,8 +125,8 @@ else if (timer[1] != -1)
     //Prevent decimals
     with(oBattleManager)
     {
-        global.phealth = ceil(global.phealth);
-        global.pp = ceil(global.pp);
+        global.PlayerHP = ceil(global.PlayerHP);
+        global.PlayerPP = ceil(global.PlayerPp);
         EnemyBattle.Health = ceil(EnemyBattle.Health);
     }
     Destroy = true;
@@ -153,7 +153,7 @@ draw_roundrect(room_width/2+500,room_height/2+(250*OpenEffect),room_width/2-500,
 if(timer[1] != -1)
 {
     draw_set_color(c_red);
-    var Time = round((timer[1]/(4*60))*10)/10;
+    var Time = round((timer[1]/(4*60))*12)/12;
     draw_rectangle(room_width/2-500+(Time*1000),room_height/2+250,room_width/2-500,room_height/2+225,false);
 }
 

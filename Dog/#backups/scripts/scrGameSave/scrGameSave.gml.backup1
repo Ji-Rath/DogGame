@@ -1,13 +1,13 @@
-// 2020-02-22 13:21:13
+// 2020-02-22 19:21:49
 /// @param SaveName
-/// @param Room = Room
+/// @param Room = room
 #args SaveName, Room = room
 
 //Save Player position
 with(oDogPaddler)
 {
-    ds_map_replace(oAreaStats.SaveState,room_get_name(Room)+"PlayerX",x);
-    ds_map_replace(oAreaStats.SaveState,room_get_name(Room)+"PlayerY",y);
+    ds_map_replace(oAreaStats.SaveState,"PlayerX",x);
+    ds_map_replace(oAreaStats.SaveState,"PlayerY",y);
 }
 
 //Save Player Stats

@@ -11,15 +11,19 @@ with(oCrabWeigh)
     }
 }
 
-
+//If the player successfully completed the minigame, end the minigame early
 if(CrabCount == instance_number(oCrabWeigh) && IsResting && !Complete)
 {
     oMiniGame.timer[1] = 0.5*60;
     Complete = true;
+    
+    var Icon = instance_create_layer(room_width/2, room_height/2, "GUI", oIconPopup);
+    Icon.Sprite = sCheckMark;
 }
+
 //If minigame timer is over and player could not balance the crabs, deal damage
 if(oMiniGame.timer[1] <= 0 && oMiniGame.timer[1] != -1 && !Complete)
 {
-    global.phealth -= 10;
+    global.PlayerHP -= 10;
     Complete = true;
 }

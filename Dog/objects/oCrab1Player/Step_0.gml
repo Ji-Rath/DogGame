@@ -55,12 +55,15 @@ if(oMiniGame.timer[0] == -1)
             if(Success)
             {
                 sprite_index = sMiniGameCrab1PlayerJump;
+                
+                var Icon = instance_create_layer(room_width/2, room_height/2, "GUI", oIconPopup);
+                Icon.Sprite = sCheckMark;
             }
             else
             {
                 if(!HitPlayer)
                 {
-                    global.phealth -= 10;
+                    global.PlayerHP -= 10;
                     HitPlayer = true;
                 }
             }

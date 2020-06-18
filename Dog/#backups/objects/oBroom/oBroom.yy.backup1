@@ -1,8 +1,8 @@
-// 2020-05-24 13:29:05
+// 2020-06-18 01:35:18
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
+sprite_index = sBroom;
 uses_physics = false;
-
 
 #event create
 
@@ -18,20 +18,27 @@ if(mouse_x > x && CurrentPosition != 1)
 {
     CurrentPosition = 1;
     Brushes++;
+    var s = instance_create_layer(x, y+150, "Instances", oBroomSmoke);
+    s.HSpeed = -5;
 }
 
 if(mouse_x < x && CurrentPosition != 0)
 {
     CurrentPosition = 0;
     Brushes++;
+    var s = instance_create_layer(x, y+150, "Instances", oBroomSmoke);
+    s.HSpeed = 5;
 }
 
 
 //If player was successful
-if(Brushes > 8 && !oEnemyBattleParent.Vulnerable)
+if(Brushes > 16 && !oEnemyBattleParent.Vulnerable)
 {
     oMiniGame.timer[1] = 1;
     oEnemyBattleParent.Vulnerable = true;
+    
+    var Icon = instance_create_layer(room_width/2, room_height/2, "Instances", oIconPopup);
+    Icon.Sprite = sCheckMark;
 }
 
 #event draw

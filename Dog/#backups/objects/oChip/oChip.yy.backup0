@@ -1,4 +1,4 @@
-// 2020-04-05 00:36:23
+// 2020-06-17 19:39:37
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 sprite_index = sChip;
@@ -6,8 +6,8 @@ uses_physics = false;
 
 #event create
 
-friction = 0.2;
-Scale = choose(1,1.25,1.5);
+friction = 0.4;
+Scale = choose(1.5,1.75,2);
 image_xscale = Scale;
 image_yscale = Scale;
 image_angle = random(360);
@@ -35,7 +35,7 @@ if(speed > 0)
 
 #event mouse_left_button
 
-global.phealth += 1;
+global.PlayerHP += 1;
 instance_destroy();
 
 #event draw

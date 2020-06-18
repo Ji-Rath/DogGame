@@ -5,6 +5,16 @@
     "name": "oButtonRage",
     "eventList": [
         {
+            "id": "00951767-9bdf-c882-48a9-57d1f40913f8",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "eventtype": 0,
+            "enumb": 0,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "m_owner": "82b55bfb-f3b2-e141-4ace-4007a22ffa47"
+        },
+        {
             "id": "fb4c85e2-3f07-d293-3640-4db45370e52c",
             "modelName": "GMEvent",
             "mvc": "1.0",

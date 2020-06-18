@@ -9,6 +9,6 @@ var ShowEnemy = argument_count > 3 ? argument[3] : false;;
 
 var MiniGame = instance_create_layer(0,0,"GameManager",oMiniGame);
 MiniGame.GameType = GameType;
-global.pp -= Cost;
+global.PlayerPP -= Cost;
 MiniGame.ShowEnemy = ShowEnemy;
 MiniGame.EndTurn = EndTurn;

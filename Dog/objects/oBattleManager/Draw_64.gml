@@ -15,6 +15,7 @@ if(visible)
 	
 	//Draw player portrait
 	draw_sprite(sGUIPlayerInfo,0,PortraitX,PortraitY);
+	draw_sprite(sGUIPlayerInfo,1,PortraitX,PortraitY+100);
 	
 	//Draw player status
 	draw_text(PortraitX+DPhpx,PortraitY+DPhpy,round(DrawPlayerHealth));

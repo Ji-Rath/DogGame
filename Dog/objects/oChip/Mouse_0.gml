@@ -1,3 +1,3 @@
 
-global.phealth += 1;
+global.PlayerHP += 1;
 instance_destroy();

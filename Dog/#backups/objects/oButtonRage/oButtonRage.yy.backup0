@@ -1,25 +1,40 @@
-// 2020-04-05 13:12:56
+// 2020-06-18 01:21:05
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 sprite_index = sBattleIcons;
 uses_physics = false;
 
+#event create
+
+scrAnimInit(Animation.Flip, AnimationIntro.Intro1);
+CanPlayAnim = true;
+image_speed = 0;
+
 #event step
 
+scrAnimStep();
 
+//Make fist visible only when available and GUI is visible
 if(oBattleManager.RageMeter >= 3 && oBattleManager.visible)
 {
     visible = true;
+    if(CanPlayAnim)
+    {
+        scrAnimInit(Animation.Flip, AnimationIntro.Intro1);
+        CanPlayAnim = false;
+    }
 }
 else
 {
     visible = false;
+    CanPlayAnim = true;
 }
 
 #event mouse_left_release
 
 if(visible)
 {
+    //Execute Dogpaddler special mode
     with(oBattleManager)
     {
         var ItemDesc = ItemDescription[Item.GlovesOff];
@@ -41,4 +56,4 @@ if(visible)
 
 #event draw
 
-draw_sprite_ext(sBattleIcons, 0, x, y, 0.75, 0.75, 0, c_red, 1);
+scrAnimDraw();

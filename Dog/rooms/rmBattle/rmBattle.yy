@@ -9,7 +9,8 @@
     "instanceCreationOrderIDs": [
         "7364462f-824c-4705-8fc5-94227d4340ba",
         "6b1c34f7-1150-47cb-b658-c1cea78776ac",
-        "67b68919-67d0-432c-8018-50f8ce7cce93"
+        "67b68919-67d0-432c-8018-50f8ce7cce93",
+        "0b3f70f4-0d8b-4597-b46e-c64893bc64d6"
     ],
     "IsDnD": false,
     "layers": [
@@ -52,7 +53,8 @@
             "inheritSubLayers": false,
             "inheritVisibility": false,
             "instances": [
-{"name": "inst_7BF60A17","id": "6b1c34f7-1150-47cb-b658-c1cea78776ac","colour": { "Value": 4294967295 },"creationCodeFile": "","creationCodeType": "","ignore": false,"imageIndex": 0,"imageSpeed": 1,"inheritCode": false,"inheritItemSettings": false,"IsDnD": false,"m_originalParentID": "00000000-0000-0000-0000-000000000000","m_serialiseFrozen": false,"modelName": "GMRInstance","name_with_no_file_rename": "inst_7BF60A17","objId": "82b55bfb-f3b2-e141-4ace-4007a22ffa47","properties": null,"rotation": 0,"scaleX": 1,"scaleY": 1,"mvc": "1.1","x": 320,"y": 96}
+{"name": "inst_7BF60A17","id": "6b1c34f7-1150-47cb-b658-c1cea78776ac","colour": { "Value": 4294967295 },"creationCodeFile": "","creationCodeType": "","ignore": false,"imageIndex": 0,"imageSpeed": 1,"inheritCode": false,"inheritItemSettings": false,"IsDnD": false,"m_originalParentID": "00000000-0000-0000-0000-000000000000","m_serialiseFrozen": false,"modelName": "GMRInstance","name_with_no_file_rename": "inst_7BF60A17","objId": "82b55bfb-f3b2-e141-4ace-4007a22ffa47","properties": null,"rotation": 0,"scaleX": 1,"scaleY": 1,"mvc": "1.1","x": 320,"y": 96},
+{"name": "inst_4C2282B0","id": "0b3f70f4-0d8b-4597-b46e-c64893bc64d6","colour": { "Value": 4294967295 },"creationCodeFile": "","creationCodeType": "","ignore": false,"imageIndex": 0,"imageSpeed": 1,"inheritCode": false,"inheritItemSettings": false,"IsDnD": false,"m_originalParentID": "00000000-0000-0000-0000-000000000000","m_serialiseFrozen": false,"modelName": "GMRInstance","name_with_no_file_rename": "inst_4C2282B0","objId": "fa851a8e-5a1c-0cb8-a63e-8d842dbe952e","properties": null,"rotation": 0,"scaleX": 1,"scaleY": 1,"mvc": "1.1","x": 320,"y": 192}
             ],
             "layers": [
 

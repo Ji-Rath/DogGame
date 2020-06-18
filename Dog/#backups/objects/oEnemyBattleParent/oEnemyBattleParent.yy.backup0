@@ -1,4 +1,4 @@
-// 2020-05-25 23:51:50
+// 2020-06-18 01:38:23
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 uses_physics = false;
@@ -57,7 +57,7 @@ if(path_index != -1)
 if(Vulnerable)
 {
     if(Angle != 180 && Health > 0)
-        Angle += 10;
+        Angle += 5;
 }
 else
 {
