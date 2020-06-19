@@ -1,4 +1,4 @@
-// 2020-06-17 19:38:32
+// 2020-06-19 00:59:53
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 uses_physics = false;
@@ -126,7 +126,7 @@ else if (timer[1] != -1)
     with(oBattleManager)
     {
         global.PlayerHP = ceil(global.PlayerHP);
-        global.PlayerPP = ceil(global.PlayerPp);
+        global.PlayerPP = ceil(global.PlayerPP);
         EnemyBattle.Health = ceil(EnemyBattle.Health);
     }
     Destroy = true;

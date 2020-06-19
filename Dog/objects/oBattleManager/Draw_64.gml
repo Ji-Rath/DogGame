@@ -22,7 +22,7 @@ if(visible)
 	draw_text(PortraitX+DPhpx,PortraitY+DPhpy+DPoffy,round(DrawPlayerPP));
 	
 	//Draw battle timer
-	if(BattleTimer > 0)
+	if((DrawTimer > 0 && BattleStage == 3) || BattleTimer != DrawTimer)
 	{
 		var TimerPosX = GUIWidth/2;
 		var TimerPosY = GUIHeight/1.3;
@@ -32,7 +32,7 @@ if(visible)
 		draw_set_color(c_black);
 		draw_rectangle(TimerPosX-BarWidth/2,TimerPosY+BarHeight/2,TimerPosX+BarWidth/2,TimerPosY-BarHeight/2,false);
 		draw_set_color(c_red);
-		var BattleTimerNum = ((round(BattleTimer/60/BattleTimerInit*16)/16)*BarWidth);
+		var BattleTimerNum = ((round(DrawTimer/60/BattleTimerInit*16)/16)*BarWidth);
 		draw_rectangle(TimerPosX-BarWidth/2,TimerPosY+BarHeight/2,TimerPosX-BarWidth/2+BattleTimerNum,TimerPosY-BarHeight/2,false);
 	}
 }

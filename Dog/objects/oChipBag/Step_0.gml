@@ -17,8 +17,7 @@ if(Opened && !Complete && instance_number(oChip) == 0)
     oMiniGame.timer[1] = 0.5*60;
     Complete = true;
     
-    var Icon = instance_create_layer(room_width/2, room_height/2, "GUI", oIconPopup);
-    Icon.Sprite = sCheckMark;
+    oBattleManager.BattleTimer += 2*60;
     
     var Icon = instance_create_layer(room_width/2, room_height/2, "GUI", oIconPopup);
     Icon.Sprite = sMoreTime;

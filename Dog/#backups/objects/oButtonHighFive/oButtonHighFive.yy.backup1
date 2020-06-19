@@ -1,4 +1,4 @@
-// 2020-06-18 01:54:03
+// 2020-06-18 01:54:09
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 sprite_index = sNeedHand;
@@ -9,6 +9,7 @@ uses_physics = false;
 scrAnimInit(Animation.Flip, AnimationIntro.Intro1);
 CanPlayAnim = true;
 image_speed = 0;
+IsHovering = false;
 
 #event step
 

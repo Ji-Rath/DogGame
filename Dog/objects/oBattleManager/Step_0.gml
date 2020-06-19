@@ -40,7 +40,6 @@ if(BattleStageEnd)
 			{
 				visible = true;
 			}
-			BattleTimer = BattleTimerInit*60;
 		break;
 		
 		case 4:
@@ -89,7 +88,7 @@ if(BattleStageEnd)
 }
 
 //Reduce battle timer, and end turn if at 0
-if(BattleTimer > 0 && visible && BattleStage == 3)
+if(BattleTimer > 0 && visible && BattleStage == 3 && DrawTimer == BattleTimer)
 {
 	BattleTimer -= 1;
 	if (BattleTimer <= 0)
@@ -102,7 +101,11 @@ if(BattleTimer > 0 && visible && BattleStage == 3)
         }
         visible = false;
 	}
+	if(BattleStage == 3)
+		DrawTimer = BattleTimer;
 }
+
+show_debug_message("BattleTimer: "+string(BattleTimer)+" DrawTimer: "+string(DrawTimer));
 
 //Update player stats visually if changed
 if(UpdateStats)
@@ -136,9 +139,9 @@ if(UpdateStats)
 	
 	//Check timer for changes
 	if(DrawTimer > BattleTimer)
-		DrawTimer -= Increment;
+		DrawTimer -= Increment*8;
 	if(DrawTimer < BattleTimer)
-		DrawTimer -= Increment;
+		DrawTimer += Increment*8;
 	if(DrawTimer == BattleTimer)
 		Check++;
 	
@@ -159,7 +162,11 @@ else if(timer[0] != -1)
 	{
 		UpdateStats = false;
 		if(BattleStage == 2 || BattleStage == 4)
+		{
 			BattleStageEnd = true;
+			BattleTimer = BattleTimerInit*60;
+			DrawTimer = BattleTimer;
+		}
 	}
 	else
 	{
@@ -171,12 +178,12 @@ else if(timer[0] != -1)
 	}
 	if(DrawEnemyHealth > EnemyBattle.Health)
 	{
-		Shake[1] = 10;
+		Shake[1] = 8;
 	}
 	
 	if(oEnemyBattleParent.Vulnerable && BattleStage == 4)
 	{
-		oEnemyBattleParent.Vulnerable = false;	
+		oEnemyBattleParent.Vulnerable = false;
 	}
 }
 

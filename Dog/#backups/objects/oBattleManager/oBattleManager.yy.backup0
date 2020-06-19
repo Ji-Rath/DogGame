@@ -1,4 +1,4 @@
-// 2020-06-18 02:04:06
+// 2020-06-19 01:11:40
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 visible = false;
@@ -119,7 +119,6 @@ if(BattleStageEnd)
 			{
 				visible = true;
 			}
-			BattleTimer = BattleTimerInit*60;
 		break;
 		
 		case 4:
@@ -168,7 +167,7 @@ if(BattleStageEnd)
 }
 
 //Reduce battle timer, and end turn if at 0
-if(BattleTimer > 0 && visible && BattleStage == 3)
+if(BattleTimer > 0 && visible && BattleStage == 3 && DrawTimer == BattleTimer)
 {
 	BattleTimer -= 1;
 	if (BattleTimer <= 0)
@@ -181,7 +180,11 @@ if(BattleTimer > 0 && visible && BattleStage == 3)
         }
         visible = false;
 	}
+	if(BattleStage == 3)
+		DrawTimer = BattleTimer;
 }
+
+show_debug_message("BattleTimer: "+string(BattleTimer)+" DrawTimer: "+string(DrawTimer));
 
 //Update player stats visually if changed
 if(UpdateStats)
@@ -215,9 +218,9 @@ if(UpdateStats)
 	
 	//Check timer for changes
 	if(DrawTimer > BattleTimer)
-		DrawTimer -= Increment;
+		DrawTimer -= Increment*8;
 	if(DrawTimer < BattleTimer)
-		DrawTimer -= Increment;
+		DrawTimer += Increment*8;
 	if(DrawTimer == BattleTimer)
 		Check++;
 	
@@ -238,7 +241,11 @@ else if(timer[0] != -1)
 	{
 		UpdateStats = false;
 		if(BattleStage == 2 || BattleStage == 4)
+		{
 			BattleStageEnd = true;
+			BattleTimer = BattleTimerInit*60;
+			DrawTimer = BattleTimer;
+		}
 	}
 	else
 	{
@@ -250,12 +257,12 @@ else if(timer[0] != -1)
 	}
 	if(DrawEnemyHealth > EnemyBattle.Health)
 	{
-		Shake[1] = 10;
+		Shake[1] = 8;
 	}
 	
 	if(oEnemyBattleParent.Vulnerable && BattleStage == 4)
 	{
-		oEnemyBattleParent.Vulnerable = false;	
+		oEnemyBattleParent.Vulnerable = false;
 	}
 }
 
@@ -292,7 +299,7 @@ if(visible)
 	draw_text(PortraitX+DPhpx,PortraitY+DPhpy+DPoffy,round(DrawPlayerPP));
 	
 	//Draw battle timer
-	if(BattleTimer > 0)
+	if((DrawTimer > 0 && BattleStage == 3) || BattleTimer != DrawTimer)
 	{
 		var TimerPosX = GUIWidth/2;
 		var TimerPosY = GUIHeight/1.3;
@@ -302,7 +309,7 @@ if(visible)
 		draw_set_color(c_black);
 		draw_rectangle(TimerPosX-BarWidth/2,TimerPosY+BarHeight/2,TimerPosX+BarWidth/2,TimerPosY-BarHeight/2,false);
 		draw_set_color(c_red);
-		var BattleTimerNum = ((round(BattleTimer/60/BattleTimerInit*16)/16)*BarWidth);
+		var BattleTimerNum = ((round(DrawTimer/60/BattleTimerInit*16)/16)*BarWidth);
 		draw_rectangle(TimerPosX-BarWidth/2,TimerPosY+BarHeight/2,TimerPosX-BarWidth/2+BattleTimerNum,TimerPosY-BarHeight/2,false);
 	}
 }

@@ -36,6 +36,7 @@ if(visible && Selected)
         }
         oBattleManager.visible = false;
         oBattleManager.BattleTimer = 0;
+        oBattleManager.DrawTimer = 0;
         Selected = false;
         
         //Increase rage
@@ -78,9 +79,11 @@ if(visible && Selected)
                     visible = false;
                     Selected = false;
                 }
-                oBattleManager.visible = false;
-                oBattleManager.BattleTimer = 0;
-                Selected = false;
+                
+        		with(oBattleManager)
+                {
+                    visible = false;
+                }
                 
                 //Increase Rage
                 oBattleManager.RageMeter += 1;

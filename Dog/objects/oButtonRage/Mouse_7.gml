@@ -14,6 +14,7 @@ if(visible)
         }
         oBattleManager.visible = false;
         oBattleManager.BattleTimer = 0;
+        oBattleManager.DrawTimer = 0;
         Selected = false;
         
         //Increase rage

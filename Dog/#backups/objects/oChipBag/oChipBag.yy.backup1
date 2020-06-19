@@ -1,4 +1,4 @@
-// 2020-06-17 16:21:06
+// 2020-06-19 01:09:14
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 sprite_index = sChipBag;
@@ -29,8 +29,13 @@ if(Opened && !Complete && instance_number(oChip) == 0)
     oMiniGame.timer[1] = 0.5*60;
     Complete = true;
     
-    var Icon = instance_create_layer(room_width/2, room_height/2, "Instances", oIconPopup);
+    oBattleManager.BattleTimer += 2*60;
+    
+    var Icon = instance_create_layer(room_width/2, room_height/2, "GUI", oIconPopup);
     Icon.Sprite = sCheckMark;
+    
+    var Icon = instance_create_layer(room_width/2, room_height/2, "GUI", oIconPopup);
+    Icon.Sprite = sMoreTime;
 }
 
 #event draw

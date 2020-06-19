@@ -65,7 +65,6 @@ else if (timer[1] != -1)
         oBattleManager.UpdateStats = true;
         oBattleManager.visible = true;
         oBattleMenuParent.visible = true;
-        oBattleManager.BattleTimer = oBattleManager.BattleTimerInit*60;
     }
     timer[1] = -1;
 }

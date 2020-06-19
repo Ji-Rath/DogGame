@@ -1,4 +1,4 @@
-// 2020-05-25 22:40:02
+// 2020-06-19 01:08:08
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 mask_index = sBattleIcons;
@@ -126,9 +126,11 @@ if(visible && Selected)
                     visible = false;
                     Selected = false;
                 }
-                oBattleManager.visible = false;
-                oBattleManager.BattleTimer = 0;
-                Selected = false;
+                
+        		with(oBattleManager)
+                {
+                    visible = false;
+                }
                 
                 //Increase Rage
                 oBattleManager.RageMeter += 1;
@@ -140,11 +142,6 @@ else
 {
     Rot = 0;
     RotValue = 0;
-}
-
-if(ItemIndex == 1)
-{
-    show_debug_message("List Size: "+string(ds_list_size(Contents)));
 }
 
 
