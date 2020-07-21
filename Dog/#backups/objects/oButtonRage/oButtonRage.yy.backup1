@@ -1,4 +1,4 @@
-// 2020-06-18 01:51:12
+// 2020-07-21 16:48:41
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 sprite_index = sBattleIcons;
@@ -10,6 +10,8 @@ scrAnimInit(Animation.Flip, AnimationIntro.Intro1);
 CanPlayAnim = true;
 image_speed = 0;
 IsHovering = false;
+
+MaxRage = oBattleManager.MaxRage;
 
 #event step
 
@@ -31,14 +33,6 @@ else
     CanPlayAnim = true;
 }
 
-#event mouse_enter
-
-IsHovering = true;
-
-#event mouse_leave
-
-IsHovering = false;
-
 #event mouse_left_release
 
 if(visible)
@@ -56,12 +50,21 @@ if(visible)
         }
         oBattleManager.visible = false;
         oBattleManager.BattleTimer = 0;
+        oBattleManager.DrawTimer = 0;
         Selected = false;
         
-        //Increase rage
+        //Reset rage meter
         oBattleManager.RageMeter = 0;
     }
 }
+
+#event mouse_enter
+
+IsHovering = true;
+
+#event mouse_leave
+
+IsHovering = false;
 
 #event draw
 
