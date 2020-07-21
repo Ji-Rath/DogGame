@@ -1,4 +1,4 @@
-// 2020-06-19 01:08:08
+// 2020-06-19 01:08:28
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 mask_index = sBattleIcons;
@@ -84,6 +84,7 @@ if(visible && Selected)
         }
         oBattleManager.visible = false;
         oBattleManager.BattleTimer = 0;
+        oBattleManager.DrawTimer = 0;
         Selected = false;
         
         //Increase rage
