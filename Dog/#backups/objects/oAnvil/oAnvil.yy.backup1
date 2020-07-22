@@ -1,4 +1,4 @@
-// 2020-07-22 16:03:17
+// 2020-07-22 16:11:44
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 sprite_index = sAnvil;
@@ -23,10 +23,10 @@ Interact = false;
 CompleteCounter = 10;
 
 phy_active = false;
-alarm[0] = 1*60;
+alarm[0] = 1.5*60;
 
 MouseCollision = 0;
-ButtonAlternate = instance_create_layer(room_width/2, room_height/2+300, "Instances", oButtonSignal);
+ButtonAlternate = instance_create_layer(room_width/1.1, room_height/2+300, "Instances", oButtonSignal);
 ButtonAlternate.sprite_index = sButtonAlternate;
 
 #event destroy
