@@ -52,9 +52,10 @@ if(oMiniGame.timer[0] == -1)
             MoveX = x;
             timer[1] = -1;
             Spd = 0;
-            if(Success)
+            if(Success && !HitPlayer)
             {
                 sprite_index = sMiniGameCrab1PlayerJump;
+                HitPlayer = true;
                 
                 var Icon = instance_create_layer(room_width/2, room_height/2, "GUI", oIconPopup);
                 Icon.Sprite = sCheckMark;
