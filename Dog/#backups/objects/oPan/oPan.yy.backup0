@@ -1,4 +1,4 @@
-// 2020-07-22 12:21:12
+// 2020-07-22 12:23:09
 #event properties (no comments/etc. here are saved)
 parent_index = oPhysicsDrag;
 sprite_index = sPan;
@@ -39,6 +39,9 @@ if(!Hit)
 	var Icon = instance_create_layer(room_width/2, room_height/2, "GUI", oIconPopup);
     Icon.Sprite = sCheckMark;
 }
+
+#event collision:oPhysicsBoundaries
+//Collision
 
 #event mouse_left_press
 
