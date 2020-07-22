@@ -65,3 +65,5 @@ NeglectMeter = 0;
 MaxNeglect = 30;
 
 DrawGUI = false;
+
+image_speed = 0.5;

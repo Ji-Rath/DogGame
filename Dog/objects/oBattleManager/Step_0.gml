@@ -1,6 +1,6 @@
 
 //Increment neglect at a rate of 1 per second
-if(NeglectMeter <= MaxNeglect)
+if(NeglectMeter <= MaxNeglect && !instance_exists(oBattleTextBox))
 {
 	NeglectMeter += (1/60);
 }
@@ -56,6 +56,10 @@ if(BattleStageEnd)
 			timer[0] = 0.5*60;
 			visible = true;
 			DrawGUI = true;
+			if(global.PlayerPP <= 0)
+			{
+				global.PlayerHP -= 5;
+			}
 		break;
 		
 		case 5:
@@ -99,7 +103,7 @@ if(BattleStageEnd)
 }
 
 //Reduce battle timer, and end turn if at 0
-if(BattleTimer > 0 && visible && BattleStage == 3 && DrawTimer == BattleTimer)
+if(BattleTimer > 0 && visible && BattleStage == 3 && DrawTimer == BattleTimer && !instance_exists(oBattleTextBox))
 {
 	BattleTimer -= 1;
 	if (BattleTimer <= 0)

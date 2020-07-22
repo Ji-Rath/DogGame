@@ -1519,6 +1519,14 @@
             }
         },
         {
+            "Key": "b160a7be-df11-4253-82b3-c59b6a796b0a",
+            "Value": {
+                "id": "d4579a0e-e2f6-437a-a31c-e37318a6f966",
+                "resourcePath": "sprites\\sHungry\\sHungry.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "b1c00d2d-388b-415e-a5be-4713a41d7f92",
             "Value": {
                 "id": "c7a2af82-a0f3-4a99-9f82-6f86ca281045",

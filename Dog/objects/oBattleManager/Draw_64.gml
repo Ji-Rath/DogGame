@@ -17,6 +17,12 @@ if(DrawGUI)
 	draw_sprite(sGUIPlayerInfo,0,PortraitX,PortraitY);
 	draw_sprite(sGUIPlayerInfo,1,PortraitX,PortraitY+100);
 	
+	//If player is smelly...i mean hungry
+	if(global.PlayerPP <= 0)
+	{
+		draw_sprite(sHungry, image_index, PortraitX+50, PortraitY+50)
+	}
+	
 	//Draw player status
 	draw_text(PortraitX+DPhpx,PortraitY+DPhpy,round(DrawPlayerHealth));
 	draw_text(PortraitX+DPhpx,PortraitY+DPhpy+DPoffy,round(DrawPlayerPP));

@@ -1,4 +1,4 @@
-// 2020-07-22 11:42:46
+// 2020-07-22 14:00:24
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 visible = false;
@@ -72,10 +72,12 @@ MaxNeglect = 30;
 
 DrawGUI = false;
 
+image_speed = 0.5;
+
 #event step
 
 //Increment neglect at a rate of 1 per second
-if(NeglectMeter <= MaxNeglect)
+if(NeglectMeter <= MaxNeglect && !instance_exists(oBattleTextBox))
 {
 	NeglectMeter += (1/60);
 }
@@ -131,6 +133,10 @@ if(BattleStageEnd)
 			timer[0] = 0.5*60;
 			visible = true;
 			DrawGUI = true;
+			if(global.PlayerPP <= 0)
+			{
+				global.PlayerHP -= 5;
+			}
 		break;
 		
 		case 5:
@@ -174,7 +180,7 @@ if(BattleStageEnd)
 }
 
 //Reduce battle timer, and end turn if at 0
-if(BattleTimer > 0 && visible && BattleStage == 3 && DrawTimer == BattleTimer)
+if(BattleTimer > 0 && visible && BattleStage == 3 && DrawTimer == BattleTimer && !instance_exists(oBattleTextBox))
 {
 	BattleTimer -= 1;
 	if (BattleTimer <= 0)
@@ -320,6 +326,12 @@ if(DrawGUI)
 	//Draw player portrait
 	draw_sprite(sGUIPlayerInfo,0,PortraitX,PortraitY);
 	draw_sprite(sGUIPlayerInfo,1,PortraitX,PortraitY+100);
+	
+	//If player is smelly...i mean hungry
+	if(global.PlayerPP <= 0)
+	{
+		draw_sprite(sHungry, image_index, PortraitX+50, PortraitY+50)
+	}
 	
 	//Draw player status
 	draw_text(PortraitX+DPhpx,PortraitY+DPhpy,round(DrawPlayerHealth));
