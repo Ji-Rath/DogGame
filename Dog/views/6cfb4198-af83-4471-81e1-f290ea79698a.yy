@@ -10,7 +10,8 @@
         "be539d58-7d69-4d4b-a442-3cd5aac09119",
         "53c19b6d-87d0-452d-9d0d-08e1355380ca",
         "c421cfa9-c250-4123-aaea-8d4851e9b11c",
-        "3476715f-f9af-4aba-8ae5-76f4237a6b9d"
+        "3476715f-f9af-4aba-8ae5-76f4237a6b9d",
+        "5b8e5e54-f995-4cd8-96dd-b02d3e6b3e19"
     ],
     "filterType": "GMSprite",
     "folderName": "MiniGame",

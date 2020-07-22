@@ -46,9 +46,9 @@ if(BattleStageEnd)
 			with(oBattleMenuParent)
 			{
 				visible = true;
-				DrawGUI = true;
-				oButtonHighFive.CanHighfive = true;
 			}
+			DrawGUI = true;
+			oButtonHighFive.CanHighfive = true;
 		break;
 		
 		case 4:

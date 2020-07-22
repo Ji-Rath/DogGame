@@ -855,6 +855,14 @@
             }
         },
         {
+            "Key": "5b8e5e54-f995-4cd8-96dd-b02d3e6b3e19",
+            "Value": {
+                "id": "eb37cc29-3499-4966-8ddd-2a3efe251942",
+                "resourcePath": "views\\5b8e5e54-f995-4cd8-96dd-b02d3e6b3e19.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "5ba5ffac-a676-972f-de89-76dc0d1c108f",
             "Value": {
                 "id": "c541ff57-db73-14ef-21e7-92acdc3004d5",
@@ -1231,6 +1239,14 @@
             }
         },
         {
+            "Key": "87be6ec5-97c4-48a7-e7e2-68f6c2f486d3",
+            "Value": {
+                "id": "f09cbf48-8f01-dccb-229b-bf202e3aae62",
+                "resourcePath": "objects\\oAnvil\\oAnvil.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "88be3cec-3012-4a90-831b-3030cb687d24",
             "Value": {
                 "id": "bd929f6d-cfb0-49ab-bea0-89cb7bccbcac",
@@ -1268,6 +1284,22 @@
                 "id": "193fd756-dedb-659f-6540-ccba1dfdf7da",
                 "resourcePath": "objects\\oLGBack\\oLGBack.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "8d5791d1-e58d-40be-9ed8-199d82b57b07",
+            "Value": {
+                "id": "fd9684ce-ad39-4de4-af10-ef6f09bb5ec2",
+                "resourcePath": "sprites\\sRopeCover\\sRopeCover.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "8daeb983-2f1e-ee6d-d405-217d459a9aa5",
+            "Value": {
+                "id": "c9f2258b-218b-6d69-7ca8-396be8174785",
+                "resourcePath": "views\\8daeb983-2f1e-ee6d-d405-217d459a9aa5.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -1820,6 +1852,14 @@
                 "id": "674ed1c6-342d-e596-3264-be486de32c2f",
                 "resourcePath": "scripts\\scrAnimInit\\scrAnimInit.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "d523f5f0-181c-4257-9ec0-beec1d11113e",
+            "Value": {
+                "id": "fc3bd49a-0e66-4f5a-939d-8bdb298fb1dc",
+                "resourcePath": "sprites\\sAnvil\\sAnvil.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

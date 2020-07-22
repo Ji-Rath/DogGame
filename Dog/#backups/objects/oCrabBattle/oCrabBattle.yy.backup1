@@ -1,8 +1,18 @@
-// 2020-04-01 00:33:25
+// 2020-07-22 15:22:27
 #event properties (no comments/etc. here are saved)
 parent_index = oEnemyBattleParent;
 sprite_index = sCrabfightidle;
-uses_physics = false;
+uses_physics = true;
+physics_density = 0;
+physics_restitution = 0.1;
+physics_collision_group = 0;
+physics_linear_damping = 0.1;
+physics_angular_damping = 0.1;
+physics_sensor = false;
+physics_start_awake = true;
+physics_kinematic = false;
+physics_shape = 1;
+physics_shape_data = "207,249;323,249;323,306;207,306";
 
 #event create Insert description here
 // You can write your code in this editor
@@ -24,4 +34,4 @@ AttackDamage = 3;
 Health = 10;
 Name = "Crab"
 
-EnemyAttacks = [Game.Crab1];
+EnemyAttacks = [Game.AnvilStruggle, Game.CrabAttack, Game.CrabWeigh, Game.Crab1];

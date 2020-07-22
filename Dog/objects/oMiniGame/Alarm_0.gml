@@ -40,4 +40,12 @@ switch(GameType)
         SmallScreenPosY = 125+100;
         ds_list_add(Instances, instance_create_layer(SmallScreenPosX,SmallScreenPosY,"Instances",oHighfive));
     break;
+    
+    case Game.AnvilStruggle:
+        var Anvil = instance_create_layer(room_width/2,room_height/2-300,"Instances",oAnvil);
+        ds_list_add(Instances, Anvil);
+        var Collision = instance_create_layer(room_width/2-32, room_height/2+200-32, "Instances", oPhysicsBoundaries);
+        ds_list_add(Instances, Collision);
+        Anvil.MouseCollision = Collision;
+    break;
 }

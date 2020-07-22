@@ -23,7 +23,8 @@ enum Game
     PanAttack,
     BroomAttack,
     CrabWeigh,
-    Highfive
+    Highfive,
+    AnvilStruggle
 }
 alarm[0] = 1;
 

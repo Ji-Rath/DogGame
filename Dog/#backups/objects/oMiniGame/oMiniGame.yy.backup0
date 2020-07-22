@@ -1,4 +1,4 @@
-// 2020-07-22 13:11:54
+// 2020-07-22 15:15:23
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 uses_physics = false;
@@ -29,7 +29,8 @@ enum Game
     PanAttack,
     BroomAttack,
     CrabWeigh,
-    Highfive
+    Highfive,
+    AnvilStruggle
 }
 alarm[0] = 1;
 
@@ -79,6 +80,14 @@ switch(GameType)
         SmallScreenPosX = 250+100;
         SmallScreenPosY = 125+100;
         ds_list_add(Instances, instance_create_layer(SmallScreenPosX,SmallScreenPosY,"Instances",oHighfive));
+    break;
+    
+    case Game.AnvilStruggle:
+        var Anvil = instance_create_layer(room_width/2,room_height/2-300,"Instances",oAnvil);
+        ds_list_add(Instances, Anvil);
+        var Collision = instance_create_layer(room_width/2-32, room_height/2+200-32, "Instances", oPhysicsBoundaries);
+        ds_list_add(Instances, Collision);
+        Anvil.MouseCollision = Collision;
     break;
 }
 
