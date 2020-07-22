@@ -8,8 +8,6 @@ if(ceil(ImageIndex) > sprite_get_number(sHandClap) && CanAttempt)
 }
 ImageIndex = ImageIndex % (sprite_get_number(sHandClap));
 
-//show_debug_message("Index: "+string(ImageIndex)+", Target: "+string(sprite_get_number(sHandClap)));
-
 if(CanAttempt && global.KeyInteract)
 {
     if(ceil(ImageIndex) == sprite_get_number(sHandClap))

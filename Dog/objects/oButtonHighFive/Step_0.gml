@@ -1,8 +1,7 @@
 
 scrAnimStep();
 
-visible = (oBattleManager.DrawGUI && oBattleManager.NeglectMeter >= MaxNeglect);
-show_debug_message(string(oBattleManager.DrawGUI));
+visible = (CanHighfive && oBattleManager.DrawGUI && oBattleManager.NeglectMeter >= MaxNeglect);
 
 //Make fist visible only when available and GUI is visible
 if (visible)

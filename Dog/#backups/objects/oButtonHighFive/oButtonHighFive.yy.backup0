@@ -1,4 +1,4 @@
-// 2020-07-21 19:00:55
+// 2020-07-22 11:44:46
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 sprite_index = sNeedHand;
@@ -12,13 +12,13 @@ image_speed = 0;
 IsHovering = false;
 
 MaxNeglect = oBattleManager.MaxNeglect;
+CanHighfive = true;
 
 #event step
 
 scrAnimStep();
 
-visible = (oBattleManager.DrawGUI && oBattleManager.NeglectMeter >= MaxNeglect);
-show_debug_message(string(oBattleManager.DrawGUI));
+visible = (CanHighfive && oBattleManager.DrawGUI && oBattleManager.NeglectMeter >= MaxNeglect);
 
 //Make fist visible only when available and GUI is visible
 if (visible)
@@ -46,6 +46,7 @@ if(visible)
         script_execute(ExecuteArray[0],ExecuteArray[1]);
         DrawGUI = false;
     }
+    CanHighfive = false;
 }
 
 #event mouse_enter

@@ -1,4 +1,4 @@
-// 2020-07-21 18:34:20
+// 2020-07-21 18:43:30
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 uses_physics = false;
@@ -13,7 +13,7 @@ CanAttempt = true;
 #event step
 
 ImageIndex += ImageSpeed;
-if(ceil(ImageIndex) > sprite_get_number(sHandClap))
+if(ceil(ImageIndex) > sprite_get_number(sHandClap) && CanAttempt)
 {
     CanAttempt = false;
     oMiniGame.timer[1] = 0.1*60;

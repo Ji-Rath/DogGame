@@ -9,4 +9,5 @@ if(visible)
         script_execute(ExecuteArray[0],ExecuteArray[1]);
         DrawGUI = false;
     }
+    CanHighfive = false;
 }

@@ -47,6 +47,7 @@ if(BattleStageEnd)
 			{
 				visible = true;
 				DrawGUI = true;
+				oButtonHighFive.CanHighfive = true;
 			}
 		break;
 		
