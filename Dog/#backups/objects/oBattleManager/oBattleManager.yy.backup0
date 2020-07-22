@@ -1,4 +1,4 @@
-// 2020-07-21 16:58:05
+// 2020-07-21 18:59:54
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 visible = false;
@@ -64,14 +64,27 @@ RageMeter = 0;
 //Value to trigger rage attack
 MaxRage = 3;
 
+//Neglect meter
+NeglectMeter = 0;
+
+//Value to trigger neglect effects
+MaxNeglect = 30;
+
+DrawGUI = false;
 
 #event step
+
+//Increment neglect at a rate of 1 per second
+if(NeglectMeter <= MaxNeglect)
+{
+	NeglectMeter += (1/60);
+}
 
 //If the current battle stage is done, transition to the next one.
 if(BattleStageEnd)
 {
 	BattleStage++;
-	show_debug_message("BattleStage: "+string(BattleStage));
+	//show_debug_message("BattleStage: "+string(BattleStage));
 	if(BattleStage == 6)
 	{
 		BattleStage = 1;
@@ -100,6 +113,7 @@ if(BattleStageEnd)
 			//Update Stats
 			timer[0] = 0.5*60;
 			visible = true;
+			DrawGUI = true;
 		break;
 		
 		case 3:
@@ -107,6 +121,7 @@ if(BattleStageEnd)
 			with(oBattleMenuParent)
 			{
 				visible = true;
+				DrawGUI = true;
 			}
 		break;
 		
@@ -114,11 +129,13 @@ if(BattleStageEnd)
 			//Update Stats
 			timer[0] = 0.5*60;
 			visible = true;
+			DrawGUI = true;
 		break;
 		
 		case 5:
 			//CHATTER BEFORE LOOP
 			visible = false;
+			DrawGUI = false;
 			var EnemyText = EnemyBattle.TextDuring[random_range(0,array_length_1d(EnemyBattle.TextDuring))];
 			scrCreateBattleBox(EnemyText);
 		break;
@@ -168,12 +185,13 @@ if(BattleTimer > 0 && visible && BattleStage == 3 && DrawTimer == BattleTimer)
             Selected = false;
         }
         visible = false;
+        DrawGUI = false;
 	}
 	if(BattleStage == 3)
 		DrawTimer = BattleTimer;
 }
 
-show_debug_message("BattleTimer: "+string(BattleTimer)+" DrawTimer: "+string(DrawTimer));
+//show_debug_message("BattleTimer: "+string(BattleTimer)+" DrawTimer: "+string(DrawTimer));
 
 //Update player stats visually if changed
 if(UpdateStats)
@@ -267,7 +285,7 @@ for(i=0;i<array_length_1d(Shake);i++)
 #event draw_gui Insert description here
 // You can write your code in this editor
 
-if(visible)
+if(DrawGUI)
 {
 	var GUIWidth = display_get_gui_width();
 	var GUIHeight = display_get_gui_height();
@@ -287,19 +305,22 @@ if(visible)
 	draw_text(PortraitX+DPhpx,PortraitY+DPhpy,round(DrawPlayerHealth));
 	draw_text(PortraitX+DPhpx,PortraitY+DPhpy+DPoffy,round(DrawPlayerPP));
 	
-	//Draw battle timer
-	if((DrawTimer > 0 && BattleStage == 3) || BattleTimer != DrawTimer)
-	{
-		var TimerPosX = GUIWidth/2;
-		var TimerPosY = GUIHeight/1.3;
-		var BarHeight = 20;
-		
-		draw_sprite(sBattleTimer,0,TimerPosX-BarWidth/2-100,TimerPosY);
-		draw_set_color(c_black);
-		draw_rectangle(TimerPosX-BarWidth/2,TimerPosY+BarHeight/2,TimerPosX+BarWidth/2,TimerPosY-BarHeight/2,false);
-		draw_set_color(c_red);
-		var BattleTimerNum = ((round(DrawTimer/60/BattleTimerInit*16)/16)*BarWidth);
-		draw_rectangle(TimerPosX-BarWidth/2,TimerPosY+BarHeight/2,TimerPosX-BarWidth/2+BattleTimerNum,TimerPosY-BarHeight/2,false);
-	}
+}
+
+#event draw
+
+//Draw battle timer
+if((DrawTimer > 0 && BattleStage == 3) || BattleTimer != DrawTimer)
+{
+	var TimerPosX = room_width/2;
+	var TimerPosY = room_height/1.3;
+	var BarHeight = 20;
+	
+	draw_sprite(sBattleTimer,0,TimerPosX-BarWidth/2-100,TimerPosY);
+	draw_set_color(c_black);
+	draw_rectangle(TimerPosX-BarWidth/2,TimerPosY+BarHeight/2,TimerPosX+BarWidth/2,TimerPosY-BarHeight/2,false);
+	draw_set_color(c_red);
+	var BattleTimerNum = ((round(DrawTimer/60/BattleTimerInit*16)/16)*BarWidth);
+	draw_rectangle(TimerPosX-BarWidth/2,TimerPosY+BarHeight/2,TimerPosX-BarWidth/2+BattleTimerNum,TimerPosY-BarHeight/2,false);
 }
 

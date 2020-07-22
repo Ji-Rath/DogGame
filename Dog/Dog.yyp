@@ -50,7 +50,7 @@
             "Key": "028e2de4-42db-4d48-84dd-236b07ef52aa",
             "Value": {
                 "id": "a72d9e1e-1261-4caa-b302-771f9dfb2189",
-                "resourcePath": "objects/oEnemyParent/oEnemyParent.yy",
+                "resourcePath": "objects\/oEnemyParent\/oEnemyParent.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -146,7 +146,7 @@
             "Key": "0e283163-718b-a3bc-86c0-65e780e263ab",
             "Value": {
                 "id": "3710b90f-1c6c-85a8-387b-1d147a683fad",
-                "resourcePath": "objects/oTriggerParent/oTriggerParent.yy",
+                "resourcePath": "objects\/oTriggerParent\/oTriggerParent.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -162,7 +162,7 @@
             "Key": "0e9dcf64-dd37-475c-a91d-198d41c95dd5",
             "Value": {
                 "id": "745fba32-5d84-4906-9711-38846b5cce42",
-                "resourcePath": "scripts/scrStringWrap/scrStringWrap.yy",
+                "resourcePath": "scripts\/scrStringWrap\/scrStringWrap.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -194,7 +194,7 @@
             "Key": "117f0b7a-7b29-42d3-86f8-2900a1c906f7",
             "Value": {
                 "id": "40273271-6cf1-4bab-ae7a-323d5e0b298e",
-                "resourcePath": "scripts/scrEnemyDetect/scrEnemyDetect.yy",
+                "resourcePath": "scripts\/scrEnemyDetect\/scrEnemyDetect.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -218,7 +218,7 @@
             "Key": "11e0d289-c857-4064-b4ec-5e315c640014",
             "Value": {
                 "id": "e44c303b-a814-470c-b290-cfe4651e9923",
-                "resourcePath": "objects/oTextBox/oTextBox.yy",
+                "resourcePath": "objects\/oTextBox\/oTextBox.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -242,7 +242,7 @@
             "Key": "1330eda0-0a50-455a-8260-6b4e3cf6fd72",
             "Value": {
                 "id": "0b1346c1-5463-40b2-9d1a-41cfe09a2b78",
-                "resourcePath": "sprites/sDogpaddlerBox/sDogpaddlerBox.yy",
+                "resourcePath": "sprites\/sDogpaddlerBox\/sDogpaddlerBox.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -311,6 +311,14 @@
             }
         },
         {
+            "Key": "17a71f47-dd89-36b1-7400-69216559ffca",
+            "Value": {
+                "id": "5c955f7b-e010-b01c-4f31-d148c75b2b97",
+                "resourcePath": "objects\\oHighfive\\oHighfive.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "1840f649-bf0d-9879-9e35-942d8dd4a72c",
             "Value": {
                 "id": "9f27af55-3d96-9ea8-26a4-052e23bea9d0",
@@ -346,7 +354,7 @@
             "Key": "1b0b06fc-3fc3-452f-99b1-aa6511271a05",
             "Value": {
                 "id": "ae4ae7db-7ae9-4e3b-b6fb-1ce952bd3d7a",
-                "resourcePath": "objects/oBattleManager/oBattleManager.yy",
+                "resourcePath": "objects\/oBattleManager\/oBattleManager.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -418,7 +426,7 @@
             "Key": "25131f86-b1d2-4c8b-a831-b3ae55444130",
             "Value": {
                 "id": "df7e63e4-ed4a-460c-a090-3755b6e4c6c8",
-                "resourcePath": "sprites/sDogpaddlerRunDown/sDogpaddlerRunDown.yy",
+                "resourcePath": "sprites\/sDogpaddlerRunDown\/sDogpaddlerRunDown.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -562,7 +570,7 @@
             "Key": "3a8ceacf-8c1b-42c2-ba22-b8acef9e300d",
             "Value": {
                 "id": "9d5cceed-3c13-4da9-88be-287131f7aa75",
-                "resourcePath": "scripts/scrMoveCollision/scrMoveCollision.yy",
+                "resourcePath": "scripts\/scrMoveCollision\/scrMoveCollision.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -602,7 +610,7 @@
             "Key": "431e1163-0330-470d-9db4-060a9b2aa1ed",
             "Value": {
                 "id": "03edf491-a0d4-4829-b751-0c3a7ff5463a",
-                "resourcePath": "scripts/scrWalk/scrWalk.yy",
+                "resourcePath": "scripts\/scrWalk\/scrWalk.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -746,7 +754,7 @@
             "Key": "527037ad-f864-459f-bcf1-6fc123da07a2",
             "Value": {
                 "id": "45bfd73d-608b-46e0-aa0d-23bc06fe6dd1",
-                "resourcePath": "sprites/sDogpaddlerWalkDown/sDogpaddlerWalkDown.yy",
+                "resourcePath": "sprites\/sDogpaddlerWalkDown\/sDogpaddlerWalkDown.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -834,7 +842,7 @@
             "Key": "5a375fb0-7d57-eedd-1a7b-ede5d34cd5e0",
             "Value": {
                 "id": "987e6fec-2488-e8cb-9716-3eaba1f241db",
-                "resourcePath": "objects/oLGParent/oLGParent.yy",
+                "resourcePath": "objects\/oLGParent\/oLGParent.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -930,7 +938,7 @@
             "Key": "653aa651-6a8e-47ef-bbe3-52ce8c455c93",
             "Value": {
                 "id": "3c21372a-efde-447f-a9ef-f52a24218707",
-                "resourcePath": "sprites/sDogpaddlerRun/sDogpaddlerRun.yy",
+                "resourcePath": "sprites\/sDogpaddlerRun\/sDogpaddlerRun.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -1026,7 +1034,7 @@
             "Key": "72ba0c98-99e9-422a-a413-0f31e2d64daf",
             "Value": {
                 "id": "d8732f8f-8c44-40b7-b431-515afddde27a",
-                "resourcePath": "scripts/scrFadeout/scrFadeout.yy",
+                "resourcePath": "scripts\/scrFadeout\/scrFadeout.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -1130,7 +1138,7 @@
             "Key": "7faf1653-6dd8-47e1-9aa4-6e08047c5684",
             "Value": {
                 "id": "4f1c963a-d920-473a-afbd-578b4c33d10b",
-                "resourcePath": "sprites/sDogpaddlerWalkUp/sDogpaddlerWalkUp.yy",
+                "resourcePath": "sprites\/sDogpaddlerWalkUp\/sDogpaddlerWalkUp.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -1242,7 +1250,7 @@
             "Key": "8b4bb2d1-2cd7-9875-f653-62221291941f",
             "Value": {
                 "id": "d5935e92-ebe1-15fc-3a2a-1529b5ded875",
-                "resourcePath": "scripts/scrEnemyAlert/scrEnemyAlert.yy",
+                "resourcePath": "scripts\/scrEnemyAlert\/scrEnemyAlert.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -1322,7 +1330,7 @@
             "Key": "98f83f6d-5e63-05c6-5ddc-261159d1b3c9",
             "Value": {
                 "id": "f0bc4187-1efa-bfd8-ddf0-2f083e80a86d",
-                "resourcePath": "scripts/scrEnemyWander/scrEnemyWander.yy",
+                "resourcePath": "scripts\/scrEnemyWander\/scrEnemyWander.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -1386,7 +1394,7 @@
             "Key": "a02ac647-4596-4c83-bf30-b9dc34d67cae",
             "Value": {
                 "id": "7ceacdb6-326d-496e-b8fc-66396f214e9b",
-                "resourcePath": "sprites/sDogpaddlerRunUp/sDogpaddlerRunUp.yy",
+                "resourcePath": "sprites\/sDogpaddlerRunUp\/sDogpaddlerRunUp.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -1506,7 +1514,7 @@
             "Key": "b1c00d2d-388b-415e-a5be-4713a41d7f92",
             "Value": {
                 "id": "c7a2af82-a0f3-4a99-9f82-6f86ca281045",
-                "resourcePath": "sprites/sDogpaddlerWalk/sDogpaddlerWalk.yy",
+                "resourcePath": "sprites\/sDogpaddlerWalk\/sDogpaddlerWalk.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -1546,7 +1554,7 @@
             "Key": "b6b7d335-4e3f-a7ea-8256-818672ed4a16",
             "Value": {
                 "id": "128711d8-8694-2269-0465-dc6ad5cc2491",
-                "resourcePath": "scripts/scrEnemyIdle/scrEnemyIdle.yy",
+                "resourcePath": "scripts\/scrEnemyIdle\/scrEnemyIdle.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -1586,7 +1594,7 @@
             "Key": "bd6494ce-f580-6bca-bb89-bb0f17a00585",
             "Value": {
                 "id": "0854dd94-c37d-5d15-019d-00ffec90df1a",
-                "resourcePath": "scripts/scrEnemyAggro/scrEnemyAggro.yy",
+                "resourcePath": "scripts\/scrEnemyAggro\/scrEnemyAggro.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -1767,10 +1775,18 @@
             }
         },
         {
+            "Key": "d1817acd-ee50-3d66-59e6-635273285e91",
+            "Value": {
+                "id": "c42d2e88-1bba-8387-f565-77f5232c6ed2",
+                "resourcePath": "scripts\\scrSameScreenMiniGame\\scrSameScreenMiniGame.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "d31294ce-64cb-45e3-aae9-83895d682f9c",
             "Value": {
                 "id": "89f63488-4173-4f06-adc8-c6e353961c7d",
-                "resourcePath": "scripts/scrCreateTextBox/scrCreateTextBox.yy",
+                "resourcePath": "scripts\/scrCreateTextBox\/scrCreateTextBox.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -1815,6 +1831,14 @@
             }
         },
         {
+            "Key": "d9d06114-4853-a70a-ced6-5c77503264d6",
+            "Value": {
+                "id": "0b888b5a-0421-d29e-7085-7cb295900b01",
+                "resourcePath": "views\\d9d06114-4853-a70a-ced6-5c77503264d6.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "da7b91cd-25e4-4059-8150-71a182cbd55a",
             "Value": {
                 "id": "028ebdac-31de-4ff1-9f76-e051725bdf34",
@@ -1826,7 +1850,7 @@
             "Key": "daaec725-5f22-463b-a580-f634dcfb751c",
             "Value": {
                 "id": "c55c1b29-b99a-4fd4-9304-dce061443369",
-                "resourcePath": "objects/oNPC/oNPC.yy",
+                "resourcePath": "objects\/oNPC\/oNPC.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -1930,7 +1954,7 @@
             "Key": "e41d4359-c02f-42be-a4a1-c5ed01d19080",
             "Value": {
                 "id": "f4bf7a86-9f0e-4644-bc82-791f2c14eadf",
-                "resourcePath": "objects/oBattleTextBox/oBattleTextBox.yy",
+                "resourcePath": "objects\/oBattleTextBox\/oBattleTextBox.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -1938,7 +1962,7 @@
             "Key": "e4a77cef-6cb5-c0fc-64d1-a50ecf55708d",
             "Value": {
                 "id": "66b4c130-a403-0eb9-6da6-916fae9eab9d",
-                "resourcePath": "scripts/scrBattleMenuCreate/scrBattleMenuCreate.yy",
+                "resourcePath": "scripts\/scrBattleMenuCreate\/scrBattleMenuCreate.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -1962,7 +1986,7 @@
             "Key": "eccb3a6b-05ff-468d-9ece-dfa51be0c991",
             "Value": {
                 "id": "571fa7de-1046-4dab-9706-77df77245970",
-                "resourcePath": "objects/oAreaStats/oAreaStats.yy",
+                "resourcePath": "objects\/oAreaStats\/oAreaStats.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -2042,7 +2066,7 @@
             "Key": "f6e8c564-4e5c-4266-8b2d-0f8948f93666",
             "Value": {
                 "id": "a5484fa8-d7f3-4ee2-8cb5-c12cedd8a23b",
-                "resourcePath": "scripts/scrPlayerStats/scrPlayerStats.yy",
+                "resourcePath": "scripts\/scrPlayerStats\/scrPlayerStats.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -2095,6 +2119,14 @@
             }
         },
         {
+            "Key": "fa851a8e-5a1c-0cb8-a63e-8d842dbe952e",
+            "Value": {
+                "id": "cfc86a96-6be8-ff06-229d-274255e91b8b",
+                "resourcePath": "objects\\oButtonHighFive\\oButtonHighFive.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "fb261d6b-c4ed-4a7f-9609-f4d36becfe51",
             "Value": {
                 "id": "b8e13060-2833-4fa3-a831-37aa6cd355f0",
@@ -2130,7 +2162,7 @@
             "Key": "fd0f3317-ce81-4917-b5d7-3799fed8ac4f",
             "Value": {
                 "id": "0ec657b9-92a9-4415-b191-0402059f7725",
-                "resourcePath": "objects/oCamera/oCamera.yy",
+                "resourcePath": "objects\/oCamera\/oCamera.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -2149,14 +2181,6 @@
                 "resourcePath": "fonts\\fnt_stats\\fnt_stats.yy",
                 "resourceType": "GMFont"
             }
-        },
-        {
-            "Key": "fa851a8e-5a1c-0cb8-a63e-8d842dbe952e",
-            "Value": {
-                "id": "cfc86a96-6be8-ff06-229d-274255e91b8b",
-                "resourcePath": "objects\\oButtonHighFive\\oButtonHighFive.yy",
-                "resourceType": "GMObject"
-            }
         }
     ],
     "script_order": [
@@ -2169,6 +2193,7 @@
         "e4a77cef-6cb5-c0fc-64d1-a50ecf55708d",
         "7c06b8c9-959a-a9ee-5b30-afa168c0fc2d",
         "bcbe6859-4d82-f8ca-5151-112032ba8214",
+        "d1817acd-ee50-3d66-59e6-635273285e91",
         "c0dd01a1-cbf1-3814-808f-b9825a21d68a",
         "8a30d179-becd-443c-0a22-8070cddce520",
         "03a15bbb-41f7-8bfa-c3a0-ad5332091d3e",

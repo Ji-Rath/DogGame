@@ -1,4 +1,4 @@
-// 2020-07-21 16:48:41
+// 2020-07-21 16:48:45
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 sprite_index = sBattleIcons;
@@ -18,7 +18,7 @@ MaxRage = oBattleManager.MaxRage;
 scrAnimStep();
 
 //Make fist visible only when available and GUI is visible
-if(oBattleManager.RageMeter >= 3 && oBattleMenuParent.visible)
+if(oBattleManager.RageMeter >= MaxRage && oBattleMenuParent.visible)
 {
     visible = true;
     if(CanPlayAnim)

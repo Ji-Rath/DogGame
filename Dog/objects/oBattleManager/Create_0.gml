@@ -57,3 +57,11 @@ RageMeter = 0;
 
 //Value to trigger rage attack
 MaxRage = 3;
+
+//Neglect meter
+NeglectMeter = 0;
+
+//Value to trigger neglect effects
+MaxNeglect = 30;
+
+DrawGUI = false;

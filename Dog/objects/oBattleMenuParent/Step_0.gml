@@ -37,6 +37,7 @@ if(visible && Selected)
         oBattleManager.visible = false;
         oBattleManager.BattleTimer = 0;
         oBattleManager.DrawTimer = 0;
+        oBattleManager.DrawGUI = false;
         Selected = false;
         
         //Increase rage
@@ -61,6 +62,15 @@ if(visible && Selected)
             if(mouse_check_button_pressed(mb_left))
             {
                 //Do Action based on item selected
+                
+                if (ItemIndex == 2 && oBattleManager.NeglectMeter >= oBattleManager.MaxNeglect)
+                {
+                    var Text = "Your ally is feeling neglected. He is too sad to attack!";
+                    scrCreateBattleBox([Text], false);
+                    Selected = false;
+                    exit;
+                }
+                
                 var ContentArray = oBattleManager.ItemDescription[ItemMouseHoverSelect];
                 var ExecuteArray = ContentArray[4];
                 var Len = array_length_1d(ExecuteArray)-1;
@@ -83,6 +93,7 @@ if(visible && Selected)
         		with(oBattleManager)
                 {
                     visible = false;
+                    DrawGUI = false;
                 }
                 
                 //Increase Rage

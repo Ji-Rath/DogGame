@@ -1,4 +1,4 @@
-// 2020-06-19 01:08:28
+// 2020-07-21 18:58:09
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 mask_index = sBattleIcons;
@@ -109,6 +109,15 @@ if(visible && Selected)
             if(mouse_check_button_pressed(mb_left))
             {
                 //Do Action based on item selected
+                
+                if (ItemIndex == 2 && oBattleManager.NeglectMeter >= oBattleManager.MaxNeglect)
+                {
+                    var Text = "Your ally is feeling neglected. He is too sad to attack!";
+                    scrCreateBattleBox([Text], false);
+                    Selected = false;
+                    exit;
+                }
+                
                 var ContentArray = oBattleManager.ItemDescription[ItemMouseHoverSelect];
                 var ExecuteArray = ContentArray[4];
                 var Len = array_length_1d(ExecuteArray)-1;
@@ -131,6 +140,7 @@ if(visible && Selected)
         		with(oBattleManager)
                 {
                     visible = false;
+                    DrawGUI = false;
                 }
                 
                 //Increase Rage
@@ -147,7 +157,7 @@ else
 
 
 #event mouse_left_press
-if(visible)
+if(visible && !instance_exists(oMiniGame))
 {
     //Disable other Menu's
     with(oBattleMenuParent)

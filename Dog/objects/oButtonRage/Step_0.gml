@@ -2,7 +2,7 @@
 scrAnimStep();
 
 //Make fist visible only when available and GUI is visible
-if(oBattleManager.RageMeter >= MaxRage && oBattleMenuParent.visible)
+if(oBattleManager.RageMeter >= MaxRage && oBattleManager.DrawGUI)
 {
     visible = true;
     if(CanPlayAnim)

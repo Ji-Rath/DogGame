@@ -28,6 +28,7 @@ else
         }
     }
 }
+
 OpenEffect = sin(OpenFraction);
 
 //After set time, execute game
@@ -48,23 +49,33 @@ if(timer[1] > 0)
 }
 else if (timer[1] != -1)
 {
-    //Prevent decimals
-    with(oBattleManager)
+    if(DrawSmall)
     {
-        global.PlayerHP = ceil(global.PlayerHP);
-        global.PlayerPP = ceil(global.PlayerPP);
-        EnemyBattle.Health = ceil(EnemyBattle.Health);
-    }
-    Destroy = true;
-    if(EndTurn)
-    {
-        oBattleManager.BattleStageEnd = true;
+        Destroy = true;
+        oBattleManager.DrawGUI = true;
     }
     else
     {
-        oBattleManager.UpdateStats = true;
-        oBattleManager.visible = true;
-        oBattleMenuParent.visible = true;
+        //Prevent decimals
+        with(oBattleManager)
+        {
+            global.PlayerHP = ceil(global.PlayerHP);
+            global.PlayerPP = ceil(global.PlayerPP);
+            EnemyBattle.Health = ceil(EnemyBattle.Health);
+        }
+        Destroy = true;
+        if(EndTurn)
+        {
+            oBattleManager.BattleStageEnd = true;
+        }
+        else
+        {
+            oBattleManager.UpdateStats = true;
+            oBattleManager.visible = true;
+            oBattleMenuParent.visible = true;
+            oBattleManager.DrawGUI = true;
+        }
     }
+    
     timer[1] = -1;
 }

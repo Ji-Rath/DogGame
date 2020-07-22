@@ -10,6 +10,7 @@ enum Item
     PanAttack,
     Hamburger,
     BroomAttack,
+    Highfive,
     LastItem
 }
 
@@ -32,3 +33,7 @@ CurrentItem = Item.BroomAttack;
 ItemExecute[CurrentItem] = [scrItemMiniGame, Game.BroomAttack, 5, false, false];
 ItemDescription[CurrentItem] = ["Broom","Metal Pan",sEnemydownrun, 2, ItemExecute[CurrentItem]];
 ds_map_add(oAreaStats.Items, CurrentItem, 1);
+
+CurrentItem = Item.Highfive;
+ItemExecute[CurrentItem] = [scrSameScreenMiniGame, Game.Highfive];
+ItemDescription[CurrentItem] = ["Broom","Metal Pan",sEnemydownrun, 3, ItemExecute[CurrentItem]];

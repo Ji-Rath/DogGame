@@ -1,11 +1,11 @@
-// 2020-06-19 00:59:53
+// 2020-07-21 19:06:50
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 uses_physics = false;
 
 #event create
 
-GameType = 0;
+GameType = -1;
 timer[0] = 1*60; //Wait 1 second before spawning characters
 timer[1] = -1 //MiniGame time
 
@@ -28,9 +28,14 @@ enum Game
     Chips,
     PanAttack,
     BroomAttack,
-    CrabWeigh
+    CrabWeigh,
+    Highfive
 }
 alarm[0] = 1;
+
+DrawSmall = false;
+SmallScreenPosX = 0;
+SmallScreenPosY = 0;
 
 #event alarm0
 
@@ -68,6 +73,13 @@ switch(GameType)
         ds_list_add(Instances, instance_create_layer(room_width/2-200,room_height/2,"Instances",oCrabWeigh));
         ds_list_add(Instances, instance_create_layer(room_width/2,room_height/2+200,"Instances",oCrabBalance));
     break;
+    
+    case Game.Highfive:
+        DrawSmall = true;
+        SmallScreenPosX = 250+100;
+        SmallScreenPosY = 125+100;
+        ds_list_add(Instances, instance_create_layer(SmallScreenPosX,SmallScreenPosY,"Instances",oHighfive));
+    break;
 }
 
 
@@ -102,6 +114,7 @@ else
         }
     }
 }
+
 OpenEffect = sin(OpenFraction);
 
 //After set time, execute game
@@ -122,47 +135,66 @@ if(timer[1] > 0)
 }
 else if (timer[1] != -1)
 {
-    //Prevent decimals
-    with(oBattleManager)
+    if(DrawSmall)
     {
-        global.PlayerHP = ceil(global.PlayerHP);
-        global.PlayerPP = ceil(global.PlayerPP);
-        EnemyBattle.Health = ceil(EnemyBattle.Health);
-    }
-    Destroy = true;
-    if(EndTurn)
-    {
-        oBattleManager.BattleStageEnd = true;
+        Destroy = true;
+        oBattleManager.DrawGUI = true;
     }
     else
     {
-        oBattleManager.UpdateStats = true;
-        oBattleManager.visible = true;
-        oBattleMenuParent.visible = true;
-        oBattleManager.BattleTimer = oBattleManager.BattleTimerInit*60;
+        //Prevent decimals
+        with(oBattleManager)
+        {
+            global.PlayerHP = ceil(global.PlayerHP);
+            global.PlayerPP = ceil(global.PlayerPP);
+            EnemyBattle.Health = ceil(EnemyBattle.Health);
+        }
+        Destroy = true;
+        if(EndTurn)
+        {
+            oBattleManager.BattleStageEnd = true;
+        }
+        else
+        {
+            oBattleManager.UpdateStats = true;
+            oBattleManager.visible = true;
+            oBattleMenuParent.visible = true;
+            oBattleManager.DrawGUI = true;
+        }
     }
+    
     timer[1] = -1;
 }
 
 #event draw
 
-//Draw MiniGame Boundries
-draw_set_color(c_ltgray);
-draw_roundrect(room_width/2+500,room_height/2+(250*OpenEffect),room_width/2-500,room_height/2-(250*OpenEffect),false)
-
-if(timer[1] != -1)
+if(alarm_get(0))
 {
-    draw_set_color(c_red);
-    var Time = round((timer[1]/(4*60))*12)/12;
-    draw_rectangle(room_width/2-500+(Time*1000),room_height/2+250,room_width/2-500,room_height/2+225,false);
-}
-
-draw_set_color(c_white);
-
-for(i=0;i<ds_list_size(Instances);i++)
-{
-    with(ds_list_find_value(Instances,i))
+    //Draw MiniGame Boundries
+    draw_set_color(c_ltgray);
+    
+    if(DrawSmall)
     {
-        image_alpha = oMiniGame.OpenEffect;
+        draw_roundrect(SmallScreenPosX+250,SmallScreenPosY+(125*OpenEffect),SmallScreenPosX-250,SmallScreenPosY-(125*OpenEffect),false)
+    }
+    else
+    {
+        draw_roundrect(room_width/2+500,room_height/2+(250*OpenEffect),room_width/2-500,room_height/2-(250*OpenEffect),false)
+        if(timer[1] != -1)
+        {
+            draw_set_color(c_red);
+            var Time = round((timer[1]/(4*60))*12)/12;
+            draw_rectangle(room_width/2-500+(Time*1000),room_height/2+250,room_width/2-500,room_height/2+225,false);
+        }
+    }
+    
+    draw_set_color(c_white);
+    
+    for(i=0;i<ds_list_size(Instances);i++)
+    {
+        with(ds_list_find_value(Instances,i))
+        {
+            image_alpha = oMiniGame.OpenEffect;
+        }
     }
 }
