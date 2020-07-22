@@ -40,6 +40,7 @@ if(!Complete && Counter >= CompleteCounter)
     Enemy = oBattleManager.EnemyBattle;
     Enemy.Health -= 3;
     instance_destroy(MouseCollision);
+    instance_destroy(ButtonAlternate);
     
     var Icon = instance_create_layer(room_width/2, room_height/2, "GUI", oIconPopup);
     Icon.Sprite = sCheckMark;

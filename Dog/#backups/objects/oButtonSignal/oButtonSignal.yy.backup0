@@ -1,0 +1,9 @@
+// 2020-07-22 16:08:27
+#event properties (no comments/etc. here are saved)
+parent_index = -1;
+uses_physics = false;
+
+#event create
+
+image_speed = 0.75;
+

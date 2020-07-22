@@ -31,3 +31,6 @@ alarm[0] = 1;
 DrawSmall = false;
 SmallScreenPosX = 0;
 SmallScreenPosY = 0;
+
+//Text to show player to help with the minigame
+HelpText = "";

@@ -1,4 +1,4 @@
-// 2020-07-22 15:17:10
+// 2020-07-22 16:09:40
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 sprite_index = sAnvil;
@@ -26,6 +26,12 @@ phy_active = false;
 alarm[0] = 1*60;
 
 MouseCollision = 0;
+ButtonAlternate = instance_create_layer(room_width/1.1, room_height/2+300, "Instances", oButtonSignal);
+ButtonAlternate.sprite_index = sButtonAlternate;
+
+#event destroy
+
+instance_destroy(ButtonAlternate);
 
 #event alarm0
 
@@ -75,6 +81,7 @@ if(!Complete && Counter >= CompleteCounter)
     Enemy = oBattleManager.EnemyBattle;
     Enemy.Health -= 3;
     instance_destroy(MouseCollision);
+    instance_destroy(ButtonAlternate);
     
     var Icon = instance_create_layer(room_width/2, room_height/2, "GUI", oIconPopup);
     Icon.Sprite = sCheckMark;

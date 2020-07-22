@@ -24,6 +24,12 @@ if(oMiniGame.timer[0] == -1)
             {
                 State = Crab1State.Attack;
             }
+            
+            if(!instance_exists(ButtonPress))
+            {
+                ButtonPress = instance_create_layer(room_width/1.1, room_height/2+300, "Instances", oButtonSignal);
+                ButtonPress.sprite_index = sButtonPress;
+            }
         break;
         
         case Crab1State.Attack:
@@ -33,6 +39,7 @@ if(oMiniGame.timer[0] == -1)
             {
                 oMiniGame.timer[1] = 0.5*60;
             }
+            instance_destroy(ButtonPress);
         break;
     }
     
