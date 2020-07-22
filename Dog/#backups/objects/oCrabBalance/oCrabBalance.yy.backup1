@@ -1,42 +1,80 @@
-// 2020-06-17 16:22:52
+// 2020-07-22 13:23:46
 #event properties (no comments/etc. here are saved)
-parent_index = -1;
-sprite_index = sChipBag;
-uses_physics = false;
+parent_index = oPhysicsDrag;
+sprite_index = sBalance;
+uses_physics = true;
+physics_density = 1;
+physics_restitution = 0.1;
+physics_collision_group = 0;
+physics_linear_damping = 0.05;
+physics_angular_damping = 0.01;
+physics_sensor = false;
+physics_start_awake = true;
+physics_kinematic = false;
+physics_shape = 1;
+physics_shape_data = "0,0;260,0;260,73;0,73";
 
 #event create
 
+event_inherited();
 CrabList = ds_list_create();
 CrabCount = 0;
 Complete = false;
+alarm[0] = 30;
+Timer[0] = 2*60;
+StillTimer = false;
 
 #event step
 
-CrabCount = collision_line_list(x,y,x,y-1000,oCrabWeigh,false,true,CrabList,false);
+event_inherited();
+
+CrabCount = collision_rectangle_list(x-130,y,x+130,y-200,oCrabWeigh,false,true,CrabList,false);
 
 var IsResting = true;
+
 with(oCrabWeigh)
 {
     if(abs(phy_angular_velocity) > 3 || Grabbed)
     {
         IsResting = false;
+        Timer[0] = 2*60;
+        StillTimer = false;
         show_debug_message("Velocity: "+string(phy_angular_velocity));
     }
 }
 
 //If the player successfully completed the minigame, end the minigame early
-if(CrabCount == instance_number(oCrabWeigh) && IsResting && !Complete)
+if(StillTimer && CrabCount == instance_number(oCrabWeigh) && IsResting && !Complete)
 {
     oMiniGame.timer[1] = 0.5*60;
     Complete = true;
     
-    var Icon = instance_create_layer(room_width/2, room_height/2, "Instances", oIconPopup);
+    var Icon = instance_create_layer(room_width/2, room_height/2, "GUI", oIconPopup);
     Icon.Sprite = sCheckMark;
 }
 
 //If minigame timer is over and player could not balance the crabs, deal damage
 if(oMiniGame.timer[1] <= 0 && oMiniGame.timer[1] != -1 && !Complete)
 {
-    global.phealth -= 10;
+    global.PlayerHP -= 10;
     Complete = true;
+}
+
+if(Timer[0] > 0)
+{
+    Timer[0] -= 1;
+}
+else if (Timer[0] != -1)
+{
+    StillTimer = true;
+    Timer[0] = -1;
+}
+
+#event draw
+
+draw_self();
+
+if(global.Debug)
+{
+    draw_rectangle(x-130,y,x+130,y-200, true);
 }

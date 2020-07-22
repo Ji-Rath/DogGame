@@ -519,6 +519,14 @@
             }
         },
         {
+            "Key": "3476715f-f9af-4aba-8ae5-76f4237a6b9d",
+            "Value": {
+                "id": "16dd849f-84dd-4a3f-a99b-239feda2b786",
+                "resourcePath": "views\\3476715f-f9af-4aba-8ae5-76f4237a6b9d.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "34f56a4e-eab3-b845-cd1f-c8490ce7ada8",
             "Value": {
                 "id": "16999967-f7a8-b08f-2726-48cffcef0b61",
@@ -1875,6 +1883,14 @@
             "Value": {
                 "id": "e1267f1a-54ab-4a75-962d-edc5a53beeb1",
                 "resourcePath": "sprites\\sMiniGamePlayerGloveAnim1\\sMiniGamePlayerGloveAnim1.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "dead2b0f-c952-4162-8887-8660371e9b3a",
+            "Value": {
+                "id": "b162cd45-7398-4f0a-ab14-27c3ad9a2aed",
+                "resourcePath": "sprites\\sBalance\\sBalance.yy",
                 "resourceType": "GMSprite"
             }
         },

@@ -1,4 +1,4 @@
-// 2020-07-21 19:06:50
+// 2020-07-22 13:11:45
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 uses_physics = false;
@@ -69,9 +69,9 @@ switch(GameType)
     break;
     
     case Game.CrabWeigh:
-        ds_list_add(Instances, instance_create_layer(room_width/2+200,room_height/2,"Instances",oCrabWeigh));
-        ds_list_add(Instances, instance_create_layer(room_width/2-200,room_height/2,"Instances",oCrabWeigh));
-        ds_list_add(Instances, instance_create_layer(room_width/2,room_height/2+200,"Instances",oCrabBalance));
+        ds_list_add(Instances, instance_create_layer(room_width/2+200+random(200),room_height/2+random_range(-100,100),"Instances",oCrabWeigh));
+        ds_list_add(Instances, instance_create_layer(room_width/2-200+random(200),room_height/2+random_range(-100,100),"Instances",oCrabWeigh));
+        ds_list_add(Instances, instance_create_layer(room_width/2,room_height/2+100,"Instances",oCrabBalance));
     break;
     
     case Game.Highfive:
@@ -168,7 +168,7 @@ else if (timer[1] != -1)
 
 #event draw
 
-if(alarm_get(0))
+if(alarm[0] == -1)
 {
     //Draw MiniGame Boundries
     draw_set_color(c_ltgray);
