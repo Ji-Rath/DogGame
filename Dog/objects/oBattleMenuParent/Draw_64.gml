@@ -19,28 +19,32 @@ if(Selected)
 {
     draw_sprite(sBattleMenu1,0,x,y);
     
-    //Draw Contents
-    for(i=0;i<ds_list_size(Contents);i++)
+    //Draw text box for magic book
+    if(ItemIndex != 2)
     {
-        //Draw available contents
-        
-        var ArrayIndex = ds_list_find_value(Contents,i);
-        var DescArray = oBattleManager.ItemDescription[ArrayIndex];
-        var ItemCount = ds_map_find_value(oAreaStats.Items, ArrayIndex);
-        draw_sprite(DescArray[2],0,x+100,y-250+(i*75));
-        if(ItemCount > 1)
+        //Draw Contents
+        for(i=0;i<ds_list_size(Contents);i++)
         {
-            draw_text(x+100,y-250+(i*75),ItemCount);
+            //Draw available contents
+            
+            var ArrayIndex = ds_list_find_value(Contents,i);
+            var DescArray = oBattleManager.ItemDescription[ArrayIndex];
+            var ItemCount = ds_map_find_value(oAreaStats.Items, ArrayIndex);
+            draw_sprite(DescArray[2],0,x+100,y-250+(i*75));
+            if(ItemCount > 1)
+            {
+                draw_text(x+100,y-250+(i*75),ItemCount);
+            }
+            
         }
         
-    }
-    
-    if(ItemMouseHover)
-    {
-        var DescArray = oBattleManager.ItemDescription[ItemMouseHoverSelect];
-        draw_sprite(sBattleMenu2,0,x,y);
-        draw_set_font(fnt_stats);
-        draw_text(x+80,y-470,DescArray[0]);
-        draw_text(x+80,y-420,DescArray[1]);
+        if(ItemMouseHover)
+        {
+            var DescArray = oBattleManager.ItemDescription[ItemMouseHoverSelect];
+            draw_sprite(sBattleMenu2,0,x,y);
+            draw_set_font(fnt_stats);
+            draw_text(x+80,y-470,DescArray[0]);
+            draw_text(x+80,y-420,DescArray[1]);
+        }
     }
 }

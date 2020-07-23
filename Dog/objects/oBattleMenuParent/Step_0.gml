@@ -63,14 +63,6 @@ if(visible && Selected)
             {
                 //Do Action based on item selected
                 
-                if (ItemIndex == 2 && oBattleManager.NeglectMeter >= oBattleManager.MaxNeglect)
-                {
-                    var Text = "Your ally is feeling neglected. He is too sad to attack!";
-                    scrCreateBattleBox([Text], false);
-                    Selected = false;
-                    exit;
-                }
-                
                 var ContentArray = oBattleManager.ItemDescription[ItemMouseHoverSelect];
                 var ExecuteArray = ContentArray[4];
                 var Len = array_length_1d(ExecuteArray)-1;

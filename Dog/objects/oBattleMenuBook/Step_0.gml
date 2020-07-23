@@ -1,31 +1,3 @@
-// 2020-07-23 11:53:31
-#event properties (no comments/etc. here are saved)
-parent_index = oBattleMenuParent;
-mask_index = sBattleIcons;
-uses_physics = false;
-
-#event create
-
-ItemIndex = 2;
-event_inherited();
-SpriteIndex = 3;
-
-//Hold textbox text
-TextBox = "";
-
-//Handle line indicator while typing
-LineIndicator = "|";
-alarm[0] = 0.5*60;
-
-//If true, allow player to type
-IsFocused = false;
-
-TextBoxX = x+100;
-TextBoxY = y-200;
-TextBoxWidth = 310;
-TextBoxHeight = string_height("I")+10;
-
-#event step
 
 //Update text if focused
 if(IsFocused)
@@ -101,52 +73,4 @@ if(keyboard_check_pressed(vk_enter))
     //Reset textbox
     TextBox = "";
     IsFocused = false;
-}
-
-
-#event mouse_global_left_press
-
-//Toggle focus for textbox
-if(Selected && point_in_rectangle(mouse_x, mouse_y, TextBoxX, TextBoxY, TextBoxX+TextBoxWidth, TextBoxY+TextBoxHeight))
-{
-    IsFocused = true;
-    LineIndicator = "|";
-    keyboard_string = TextBox;
-}
-else
-{
-    IsFocused = false;
-}
-
-#event alarm0
-
-//Switch line indicator on and off
-if(LineIndicator == "")
-{
-    LineIndicator = "|";
-}
-else
-{
-    LineIndicator = "";
-}
-
-alarm[0] = 0.5*60;
-
-#event draw_gui
-
-event_inherited();
-
-//Draw textbox when book is selected
-if(Selected)
-{
-    draw_rectangle(TextBoxX, TextBoxY, TextBoxX+TextBoxWidth, TextBoxY+TextBoxHeight,true);
-    if(IsFocused)
-    {
-        draw_text(TextBoxX, TextBoxY+5, TextBox+LineIndicator);
-    }
-    else
-    {
-        draw_text(TextBoxX, TextBoxY, TextBox);
-    }
-    
 }
