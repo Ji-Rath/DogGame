@@ -103,10 +103,14 @@ if(BattleStageEnd)
 }
 
 //Reduce battle timer, and end turn if at 0
-if(BattleTimer > 0 && visible && BattleStage == 3 && DrawTimer == BattleTimer && !instance_exists(oBattleTextBox))
+if(visible && BattleStage == 3 && DrawTimer == BattleTimer && !instance_exists(oBattleTextBox))
 {
-	BattleTimer -= 1;
-	if (BattleTimer <= 0)
+	if(BattleTimer > 0)
+	{
+		BattleTimer -= 1;	
+	}
+	
+	if (BattleTimer <= 0 && !instance_exists(oMiniGame))
 	{
 		BattleStageEnd = true;
 		with(oBattleMenuParent)
