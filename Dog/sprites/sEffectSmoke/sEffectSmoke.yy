@@ -2,7 +2,7 @@
     "id": "09426371-6a8e-4583-809f-fd60109e9b37",
     "modelName": "GMSprite",
     "mvc": "1.12",
-    "name": "sSmoke",
+    "name": "sEffectSmoke",
     "For3D": false,
     "HTile": false,
     "VTile": false,
