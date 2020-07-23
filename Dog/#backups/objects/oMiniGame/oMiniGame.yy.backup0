@@ -1,11 +1,11 @@
-// 2020-06-19 01:00:39
+// 2020-07-23 10:30:12
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 uses_physics = false;
 
 #event create
 
-GameType = 0;
+GameType = -1;
 timer[0] = 1*60; //Wait 1 second before spawning characters
 timer[1] = -1 //MiniGame time
 
@@ -28,9 +28,18 @@ enum Game
     Chips,
     PanAttack,
     BroomAttack,
-    CrabWeigh
+    CrabWeigh,
+    Highfive,
+    AnvilStruggle
 }
 alarm[0] = 1;
+
+DrawSmall = false;
+SmallScreenPosX = 0;
+SmallScreenPosY = 0;
+
+//Text to show player to help with the minigame
+HelpText = "";
 
 #event alarm0
 
@@ -43,6 +52,7 @@ switch(GameType)
     break;
     
     case Game.Crab1:
+        HelpText = "Dodge!";
         ds_list_add(Instances, instance_create_layer(room_width/2,room_height/2+50,"Instances",oCrab1Arm));
         ds_list_add(Instances, instance_create_layer(room_width/2,room_height/2-50,"Instances",oCrab1Player));
     break;
@@ -51,7 +61,7 @@ switch(GameType)
         ds_list_add(Instances, instance_create_layer(room_width/2,room_height/2,"Instances",oPlayerGloveSmack));
     break;
     
-    case Game.Chips: 
+    case Game.Chips:
         ds_list_add(Instances, instance_create_layer(room_width/2,room_height/2+200,"Instances",oChipBag));
     break;
     
@@ -60,13 +70,31 @@ switch(GameType)
     break;
     
     case Game.BroomAttack:
+        HelpText = "Broom!";
         ds_list_add(Instances, instance_create_layer(room_width/2,room_height/2,"Instances",oBroom));
     break;
     
     case Game.CrabWeigh:
-        ds_list_add(Instances, instance_create_layer(room_width/2+200,room_height/2,"Instances",oCrabWeigh));
-        ds_list_add(Instances, instance_create_layer(room_width/2-200,room_height/2,"Instances",oCrabWeigh));
-        ds_list_add(Instances, instance_create_layer(room_width/2,room_height/2+200,"Instances",oCrabBalance));
+        HelpText = "Weigh!";
+        ds_list_add(Instances, instance_create_layer(room_width/2+200+random(200),room_height/2+random_range(-150,150),"Instances",oCrabWeigh));
+        ds_list_add(Instances, instance_create_layer(room_width/2-200+random(200),room_height/2+random_range(-150,150),"Instances",oCrabWeigh));
+        ds_list_add(Instances, instance_create_layer(room_width/2,room_height/2+100,"Instances",oCrabBalance));
+    break;
+    
+    case Game.Highfive:
+        DrawSmall = true;
+        SmallScreenPosX = 250+100;
+        SmallScreenPosY = 125+100;
+        ds_list_add(Instances, instance_create_layer(SmallScreenPosX,SmallScreenPosY,"Instances",oHighfive));
+    break;
+    
+    case Game.AnvilStruggle:
+        HelpText = "Struggle!";
+        var Anvil = instance_create_layer(room_width/2,room_height/2-200,"Instances",oAnvil);
+        ds_list_add(Instances, Anvil);
+        var Collision = instance_create_layer(room_width/2-32, room_height/2+200-32, "Instances", oPhysicsBoundaries);
+        ds_list_add(Instances, Collision);
+        Anvil.MouseCollision = Collision;
     break;
 }
 
@@ -102,6 +130,7 @@ else
         }
     }
 }
+
 OpenEffect = sin(OpenFraction);
 
 //After set time, execute game
@@ -122,46 +151,76 @@ if(timer[1] > 0)
 }
 else if (timer[1] != -1)
 {
-    //Prevent decimals
-    with(oBattleManager)
+    if(DrawSmall)
     {
-        global.PlayerHP = ceil(global.PlayerHP);
-        global.PlayerPP = ceil(global.PlayerPP);
-        EnemyBattle.Health = ceil(EnemyBattle.Health);
-    }
-    Destroy = true;
-    if(EndTurn)
-    {
-        oBattleManager.BattleStageEnd = true;
+        Destroy = true;
+        oBattleManager.DrawGUI = true;
     }
     else
     {
-        oBattleManager.UpdateStats = true;
-        oBattleManager.visible = true;
-        oBattleMenuParent.visible = true;
+        //Prevent decimals
+        with(oBattleManager)
+        {
+            global.PlayerHP = ceil(global.PlayerHP);
+            global.PlayerPP = ceil(global.PlayerPP);
+            EnemyBattle.Health = ceil(EnemyBattle.Health);
+        }
+        Destroy = true;
+        if(EndTurn)
+        {
+            oBattleManager.BattleStageEnd = true;
+        }
+        else
+        {
+            oBattleManager.UpdateStats = true;
+            oBattleManager.visible = true;
+            oBattleMenuParent.visible = true;
+            oBattleManager.DrawGUI = true;
+        }
     }
+    
     timer[1] = -1;
 }
 
 #event draw
 
-//Draw MiniGame Boundries
-draw_set_color(c_ltgray);
-draw_roundrect(room_width/2+500,room_height/2+(250*OpenEffect),room_width/2-500,room_height/2-(250*OpenEffect),false)
-
-if(timer[1] != -1)
+if(alarm[0] == -1)
 {
-    draw_set_color(c_red);
-    var Time = round((timer[1]/(4*60))*12)/12;
-    draw_rectangle(room_width/2-500+(Time*1000),room_height/2+250,room_width/2-500,room_height/2+225,false);
-}
-
-draw_set_color(c_white);
-
-for(i=0;i<ds_list_size(Instances);i++)
-{
-    with(ds_list_find_value(Instances,i))
+    //Draw MiniGame Boundries
+    draw_set_color(c_ltgray);
+    
+    if(DrawSmall)
     {
-        image_alpha = oMiniGame.OpenEffect;
+        draw_roundrect(SmallScreenPosX+250,SmallScreenPosY+(125*OpenEffect),SmallScreenPosX-250,SmallScreenPosY-(125*OpenEffect),false)
+    }
+    else
+    {
+        draw_roundrect(room_width/2+500,room_height/2+(250*OpenEffect),room_width/2-500,room_height/2-(250*OpenEffect),false)
+        
+        //Draw timer for minigame
+        if(timer[1] != -1)
+        {
+            draw_set_color(c_red);
+            var Time = round((timer[1]/(4*60))*12)/12;
+            draw_rectangle(room_width/2-500+(Time*1000),room_height/2+250,room_width/2-500,room_height/2+225,false);
+        }
+        //Draw helptext
+        draw_set_alpha(OpenEffect);
+        draw_set_halign(fa_middle);
+        draw_set_color(c_ltgray);
+        draw_set_font(fnt_battle);
+        draw_text(room_width/2,25, string_upper(HelpText));
+        draw_set_alpha(1);
+        draw_set_halign(fa_left);
+    }
+    
+    draw_set_color(c_white);
+    
+    for(i=0;i<ds_list_size(Instances);i++)
+    {
+        with(ds_list_find_value(Instances,i))
+        {
+            image_alpha = oMiniGame.OpenEffect;
+        }
     }
 }

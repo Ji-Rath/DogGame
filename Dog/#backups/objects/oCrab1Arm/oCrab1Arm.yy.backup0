@@ -1,4 +1,4 @@
-// 2020-04-05 00:36:23
+// 2020-07-22 16:09:02
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 sprite_index = sMiniGameCrab1Setup;
@@ -20,6 +20,8 @@ State = Crab1State.Setup;
 timer[0] = random_range(0.5,2)*60;
 
 Spd = 1.5;
+
+ButtonPress = noone;
 
 #event step
 
@@ -48,6 +50,12 @@ if(oMiniGame.timer[0] == -1)
             {
                 State = Crab1State.Attack;
             }
+            
+            if(!instance_exists(ButtonPress))
+            {
+                ButtonPress = instance_create_layer(room_width/1.1, room_height/2+300, "Instances", oButtonSignal);
+                ButtonPress.sprite_index = sButtonPress;
+            }
         break;
         
         case Crab1State.Attack:
@@ -57,6 +65,7 @@ if(oMiniGame.timer[0] == -1)
             {
                 oMiniGame.timer[1] = 0.5*60;
             }
+            instance_destroy(ButtonPress);
         break;
     }
     
@@ -70,6 +79,10 @@ if(oMiniGame.timer[0] == -1)
     }
 
 }
+
+#event destroy
+
+instance_destroy(ButtonPress);
 
 #event draw
 

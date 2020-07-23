@@ -31,7 +31,7 @@ text_y = 60
 
 font = fnt_battle;
 draw_set_font(font)
-x_buffer = 20;
+x_buffer = 50;
 text_max_width = box_width - (2*x_buffer);
 text_height = string_height("A");
 

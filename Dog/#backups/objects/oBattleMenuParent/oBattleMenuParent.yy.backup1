@@ -1,4 +1,4 @@
-// 2020-06-19 01:08:28
+// 2020-07-23 12:10:59
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 mask_index = sBattleIcons;
@@ -19,15 +19,15 @@ enum BattleState
     Finish
 }
 
-//Contents of button
-Contents = ds_list_create();
-
 //Start invisible
 visible = false;
 
 //Rotation when icon selected
 RotValue = 0;
 Rot = 0;
+
+//Contents of button
+Contents = ds_list_create();
 
 //Add available items to ds list
 for(var i=0;i<Item.LastItem;i++)
@@ -38,7 +38,7 @@ for(var i=0;i<Item.LastItem;i++)
         var ItemCount = ds_map_find_value(oAreaStats.Items, i);
         
         //Check if ItemIndex matches with the looping item
-        if(GroupCheck[3] == ItemIndex && ItemCount > 0)
+        if(GroupCheck[3] == ItemIndex && (ItemCount > 0 || ItemCount == -1))
         {
             ds_list_add(Contents,i);
         }
@@ -85,6 +85,7 @@ if(visible && Selected)
         oBattleManager.visible = false;
         oBattleManager.BattleTimer = 0;
         oBattleManager.DrawTimer = 0;
+        oBattleManager.DrawGUI = false;
         Selected = false;
         
         //Increase rage
@@ -109,6 +110,7 @@ if(visible && Selected)
             if(mouse_check_button_pressed(mb_left))
             {
                 //Do Action based on item selected
+                
                 var ContentArray = oBattleManager.ItemDescription[ItemMouseHoverSelect];
                 var ExecuteArray = ContentArray[4];
                 var Len = array_length_1d(ExecuteArray)-1;
@@ -131,10 +133,40 @@ if(visible && Selected)
         		with(oBattleManager)
                 {
                     visible = false;
+                    DrawGUI = false;
                 }
                 
                 //Increase Rage
                 oBattleManager.RageMeter += 1;
+                
+                //Decrease ItemCount if applicable and update icons
+                var ItemCount = ds_map_find_value(oAreaStats.Items, ItemMouseHoverSelect);
+                if(ItemCount > 0)
+                {
+                    ds_map_set(oAreaStats.Items, ItemMouseHoverSelect, ItemCount-1);
+                }
+                
+                //Reset contents of button
+                ds_list_clear(Contents);
+                
+                //Update available items to ds list
+                for(var i=0;i<Item.LastItem;i++)
+                {
+                    if(i != Item.LastItem)
+                    {
+                        var GroupCheck = oBattleManager.ItemDescription[i];
+                        var ItemCount = ds_map_find_value(oAreaStats.Items, i);
+                        
+                        //Check if ItemIndex matches with the looping item
+                        if(GroupCheck[3] == ItemIndex && (ItemCount > 0 || ItemCount == -1))
+                        {
+                            ds_list_add(Contents,i);
+                        }
+                    }
+                }
+                
+                //Reset selected item
+                ItemMouseHover = false;
             }
         }
     }
@@ -147,7 +179,7 @@ else
 
 
 #event mouse_left_press
-if(visible)
+if(visible && !instance_exists(oMiniGame))
 {
     //Disable other Menu's
     with(oBattleMenuParent)
@@ -193,28 +225,32 @@ if(Selected)
 {
     draw_sprite(sBattleMenu1,0,x,y);
     
-    //Draw Contents
-    for(i=0;i<ds_list_size(Contents);i++)
+    //Draw text box for magic book
+    if(ItemIndex != 2)
     {
-        //Draw available contents
-        
-        var ArrayIndex = ds_list_find_value(Contents,i);
-        var DescArray = oBattleManager.ItemDescription[ArrayIndex];
-        var ItemCount = ds_map_find_value(oAreaStats.Items, ArrayIndex);
-        draw_sprite(DescArray[2],0,x+100,y-250+(i*75));
-        if(ItemCount > 1)
+        //Draw Contents
+        for(i=0;i<ds_list_size(Contents);i++)
         {
-            draw_text(x+100,y-250+(i*75),ItemCount);
+            //Draw available contents
+            
+            var ArrayIndex = ds_list_find_value(Contents,i);
+            var DescArray = oBattleManager.ItemDescription[ArrayIndex];
+            var ItemCount = ds_map_find_value(oAreaStats.Items, ArrayIndex);
+            draw_sprite(DescArray[2],0,x+100,y-250+(i*75));
+            if(ItemCount > 1)
+            {
+                draw_text(x+100,y-250+(i*75),ItemCount);
+            }
+            
         }
         
-    }
-    
-    if(ItemMouseHover)
-    {
-        var DescArray = oBattleManager.ItemDescription[ItemMouseHoverSelect];
-        draw_sprite(sBattleMenu2,0,x,y);
-        draw_set_font(fnt_stats);
-        draw_text(x+80,y-470,DescArray[0]);
-        draw_text(x+80,y-420,DescArray[1]);
+        if(ItemMouseHover)
+        {
+            var DescArray = oBattleManager.ItemDescription[ItemMouseHoverSelect];
+            draw_sprite(sBattleMenu2,0,x,y);
+            draw_set_font(fnt_stats);
+            draw_text(x+80,y-470,DescArray[0]);
+            draw_text(x+80,y-420,DescArray[1]);
+        }
     }
 }

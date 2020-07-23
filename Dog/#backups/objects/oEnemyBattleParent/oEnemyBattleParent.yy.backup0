@@ -1,4 +1,4 @@
-// 2020-06-18 01:38:23
+// 2020-07-21 18:28:38
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 uses_physics = false;
@@ -77,14 +77,17 @@ var YDivision = 1;
 //Draw enemy if the minigame has the option enabled
 if(instance_exists(oMiniGame))
 {
-    if(oMiniGame.ShowEnemy)
+    if(!oMiniGame.DrawSmall)
     {
-        Scale = 1-(oMiniGame.OpenEffect/1.75);
-    }
-    else
-    {
-        YPos = y + oMiniGame.OpenEffect*250;
-        Alpha = 1-(oMiniGame.OpenEffect/2);
+        if(oMiniGame.ShowEnemy)
+        {
+            Scale = 1-(oMiniGame.OpenEffect/1.75);
+        }
+        else
+        {
+            YPos = y + oMiniGame.OpenEffect*250;
+            Alpha = 1-(oMiniGame.OpenEffect/2);
+        }
     }
     
     if(instance_exists(oPan))

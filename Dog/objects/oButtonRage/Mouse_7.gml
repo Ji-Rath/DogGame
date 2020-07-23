@@ -17,7 +17,7 @@ if(visible)
         oBattleManager.DrawTimer = 0;
         Selected = false;
         
-        //Increase rage
+        //Reset rage meter
         oBattleManager.RageMeter = 0;
     }
 }

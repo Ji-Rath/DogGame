@@ -1,4 +1,4 @@
-// 2020-05-25 19:25:22
+// 2020-07-22 13:27:57
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 uses_physics = false;
@@ -12,6 +12,8 @@ SpriteXOffset = sprite_get_xoffset(sprite_index);
 SpriteYOffset = sprite_get_yoffset(sprite_index);
 ObjectFixture = 0;
 
+image_angle = random(360);
+
 //Set default values in object
 
 #event step Insert description here
@@ -19,32 +21,29 @@ ObjectFixture = 0;
 
 if(!Hit && Grabbed)
 {
-	physics_apply_impulse(x,y,mouse_x-x,mouse_y-y)
+	physics_apply_impulse(x,y,(mouse_x-x)*50,(mouse_y-y)*50);
 	phy_position_x = mouse_x;
 	phy_position_y = mouse_y;
 }
+
+#event collision:oPhysicsBoundaries
+//Collision
+
+#event collision:oCrabWeigh
+//Collision
+
+#event collision:oCrabBalance
+//Collision
+
 
 #event mouse_left_press
 
 Grabbed = true;
 
-physics_remove_fixture(self, ObjectFixture);
-
-Fixture = physics_fixture_create();
-physics_fixture_set_density(Fixture, 0.1);
-physics_fixture_set_restitution(Fixture, 0.1);
-physics_fixture_set_collision_group(Fixture, 0);
-physics_fixture_set_linear_damping(Fixture, 15);
-physics_fixture_set_angular_damping(Fixture, 15);
-physics_fixture_set_friction(Fixture,0.2);
-physics_fixture_set_polygon_shape(Fixture);
-
 
 #event mouse_global_left_release
 
 Grabbed = false;
-
-//Set default values in object
 
 #event draw
 
