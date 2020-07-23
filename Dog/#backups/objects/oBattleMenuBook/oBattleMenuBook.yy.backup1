@@ -1,4 +1,4 @@
-// 2020-07-23 11:53:17
+// 2020-07-23 11:53:31
 #event properties (no comments/etc. here are saved)
 parent_index = oBattleMenuParent;
 mask_index = sBattleIcons;
@@ -136,6 +136,7 @@ alarm[0] = 0.5*60;
 
 event_inherited();
 
+//Draw textbox when book is selected
 if(Selected)
 {
     draw_rectangle(TextBoxX, TextBoxY, TextBoxX+TextBoxWidth, TextBoxY+TextBoxHeight,true);

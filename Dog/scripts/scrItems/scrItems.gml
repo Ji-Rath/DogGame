@@ -21,7 +21,7 @@ ds_map_add(oAreaStats.Items, CurrentItem, 3);
 
 CurrentItem = Item.GlovesOff;
 ItemExecute[CurrentItem] = [scrItemMiniGame, Game.GlovesOff, 10, true, true];
-ItemDescription[CurrentItem] = ["Gloves Off","Its Time",sEnemydownrun, 0, ItemExecute[CurrentItem]];
+ItemDescription[CurrentItem] = ["Gloves Off","Its Time",sEnemydownrun, 4, ItemExecute[CurrentItem]];
 ds_map_add(oAreaStats.Items, CurrentItem, -1);
 
 CurrentItem = Item.PanAttack;
@@ -36,4 +36,4 @@ ds_map_add(oAreaStats.Items, CurrentItem, -1);
 
 CurrentItem = Item.Highfive;
 ItemExecute[CurrentItem] = [scrSameScreenMiniGame, Game.Highfive];
-ItemDescription[CurrentItem] = ["Broom","Metal Pan",sEnemydownrun, 3, ItemExecute[CurrentItem]];
+ItemDescription[CurrentItem] = ["Broom","Metal Pan",sEnemydownrun, 4, ItemExecute[CurrentItem]];

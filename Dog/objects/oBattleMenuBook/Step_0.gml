@@ -61,7 +61,7 @@ if(keyboard_check_pressed(vk_enter))
             }
             else
             {
-                var Text = "What the heck, '"+TextBox+"' aint no valid ability";
+                var Text = "What the heck, '"+TextBox+"' aint no valid spell";
                 scrCreateBattleBox([Text], false);
                 Selected = false;
                 break;
