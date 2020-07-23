@@ -1,4 +1,4 @@
-// 2020-07-23 11:08:18
+// 2020-07-23 12:10:04
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 mask_index = sBattleIcons;
@@ -19,15 +19,15 @@ enum BattleState
     Finish
 }
 
-//Contents of button
-Contents = ds_list_create();
-
 //Start invisible
 visible = false;
 
 //Rotation when icon selected
 RotValue = 0;
 Rot = 0;
+
+//Contents of button
+Contents = ds_list_create();
 
 //Add available items to ds list
 for(var i=0;i<Item.LastItem;i++)
@@ -38,7 +38,7 @@ for(var i=0;i<Item.LastItem;i++)
         var ItemCount = ds_map_find_value(oAreaStats.Items, i);
         
         //Check if ItemIndex matches with the looping item
-        if(GroupCheck[3] == ItemIndex && ItemCount > 0)
+        if(GroupCheck[3] == ItemIndex && (ItemCount > 0 || ItemCount == -1))
         {
             ds_list_add(Contents,i);
         }
@@ -111,14 +111,6 @@ if(visible && Selected)
             {
                 //Do Action based on item selected
                 
-                if (ItemIndex == 2 && oBattleManager.NeglectMeter >= oBattleManager.MaxNeglect)
-                {
-                    var Text = "Your ally is feeling neglected. He is too sad to attack!";
-                    scrCreateBattleBox([Text], false);
-                    Selected = false;
-                    exit;
-                }
-                
                 var ContentArray = oBattleManager.ItemDescription[ItemMouseHoverSelect];
                 var ExecuteArray = ContentArray[4];
                 var Len = array_length_1d(ExecuteArray)-1;
@@ -146,6 +138,35 @@ if(visible && Selected)
                 
                 //Increase Rage
                 oBattleManager.RageMeter += 1;
+                
+                //Decrease ItemCount if applicable and update icons
+                var ItemCount = ds_map_find_value(oAreaStats.Items, ItemMouseHoverSelect);
+                if(ItemCount > 0)
+                {
+                    ds_map_set(oAreaStats.Items, ItemMouseHoverSelect, ItemCount-1);
+                }
+                
+                //Reset contents of button
+                ds_list_clear(Contents);
+                
+                //Update available items to ds list
+                for(var i=0;i<Item.LastItem;i++)
+                {
+                    if(i != Item.LastItem)
+                    {
+                        var GroupCheck = oBattleManager.ItemDescription[i];
+                        var ItemCount = ds_map_find_value(oAreaStats.Items, i);
+                        
+                        //Check if ItemIndex matches with the looping item
+                        if(GroupCheck[3] == ItemIndex && (ItemCount > 0 || ItemCount == -1))
+                        {
+                            ds_list_add(Contents,i);
+                        }
+                    }
+                }
+                
+                //Reset selected item
+                ItemMouseHoverSelect = 0;
             }
         }
     }
