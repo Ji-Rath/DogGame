@@ -1,5 +1,5 @@
 
-ItemIndex = 2;
+ItemIndex = 3;
 event_inherited();
 SpriteIndex = 2;
 

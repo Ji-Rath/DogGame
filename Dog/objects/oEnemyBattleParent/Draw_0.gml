@@ -9,14 +9,17 @@ var YDivision = 1;
 //Draw enemy if the minigame has the option enabled
 if(instance_exists(oMiniGame))
 {
-    if(oMiniGame.ShowEnemy)
+    if(!oMiniGame.DrawSmall)
     {
-        Scale = 1-(oMiniGame.OpenEffect/1.75);
-    }
-    else
-    {
-        YPos = y + oMiniGame.OpenEffect*250;
-        Alpha = 1-(oMiniGame.OpenEffect/2);
+        if(oMiniGame.ShowEnemy)
+        {
+            Scale = 1-(oMiniGame.OpenEffect/1.75);
+        }
+        else
+        {
+            YPos = y + oMiniGame.OpenEffect*250;
+            Alpha = 1-(oMiniGame.OpenEffect/2);
+        }
     }
     
     if(instance_exists(oPan))

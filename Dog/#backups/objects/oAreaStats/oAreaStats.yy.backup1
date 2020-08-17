@@ -1,4 +1,4 @@
-// 2020-04-07 19:13:35
+// 2020-07-22 12:55:40
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 persistent = true;
@@ -30,8 +30,8 @@ if(keyboard_check_pressed(vk_f1))
 #event other_room_start
 
 //Create AIGrid
-var CellWidth = 32;
-var CellHeight = 32;
+var CellWidth = 64;
+var CellHeight = 64;
 
 var CellCountW = room_width/CellWidth;
 var CellCountH = room_height/CellHeight;
@@ -116,7 +116,10 @@ with(oNPCParent)
 if(room != rmTitle && room != rmLoad && room != rmGameOver)
     scrGameSave("TempSave");
     
+
 #event draw
 
-if(global.Debug)
+if(global.Debug && global.AIGrid)
+{
     mp_grid_draw(global.AIGrid);
+}

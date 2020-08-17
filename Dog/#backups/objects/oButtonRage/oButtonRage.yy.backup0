@@ -1,4 +1,4 @@
-// 2020-06-19 01:16:25
+// 2020-07-23 12:37:45
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 sprite_index = sBattleIcons;
@@ -11,12 +11,14 @@ CanPlayAnim = true;
 image_speed = 0;
 IsHovering = false;
 
+MaxRage = oBattleManager.MaxRage;
+
 #event step
 
 scrAnimStep();
 
 //Make fist visible only when available and GUI is visible
-if(oBattleManager.RageMeter >= 3 && oBattleMenuParent.visible)
+if(oBattleManager.RageMeter >= MaxRage && oBattleManager.BattleStage == 3 && !instance_exists(oMiniGame))
 {
     visible = true;
     if(CanPlayAnim)
@@ -51,7 +53,7 @@ if(visible)
         oBattleManager.DrawTimer = 0;
         Selected = false;
         
-        //Increase rage
+        //Reset rage meter
         oBattleManager.RageMeter = 0;
     }
 }

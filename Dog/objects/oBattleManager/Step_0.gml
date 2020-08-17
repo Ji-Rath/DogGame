@@ -1,9 +1,15 @@
 
+//Increment neglect at a rate of 1 per second
+if(NeglectMeter <= MaxNeglect && !instance_exists(oBattleTextBox))
+{
+	NeglectMeter += (1/60);
+}
+
 //If the current battle stage is done, transition to the next one.
 if(BattleStageEnd)
 {
 	BattleStage++;
-	show_debug_message("BattleStage: "+string(BattleStage));
+	//show_debug_message("BattleStage: "+string(BattleStage));
 	if(BattleStage == 6)
 	{
 		BattleStage = 1;
@@ -32,6 +38,7 @@ if(BattleStageEnd)
 			//Update Stats
 			timer[0] = 0.5*60;
 			visible = true;
+			DrawGUI = true;
 		break;
 		
 		case 3:
@@ -40,17 +47,25 @@ if(BattleStageEnd)
 			{
 				visible = true;
 			}
+			DrawGUI = true;
+			oButtonHighFive.CanHighfive = true;
 		break;
 		
 		case 4:
 			//Update Stats
 			timer[0] = 0.5*60;
 			visible = true;
+			DrawGUI = true;
+			if(global.PlayerPP <= 0)
+			{
+				global.PlayerHP -= 5;
+			}
 		break;
 		
 		case 5:
 			//CHATTER BEFORE LOOP
 			visible = false;
+			DrawGUI = false;
 			var EnemyText = EnemyBattle.TextDuring[random_range(0,array_length_1d(EnemyBattle.TextDuring))];
 			scrCreateBattleBox(EnemyText);
 		break;
@@ -88,10 +103,14 @@ if(BattleStageEnd)
 }
 
 //Reduce battle timer, and end turn if at 0
-if(BattleTimer > 0 && visible && BattleStage == 3 && DrawTimer == BattleTimer)
+if(visible && BattleStage == 3 && DrawTimer == BattleTimer && !instance_exists(oBattleTextBox))
 {
-	BattleTimer -= 1;
-	if (BattleTimer <= 0)
+	if(BattleTimer > 0)
+	{
+		BattleTimer -= 1;	
+	}
+	
+	if (BattleTimer <= 0 && !instance_exists(oMiniGame))
 	{
 		BattleStageEnd = true;
 		with(oBattleMenuParent)
@@ -100,12 +119,13 @@ if(BattleTimer > 0 && visible && BattleStage == 3 && DrawTimer == BattleTimer)
             Selected = false;
         }
         visible = false;
+        DrawGUI = false;
 	}
 	if(BattleStage == 3)
 		DrawTimer = BattleTimer;
 }
 
-show_debug_message("BattleTimer: "+string(BattleTimer)+" DrawTimer: "+string(DrawTimer));
+//show_debug_message("BattleTimer: "+string(BattleTimer)+" DrawTimer: "+string(DrawTimer));
 
 //Update player stats visually if changed
 if(UpdateStats)

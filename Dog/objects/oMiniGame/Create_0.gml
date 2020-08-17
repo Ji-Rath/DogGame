@@ -1,5 +1,5 @@
 
-GameType = 0;
+GameType = -1;
 timer[0] = 1*60; //Wait 1 second before spawning characters
 timer[1] = -1 //MiniGame time
 
@@ -22,6 +22,15 @@ enum Game
     Chips,
     PanAttack,
     BroomAttack,
-    CrabWeigh
+    CrabWeigh,
+    Highfive,
+    AnvilStruggle
 }
 alarm[0] = 1;
+
+DrawSmall = false;
+SmallScreenPosX = 0;
+SmallScreenPosY = 0;
+
+//Text to show player to help with the minigame
+HelpText = "";

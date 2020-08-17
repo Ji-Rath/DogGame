@@ -1,4 +1,4 @@
-// 2020-06-18 01:35:18
+// 2020-07-23 10:24:04
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 sprite_index = sBroom;
@@ -8,6 +8,7 @@ uses_physics = false;
 
 CurrentPosition = 0;
 Brushes = 0;
+Success = false;
 
 
 #event step
@@ -32,12 +33,13 @@ if(mouse_x < x && CurrentPosition != 0)
 
 
 //If player was successful
-if(Brushes > 16 && !oEnemyBattleParent.Vulnerable)
+if(Brushes > 16 && !Success)
 {
     oMiniGame.timer[1] = 1;
     oEnemyBattleParent.Vulnerable = true;
+    Success = true;
     
-    var Icon = instance_create_layer(room_width/2, room_height/2, "Instances", oIconPopup);
+    var Icon = instance_create_layer(room_width/2, room_height/2, "GUI", oIconPopup);
     Icon.Sprite = sCheckMark;
 }
 

@@ -4,7 +4,16 @@
     "mvc": "1.0",
     "name": "oPhysicsBoundaries",
     "eventList": [
-        
+        {
+            "id": "6dbf68a3-4108-8546-f901-52ffeab2380e",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "eventtype": 8,
+            "enumb": 0,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "m_owner": "40531c67-00b7-48f6-948a-64d4362f4bd2"
+        }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,
@@ -12,12 +21,12 @@
     "persistent": false,
     "physicsAngularDamping": 1,
     "physicsDensity": 0,
-    "physicsFriction": 0.2,
+    "physicsFriction": 1,
     "physicsGroup": 0,
     "physicsKinematic": false,
     "physicsLinearDamping": 1,
     "physicsObject": true,
-    "physicsRestitution": 1,
+    "physicsRestitution": 0,
     "physicsSensor": false,
     "physicsShape": 1,
     "physicsShapePoints": [
@@ -54,5 +63,5 @@
     "properties": null,
     "solid": false,
     "spriteId": "2fb06872-f36a-4f1e-b655-88d04e68d9fc",
-    "visible": false
+    "visible": true
 }

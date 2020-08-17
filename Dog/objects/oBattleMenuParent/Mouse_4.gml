@@ -1,4 +1,4 @@
-if(visible)
+if(visible && !instance_exists(oMiniGame))
 {
     //Disable other Menu's
     with(oBattleMenuParent)

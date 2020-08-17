@@ -37,6 +37,7 @@ if(visible && Selected)
         oBattleManager.visible = false;
         oBattleManager.BattleTimer = 0;
         oBattleManager.DrawTimer = 0;
+        oBattleManager.DrawGUI = false;
         Selected = false;
         
         //Increase rage
@@ -61,6 +62,7 @@ if(visible && Selected)
             if(mouse_check_button_pressed(mb_left))
             {
                 //Do Action based on item selected
+                
                 var ContentArray = oBattleManager.ItemDescription[ItemMouseHoverSelect];
                 var ExecuteArray = ContentArray[4];
                 var Len = array_length_1d(ExecuteArray)-1;
@@ -83,10 +85,40 @@ if(visible && Selected)
         		with(oBattleManager)
                 {
                     visible = false;
+                    DrawGUI = false;
                 }
                 
                 //Increase Rage
                 oBattleManager.RageMeter += 1;
+                
+                //Decrease ItemCount if applicable and update icons
+                var ItemCount = ds_map_find_value(oAreaStats.Items, ItemMouseHoverSelect);
+                if(ItemCount > 0)
+                {
+                    ds_map_set(oAreaStats.Items, ItemMouseHoverSelect, ItemCount-1);
+                }
+                
+                //Reset contents of button
+                ds_list_clear(Contents);
+                
+                //Update available items to ds list
+                for(var i=0;i<Item.LastItem;i++)
+                {
+                    if(i != Item.LastItem)
+                    {
+                        var GroupCheck = oBattleManager.ItemDescription[i];
+                        var ItemCount = ds_map_find_value(oAreaStats.Items, i);
+                        
+                        //Check if ItemIndex matches with the looping item
+                        if(GroupCheck[3] == ItemIndex && (ItemCount > 0 || ItemCount == -1))
+                        {
+                            ds_list_add(Contents,i);
+                        }
+                    }
+                }
+                
+                //Reset selected item
+                ItemMouseHover = false;
             }
         }
     }
