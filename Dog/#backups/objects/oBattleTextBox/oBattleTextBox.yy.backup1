@@ -1,4 +1,4 @@
-// 2020-03-31 14:32:42
+// 2020-07-23 12:14:34
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 uses_physics = false;
@@ -36,7 +36,7 @@ text_y = 60
 
 font = fnt_battle;
 draw_set_font(font)
-x_buffer = 20;
+x_buffer = 40;
 text_max_width = box_width - (2*x_buffer);
 text_height = string_height("A");
 
@@ -62,6 +62,10 @@ if (global.KeyInteract)
 		{
 			//When there is no more text, move on to the next battle stage
 			oBattleManager.BattleStageEnd = EndTurn;
+			if(!EndTurn)
+			{
+				oBattleManager.timer[0] = 0.5*60;
+			}
 			instance_destroy();
 		}
 	}

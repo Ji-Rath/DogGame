@@ -1,0 +1,122 @@
+// 2020-07-22 16:11:47
+#event properties (no comments/etc. here are saved)
+parent_index = -1;
+sprite_index = sAnvil;
+uses_physics = true;
+physics_density = 1;
+physics_restitution = 0.1;
+physics_collision_group = 0;
+physics_linear_damping = 0.1;
+physics_angular_damping = 0.1;
+physics_sensor = false;
+physics_start_awake = true;
+physics_kinematic = false;
+physics_shape = 1;
+physics_shape_data = "0,0;378,0;378,213;0,213";
+
+#event create
+
+StruggleRight = true;
+Counter = 0;
+Complete = false;
+Interact = false;
+CompleteCounter = 10;
+
+phy_active = false;
+alarm[0] = 1.75*60;
+
+MouseCollision = 0;
+ButtonAlternate = instance_create_layer(room_width/1.1, room_height/2+300, "Instances", oButtonSignal);
+ButtonAlternate.sprite_index = sButtonAlternate;
+
+#event destroy
+
+instance_destroy(ButtonAlternate);
+
+#event alarm0
+
+phy_active = true;
+
+
+#event step
+
+if(global.KeyInteract)
+{
+    Interact = true;
+}
+if(global.KeyInteractRelease)
+{
+    Interact = false;
+}
+
+if(Counter < CompleteCounter)
+{
+    if(Interact)
+    {
+        if(!StruggleRight)
+        {
+           StruggleRight = true;
+           Counter++;
+        }
+        window_mouse_set(room_width/2+15, room_height/2+200);
+    } else if(global.KeySprint)
+    {
+        if(StruggleRight)
+        {
+            StruggleRight = false;
+            Counter++;
+        }
+        window_mouse_set(room_width/2-15, room_height/2+200);
+    }
+    else
+    {
+        window_mouse_set(room_width/2, room_height/2+200);
+    }
+}
+
+if(!Complete && Counter >= CompleteCounter)
+{
+    oMiniGame.timer[1] = 1*60;
+    Complete = true;
+    Enemy = oBattleManager.EnemyBattle;
+    Enemy.Health -= 3;
+    instance_destroy(MouseCollision);
+    instance_destroy(ButtonAlternate);
+    
+    var Icon = instance_create_layer(room_width/2, room_height/2, "GUI", oIconPopup);
+    Icon.Sprite = sCheckMark;
+}
+
+if(oMiniGame.timer[1] <= 0 && oMiniGame.timer[1] != -1 && !Complete)
+{
+    global.PlayerHP -= 10;
+    Complete = true;
+    Counter = 0;
+}
+
+if(!Complete && distance_to_point(mouse_x, mouse_y) < 100 && phy_active)
+{
+    Complete = true;
+    oMiniGame.timer[1] = 0.5*60;
+    global.PlayerHP -= 10;
+    Counter = 0;
+}
+
+#event collision:oPhysicsBoundaries
+//Collision
+
+#event draw
+
+draw_self();
+
+if(Counter < CompleteCounter)
+{
+    draw_sprite(sRopeCover, image_index, mouse_x,mouse_y);
+}
+
+if(global.Debug)
+{
+    physics_draw_debug();
+}
+
+

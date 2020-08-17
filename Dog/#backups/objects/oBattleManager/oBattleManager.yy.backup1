@@ -1,4 +1,4 @@
-// 2020-06-19 01:09:58
+// 2020-07-23 10:39:17
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 visible = false;
@@ -7,42 +7,27 @@ uses_physics = false;
 #event create Insert description here
 // You can write your code in this editor
 
+//Initialize Itembar variables
 scrItems();
-
-box = sBattleBox;
-gui_width = display_get_gui_width();
-gui_height = display_get_gui_height();
 
 //Assign enemy objects to variables and store unique id
 EnemyBattle = oAreaStats.EnemyBattle;
 EnemyKey = oAreaStats.EnemyKey;
 
-//Create variables to keep track of battle stage
+//Current battle stage
 BattleStage = 0;
+
+//If true, go to next battle stage
 BattleStageEnd = false;
 
-//Portait position
+//Mark player portrait position
 DPstat = sDPstatnormal;
 DPhpx = 170
 DPhpy = 17
 DPoffy = 50
 
-text_height = string_height("A");
-
-
 //Create Enemy Object
 EnemyBattle = instance_create_layer(640,390,"Instances",EnemyBattle);
-
-//Create BattleMenu variables
-enum BattleMenu
-{
-    Attack,
-    Bag,
-    Defend,
-    Book
-}
-BattleSelect = BattleMenu.Attack;
-
 
 //INTRO TEXT - BATTLE STAGE 0
 var FirstText = "A "+string(EnemyBattle.Name) + " has attacked!";
@@ -73,16 +58,35 @@ for(i=0;i<2;i++)
 	Shake[i] = 0;
 }
 
+//Rage meter
 RageMeter = 0;
 
+//Value to trigger rage attack
+MaxRage = 3;
+
+//Neglect meter
+NeglectMeter = 0;
+
+//Value to trigger neglect effects
+MaxNeglect = 30;
+
+DrawGUI = false;
+
+image_speed = 0.1;
 
 #event step
+
+//Increment neglect at a rate of 1 per second
+if(NeglectMeter <= MaxNeglect && !instance_exists(oBattleTextBox))
+{
+	NeglectMeter += (1/60);
+}
 
 //If the current battle stage is done, transition to the next one.
 if(BattleStageEnd)
 {
 	BattleStage++;
-	show_debug_message("BattleStage: "+string(BattleStage));
+	//show_debug_message("BattleStage: "+string(BattleStage));
 	if(BattleStage == 6)
 	{
 		BattleStage = 1;
@@ -111,6 +115,7 @@ if(BattleStageEnd)
 			//Update Stats
 			timer[0] = 0.5*60;
 			visible = true;
+			DrawGUI = true;
 		break;
 		
 		case 3:
@@ -119,17 +124,25 @@ if(BattleStageEnd)
 			{
 				visible = true;
 			}
+			DrawGUI = true;
+			oButtonHighFive.CanHighfive = true;
 		break;
 		
 		case 4:
 			//Update Stats
 			timer[0] = 0.5*60;
 			visible = true;
+			DrawGUI = true;
+			if(global.PlayerPP <= 0)
+			{
+				global.PlayerHP -= 5;
+			}
 		break;
 		
 		case 5:
 			//CHATTER BEFORE LOOP
 			visible = false;
+			DrawGUI = false;
 			var EnemyText = EnemyBattle.TextDuring[random_range(0,array_length_1d(EnemyBattle.TextDuring))];
 			scrCreateBattleBox(EnemyText);
 		break;
@@ -167,10 +180,10 @@ if(BattleStageEnd)
 }
 
 //Reduce battle timer, and end turn if at 0
-if(BattleTimer > 0 && visible && BattleStage == 3 && DrawTimer == BattleTimer)
+if(BattleTimer > 0 && visible && BattleStage == 3 && DrawTimer == BattleTimer && !instance_exists(oBattleTextBox))
 {
 	BattleTimer -= 1;
-	if (BattleTimer <= 0)
+	if (BattleTimer <= 0 && !instance_exists(oMiniGame))
 	{
 		BattleStageEnd = true;
 		with(oBattleMenuParent)
@@ -179,12 +192,13 @@ if(BattleTimer > 0 && visible && BattleStage == 3 && DrawTimer == BattleTimer)
             Selected = false;
         }
         visible = false;
+        DrawGUI = false;
 	}
 	if(BattleStage == 3)
 		DrawTimer = BattleTimer;
 }
 
-show_debug_message("BattleTimer: "+string(BattleTimer)+" DrawTimer: "+string(DrawTimer));
+//show_debug_message("BattleTimer: "+string(BattleTimer)+" DrawTimer: "+string(DrawTimer));
 
 //Update player stats visually if changed
 if(UpdateStats)
@@ -220,7 +234,7 @@ if(UpdateStats)
 	if(DrawTimer > BattleTimer)
 		DrawTimer -= Increment*8;
 	if(DrawTimer < BattleTimer)
-		DrawTimer -= Increment*8;
+		DrawTimer += Increment*8;
 	if(DrawTimer == BattleTimer)
 		Check++;
 	
@@ -275,10 +289,29 @@ for(i=0;i<array_length_1d(Shake);i++)
 	}
 }
 
+#event draw
+
+//Draw battle timer
+if((DrawTimer > 0 && BattleStage == 3) || BattleTimer != DrawTimer)
+{
+	var TimerPosX = room_width/2;
+	var TimerPosY = room_height/1.3;
+	var BarHeight = 20;
+	
+	draw_sprite(sBattleTimer,0,TimerPosX-BarWidth/2-100,TimerPosY);
+	draw_set_color(c_black);
+	draw_rectangle(TimerPosX-BarWidth/2,TimerPosY+BarHeight/2,TimerPosX+BarWidth/2,TimerPosY-BarHeight/2,false);
+	draw_set_color(c_red);
+	var BattleTimerNum = ((round(DrawTimer/60/BattleTimerInit*16)/16)*BarWidth);
+	draw_rectangle(TimerPosX-BarWidth/2,TimerPosY+BarHeight/2,TimerPosX-BarWidth/2+BattleTimerNum,TimerPosY-BarHeight/2,false);
+}
+
+
+
 #event draw_gui Insert description here
 // You can write your code in this editor
 
-if(visible)
+if(DrawGUI)
 {
 	var GUIWidth = display_get_gui_width();
 	var GUIHeight = display_get_gui_height();
@@ -294,23 +327,18 @@ if(visible)
 	draw_sprite(sGUIPlayerInfo,0,PortraitX,PortraitY);
 	draw_sprite(sGUIPlayerInfo,1,PortraitX,PortraitY+100);
 	
+	//If player is smelly...i mean hungry, draw effect
+	if(global.PlayerPP <= 0)
+	{
+		draw_sprite(sEffectHungry, image_index, PortraitX+50, PortraitY+50);
+	}
+	if(NeglectMeter >= MaxNeglect)
+	{
+		draw_sprite(sEffectNeglect, image_index, PortraitX+50, PortraitY+100+50);
+	}
+	
 	//Draw player status
 	draw_text(PortraitX+DPhpx,PortraitY+DPhpy,round(DrawPlayerHealth));
 	draw_text(PortraitX+DPhpx,PortraitY+DPhpy+DPoffy,round(DrawPlayerPP));
 	
-	//Draw battle timer
-	if((DrawTimer > 0 && BattleStage == 3) || BattleTimer != DrawTimer)
-	{
-		var TimerPosX = GUIWidth/2;
-		var TimerPosY = GUIHeight/1.3;
-		var BarHeight = 20;
-		
-		draw_sprite(sBattleTimer,0,TimerPosX-BarWidth/2-100,TimerPosY);
-		draw_set_color(c_black);
-		draw_rectangle(TimerPosX-BarWidth/2,TimerPosY+BarHeight/2,TimerPosX+BarWidth/2,TimerPosY-BarHeight/2,false);
-		draw_set_color(c_red);
-		var BattleTimerNum = ((round(DrawTimer/60/BattleTimerInit*16)/16)*BarWidth);
-		draw_rectangle(TimerPosX-BarWidth/2,TimerPosY+BarHeight/2,TimerPosX-BarWidth/2+BattleTimerNum,TimerPosY-BarHeight/2,false);
-	}
 }
-

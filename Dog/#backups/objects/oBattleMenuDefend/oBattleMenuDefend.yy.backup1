@@ -1,4 +1,4 @@
-// 2020-02-18 08:24:38
+// 2020-02-18 08:26:44
 #event properties (no comments/etc. here are saved)
 parent_index = oBattleMenuParent;
 mask_index = sBattleIcons;
@@ -6,5 +6,7 @@ uses_physics = false;
 
 #event create
 
-SpriteIndex = 2;
+ItemIndex = 2;
 event_inherited();
+SpriteIndex = 2;
+

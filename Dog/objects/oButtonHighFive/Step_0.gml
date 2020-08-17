@@ -1,10 +1,11 @@
 
 scrAnimStep();
 
+visible = (CanHighfive && oBattleManager.BattleStage == 3 && oBattleManager.NeglectMeter >= MaxNeglect && !instance_exists(oMiniGame));
+
 //Make fist visible only when available and GUI is visible
-if(oBattleManager.RageMeter >= 3 && oBattleMenuParent.visible)
+if (visible)
 {
-    visible = true;
     if(CanPlayAnim)
     {
         scrAnimInit(Animation.Flip, AnimationIntro.Intro1);
@@ -13,6 +14,5 @@ if(oBattleManager.RageMeter >= 3 && oBattleMenuParent.visible)
 }
 else
 {
-    visible = false;
     CanPlayAnim = true;
 }

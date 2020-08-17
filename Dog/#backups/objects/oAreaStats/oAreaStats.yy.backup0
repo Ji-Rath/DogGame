@@ -1,4 +1,4 @@
-// 2020-04-07 19:15:31
+// 2020-07-22 12:55:51
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 persistent = true;
@@ -116,7 +116,10 @@ with(oNPCParent)
 if(room != rmTitle && room != rmLoad && room != rmGameOver)
     scrGameSave("TempSave");
     
+
 #event draw
 
-if(global.Debug)
+if(global.Debug && room != rmBattle)
+{
     mp_grid_draw(global.AIGrid);
+}
