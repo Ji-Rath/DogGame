@@ -1,8 +1,12 @@
 {
-    "id": "d1817acd-ee50-3d66-59e6-635273285e91",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "scrSameScreenMiniGame",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "BattleMenu",
+    "path": "folders/Scripts/BattleMenu.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "scrSameScreenMiniGame",
+  "tags": [],
+  "resourceType": "GMScript",
 }

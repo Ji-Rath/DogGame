@@ -1,8 +1,12 @@
 {
-    "id": "67e021c1-39e3-513a-82ec-a69e029b7811",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "scrAnimStep",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Animation",
+    "path": "folders/Scripts/Animation.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "scrAnimStep",
+  "tags": [],
+  "resourceType": "GMScript",
 }

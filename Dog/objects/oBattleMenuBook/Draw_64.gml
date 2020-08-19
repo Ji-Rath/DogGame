@@ -4,6 +4,7 @@ event_inherited();
 //Draw textbox when book is selected
 if(Selected)
 {
+    draw_set_color(c_black);
     draw_rectangle(TextBoxX, TextBoxY, TextBoxX+TextBoxWidth, TextBoxY+TextBoxHeight,true);
     if(IsFocused)
     {

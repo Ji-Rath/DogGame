@@ -1,5 +1,9 @@
 /// @param Object
-var Object = argument0;
+function scrCutSceneCamera(argument0) {
+	var Object = argument0;
 
-oCamera.Follow = Object;
-scrCutSceneEnd();
+	oCamera.Follow = Object;
+	scrCutSceneEnd();
+
+
+}

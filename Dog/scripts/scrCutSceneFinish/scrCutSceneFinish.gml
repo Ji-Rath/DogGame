@@ -1,3 +1,7 @@
+function scrCutSceneFinish() {
 
-SelectedCutScene = -1;
-instance_destroy();
+	SelectedCutScene = -1;
+	instance_destroy();
+
+
+}

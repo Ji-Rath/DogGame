@@ -1,8 +1,12 @@
 {
-    "id": "7c06b8c9-959a-a9ee-5b30-afa168c0fc2d",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "scrItemConsume",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "BattleMenu",
+    "path": "folders/Scripts/BattleMenu.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "scrItemConsume",
+  "tags": [],
+  "resourceType": "GMScript",
 }

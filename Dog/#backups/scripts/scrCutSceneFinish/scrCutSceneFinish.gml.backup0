@@ -1,4 +1,0 @@
-// 2020-02-15 00:17:13
-
-SelectedCutScene = -1;
-instance_destroy();

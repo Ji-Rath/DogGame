@@ -1,92 +1,82 @@
 {
-    "id": "7220b6d9-44a1-4e91-8d2a-4f5d31eb2879",
-    "modelName": "GMSprite",
-    "mvc": "1.12",
-    "name": "sOldManWalk",
-    "For3D": false,
-    "HTile": false,
-    "VTile": false,
-    "bbox_bottom": 63,
-    "bbox_left": 6,
-    "bbox_right": 59,
-    "bbox_top": 7,
-    "bboxmode": 0,
-    "colkind": 1,
-    "coltolerance": 0,
-    "edgeFiltering": false,
-    "frames": [
-        {
-            "id": "c137d598-b3b9-4ee2-acda-56989dcff11f",
-            "modelName": "GMSpriteFrame",
-            "mvc": "1.0",
-            "SpriteId": "7220b6d9-44a1-4e91-8d2a-4f5d31eb2879",
-            "compositeImage": {
-                "id": "12e27607-444b-4fc7-800d-62677a3e2cec",
-                "modelName": "GMSpriteImage",
-                "mvc": "1.0",
-                "FrameId": "c137d598-b3b9-4ee2-acda-56989dcff11f",
-                "LayerId": "00000000-0000-0000-0000-000000000000"
-            },
-            "images": [
-                {
-                    "id": "06232edb-b280-4f29-b180-16c2abffdf42",
-                    "modelName": "GMSpriteImage",
-                    "mvc": "1.0",
-                    "FrameId": "c137d598-b3b9-4ee2-acda-56989dcff11f",
-                    "LayerId": "34208dd5-e4d4-4ab2-be7d-c7ed1211a873"
-                }
-            ]
-        },
-        {
-            "id": "14a72c7f-06b9-4489-88ee-9a755a52f428",
-            "modelName": "GMSpriteFrame",
-            "mvc": "1.0",
-            "SpriteId": "7220b6d9-44a1-4e91-8d2a-4f5d31eb2879",
-            "compositeImage": {
-                "id": "683f0400-1ce0-4256-8bbb-13b5d8ee9e8c",
-                "modelName": "GMSpriteImage",
-                "mvc": "1.0",
-                "FrameId": "14a72c7f-06b9-4489-88ee-9a755a52f428",
-                "LayerId": "00000000-0000-0000-0000-000000000000"
-            },
-            "images": [
-                {
-                    "id": "ee61f5fc-05c3-4177-9fc8-3bf8e0c11dda",
-                    "modelName": "GMSpriteImage",
-                    "mvc": "1.0",
-                    "FrameId": "14a72c7f-06b9-4489-88ee-9a755a52f428",
-                    "LayerId": "34208dd5-e4d4-4ab2-be7d-c7ed1211a873"
-                }
-            ]
-        }
-    ],
-    "gridX": 0,
-    "gridY": 0,
-    "height": 64,
-    "layers": [
-        {
-            "id": "34208dd5-e4d4-4ab2-be7d-c7ed1211a873",
-            "modelName": "GMImageLayer",
-            "mvc": "1.0",
-            "SpriteId": "7220b6d9-44a1-4e91-8d2a-4f5d31eb2879",
-            "blendMode": 0,
-            "isLocked": false,
-            "name": "default",
-            "opacity": 100,
-            "visible": true
-        }
-    ],
-    "origin": 7,
-    "originLocked": false,
-    "playbackSpeed": 15,
+  "bboxMode": 0,
+  "collisionKind": 1,
+  "type": 0,
+  "origin": 9,
+  "preMultiplyAlpha": false,
+  "edgeFiltering": false,
+  "collisionTolerance": 0,
+  "swfPrecision": 2.525,
+  "bbox_left": 6,
+  "bbox_right": 59,
+  "bbox_top": 7,
+  "bbox_bottom": 63,
+  "HTile": false,
+  "VTile": false,
+  "For3D": false,
+  "width": 64,
+  "height": 64,
+  "textureGroupId": {
+    "name": "Default",
+    "path": "texturegroups/Default",
+  },
+  "swatchColours": null,
+  "gridX": 0,
+  "gridY": 0,
+  "frames": [
+    {"compositeImage":{"FrameId":{"name":"c137d598-b3b9-4ee2-acda-56989dcff11f","path":"sprites/sOldManWalk/sOldManWalk.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"c137d598-b3b9-4ee2-acda-56989dcff11f","path":"sprites/sOldManWalk/sOldManWalk.yy",},"LayerId":{"name":"34208dd5-e4d4-4ab2-be7d-c7ed1211a873","path":"sprites/sOldManWalk/sOldManWalk.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sOldManWalk","path":"sprites/sOldManWalk/sOldManWalk.yy",},"resourceVersion":"1.0","name":"c137d598-b3b9-4ee2-acda-56989dcff11f","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"14a72c7f-06b9-4489-88ee-9a755a52f428","path":"sprites/sOldManWalk/sOldManWalk.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"14a72c7f-06b9-4489-88ee-9a755a52f428","path":"sprites/sOldManWalk/sOldManWalk.yy",},"LayerId":{"name":"34208dd5-e4d4-4ab2-be7d-c7ed1211a873","path":"sprites/sOldManWalk/sOldManWalk.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sOldManWalk","path":"sprites/sOldManWalk/sOldManWalk.yy",},"resourceVersion":"1.0","name":"14a72c7f-06b9-4489-88ee-9a755a52f428","tags":[],"resourceType":"GMSpriteFrame",},
+  ],
+  "sequence": {
+    "spriteId": {"name":"sOldManWalk","path":"sprites/sOldManWalk/sOldManWalk.yy",},
+    "timeUnits": 1,
+    "playback": 1,
+    "playbackSpeed": 15.0,
     "playbackSpeedType": 0,
-    "premultiplyAlpha": false,
-    "sepmasks": false,
-    "swatchColours": null,
-    "swfPrecision": 2.525,
-    "textureGroupId": "1225f6b0-ac20-43bd-a82e-be73fa0b6f4f",
-    "type": 0,
-    "width": 64,
-    "xorig": 32,
-    "yorig": 63
+    "autoRecord": true,
+    "volume": 1.0,
+    "length": 2.0,
+    "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
+    "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
+    "tracks": [
+      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+            {"id":"f74187b4-592e-45ba-b346-1f60a557d795","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"c137d598-b3b9-4ee2-acda-56989dcff11f","path":"sprites/sOldManWalk/sOldManWalk.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"ccaa34f9-09f8-440f-9d97-93e8a970cfac","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"14a72c7f-06b9-4489-88ee-9a755a52f428","path":"sprites/sOldManWalk/sOldManWalk.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
+    ],
+    "visibleRange": {"x":0.0,"y":0.0,},
+    "lockOrigin": false,
+    "showBackdrop": true,
+    "showBackdropImage": false,
+    "backdropImagePath": "",
+    "backdropImageOpacity": 0.5,
+    "backdropWidth": 1920,
+    "backdropHeight": 1080,
+    "backdropXOffset": 0.0,
+    "backdropYOffset": 0.0,
+    "xorigin": 32,
+    "yorigin": 63,
+    "eventToFunction": {},
+    "eventStubScript": null,
+    "parent": {"name":"sOldManWalk","path":"sprites/sOldManWalk/sOldManWalk.yy",},
+    "resourceVersion": "1.3",
+    "name": "",
+    "tags": [],
+    "resourceType": "GMSequence",
+  },
+  "layers": [
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"34208dd5-e4d4-4ab2-be7d-c7ed1211a873","tags":[],"resourceType":"GMImageLayer",},
+  ],
+  "parent": {
+    "name": "NPCs",
+    "path": "folders/Sprites/NPCs.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "sOldManWalk",
+  "tags": [],
+  "resourceType": "GMSprite",
 }

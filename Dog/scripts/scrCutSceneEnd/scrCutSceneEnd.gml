@@ -1,3 +1,7 @@
+function scrCutSceneEnd() {
 
-with(oCutScene)
-    CurrentScene++;
+	with(oCutScene)
+	    CurrentScene++;
+
+
+}

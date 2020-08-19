@@ -1,7 +1,0 @@
-// 2020-02-15 01:22:07
-#args Enemy
-
-scrGameSave("TempSave.sav");
-scrFadeout(rmBattle, c_maroon, 0.025);
-oAreaStats.EnemyBattle = Enemy.BattleObject;
-oAreaStats.EnemyKey = Enemy.Key;

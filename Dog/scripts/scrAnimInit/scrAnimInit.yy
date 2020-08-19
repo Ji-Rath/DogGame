@@ -1,8 +1,12 @@
 {
-    "id": "d4e0bb9c-a810-e0da-8df3-acddd82f4234",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "scrAnimInit",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Animation",
+    "path": "folders/Scripts/Animation.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "scrAnimInit",
+  "tags": [],
+  "resourceType": "GMScript",
 }

@@ -1,5 +1,0 @@
-// 2020-02-19 15:13:24
-
-
-var Scene = instance_create_layer(0,0,"Control",oCutScene);
-Scene.CutScene = argument0;

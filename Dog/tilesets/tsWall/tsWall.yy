@@ -1,49 +1,51 @@
 {
-    "id": "62e7ff8f-5e3e-4486-81fd-7b2b219dddec",
-    "modelName": "GMTileSet",
-    "mvc": "1.11",
-    "name": "tsWall",
-    "auto_tile_sets": [
-        
+  "spriteId": {
+    "name": "sWall",
+    "path": "sprites/sWall/sWall.yy",
+  },
+  "tileWidth": 64,
+  "tileHeight": 64,
+  "tilexoff": 0,
+  "tileyoff": 0,
+  "tilehsep": 0,
+  "tilevsep": 0,
+  "spriteNoExport": false,
+  "textureGroupId": {
+    "name": "Default",
+    "path": "texturegroups/Default",
+  },
+  "out_tilehborder": 2,
+  "out_tilevborder": 2,
+  "out_columns": 3,
+  "tile_count": 9,
+  "autoTileSets": [],
+  "tileAnimationFrames": [],
+  "tileAnimationSpeed": 15.0,
+  "tileAnimation": {
+    "FrameData": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
     ],
-    "macroPageTiles": {
-        "SerialiseData": null,
-        "SerialiseHeight": 0,
-        "SerialiseWidth": 0,
-        "TileSerialiseData": [
-            
-        ]
-    },
-    "out_columns": 3,
-    "out_tilehborder": 2,
-    "out_tilevborder": 2,
-    "spriteId": "da7b91cd-25e4-4059-8150-71a182cbd55a",
-    "sprite_no_export": false,
-    "textureGroupId": "1225f6b0-ac20-43bd-a82e-be73fa0b6f4f",
-    "tile_animation": {
-        "AnimationCreationOrder": null,
-        "FrameData": [
-            0,
-            1,
-            2,
-            3,
-            4,
-            5,
-            6,
-            7,
-            8
-        ],
-        "SerialiseFrameCount": 1
-    },
-    "tile_animation_frames": [
-        
-    ],
-    "tile_animation_speed": 15,
-    "tile_count": 9,
-    "tileheight": 64,
-    "tilehsep": 0,
-    "tilevsep": 0,
-    "tilewidth": 64,
-    "tilexoff": 0,
-    "tileyoff": 0
+    "SerialiseFrameCount": 1,
+  },
+  "macroPageTiles": {
+    "SerialiseWidth": 0,
+    "SerialiseHeight": 0,
+    "TileSerialiseData": [],
+  },
+  "parent": {
+    "name": "Tile Sets",
+    "path": "folders/Tile Sets.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "tsWall",
+  "tags": [],
+  "resourceType": "GMTileSet",
 }

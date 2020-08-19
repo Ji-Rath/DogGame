@@ -1,8 +1,12 @@
 {
-    "id": "8b4bb2d1-2cd7-9875-f653-62221291941f",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "scrEnemyAlert",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "State",
+    "path": "folders/Scripts/Enemy/State.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "scrEnemyAlert",
+  "tags": [],
+  "resourceType": "GMScript",
 }

@@ -1,14 +1,18 @@
 /// @param Time = 0
-var Time = argument_count > 0 ? argument[0] : 0;
+function scrCutSceneWait() {
+	var Time = argument_count > 0 ? argument[0] : 0;
 
-//Turn time to miliseconds
-Time *= 60;
+	//Turn time to miliseconds
+	Time *= 60;
 
-//Increment time
-Timer++;
+	//Increment time
+	Timer++;
 
-if(Timer > Time)
-{
-    Timer = 0;
-    scrCutSceneEnd();
+	if(Timer > Time)
+	{
+	    Timer = 0;
+	    scrCutSceneEnd();
+	}
+
+
 }

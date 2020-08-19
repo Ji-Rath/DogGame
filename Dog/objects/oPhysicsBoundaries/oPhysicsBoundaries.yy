@@ -1,67 +1,41 @@
 {
-    "id": "40531c67-00b7-48f6-948a-64d4362f4bd2",
-    "modelName": "GMObject",
-    "mvc": "1.0",
-    "name": "oPhysicsBoundaries",
-    "eventList": [
-        {
-            "id": "6dbf68a3-4108-8546-f901-52ffeab2380e",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "eventtype": 8,
-            "enumb": 0,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "m_owner": "40531c67-00b7-48f6-948a-64d4362f4bd2"
-        }
-    ],
-    "maskSpriteId": "00000000-0000-0000-0000-000000000000",
-    "overriddenProperties": null,
-    "parentObjectId": "00000000-0000-0000-0000-000000000000",
-    "persistent": false,
-    "physicsAngularDamping": 1,
-    "physicsDensity": 0,
-    "physicsFriction": 1,
-    "physicsGroup": 0,
-    "physicsKinematic": false,
-    "physicsLinearDamping": 1,
-    "physicsObject": true,
-    "physicsRestitution": 0,
-    "physicsSensor": false,
-    "physicsShape": 1,
-    "physicsShapePoints": [
-        {
-            "id": "8ddc4a87-5dd6-4b8b-ba46-e098d248df72",
-            "modelName": "GMPoint",
-            "mvc": "1.0",
-            "x": 0,
-            "y": 0
-        },
-        {
-            "id": "b8267de8-2fa0-442d-bd60-c9c24b93650b",
-            "modelName": "GMPoint",
-            "mvc": "1.0",
-            "x": 62,
-            "y": 0
-        },
-        {
-            "id": "c9458c34-992c-4ee3-a602-101352aaabfd",
-            "modelName": "GMPoint",
-            "mvc": "1.0",
-            "x": 62,
-            "y": 64
-        },
-        {
-            "id": "e0c85435-0202-4105-9eb1-997eee422981",
-            "modelName": "GMPoint",
-            "mvc": "1.0",
-            "x": 0,
-            "y": 64
-        }
-    ],
-    "physicsStartAwake": true,
-    "properties": null,
-    "solid": false,
-    "spriteId": "2fb06872-f36a-4f1e-b655-88d04e68d9fc",
-    "visible": true
+  "spriteId": {
+    "name": "sBox",
+    "path": "sprites/sBox/sBox.yy",
+  },
+  "solid": false,
+  "visible": true,
+  "spriteMaskId": null,
+  "persistent": false,
+  "parentObjectId": null,
+  "physicsObject": true,
+  "physicsSensor": false,
+  "physicsShape": 1,
+  "physicsGroup": 0,
+  "physicsDensity": 0.0,
+  "physicsRestitution": 0.0,
+  "physicsLinearDamping": 1.0,
+  "physicsAngularDamping": 1.0,
+  "physicsFriction": 1.0,
+  "physicsStartAwake": true,
+  "physicsKinematic": false,
+  "physicsShapePoints": [
+    {"x":0.0,"y":0.0,},
+    {"x":62.0,"y":0.0,},
+    {"x":62.0,"y":64.0,},
+    {"x":0.0,"y":64.0,},
+  ],
+  "eventList": [
+    {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"parent":{"name":"oPhysicsBoundaries","path":"objects/oPhysicsBoundaries/oPhysicsBoundaries.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+  ],
+  "properties": [],
+  "overriddenProperties": [],
+  "parent": {
+    "name": "Minigame",
+    "path": "folders/Objects/Minigame.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "oPhysicsBoundaries",
+  "tags": [],
+  "resourceType": "GMObject",
 }

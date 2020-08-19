@@ -1,6 +1,0 @@
-// 2020-02-19 21:22:44
-/// @param Object
-#args Object
-
-oCamera.Follow = Object;
-scrCutSceneEnd();

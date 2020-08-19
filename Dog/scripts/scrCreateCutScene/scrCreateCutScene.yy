@@ -1,8 +1,12 @@
 {
-    "id": "14b3716a-b690-ad40-cfe8-4159479a9f65",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "scrCreateCutScene",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Scripts",
+    "path": "folders/Scripts.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "scrCreateCutScene",
+  "tags": [],
+  "resourceType": "GMScript",
 }

@@ -1,8 +1,0 @@
-// 2020-02-19 23:02:09
-
-#args Object, Emote
-
-var EmoteObject = instance_create_layer(Object.x,Object.y-Object.sprite_yoffset,"Instances",oEmote);
-EmoteObject.sprite_index = Emote;
-
-scrCutSceneEnd();

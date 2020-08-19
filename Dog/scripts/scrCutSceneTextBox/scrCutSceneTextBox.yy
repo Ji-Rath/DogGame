@@ -1,8 +1,12 @@
 {
-    "id": "34f56a4e-eab3-b845-cd1f-c8490ce7ada8",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "scrCutSceneTextBox",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "CutScenes",
+    "path": "folders/Scripts/CutScenes.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "scrCutSceneTextBox",
+  "tags": [],
+  "resourceType": "GMScript",
 }

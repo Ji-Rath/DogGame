@@ -1,7 +1,7 @@
-// 2020-07-23 12:40:05
+// 2020-08-19 01:09:26
 #event properties (no comments/etc. here are saved)
-parent_index = oBattleMenuParent;
-mask_index = sBattleIcons;
+parent_index = "[object Object]"; // amiss
+mask_index = "[object Object]"; // amiss
 uses_physics = false;
 
 #event create
