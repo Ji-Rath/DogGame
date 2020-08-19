@@ -28,7 +28,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "TestMiniGame",
-    "path": "folders/Objects/Minigame/TestMiniGame.yy",
+    "path": "folders/Objects/MiniGames/TestMiniGame.yy",
   },
   "resourceVersion": "1.0",
   "name": "oEnemyCrabArm",

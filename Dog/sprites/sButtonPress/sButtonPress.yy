@@ -72,8 +72,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"dbc7b32a-6089-4f99-83fe-2560b2b668d7","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "GUI",
-    "path": "folders/Sprites/GUI.yy",
+    "name": "UI",
+    "path": "folders/Sprites/UI.yy",
   },
   "resourceVersion": "1.0",
   "name": "sButtonPress",

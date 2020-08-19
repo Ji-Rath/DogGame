@@ -11,8 +11,8 @@
   },
   "persistent": false,
   "parentObjectId": {
-    "name": "oNPCParent",
-    "path": "objects/oNPCParent/oNPCParent.yy",
+    "name": "oNPCBase",
+    "path": "objects/oNPCBase/oNPCBase.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -33,8 +33,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "MainScene",
-    "path": "folders/Objects/MainScene.yy",
+    "name": "NPC",
+    "path": "folders/Objects/MainScene/NPC.yy",
   },
   "resourceVersion": "1.0",
   "name": "oNPCOldMan",

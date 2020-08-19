@@ -69,7 +69,7 @@
   ],
   "parent": {
     "name": "enemydemo",
-    "path": "folders/Sprites/enemydemo.yy",
+    "path": "folders/Sprites/Enemies/enemydemo.yy",
   },
   "resourceVersion": "1.0",
   "name": "sEnemyup",

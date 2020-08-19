@@ -8,8 +8,8 @@
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "oPhysicsDrag",
-    "path": "objects/oPhysicsDrag/oPhysicsDrag.yy",
+    "name": "oPhysicsBase",
+    "path": "objects/oPhysicsBase/oPhysicsBase.yy",
   },
   "physicsObject": true,
   "physicsSensor": false,
@@ -35,7 +35,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Pan",
-    "path": "folders/Objects/Minigame/Pan.yy",
+    "path": "folders/Objects/MiniGames/Pan.yy",
   },
   "resourceVersion": "1.0",
   "name": "oPan",

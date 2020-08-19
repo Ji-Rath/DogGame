@@ -68,8 +68,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"38dcd031-54ee-40c6-8791-419a033c7c1f","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "GUI",
-    "path": "folders/Sprites/GUI.yy",
+    "name": "UI",
+    "path": "folders/Sprites/UI.yy",
   },
   "resourceVersion": "1.0",
   "name": "sCheckMark",

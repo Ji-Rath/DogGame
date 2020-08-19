@@ -105,7 +105,7 @@
   ],
   "parent": {
     "name": "Crab",
-    "path": "folders/Sprites/Crab.yy",
+    "path": "folders/Sprites/Enemies/Crab.yy",
   },
   "resourceVersion": "1.0",
   "name": "sCrab",

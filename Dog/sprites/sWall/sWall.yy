@@ -68,8 +68,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"41181f04-6cbe-4d99-9d16-38eb16c8bd3d","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Tiles",
+    "path": "folders/Sprites/Map Assets/Tiles.yy",
   },
   "resourceVersion": "1.0",
   "name": "sWall",

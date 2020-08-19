@@ -31,8 +31,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "BattleScene",
-    "path": "folders/Objects/BattleScene.yy",
+    "name": "BattleMenu",
+    "path": "folders/Objects/BattleScene/BattleMenu.yy",
   },
   "resourceVersion": "1.0",
   "name": "oButtonHighFive",

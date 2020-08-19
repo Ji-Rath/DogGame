@@ -72,8 +72,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"4d4c78ec-d9b2-4e4b-8c22-1ea922d5f9c7","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Particles",
-    "path": "folders/Sprites/Particles.yy",
+    "name": "Effects",
+    "path": "folders/Sprites/Effects.yy",
   },
   "resourceVersion": "1.0",
   "name": "sEffectNeglect",

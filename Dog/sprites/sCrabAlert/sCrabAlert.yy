@@ -68,7 +68,7 @@
             {"id":"2a3658d7-b79e-4da1-a665-6b92b713792f","Key":6.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"4498c6fc-4eb7-4e63-ad80-0b1e00e1b797","path":"sprites/sCrabAlert/sCrabAlert.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
-    "visibleRange": {"x":0.0,"y":0.0,},
+    "visibleRange": null,
     "lockOrigin": false,
     "showBackdrop": true,
     "showBackdropImage": false,
@@ -93,7 +93,7 @@
   ],
   "parent": {
     "name": "Crab",
-    "path": "folders/Sprites/Crab.yy",
+    "path": "folders/Sprites/Enemies/Crab.yy",
   },
   "resourceVersion": "1.0",
   "name": "sCrabAlert",

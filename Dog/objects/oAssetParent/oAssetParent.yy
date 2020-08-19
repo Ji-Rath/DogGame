@@ -26,8 +26,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Foliage",
-    "path": "folders/Objects/Assets/Foliage.yy",
+    "name": "Assets",
+    "path": "folders/Objects/Assets.yy",
   },
   "resourceVersion": "1.0",
   "name": "oAssetParent",

@@ -26,7 +26,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Highfive",
-    "path": "folders/Objects/Minigame/Highfive.yy",
+    "path": "folders/Objects/MiniGames/Highfive.yy",
   },
   "resourceVersion": "1.0",
   "name": "oHighfive",

@@ -29,7 +29,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "BroomAttack",
-    "path": "folders/Objects/Minigame/BroomAttack.yy",
+    "path": "folders/Objects/MiniGames/BroomAttack.yy",
   },
   "resourceVersion": "1.0",
   "name": "oBroomSmoke",

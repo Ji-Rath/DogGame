@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sBattleIcons",
-    "path": "sprites/sBattleIcons/sBattleIcons.yy",
+    "name": "sButtonIcons",
+    "path": "sprites/sButtonIcons/sButtonIcons.yy",
   },
   "solid": false,
   "visible": true,
@@ -31,8 +31,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "BattleScene",
-    "path": "folders/Objects/BattleScene.yy",
+    "name": "BattleMenu",
+    "path": "folders/Objects/BattleScene/BattleMenu.yy",
   },
   "resourceVersion": "1.0",
   "name": "oButtonRage",

@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sBox",
-    "path": "sprites/sBox/sBox.yy",
+    "name": "sPhysicsBox",
+    "path": "sprites/sPhysicsBox/sPhysicsBox.yy",
   },
   "solid": false,
   "visible": true,
@@ -21,7 +21,7 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":4,"collisionObjectId":{"name":"oDogPaddler","path":"objects/oDogPaddler/oDogPaddler.yy",},"parent":{"name":"oRoomTransition","path":"objects/oRoomTransition/oRoomTransition.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":4,"collisionObjectId":{"name":"oDog","path":"objects/oDog/oDog.yy",},"parent":{"name":"oRoomTransition","path":"objects/oRoomTransition/oRoomTransition.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [
     {"varType":5,"value":"0","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":null,"multiselect":false,"filters":[

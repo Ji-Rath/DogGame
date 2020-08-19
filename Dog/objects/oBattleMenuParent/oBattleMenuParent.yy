@@ -3,8 +3,8 @@
   "solid": false,
   "visible": true,
   "spriteMaskId": {
-    "name": "sBattleIcons",
-    "path": "sprites/sBattleIcons/sBattleIcons.yy",
+    "name": "sButtonIcons",
+    "path": "sprites/sButtonIcons/sButtonIcons.yy",
   },
   "persistent": false,
   "parentObjectId": null,

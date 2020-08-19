@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sDogpaddlerface",
-    "path": "sprites/sDogpaddlerface/sDogpaddlerface.yy",
+    "name": "sDogFace",
+    "path": "sprites/sDogFace/sDogFace.yy",
   },
   "solid": false,
   "visible": true,
@@ -27,7 +27,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "TestMiniGame",
-    "path": "folders/Objects/Minigame/TestMiniGame.yy",
+    "path": "folders/Objects/MiniGames/TestMiniGame.yy",
   },
   "resourceVersion": "1.0",
   "name": "oPlayerBoob",

@@ -72,8 +72,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"f94dd100-536f-4752-9369-e7bf30478911","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Particles",
-    "path": "folders/Sprites/Particles.yy",
+    "name": "Effects",
+    "path": "folders/Sprites/Effects.yy",
   },
   "resourceVersion": "1.0",
   "name": "sEffectHungry",
