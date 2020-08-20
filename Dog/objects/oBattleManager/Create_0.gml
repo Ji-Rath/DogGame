@@ -25,7 +25,7 @@ EnemyBattle = instance_create_layer(640,390,"Instances",EnemyBattle);
 
 //INTRO TEXT - BATTLE STAGE 0
 var FirstText = "A "+string(EnemyBattle.Name) + " has attacked!";
-scrCreateBattleBox([FirstText]);
+scrBattleTextBox([FirstText], true);
 
 //Create BattleMenu
 instance_create_layer(room_width/2-150,room_height-100,"GUI",oBattleMenuAttack);

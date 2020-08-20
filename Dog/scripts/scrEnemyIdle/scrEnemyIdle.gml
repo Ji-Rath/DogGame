@@ -16,7 +16,7 @@ function scrEnemyIdle() {
 		timer[0] = choose(1,2,3)*60;
 	}
 
-	if(distance_to_object(oDogPaddler) < DetectRange)
+	if(distance_to_object(oDog) < DetectRange)
 	{
 		State = estates.Alert;
 		timer[0] = 0.5*60;

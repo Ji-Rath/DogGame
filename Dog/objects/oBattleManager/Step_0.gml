@@ -67,7 +67,7 @@ if(BattleStageEnd)
 			visible = false;
 			DrawGUI = false;
 			var EnemyText = EnemyBattle.TextDuring[random_range(0,array_length_1d(EnemyBattle.TextDuring))];
-			scrCreateBattleBox(EnemyText);
+			scrBattleTextBox(EnemyText, true);
 		break;
 		
 		case 7:
@@ -125,8 +125,6 @@ if(visible && BattleStage == 3 && DrawTimer == BattleTimer && !instance_exists(o
 		DrawTimer = BattleTimer;
 }
 
-//show_debug_message("BattleTimer: "+string(BattleTimer)+" DrawTimer: "+string(DrawTimer));
-
 //Update player stats visually if changed
 if(UpdateStats)
 {
@@ -157,7 +155,7 @@ if(UpdateStats)
 	if(DrawEnemyHealth = EnemyBattle.Health)
 		Check++;
 	
-	//Check timer for changes
+	//Check battle timer for changes
 	if(DrawTimer > BattleTimer)
 		DrawTimer -= Increment*8;
 	if(DrawTimer < BattleTimer)
@@ -170,13 +168,16 @@ if(UpdateStats)
 		timer[0] = 0.5*60;
 }
 
-//timer management
+//TIMER MANAGEMENT
+
+//Count how much time the player has left on their turn
 if(timer[0] > 0)
 {
 	timer[0] -= 1;
 }
 else if(timer[0] != -1)
 {
+	//Continue to the enemies turn if out of time
 	timer[0] = -1;
 	if(UpdateStats)
 	{
@@ -192,6 +193,8 @@ else if(timer[0] != -1)
 	{
 		UpdateStats = true;
 	}
+	
+	//Update stats
 	if(DrawPlayerHealth > global.PlayerHP)
 	{
 		Shake[0] = 8;
@@ -201,6 +204,7 @@ else if(timer[0] != -1)
 		Shake[1] = 8;
 	}
 	
+	//If enemy is flipped, but them in correct position
 	if(oEnemyBattleParent.Vulnerable && BattleStage == 4)
 	{
 		oEnemyBattleParent.Vulnerable = false;

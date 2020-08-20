@@ -1,20 +1,24 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+//Inherit parent values
 event_inherited();
 
-//Initialize basic variables
+//Initialize movement variables
 HSpeed = 0;
 VSpeed = 0;
 Speed = 0;
-WalkSpeed = 3;
 WanderDirectionX = 0;
 WanderDirectionY = 0;
-DetectRange = 350;
-Health = 10;
 TimerEnded = false;
 
-//Initialize state
+//Enemy values
+WalkSpeed = 3;
+DetectRange = 350;
+Health = 10;
+
+
+//Enemy States
 enum estates
 {
 	Idle,
@@ -23,6 +27,8 @@ enum estates
 	Aggro,
 	
 }
+
+//Current state of enemy
 State = estates.Idle;
 
 //Get battleobject of enemy
@@ -39,10 +45,9 @@ SWalkDown = sEnemywalk;
 SRun = sEnemyrun;
 SRunUp = sEnemyrun;
 SRunDown = sEnemyrun;
-
 SAlert = sEnemyalert;
 
-//Timer
+//Timer to alternate between states
 timer[0] = 3*60;
 
 
@@ -51,5 +56,5 @@ Scale = 0.5;
 image_xscale = Scale;
 image_yscale = Scale;
 
-//Key
+//Give enemies a unique key - used for saving position, death, etc.
 Key = room_get_name(room)+"Enemy"+string(x)+string(y);

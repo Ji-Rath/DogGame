@@ -1,6 +1,4 @@
 /// @description Insert description here
-// You can write your code in this editor
-
 
 //Set speed and animation while walking/running
 scrWalk();
@@ -11,7 +9,7 @@ else
 
 
 //If player is in the normal state, update movement variables
-if (state = paddlerstates.normal)
+if (state = DogState.normal)
 {
 	var HMove = global.KeyRight - global.KeyLeft;
 	var VMove = global.KeyDown - global.KeyUp;
@@ -29,33 +27,33 @@ if (state = paddlerstates.normal)
 
 
 
-//NPC INTERACTION
+//Interaction
 if (global.KeyInteract && !instance_exists(oCutScene))
 {
 	var radius = 50;
-	var inst = collision_rectangle(x-radius,y-radius,x+radius,y+radius,oNPCParent,false,false);
-	if(inst != noone)
+	
+	//Interact with NPC if in range
+	var inst = collision_rectangle(x-radius,y-radius,x+radius,y+radius,oNPCBase,false,false);
+	if(inst != noone && !inst.TextCooldown)
 	{
-		//If player is currently not in dialogue
-		if(!inst.TextCooldown)
-		{
-			scrCreateTextBox(inst.TextArray);
-		}
+		scrTextBox(inst.TextArray);
 	}
 	
-	if(place_meeting(x,y,oSaveGame))
+	//Save game if interacting with SaveGame object
+	if(place_meeting(x,y,oGameSave))
 	{
 		scrGameSave(oAreaStats.CurrentSave);
 	}
 }
 
-//TESTING EVENTS
+//Go to menu
 if(keyboard_check_pressed(vk_escape))
 {
 	room_goto(rmTitle);
 }
 
+//Show current enemies in the map
 if(keyboard_check_pressed(ord("Q")))
 {
-	show_debug_message(string(instance_number(oEnemyParent)));
+	show_debug_message(string(instance_number(oEnemyBase)));
 }

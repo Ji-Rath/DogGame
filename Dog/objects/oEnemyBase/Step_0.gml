@@ -1,12 +1,11 @@
 /// @description Insert description here
-// You can write your code in this editor
 
-//If in battle room or dead, turn invisible
+//If dead, turn invisible
 if(Health <= 0)
-	Destroyed = true;
+	instance_destroy();
 
 //Only move if visible and not in a cutscene
-if(!instance_exists(oCutScene) && !Destroyed)
+if(!instance_exists(oCutScene))
 {
 	TimerEnded = (timer[0] <= 0);
 	//State machine
@@ -39,6 +38,7 @@ scrPathSpeed();
 scrMoveCollision();
 scrWalk();
 
+//Update previous values - for path speed calculation
 XPrevious = x;
 YPrevious = y;
 

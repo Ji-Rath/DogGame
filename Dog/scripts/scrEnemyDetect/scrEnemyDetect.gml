@@ -1,11 +1,11 @@
 function scrEnemyDetect() {
-	var PlayerDistance = point_distance(x,y,oDogPaddler.x,oDogPaddler.y);
+	var PlayerDistance = point_distance(x,y,oDog.x,oDog.y);
 	if (PlayerDistance < DetectRange)
 	{
 	
 		if (sprite_index = SWalk)
 		{
-			var m = oDogPaddler.x - x;
+			var m = oDog.x - x;
 		
 			if (sign(image_xscale) = sign(m))
 			{
@@ -16,7 +16,7 @@ function scrEnemyDetect() {
 		}
 		else if (sprite_index = SWalkUp)
 		{
-			var m = oDogPaddler.y - y;
+			var m = oDog.y - y;
 		
 			if (m < 0)
 			{
@@ -27,7 +27,7 @@ function scrEnemyDetect() {
 		}
 		else if (sprite_index = SWalkDown)
 		{
-			var m = oDogPaddler.y - y;
+			var m = oDog.y - y;
 		
 			if (m > 0)
 			{

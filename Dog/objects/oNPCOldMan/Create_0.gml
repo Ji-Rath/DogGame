@@ -25,8 +25,11 @@ Text = [
     ["Ive had better days",sEnemyalert,2]
 ]
 
+//Get player
 var Player = instance_find(oDogPaddler,0);
-CSWarning = //A group of scenes
+
+//CutScene to warn the player of crabs
+CSWarning =
 [
     [scrCutSceneCamera, id],
     [scrCutSceneEmote, id, sAlert],
@@ -34,18 +37,21 @@ CSWarning = //A group of scenes
     [scrCutSceneMoveToObject, id, Speed, Player, 100],
     [scrCutSceneCamera, Player],
     [scrCutSceneWait, 0.5],
-    [scrCutSceneTextBox, [["Hey, where did you come from? There are some sicko mode crabs around",sOldMan,0]]],
+    [scrCutSceneTextBox, [["Hey, where did you come from? There are some wicked crabs around",sOldMan,0]]],
     [scrCutSceneEmote, Player, sAlert],
     [scrCutSceneWait, 0.5],
     [scrCutSceneTextBox, [["Dont worry, I was born to fight them",sDogpaddlerface,2],["Dont say I didnt warn ya",sOldMan,0]]],
     [scrCutSceneFinish]
 ];
 
+//Whether the player has already encountered the NPC
 Used = false;
 
+//Scale the sprite accordingly
 Scale = 2;
 image_xscale = Scale;
 image_yscale = Scale;
 
+//Used to track path speed
 XPrevious = 0;
 YPrevious = 0;

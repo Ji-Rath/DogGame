@@ -2,10 +2,10 @@
 /// @param Room = room
 function scrGameSave() {
 	var SaveName = argument[0];
-	var Room = argument_count > 1 ? argument[1] : room;
+var Room = argument_count > 1 ? argument[1] : room;
 
 	//Save Player position
-	with(oDogPaddler)
+	with(oDog)
 	{
 	    ds_map_replace(oAreaStats.SaveState,"PlayerX",x);
 	    ds_map_replace(oAreaStats.SaveState,"PlayerY",y);
@@ -25,7 +25,7 @@ function scrGameSave() {
 	//Save Enemy State
 	var Enemy = ds_grid_create(4,0);
 	var KeyName = room_get_name(Room)+"Enemy";
-	with(oEnemyParent)
+	with(oEnemyBase)
 	{
 	    ds_grid_resize(Enemy,ds_grid_width(Enemy),ds_grid_height(Enemy)+1);
 	    var row = ds_grid_height(Enemy)-1;
@@ -39,14 +39,14 @@ function scrGameSave() {
 	//Save Trigger State
 	var Trigger = ds_grid_create(2,0);
 	var KeyName = room_get_name(Room)+"Trigger";
-	with(oTriggerParent)
+	with(oTriggerBase)
 	{
 	    ds_grid_resize(Trigger,ds_grid_width(Trigger),ds_grid_height(Trigger)+1);
 	    var row = ds_grid_height(Trigger)-1;
 	    ds_grid_add(Trigger,0,row,Key);
 	    ds_grid_add(Trigger,1,row,Used);
 	}
-	with(oNPCParent)
+	with(oNPCBase)
 	{
 	    ds_grid_resize(Trigger,ds_grid_width(Trigger),ds_grid_height(Trigger)+1);
 	    var row = ds_grid_height(Trigger)-1;

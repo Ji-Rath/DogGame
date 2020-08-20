@@ -1,5 +1,7 @@
 /// @description Insert description here
-// You can write your code in this editor
+
+//Inherit parent code
 event_inherited();
 
+//Enemy object when in BattleScene
 BattleObject = oCrabBattle;

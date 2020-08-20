@@ -17,7 +17,7 @@ function scrEnemyWander() {
 		VSpeed = 0;
 	}
 
-	if(distance_to_object(oDogPaddler) < DetectRange)
+	if(distance_to_object(oDog) < DetectRange)
 	{
 		State = estates.Alert;
 		timer[0] = 0.5*60;

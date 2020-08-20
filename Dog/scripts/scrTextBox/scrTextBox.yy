@@ -6,7 +6,7 @@
     "path": "folders/Scripts.yy",
   },
   "resourceVersion": "1.0",
-  "name": "scrCreateTextBox",
+  "name": "scrTextBox",
   "tags": [],
   "resourceType": "GMScript",
 }

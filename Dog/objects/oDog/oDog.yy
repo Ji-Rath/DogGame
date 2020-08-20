@@ -11,8 +11,8 @@
   },
   "persistent": false,
   "parentObjectId": {
-    "name": "oDepthParent",
-    "path": "objects/oDepthParent/oDepthParent.yy",
+    "name": "oDepthBase",
+    "path": "objects/oDepthBase/oDepthBase.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -29,7 +29,7 @@
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"oDog","path":"objects/oDog/oDog.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"parent":{"name":"oDog","path":"objects/oDog/oDog.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":4,"collisionObjectId":{"name":"oEnemyParent","path":"objects/oEnemyParent/oEnemyParent.yy",},"parent":{"name":"oDog","path":"objects/oDog/oDog.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":4,"collisionObjectId":{"name":"oEnemyBase","path":"objects/oEnemyBase/oEnemyBase.yy",},"parent":{"name":"oDog","path":"objects/oDog/oDog.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],

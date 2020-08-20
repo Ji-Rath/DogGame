@@ -1,6 +1,9 @@
 /// @description Insert description here
-// You can write your code in this editor
+
+//Inherit parent code
 event_inherited();
+
+//Set sprite values of crab
 SIdle = sCrab;
 SWalk = sCrabWalk;
 SRun = sCrabRun;

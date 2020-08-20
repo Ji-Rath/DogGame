@@ -69,7 +69,7 @@
   ],
   "parent": {
     "name": "TextBox",
-    "path": "folders/Sprites/TextBox.yy",
+    "path": "folders/Sprites/UI/TextBox.yy",
   },
   "resourceVersion": "1.0",
   "name": "sPortraitFrame",

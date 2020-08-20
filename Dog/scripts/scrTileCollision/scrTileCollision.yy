@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Animation",
-    "path": "folders/Scripts/Animation.yy",
+    "name": "Utility",
+    "path": "folders/Scripts/Utility.yy",
   },
   "resourceVersion": "1.0",
-  "name": "scrAnimDraw",
+  "name": "scrTileCollision",
   "tags": [],
   "resourceType": "GMScript",
 }

@@ -11,8 +11,8 @@
   },
   "persistent": false,
   "parentObjectId": {
-    "name": "oEnemyParent",
-    "path": "objects/oEnemyParent/oEnemyParent.yy",
+    "name": "oEnemyBase",
+    "path": "objects/oEnemyBase/oEnemyBase.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,

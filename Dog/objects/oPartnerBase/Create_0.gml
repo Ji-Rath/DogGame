@@ -1,14 +1,14 @@
 
 //Assigning sprites to variables
-SWalk = sDogpaddlerWalk;
-SRun = sDogpaddlerRun;
-SWalkUp = sDogpaddlerWalkUp;
-SRunUp = sDogpaddlerRunUp;
-SWalkDown = sDogpaddlerWalkDown;
-SRunDown = sDogpaddlerRunDown;
-SIdle = sDogpaddlerIdle;
-SIdleUp = sDogpaddlerIdleUp;
-SIdleDown = sDogpaddlerIdleDown;
+SWalk = sDogWalk;
+SRun = sDogRun;
+SWalkUp = sDogWalkUp;
+SRunUp = sDogRunUp;
+SWalkDown = sDogWalkDown;
+SRunDown = sDogRunDown;
+SIdle = sDogIdleRight;
+SIdleUp = sDogIdleUp;
+SIdleDown = sDogIdleDown;
 
 HSpeed = 0;
 VSpeed = 0;

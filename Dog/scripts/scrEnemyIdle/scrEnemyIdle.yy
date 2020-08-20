@@ -2,8 +2,8 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "State",
-    "path": "folders/Scripts/Enemy/State.yy",
+    "name": "EnemyState",
+    "path": "folders/Scripts/EnemyState.yy",
   },
   "resourceVersion": "1.0",
   "name": "scrEnemyIdle",

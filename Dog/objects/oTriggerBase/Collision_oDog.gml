@@ -1,7 +1,7 @@
 
 if(!instance_exists(oCutScene) && !Used)
 {
-    scrCreateCutScene(CutScene);
+    scrCutScene(CutScene);
     if(OnlyUse)
         Used = true;
 }
