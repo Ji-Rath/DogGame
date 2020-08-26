@@ -1,10 +1,12 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function scrEnemyAggro() {
+function scrEnemyAggro()
+{
 
 	//Update speed
 	Speed = RunSpeed;
 	
+	//Create path towards player
 	var Path = path_add();
 	if(mp_grid_path(global.AIGrid, Path, x, y, oDog.x, oDog.y, true))
 	{
@@ -23,8 +25,8 @@ function scrEnemyAggro() {
 	}
 }
 
-function scrEnemyAlert() {
-
+function scrEnemyAlert()
+{
 	sprite_index = SAlert;
 	HSpeed = 0;
 	VSpeed = 0;
@@ -35,42 +37,18 @@ function scrEnemyAlert() {
 	}
 }
 
-function scrEnemyDetect() {
+function scrEnemyDetect()
+{
 	var PlayerDistance = point_distance(x,y,oDog.x,oDog.y);
 	if (PlayerDistance < DetectRange)
 	{
-	
-		if (sprite_index = SWalk)
-		{
-			var m = oDog.x - x;
-			if (sign(image_xscale) = sign(m))
-			{
-				State = estates.Alert;
-				timer[0] = 0.5*60;
-			}
-		}
-		else if (sprite_index = SWalkUp)
-		{
-			var m = oDog.y - y;
-			if (m < 0)
-			{
-				State = estates.Alert;
-				timer[0] = 0.5*60;
-			}
-		}
-		else if (sprite_index = SWalkDown)
-		{
-			var m = oDog.y - y;
-			if (m > 0)
-			{
-				State = estates.Alert;
-				timer[0] = 0.5*60;
-			}
-		}
+		State = estates.Alert;
+		timer[0] = 0.5*60;
 	}
 }
 
-function scrEnemyIdle() {
+function scrEnemyIdle()
+{
 
 	//Turn to alert if player in range
 	scrEnemyDetect();
@@ -95,15 +73,16 @@ function scrEnemyIdle() {
 	}
 }
 
-function scrEnemyWander() {
-
+function scrEnemyWander()
+{
+	//Aggro player if within range
 	scrEnemyDetect();
-
+	
 	Speed = WalkSpeed;
 	HSpeed = WanderDirectionX*Speed;
 	VSpeed = WanderDirectionY*Speed;
 
-	//Movement animation
+	//Movement animations
 	scrWalk();
 
 	if (TimerEnded)
@@ -112,11 +91,5 @@ function scrEnemyWander() {
 		timer[0] = choose(1,2,3)*60;
 		HSpeed = 0;
 		VSpeed = 0;
-	}
-
-	if(distance_to_object(oDog) < DetectRange)
-	{
-		State = estates.Alert;
-		timer[0] = 0.5*60;
 	}
 }
