@@ -411,6 +411,8 @@
         {"properties":[],"isDnd":false,"objectId":{"name":"oTree_2","path":"objects/oTree_2/oTree_2.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":2144.0,"y":2816.0,"resourceVersion":"1.0","name":"inst_31F46916","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"oTree_2","path":"objects/oTree_2/oTree_2.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":2016.0,"y":2848.0,"resourceVersion":"1.0","name":"inst_262283B","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"oTree_2","path":"objects/oTree_2/oTree_2.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":2208.0,"y":2880.0,"resourceVersion":"1.0","name":"inst_1100BB30","tags":[],"resourceType":"GMRInstance",},
+        {"properties":[],"isDnd":false,"objectId":{"name":"oMushroom","path":"objects/oMushroom/oMushroom.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":1344.0,"y":717.0,"resourceVersion":"1.0","name":"inst_144CDE7B","tags":[],"resourceType":"GMRInstance",},
+        {"properties":[],"isDnd":false,"objectId":{"name":"oRock","path":"objects/oRock/oRock.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":1088.0,"y":500.0,"resourceVersion":"1.0","name":"inst_7F3EA67D","tags":[],"resourceType":"GMRInstance",},
       ],"visible":true,"depth":500,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"o_village","tags":[],"resourceType":"GMRInstanceLayer",},
     {"tilesetId":{"name":"tsGrass_Dirt_Cobble_Water","path":"tilesets/tsGrass_Dirt_Cobble_Water/tsGrass_Dirt_Cobble_Water.yy",},"x":0,"y":0,"tiles":{"SerialiseWidth":63,"SerialiseHeight":63,"TileSerialiseData":[
 34,34,34,34,34,35,25,22,23,25,25,33,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,
@@ -809,6 +811,8 @@
     {"name":"inst_31F46916","path":"rooms/rmSceneVillage/rmSceneVillage.yy",},
     {"name":"inst_262283B","path":"rooms/rmSceneVillage/rmSceneVillage.yy",},
     {"name":"inst_1100BB30","path":"rooms/rmSceneVillage/rmSceneVillage.yy",},
+    {"name":"inst_144CDE7B","path":"rooms/rmSceneVillage/rmSceneVillage.yy",},
+    {"name":"inst_7F3EA67D","path":"rooms/rmSceneVillage/rmSceneVillage.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,
