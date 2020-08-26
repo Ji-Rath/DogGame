@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-box = sBattleBox;
+box = sTextBox;
 
 
 box_width = sprite_get_width(box);

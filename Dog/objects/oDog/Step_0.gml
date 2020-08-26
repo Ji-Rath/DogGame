@@ -2,8 +2,9 @@
 
 //Set speed and animation while walking/running
 scrWalk();
+
 if(global.KeySprint)
-	Speed = WalkSpeed*2;
+	Speed = RunSpeed;
 else
 	Speed = WalkSpeed;
 
@@ -13,8 +14,10 @@ if (state = DogState.normal)
 {
 	var HMove = global.KeyRight - global.KeyLeft;
 	var VMove = global.KeyDown - global.KeyUp;
+	
 	HSpeed = HMove*Speed;
 	VSpeed = VMove*Speed;
+	
 	if(instance_exists(oCutScene))
 	{
 		HSpeed = 0;
@@ -30,10 +33,9 @@ if (state = DogState.normal)
 //Interaction
 if (global.KeyInteract && !instance_exists(oCutScene))
 {
-	var radius = 50;
 	
 	//Interact with NPC if in range
-	var inst = collision_rectangle(x-radius,y-radius,x+radius,y+radius,oNPCBase,false,false);
+	var inst = collision_rectangle(x-InteractRadius,y-InteractRadius,x+InteractRadius,y+InteractRadius,oNPCBase,false,false);
 	if(inst != noone && !inst.TextCooldown)
 	{
 		scrTextBox(inst.TextArray);

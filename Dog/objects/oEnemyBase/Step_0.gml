@@ -8,6 +8,7 @@ if(Health <= 0)
 if(!instance_exists(oCutScene))
 {
 	TimerEnded = (timer[0] <= 0);
+	
 	//State machine
 	switch(State)
 	{
@@ -16,6 +17,7 @@ if(!instance_exists(oCutScene))
 		case estates.Alert: scrEnemyAlert(); break;
 		case estates.Aggro: scrEnemyAggro(); break;
 	}
+	
 	//Decrease timer
 	if(timer[0] > 0)
 	{

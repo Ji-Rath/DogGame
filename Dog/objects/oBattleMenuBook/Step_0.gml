@@ -27,7 +27,7 @@ if(Selected)
                     if (oBattleManager.NeglectMeter >= oBattleManager.MaxNeglect)
                     {
                         var Text = "Your ally is feeling neglected. He is too sad to attack!";
-                        scrCreateBattleBox([Text], false);
+                        scrBattleTextBox([Text], false);
                         Selected = false;
                         break;
                     }
@@ -44,7 +44,7 @@ if(Selected)
                         case 5: script_execute(ExecuteArray[0],ExecuteArray[1],ExecuteArray[2],ExecuteArray[3],ExecuteArray[4],ExecuteArray[5]); break;
                     }
                     
-                    with(oBattleMenuParent)
+                    with(oBattleMenuBase)
                     {
                         visible = false;
                         Selected = false;
@@ -64,7 +64,7 @@ if(Selected)
                 else
                 {
                     var Text = "What the heck, '"+TextBox+"' aint no valid spell";
-                    scrCreateBattleBox([Text], false);
+                    scrBattleTextBox([Text], false);
                     Selected = false;
                     break;
                 }

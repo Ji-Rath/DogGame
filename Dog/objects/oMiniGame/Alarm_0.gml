@@ -48,7 +48,7 @@ switch(GameType)
         HelpText = "Struggle!";
         var Anvil = instance_create_layer(room_width/2,room_height/2-200,"Instances",oAnvil);
         ds_list_add(Instances, Anvil);
-        var Collision = instance_create_layer(room_width/2-32, room_height/2+200-32, "Instances", oPhysicsBoundaries);
+        var Collision = instance_create_layer(room_width/2-32, room_height/2+200-32, "Instances", oPhysicsBox);
         ds_list_add(Instances, Collision);
         Anvil.MouseCollision = Collision;
     break;

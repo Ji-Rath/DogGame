@@ -8,8 +8,8 @@
   },
   "persistent": false,
   "parentObjectId": {
-    "name": "oBattleMenuParent",
-    "path": "objects/oBattleMenuParent/oBattleMenuParent.yy",
+    "name": "oBattleMenuBase",
+    "path": "objects/oBattleMenuBase/oBattleMenuBase.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,

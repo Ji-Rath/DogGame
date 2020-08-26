@@ -27,7 +27,6 @@ function scrFadeout() {
 	        Fade.Sprite = Sprite;
 	        Fade.SpriteXScale = SpriteXScale;
 	    }
-	    show_debug_message(room_get_name(Room));
 	}
 
 

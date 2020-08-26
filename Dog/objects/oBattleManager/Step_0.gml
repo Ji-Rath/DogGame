@@ -43,7 +43,7 @@ if(BattleStageEnd)
 		
 		case 3:
 			//Player turn
-			with(oBattleMenuParent)
+			with(oBattleMenuBase)
 			{
 				visible = true;
 			}
@@ -113,7 +113,7 @@ if(visible && BattleStage == 3 && DrawTimer == BattleTimer && !instance_exists(o
 	if (BattleTimer <= 0 && !instance_exists(oMiniGame))
 	{
 		BattleStageEnd = true;
-		with(oBattleMenuParent)
+		with(oBattleMenuBase)
         {
             visible = false;
             Selected = false;

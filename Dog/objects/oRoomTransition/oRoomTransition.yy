@@ -25,15 +25,6 @@
   ],
   "properties": [
     {"varType":5,"value":"0","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":null,"multiselect":false,"filters":[
-        "GMTileSet",
-        "GMSprite",
-        "GMSound",
-        "GMPath",
-        "GMScript",
-        "GMShader",
-        "GMFont",
-        "GMTimeLine",
-        "GMObject",
         "GMRoom",
       ],"resourceVersion":"1.0","name":"Room","tags":[],"resourceType":"GMObjectProperty",},
     {"varType":0,"value":"0","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":null,"multiselect":false,"filters":[

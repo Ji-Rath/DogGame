@@ -8,8 +8,8 @@
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "oAssetParent",
-    "path": "objects/oAssetParent/oAssetParent.yy",
+    "name": "oAssetBase",
+    "path": "objects/oAssetBase/oAssetBase.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,

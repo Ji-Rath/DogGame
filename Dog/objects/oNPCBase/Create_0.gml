@@ -6,13 +6,7 @@ event_inherited();
 Key = room_get_name(room)+"Trigger"+string(x)+string(y);
 
 //Text array
-Text = [];
-
-//Face sprite array
-Face = [];
-
-//Face index to use
-FaceIndex = [];
+TextArray = [];
 
 //Variable to prevent infinite talking
 TextCooldown = false;

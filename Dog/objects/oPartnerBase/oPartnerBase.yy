@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sDogFace",
-    "path": "sprites/sDogFace/sDogFace.yy",
+    "name": "sDogIdleDown",
+    "path": "sprites/sDogIdleDown/sDogIdleDown.yy",
   },
   "solid": false,
   "visible": true,
@@ -30,8 +30,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Partners",
+    "path": "folders/Objects/MainScene/Partners.yy",
   },
   "resourceVersion": "1.0",
   "name": "oPartnerBase",

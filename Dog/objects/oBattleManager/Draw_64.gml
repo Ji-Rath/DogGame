@@ -14,8 +14,8 @@ if(DrawGUI)
 	draw_set_font(fnt_stats);
 	
 	//Draw player portrait
-	draw_sprite(sGUIPlayerInfo,0,PortraitX,PortraitY);
-	draw_sprite(sGUIPlayerInfo,1,PortraitX,PortraitY+100);
+	draw_sprite(sUIPlayer,0,PortraitX,PortraitY);
+	draw_sprite(sUIPlayer,1,PortraitX,PortraitY+100);
 	
 	//If player is smelly...i mean hungry, draw effect
 	if(global.PlayerPP <= 0)

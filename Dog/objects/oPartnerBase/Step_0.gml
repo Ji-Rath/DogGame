@@ -1,33 +1,41 @@
 
 event_inherited();
 
+//Check player distance at a specified interval
 if(timer[0] > 0)
 {
     timer[0] -= 1;
 }
 else
 {
-    if(point_distance(self.x, self.y, oDog.x, oDog.y) > 200)
+	//Check distance from object, change to running if far away
+    if(point_distance(x, y, FollowObject.x, FollowObject.y) >= RunningDistance)
     {
-        Speed = WalkSpeed*2
+        Speed = RunSpeed;
     }
     else
     {
         Speed = WalkSpeed;
     }
-    var Path = path_add();
-    if(mp_grid_path(global.AIGrid, Path, x, y, oDog.x, oDog.y, true))
-    {
-    	path_start(Path, Speed, path_action_stop, false);
-    }
-    timer[0] = 0.2*60;
-}
-
-if(distance_to_object(oDog) < Distance)
-{
-    path_end();
-    HSpeed = 0;
-    VSpeed = 0;
+	
+	//Check distance from object to stop following
+	if(distance_to_object(oDog) <= Distance)
+	{
+	    path_end();
+	    HSpeed = 0;
+	    VSpeed = 0;
+	}
+	else
+	{
+		//Create path to follow player
+	    var Path = path_add();
+	    if(mp_grid_path(global.AIGrid, Path, x, y, FollowObject.x, FollowObject.y, true))
+	    {
+	    	path_start(Path, Speed, path_action_stop, false);
+	    }
+	}
+	
+    timer[0] = IntervalCheckDelay;
 }
 
 scrWalk();

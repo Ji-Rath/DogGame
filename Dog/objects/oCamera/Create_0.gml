@@ -6,9 +6,9 @@ Follow = oDog
 //Set initial position of camera
 ViewWidthHalf = camera_get_view_width(Camera) * 0.5;
 ViewHeightHalf = camera_get_view_height(Camera) * 0.5;
-x = oDog.x;
-y = oDog.y;
-camera_set_view_pos(Camera,oDog.x-ViewWidthHalf,oDog.y-ViewHeightHalf);
+x = Follow.x;
+y = Follow.y;
+camera_set_view_pos(Camera,Follow.x-ViewWidthHalf,Follow.y-ViewHeightHalf);
 
 //Track the camera destination
 XDestination = 0;
