@@ -10,6 +10,18 @@ function scrSpawnParticle(XPos, YPos, ParticleFunction, Count, Lifetime)
 	ParticleObject.ParticleCount = Count;
 }
 
+function scrSpawnEmitter(XPos, YPos, ParticleFunction, Count, Lifetime, Size, Shape, Distribution)
+{
+	var EmitterObject = instance_create_layer(XPos, YPos, "Instances", oEmitterBase);
+	EmitterObject.Lifetime = Lifetime;
+	EmitterObject.ParticleFunction = ParticleFunction;
+	EmitterObject.ParticleCount = Count;
+	EmitterObject.Size = Size;
+	EmitterObject.EmitterShape = Shape;
+	EmitterObject.EmitterDist = Distribution;
+	
+}
+
 function scrPartRun() {
 	particle1 = part_type_create();
 	part_type_sprite(particle1,sEffectSmoke,1,0,0);
