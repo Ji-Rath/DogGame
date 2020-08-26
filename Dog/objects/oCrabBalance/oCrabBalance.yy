@@ -8,8 +8,8 @@
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "oPhysicsDrag",
-    "path": "objects/oPhysicsDrag/oPhysicsDrag.yy",
+    "name": "oPhysicsBase",
+    "path": "objects/oPhysicsBase/oPhysicsBase.yy",
   },
   "physicsObject": true,
   "physicsSensor": false,
@@ -37,7 +37,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "CrabWeigh",
-    "path": "folders/Objects/Minigame/CrabWeigh.yy",
+    "path": "folders/Objects/MiniGames/CrabWeigh.yy",
   },
   "resourceVersion": "1.0",
   "name": "oCrabBalance",

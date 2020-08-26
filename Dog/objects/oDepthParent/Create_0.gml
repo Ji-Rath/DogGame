@@ -1,3 +1,0 @@
-
-visible = false;
-Destroyed = false;

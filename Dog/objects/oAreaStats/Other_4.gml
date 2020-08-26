@@ -1,13 +1,15 @@
 
-//Create AIGrid
+//Set grid values
 var CellWidth = 64;
 var CellHeight = 64;
 
 var CellCountW = room_width/CellWidth;
 var CellCountH = room_height/CellHeight;
 
+//Create the AI grid
 global.AIGrid = mp_grid_create(0, 0, CellCountW, CellCountH, CellWidth, CellHeight);
 
+//Avoid tiles that are within the 'Collision' layer
 var LayerID = layer_get_id("Collision");
 if(LayerID)
 {
@@ -24,8 +26,8 @@ if(LayerID)
     }
 }
 
-//Check enemies in the room and update their position with the pos on file
-with(oEnemyParent)
+//Update the enemies position with what was saved
+with(oEnemyBase)
 {
     var GridString = ds_map_find_value(oAreaStats.SaveState,room_get_name(room)+"Enemy");
     if(GridString != undefined)
@@ -44,8 +46,8 @@ with(oEnemyParent)
     }
 }
 
-//Check triggers and update the ones that were already used
-with(oTriggerParent)
+//Update triggers that were already used
+with(oTriggerBase)
 {
     var GridString = ds_map_find_value(oAreaStats.SaveState,room_get_name(room)+"Trigger");
     if(GridString != undefined)
@@ -61,8 +63,8 @@ with(oTriggerParent)
         }
     }
 }
-//Check NPC's and update the ones that were already used
-with(oNPCParent)
+//Update NPC's that were already interacted with
+with(oNPCBase)
 {
     var GridString = ds_map_find_value(oAreaStats.SaveState,room_get_name(room)+"Trigger");
     if(GridString != undefined)

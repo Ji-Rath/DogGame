@@ -68,8 +68,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"48ec093c-a7e7-44d6-90a5-4eb96f9315e4","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Tiles",
+    "path": "folders/Sprites/Map Assets/Tiles.yy",
   },
   "resourceVersion": "1.0",
   "name": "sGrassy",

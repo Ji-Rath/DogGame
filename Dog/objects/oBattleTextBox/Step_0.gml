@@ -1,7 +1,9 @@
 /// @description Insert description here
-// You can write your code in this editor
+
+
 if (global.KeyInteract)
 {
+	//If there is additional text, from the same text array index, go to the next page
 	if (Page < (array_length_1d(Text)-1))
 	{
 		Page ++;
@@ -9,6 +11,7 @@ if (global.KeyInteract)
 	}
 	else
 	{
+		//If there is another text queued, read that text and display it
 		if(!ds_queue_empty(TextQueue))
 		{
 			Text = ds_queue_dequeue(TextQueue);
@@ -17,11 +20,15 @@ if (global.KeyInteract)
 		else
 		{
 			//When there is no more text, move on to the next battle stage
-			oBattleManager.BattleStageEnd = EndTurn;
-			if(!EndTurn)
+			if(room = rmBattle)
 			{
-				oBattleManager.timer[0] = 0.5*60;
+				oBattleManager.BattleStageEnd = EndTurn;
+				if(!EndTurn)
+				{
+					oBattleManager.timer[0] = 0.5*60;
+				}
 			}
+			
 			instance_destroy();
 		}
 	}

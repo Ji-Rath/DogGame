@@ -69,7 +69,7 @@
   ],
   "parent": {
     "name": "Foliage",
-    "path": "folders/Sprites/Assets/Foliage.yy",
+    "path": "folders/Sprites/Map Assets/Foliage.yy",
   },
   "resourceVersion": "1.0",
   "name": "sTree",

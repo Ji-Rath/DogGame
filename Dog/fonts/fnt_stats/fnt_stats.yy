@@ -125,8 +125,8 @@
   "canGenerateBitmap": true,
   "maintainGms1Font": false,
   "parent": {
-    "name": "FC_DialogueSystem",
-    "path": "folders/Fonts/FC_DialogueSystem.yy",
+    "name": "Fonts",
+    "path": "folders/Fonts.yy",
   },
   "resourceVersion": "1.0",
   "name": "fnt_stats",

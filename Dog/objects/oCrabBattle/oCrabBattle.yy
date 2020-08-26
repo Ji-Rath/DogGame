@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sCrabfightidle",
-    "path": "sprites/sCrabfightidle/sCrabfightidle.yy",
+    "name": "sCrabBattle",
+    "path": "sprites/sCrabBattle/sCrabBattle.yy",
   },
   "solid": false,
   "visible": true,

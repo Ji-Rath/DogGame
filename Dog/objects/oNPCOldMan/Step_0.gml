@@ -17,12 +17,12 @@ if(path_index == -1 && !instance_exists(oCutScene))
 }
 
 //Go to cutscene if player gets near
-if(distance_to_object(oDogPaddler) < 300 && !Used)
+if(distance_to_object(oDog) < AlertDistance && !Used)
 {
     path_end();
     HSpeed = 0;
     VSpeed = 0;
-    scrCreateCutScene(CSWarning);
+    scrCutScene(CSWarning);
     Used = true;
 }
 

@@ -23,8 +23,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Minigame",
-    "path": "folders/Objects/Minigame.yy",
+    "name": "MiniGames",
+    "path": "folders/Objects/MiniGames.yy",
   },
   "resourceVersion": "1.0",
   "name": "oButtonSignal",

@@ -1,29 +1,29 @@
 
-var InstCount = instance_number(oDepthParent)
+//Get objects being tracked for depth and resize the grid accordingly
+var InstCount = instance_number(oDepthBase)
 ds_grid_resize(DepthGrid,2,InstCount);
 var DGrid = DepthGrid
 
-//GET OBJECT Y POSITION AND ID
+//Set grid values to the objects id and y position
 var InstNumber = 0;
-with(oDepthParent)
+with(oDepthBase)
 {
     ds_grid_set(DGrid,0,InstNumber,id);
     ds_grid_set(DGrid,1,InstNumber,y)
     InstNumber ++;
 }
 
-//SORT OBJECTS BY DEPTH
+//Sort objects based on their y position
 ds_grid_sort(DGrid,1,true);
 
-//DRAW OBJECTS IN ORDER
+//Draw the objects in the order they are on in the grid
 InstNumber = 0;
 repeat(InstCount)
 {
     var Instance = ds_grid_get(DGrid,0,InstNumber);
     with(Instance)
     {
-        if(!Destroyed)
-            event_perform(ev_draw,0);
+        event_perform(ev_draw,0);
     }
     InstNumber++;
 }

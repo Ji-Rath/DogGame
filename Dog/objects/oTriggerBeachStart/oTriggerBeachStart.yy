@@ -8,8 +8,8 @@
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "oTriggerParent",
-    "path": "objects/oTriggerParent/oTriggerParent.yy",
+    "name": "oTriggerBase",
+    "path": "objects/oTriggerBase/oTriggerBase.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,

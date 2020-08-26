@@ -30,7 +30,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Crab1",
-    "path": "folders/Objects/Minigame/Crab1.yy",
+    "path": "folders/Objects/MiniGames/Crab1.yy",
   },
   "resourceVersion": "1.0",
   "name": "oCrab1Arm",
