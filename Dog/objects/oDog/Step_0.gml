@@ -4,11 +4,16 @@
 scrWalk();
 
 if(global.KeySprint)
+{
 	Speed = RunSpeed;
+	if(alarm_get(0) == -1)
+		alarm_set(0, RunPartInterval*60);	
+}
 else
+{
 	Speed = WalkSpeed;
-
-
+}
+	
 //If player is in the normal state, update movement variables
 if (state = DogState.normal)
 {

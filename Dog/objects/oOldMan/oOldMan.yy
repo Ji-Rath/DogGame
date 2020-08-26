@@ -27,8 +27,8 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"oNPCOldMan","path":"objects/oNPCOldMan/oNPCOldMan.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"parent":{"name":"oNPCOldMan","path":"objects/oNPCOldMan/oNPCOldMan.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"oOldMan","path":"objects/oOldMan/oOldMan.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"parent":{"name":"oOldMan","path":"objects/oOldMan/oOldMan.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
@@ -37,7 +37,7 @@
     "path": "folders/Objects/MainScene/NPC.yy",
   },
   "resourceVersion": "1.0",
-  "name": "oNPCOldMan",
+  "name": "oOldMan",
   "tags": [],
   "resourceType": "GMObject",
 }
