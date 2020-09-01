@@ -3,7 +3,10 @@
 if(!variable_instance_exists(self, "Sequence")) exit;
 
 //Create and play intro sequence
-Seq = layer_sequence_create("Instances", view_xport[0] + view_wport[0]/2, view_yport[0] + view_hport[0]/2, Sequence);
+Camera = view_camera[0];
+ViewWidthHalf = camera_get_view_width(Camera) * 0.5;
+ViewHeightHalf = camera_get_view_height(Camera) * 0.5;
+Seq = layer_sequence_create("GUI", camera_get_view_x(Camera)+ViewWidthHalf, camera_get_view_y(Camera)+ViewHeightHalf, Sequence);
 SeqInstance = layer_sequence_get_instance(Seq);
 
 //Override sequence oTextBox object to use (this) one

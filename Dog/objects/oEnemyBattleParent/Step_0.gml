@@ -12,14 +12,14 @@ if(timer[0] > 0)
 }
 else if(timer[0] != -1)
 {
-    path_start(pathBattleEnemyDeath, 20, path_action_stop, false);
+    path_start(pathEnemyDeath, 20, path_action_stop, false);
     timer[0] = -1;
 }
 
 //Show victory message
 if(path_position == 1 && !IsDead)
 {
-    scrCreateBattleBox(["You Win!"]);
+    CreateBattleTextEvent("You Win!", true);
     IsDead = true;
 }
 

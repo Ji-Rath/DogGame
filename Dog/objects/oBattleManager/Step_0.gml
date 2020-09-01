@@ -1,6 +1,6 @@
 
 //Increment neglect at a rate of 1 per second
-if(NeglectMeter <= MaxNeglect && !instance_exists(oBattleTextBox))
+if(NeglectMeter <= MaxNeglect && !instance_exists(oTextBox))
 {
 	NeglectMeter += (1/60);
 }
@@ -9,7 +9,6 @@ if(NeglectMeter <= MaxNeglect && !instance_exists(oBattleTextBox))
 if(BattleStageEnd)
 {
 	BattleStage++;
-	//show_debug_message("BattleStage: "+string(BattleStage));
 	if(BattleStage == 6)
 	{
 		BattleStage = 1;
@@ -67,7 +66,7 @@ if(BattleStageEnd)
 			visible = false;
 			DrawGUI = false;
 			var EnemyText = EnemyBattle.TextDuring[random_range(0,array_length_1d(EnemyBattle.TextDuring))];
-			scrBattleTextBox(EnemyText, true);
+			CreateBattleTextEvent(EnemyText, true, new TextInit(0.1, c_black, 1));
 		break;
 		
 		case 7:
@@ -103,7 +102,7 @@ if(BattleStageEnd)
 }
 
 //Reduce battle timer, and end turn if at 0
-if(visible && BattleStage == 3 && DrawTimer == BattleTimer && !instance_exists(oBattleTextBox))
+if(visible && BattleStage == 3 && DrawTimer == BattleTimer && !instance_exists(oTextBox))
 {
 	if(BattleTimer > 0)
 	{
