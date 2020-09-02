@@ -8,7 +8,7 @@ if (visible)
 {
     if(CanPlayAnim)
     {
-        scrAnimInit(Animation.Flip, AnimationIntro.Intro1);
+        scrAnimInit(Animations.Flip, Animations.IntroScale);
         CanPlayAnim = false;
     }
 }

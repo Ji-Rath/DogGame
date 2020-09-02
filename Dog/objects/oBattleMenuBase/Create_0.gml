@@ -1,5 +1,7 @@
- 
-SpriteIndex = 0;
+
+
+scrAnimInit(Animations.SmoothFlip, Animations.IntroScale);
+
 Selected = false;
 IsHovering = false;
 ItemMouseHover = false;
@@ -14,6 +16,8 @@ enum BattleState
 
 //Start invisible
 visible = false;
+image_index = SpriteIndex;
+image_speed = 0;
 
 //Rotation when icon selected
 RotValue = 0;

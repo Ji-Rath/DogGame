@@ -1,7 +1,7 @@
 
 ItemIndex = 2;
-event_inherited();
 SpriteIndex = 3;
+event_inherited();
 
 //Hold textbox text
 TextBox = "";

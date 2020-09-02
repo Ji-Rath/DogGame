@@ -89,6 +89,7 @@
     {"id":{"name":"pathBeachStart","path":"paths/pathBeachStart/pathBeachStart.yy",},"order":1,},
     {"id":{"name":"pathOldMan","path":"paths/pathOldMan/pathOldMan.yy",},"order":2,},
     {"id":{"name":"oTextBox","path":"objects/oTextBox/oTextBox.yy",},"order":14,},
+    {"id":{"name":"seqIconPress","path":"sequences/seqIconPress/seqIconPress.yy",},"order":2,},
     {"id":{"name":"pathEnemyDeath","path":"paths/pathEnemyDeath/pathEnemyDeath.yy",},"order":3,},
     {"id":{"name":"scrPlayerStats","path":"scripts/scrPlayerStats/scrPlayerStats.yy",},"order":7,},
     {"id":{"name":"scrSameScreenMiniGame","path":"scripts/scrSameScreenMiniGame/scrSameScreenMiniGame.yy",},"order":3,},

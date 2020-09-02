@@ -1,4 +1,6 @@
 
+if(in_sequence) exit;
+
 //Set Fonts/Color
 draw_set_font(fnt_battle);
 draw_set_color(c_black);
@@ -12,7 +14,8 @@ if(CanScale)
 
 
 //Draw icon
-draw_sprite_ext(sButtonIcons,SpriteIndex,x,y,Scale,Scale,RotValue*25,c_white,1);
+//draw_sprite_ext(sButtonIcons,SpriteIndex,x,y,Scale,Scale,RotValue*25,c_white,1);
+scrAnimDraw();
 
 //Draw interface
 if(Selected)

@@ -7,7 +7,7 @@ if(oBattleManager.RageMeter >= MaxRage && oBattleManager.BattleStage == 3 && !in
     visible = true;
     if(CanPlayAnim)
     {
-        scrAnimInit(Animation.Flip, AnimationIntro.Intro1);
+        scrAnimInit(Animations.Flip, Animations.IntroScale);
         CanPlayAnim = false;
     }
 }

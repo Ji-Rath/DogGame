@@ -1,5 +1,8 @@
 {
-  "spriteId": null,
+  "spriteId": {
+    "name": "sButtonIcons",
+    "path": "sprites/sButtonIcons/sButtonIcons.yy",
+  },
   "solid": false,
   "visible": true,
   "spriteMaskId": {
