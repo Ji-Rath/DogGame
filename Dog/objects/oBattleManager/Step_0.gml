@@ -66,7 +66,7 @@ if(BattleStageEnd)
 			visible = false;
 			DrawGUI = false;
 			var EnemyText = EnemyBattle.TextDuring[random_range(0,array_length_1d(EnemyBattle.TextDuring))];
-			CreateBattleTextEvent(EnemyText, true, new TextInit(0.1, c_black, 1));
+			CreateBattleTextEvent(EnemyText, true, new TextInit(0.05, c_black, 1));
 		break;
 		
 		case 7:

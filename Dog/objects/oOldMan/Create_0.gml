@@ -18,13 +18,30 @@ WalkSpeed = 3; //NPC walk speed
 Scale = 2; //Sprite scaling
 AlertDistance = 300; //Distance for seeing the player and starting the cutscene
 
+//Textbox variables
+Voice				= sndSelect;
+Font				= fnt_dialogue;
+Name				= "OldMan";
+
 //Interact text (Documentation can be found on github wiki)
-TextArray = [
-    ["Yo Man hows it going?",sEnemyalert,0],
-    ["Its going pretty sicko mode, how about you?",sDogFace,1],
-    ["Meh",sEnemyalert,1],
-    ["Ive had better days",sEnemyalert,2]
-]
+Text = [];
+TextExt = []
+TextInitialVal = []
+Line = 0;
+
+Text[Line] = "Yo Man hows it going?";
+TextInitialVal[Line] = new TextInit(0.05, c_black, 0, oOldMan);
+TextExt[Line] = []
+
+Line++;
+Text[Line] = "Its going pretty sicko mode, how about you?";
+TextInitialVal[Line] = new TextInit(0.05, c_black, 0, oDog);
+TextExt[Line] = []
+
+Line++;
+Text[Line] = "Meh...Ive had better days";
+TextInitialVal[Line] = new TextInit(0.05, c_black, 0, oOldMan);
+TextExt[Line] = []
 
 //Get player reference for use in cutscene
 var Player = instance_find(oDog, 0);
@@ -38,10 +55,10 @@ CSWarning =
     [scrCutSceneMoveToObject, self, WalkSpeed, Player, 100],
     [scrCutSceneCamera, Player],
     [scrCutSceneWait, 0.5],
-    [scrCutSceneTextBox, [["Hey, where did you come from? There are some wicked crabs around",sOldMan,0]]],
+    [scrCutSceneTextBox, ["Hey, where did you come from? There are some wicked crabs around"]],
     [scrCutSceneEmote, Player, sAlert],
     [scrCutSceneWait, 0.5],
-    [scrCutSceneTextBox, [["Dont worry, I was born to fight them",sDogFace,2],["Dont say I didnt warn ya",sOldMan,0]]],
+    [scrCutSceneTextBox, ["Dont worry, I was born to fight them","Dont say I didnt warn ya"]],
     [scrCutSceneFinish]
 ];
 

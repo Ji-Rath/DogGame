@@ -1,6 +1,8 @@
 
+if(instance_exists(oCutScene) || instance_exists(oTextBox)) exit;
+
 //Have NPC go to path if not in a cutscene
-if(path_index == -1 && !instance_exists(oCutScene))
+if(path_index == -1)
 {
     if(floor(y) != floor(path_get_point_y(pathOldMan,0)) && floor(x) != floor(path_get_point_x(pathOldMan,0)))
     {

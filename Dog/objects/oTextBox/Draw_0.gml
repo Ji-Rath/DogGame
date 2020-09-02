@@ -9,7 +9,7 @@ if(!instance_exists(TextPositionRef)) exit;
 draw_self();
 
 //Set alignments for text
-draw_set_halign(fa_left);
+draw_set_halign(fa_left); 
 draw_set_valign(fa_top);
 draw_set_font(CurrentFont);
 
