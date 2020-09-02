@@ -3,6 +3,8 @@
 //Set speed and animation while walking/running
 scrWalk();
 
+if(instance_exists(oCutScene) || instance_exists(oTextBox)) exit;
+
 if(global.KeySprint)
 {
 	Speed = RunSpeed;
@@ -23,11 +25,6 @@ if (state = DogState.normal)
 	HSpeed = HMove*Speed;
 	VSpeed = VMove*Speed;
 	
-	if(instance_exists(oCutScene))
-	{
-		HSpeed = 0;
-		VSpeed = 0;
-	}
 	scrPathSpeed();
 	
 	scrMoveCollision();
@@ -36,14 +33,19 @@ if (state = DogState.normal)
 
 
 //Interaction
-if (global.KeyInteract && !instance_exists(oCutScene))
+if (global.KeyInteract)
 {
 	
 	//Interact with NPC if in range
 	var inst = collision_rectangle(x-InteractRadius,y-InteractRadius,x+InteractRadius,y+InteractRadius,oNPCBase,false,false);
 	if(inst != noone && !inst.TextCooldown)
 	{
-		scrTextBox(inst.TextArray);
+		CreateTextEvent(inst.Text, inst.TextInitialVal, inst.TextExt);
+		with(inst)
+		{
+			path_end();
+		}
+		show_debug_message("Bruh");
 	}
 	
 	//Save game if interacting with SaveGame object

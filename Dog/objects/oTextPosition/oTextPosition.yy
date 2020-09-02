@@ -28,7 +28,7 @@
     "path": "folders/Objects/UI.yy",
   },
   "resourceVersion": "1.0",
-  "name": "oTracker",
+  "name": "oTextPosition",
   "tags": [],
   "resourceType": "GMObject",
 }

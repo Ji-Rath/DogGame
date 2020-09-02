@@ -1,12 +1,12 @@
-/// @func scrFadeOut(room, fadecolor, fadespeed)
+/// @func scrFadeout(room, fadecolor, fadespeed)
 /// @desc Fade into a different room
 /// @arg Room
 /// @arg Color
 /// @arg FadeSpeed
-/// @arg XDest = 0
-/// @arg YDest = 0
-/// @arg Sprite = 0
-/// @arg SpriteXScale = 0
+/// @arg *XDest = 0
+/// @arg *YDest = 0
+/// @arg *Sprite = 0
+/// @arg *SpriteXScale = 0
 function scrFadeout() {
 	var Room = argument[0], Color = argument[1], FadeSpeed = argument[2];
 	var XDest = argument_count > 3 ? argument[3] : 0;
