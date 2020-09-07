@@ -1,11 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-<<<<<<< Updated upstream
 box = sBattleBox;
-=======
-box = sTextBox;
->>>>>>> Stashed changes
 
 
 box_width = sprite_get_width(box);

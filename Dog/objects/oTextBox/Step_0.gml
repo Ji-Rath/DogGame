@@ -15,7 +15,7 @@ if (global.KeyInteract && KeyWait == false)
 		}
 		else
 		{
-			instance_destroy();
+			Timer[0] = 0.25*60;
 			TextPos = 0;
 		}
 	}
@@ -27,4 +27,13 @@ if (global.KeyInteract && KeyWait == false)
 else
 {
 	KeyWait = false
+}
+
+if(Timer[0] > 0)
+{
+	Timer[0] -= 1;
+}
+else if(Timer[0] != -1)
+{
+	instance_destroy();
 }

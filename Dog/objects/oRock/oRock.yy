@@ -28,11 +28,7 @@
     "path": "folders/Objects/Assets/Foliage.yy",
   },
   "resourceVersion": "1.0",
-<<<<<<< Updated upstream:Dog/objects/oRock/oRock.yy
   "name": "oRock",
-=======
-  "name": "oTracker",
->>>>>>> Stashed changes:Dog/objects/oTracker/oTracker.yy
   "tags": [],
   "resourceType": "GMObject",
 }

@@ -17,7 +17,6 @@ if (Counter<str_len)
 }
 var substr = string_copy(text_wrapped,1,Counter);
 
+
 //Draw text
 draw_text(text_x,text_y,substr)
-
-
