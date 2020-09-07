@@ -1,6 +1,5 @@
-function scrCutSceneTextBox(argument0) {
-
-
+function scrCutSceneTextBox(argument0)
+{
 	if(!instance_exists(oTextBox) && CreatedBox)
 	{
 	    scrCutSceneEnd();
@@ -8,9 +7,7 @@ function scrCutSceneTextBox(argument0) {
 	}
 	else
 	{
-	    scrCreateTextBox(argument0);
+	    scrTextBox(argument0);
 	    CreatedBox = true;
 	}
-
-
 }

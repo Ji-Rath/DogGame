@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sRock",
-    "path": "sprites/sRock/sRock.yy",
+    "name": "sTracker",
+    "path": "sprites/sTracker/sTracker.yy",
   },
   "solid": false,
   "visible": true,
@@ -24,15 +24,11 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Foliage",
-    "path": "folders/Objects/Assets/Foliage.yy",
+    "name": "UI",
+    "path": "folders/Objects/UI.yy",
   },
   "resourceVersion": "1.0",
-<<<<<<< Updated upstream:Dog/objects/oRock/oRock.yy
-  "name": "oRock",
-=======
   "name": "oTracker",
->>>>>>> Stashed changes:Dog/objects/oTracker/oTracker.yy
   "tags": [],
   "resourceType": "GMObject",
 }
