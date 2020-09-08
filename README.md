@@ -2,7 +2,7 @@
 
 Developers:
 - Gareth #1,
-- Gareth #2,
+- Gareth #2 (prime),
 - Andi
 - Josh
   
