@@ -4,18 +4,6 @@ if(in_sequence) exit;
 //Set Fonts/Color
 draw_set_font(fnt_battle);
 draw_set_color(c_black);
-var CanScale = (IsHovering || Selected)
-var Scale = 1;
-if(CanScale)
-{
-    Scale *= 1.25;
-}
-
-
-
-//Draw icon
-//draw_sprite_ext(sButtonIcons,SpriteIndex,x,y,Scale,Scale,RotValue*25,c_white,1);
-scrAnimDraw();
 
 //Draw interface
 if(Selected)
@@ -28,7 +16,7 @@ if(Selected)
         //Draw Contents
         for(i=0;i<ds_list_size(Contents);i++)
         {
-            //Draw available contents
+            //Draw available contents 
             
             var ArrayIndex = ds_list_find_value(Contents,i);
             var DescArray = oBattleManager.ItemDescription[ArrayIndex];

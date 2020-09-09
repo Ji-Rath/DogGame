@@ -4,7 +4,7 @@ scrAnimStep();
 if(visible && Selected)
 {   
     //Go straight to attacking with attack button (Can probably be optimized in the future)
-    if(ItemIndex == 0)
+    if(ItemIndex == 0 && !in_sequence)
     {
         //Do Action based on item selected
         ItemMouseHoverSelect = ds_list_find_value(Contents,0);
@@ -96,9 +96,4 @@ if(visible && Selected)
             }
         }
     }
-}
-else
-{
-    Rot = 0;
-    RotValue = 0;
 }

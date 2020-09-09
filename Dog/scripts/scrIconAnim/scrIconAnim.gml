@@ -13,7 +13,8 @@ function scrAnimInit()
 	{
 	    Flip,
 		IntroScale,
-		SmoothFlip
+		SmoothFlip,
+		FadeIn
 	}
 	
 	//Setup timers
@@ -33,7 +34,8 @@ function scrAnimInit()
 	YPosInit = y;
 	
 	AnimAlpha = 1;
-	AnimScale = 1;
+	InitAnimScale = image_xscale;
+	AnimScale = InitAnimScale;
 
 	XPos = x;
 	YPos = y;
@@ -42,7 +44,23 @@ function scrAnimInit()
 	switch(AnimIntro)
 	{
 		case Animations.IntroScale:
-			Scale = 0;
+			AnimScale = 0;
+			break;
+		case Animations.FadeIn:
+			AnimAlpha = 0;
+			break;
+	}
+}
+
+function scrAnimReinit(AnimationPrimary, AnimationIntro)
+{
+	AnimPrimary = AnimationPrimary;
+	AnimIntro = AnimationIntro;
+	
+	switch(AnimIntro)
+	{
+		case Animations.IntroScale:
+			AnimScale = 0;
 			break;
 	}
 }
@@ -103,11 +121,11 @@ function scrPlayAnimation(AnimationEnum)
 	switch(AnimationEnum)
 	{
 		case Animations.IntroScale:
-	        if (AnimScale < 1)
+	        if (AnimScale < InitAnimScale)
 	            AnimScale += 0.075;
 				
 	        if (AnimRotation < 360)
-	            AnimRotation += 30;
+	            AnimRotation += 15;
 				
 	        if (AnimScale >= 1 && AnimRotation >= 360) //Animation finished
 	            AnimIntro = -1;
@@ -126,12 +144,16 @@ function scrPlayAnimation(AnimationEnum)
 			break;
 		case Animations.SmoothFlip:
 			//Rotate effect
-		    Rot += (2*pi)/120;
-		    AnimRotation = sin(Rot)*25;
+		    Rot += (2*pi)/240;
+		    AnimRotation = sin(Rot)*20;
 		    if(Rot > 2*pi)
 		    {
 		        Rot = 0;
 		    }
+		case Animations.FadeIn:
+			AnimAlpha += 0.05;
+			if(AnimAlpha >= 1)
+				AnimIntro = -1;
 	}
 }
 

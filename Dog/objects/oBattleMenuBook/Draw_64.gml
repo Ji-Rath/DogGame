@@ -1,4 +1,6 @@
 
+if(in_sequence) exit;
+
 event_inherited();
 
 //Draw textbox when book is selected

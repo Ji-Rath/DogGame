@@ -70,10 +70,8 @@ else if (timer[1] != -1)
         }
         else
         {
-            oBattleManager.UpdateStats = true;
             oBattleManager.visible = true;
             oBattleMenuBase.visible = true;
-            oBattleManager.DrawGUI = true;
         }
     }
     

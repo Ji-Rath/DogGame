@@ -20,6 +20,8 @@ DPhpx = 170
 DPhpy = 17
 DPoffy = 50
 
+Alpha = 0;
+
 //Create Enemy Object
 EnemyBattle = instance_create_layer(640,390,"Instances",EnemyBattle);
 
@@ -27,10 +29,10 @@ EnemyBattle = instance_create_layer(640,390,"Instances",EnemyBattle);
 CreateBattleTextEvent(["A "+string(EnemyBattle.Name) + " has attacked!"], true, new TextInit(0.05, c_black, 1));
 
 //Create BattleMenu
-instance_create_layer(room_width/2-150,room_height-100,"GUI",oBattleMenuAttack);
-instance_create_layer(room_width/2-50,room_height-100,"GUI",oBattleMenuBag);
-instance_create_layer(room_width/2+50,room_height-100,"GUI",oBattleMenuDefend);
-instance_create_layer(room_width/2+150,room_height-100,"GUI",oBattleMenuBook);
+//instance_create_layer(room_width/2-150,room_height-100,"GUI",oBattleMenuAttack);
+//instance_create_layer(room_width/2-50,room_height-100,"GUI",oBattleMenuBag);
+//instance_create_layer(room_width/2+50,room_height-100,"GUI",oBattleMenuDefend);
+//instance_create_layer(room_width/2+150,room_height-100,"GUI",oBattleMenuBook);
 
 //Timer Bar Width
 BarWidth = 400;

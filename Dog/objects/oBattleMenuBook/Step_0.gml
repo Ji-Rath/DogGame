@@ -1,5 +1,7 @@
 
-if(Selected)
+scrAnimStep();
+
+if(visible && Selected)
 {
     //Update text if focused
     if(IsFocused)
@@ -27,7 +29,7 @@ if(Selected)
                     if (oBattleManager.NeglectMeter >= oBattleManager.MaxNeglect)
                     {
                         var Text = "Your ally is feeling neglected. He is too sad to attack!";
-                        CreateBattleTextEvent(Text, false, new TextInit(0.1, c_black, 1.5));
+                        CreateBattleTextEvent(Text, false, new TextInit(0.05, c_black, 1.5));
                         Selected = false;
                         break;
                     }
@@ -55,7 +57,7 @@ if(Selected)
                 else
                 {
                     var Text = "What the heck, '"+TextBox+"' aint no valid spell";
-                    CreateBattleTextEvent(Text, false, new TextInit(0.1, c_black, 1.5));
+                    CreateBattleTextEvent(Text, false, new TextInit(0.05, c_black, 1.5));
                     Selected = false;
                     break;
                 }

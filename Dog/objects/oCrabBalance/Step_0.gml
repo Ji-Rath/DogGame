@@ -12,7 +12,7 @@ with(oCrabWeigh)
         IsResting = false;
         Timer[0] = 1.5*60;
         StillTimer = false;
-        show_debug_message("Velocity: "+string(phy_angular_velocity));
+        //show_debug_message("Velocity: "+string(phy_angular_velocity));
     }
 }
 
