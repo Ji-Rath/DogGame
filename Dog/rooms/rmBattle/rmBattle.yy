@@ -71,7 +71,7 @@
     "inheritPhysicsSettings": false,
     "PhysicsWorld": true,
     "PhysicsWorldGravityX": 0.0,
-    "PhysicsWorldGravityY": 98.0,
+    "PhysicsWorldGravityY": 110.0,
     "PhysicsWorldPixToMetres": 0.1,
   },
   "parent": {
