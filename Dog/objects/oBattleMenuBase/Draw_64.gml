@@ -5,6 +5,9 @@ if(in_sequence) exit;
 draw_set_font(fnt_battle);
 draw_set_color(c_black);
 
+if(!oBattleManager.DrawGUI && oBattleManager.BattleStage == BattleSection.PlayerAttack)
+	draw_set_alpha(oBattleManager.Alpha);
+
 //Draw interface
 if(Selected)
 {
@@ -39,3 +42,6 @@ if(Selected)
         }
     }
 }
+
+if(!oBattleManager.DrawGUI && oBattleManager.BattleStage == BattleSection.PlayerAttack)
+	draw_set_alpha(1);

@@ -16,7 +16,7 @@ if(visible && Selected)
     
     if(keyboard_check_pressed(vk_enter))
     {
-        var ItemName, Description;
+        var Description;
         for(i=0;i<Item.LastItem;i++)
         {
             Description = oBattleManager.ItemDescription[i];
@@ -29,37 +29,26 @@ if(visible && Selected)
                     if (oBattleManager.NeglectMeter >= oBattleManager.MaxNeglect)
                     {
                         var Text = "Your ally is feeling neglected. He is too sad to attack!";
-                        CreateBattleTextEvent(Text, false, new TextInit(0.05, c_black, 1.5));
-                        Selected = false;
-                        break;
-                    }
-                    
-                    var ExecuteArray = Description[4];
-                    scrExecuteAlt(ExecuteArray);
-                    
-                    with(oBattleMenuBase)
-                    {
-                        visible = false;
+                        CreateBattleTextEvent(Text, false, new TextInit(0.05, c_black, 1));
                         Selected = false;
                     }
+					else
+					{
+						var ExecuteArray = Description[4];
+	                    scrExecuteAlt(ExecuteArray);
                     
-            		with(oBattleManager)
-                    {
-                        visible = false;
-                        DrawGUI = false;
-                    }
+	                    with(oBattleMenuBase)
+	                        Selected = false;
                     
-                    //Increase Rage
-                    oBattleManager.RageMeter += 1;
-                    
-                    break;
+	            		with(oBattleManager)
+							DrawGUI = false;
+					}
                 }
                 else
                 {
                     var Text = "What the heck, '"+TextBox+"' aint no valid spell";
-                    CreateBattleTextEvent(Text, false, new TextInit(0.05, c_black, 1.5));
+                    CreateBattleTextEvent(Text, false, new TextInit(0.05, c_black, 1));
                     Selected = false;
-                    break;
                 }
                 
             }

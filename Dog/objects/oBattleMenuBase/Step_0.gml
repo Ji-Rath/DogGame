@@ -11,20 +11,12 @@ if(visible && Selected)
         var ContentArray = oBattleManager.ItemDescription[ItemMouseHoverSelect];
         var ExecuteArray = ContentArray[4];
 		scrExecuteAlt(ExecuteArray);
-        
-        with(oBattleMenuBase)
-        {
-            visible = false;
-            Selected = false;
-        }
-        oBattleManager.visible = false;
-        oBattleManager.BattleTimer = 0;
-        oBattleManager.DrawTimer = 0;
-        oBattleManager.DrawGUI = false;
-        Selected = false;
-        
-        //Increase rage
-        oBattleManager.RageMeter += 1;
+		
+		with(oBattleMenuBase)
+	        Selected = false;
+                
+	    with(oBattleManager)
+	        DrawGUI = false;
     }
     
     
@@ -51,26 +43,15 @@ if(visible && Selected)
                 scrExecuteAlt(ExecuteArray);
                 
                 with(oBattleMenuBase)
-                {
-                    visible = false;
                     Selected = false;
-                }
                 
         		with(oBattleManager)
-                {
-                    visible = false;
                     DrawGUI = false;
-                }
-                
-                //Increase Rage
-                oBattleManager.RageMeter += 1;
                 
                 //Decrease ItemCount if applicable and update icons
                 var ItemCount = ds_map_find_value(oAreaStats.Items, ItemMouseHoverSelect);
                 if(ItemCount > 0)
-                {
                     ds_map_set(oAreaStats.Items, ItemMouseHoverSelect, ItemCount-1);
-                }
                 
                 //Reset contents of button
                 ds_list_clear(Contents);

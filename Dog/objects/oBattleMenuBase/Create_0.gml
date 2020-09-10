@@ -13,7 +13,7 @@ enum BattleState
 }
 
 //Start invisible
-visible = false;
+visible = true;
 image_index = SpriteIndex;
 image_speed = 0;
 

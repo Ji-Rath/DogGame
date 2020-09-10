@@ -18,14 +18,6 @@ else
     {
         //Destroy self and instances created for the minigame
         instance_destroy();
-        for(var i=0;i<ds_list_size(Instances);i++)
-        {
-            var Instance = ds_list_find_value(Instances,i);
-            if(instance_exists(Instance))
-            {
-                instance_destroy(Instance);
-            }
-        }
     }
 }
 
@@ -63,16 +55,8 @@ else if (timer[1] != -1)
             global.PlayerPP = ceil(global.PlayerPP);
             EnemyBattle.Health = ceil(EnemyBattle.Health);
         }
+		
         Destroy = true;
-        if(EndTurn)
-        {
-            oBattleManager.BattleStageEnd = true;
-        }
-        else
-        {
-            oBattleManager.visible = true;
-            oBattleMenuBase.visible = true;
-        }
     }
     
     timer[1] = -1;
