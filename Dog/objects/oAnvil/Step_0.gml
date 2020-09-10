@@ -37,8 +37,8 @@ if(!Complete && Counter >= CompleteCounter)
 {
     oMiniGame.timer[1] = 1*60;
     Complete = true;
-    Enemy = oBattleManager.EnemyBattle;
-    Enemy.Health -= 3;
+	DealEnemyDamage = true;
+	alarm[0] = 1;
     instance_destroy(MouseCollision);
     instance_destroy(ButtonAlternate);
     

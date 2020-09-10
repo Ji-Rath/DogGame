@@ -4,7 +4,7 @@ draw_set_color(c_white);
 draw_set_font(fnt_stats);
 
 //Draw battle timer
-if((DrawTimer > 0 && BattleStage == BattleSection.PlayerAttack) || BattleTimer != DrawTimer)
+if((DrawTimer > 0 || BattleTimer != DrawTimer) && !instance_exists(oMiniGame) && oBattleMenuBase.AnimAlpha != 0)
 {
 	var TimerPosX = room_width/2;
 	var TimerPosY = room_height/1.4;

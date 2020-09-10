@@ -71,10 +71,11 @@ enum BattleSection
 	EnemyAttack,
 	PlayerAttack,
 	PlayerDead,
-	PlayerVictory
+	PlayerVictory,
+	RoomTransition
 }
 
-function EndTurn()
+function NextTurn()
 {
 	var Delay = argument_count > 0 ? argument[0] : 0.1;
 	if (alarm[0] > Delay*60 || alarm[0] == -1)
@@ -106,20 +107,18 @@ function RunBattleStage()
 			//Player turn
 			DrawGUI = true;
 			oButtonHighFive.CanHighfive = true;
+			
+			with(oBattleMenuBase)
+				scrAnimReinit(Animations.SmoothFlip, Animations.IntroScale);
 			break;
 		
 		break;
 		
-		//Deprecated
-		case 3:
-			//CHATTER BEFORE LOOP
-			visible = false;
-			DrawGUI = false;
-			var EnemyText = EnemyBattle.TextDuring[random_range(0,array_length_1d(EnemyBattle.TextDuring))];
-			CreateBattleTextEvent(EnemyText, true, new TextInit(0.05, c_black, 1));
+		case BattleSection.PlayerVictory:
+			//Handled in oEnemyBattleParent
 			break;
 		
-		case BattleSection.PlayerVictory:
+		case BattleSection.RoomTransition:
 			//PLAYER WINS
 			var Room = ds_map_find_value(oAreaStats.SaveState,"Room");
 			var EnemyGrid = ds_grid_create(0,0);

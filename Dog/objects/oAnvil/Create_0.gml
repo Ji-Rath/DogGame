@@ -4,6 +4,7 @@ Counter = 0;
 Complete = false;
 Interact = false;
 CompleteCounter = 10;
+DealEnemyDamage = false;
 
 phy_active = false;
 alarm[0] = 2*60;

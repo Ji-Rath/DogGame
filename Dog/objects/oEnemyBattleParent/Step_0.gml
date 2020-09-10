@@ -1,6 +1,6 @@
 
 //Delay death animation
-if(Health <= 0 && timer[0] == -1 && oBattleManager.BattleStage >= 6 && !IsDead && path_index == -1)
+if(Health <= 0 && timer[0] == -1 && oBattleManager.BattleStage == BattleSection.PlayerVictory && !IsDead && path_index == -1)
 {
     timer[0] = 1*60;
 }
@@ -17,10 +17,24 @@ else if(timer[0] != -1)
 }
 
 //Show victory message
-if(path_position == 1 && !IsDead)
+if(path_position == 1)
 {
-    CreateBattleTextEvent("You Win!", true);
-    IsDead = true;
+	if(!instance_exists(oTextBox))
+	{
+		if(!IsDead)
+		{
+			CreateBattleTextEvent("You Win!");
+			IsDead = true;
+		}
+		else
+		{
+			with(oBattleManager)
+			{
+				BattleStage = BattleSection.RoomTransition;
+				RunBattleStage();
+			}
+		}
+	}
 }
 
 //Spin enemy while death animation is running

@@ -13,7 +13,6 @@ enum BattleState
 }
 
 //Start invisible
-visible = true;
 image_index = SpriteIndex;
 image_speed = 0;
 
@@ -23,7 +22,8 @@ Rot = 0;
 //Contents of button
 Contents = ds_list_create();
 
-scrAnimInit(Animations.SmoothFlip, Animations.IntroScale);
+scrAnimInit(-1, Animations.FadeOut);
+AnimAlpha = 0;
 
 //Add available items to ds list
 for(var i=0;i<Item.LastItem;i++)

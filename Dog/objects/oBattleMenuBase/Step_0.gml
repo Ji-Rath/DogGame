@@ -13,10 +13,15 @@ if(visible && Selected)
 		scrExecuteAlt(ExecuteArray);
 		
 		with(oBattleMenuBase)
-	        Selected = false;
+		{
+			scrAnimReinit(Animations.Flip, Animations.FadeOut);
+			Selected = false;
+		}
+	        
                 
 	    with(oBattleManager)
-	        DrawGUI = false;
+			DrawGUI = false;
+	        
     }
     
     
@@ -43,10 +48,14 @@ if(visible && Selected)
                 scrExecuteAlt(ExecuteArray);
                 
                 with(oBattleMenuBase)
-                    Selected = false;
+				{
+					scrAnimReinit(-1, Animations.FadeOut);
+					Selected = false;
+				}
                 
         		with(oBattleManager)
-                    DrawGUI = false;
+					DrawGUI = false;
+                    
                 
                 //Decrease ItemCount if applicable and update icons
                 var ItemCount = ds_map_find_value(oAreaStats.Items, ItemMouseHoverSelect);

@@ -14,7 +14,8 @@ function scrAnimInit()
 	    Flip,
 		IntroScale,
 		SmoothFlip,
-		FadeIn
+		FadeIn,
+		FadeOut
 	}
 	
 	//Setup timers
@@ -61,6 +62,11 @@ function scrAnimReinit(AnimationPrimary, AnimationIntro)
 	{
 		case Animations.IntroScale:
 			AnimScale = 0;
+			AnimAlpha = 1;
+			break;
+		case Animations.FadeIn:
+			AnimAlpha = 0;
+			AnimScale = InitAnimScale;
 			break;
 	}
 }
@@ -99,16 +105,14 @@ function scrAnimStep()
 	}
 
 	//Play animations
+	if(AnimIntro != -1)
+	{
+		scrPlayAnimation(AnimIntro);
+	}
+	
 	if(AnimPrimary != -1)
 	{
-		if(AnimIntro == -1)
-		{
-		    scrPlayAnimation(AnimPrimary);
-		}
-		else
-		{
-		    scrPlayAnimation(AnimIntro);
-		}	
+		scrPlayAnimation(AnimPrimary);
 	}
 	
 }
@@ -147,13 +151,18 @@ function scrPlayAnimation(AnimationEnum)
 		    Rot += (2*pi)/240;
 		    AnimRotation = sin(Rot)*20;
 		    if(Rot > 2*pi)
-		    {
 		        Rot = 0;
-		    }
+			break;
 		case Animations.FadeIn:
 			AnimAlpha += 0.05;
 			if(AnimAlpha >= 1)
 				AnimIntro = -1;
+			break;
+		case Animations.FadeOut:
+			AnimAlpha -= 0.05;
+			if(AnimAlpha <= 0)
+				AnimIntro = -1;
+			break;
 	}
 }
 

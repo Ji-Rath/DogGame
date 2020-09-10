@@ -6,7 +6,7 @@
     "path": "folders/Scripts/BattleMenu.yy",
   },
   "resourceVersion": "1.0",
-  "name": "scrSameScreenMiniGame",
+  "name": "scrBattleMenu",
   "tags": [],
   "resourceType": "GMScript",
 }

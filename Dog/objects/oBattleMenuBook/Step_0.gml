@@ -38,7 +38,10 @@ if(visible && Selected)
 	                    scrExecuteAlt(ExecuteArray);
                     
 	                    with(oBattleMenuBase)
-	                        Selected = false;
+						{
+							scrAnimReinit(Animations.Flip, Animations.FadeOut);
+							Selected = false;
+						}
                     
 	            		with(oBattleManager)
 							DrawGUI = false;

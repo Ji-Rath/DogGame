@@ -49,5 +49,5 @@ HealthChanged = HC;
 
 //Draw enemy health if it has changed
 if(HealthChanged)
-    draw_healthbar(XPos-100,YPos-50,XPos+100,YPos-75,oBattleManager.DrawEnemyHealth*10,c_gray,c_red,c_red,0,true,false);
+    draw_healthbar(XPos-100,YPos-50,XPos+100,YPos-75,(oBattleManager.DrawEnemyHealth/MaxHealth)*100,c_gray,c_red,c_red,0,true,false);
     

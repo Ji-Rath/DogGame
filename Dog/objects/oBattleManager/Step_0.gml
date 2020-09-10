@@ -3,7 +3,6 @@
 if(NeglectMeter <= MaxNeglect && !instance_exists(oTextBox))
 	NeglectMeter += (1/60);
 
-show_debug_message(string(BattleTimer-DrawTimer));
 
 //If the current battle stage is done, transition to the next one.
 if(BattleStageEnd)
@@ -18,7 +17,7 @@ if(BattleStageEnd)
 	if(DrawPlayerHealth <= 0 && BattleStage != BattleSection.PlayerDead)
 		BattleStage = BattleSection.PlayerDead;
 	
-	if(DrawEnemyHealth <= 0 && BattleStage != BattleSection.PlayerVictory)
+	if(DrawEnemyHealth <= 0 && BattleStage != BattleSection.PlayerVictory && BattleStage != BattleSection.RoomTransition)
 		BattleStage = BattleSection.PlayerVictory;
 	
 	RunBattleStage();
@@ -27,20 +26,30 @@ if(BattleStageEnd)
 }
 
 //Reduce battle timer, and end turn if at 0
-if(DrawGUI && BattleStage == BattleSection.PlayerAttack && !instance_exists(oMiniGame))
+if(DrawGUI && oBattleMenuBase.AnimAlpha != 0 && !instance_exists(oMiniGame))
 {
 	if(BattleTimer > 0)
 		BattleTimer -= 1;
 	
 	if (BattleTimer <= 0)
-		EndTurn();
+		NextTurn();
 }
 
-if((DrawPlayerHealth != global.PlayerHP || DrawEnemyHealth != EnemyBattle.Health || DrawTimer != BattleTimer) && timer[0] == -1 && !UpdateStats)
+if(timer[0] == -1 && !UpdateStats)
 {
-	DrawGUI = true;
-	timer[0] = 0.5*60;
+	if (DrawPlayerHealth != global.PlayerHP)
+	{
+		DrawGUI = true;
+		timer[0] = 0.5*60;
+	}
+	
+	if(DrawEnemyHealth != EnemyBattle.Health || (DrawTimer != BattleTimer && !instance_exists(oMiniGame)))
+	{
+		DrawGUI = true;
+		timer[0] = 1;
+	}
 }
+
 
 //Update player stats visually if changed
 if(UpdateStats)
@@ -66,11 +75,17 @@ if(UpdateStats)
 	if(DrawEnemyHealth = EnemyBattle.Health)
 		Check++;
 	
-	//Check battle timer for changes
-	DrawTimer += clamp(Increment*8, 0, abs(DrawTimer-BattleTimer))*sign(BattleTimer-DrawTimer);
+	if(!instance_exists(oMiniGame))
+	{
+		//Check battle timer for changes
+		DrawTimer += clamp(Increment*16, 0, abs(DrawTimer-BattleTimer))*sign(BattleTimer-DrawTimer);
 	
-	if(DrawTimer == BattleTimer)
+		if(DrawTimer == BattleTimer)
+			Check++;
+	}
+	else
 		Check++;
+	
 	
 	//If all checks done, go to next phase
 	if(Check == 4 && timer[0] == -1)
