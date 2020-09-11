@@ -41,6 +41,10 @@ function scrAnimInit()
 	XPos = x;
 	YPos = y;
 	
+	SpeedMultiplier = 1;
+	if(instance_exists(oBattleManager))
+		SpeedMultiplier = oBattleManager.SpeedMultiplier;
+	
 	//Initial values for intro animations
 	switch(AnimIntro)
 	{
@@ -57,6 +61,10 @@ function scrAnimReinit(AnimationPrimary, AnimationIntro)
 {
 	AnimPrimary = AnimationPrimary;
 	AnimIntro = AnimationIntro;
+	
+	SpeedMultiplier = 1;
+	if(instance_exists(oBattleManager))
+		SpeedMultiplier = oBattleManager.SpeedMultiplier;
 	
 	switch(AnimIntro)
 	{
@@ -137,7 +145,7 @@ function scrPlayAnimation(AnimationEnum)
 		case Animations.Flip:
 		    if (AnimationTimer[0] = -1)
 		    {
-			    AnimationTimer[0] = 0.5*60;
+			    AnimationTimer[0] = 0.5*60/SpeedMultiplier;
 			    AnimFlipped = !AnimFlipped;
 				
 			    if(AnimFlipped)
@@ -148,18 +156,18 @@ function scrPlayAnimation(AnimationEnum)
 			break;
 		case Animations.SmoothFlip:
 			//Rotate effect
-		    Rot += (2*pi)/240;
+		    Rot += (SpeedMultiplier/5)/(2*pi);
 		    AnimRotation = sin(Rot)*20;
-		    if(Rot > 2*pi)
+		    if(Rot >= 2*pi)
 		        Rot = 0;
 			break;
 		case Animations.FadeIn:
-			AnimAlpha += 0.05;
+			AnimAlpha = clamp(AnimAlpha+0.05*SpeedMultiplier, 0, 1);
 			if(AnimAlpha >= 1)
 				AnimIntro = -1;
 			break;
 		case Animations.FadeOut:
-			AnimAlpha -= 0.05;
+			AnimAlpha = clamp(AnimAlpha-0.05*SpeedMultiplier, 0, 1);
 			if(AnimAlpha <= 0)
 				AnimIntro = -1;
 			break;
@@ -171,4 +179,5 @@ function scrPlaySequence(Sequence)
 	AnimSeq = layer_sequence_create("GUI", XPosInit, YPosInit, Sequence);
 	var AnimSeqInstance = layer_sequence_get_instance(AnimSeq);
 	sequence_instance_override_object(AnimSeqInstance, oButtonRage, self);
+	layer_sequence_speedscale(AnimSeq, SpeedMultiplier);
 }

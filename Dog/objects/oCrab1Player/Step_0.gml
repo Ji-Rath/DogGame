@@ -66,7 +66,7 @@ if(oMiniGame.timer[0] == -1)
                 {
                     global.PlayerHP -= 10;
                     HitPlayer = true;
-					show_debug_message("Damage");
+					//show_debug_message("Damage");
                 }
             }
         break;

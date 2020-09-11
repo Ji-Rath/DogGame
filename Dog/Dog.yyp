@@ -156,6 +156,7 @@
     {"id":{"name":"oCrabBalance","path":"objects/oCrabBalance/oCrabBalance.yy",},"order":1,},
     {"id":{"name":"oPhysicsBase","path":"objects/oPhysicsBase/oPhysicsBase.yy",},"order":11,},
     {"id":{"name":"oPan","path":"objects/oPan/oPan.yy",},"order":0,},
+    {"id":{"name":"oDogSave","path":"objects/oDogSave/oDogSave.yy",},"order":1,},
     {"id":{"name":"oBroom","path":"objects/oBroom/oBroom.yy",},"order":0,},
     {"id":{"name":"oBroomSmoke","path":"objects/oBroomSmoke/oBroomSmoke.yy",},"order":1,},
     {"id":{"name":"oHighfive","path":"objects/oHighfive/oHighfive.yy",},"order":0,},

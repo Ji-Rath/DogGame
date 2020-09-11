@@ -4,6 +4,7 @@ Health = 0;
 MaxHealth = Health;
 AttackDamage = 0;
 Name = "";
+Angry = false;
 
 EnemyAttacks = [];
 

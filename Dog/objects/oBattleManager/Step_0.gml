@@ -3,7 +3,6 @@
 if(NeglectMeter <= MaxNeglect && !instance_exists(oTextBox))
 	NeglectMeter += (1/60);
 
-
 //If the current battle stage is done, transition to the next one.
 if(BattleStageEnd)
 {	
@@ -124,6 +123,8 @@ for(i=0;i<array_length_1d(Shake);i++)
 
 //Manage alpha fading for UI
 if(DrawGUI && Alpha <= 1)
-	Alpha += 0.04;
+	Alpha += 0.06*SpeedMultiplier;
 else if(Alpha >= 0)
-	Alpha -= 0.04;
+	Alpha -= 0.06*SpeedMultiplier;
+	
+Alpha = clamp(Alpha, 0, 1);

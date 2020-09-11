@@ -3,16 +3,16 @@
 if(!Destroy)
 {
     
-    if(OpenEffect != 1)
+    if(OpenFraction <= (pi/2))
     {
-        OpenFraction += (2*pi)/120;
+        OpenFraction += (oBattleManager.SpeedMultiplier/2)/(2*pi);
     }
 }
 else
 {
-    if(OpenEffect != 0)
+    if(OpenEffect >= 0)
     {
-        OpenFraction -= (2*pi)/60;
+        OpenFraction -= (oBattleManager.SpeedMultiplier/2)/(2*pi);
     }
     else
     {
@@ -31,7 +31,7 @@ if(timer[0] > 0)
 else if (timer[0] != -1)
 {
     timer[0] = -1;
-    timer[1] = 4*60;
+    timer[1] = MiniGameTime*60;
 }
 
 //End of minigame

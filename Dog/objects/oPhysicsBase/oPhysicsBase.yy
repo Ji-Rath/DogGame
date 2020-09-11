@@ -26,6 +26,8 @@
     {"isDnD":false,"eventNum":4,"eventType":6,"collisionObjectId":null,"parent":{"name":"oPhysicsBase","path":"objects/oPhysicsBase/oPhysicsBase.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":56,"eventType":6,"collisionObjectId":null,"parent":{"name":"oPhysicsBase","path":"objects/oPhysicsBase/oPhysicsBase.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"parent":{"name":"oPhysicsBase","path":"objects/oPhysicsBase/oPhysicsBase.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":4,"collisionObjectId":{"name":"oDogSave","path":"objects/oDogSave/oDogSave.yy",},"parent":{"name":"oPhysicsBase","path":"objects/oPhysicsBase/oPhysicsBase.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":4,"collisionObjectId":{"name":"oAnvil","path":"objects/oAnvil/oAnvil.yy",},"parent":{"name":"oPhysicsBase","path":"objects/oPhysicsBase/oPhysicsBase.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
