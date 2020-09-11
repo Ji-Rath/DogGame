@@ -5,7 +5,7 @@ CrabCount = collision_rectangle_list(x-80,y,x+80,y-150,oCrabWeigh,false,true,Cra
 
 with(oCrabWeigh)
 {
-    if(abs(phy_angular_velocity) > 10 || Grabbed)
+    if(abs(phy_angular_velocity) > 20 || Grabbed)
     {
         other.Timer[0] = 0.25*60;
         other.StillTimer = false;

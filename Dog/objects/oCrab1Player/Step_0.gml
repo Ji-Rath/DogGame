@@ -42,6 +42,8 @@ switch(State)
         if(TimerReady)
         {
             sprite_index = sMiniGameCrab1PlayerRun;
+			if(oCrab1Arm.State == Crab1State.Setup)
+				oCrab1Arm.timer[0] = 1;
             State = Crab1PlayerState.Result;
         }
     break;

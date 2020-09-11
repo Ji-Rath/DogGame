@@ -9,15 +9,15 @@ function scrItems() {
 	{
 	    GlovesOff,
 	    PanAttack,
-	    Hamburger,
+	    Chips,
 	    BroomAttack,
 	    Highfive,
 	    LastItem
 	}
 
-	CurrentItem = Item.Hamburger;
-	ItemExecute[CurrentItem] = [scrItemMiniGame, Game.Chips, 10, false];
-	ItemDescription[CurrentItem] = ["Hamburger", "A delicious treat", sEnemyalert, 1, ItemExecute[CurrentItem]];
+	CurrentItem = Item.Chips;
+	ItemExecute[CurrentItem] = [scrItemMiniGame, Game.Chips, 0, false];
+	ItemDescription[CurrentItem] = ["Crunchy Chips", "A delicious treat", sEnemyalert, 1, ItemExecute[CurrentItem]];
 	ds_map_add(oAreaStats.Items, CurrentItem, 3);
 
 	CurrentItem = Item.GlovesOff;
@@ -54,7 +54,7 @@ function scrItemMiniGame() {
 
 	var MiniGame = instance_create_layer(0,0,"GameManager",oMiniGame);
 	MiniGame.GameType = GameType;
-	global.PlayerPP -= Cost;
+	global.PlayerPP = clamp(global.PlayerPP-Cost, 0, global.PlayerMaxPP);
 	MiniGame.ShowEnemy = ShowEnemy;
 	MiniGame.EndTurn = EndTurn;
 }

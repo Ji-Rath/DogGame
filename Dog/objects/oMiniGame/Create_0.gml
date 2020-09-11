@@ -1,7 +1,14 @@
 
+
+
+MiniGameTime = 5; //Time in seconds to complete minigame - is affected by speed multiplier
+
+/////////////////////////////////////////////////////////////////////////
+
+MiniGameTime /= oBattleManager.SpeedMultiplier;
+
 GameType = -1;
 
-MiniGameTime = 4/oBattleManager.SpeedMultiplier; //Time in seconds to complete minigame
 timer[1] = MiniGameTime*60; //MiniGame time
 
 //Instances to destroy after the minigame

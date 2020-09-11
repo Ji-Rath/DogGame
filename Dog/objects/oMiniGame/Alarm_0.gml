@@ -1,4 +1,4 @@
-
+///@description Spawn MiniGame objects
 //Switch to the specified minigame
 switch(GameType)
 {
