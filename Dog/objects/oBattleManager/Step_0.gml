@@ -31,7 +31,16 @@ if(DrawGUI && oBattleMenuBase.AnimAlpha != 0 && !instance_exists(oMiniGame))
 		BattleTimer -= 1;
 	
 	if (BattleTimer <= 0)
+	{
 		NextTurn();
+	
+		with(oBattleMenuBase)
+		{
+			scrAnimReinit(Animations.Flip, Animations.FadeOut);
+			Selected = false;
+		}
+	}
+
 }
 
 if(timer[0] == -1 && !UpdateStats)

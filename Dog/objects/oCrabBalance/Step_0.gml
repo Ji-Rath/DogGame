@@ -15,7 +15,7 @@ with(oCrabWeigh)
 //If the player successfully completed the minigame, end the minigame early
 if(StillTimer && CrabCount == instance_number(oCrabWeigh) && !Complete)
 {
-    oMiniGame.timer[1] = 0.5*60;
+    oMiniGame.timer[1] = (0.5 / oBattleManager.SpeedMultiplier)*60;
     Complete = true;
     
     scrMiniGameIcon(sCheckMark);

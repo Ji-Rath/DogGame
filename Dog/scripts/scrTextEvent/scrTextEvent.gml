@@ -90,6 +90,7 @@ function CreateBattleTextEvent()
     		EndTurn = EndsTurn;
     		Sequence = seqBattleTextIntro;
     		event_perform(ev_other, ev_user0);
+			NewLineCutOff = 40;
     		InitLine(0);
     		alarm_set(0, 1*30); //Initial text delay
     	}

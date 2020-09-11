@@ -4,7 +4,7 @@
 SpeedMultiplier = 0.7;
 
 //Battle timer values
-BattleTimerInit = 20; //Time for player turn (seconds) - Multiplied by speed multiplier
+BattleTimerInit = 15; //Time for player turn (seconds) - Multiplied by speed multiplier
 BarWidth = 400; //Width of timer rectangle
 
 //Value to trigger rage attack
