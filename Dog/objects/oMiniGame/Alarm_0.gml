@@ -45,7 +45,7 @@ switch(GameType)
     break;
     
     case Game.AnvilStruggle:
-        HelpText = "Struggle!";
+        HelpText = "Struggle/Save!";
         var Anvil = instance_create_layer(room_width/2,room_height/2-200,"Instances",oAnvil);
         ds_list_add(Instances, Anvil);
 		var DogHelp = instance_create_layer(room_width/2,room_height/2+200,"Instances",oDogSave);

@@ -9,7 +9,7 @@ if(oBattleManager.DrawEnemyHealth < MaxHealth/2 && !Angry)
 {
 	with(oBattleManager)
 	{
-		SpeedMultiplier += 1;
+		SpeedMultiplier += 0.75;
 		BattleTimerInit = 20/SpeedMultiplier; //Time for player turn (seconds)	
 	}
 	CreateBattleTextEvent("Im Angry Now!", false, new TextInit(0.05, c_black, 1));

@@ -17,14 +17,20 @@ if(Counter < CompleteCounter)
         {
            StruggleRight = true;
            Counter++;
+		   with(DogSave)
+				physics_apply_impulse(x, y, 200, -200);
         }
+		
     } else if(global.KeySprint)
     {
         if(StruggleRight)
         {
             StruggleRight = false;
             Counter++;
+			with(DogSave)
+				physics_apply_impulse(x, y, -200, -200);
         }
+		
     }
 }
 
