@@ -8,8 +8,8 @@ function scrPlayerStats() {
 	global.XP = 0;
 	global.MaxXP = 100;
 	global.PlayerPP = 15;
+	global.PlayerMaxPP = 30;
 
-	global.WizardHealth = 50;
 	global.WizardHappy = 50;
 
 	//Load Variables from ds map if available

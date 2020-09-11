@@ -1,4 +1,4 @@
-
+///@description Spawn MiniGame objects
 //Switch to the specified minigame
 switch(GameType)
 {
@@ -39,8 +39,8 @@ switch(GameType)
     
     case Game.Highfive:
         DrawSmall = true;
-        SmallScreenPosX = 250+100;
-        SmallScreenPosY = 125+100;
+        SmallScreenPosX = 250+50;
+        SmallScreenPosY = 125+50;
         ds_list_add(Instances, instance_create_layer(SmallScreenPosX,SmallScreenPosY,"Instances",oHighfive));
     break;
     

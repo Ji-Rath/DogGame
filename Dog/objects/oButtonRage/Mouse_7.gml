@@ -1,5 +1,5 @@
 
-if(visible)
+if(visible && scrAnimVisible())
 {
     //Execute Dogpaddler special mode
     with(oBattleManager)

@@ -1,5 +1,4 @@
 
-
 Selected = false;
 IsHovering = false;
 ItemMouseHover = false;
@@ -15,9 +14,6 @@ enum BattleState
 //Start invisible
 image_index = SpriteIndex;
 image_speed = 0;
-
-//Rotation when icon selected
-Rot = 0;
 
 //Contents of button
 Contents = ds_list_create();

@@ -56,7 +56,7 @@ function CreateTextEvent()
 	
 	if(!instance_exists(oTextBox))
 	    {
-		var TextInst = instance_create_layer(view_xport[0], view_yport[0], "GUI", oTextBox);
+		var TextInst = instance_create_layer(view_xport[0], view_yport[0], "TextBox", oTextBox);
 		with(TextInst)
 		{
 			TextBox = new TextEvent(Text, TextInitialVal, TextExt);
@@ -83,13 +83,14 @@ function CreateBattleTextEvent()
     
     if(!instance_exists(oTextBox))
     {
-        var TextInst = instance_create_layer(0, -1000, "GUI", oTextBox);
+        var TextInst = instance_create_layer(0, -1000, "TextBox", oTextBox);
     	with(TextInst)
     	{
     		TextBox = new TextEvent(Text, TextInitialVal, TextExt);
     		EndTurn = EndsTurn;
     		Sequence = seqBattleTextIntro;
     		event_perform(ev_other, ev_user0);
+			NewLineCutOff = 40;
     		InitLine(0);
     		alarm_set(0, 1*30); //Initial text delay
     	}

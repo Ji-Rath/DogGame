@@ -1,5 +1,5 @@
 
-if(visible)
+if(visible && scrAnimVisible())
 {
     //Execute highfive minigame
     with(oBattleManager)

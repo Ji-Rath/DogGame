@@ -13,8 +13,7 @@ if(CanAttempt && global.KeyInteract)
     if(ceil(ImageIndex) == sprite_get_number(sHandClap))
     {
         oBattleManager.NeglectMeter = 0;
-        var Icon = instance_create_layer(room_width/2, room_height/2, "GUI", oIconPopup);
-        Icon.Sprite = sCheckMark;
+        scrMiniGameIcon(sCheckMark);
     }
     
     CanAttempt = false;

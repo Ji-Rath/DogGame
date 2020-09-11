@@ -1,14 +1,14 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-SpeedMultiplier = 0.75;
+SpeedMultiplier = 0.7;
 
 //Battle timer values
-BattleTimerInit = 20; //Time for player turn (seconds)
+BattleTimerInit = 15; //Time for player turn (seconds) - Multiplied by speed multiplier
 BarWidth = 400; //Width of timer rectangle
 
 //Value to trigger rage attack
-MaxRage = 3; //Increments every player turn
+MaxRage = 4; //Increments every player turn
 
 //Value to trigger neglect effects
 MaxNeglect = 30; // (seconds)
@@ -109,7 +109,6 @@ function RunBattleStage()
 			
 			//Player turn
 			DrawGUI = true;
-			oButtonHighFive.CanHighfive = true;
 			
 			with(oBattleMenuBase)
 				scrAnimReinit(Animations.SmoothFlip, Animations.IntroScale);

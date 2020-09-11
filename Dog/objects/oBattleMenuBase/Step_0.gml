@@ -17,8 +17,7 @@ if(visible && Selected)
 			scrAnimReinit(Animations.Flip, Animations.FadeOut);
 			Selected = false;
 		}
-	        
-                
+		
 	    with(oBattleManager)
 			DrawGUI = false;
 	        

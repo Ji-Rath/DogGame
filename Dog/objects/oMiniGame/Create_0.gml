@@ -1,9 +1,15 @@
 
-GameType = -1;
-timer[0] = 1*60; //Wait 1 second before spawning characters
-timer[1] = -1 //MiniGame time
 
-MiniGameTime = 4/oBattleManager.SpeedMultiplier; //Time in seconds to complete minigame
+
+MiniGameTime = 5; //Time in seconds to complete minigame - is affected by speed multiplier
+
+/////////////////////////////////////////////////////////////////////////
+
+MiniGameTime /= oBattleManager.SpeedMultiplier;
+
+GameType = -1;
+
+timer[1] = MiniGameTime*60; //MiniGame time
 
 //Instances to destroy after the minigame
 Instances = ds_list_create();
