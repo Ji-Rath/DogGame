@@ -31,6 +31,7 @@ function scrAnimInit()
 	//Variables to keep track of icon transform
 	AnimFlipped = false;
 	AnimRotation = 0;
+	AnimRot = 0;
 	XPosInit = x;
 	YPosInit = y;
 	
@@ -156,10 +157,10 @@ function scrPlayAnimation(AnimationEnum)
 			break;
 		case Animations.SmoothFlip:
 			//Rotate effect
-		    Rot += (SpeedMultiplier/5)/(2*pi);
-		    AnimRotation = sin(Rot)*20;
-		    if(Rot >= 2*pi)
-		        Rot = 0;
+		    AnimRot += (SpeedMultiplier/5)/(2*pi);
+		    AnimRotation = sin(AnimRot)*20;
+		    if(AnimRot >= 2*pi)
+		        AnimRot = 0;
 			break;
 		case Animations.FadeIn:
 			AnimAlpha = clamp(AnimAlpha+0.05*SpeedMultiplier, 0, 1);
@@ -180,4 +181,9 @@ function scrPlaySequence(Sequence)
 	var AnimSeqInstance = layer_sequence_get_instance(AnimSeq);
 	sequence_instance_override_object(AnimSeqInstance, oButtonRage, self);
 	layer_sequence_speedscale(AnimSeq, SpeedMultiplier);
+}
+
+function scrAnimVisible()
+{
+	return AnimAlpha >= 1 || AnimScale >= InitAnimScale;
 }

@@ -1,35 +1,30 @@
 
 event_inherited();
 
-CrabCount = collision_rectangle_list(x-100,y,x+100,y-200,oCrabWeigh,false,true,CrabList,false);
-
-var IsResting = true;
+CrabCount = collision_rectangle_list(x-80,y,x+80,y-150,oCrabWeigh,false,true,CrabList,false);
 
 with(oCrabWeigh)
 {
-    if(abs(phy_angular_velocity) > 3 || Grabbed)
+    if(abs(phy_angular_velocity) > 10 || Grabbed)
     {
-        IsResting = false;
-        Timer[0] = 1.5*60;
-        StillTimer = false;
-        //show_debug_message("Velocity: "+string(phy_angular_velocity));
+        other.Timer[0] = 0.25*60;
+        other.StillTimer = false;
     }
 }
 
 //If the player successfully completed the minigame, end the minigame early
-if(StillTimer && CrabCount == instance_number(oCrabWeigh) && IsResting && !Complete)
+if(StillTimer && CrabCount == instance_number(oCrabWeigh) && !Complete)
 {
     oMiniGame.timer[1] = 0.5*60;
     Complete = true;
     
-    var Icon = instance_create_layer(room_width/2, room_height/2, "GUI", oIconPopup);
-    Icon.Sprite = sCheckMark;
+    scrMiniGameIcon(sCheckMark);
 }
 
 //If minigame timer is over and player could not balance the crabs, deal damage
 if(oMiniGame.timer[1] <= 0 && oMiniGame.timer[1] != -1 && !Complete)
 {
-    global.PlayerHP -= 10;
+    global.PlayerHP -= 5;
     Complete = true;
 }
 

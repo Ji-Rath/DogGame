@@ -3,6 +3,7 @@ if(alarm[0] == -1)
 {
     //Draw MiniGame Boundries
     draw_set_color(c_ltgray);
+	draw_set_alpha(OpenEffect);
     
     if(DrawSmall)
     {
@@ -20,7 +21,6 @@ if(alarm[0] == -1)
             draw_rectangle(room_width/2-500+(Time*1000),room_height/2+250,room_width/2-500,room_height/2+225,false);
         }
         //Draw helptext
-        draw_set_alpha(OpenEffect);
         draw_set_halign(fa_middle);
         draw_set_color(c_ltgray);
         draw_set_font(fnt_battle);

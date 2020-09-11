@@ -84,3 +84,9 @@ function scrSameScreenMiniGame(argument0) {
 	MiniGame.GameType = GameType;
 	MiniGame.EndTurn = false;
 }
+
+function scrMiniGameIcon(Sprite)
+{
+	var Icon = instance_create_layer(room_width/2, room_height/2, "TextBox", oIconPopup);
+	Icon.Sprite = Sprite;
+}

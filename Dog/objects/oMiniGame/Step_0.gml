@@ -23,17 +23,6 @@ else
 
 OpenEffect = sin(OpenFraction);
 
-//After set time, execute game
-if(timer[0] > 0)
-{
-    timer[0] -= 1;
-}
-else if (timer[0] != -1)
-{
-    timer[0] = -1;
-    timer[1] = MiniGameTime*60;
-}
-
 //End of minigame
 if(timer[1] > 0)
 {

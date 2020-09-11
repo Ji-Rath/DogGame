@@ -38,5 +38,7 @@ if(!Complete && Counter >= CompleteCounter)
 {
     Complete = true;
 	DogSave.CanGrab = true;
+	if(alarm[0] > 0.25*60)
+		alarm[0] = 0.25*60;
     instance_destroy(ButtonAlternate);
 }
