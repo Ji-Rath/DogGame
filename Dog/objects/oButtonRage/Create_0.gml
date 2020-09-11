@@ -1,5 +1,5 @@
 
-scrAnimInit(Animation.Flip, AnimationIntro.Intro1);
+scrAnimInit(Animations.Flip, Animations.FadeIn);
 CanPlayAnim = true;
 image_speed = 0;
 IsHovering = false;

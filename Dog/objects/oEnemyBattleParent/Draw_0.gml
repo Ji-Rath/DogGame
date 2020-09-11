@@ -38,18 +38,16 @@ draw_sprite_ext(sprite_index,image_index,XPos,YPos,Scale,Scale/YDivision,Angle,c
 var HC = HealthChanged;
 with(oBattleManager)
 {
-    if (EnemyBattle != noone && DrawEnemyHealth != EnemyBattle.Health)
+    if (instance_exists(EnemyBattle) && DrawEnemyHealth != EnemyBattle.Health)
     {
         HC = true;
     }
-    if(!UpdateStats)
-    {
-        HC = false;
-    }
+	if(!UpdateStats)
+		HC = false;
 }
 HealthChanged = HC;
 
 //Draw enemy health if it has changed
-if((oBattleManager.visible) && HealthChanged)
-    draw_healthbar(XPos-100,YPos-50,XPos+100,YPos-75,oBattleManager.DrawEnemyHealth*10,c_gray,c_red,c_red,0,true,false);
+if(HealthChanged)
+    draw_healthbar(XPos-100,YPos-50,XPos+100,YPos-75,(oBattleManager.DrawEnemyHealth/MaxHealth)*100,c_gray,c_red,c_red,0,true,false);
     

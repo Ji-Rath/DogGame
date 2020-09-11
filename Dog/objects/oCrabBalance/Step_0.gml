@@ -1,7 +1,7 @@
 
 event_inherited();
 
-CrabCount = collision_rectangle_list(x-130,y,x+130,y-200,oCrabWeigh,false,true,CrabList,false);
+CrabCount = collision_rectangle_list(x-100,y,x+100,y-200,oCrabWeigh,false,true,CrabList,false);
 
 var IsResting = true;
 
@@ -12,7 +12,7 @@ with(oCrabWeigh)
         IsResting = false;
         Timer[0] = 1.5*60;
         StillTimer = false;
-        show_debug_message("Velocity: "+string(phy_angular_velocity));
+        //show_debug_message("Velocity: "+string(phy_angular_velocity));
     }
 }
 

@@ -6,7 +6,8 @@ if(!variable_instance_exists(self, "CurrentText")) exit;
 if(!instance_exists(TextPositionRef)) exit;
 
 //Draw textbox
-draw_self();
+draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, 0, c_white, 0.8);
+//draw_self();
 
 //Set alignments for text
 draw_set_halign(fa_left); 

@@ -1,5 +1,5 @@
- 
-SpriteIndex = 0;
+
+
 Selected = false;
 IsHovering = false;
 ItemMouseHover = false;
@@ -13,14 +13,17 @@ enum BattleState
 }
 
 //Start invisible
-visible = false;
+image_index = SpriteIndex;
+image_speed = 0;
 
 //Rotation when icon selected
-RotValue = 0;
 Rot = 0;
 
 //Contents of button
 Contents = ds_list_create();
+
+scrAnimInit(-1, Animations.FadeOut);
+AnimAlpha = 0;
 
 //Add available items to ds list
 for(var i=0;i<Item.LastItem;i++)

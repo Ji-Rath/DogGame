@@ -1,8 +1,19 @@
 
 //Delay death animation
-if(Health <= 0 && timer[0] == -1 && oBattleManager.BattleStage >= 6 && !IsDead && path_index == -1)
+if(Health <= 0 && timer[0] == -1 && oBattleManager.BattleStage == BattleSection.PlayerVictory && !IsDead && path_index == -1)
 {
     timer[0] = 1*60;
+}
+
+if(oBattleManager.DrawEnemyHealth < MaxHealth/2 && !Angry)
+{
+	with(oBattleManager)
+	{
+		SpeedMultiplier += 0.75;
+		BattleTimerInit = 20/SpeedMultiplier; //Time for player turn (seconds)	
+	}
+	CreateBattleTextEvent("Im Angry Now!", false, new TextInit(0.05, c_black, 1));
+	Angry = true;
 }
 
 //Perform enemy death animation
@@ -17,10 +28,24 @@ else if(timer[0] != -1)
 }
 
 //Show victory message
-if(path_position == 1 && !IsDead)
+if(path_position == 1)
 {
-    CreateBattleTextEvent("You Win!", true);
-    IsDead = true;
+	if(!instance_exists(oTextBox))
+	{
+		if(!IsDead)
+		{
+			CreateBattleTextEvent("You Win!");
+			IsDead = true;
+		}
+		else
+		{
+			with(oBattleManager)
+			{
+				BattleStage = BattleSection.RoomTransition;
+				RunBattleStage();
+			}
+		}
+	}
 }
 
 //Spin enemy while death animation is running

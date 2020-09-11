@@ -1,47 +1,27 @@
 
+scrAnimStep();
 
 if(visible && Selected)
-{
-    //Rotate effect
-    Rot += (2*pi)/120;
-    RotValue = sin(Rot);
-    if(Rot > 2*pi)
-    {
-        Rot = 0;
-    }
-    
+{   
     //Go straight to attacking with attack button (Can probably be optimized in the future)
-    if(ItemIndex == 0)
+    if(ItemIndex == 0 && !in_sequence)
     {
         //Do Action based on item selected
         ItemMouseHoverSelect = ds_list_find_value(Contents,0);
         var ContentArray = oBattleManager.ItemDescription[ItemMouseHoverSelect];
         var ExecuteArray = ContentArray[4];
-        var Len = array_length_1d(ExecuteArray)-1;
-        show_debug_message("Item ID: "+string(ItemMouseHoverSelect));
-        switch(Len)
-        {
-            case 0: script_execute(ExecuteArray[0]); break;
-            case 1: script_execute(ExecuteArray[0],ExecuteArray[1]); break;
-            case 2: script_execute(ExecuteArray[0],ExecuteArray[1],ExecuteArray[2]); break;
-            case 3: script_execute(ExecuteArray[0],ExecuteArray[1],ExecuteArray[2],ExecuteArray[3]); break;
-            case 4: script_execute(ExecuteArray[0],ExecuteArray[1],ExecuteArray[2],ExecuteArray[3],ExecuteArray[4]); break;
-            case 5: script_execute(ExecuteArray[0],ExecuteArray[1],ExecuteArray[2],ExecuteArray[3],ExecuteArray[4],ExecuteArray[5]); break;
-        }
-        
-        with(oBattleMenuBase)
-        {
-            visible = false;
-            Selected = false;
-        }
-        oBattleManager.visible = false;
-        oBattleManager.BattleTimer = 0;
-        oBattleManager.DrawTimer = 0;
-        oBattleManager.DrawGUI = false;
-        Selected = false;
-        
-        //Increase rage
-        oBattleManager.RageMeter += 1;
+		scrExecuteAlt(ExecuteArray);
+		
+		with(oBattleMenuBase)
+		{
+			scrAnimReinit(Animations.Flip, Animations.FadeOut);
+			Selected = false;
+		}
+	        
+                
+	    with(oBattleManager)
+			DrawGUI = false;
+	        
     }
     
     
@@ -65,38 +45,22 @@ if(visible && Selected)
                 
                 var ContentArray = oBattleManager.ItemDescription[ItemMouseHoverSelect];
                 var ExecuteArray = ContentArray[4];
-                var Len = array_length_1d(ExecuteArray)-1;
-                switch(Len)
-                {
-                    case 0: script_execute(ExecuteArray[0]); break;
-                    case 1: script_execute(ExecuteArray[0],ExecuteArray[1]); break;
-                    case 2: script_execute(ExecuteArray[0],ExecuteArray[1],ExecuteArray[2]); break;
-                    case 3: script_execute(ExecuteArray[0],ExecuteArray[1],ExecuteArray[2],ExecuteArray[3]); break;
-                    case 4: script_execute(ExecuteArray[0],ExecuteArray[1],ExecuteArray[2],ExecuteArray[3],ExecuteArray[4]); break;
-                    case 5: script_execute(ExecuteArray[0],ExecuteArray[1],ExecuteArray[2],ExecuteArray[3],ExecuteArray[4],ExecuteArray[5]); break;
-                }
+                scrExecuteAlt(ExecuteArray);
                 
                 with(oBattleMenuBase)
-                {
-                    visible = false;
-                    Selected = false;
-                }
+				{
+					scrAnimReinit(-1, Animations.FadeOut);
+					Selected = false;
+				}
                 
         		with(oBattleManager)
-                {
-                    visible = false;
-                    DrawGUI = false;
-                }
-                
-                //Increase Rage
-                oBattleManager.RageMeter += 1;
+					DrawGUI = false;
+                    
                 
                 //Decrease ItemCount if applicable and update icons
                 var ItemCount = ds_map_find_value(oAreaStats.Items, ItemMouseHoverSelect);
                 if(ItemCount > 0)
-                {
                     ds_map_set(oAreaStats.Items, ItemMouseHoverSelect, ItemCount-1);
-                }
                 
                 //Reset contents of button
                 ds_list_clear(Contents);
@@ -122,9 +86,4 @@ if(visible && Selected)
             }
         }
     }
-}
-else
-{
-    Rot = 0;
-    RotValue = 0;
 }

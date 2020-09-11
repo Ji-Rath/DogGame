@@ -57,10 +57,9 @@ function scrItemMiniGame() {
 	global.PlayerPP -= Cost;
 	MiniGame.ShowEnemy = ShowEnemy;
 	MiniGame.EndTurn = EndTurn;
-
-
 }
 
+/*
 /// @param Text
 /// @param Health
 function scrItemConsume(argument0, argument1) {
@@ -74,6 +73,14 @@ function scrItemConsume(argument0, argument1) {
 
 	//Update item amount
 	ds_map_replace(oAreaStats.Items, ItemMouseHoverSelect, ds_map_find_value(oAreaStats.Items, ItemMouseHoverSelect)-1);
+}
+*/
 
+/// @param GameType
+function scrSameScreenMiniGame(argument0) {
+	var GameType = argument0;
 
+	var MiniGame = instance_create_layer(0,0,"GameManager",oMiniGame);
+	MiniGame.GameType = GameType;
+	MiniGame.EndTurn = false;
 }

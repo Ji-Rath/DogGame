@@ -3,29 +3,21 @@
 if(!Destroy)
 {
     
-    if(OpenEffect != 1)
+    if(OpenFraction <= (pi/2))
     {
-        OpenFraction += (2*pi)/120;
+        OpenFraction += (oBattleManager.SpeedMultiplier/2)/(2*pi);
     }
 }
 else
 {
-    if(OpenEffect != 0)
+    if(OpenEffect >= 0)
     {
-        OpenFraction -= (2*pi)/60;
+        OpenFraction -= (oBattleManager.SpeedMultiplier/2)/(2*pi);
     }
     else
     {
         //Destroy self and instances created for the minigame
         instance_destroy();
-        for(var i=0;i<ds_list_size(Instances);i++)
-        {
-            var Instance = ds_list_find_value(Instances,i);
-            if(instance_exists(Instance))
-            {
-                instance_destroy(Instance);
-            }
-        }
     }
 }
 
@@ -39,7 +31,7 @@ if(timer[0] > 0)
 else if (timer[0] != -1)
 {
     timer[0] = -1;
-    timer[1] = 4*60;
+    timer[1] = MiniGameTime*60;
 }
 
 //End of minigame
@@ -63,18 +55,8 @@ else if (timer[1] != -1)
             global.PlayerPP = ceil(global.PlayerPP);
             EnemyBattle.Health = ceil(EnemyBattle.Health);
         }
+		
         Destroy = true;
-        if(EndTurn)
-        {
-            oBattleManager.BattleStageEnd = true;
-        }
-        else
-        {
-            oBattleManager.UpdateStats = true;
-            oBattleManager.visible = true;
-            oBattleMenuBase.visible = true;
-            oBattleManager.DrawGUI = true;
-        }
     }
     
     timer[1] = -1;
