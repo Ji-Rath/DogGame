@@ -3,7 +3,9 @@
 //Set speed and animation while walking/running
 scrWalk();
 
-if(instance_exists(oCutScene) || instance_exists(oTextBox)) exit;
+scrPathSpeed();
+
+if(instance_exists(oCutScene) || instance_exists(oTextBox)) return;
 
 if(global.KeySprint)
 {
@@ -24,8 +26,6 @@ if (state = DogState.normal)
 	
 	HSpeed = HMove*Speed;
 	VSpeed = VMove*Speed;
-	
-	scrPathSpeed();
 	
 	scrMoveCollision();
 }

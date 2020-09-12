@@ -54,6 +54,8 @@ function CreateTextEvent()
 	var TextInitialVal = argument_count > 1 ? argument[1] : [new TextInit()];
 	var TextExt = argument_count > 2 ? argument[2] : [];
 	
+	if(!layer_exists(layer_get_id("TextBox"))) {show_debug_message("No TextBox layer found in room!"); return;}
+	
 	if(!instance_exists(oTextBox))
 	    {
 		var TextInst = instance_create_layer(view_xport[0], view_yport[0], "TextBox", oTextBox);
@@ -81,6 +83,8 @@ function CreateBattleTextEvent()
 	var TextInitialVal = argument_count > 2 ? argument[2] : new TextInit();
 	var TextExt = argument_count > 3 ? argument[3] : [];
     
+	if(!layer_exists(layer_get_id("TextBox"))) {show_debug_message("No TextBox layer found in room!"); return;}
+	
     if(!instance_exists(oTextBox))
     {
         var TextInst = instance_create_layer(0, -1000, "TextBox", oTextBox);
