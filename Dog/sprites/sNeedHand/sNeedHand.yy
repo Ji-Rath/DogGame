@@ -7,10 +7,10 @@
   "edgeFiltering": false,
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
-  "bbox_left": 20,
-  "bbox_right": 80,
+  "bbox_left": 21,
+  "bbox_right": 82,
   "bbox_top": 25,
-  "bbox_bottom": 97,
+  "bbox_bottom": 93,
   "HTile": false,
   "VTile": false,
   "For3D": false,
@@ -26,10 +26,14 @@
   "frames": [
     {"compositeImage":{"FrameId":{"name":"a2704c2d-5ab8-4732-a93f-223e96551876","path":"sprites/sNeedHand/sNeedHand.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
         {"FrameId":{"name":"a2704c2d-5ab8-4732-a93f-223e96551876","path":"sprites/sNeedHand/sNeedHand.yy",},"LayerId":{"name":"96540646-5948-456b-9b13-ba632c6e81ae","path":"sprites/sNeedHand/sNeedHand.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"a2704c2d-5ab8-4732-a93f-223e96551876","path":"sprites/sNeedHand/sNeedHand.yy",},"LayerId":{"name":"6c6558e5-7559-4b68-80ba-03d4ea128c21","path":"sprites/sNeedHand/sNeedHand.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"a2704c2d-5ab8-4732-a93f-223e96551876","path":"sprites/sNeedHand/sNeedHand.yy",},"LayerId":{"name":"44a01f88-c1e1-46d7-b0d9-031e87298f99","path":"sprites/sNeedHand/sNeedHand.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"sNeedHand","path":"sprites/sNeedHand/sNeedHand.yy",},"resourceVersion":"1.0","name":"a2704c2d-5ab8-4732-a93f-223e96551876","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"b416e3b8-9f2e-49c2-88f8-e14465665ceb","path":"sprites/sNeedHand/sNeedHand.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"b416e3b8-9f2e-49c2-88f8-e14465665ceb","path":"sprites/sNeedHand/sNeedHand.yy",},"LayerId":{"name":"96540646-5948-456b-9b13-ba632c6e81ae","path":"sprites/sNeedHand/sNeedHand.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sNeedHand","path":"sprites/sNeedHand/sNeedHand.yy",},"resourceVersion":"1.0","name":"b416e3b8-9f2e-49c2-88f8-e14465665ceb","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"997e4ffe-c1e1-4f69-a2b8-befcb19d0caa","path":"sprites/sNeedHand/sNeedHand.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"997e4ffe-c1e1-4f69-a2b8-befcb19d0caa","path":"sprites/sNeedHand/sNeedHand.yy",},"LayerId":{"name":"6c6558e5-7559-4b68-80ba-03d4ea128c21","path":"sprites/sNeedHand/sNeedHand.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"997e4ffe-c1e1-4f69-a2b8-befcb19d0caa","path":"sprites/sNeedHand/sNeedHand.yy",},"LayerId":{"name":"96540646-5948-456b-9b13-ba632c6e81ae","path":"sprites/sNeedHand/sNeedHand.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"997e4ffe-c1e1-4f69-a2b8-befcb19d0caa","path":"sprites/sNeedHand/sNeedHand.yy",},"LayerId":{"name":"44a01f88-c1e1-46d7-b0d9-031e87298f99","path":"sprites/sNeedHand/sNeedHand.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sNeedHand","path":"sprites/sNeedHand/sNeedHand.yy",},"resourceVersion":"1.0","name":"997e4ffe-c1e1-4f69-a2b8-befcb19d0caa","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"sNeedHand","path":"sprites/sNeedHand/sNeedHand.yy",},
@@ -45,10 +49,10 @@
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"2ece3408-408c-405e-ae54-b4d4c3d76fc7","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"a2704c2d-5ab8-4732-a93f-223e96551876","path":"sprites/sNeedHand/sNeedHand.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-            {"id":"5a28ea0d-6955-4996-a5cf-7e279be5d33d","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"b416e3b8-9f2e-49c2-88f8-e14465665ceb","path":"sprites/sNeedHand/sNeedHand.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"87ca432e-ab5a-45ff-94c4-789d41dfd3f4","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"997e4ffe-c1e1-4f69-a2b8-befcb19d0caa","path":"sprites/sNeedHand/sNeedHand.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
-    "visibleRange": {"x":0.0,"y":0.0,},
+    "visibleRange": null,
     "lockOrigin": false,
     "showBackdrop": true,
     "showBackdropImage": false,
@@ -69,7 +73,8 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"96540646-5948-456b-9b13-ba632c6e81ae","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Layer 1","resourceVersion":"1.0","name":"6c6558e5-7559-4b68-80ba-03d4ea128c21","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":false,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"96540646-5948-456b-9b13-ba632c6e81ae","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
     "name": "UI",

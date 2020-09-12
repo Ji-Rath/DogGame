@@ -7,10 +7,10 @@
   "edgeFiltering": false,
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
-  "bbox_left": 7,
-  "bbox_right": 532,
-  "bbox_top": 0,
-  "bbox_bottom": 226,
+  "bbox_left": 18,
+  "bbox_right": 513,
+  "bbox_top": 23,
+  "bbox_bottom": 207,
   "HTile": false,
   "VTile": false,
   "For3D": false,
@@ -26,6 +26,7 @@
   "frames": [
     {"compositeImage":{"FrameId":{"name":"fcbff8f3-69e3-432c-b64e-a306aa43a9f0","path":"sprites/sAttackInfo/sAttackInfo.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
         {"FrameId":{"name":"fcbff8f3-69e3-432c-b64e-a306aa43a9f0","path":"sprites/sAttackInfo/sAttackInfo.yy",},"LayerId":{"name":"9c3f145a-3c22-44a6-94ed-449b74f7bc7d","path":"sprites/sAttackInfo/sAttackInfo.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"fcbff8f3-69e3-432c-b64e-a306aa43a9f0","path":"sprites/sAttackInfo/sAttackInfo.yy",},"LayerId":{"name":"dc134f85-4955-428d-b050-911352d1702d","path":"sprites/sAttackInfo/sAttackInfo.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"sAttackInfo","path":"sprites/sAttackInfo/sAttackInfo.yy",},"resourceVersion":"1.0","name":"fcbff8f3-69e3-432c-b64e-a306aa43a9f0","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
@@ -44,7 +45,7 @@
             {"id":"7826d2b2-10a4-4e53-b94c-22b5b545c62e","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"fcbff8f3-69e3-432c-b64e-a306aa43a9f0","path":"sprites/sAttackInfo/sAttackInfo.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
-    "visibleRange": {"x":0.0,"y":0.0,},
+    "visibleRange": null,
     "lockOrigin": false,
     "showBackdrop": true,
     "showBackdropImage": false,
@@ -65,7 +66,7 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"9c3f145a-3c22-44a6-94ed-449b74f7bc7d","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Layer 1","resourceVersion":"1.0","name":"dc134f85-4955-428d-b050-911352d1702d","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
     "name": "BattleMenu",
