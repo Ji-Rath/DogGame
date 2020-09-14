@@ -25,7 +25,7 @@ RunPartInterval = 0.25; //Time (seconds) to spawn particles while running
 Voice				= sndVoice_02;
 Font				= fnt_dialogue;
 Name				= "Dogpaddler";
-
+	
 //////////////////////////////////////////////////////////////////////////////////
 
 //Create State machine
@@ -57,3 +57,10 @@ Speed = 0;
 
 image_yscale = Scale;
 image_xscale = Scale;
+
+for(var i=0; i<array_length(global.PartnerArray);i++)
+{
+	var Partner = array_get(global.PartnerArray, i);
+	if(Partner != -1)
+		instance_create_layer(x, y, "Instances", Partner);
+}

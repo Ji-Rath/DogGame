@@ -13,6 +13,7 @@ function scrFadeout() {
 	var YDest = argument_count > 4 ? argument[4] : 0;
 	var Sprite = argument_count > 5 ? argument[5] : 0;
 	var SpriteXScale = argument_count > 6 ? argument[6] : 0;
+	
 	if(!instance_exists(oFade))
 	{
 	    var Fade = instance_create_depth(0,0,0,oFade);
@@ -28,6 +29,4 @@ function scrFadeout() {
 	        Fade.SpriteXScale = SpriteXScale;
 	    }
 	}
-
-
 }

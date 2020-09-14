@@ -35,9 +35,6 @@
     {"instances":[
         {"properties":[],"isDnd":false,"objectId":{"name":"oDog","path":"objects/oDog/oDog.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":96.0,"y":224.0,"resourceVersion":"1.0","name":"inst_45400386","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"oCamera","path":"objects/oCamera/oCamera.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":32.0,"y":32.0,"resourceVersion":"1.0","name":"inst_1E25C428","tags":[],"resourceType":"GMRInstance",},
-        {"properties":[],"isDnd":false,"objectId":{"name":"oMissileBoy","path":"objects/oMissileBoy/oMissileBoy.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":576.0,"y":192.0,"resourceVersion":"1.0","name":"inst_2EAB6475","tags":[],"resourceType":"GMRInstance",},
-        {"properties":[],"isDnd":false,"objectId":{"name":"oArtGirl","path":"objects/oArtGirl/oArtGirl.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":928.0,"y":448.0,"resourceVersion":"1.0","name":"inst_5C614384","tags":[],"resourceType":"GMRInstance",},
-        {"properties":[],"isDnd":false,"objectId":{"name":"oWitchGirl","path":"objects/oWitchGirl/oWitchGirl.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":992.0,"y":96.0,"resourceVersion":"1.0","name":"inst_45131654","tags":[],"resourceType":"GMRInstance",},
       ],"visible":true,"depth":400,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"Instances","tags":[],"resourceType":"GMRInstanceLayer",},
     {"tilesetId":{"name":"tsGrassy","path":"tilesets/tsGrassy/tsGrassy.yy",},"x":0,"y":0,"tiles":{"SerialiseWidth":11,"SerialiseHeight":8,"TileSerialiseData":[
 2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,
@@ -58,9 +55,6 @@
     {"name":"inst_45400386","path":"rooms/rmDebug/rmDebug.yy",},
     {"name":"inst_1E25C428","path":"rooms/rmDebug/rmDebug.yy",},
     {"name":"inst_674273BF","path":"rooms/rmDebug/rmDebug.yy",},
-    {"name":"inst_2EAB6475","path":"rooms/rmDebug/rmDebug.yy",},
-    {"name":"inst_5C614384","path":"rooms/rmDebug/rmDebug.yy",},
-    {"name":"inst_45131654","path":"rooms/rmDebug/rmDebug.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,
