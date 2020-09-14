@@ -19,7 +19,6 @@ Scale = 0.5; //Sprite scaling
 WalkSpeed = 3; //Walking Speed
 RunSpeed = WalkSpeed*2 //Running Speed
 IntervalCheckDelay = 0.2; //Interval (seconds) to check distance from player
-FollowObject = oDog; //The object to follow
 
 /////////////////////////////////////////////////////////////////////////////////
 
