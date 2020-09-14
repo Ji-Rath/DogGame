@@ -80,6 +80,7 @@
     {"id":{"name":"sprite60","path":"sprites/sprite60/sprite60.yy",},"order":0,},
     {"id":{"name":"sprite61","path":"sprites/sprite61/sprite61.yy",},"order":1,},
     {"id":{"name":"tsWall","path":"tilesets/tsWall/tsWall.yy",},"order":0,},
+    {"id":{"name":"oPhysicsMouse","path":"objects/oPhysicsMouse/oPhysicsMouse.yy",},"order":15,},
     {"id":{"name":"tsGrassy","path":"tilesets/tsGrassy/tsGrassy.yy",},"order":1,},
     {"id":{"name":"tsGrassDirt","path":"tilesets/tsGrassDirt/tsGrassDirt.yy",},"order":2,},
     {"id":{"name":"sndVoice_01","path":"sounds/sndVoice_01/sndVoice_01.yy",},"order":3,},

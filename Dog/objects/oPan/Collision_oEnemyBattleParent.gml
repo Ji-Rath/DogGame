@@ -12,4 +12,7 @@ if(!Hit)
 		ScreenShake(20, 15);
 	
 	scrMiniGameIcon(sCheckMark);
+	
+	if(Joint != -1)
+		physics_joint_delete(Joint);
 }
