@@ -18,7 +18,7 @@ if(Counter < CompleteCounter)
            StruggleRight = true;
            Counter++;
 		   with(DogSave)
-				physics_apply_impulse(x, y, 200, -200);
+				physics_apply_force(x, y, 15, -10);
         }
 		
     } else if(global.KeySprint)
@@ -28,7 +28,7 @@ if(Counter < CompleteCounter)
             StruggleRight = false;
             Counter++;
 			with(DogSave)
-				physics_apply_impulse(x, y, -200, -200);
+				physics_apply_force(x, y, -15, -10);
         }
 		
     }

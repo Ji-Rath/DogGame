@@ -8,5 +8,11 @@ if(!Hit)
 	Hit = true;
 	oMiniGame.timer[1] = 0.5*60;
 	
+	with(oCamera)
+		ScreenShake(20, 15);
+	
 	scrMiniGameIcon(sCheckMark);
+	
+	if(Joint != -1)
+		physics_joint_delete(Joint);
 }

@@ -34,8 +34,8 @@ if(visible && Selected)
                     }
 					else
 					{
-						var ExecuteArray = Description[4];
-	                    scrExecuteAlt(ExecuteArray);
+						ItemMouseHoverSelect = i;
+						alarm[0] = 0.5*60/oBattleManager.SpeedMultiplier;
                     
 	                    with(oBattleMenuBase)
 						{

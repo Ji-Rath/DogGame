@@ -10,8 +10,8 @@ State = Crab1State.Setup;
 
 
 //Timer setup
-timer[0] = (random_range(0.5,2)/oBattleManager.SpeedMultiplier)*60;
+timer[0] = (random_range(1,3)/oBattleManager.SpeedMultiplier)*60;
 
-Spd = 1.5;
+Spd = 1.75;
 
 ButtonPress = noone;

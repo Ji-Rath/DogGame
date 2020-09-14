@@ -27,10 +27,7 @@ EnemyBattle = oAreaStats.EnemyBattle;
 EnemyKey = oAreaStats.EnemyKey;
 
 //Current battle stage
-BattleStage = BattleSection.EnemyAttack;
-
-//If true, go to next battle stage
-BattleStageEnd = false;
+BattleStage = BattleSection.PlayerAttack;
 
 //Mark player portrait position
 DPhpx = 170;
@@ -83,6 +80,27 @@ function NextTurn()
 	var Delay = argument_count > 0 ? argument[0] : 0.1;
 	if (alarm[0] > Delay*60 || alarm[0] == -1)
 		alarm[0] = Delay*60/SpeedMultiplier;
+		
+	switch(BattleStage)
+	{
+		case BattleSection.EnemyAttack: BattleStage = BattleSection.PlayerAttack; break;
+		case BattleSection.PlayerAttack: BattleStage = BattleSection.EnemyAttack; break;
+	}
+	
+	//Check enemy and player health
+	if(DrawPlayerHealth <= 0 && BattleStage != BattleSection.PlayerDead)
+		BattleStage = BattleSection.PlayerDead;
+	
+	if(DrawEnemyHealth <= 0 && BattleStage != BattleSection.PlayerVictory && BattleStage != BattleSection.RoomTransition)
+		BattleStage = BattleSection.PlayerVictory;
+		
+	switch(BattleStage)
+	{
+		case BattleSection.EnemyAttack:
+			var EnemyText = EnemyBattle.TextDuring[random_range(0,array_length_1d(EnemyBattle.TextDuring))];
+			CreateBattleTextEvent(EnemyText, false, new TextInit(0.05, c_black, 1/SpeedMultiplier));
+			break;
+	}
 }
 
 function RunBattleStage()
@@ -92,9 +110,6 @@ function RunBattleStage()
 		case BattleSection.EnemyAttack: //Enemy turn, send enemy minigame
 			var MiniGame = instance_create_layer(0,0,"GameManager",oMiniGame);
 			MiniGame.GameType = EnemyBattle.EnemyAttacks[random_range(0,array_length_1d(EnemyBattle.EnemyAttacks))]
-			
-			var EnemyText = EnemyBattle.TextDuring[random_range(0,array_length_1d(EnemyBattle.TextDuring))];
-			CreateBattleTextEvent(EnemyText, false, new TextInit(0.05, c_black, 1/SpeedMultiplier));
 			break;
 		
 		case BattleSection.PlayerAttack: //Player turn
@@ -147,4 +162,4 @@ function RunBattleStage()
 	}	
 }
 
-RunBattleStage();
+NextTurn(0.5);

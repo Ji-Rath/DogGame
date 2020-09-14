@@ -5,14 +5,14 @@ if(!Destroy)
     
     if(OpenFraction <= (pi/2))
     {
-        OpenFraction += (oBattleManager.SpeedMultiplier/2)/(2*pi);
+        OpenFraction += (oBattleManager.SpeedMultiplier/3)/(2*pi);
     }
 }
 else
 {
     if(OpenEffect >= 0)
     {
-        OpenFraction -= (oBattleManager.SpeedMultiplier/2)/(2*pi);
+        OpenFraction -= (oBattleManager.SpeedMultiplier/3)/(2*pi);
     }
     else
     {

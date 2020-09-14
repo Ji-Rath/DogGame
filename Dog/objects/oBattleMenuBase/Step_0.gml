@@ -8,10 +8,10 @@ if(visible && Selected)
     {
         //Do Action based on item selected
         ItemMouseHoverSelect = ds_list_find_value(Contents,0);
-        var ContentArray = oBattleManager.ItemDescription[ItemMouseHoverSelect];
-        var ExecuteArray = ContentArray[4];
-		scrExecuteAlt(ExecuteArray);
+		alarm[0] = 0.5*60/oBattleManager.SpeedMultiplier;
 		
+		
+		//Fade out GUI icons
 		with(oBattleMenuBase)
 		{
 			scrAnimReinit(Animations.Flip, Animations.FadeOut);
@@ -40,12 +40,10 @@ if(visible && Selected)
             
             if(mouse_check_button_pressed(mb_left))
             {
-                //Do Action based on item selected
+                //Do delayed action based on item selected
+                alarm[0] = 0.5*60/oBattleManager.SpeedMultiplier;
                 
-                var ContentArray = oBattleManager.ItemDescription[ItemMouseHoverSelect];
-                var ExecuteArray = ContentArray[4];
-                scrExecuteAlt(ExecuteArray);
-                
+				//Fade out GUI icons
                 with(oBattleMenuBase)
 				{
 					scrAnimReinit(-1, Animations.FadeOut);

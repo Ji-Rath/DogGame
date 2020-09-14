@@ -9,4 +9,8 @@ with(oPhysicsBase)
 }
 
 if (CanGrab && Grabbable)
+{
+	Joint = physics_joint_rope_create(self, oPhysicsMouse, mouse_x, mouse_y, oPhysicsMouse.x, oPhysicsMouse.y, 5, false);
 	Grabbed = true;
+}
+	

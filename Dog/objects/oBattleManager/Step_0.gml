@@ -3,27 +3,6 @@
 if(NeglectMeter <= MaxNeglect && !instance_exists(oTextBox))
 	NeglectMeter += (1/60);
 
-//If the current battle stage is done, transition to the next one.
-if(BattleStageEnd)
-{	
-	switch(BattleStage)
-	{
-		case BattleSection.EnemyAttack: BattleStage = BattleSection.PlayerAttack; break;
-		case BattleSection.PlayerAttack: BattleStage = BattleSection.EnemyAttack; break;
-	}
-	
-	//Check enemy and player health
-	if(DrawPlayerHealth <= 0 && BattleStage != BattleSection.PlayerDead)
-		BattleStage = BattleSection.PlayerDead;
-	
-	if(DrawEnemyHealth <= 0 && BattleStage != BattleSection.PlayerVictory && BattleStage != BattleSection.RoomTransition)
-		BattleStage = BattleSection.PlayerVictory;
-	
-	RunBattleStage();
-	
-	BattleStageEnd = false;
-}
-
 //Reduce battle timer, and end turn if at 0
 if(DrawGUI && oBattleMenuBase.AnimAlpha != 0 && !instance_exists(oMiniGame))
 {
@@ -40,7 +19,6 @@ if(DrawGUI && oBattleMenuBase.AnimAlpha != 0 && !instance_exists(oMiniGame))
 			Selected = false;
 		}
 	}
-
 }
 
 if(timer[0] == -1 && !UpdateStats)

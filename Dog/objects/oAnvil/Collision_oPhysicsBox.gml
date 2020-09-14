@@ -9,4 +9,7 @@ if(!HitObject)
 	scrMiniGameIcon(sCheckMark);
 	
 	HitObject = true;
+	
+	with(oCamera)
+		ScreenShake(20, 15);
 }
