@@ -9,4 +9,4 @@ else
     LineIndicator = "";
 }
 
-alarm[0] = 0.5*60;
+alarm[1] = 0.5*60;

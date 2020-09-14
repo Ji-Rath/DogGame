@@ -8,7 +8,7 @@ TextBox = "";
 
 //Handle line indicator while typing
 LineIndicator = "|";
-alarm[0] = 0.5*60;
+alarm[1] = 0.5*60;
 
 //If true, allow player to type
 IsFocused = false;

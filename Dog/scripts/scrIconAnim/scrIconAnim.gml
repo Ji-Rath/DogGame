@@ -146,7 +146,7 @@ function scrPlayAnimation(AnimationEnum)
 		case Animations.Flip:
 		    if (AnimationTimer[0] = -1)
 		    {
-			    AnimationTimer[0] = 0.5*60/SpeedMultiplier;
+			    AnimationTimer[0] = (0.5/SpeedMultiplier)*60;
 			    AnimFlipped = !AnimFlipped;
 				
 			    if(AnimFlipped)
@@ -157,7 +157,7 @@ function scrPlayAnimation(AnimationEnum)
 			break;
 		case Animations.SmoothFlip:
 			//Rotate effect
-		    AnimRot += (SpeedMultiplier/5)/(2*pi);
+		    AnimRot += (SpeedMultiplier/4)/(2*pi);
 		    AnimRotation = sin(AnimRot)*20;
 		    if(AnimRot >= 2*pi)
 		        AnimRot = 0;
