@@ -31,7 +31,17 @@
     {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"parent":{"name":"oOldMan","path":"objects/oOldMan/oOldMan.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
-  "overriddenProperties": [],
+  "overriddenProperties": [
+    {"propertyId":{"name":"SWalkRight","path":"objects/oCharacter/oCharacter.yy",},"objectId":{"name":"oCharacter","path":"objects/oCharacter/oCharacter.yy",},"value":"sOldManWalk","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"SWalkUp","path":"objects/oCharacter/oCharacter.yy",},"objectId":{"name":"oCharacter","path":"objects/oCharacter/oCharacter.yy",},"value":"sOldManWalk","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"SWalkDown","path":"objects/oCharacter/oCharacter.yy",},"objectId":{"name":"oCharacter","path":"objects/oCharacter/oCharacter.yy",},"value":"sOldManWalk","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"SRunRight","path":"objects/oCharacter/oCharacter.yy",},"objectId":{"name":"oCharacter","path":"objects/oCharacter/oCharacter.yy",},"value":"sOldManWalk","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"SRunUp","path":"objects/oCharacter/oCharacter.yy",},"objectId":{"name":"oCharacter","path":"objects/oCharacter/oCharacter.yy",},"value":"sOldManWalk","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"SRunDown","path":"objects/oCharacter/oCharacter.yy",},"objectId":{"name":"oCharacter","path":"objects/oCharacter/oCharacter.yy",},"value":"sOldManWalk","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"SIdleRight","path":"objects/oCharacter/oCharacter.yy",},"objectId":{"name":"oCharacter","path":"objects/oCharacter/oCharacter.yy",},"value":"sOldMan","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"SIdleUp","path":"objects/oCharacter/oCharacter.yy",},"objectId":{"name":"oCharacter","path":"objects/oCharacter/oCharacter.yy",},"value":"sOldMan","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"SIdleDown","path":"objects/oCharacter/oCharacter.yy",},"objectId":{"name":"oCharacter","path":"objects/oCharacter/oCharacter.yy",},"value":"sOldMan","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+  ],
   "parent": {
     "name": "NPC",
     "path": "folders/Objects/MainScene/NPC.yy",

@@ -130,6 +130,7 @@
     {"id":{"name":"oDepthSort","path":"objects/oDepthSort/oDepthSort.yy",},"order":4,},
     {"id":{"name":"oEmote","path":"objects/oEmote/oEmote.yy",},"order":0,},
     {"id":{"name":"oEnemyBase","path":"objects/oEnemyBase/oEnemyBase.yy",},"order":0,},
+    {"id":{"name":"oCharacter","path":"objects/oCharacter/oCharacter.yy",},"order":16,},
     {"id":{"name":"oCrab","path":"objects/oCrab/oCrab.yy",},"order":1,},
     {"id":{"name":"oDog","path":"objects/oDog/oDog.yy",},"order":1,},
     {"id":{"name":"oNPCBase","path":"objects/oNPCBase/oNPCBase.yy",},"order":0,},

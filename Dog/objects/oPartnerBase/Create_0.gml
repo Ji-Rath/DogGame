@@ -2,17 +2,6 @@
 //Inherit code from parent object
 event_inherited();
 
-//Assigning sprites to variables
-SWalk = sDogWalk;
-SRun = sDogRun;
-SWalkUp = sDogWalkUp;
-SRunUp = sDogRunUp;
-SWalkDown = sDogWalkDown;
-SRunDown = sDogRunDown;
-SIdle = sDogIdleRight;
-SIdleUp = sDogIdleUp;
-SIdleDown = sDogIdleDown;
-
 Distance = 32; //Distance to start following object
 RunningDistance = 200 //Distance to start running towards object
 Scale = 0.5; //Sprite scaling

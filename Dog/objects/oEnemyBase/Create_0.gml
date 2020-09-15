@@ -4,18 +4,6 @@
 //Inherit parent values
 event_inherited();
 
-//Set sprites for object
-SIdle = sEnemydefault;
-SIdleUp = sEnemydefault;
-SIdleDown = sEnemydefault;
-SWalk = sEnemywalk;
-SWalkUp = sEnemywalk;
-SWalkDown = sEnemywalk;
-SRun = sEnemyrun;
-SRunUp = sEnemyrun;
-SRunDown = sEnemyrun;
-SAlert = sEnemyalert;
-
 //Enemy values
 WalkSpeed = 3;
 RunSpeed = WalkSpeed * 1.5;
@@ -53,10 +41,6 @@ image_yscale = Scale;
 //Give enemies a unique key - used for saving position, death, etc.
 Key = room_get_name(room)+"Enemy"+string(x)+string(y);
 
-//Initialize movement variables
-HSpeed = 0;
-VSpeed = 0;
-Speed = 0;
 WanderDirectionX = 0;
 WanderDirectionY = 0;
 TimerEnded = false;

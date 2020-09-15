@@ -11,8 +11,8 @@
   },
   "persistent": false,
   "parentObjectId": {
-    "name": "oDepthBase",
-    "path": "objects/oDepthBase/oDepthBase.yy",
+    "name": "oCharacter",
+    "path": "objects/oCharacter/oCharacter.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,

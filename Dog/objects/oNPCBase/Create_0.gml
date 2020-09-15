@@ -10,7 +10,3 @@ TextArray = [];
 
 //Variable to prevent infinite talking
 TextCooldown = false;
-
-//Track NPC speed
-HSpeed = 0;
-VSpeed = 0;

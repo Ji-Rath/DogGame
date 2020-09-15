@@ -3,17 +3,6 @@
 
 event_inherited();
 
-//Assigning sprites to variables
-SWalk = sOldManWalk;
-SWalkUp = sOldManWalk;
-SWalkDown = sOldManWalk;
-SRun = sOldManWalk;
-SRunUp = sOldManWalk;
-SRunDown = sOldManWalk;
-SIdle = sOldMan;
-SIdleUp = sOldMan;
-SIdleDown = sOldMan;
-
 WalkSpeed = 3; //NPC walk speed
 Scale = 2; //Sprite scaling
 AlertDistance = 300; //Distance for seeing the player and starting the cutscene
@@ -70,9 +59,5 @@ Used = false;
 //Scale the sprite accordingly
 image_xscale = Scale;
 image_yscale = Scale;
-
-//Used to track path speed
-XPrevious = 0;
-YPrevious = 0;
 
 Speed = WalkSpeed;

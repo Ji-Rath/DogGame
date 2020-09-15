@@ -3,16 +3,6 @@
 //Inherit parent code
 event_inherited();
 
-//Set sprite values
-SIdle = sCrab;
-SWalk = sCrabWalk;
-SRun = sCrabRun;
-SWalkUp = sCrabWalk;
-SRunUp = sCrabRun;
-SWalkDown = sCrabWalk;
-SRunDown = sCrabRun;
-SAlert = sCrabAlert;
-
 WalkSpeed = 3; //player walk speed
 RunSpeed = WalkSpeed * 1.5; //player run speed
 DetectRange = 350; //Range to detect player
