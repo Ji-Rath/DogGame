@@ -19,7 +19,7 @@ else
     }
 	
 	//Check distance from object to stop following
-	if(distance_to_object(oDog) <= Distance)
+	if(distance_to_object(FollowObject) <= Distance)
 	{
 	    path_end();
 	    HSpeed = 0;

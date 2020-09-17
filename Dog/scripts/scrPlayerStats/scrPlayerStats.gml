@@ -11,6 +11,8 @@ function scrPlayerStats() {
 	global.PlayerMaxPP = 30;
 
 	global.WizardHappy = 50;
+	
+	global.PartnerArray = [oArtGirl, oMissileBoy, oWitchGirl];
 
 	//Load Variables from ds map if available
 	var SaveVal = ds_map_find_value(oAreaStats.SaveState,"PlayerHealth");

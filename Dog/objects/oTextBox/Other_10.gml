@@ -16,7 +16,7 @@ TextPositionRef = instance_find(oTextPosition, 0);
 //Textbox variables
 PausePunctuation = true;
 PunctuationDelay = 0.5;
-NewLineCutOff = 100;
+NewLineCutOff = 30;
 
 //Default values
 Voice				= sndVoice_01;

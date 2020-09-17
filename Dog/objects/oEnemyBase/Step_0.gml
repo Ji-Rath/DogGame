@@ -40,7 +40,3 @@ scrPathSpeed();
 scrMoveCollision();
 scrWalk();
 
-//Update previous values - for path speed calculation
-XPrevious = x;
-YPrevious = y;
-

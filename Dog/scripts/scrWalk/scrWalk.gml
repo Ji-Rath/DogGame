@@ -6,9 +6,9 @@ function scrWalk() {
 	{
 		image_xscale = sign(HSpeed)*Scale;
 		if(abs(HSpeed) > (WalkSpeed+Buffer))
-			sprite_index = SRun;
+			sprite_index = SRunRight;
 		else
-			sprite_index = SWalk;
+			sprite_index = SWalkRight;
 	}
 	else if (VSpeed < 0)
 	{
@@ -29,9 +29,9 @@ function scrWalk() {
 	//Set Idle animation
 	if(HSpeed == 0 && VSpeed == 0)
 	{
-		if(sprite_index == SWalk || sprite_index == SRun)
+		if(sprite_index == SWalkRight || sprite_index == SRunRight)
 		{
-			sprite_index = SIdle
+			sprite_index = SIdleRight
 		}
 		if(sprite_index == SWalkUp || sprite_index == SRunUp)
 		{
