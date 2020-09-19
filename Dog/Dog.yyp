@@ -51,6 +51,7 @@
     {"id":{"name":"sDogIdleDown","path":"sprites/sDogIdleDown/sDogIdleDown.yy",},"order":2,},
     {"id":{"name":"sDogBox","path":"sprites/sDogBox/sDogBox.yy",},"order":3,},
     {"id":{"name":"sDogFace","path":"sprites/sDogFace/sDogFace.yy",},"order":4,},
+    {"id":{"name":"sOpenBook","path":"sprites/sOpenBook/sOpenBook.yy",},"order":0,},
     {"id":{"name":"oParticleBase","path":"objects/oParticleBase/oParticleBase.yy",},"order":3,},
     {"id":{"name":"sDandelion","path":"sprites/sDandelion/sDandelion.yy",},"order":1,},
     {"id":{"name":"sRock","path":"sprites/sRock/sRock.yy",},"order":0,},
@@ -308,6 +309,7 @@
     {"folderPath":"folders/Sprites/Map Assets/Decor.yy","order":3,"resourceVersion":"1.0","name":"Decor","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Sprites/Map Assets/Interior.yy","order":4,"resourceVersion":"1.0","name":"Interior","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Sprites/Map Assets/Foliage/SMALL.yy","order":3,"resourceVersion":"1.0","name":"SMALL","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Sprites/BattleMenu/book_open_animaiton.yy","order":5,"resourceVersion":"1.0","name":"book_open_animaiton","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":461609314234257646,"resourceVersion":"1.0","name":"audiogroup_default","resourceType":"GMAudioGroup",},

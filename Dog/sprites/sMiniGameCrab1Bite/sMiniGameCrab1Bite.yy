@@ -7,10 +7,10 @@
   "edgeFiltering": false,
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
-  "bbox_left": 110,
-  "bbox_right": 215,
-  "bbox_top": 23,
-  "bbox_bottom": 344,
+  "bbox_left": 131,
+  "bbox_right": 213,
+  "bbox_top": 36,
+  "bbox_bottom": 333,
   "HTile": false,
   "VTile": false,
   "For3D": false,
@@ -26,6 +26,7 @@
   "frames": [
     {"compositeImage":{"FrameId":{"name":"c2f4ecd5-bf56-491e-9aa3-34461bde9e6b","path":"sprites/sMiniGameCrab1Bite/sMiniGameCrab1Bite.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
         {"FrameId":{"name":"c2f4ecd5-bf56-491e-9aa3-34461bde9e6b","path":"sprites/sMiniGameCrab1Bite/sMiniGameCrab1Bite.yy",},"LayerId":{"name":"b3d9be99-8654-4c38-b237-84f2c96db38b","path":"sprites/sMiniGameCrab1Bite/sMiniGameCrab1Bite.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"c2f4ecd5-bf56-491e-9aa3-34461bde9e6b","path":"sprites/sMiniGameCrab1Bite/sMiniGameCrab1Bite.yy",},"LayerId":{"name":"20d8a0d9-0d70-4cd8-818f-c49fbc0ada2b","path":"sprites/sMiniGameCrab1Bite/sMiniGameCrab1Bite.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"sMiniGameCrab1Bite","path":"sprites/sMiniGameCrab1Bite/sMiniGameCrab1Bite.yy",},"resourceVersion":"1.0","name":"c2f4ecd5-bf56-491e-9aa3-34461bde9e6b","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
@@ -65,7 +66,8 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"b3d9be99-8654-4c38-b237-84f2c96db38b","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Layer 1","resourceVersion":"1.0","name":"20d8a0d9-0d70-4cd8-818f-c49fbc0ada2b","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":false,"isLocked":false,"blendMode":0,"opacity":39.0,"displayName":"default","resourceVersion":"1.0","name":"b3d9be99-8654-4c38-b237-84f2c96db38b","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
     "name": "Crab1",
