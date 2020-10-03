@@ -18,7 +18,7 @@ if(instance_exists(oMiniGame))
         else
         {
             YPos = y + oMiniGame.OpenEffect*250;
-            Alpha = 1-(oMiniGame.OpenEffect/2);
+            Alpha = 1-(oMiniGame.OpenEffect);
         }
     }
     
