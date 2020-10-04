@@ -23,19 +23,23 @@
               {"id":"0f7220a3-1be1-4607-9af9-7419eafa9f9c","Key":0.0,"Length":30.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"EmbeddedAnimCurve":{"function":1,"channels":[
                         {"colour":4294901760,"visible":true,"points":[
                             {"x":0.0,"y":-430.0,},
+                            {"x":0.729572,"y":-423.5039,},
                             {"x":1.0,"y":-423.0,},
                           ],"controlPoints":[],"resourceVersion":"1.0","name":"x","tags":[],"resourceType":"GMAnimCurveChannel",},
                         {"colour":4278190335,"visible":true,"points":[
                             {"x":0.0,"y":-608.439941,},
+                            {"x":0.729572,"y":-354.590881,},
                             {"x":1.0,"y":-331.90036,},
                           ],"controlPoints":[],"resourceVersion":"1.0","name":"y","tags":[],"resourceType":"GMAnimCurveChannel",},
                       ],"parent":{"name":"position","path":"sequences/seqBattleTextIntro/seqBattleTextIntro.yy",},"resourceVersion":"1.1","name":null,"tags":[],"resourceType":"GMAnimCurve",},"RealValue":0.0,"AnimCurveId":null,"resourceVersion":"1.0","resourceType":"RealKeyframe",},"1":{"EmbeddedAnimCurve":{"function":1,"channels":[
                         {"colour":4294901760,"visible":true,"points":[
                             {"x":0.0,"y":-430.0,},
+                            {"x":0.729572,"y":-423.5039,},
                             {"x":1.0,"y":-423.0,},
                           ],"controlPoints":[],"resourceVersion":"1.0","name":"x","tags":[],"resourceType":"GMAnimCurveChannel",},
                         {"colour":4278190335,"visible":true,"points":[
                             {"x":0.0,"y":-608.439941,},
+                            {"x":0.729572,"y":-354.590881,},
                             {"x":1.0,"y":-331.90036,},
                           ],"controlPoints":[],"resourceVersion":"1.0","name":"y","tags":[],"resourceType":"GMAnimCurveChannel",},
                       ],"parent":{"name":"position","path":"sequences/seqBattleTextIntro/seqBattleTextIntro.yy",},"resourceVersion":"1.1","name":null,"tags":[],"resourceType":"GMAnimCurve",},"RealValue":0.0,"AnimCurveId":null,"resourceVersion":"1.0","resourceType":"RealKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<RealKeyframe>",},

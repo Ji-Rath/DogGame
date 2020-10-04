@@ -7,10 +7,10 @@
   "edgeFiltering": false,
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
-  "bbox_left": 101,
-  "bbox_right": 248,
-  "bbox_top": 102,
-  "bbox_bottom": 305,
+  "bbox_left": 114,
+  "bbox_right": 235,
+  "bbox_top": 90,
+  "bbox_bottom": 250,
   "HTile": false,
   "VTile": false,
   "For3D": false,
@@ -24,31 +24,24 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"bdf69a1d-bd66-483c-b5a4-e81f869b61b0","path":"sprites/sMiniGameCrab1PlayerRun/sMiniGameCrab1PlayerRun.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"bdf69a1d-bd66-483c-b5a4-e81f869b61b0","path":"sprites/sMiniGameCrab1PlayerRun/sMiniGameCrab1PlayerRun.yy",},"LayerId":{"name":"d707a94b-9101-4122-81ca-67dffcf50fa9","path":"sprites/sMiniGameCrab1PlayerRun/sMiniGameCrab1PlayerRun.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"bdf69a1d-bd66-483c-b5a4-e81f869b61b0","path":"sprites/sMiniGameCrab1PlayerRun/sMiniGameCrab1PlayerRun.yy",},"LayerId":{"name":"393a63bf-76a1-413b-a566-e06821a0e21b","path":"sprites/sMiniGameCrab1PlayerRun/sMiniGameCrab1PlayerRun.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"bdf69a1d-bd66-483c-b5a4-e81f869b61b0","path":"sprites/sMiniGameCrab1PlayerRun/sMiniGameCrab1PlayerRun.yy",},"LayerId":{"name":"2bf79b2f-6b99-4e67-89d4-1b53e7f2d89e","path":"sprites/sMiniGameCrab1PlayerRun/sMiniGameCrab1PlayerRun.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sMiniGameCrab1PlayerRun","path":"sprites/sMiniGameCrab1PlayerRun/sMiniGameCrab1PlayerRun.yy",},"resourceVersion":"1.0","name":"bdf69a1d-bd66-483c-b5a4-e81f869b61b0","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"e1be43b0-1435-4b48-8242-3a2ff3b70655","path":"sprites/sMiniGameCrab1PlayerRun/sMiniGameCrab1PlayerRun.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"e1be43b0-1435-4b48-8242-3a2ff3b70655","path":"sprites/sMiniGameCrab1PlayerRun/sMiniGameCrab1PlayerRun.yy",},"LayerId":{"name":"d707a94b-9101-4122-81ca-67dffcf50fa9","path":"sprites/sMiniGameCrab1PlayerRun/sMiniGameCrab1PlayerRun.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"e1be43b0-1435-4b48-8242-3a2ff3b70655","path":"sprites/sMiniGameCrab1PlayerRun/sMiniGameCrab1PlayerRun.yy",},"LayerId":{"name":"393a63bf-76a1-413b-a566-e06821a0e21b","path":"sprites/sMiniGameCrab1PlayerRun/sMiniGameCrab1PlayerRun.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"e1be43b0-1435-4b48-8242-3a2ff3b70655","path":"sprites/sMiniGameCrab1PlayerRun/sMiniGameCrab1PlayerRun.yy",},"LayerId":{"name":"2bf79b2f-6b99-4e67-89d4-1b53e7f2d89e","path":"sprites/sMiniGameCrab1PlayerRun/sMiniGameCrab1PlayerRun.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sMiniGameCrab1PlayerRun","path":"sprites/sMiniGameCrab1PlayerRun/sMiniGameCrab1PlayerRun.yy",},"resourceVersion":"1.0","name":"e1be43b0-1435-4b48-8242-3a2ff3b70655","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"7cb8694c-30fb-44a1-98f8-c82cc54164f6","path":"sprites/sMiniGameCrab1PlayerRun/sMiniGameCrab1PlayerRun.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"7cb8694c-30fb-44a1-98f8-c82cc54164f6","path":"sprites/sMiniGameCrab1PlayerRun/sMiniGameCrab1PlayerRun.yy",},"LayerId":{"name":"d707a94b-9101-4122-81ca-67dffcf50fa9","path":"sprites/sMiniGameCrab1PlayerRun/sMiniGameCrab1PlayerRun.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"7cb8694c-30fb-44a1-98f8-c82cc54164f6","path":"sprites/sMiniGameCrab1PlayerRun/sMiniGameCrab1PlayerRun.yy",},"LayerId":{"name":"393a63bf-76a1-413b-a566-e06821a0e21b","path":"sprites/sMiniGameCrab1PlayerRun/sMiniGameCrab1PlayerRun.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"7cb8694c-30fb-44a1-98f8-c82cc54164f6","path":"sprites/sMiniGameCrab1PlayerRun/sMiniGameCrab1PlayerRun.yy",},"LayerId":{"name":"2bf79b2f-6b99-4e67-89d4-1b53e7f2d89e","path":"sprites/sMiniGameCrab1PlayerRun/sMiniGameCrab1PlayerRun.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sMiniGameCrab1PlayerRun","path":"sprites/sMiniGameCrab1PlayerRun/sMiniGameCrab1PlayerRun.yy",},"resourceVersion":"1.0","name":"7cb8694c-30fb-44a1-98f8-c82cc54164f6","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"32ede6ba-7b24-43c1-9183-b42184ebd864","path":"sprites/sMiniGameCrab1PlayerRun/sMiniGameCrab1PlayerRun.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"32ede6ba-7b24-43c1-9183-b42184ebd864","path":"sprites/sMiniGameCrab1PlayerRun/sMiniGameCrab1PlayerRun.yy",},"LayerId":{"name":"2bf79b2f-6b99-4e67-89d4-1b53e7f2d89e","path":"sprites/sMiniGameCrab1PlayerRun/sMiniGameCrab1PlayerRun.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"32ede6ba-7b24-43c1-9183-b42184ebd864","path":"sprites/sMiniGameCrab1PlayerRun/sMiniGameCrab1PlayerRun.yy",},"LayerId":{"name":"d707a94b-9101-4122-81ca-67dffcf50fa9","path":"sprites/sMiniGameCrab1PlayerRun/sMiniGameCrab1PlayerRun.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sMiniGameCrab1PlayerRun","path":"sprites/sMiniGameCrab1PlayerRun/sMiniGameCrab1PlayerRun.yy",},"resourceVersion":"1.0","name":"32ede6ba-7b24-43c1-9183-b42184ebd864","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"64ae7794-45c4-4ae8-8257-ca492d535532","path":"sprites/sMiniGameCrab1PlayerRun/sMiniGameCrab1PlayerRun.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"64ae7794-45c4-4ae8-8257-ca492d535532","path":"sprites/sMiniGameCrab1PlayerRun/sMiniGameCrab1PlayerRun.yy",},"LayerId":{"name":"e7137862-86fe-468b-bfee-5a5dda033835","path":"sprites/sMiniGameCrab1PlayerRun/sMiniGameCrab1PlayerRun.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sMiniGameCrab1PlayerRun","path":"sprites/sMiniGameCrab1PlayerRun/sMiniGameCrab1PlayerRun.yy",},"resourceVersion":"1.0","name":"64ae7794-45c4-4ae8-8257-ca492d535532","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"d00834f0-7a36-485e-868e-07b56645528a","path":"sprites/sMiniGameCrab1PlayerRun/sMiniGameCrab1PlayerRun.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"d00834f0-7a36-485e-868e-07b56645528a","path":"sprites/sMiniGameCrab1PlayerRun/sMiniGameCrab1PlayerRun.yy",},"LayerId":{"name":"e7137862-86fe-468b-bfee-5a5dda033835","path":"sprites/sMiniGameCrab1PlayerRun/sMiniGameCrab1PlayerRun.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sMiniGameCrab1PlayerRun","path":"sprites/sMiniGameCrab1PlayerRun/sMiniGameCrab1PlayerRun.yy",},"resourceVersion":"1.0","name":"d00834f0-7a36-485e-868e-07b56645528a","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"a8a9797f-b5c6-4a7f-b311-deeacbdef5f1","path":"sprites/sMiniGameCrab1PlayerRun/sMiniGameCrab1PlayerRun.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"a8a9797f-b5c6-4a7f-b311-deeacbdef5f1","path":"sprites/sMiniGameCrab1PlayerRun/sMiniGameCrab1PlayerRun.yy",},"LayerId":{"name":"e7137862-86fe-468b-bfee-5a5dda033835","path":"sprites/sMiniGameCrab1PlayerRun/sMiniGameCrab1PlayerRun.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sMiniGameCrab1PlayerRun","path":"sprites/sMiniGameCrab1PlayerRun/sMiniGameCrab1PlayerRun.yy",},"resourceVersion":"1.0","name":"a8a9797f-b5c6-4a7f-b311-deeacbdef5f1","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"4bbf0269-a618-41ea-8f13-a62e57cc8b4a","path":"sprites/sMiniGameCrab1PlayerRun/sMiniGameCrab1PlayerRun.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"4bbf0269-a618-41ea-8f13-a62e57cc8b4a","path":"sprites/sMiniGameCrab1PlayerRun/sMiniGameCrab1PlayerRun.yy",},"LayerId":{"name":"e7137862-86fe-468b-bfee-5a5dda033835","path":"sprites/sMiniGameCrab1PlayerRun/sMiniGameCrab1PlayerRun.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sMiniGameCrab1PlayerRun","path":"sprites/sMiniGameCrab1PlayerRun/sMiniGameCrab1PlayerRun.yy",},"resourceVersion":"1.0","name":"4bbf0269-a618-41ea-8f13-a62e57cc8b4a","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"sMiniGameCrab1PlayerRun","path":"sprites/sMiniGameCrab1PlayerRun/sMiniGameCrab1PlayerRun.yy",},
     "timeUnits": 1,
     "playback": 1,
-    "playbackSpeed": 24.0,
+    "playbackSpeed": 12.0,
     "playbackSpeedType": 0,
     "autoRecord": true,
     "volume": 1.0,
@@ -57,10 +50,10 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"2c5221ff-21cf-4fb7-8bb4-3e3e6e2c4b1a","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"bdf69a1d-bd66-483c-b5a4-e81f869b61b0","path":"sprites/sMiniGameCrab1PlayerRun/sMiniGameCrab1PlayerRun.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-            {"id":"5a29e8e7-b342-4699-aa9b-eb0e67587fd2","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"e1be43b0-1435-4b48-8242-3a2ff3b70655","path":"sprites/sMiniGameCrab1PlayerRun/sMiniGameCrab1PlayerRun.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-            {"id":"3cd37dea-7b1a-410a-b6cc-7287287bcb97","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"7cb8694c-30fb-44a1-98f8-c82cc54164f6","path":"sprites/sMiniGameCrab1PlayerRun/sMiniGameCrab1PlayerRun.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-            {"id":"5d261eef-3c00-42e6-a452-e7af531969ad","Key":3.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"32ede6ba-7b24-43c1-9183-b42184ebd864","path":"sprites/sMiniGameCrab1PlayerRun/sMiniGameCrab1PlayerRun.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"fb8007fa-e75e-482f-9d7c-9761fe9f99fa","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"64ae7794-45c4-4ae8-8257-ca492d535532","path":"sprites/sMiniGameCrab1PlayerRun/sMiniGameCrab1PlayerRun.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"eb40c547-65d9-4fef-bae5-42e5413a60d6","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"d00834f0-7a36-485e-868e-07b56645528a","path":"sprites/sMiniGameCrab1PlayerRun/sMiniGameCrab1PlayerRun.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"57aca930-50bb-49ae-8377-fa3583fd4e9a","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"a8a9797f-b5c6-4a7f-b311-deeacbdef5f1","path":"sprites/sMiniGameCrab1PlayerRun/sMiniGameCrab1PlayerRun.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"35465308-558f-4d07-947e-ef34aa8f7597","Key":3.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"4bbf0269-a618-41ea-8f13-a62e57cc8b4a","path":"sprites/sMiniGameCrab1PlayerRun/sMiniGameCrab1PlayerRun.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -84,8 +77,7 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Layer 1","resourceVersion":"1.0","name":"2bf79b2f-6b99-4e67-89d4-1b53e7f2d89e","tags":[],"resourceType":"GMImageLayer",},
-    {"visible":false,"isLocked":false,"blendMode":0,"opacity":56.0,"displayName":"default","resourceVersion":"1.0","name":"d707a94b-9101-4122-81ca-67dffcf50fa9","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"e7137862-86fe-468b-bfee-5a5dda033835","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
     "name": "Crab1",

@@ -8,9 +8,9 @@
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
   "bbox_left": 18,
-  "bbox_right": 44,
-  "bbox_top": 19,
-  "bbox_bottom": 45,
+  "bbox_right": 42,
+  "bbox_top": 21,
+  "bbox_bottom": 44,
   "HTile": false,
   "VTile": false,
   "For3D": false,
@@ -26,6 +26,7 @@
   "frames": [
     {"compositeImage":{"FrameId":{"name":"fdfaf68e-a4d2-4e6b-8bd5-e7e82367792b","path":"sprites/sChip/sChip.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
         {"FrameId":{"name":"fdfaf68e-a4d2-4e6b-8bd5-e7e82367792b","path":"sprites/sChip/sChip.yy",},"LayerId":{"name":"b8dda934-9b9a-492c-b15f-01947bca6849","path":"sprites/sChip/sChip.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"fdfaf68e-a4d2-4e6b-8bd5-e7e82367792b","path":"sprites/sChip/sChip.yy",},"LayerId":{"name":"2e90d10a-fd14-45b2-b17d-74139aed7b40","path":"sprites/sChip/sChip.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"sChip","path":"sprites/sChip/sChip.yy",},"resourceVersion":"1.0","name":"fdfaf68e-a4d2-4e6b-8bd5-e7e82367792b","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
@@ -65,7 +66,8 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"b8dda934-9b9a-492c-b15f-01947bca6849","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Layer 1","resourceVersion":"1.0","name":"2e90d10a-fd14-45b2-b17d-74139aed7b40","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":false,"isLocked":false,"blendMode":0,"opacity":7.0,"displayName":"default","resourceVersion":"1.0","name":"b8dda934-9b9a-492c-b15f-01947bca6849","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
     "name": "Chips",
