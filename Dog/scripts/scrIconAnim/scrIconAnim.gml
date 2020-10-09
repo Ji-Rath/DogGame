@@ -163,12 +163,12 @@ function scrPlayAnimation(AnimationEnum)
 		        AnimRot = 0;
 			break;
 		case Animations.FadeIn:
-			AnimAlpha = clamp(AnimAlpha+0.05*SpeedMultiplier, 0, 1);
+			AnimAlpha = clamp(AnimAlpha+(0.05*(SpeedMultiplier*2)), 0, 1);
 			if(AnimAlpha >= 1)
 				AnimIntro = -1;
 			break;
 		case Animations.FadeOut:
-			AnimAlpha = clamp(AnimAlpha-0.05*SpeedMultiplier, 0, 1);
+			AnimAlpha = clamp(AnimAlpha-(0.05*(SpeedMultiplier*2)), 0, 1);
 			if(AnimAlpha <= 0)
 				AnimIntro = -1;
 			break;
@@ -182,6 +182,18 @@ function scrPlaySequence(Sequence)
 	sequence_instance_override_object(AnimSeqInstance, oButtonRage, self);
 	layer_sequence_speedscale(AnimSeq, SpeedMultiplier);
 }
+
+function scrRunSequence(Sequence)
+{
+	if(is_string(Sequence))
+		Sequence = asset_get_index(Sequence);
+	
+	if(layer_exists("TextBox"))
+		layer_sequence_create("TextBox", view_xport[0]+view_wport[0]/2, view_yport[0]+view_hport[0]/2, Sequence);
+	else
+		layer_sequence_create("GUI", view_xport[0]+view_wport[0]/2, view_yport[0]+view_hport[0]/2, Sequence);
+}
+
 
 function scrAnimVisible()
 {

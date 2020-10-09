@@ -8,7 +8,7 @@ if(visible && Selected)
     {
         //Do Action based on item selected
         ItemMouseHoverSelect = ds_list_find_value(Contents,0);
-		alarm[0] = 0.5*60/oBattleManager.SpeedMultiplier;
+		alarm[0] = 0.3*60/oBattleManager.SpeedMultiplier;
 		
 		
 		//Fade out GUI icons
@@ -41,7 +41,7 @@ if(visible && Selected)
             if(mouse_check_button_pressed(mb_left))
             {
                 //Do delayed action based on item selected
-                alarm[0] = 0.5*60/oBattleManager.SpeedMultiplier;
+                alarm[0] = 0.3*60/oBattleManager.SpeedMultiplier;
                 
 				//Fade out GUI icons
                 with(oBattleMenuBase)

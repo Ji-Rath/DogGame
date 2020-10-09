@@ -26,8 +26,9 @@ switch(State)
             
         if(!instance_exists(ButtonPress))
         {
-            ButtonPress = instance_create_layer(room_width/1.1, room_height/2+300, "Instances", oButtonSignal);
+            ButtonPress = instance_create_layer(oCrab1Player.x, oCrab1Player.y, "Instances", oButtonSignal);
             ButtonPress.sprite_index = sButtonPress;
+			ButtonPress.ObjectFollow = oCrab1Player;
         }
     break;
         
