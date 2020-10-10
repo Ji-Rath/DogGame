@@ -7,10 +7,10 @@
   "edgeFiltering": false,
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
-  "bbox_left": 0,
-  "bbox_right": 197,
-  "bbox_top": 0,
-  "bbox_bottom": 129,
+  "bbox_left": 4,
+  "bbox_right": 186,
+  "bbox_top": 4,
+  "bbox_bottom": 115,
   "HTile": false,
   "VTile": false,
   "For3D": false,
@@ -26,6 +26,7 @@
   "frames": [
     {"compositeImage":{"FrameId":{"name":"90d6c79d-1387-41b2-9f70-fe1a5a3f8fbb","path":"sprites/sBattleTimer/sBattleTimer.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
         {"FrameId":{"name":"90d6c79d-1387-41b2-9f70-fe1a5a3f8fbb","path":"sprites/sBattleTimer/sBattleTimer.yy",},"LayerId":{"name":"a06bc306-b501-4e7f-b655-745010c44455","path":"sprites/sBattleTimer/sBattleTimer.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"90d6c79d-1387-41b2-9f70-fe1a5a3f8fbb","path":"sprites/sBattleTimer/sBattleTimer.yy",},"LayerId":{"name":"e616b785-119a-4456-b3a5-1a70ed217c8c","path":"sprites/sBattleTimer/sBattleTimer.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"sBattleTimer","path":"sprites/sBattleTimer/sBattleTimer.yy",},"resourceVersion":"1.0","name":"90d6c79d-1387-41b2-9f70-fe1a5a3f8fbb","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
@@ -65,7 +66,8 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"a06bc306-b501-4e7f-b655-745010c44455","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Layer 1","resourceVersion":"1.0","name":"e616b785-119a-4456-b3a5-1a70ed217c8c","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":false,"isLocked":false,"blendMode":0,"opacity":36.0,"displayName":"default","resourceVersion":"1.0","name":"a06bc306-b501-4e7f-b655-745010c44455","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
     "name": "BattleMenu",

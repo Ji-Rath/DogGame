@@ -7,10 +7,10 @@
   "edgeFiltering": false,
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
-  "bbox_left": 13,
-  "bbox_right": 54,
-  "bbox_top": 17,
-  "bbox_bottom": 59,
+  "bbox_left": 9,
+  "bbox_right": 55,
+  "bbox_top": 13,
+  "bbox_bottom": 60,
   "HTile": false,
   "VTile": false,
   "For3D": false,
@@ -26,6 +26,7 @@
   "frames": [
     {"compositeImage":{"FrameId":{"name":"62ee5a6d-dd7d-4f04-a11b-b48521ecb6e2","path":"sprites/sChipBag/sChipBag.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
         {"FrameId":{"name":"62ee5a6d-dd7d-4f04-a11b-b48521ecb6e2","path":"sprites/sChipBag/sChipBag.yy",},"LayerId":{"name":"9ef86bc9-8118-4743-9e77-b97dbdd1f5e6","path":"sprites/sChipBag/sChipBag.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"62ee5a6d-dd7d-4f04-a11b-b48521ecb6e2","path":"sprites/sChipBag/sChipBag.yy",},"LayerId":{"name":"a936960c-8088-48c4-b671-383e78d36a8a","path":"sprites/sChipBag/sChipBag.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"sChipBag","path":"sprites/sChipBag/sChipBag.yy",},"resourceVersion":"1.0","name":"62ee5a6d-dd7d-4f04-a11b-b48521ecb6e2","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
@@ -44,7 +45,7 @@
             {"id":"6fd04f41-e94d-41c9-ae8b-404974b3e38e","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"62ee5a6d-dd7d-4f04-a11b-b48521ecb6e2","path":"sprites/sChipBag/sChipBag.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
-    "visibleRange": {"x":0.0,"y":0.0,},
+    "visibleRange": null,
     "lockOrigin": false,
     "showBackdrop": true,
     "showBackdropImage": false,
@@ -65,7 +66,8 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"9ef86bc9-8118-4743-9e77-b97dbdd1f5e6","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Layer 1","resourceVersion":"1.0","name":"a936960c-8088-48c4-b671-383e78d36a8a","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":false,"isLocked":false,"blendMode":0,"opacity":45.0,"displayName":"default","resourceVersion":"1.0","name":"9ef86bc9-8118-4743-9e77-b97dbdd1f5e6","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
     "name": "Chips",

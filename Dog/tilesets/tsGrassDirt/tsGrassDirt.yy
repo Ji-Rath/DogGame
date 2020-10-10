@@ -1,8 +1,5 @@
 {
-  "spriteId": {
-    "name": "sprite60",
-    "path": "sprites/sprite60/sprite60.yy",
-  },
+  "spriteId": null,
   "tileWidth": 122,
   "tileHeight": 123,
   "tilexoff": 58,

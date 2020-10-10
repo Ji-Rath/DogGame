@@ -7,10 +7,10 @@
   "edgeFiltering": false,
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
-  "bbox_left": 109,
-  "bbox_right": 235,
-  "bbox_top": 186,
-  "bbox_bottom": 346,
+  "bbox_left": 119,
+  "bbox_right": 230,
+  "bbox_top": 182,
+  "bbox_bottom": 349,
   "HTile": false,
   "VTile": false,
   "For3D": false,
@@ -26,6 +26,8 @@
   "frames": [
     {"compositeImage":{"FrameId":{"name":"e674eb56-0172-472f-8631-2c28d9053592","path":"sprites/sMiniGameCrab1Setup/sMiniGameCrab1Setup.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
         {"FrameId":{"name":"e674eb56-0172-472f-8631-2c28d9053592","path":"sprites/sMiniGameCrab1Setup/sMiniGameCrab1Setup.yy",},"LayerId":{"name":"e489e5eb-c3ac-4ec3-9a35-5e50c5027b8e","path":"sprites/sMiniGameCrab1Setup/sMiniGameCrab1Setup.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"e674eb56-0172-472f-8631-2c28d9053592","path":"sprites/sMiniGameCrab1Setup/sMiniGameCrab1Setup.yy",},"LayerId":{"name":"5b5022f8-5421-4599-b3dc-e2ccf3759740","path":"sprites/sMiniGameCrab1Setup/sMiniGameCrab1Setup.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"e674eb56-0172-472f-8631-2c28d9053592","path":"sprites/sMiniGameCrab1Setup/sMiniGameCrab1Setup.yy",},"LayerId":{"name":"53dab089-7afd-48a7-9215-c7fa810ea27a","path":"sprites/sMiniGameCrab1Setup/sMiniGameCrab1Setup.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"sMiniGameCrab1Setup","path":"sprites/sMiniGameCrab1Setup/sMiniGameCrab1Setup.yy",},"resourceVersion":"1.0","name":"e674eb56-0172-472f-8631-2c28d9053592","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
@@ -44,7 +46,7 @@
             {"id":"87024fc4-edeb-45b6-be32-287b5b9df833","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"e674eb56-0172-472f-8631-2c28d9053592","path":"sprites/sMiniGameCrab1Setup/sMiniGameCrab1Setup.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
-    "visibleRange": {"x":0.0,"y":0.0,},
+    "visibleRange": null,
     "lockOrigin": false,
     "showBackdrop": true,
     "showBackdropImage": false,
@@ -65,7 +67,9 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"e489e5eb-c3ac-4ec3-9a35-5e50c5027b8e","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Layer 2","resourceVersion":"1.0","name":"53dab089-7afd-48a7-9215-c7fa810ea27a","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":false,"isLocked":false,"blendMode":0,"opacity":9.0,"displayName":"Layer 1","resourceVersion":"1.0","name":"5b5022f8-5421-4599-b3dc-e2ccf3759740","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":false,"isLocked":false,"blendMode":0,"opacity":38.0,"displayName":"default","resourceVersion":"1.0","name":"e489e5eb-c3ac-4ec3-9a35-5e50c5027b8e","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
     "name": "Crab1",
