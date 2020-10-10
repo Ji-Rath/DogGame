@@ -7,10 +7,10 @@
   "edgeFiltering": false,
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
-  "bbox_left": 0,
-  "bbox_right": 495,
-  "bbox_top": 0,
-  "bbox_bottom": 331,
+  "bbox_left": 5,
+  "bbox_right": 482,
+  "bbox_top": 8,
+  "bbox_bottom": 323,
   "HTile": false,
   "VTile": false,
   "For3D": false,
@@ -26,6 +26,7 @@
   "frames": [
     {"compositeImage":{"FrameId":{"name":"0e262fa9-ebc7-4653-823c-e6934f84bbfc","path":"sprites/sAttackMenu/sAttackMenu.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
         {"FrameId":{"name":"0e262fa9-ebc7-4653-823c-e6934f84bbfc","path":"sprites/sAttackMenu/sAttackMenu.yy",},"LayerId":{"name":"23975059-23bd-41ee-b447-645d45dc7bf2","path":"sprites/sAttackMenu/sAttackMenu.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"0e262fa9-ebc7-4653-823c-e6934f84bbfc","path":"sprites/sAttackMenu/sAttackMenu.yy",},"LayerId":{"name":"a4baef73-c7d8-4226-95cb-592ee5911e43","path":"sprites/sAttackMenu/sAttackMenu.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"sAttackMenu","path":"sprites/sAttackMenu/sAttackMenu.yy",},"resourceVersion":"1.0","name":"0e262fa9-ebc7-4653-823c-e6934f84bbfc","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
@@ -65,7 +66,7 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"23975059-23bd-41ee-b447-645d45dc7bf2","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Layer 1","resourceVersion":"1.0","name":"a4baef73-c7d8-4226-95cb-592ee5911e43","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
     "name": "BattleMenu",

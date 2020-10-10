@@ -7,10 +7,10 @@
   "edgeFiltering": false,
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
-  "bbox_left": 0,
-  "bbox_right": 283,
-  "bbox_top": 0,
-  "bbox_bottom": 159,
+  "bbox_left": 3,
+  "bbox_right": 278,
+  "bbox_top": 4,
+  "bbox_bottom": 155,
   "HTile": false,
   "VTile": false,
   "For3D": false,
@@ -26,6 +26,7 @@
   "frames": [
     {"compositeImage":{"FrameId":{"name":"a9bcfafd-9c20-4674-b089-966bb6edd6df","path":"sprites/sAnvil/sAnvil.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
         {"FrameId":{"name":"a9bcfafd-9c20-4674-b089-966bb6edd6df","path":"sprites/sAnvil/sAnvil.yy",},"LayerId":{"name":"aead30d6-40fc-4abd-aa98-d6298fdc2f03","path":"sprites/sAnvil/sAnvil.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"a9bcfafd-9c20-4674-b089-966bb6edd6df","path":"sprites/sAnvil/sAnvil.yy",},"LayerId":{"name":"302fc1be-79d9-4c74-8d80-128fee28beee","path":"sprites/sAnvil/sAnvil.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"sAnvil","path":"sprites/sAnvil/sAnvil.yy",},"resourceVersion":"1.0","name":"a9bcfafd-9c20-4674-b089-966bb6edd6df","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
@@ -65,7 +66,8 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"aead30d6-40fc-4abd-aa98-d6298fdc2f03","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Layer 1","resourceVersion":"1.0","name":"302fc1be-79d9-4c74-8d80-128fee28beee","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":false,"isLocked":false,"blendMode":0,"opacity":49.0,"displayName":"default","resourceVersion":"1.0","name":"aead30d6-40fc-4abd-aa98-d6298fdc2f03","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
     "name": "AnvilStruggle",

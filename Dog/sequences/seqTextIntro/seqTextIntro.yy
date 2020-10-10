@@ -23,19 +23,23 @@
               {"id":"43f25872-9fd8-4502-a7d3-daac59f65475","Key":0.0,"Length":30.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"EmbeddedAnimCurve":{"function":1,"channels":[
                         {"colour":4294901760,"visible":true,"points":[
                             {"x":0.0,"y":-261.5,},
+                            {"x":0.5,"y":-261.5,},
                             {"x":1.0,"y":-261.5,},
                           ],"controlPoints":[],"resourceVersion":"1.0","name":"x","tags":[],"resourceType":"GMAnimCurveChannel",},
                         {"colour":4278190335,"visible":true,"points":[
                             {"x":0.0,"y":403.504578,},
+                            {"x":0.5,"y":244.18158,},
                             {"x":1.0,"y":216.2671,},
                           ],"controlPoints":[],"resourceVersion":"1.0","name":"y","tags":[],"resourceType":"GMAnimCurveChannel",},
                       ],"parent":{"name":"position","path":"sequences/seqTextIntro/seqTextIntro.yy",},"resourceVersion":"1.1","name":null,"tags":[],"resourceType":"GMAnimCurve",},"RealValue":0.0,"AnimCurveId":null,"resourceVersion":"1.0","resourceType":"RealKeyframe",},"1":{"EmbeddedAnimCurve":{"function":1,"channels":[
                         {"colour":4294901760,"visible":true,"points":[
                             {"x":0.0,"y":-261.5,},
+                            {"x":0.5,"y":-261.5,},
                             {"x":1.0,"y":-261.5,},
                           ],"controlPoints":[],"resourceVersion":"1.0","name":"x","tags":[],"resourceType":"GMAnimCurveChannel",},
                         {"colour":4278190335,"visible":true,"points":[
                             {"x":0.0,"y":403.504578,},
+                            {"x":0.5,"y":244.18158,},
                             {"x":1.0,"y":216.2671,},
                           ],"controlPoints":[],"resourceVersion":"1.0","name":"y","tags":[],"resourceType":"GMAnimCurveChannel",},
                       ],"parent":{"name":"position","path":"sequences/seqTextIntro/seqTextIntro.yy",},"resourceVersion":"1.1","name":null,"tags":[],"resourceType":"GMAnimCurve",},"RealValue":0.0,"AnimCurveId":null,"resourceVersion":"1.0","resourceType":"RealKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<RealKeyframe>",},
