@@ -11,7 +11,7 @@ if(alarm[0] == -1)
     }
     else
     {
-        draw_roundrect(room_width/2+500,room_height/2+(250*OpenEffect),room_width/2-500,room_height/2-(250*OpenEffect),false)
+        //draw_roundrect(room_width/2+500,room_height/2+(250*OpenEffect),room_width/2-500,room_height/2-(250*OpenEffect),false)
         
         //Draw timer for minigame
         if(timer[1] != -1)

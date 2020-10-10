@@ -87,6 +87,9 @@ function scrSameScreenMiniGame(argument0) {
 
 function scrMiniGameIcon(Sprite)
 {
-	var Icon = instance_create_layer(room_width/2, room_height/2, "TextBox", oIconPopup);
-	Icon.Sprite = Sprite;
+	if(!instance_exists(oIconPopup))
+	{
+		var Icon = instance_create_layer(room_width/2, room_height/2, "TextBox", oIconPopup);
+		Icon.Sprite = Sprite;
+	}
 }

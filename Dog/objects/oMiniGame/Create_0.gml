@@ -2,6 +2,8 @@
 
 
 MiniGameTime = 5.5; //Time in seconds to complete minigame - is affected by speed multiplier
+MiniGameScreenOpenSeq = seqMiniGameOpen;
+MiniGameScreenCloseSeq = seqMiniGameOpen;
 
 /////////////////////////////////////////////////////////////////////////
 
@@ -42,3 +44,7 @@ SmallScreenPosY = 0;
 
 //Text to show player to help with the minigame
 HelpText = "";
+
+MiniGameEndSeq = -1;
+
+MiniGameScreenSeq = scrRunSequence(MiniGameScreenOpenSeq);

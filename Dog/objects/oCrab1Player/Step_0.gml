@@ -58,13 +58,14 @@ switch(State)
             sprite_index = sMiniGameCrab1PlayerJump;
             HitPlayer = true;
             
-            scrMiniGameIcon(sCheckMark);
+            scrFinishMiniGame(true);
         }
         else
         {
             if(!HitPlayer)
             {
                 global.PlayerHP -= 10;
+				scrFinishMiniGame(false);
                 HitPlayer = true;
             }
         }

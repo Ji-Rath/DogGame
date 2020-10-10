@@ -21,9 +21,8 @@ if(mouse_x < x && CurrentPosition != 0)
 //If player was successful
 if(Brushes > 16 && !Success)
 {
-    oMiniGame.timer[1] = 1;
+    scrFinishMiniGame(true);
+	
     oEnemyBattleParent.Vulnerable = true;
     Success = true;
-    
-    scrMiniGameIcon(sCheckMark);
 }

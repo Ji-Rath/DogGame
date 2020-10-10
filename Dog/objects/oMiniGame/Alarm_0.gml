@@ -2,12 +2,12 @@
 //Switch to the specified minigame
 switch(GameType)
 {
-    case Game.CrabAttack:
+    case Game.CrabAttack: //Deprecated mini game
         ds_list_add(Instances, instance_create_layer(room_width/4,room_height/2,"Instances",oPlayerBoob));
         ds_list_add(Instances, instance_create_layer(room_width/1.5,room_height/2,"Instances",oEnemyCrabArm));
     break;
     
-    case Game.Crab1:
+    case Game.Crab1: //Crab pinch minigame
         HelpText = "Dodge!";
         ds_list_add(Instances, instance_create_layer(room_width/2,room_height/2+50,"Instances",oCrab1Arm));
         ds_list_add(Instances, instance_create_layer(room_width/2,room_height/2-50,"Instances",oCrab1Player));
@@ -23,6 +23,7 @@ switch(GameType)
     
     case Game.PanAttack:
         ds_list_add(Instances, instance_create_layer(room_width/2+300,room_height/2,"Instances",oPan));
+		MiniGameEndSeq = seqLighthouse;
     break;
     
     case Game.BroomAttack:
