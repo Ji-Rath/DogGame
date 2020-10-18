@@ -2,8 +2,8 @@
 
 
 MiniGameTime = 5.5; //Time in seconds to complete minigame - is affected by speed multiplier
-MiniGameScreenOpenSeq = seqMiniGameOpen;
-MiniGameScreenCloseSeq = seqMiniGameOpen;
+MiniGameScreenOpenSeq = seqAttackEnter;
+MiniGameScreenCloseSeq = seqAttackExit;
 
 /////////////////////////////////////////////////////////////////////////
 

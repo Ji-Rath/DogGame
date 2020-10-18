@@ -36,6 +36,10 @@ switch(GameType)
         ds_list_add(Instances, instance_create_layer(room_width/2+200+random(200),room_height/2+random_range(-150,150),"Instances",oCrabWeigh));
         ds_list_add(Instances, instance_create_layer(room_width/2-200+random(200),room_height/2+random_range(-150,150),"Instances",oCrabWeigh));
         ds_list_add(Instances, instance_create_layer(room_width/2,room_height/2+100,"Instances",oCrabBalance));
+		
+		instance_create_layer(room_width/2+200,room_height/2-100, "Instances", oAnchorPoint);
+		instance_create_layer(room_width/2+100,room_height/2-100, "Instances", oHand);
+		
     break;
     
     case Game.Highfive:
