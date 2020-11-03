@@ -19,7 +19,7 @@
   },
   "tracks": [
     {"keyframes":{"Keyframes":[
-          {"id":"3d6f06bd-7a3a-455c-9c5e-99f85c283571","Key":-1.0,"Length":80.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"sBoatMan","path":"sprites/sBoatMan/sBoatMan.yy",},"resourceVersion":"1.0","resourceType":"AssetSpriteKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<AssetSpriteKeyframe>",},
+          {"id":"3d6f06bd-7a3a-455c-9c5e-99f85c283571","Key":-1.0,"Length":80.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"sFanBoatMan","path":"sprites/sFanBoatMan/sFanBoatMan.yy",},"resourceVersion":"1.0","resourceType":"AssetSpriteKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<AssetSpriteKeyframe>",},
         ],"resourceVersion":"1.0","resourceType":"KeyframeStore<AssetSpriteKeyframe>",},"trackColour":4282963186,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[
         {"keyframes":{"Keyframes":[
               {"id":"8be8eebd-a819-4ae8-849b-17661b8d96d6","Key":-1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":true,"Channels":{"0":{"EmbeddedAnimCurve":null,"RealValue":0.0,"AnimCurveId":null,"resourceVersion":"1.0","resourceType":"RealKeyframe",},"1":{"EmbeddedAnimCurve":null,"RealValue":0.0,"AnimCurveId":null,"resourceVersion":"1.0","resourceType":"RealKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<RealKeyframe>",},
@@ -55,7 +55,7 @@
                             {"x":0.8678725,"y":-23.0675659,},
                             {"x":1.0,"y":-23.0675659,},
                           ],"controlPoints":[],"resourceVersion":"1.0","name":"y","tags":[],"resourceType":"GMAnimCurveChannel",},
-                      ],"parent":{"name":"position","path":"sequences/seqLighthouse/seqLighthouse.yy",},"resourceVersion":"1.1","name":"Position","tags":[],"resourceType":"GMAnimCurve",},"RealValue":0.0,"AnimCurveId":null,"resourceVersion":"1.0","resourceType":"RealKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<RealKeyframe>",},
+                      ],"parent":{"name":"position","path":"sequences/seqLighthouse/seqLighthouse.yy",},"resourceVersion":"1.1","name":null,"tags":[],"resourceType":"GMAnimCurve",},"RealValue":0.0,"AnimCurveId":null,"resourceVersion":"1.0","resourceType":"RealKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<RealKeyframe>",},
             ],"resourceVersion":"1.0","resourceType":"KeyframeStore<RealKeyframe>",},"trackColour":4282963186,"inheritsTrackColour":true,"builtinName":14,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","name":"position","tags":[],"resourceType":"GMRealTrack",},
         {"keyframes":{"Keyframes":[
               {"id":"890bbdef-704f-4556-9565-1a7de931897f","Key":38.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"EmbeddedAnimCurve":null,"RealValue":0.0,"AnimCurveId":null,"resourceVersion":"1.0","resourceType":"RealKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<RealKeyframe>",},
@@ -69,9 +69,9 @@
             ],"resourceVersion":"1.0","resourceType":"KeyframeStore<RealKeyframe>",},"trackColour":4282963186,"inheritsTrackColour":true,"builtinName":15,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":true,"resourceVersion":"1.0","name":"scale","tags":[],"resourceType":"GMRealTrack",},
       ],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","name":"sBoatMan","tags":[],"resourceType":"GMGraphicTrack",},
     {"keyframes":{"Keyframes":[
-          {"id":"267b32a2-0a02-47b2-b3ab-9fc9b4963d29","Key":-1.0,"Length":80.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"sLighthouse","path":"sprites/sLighthouse/sLighthouse.yy",},"resourceVersion":"1.0","resourceType":"AssetSpriteKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<AssetSpriteKeyframe>",},
+          {"id":"267b32a2-0a02-47b2-b3ab-9fc9b4963d29","Key":-1.0,"Length":80.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"sFanLighthouse","path":"sprites/sFanLighthouse/sFanLighthouse.yy",},"resourceVersion":"1.0","resourceType":"AssetSpriteKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<AssetSpriteKeyframe>",},
         ],"resourceVersion":"1.0","resourceType":"KeyframeStore<AssetSpriteKeyframe>",},"trackColour":4294106696,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[
-        {"trackColour":4294106696,"builtinName":10,"name":"blend_multiply","keyframes":{"Keyframes":[
+        {"keyframes":{"Keyframes":[
               {"id":"ebe01a74-600a-4e5a-84f7-0a6536c56ebe","Key":-1.0,"Length":81.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"EmbeddedAnimCurve":{"function":1,"channels":[
                         {"colour":4294967295,"visible":true,"points":[
                             {"x":0.0,"y":117.0,},
@@ -98,7 +98,7 @@
                             {"x":1.0,"y":255.0,},
                           ],"controlPoints":[],"resourceVersion":"1.0","name":"blue","tags":[],"resourceType":"GMAnimCurveChannel",},
                       ],"parent":{"name":"blend_multiply","path":"sequences/seqLighthouse/seqLighthouse.yy",},"resourceVersion":"1.1","name":"Colour Multiply","tags":[],"resourceType":"GMAnimCurve",},"Colour":0,"AnimCurveId":null,"resourceVersion":"1.0","resourceType":"ColourKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<ColourKeyframe>",},
-            ],"resourceVersion":"1.0","resourceType":"KeyframeStore<ColourKeyframe>",},"inheritsTrackColour":true,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMColourTrack",},
+            ],"resourceVersion":"1.0","resourceType":"KeyframeStore<ColourKeyframe>",},"trackColour":4294106696,"inheritsTrackColour":true,"builtinName":10,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","name":"blend_multiply","tags":[],"resourceType":"GMColourTrack",},
         {"keyframes":{"Keyframes":[
               {"id":"8f91e32a-eddf-46e7-b6f9-2343cd8e57c4","Key":-1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":true,"Channels":{"0":{"EmbeddedAnimCurve":null,"RealValue":0.0,"AnimCurveId":null,"resourceVersion":"1.0","resourceType":"RealKeyframe",},"1":{"EmbeddedAnimCurve":null,"RealValue":0.0,"AnimCurveId":null,"resourceVersion":"1.0","resourceType":"RealKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<RealKeyframe>",},
             ],"resourceVersion":"1.0","resourceType":"KeyframeStore<RealKeyframe>",},"trackColour":4294106696,"inheritsTrackColour":true,"builtinName":16,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":true,"resourceVersion":"1.0","name":"origin","tags":[],"resourceType":"GMRealTrack",},
@@ -135,7 +135,7 @@
                             {"x":0.197530866,"y":1.0,},
                             {"x":1.0,"y":1.0,},
                           ],"controlPoints":[],"resourceVersion":"1.0","name":"y","tags":[],"resourceType":"GMAnimCurveChannel",},
-                      ],"parent":{"name":"scale","path":"sequences/seqLighthouse/seqLighthouse.yy",},"resourceVersion":"1.1","name":"Scale","tags":[],"resourceType":"GMAnimCurve",},"RealValue":0.0,"AnimCurveId":null,"resourceVersion":"1.0","resourceType":"RealKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<RealKeyframe>",},
+                      ],"parent":{"name":"scale","path":"sequences/seqLighthouse/seqLighthouse.yy",},"resourceVersion":"1.1","name":null,"tags":[],"resourceType":"GMAnimCurve",},"RealValue":0.0,"AnimCurveId":null,"resourceVersion":"1.0","resourceType":"RealKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<RealKeyframe>",},
             ],"resourceVersion":"1.0","resourceType":"KeyframeStore<RealKeyframe>",},"trackColour":4294106696,"inheritsTrackColour":true,"builtinName":15,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","name":"scale","tags":[],"resourceType":"GMRealTrack",},
       ],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","name":"sLighthouse","tags":[],"resourceType":"GMGraphicTrack",},
   ],

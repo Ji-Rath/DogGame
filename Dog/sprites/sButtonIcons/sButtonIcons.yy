@@ -81,7 +81,7 @@
   ],
   "parent": {
     "name": "BattleMenu",
-    "path": "folders/Sprites/BattleMenu.yy",
+    "path": "folders/Sprites/Battle/BattleMenu.yy",
   },
   "resourceVersion": "1.0",
   "name": "sButtonIcons",

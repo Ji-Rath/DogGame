@@ -26,15 +26,15 @@
   "frames": [
     {"compositeImage":{"FrameId":{"name":"37bf17ab-1867-4e67-90ef-9e7673c29a54","path":"sprites/sBroom/sBroom.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
         {"FrameId":{"name":"37bf17ab-1867-4e67-90ef-9e7673c29a54","path":"sprites/sBroom/sBroom.yy",},"LayerId":{"name":"d68e7863-d455-4f1a-a11f-9e8a044fe074","path":"sprites/sBroom/sBroom.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"37bf17ab-1867-4e67-90ef-9e7673c29a54","path":"sprites/sBroom/sBroom.yy",},"LayerId":{"name":"fc6e22ea-f6fe-4b56-8ce4-5546702f6724","path":"sprites/sBroom/sBroom.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"37bf17ab-1867-4e67-90ef-9e7673c29a54","path":"sprites/sBroom/sBroom.yy",},"LayerId":{"name":"sBroom","path":"sprites/sBroom/sBroom.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
         {"FrameId":{"name":"37bf17ab-1867-4e67-90ef-9e7673c29a54","path":"sprites/sBroom/sBroom.yy",},"LayerId":{"name":"918fe5a5-995a-4ffd-bab2-fb34d4b2f10b","path":"sprites/sBroom/sBroom.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"37bf17ab-1867-4e67-90ef-9e7673c29a54","path":"sprites/sBroom/sBroom.yy",},"LayerId":{"name":"b2a84063-5288-4265-9cd2-8416538f3c5d","path":"sprites/sBroom/sBroom.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"37bf17ab-1867-4e67-90ef-9e7673c29a54","path":"sprites/sBroom/sBroom.yy",},"LayerId":{"name":"sBroom","path":"sprites/sBroom/sBroom.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"sBroom","path":"sprites/sBroom/sBroom.yy",},"resourceVersion":"1.0","name":"37bf17ab-1867-4e67-90ef-9e7673c29a54","tags":[],"resourceType":"GMSpriteFrame",},
     {"compositeImage":{"FrameId":{"name":"93ef5886-7f33-4c9e-ac19-0e881b8901c4","path":"sprites/sBroom/sBroom.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
         {"FrameId":{"name":"93ef5886-7f33-4c9e-ac19-0e881b8901c4","path":"sprites/sBroom/sBroom.yy",},"LayerId":{"name":"d68e7863-d455-4f1a-a11f-9e8a044fe074","path":"sprites/sBroom/sBroom.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"93ef5886-7f33-4c9e-ac19-0e881b8901c4","path":"sprites/sBroom/sBroom.yy",},"LayerId":{"name":"fc6e22ea-f6fe-4b56-8ce4-5546702f6724","path":"sprites/sBroom/sBroom.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"93ef5886-7f33-4c9e-ac19-0e881b8901c4","path":"sprites/sBroom/sBroom.yy",},"LayerId":{"name":"sBroom","path":"sprites/sBroom/sBroom.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
         {"FrameId":{"name":"93ef5886-7f33-4c9e-ac19-0e881b8901c4","path":"sprites/sBroom/sBroom.yy",},"LayerId":{"name":"918fe5a5-995a-4ffd-bab2-fb34d4b2f10b","path":"sprites/sBroom/sBroom.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"93ef5886-7f33-4c9e-ac19-0e881b8901c4","path":"sprites/sBroom/sBroom.yy",},"LayerId":{"name":"b2a84063-5288-4265-9cd2-8416538f3c5d","path":"sprites/sBroom/sBroom.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"93ef5886-7f33-4c9e-ac19-0e881b8901c4","path":"sprites/sBroom/sBroom.yy",},"LayerId":{"name":"sBroom","path":"sprites/sBroom/sBroom.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"sBroom","path":"sprites/sBroom/sBroom.yy",},"resourceVersion":"1.0","name":"93ef5886-7f33-4c9e-ac19-0e881b8901c4","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
@@ -80,7 +80,7 @@
   ],
   "parent": {
     "name": "BroomAttack",
-    "path": "folders/Sprites/MiniGame/BroomAttack.yy",
+    "path": "folders/Sprites/Battle/MiniGame/Player/BroomAttack.yy",
   },
   "resourceVersion": "1.0",
   "name": "sBroom",
