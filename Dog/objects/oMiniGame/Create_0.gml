@@ -35,7 +35,8 @@ enum Game
     CrabWeigh,
     Highfive,
     AnvilStruggle,
-	ThirstyDoggo
+	ThirstyDoggo,
+	DogTan
 }
 alarm[0] = 1;
 

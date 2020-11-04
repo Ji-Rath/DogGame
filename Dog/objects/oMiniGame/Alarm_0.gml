@@ -48,8 +48,10 @@ switch(GameType)
 		Anvil.DogSave = DogHelp;
 		break;
 	case Game.ThirstyDoggo:
-		ds_list_add(Instances, instance_create_layer(room_width/2+200,room_height/2-100, "Instances", oAnchorPoint));
-		ds_list_add(Instances, instance_create_layer(room_width/2+100,room_height/2-100, "Instances", oHand));
-		ds_list_add(Instances, instance_create_layer(room_width/2,room_height/2+200, "Instances", oThirstyDoggo));
+		ds_list_add(Instances, instance_create_layer(room_width/2+400,room_height/2-200, "Instances", oAnchorPoint));
+		ds_list_add(Instances, instance_create_layer(room_width/2+300,room_height/2-200, "Instances", oHand));
+		ds_list_add(Instances, instance_create_layer(room_width/2,room_height/2+250, "Instances", oThirstyDoggo));
 		break;
+	case Game.DogTan:
+		ds_list_add(Instances, instance_create_layer(room_width/2,room_height/2, "Instances", oDogTan));
 }

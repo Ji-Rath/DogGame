@@ -21,4 +21,4 @@ Name = "Crab"
 ////////////////////////////////////////////////////////////////////////////
 
 MaxHealth = Health;
-EnemyAttacks = [Game.AnvilStruggle, Game.CrabWeigh, Game.Crab1];
+EnemyAttacks = [Game.AnvilStruggle, Game.CrabWeigh, Game.Crab1, Game.ThirstyDoggo, Game.DogTan];
