@@ -34,7 +34,8 @@ enum Game
     BroomAttack,
     CrabWeigh,
     Highfive,
-    AnvilStruggle
+    AnvilStruggle,
+	ThirstyDoggo
 }
 alarm[0] = 1;
 

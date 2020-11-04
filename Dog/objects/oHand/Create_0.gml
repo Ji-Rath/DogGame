@@ -5,6 +5,7 @@ var YPos = 0;
 var Inst = self;
 Joint = noone;
 
+/** Spawn arm joints and attach to eachother to create one 'rope' */
 for(var i=0;i<3;i++)
 {
 	YPos = (i+1)*128;
@@ -14,6 +15,7 @@ for(var i=0;i<3;i++)
 	Inst = NextInst;
 }
 
+/** Attach the last arm to the anchor point */
 physics_joint_rope_create(Inst, oAnchorPoint, Inst.x, Inst.y+128, oAnchorPoint.x, oAnchorPoint.y, 2, false);
 
 
