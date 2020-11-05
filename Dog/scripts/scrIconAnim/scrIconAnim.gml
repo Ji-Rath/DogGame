@@ -183,17 +183,6 @@ function scrPlaySequence(Sequence)
 	layer_sequence_speedscale(AnimSeq, SpeedMultiplier);
 }
 
-function scrRunSequence(Sequence)
-{
-	if(is_string(Sequence))
-		Sequence = asset_get_index(Sequence);
-	
-	if(layer_exists("TextBox"))
-		layer_sequence_create("TextBox", view_xport[0]+view_wport[0]/2, view_yport[0]+view_hport[0]/2, Sequence);
-	else
-		layer_sequence_create("GUI", view_xport[0]+view_wport[0]/2, view_yport[0]+view_hport[0]/2, Sequence);
-}
-
 
 function scrAnimVisible()
 {

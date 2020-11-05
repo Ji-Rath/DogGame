@@ -46,6 +46,8 @@ else if (timer[1] != -1)
         }
 		
         Destroy = true;
+		layer_sequence_destroy(MiniGameScreenSeq);
+		MiniGameScreenSeq = scrRunSequence(MiniGameScreenCloseSeq);
     }
     
     timer[1] = -1;
