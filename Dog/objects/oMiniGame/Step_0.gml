@@ -11,11 +11,6 @@ else
     {
         OpenFraction -= (oBattleManager.SpeedMultiplier/2)/(2*pi);
     }
-    else if (MiniGameEndSeq == -1)
-    {
-        //Destroy self and instances created for the minigame
-        instance_destroy();
-    }
 }
 
 OpenEffect = sin(OpenFraction);
@@ -27,6 +22,7 @@ if(timer[1] > 0)
 }
 else if (timer[1] != -1)
 {
+	timer[1] = -1;
     if(DrawSmall)
     {
         Destroy = true;
@@ -37,15 +33,17 @@ else if (timer[1] != -1)
         //Prevent decimals
         with(oBattleManager)
         {
-            global.PlayerHP = ceil(global.PlayerHP);
-            global.PlayerPP = ceil(global.PlayerPP);
-            EnemyBattle.Health = ceil(EnemyBattle.Health);
+            global.PlayerHP = round(global.PlayerHP);
+            global.PlayerPP = round(global.PlayerPP);
+            EnemyBattle.Health = round(EnemyBattle.Health);
         }
 		
         Destroy = true;
 		layer_sequence_destroy(MiniGameScreenSeq);
 		MiniGameScreenSeq = scrRunSequence(MiniGameScreenCloseSeq);
+		
+		var Len = layer_sequence_get_length(MiniGameScreenSeq);
+		var Spd = layer_sequence_get_speedscale(MiniGameScreenSeq);
+		alarm[2] = Len*Spd;
     }
-    timer[1] = -1;
-	MiniGameEndSeq = -1;
 }

@@ -71,7 +71,7 @@
   ],
   "parent": {
     "name": "Chips",
-    "path": "folders/Sprites/MiniGame/Chips.yy",
+    "path": "folders/Sprites/Battle/MiniGame/Items/Chips.yy",
   },
   "resourceVersion": "1.0",
   "name": "sChipBag",

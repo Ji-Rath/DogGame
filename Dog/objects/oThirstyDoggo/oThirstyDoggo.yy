@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sThirstyDoggo",
-    "path": "sprites/sThirstyDoggo/sThirstyDoggo.yy",
+    "name": "sDehydratedDP",
+    "path": "sprites/sDehydratedDP/sDehydratedDP.yy",
   },
   "solid": false,
   "visible": true,

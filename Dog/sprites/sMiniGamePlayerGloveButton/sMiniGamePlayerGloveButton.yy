@@ -73,7 +73,7 @@
   ],
   "parent": {
     "name": "PlayerGlove",
-    "path": "folders/Sprites/MiniGame/PlayerGlove.yy",
+    "path": "folders/Sprites/Battle/MiniGame/Player/PlayerGlove.yy",
   },
   "resourceVersion": "1.0",
   "name": "sMiniGamePlayerGloveButton",

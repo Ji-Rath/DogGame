@@ -150,7 +150,7 @@
   ],
   "parent": {
     "name": "CrabWeigh",
-    "path": "folders/Sprites/MiniGame/CrabWeigh.yy",
+    "path": "folders/Sprites/Battle/MiniGame/Crab/CrabAttacks/CrabWeigh.yy",
   },
   "resourceVersion": "1.0",
   "name": "sBalance",

@@ -69,7 +69,7 @@
   ],
   "parent": {
     "name": "Pan",
-    "path": "folders/Sprites/MiniGame/Pan.yy",
+    "path": "folders/Sprites/Battle/MiniGame/Player/Pan.yy",
   },
   "resourceVersion": "1.0",
   "name": "sPan",

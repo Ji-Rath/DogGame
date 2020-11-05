@@ -74,7 +74,7 @@
   ],
   "parent": {
     "name": "Crab1",
-    "path": "folders/Sprites/MiniGame/Crab1.yy",
+    "path": "folders/Sprites/Battle/MiniGame/Crab/CrabAttacks/Crab1.yy",
   },
   "resourceVersion": "1.0",
   "name": "sMiniGameCrab1PlayerJump",

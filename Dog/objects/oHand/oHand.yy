@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sCup",
-    "path": "sprites/sCup/sCup.yy",
+    "name": "sDehydratedCup",
+    "path": "sprites/sDehydratedCup/sDehydratedCup.yy",
   },
   "solid": false,
   "visible": true,
