@@ -2,11 +2,8 @@
 //Minigame intro transition and outro effect
 if(!Destroy)
 {
-    
     if(OpenFraction <= (pi/2))
-    {
         OpenFraction += (oBattleManager.SpeedMultiplier/2)/(2*pi);
-    }
 }
 else
 {
@@ -14,7 +11,7 @@ else
     {
         OpenFraction -= (oBattleManager.SpeedMultiplier/2)/(2*pi);
     }
-    else
+    else if (MiniGameEndSeq == -1)
     {
         //Destroy self and instances created for the minigame
         instance_destroy();
@@ -49,6 +46,6 @@ else if (timer[1] != -1)
 		layer_sequence_destroy(MiniGameScreenSeq);
 		MiniGameScreenSeq = scrRunSequence(MiniGameScreenCloseSeq);
     }
-    
     timer[1] = -1;
+	MiniGameEndSeq = -1;
 }

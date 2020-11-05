@@ -7,23 +7,30 @@ function scrRunMiniGame(GameType) {
 
 function scrFinishMiniGame(bIsSuccess)
 {
-	if(bIsSuccess)
+	if (instance_exists(oMiniGame) && !oMiniGame.bCompletedGame)
 	{
-		with(oMiniGame)
+		if(bIsSuccess)
 		{
-			if(MiniGameEndSeq != -1)
+			with(oMiniGame)
 			{
-				var Seq = scrRunSequence(MiniGameEndSeq);
-				var Len = layer_sequence_get_length(Seq);
-				var Spd = layer_sequence_get_speedscale(Seq);
-				timer[1] = Len*Spd;
-			}
-			else
-				timer[1] = 0.5*60;
+				if(MiniGameEndSeq != -1)
+				{
+					var Seq = scrRunSequence(MiniGameEndSeq, "TextBox");
+					var Len = layer_sequence_get_length(Seq);
+					var Spd = layer_sequence_get_speedscale(Seq);
+					timer[1] = Len*Spd;
+					Destroy = true;
+				}
+				else
+					timer[1] = 0.5*60;
 			
-		    scrMiniGameIcon(sCheckMark);
+			    scrMiniGameIcon(sCheckMark);
+			}
 		}
+		else
+		{
+			oMiniGame.timer[1] = 0.5*60;
+		}
+		oMiniGame.bCompletedGame = true;
 	}
-	else
-		oMiniGame.timer[1] = 0.5*60;
 }

@@ -11,6 +11,8 @@ MiniGameTime /= oBattleManager.SpeedMultiplier;
 
 GameType = -1;
 
+bCompletedGame = false;
+
 timer[1] = MiniGameTime*60; //MiniGame time
 
 //Instances to destroy after the minigame
@@ -36,7 +38,8 @@ enum Game
     Highfive,
     AnvilStruggle,
 	ThirstyDoggo,
-	DogTan
+	DogTan,
+	Lighthouse
 }
 alarm[0] = 1;
 
@@ -50,3 +53,14 @@ HelpText = "";
 MiniGameEndSeq = -1;
 
 MiniGameScreenSeq = scrRunSequence(MiniGameScreenOpenSeq);
+
+/// @func CreateInstance(x, y, obj, layer = "Instances")
+/// @desc Create object for minigame sequence
+function CreateInstance(X, Y, Object)
+{
+	var Layer = argument_count > 3 ? argument[3] : "Instances";
+	var Instance = instance_create_layer(X, Y, Layer, Object);
+	ds_list_add(Instances, Instance);
+	
+	return Instance;
+}

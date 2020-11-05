@@ -3,55 +3,60 @@
 switch(GameType)
 {
     case Game.CrabAttack: //Deprecated mini game
-        ds_list_add(Instances, instance_create_layer(room_width/4,room_height/2,"Instances",oPlayerBoob));
-        ds_list_add(Instances, instance_create_layer(room_width/1.5,room_height/2,"Instances",oEnemyCrabArm));
+        CreateInstance(room_width/4,room_height/2,oPlayerBoob);
+        CreateInstance(room_width/1.5,room_height/2,oEnemyCrabArm);
 		break;
     case Game.Crab1: //Crab pinch minigame
         HelpText = "Dodge!";
-        ds_list_add(Instances, instance_create_layer(room_width/2,room_height/2+50,"Instances",oCrab1Arm));
-        ds_list_add(Instances, instance_create_layer(room_width/2,room_height/2-50,"Instances",oCrab1Player));
+        CreateInstance(room_width/2,room_height/2+50,oCrab1Arm);
+        CreateInstance(room_width/2,room_height/2-50,oCrab1Player);
 		break;
     case Game.GlovesOff:
-        ds_list_add(Instances, instance_create_layer(room_width/2,room_height/2,"Instances",oPlayerGloveSmack));
+        CreateInstance(room_width/2,room_height/2,oPlayerGloveSmack);
 		break;
     case Game.Chips:
-        ds_list_add(Instances, instance_create_layer(room_width/2,room_height/2+200,"Instances",oChipBag));
+        CreateInstance(room_width/2,room_height/2+200,oChipBag);
 		break;
     case Game.PanAttack:
-        ds_list_add(Instances, instance_create_layer(room_width/2+300,room_height/2,"Instances",oPan));
-		MiniGameEndSeq = seqLighthouse;
+		with(oEnemyBattleParent)
+			EnemyVisibility = new DrawEnemyInit(true, true);
+        CreateInstance(room_width/2+300,room_height/2,oPan);
 		break;
     case Game.BroomAttack:
         HelpText = "Broom!";
-        ds_list_add(Instances, instance_create_layer(room_width/2,room_height/2,"Instances",oBroom));
+        CreateInstance(room_width/2,room_height/2,oBroom);
 		break;    
     case Game.CrabWeigh:
         HelpText = "Weigh!";
-        ds_list_add(Instances, instance_create_layer(room_width/2+200+random(200),room_height/2+random_range(-150,150),"Instances",oCrabWeigh));
-        ds_list_add(Instances, instance_create_layer(room_width/2-200+random(200),room_height/2+random_range(-150,150),"Instances",oCrabWeigh));
-        ds_list_add(Instances, instance_create_layer(room_width/2,room_height/2+100,"Instances",oCrabBalance));		
+        CreateInstance(room_width/2+200+random(200),room_height/2+random_range(-150,150),oCrabWeigh);
+        CreateInstance(room_width/2-200+random(200),room_height/2+random_range(-150,150),oCrabWeigh);
+        CreateInstance(room_width/2,room_height/2+100,oCrabBalance);		
 		break;
     case Game.Highfive:
-        DrawSmall = true;
+		with(oEnemyBattleParent)
+			EnemyVisibility = new DrawEnemyInit(true, false);
         SmallScreenPosX = 250+50;
         SmallScreenPosY = 125+50;
-        ds_list_add(Instances, instance_create_layer(SmallScreenPosX,SmallScreenPosY,"Instances",oHighfive));
+        CreateInstance(SmallScreenPosX,SmallScreenPosY,oHighfive);
 		break;
     case Game.AnvilStruggle:
         HelpText = "Struggle/Save!";
-		var DogHelp = instance_create_layer(room_width/2,room_height/2+200,"Instances",oDogSave);
-		ds_list_add(Instances, DogHelp);
-		
-        var Anvil = instance_create_layer(room_width/2,room_height/2-200,"Instances",oAnvil);
-        ds_list_add(Instances, Anvil);
+		var DogHelp = CreateInstance(room_width/2,room_height/2+200,oDogSave);
+        var Anvil = CreateInstance(room_width/2,room_height/2-200,oAnvil);
 		
 		Anvil.DogSave = DogHelp;
 		break;
 	case Game.ThirstyDoggo:
-		ds_list_add(Instances, instance_create_layer(room_width/2+400,room_height/2-200, "Instances", oAnchorPoint));
-		ds_list_add(Instances, instance_create_layer(room_width/2+300,room_height/2-200, "Instances", oHand));
-		ds_list_add(Instances, instance_create_layer(room_width/2,room_height/2+250, "Instances", oThirstyDoggo));
+		CreateInstance(room_width/2+400,room_height/2-250, oAnchorPoint);
+		CreateInstance(room_width/2+300,room_height/2-250, oHand);
+		CreateInstance(room_width/2,room_height/2+250, oThirstyDoggo);
 		break;
 	case Game.DogTan:
-		ds_list_add(Instances, instance_create_layer(room_width/2,room_height/2, "Instances", oDogTan));
+		CreateInstance(room_width/2, room_height/2, oDogTan);
+		break;
+	case Game.Lighthouse:
+		MiniGameEndSeq = seqLighthouse;
+		CreateInstance(room_width/2+250, room_height/2, oCampfire);
+		CreateInstance(room_width/2-250, room_height/2, oFan);
+		break;
 }
