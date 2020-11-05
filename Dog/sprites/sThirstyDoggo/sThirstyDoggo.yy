@@ -69,7 +69,7 @@
   ],
   "parent": {
     "name": "ThirstyDoggo",
-    "path": "folders/Sprites/MiniGame/ThirstyDoggo.yy",
+    "path": "folders/Sprites/ThirstyDoggo.yy",
   },
   "resourceVersion": "1.0",
   "name": "sThirstyDoggo",
