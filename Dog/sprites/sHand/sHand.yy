@@ -69,7 +69,7 @@
   ],
   "parent": {
     "name": "DogTan",
-    "path": "folders/Sprites/DogTan.yy",
+    "path": "folders/Sprites/MiniGame/DogTan.yy",
   },
   "resourceVersion": "1.0",
   "name": "sHand",

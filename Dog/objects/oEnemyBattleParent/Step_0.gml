@@ -65,3 +65,23 @@ else
     if(Angle != 0 && Health > 0)
         Angle -= 15;
 }
+
+//Minigame intro transition and outro effect
+if(instance_exists(oMiniGame))
+{
+    if(OpenFraction <= (pi/2))
+        OpenFraction += (oBattleManager.SpeedMultiplier/2)/(2*pi);
+}
+else
+{
+    if(OpenEffect >= 0)
+    {
+        OpenFraction -= (oBattleManager.SpeedMultiplier/2)/(2*pi);
+    }
+	else
+	{
+		EnemyVisibility = new DrawEnemyInit(false, false);
+	}
+}
+
+OpenEffect = sin(OpenFraction);

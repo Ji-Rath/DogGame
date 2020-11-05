@@ -1,17 +1,8 @@
 
 
-if(global.KeyInteract)
-{
-    Interact = true;
-}
-if(global.KeyInteractRelease)
-{
-    Interact = false;
-}
-
 if(Counter < CompleteCounter)
 {
-    if(Interact)
+    if(global.KeyInteract)
     {
         if(!StruggleRight)
         {
@@ -22,7 +13,8 @@ if(Counter < CompleteCounter)
 				physics_apply_force(x, y, 15, -10);
         }
 		
-    } else if(global.KeySprint)
+    }
+	else if(global.KeySprint)
     {
         if(StruggleRight)
         {

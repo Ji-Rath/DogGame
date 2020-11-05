@@ -2,7 +2,6 @@
 StruggleRight = true;
 Counter = 0;
 Complete = false;
-Interact = false;
 CompleteCounter = 10;
 DogSave = instance_find(oDogSave, 0);
 HitObject = false;

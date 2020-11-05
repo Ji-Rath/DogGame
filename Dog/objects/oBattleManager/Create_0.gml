@@ -75,6 +75,7 @@ enum BattleSection
 	RoomTransition
 }
 
+/// @func NextTurn(Delay = 0.1);
 function NextTurn()
 {
 	var Delay = argument_count > 0 ? argument[0] : 0.1;

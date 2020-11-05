@@ -1,6 +1,7 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 
+/// @func scrRunSequence(Sequence, Layer = "GUI");
 function scrRunSequence(Sequence)
 {
 	var Layer = argument_count > 1 ? argument[1] : "GUI";
