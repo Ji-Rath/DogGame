@@ -41,3 +41,11 @@ if(phy_rotation > 70 && phy_rotation < 290)
     //say "hey this is the end of the group creation"
     endGroup = physics_particle_group_end();
 }
+
+if (bGrabbed)
+{
+	if (global.KeyInteract)
+		phy_rotation += TurnRate;
+	if (global.KeySprint)
+		phy_rotation -= TurnRate;
+}

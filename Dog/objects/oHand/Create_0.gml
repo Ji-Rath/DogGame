@@ -1,9 +1,15 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+TurnRate = 2; //Speed for turning cup when grabbed
+
+/////////////////////////////////////////////////////////////////////////////
+
 var YPos = 0;
 var Inst = self;
 Joint = noone;
+
+bGrabbed = false;
 
 /** Spawn arm joints and attach to eachother to create one 'rope' */
 for(var i=0;i<3;i++)
