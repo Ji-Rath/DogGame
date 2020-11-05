@@ -69,7 +69,7 @@
   ],
   "parent": {
     "name": "AnvilStruggle",
-    "path": "folders/Sprites/MiniGame/AnvilStruggle.yy",
+    "path": "folders/Sprites/Battle/MiniGame/Crab/CrabAttacks/AnvilStruggle.yy",
   },
   "resourceVersion": "1.0",
   "name": "sSmush",

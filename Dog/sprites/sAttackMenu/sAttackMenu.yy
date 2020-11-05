@@ -25,7 +25,7 @@
   "gridY": 0,
   "frames": [
     {"compositeImage":{"FrameId":{"name":"0e262fa9-ebc7-4653-823c-e6934f84bbfc","path":"sprites/sAttackMenu/sAttackMenu.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"0e262fa9-ebc7-4653-823c-e6934f84bbfc","path":"sprites/sAttackMenu/sAttackMenu.yy",},"LayerId":{"name":"23975059-23bd-41ee-b447-645d45dc7bf2","path":"sprites/sAttackMenu/sAttackMenu.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"0e262fa9-ebc7-4653-823c-e6934f84bbfc","path":"sprites/sAttackMenu/sAttackMenu.yy",},"LayerId":{"name":"sAttackMenu","path":"sprites/sAttackMenu/sAttackMenu.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
         {"FrameId":{"name":"0e262fa9-ebc7-4653-823c-e6934f84bbfc","path":"sprites/sAttackMenu/sAttackMenu.yy",},"LayerId":{"name":"a4baef73-c7d8-4226-95cb-592ee5911e43","path":"sprites/sAttackMenu/sAttackMenu.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"sAttackMenu","path":"sprites/sAttackMenu/sAttackMenu.yy",},"resourceVersion":"1.0","name":"0e262fa9-ebc7-4653-823c-e6934f84bbfc","tags":[],"resourceType":"GMSpriteFrame",},
   ],
@@ -70,7 +70,7 @@
   ],
   "parent": {
     "name": "BattleMenu",
-    "path": "folders/Sprites/BattleMenu.yy",
+    "path": "folders/Sprites/Battle/BattleMenu.yy",
   },
   "resourceVersion": "1.0",
   "name": "sAttackMenu",

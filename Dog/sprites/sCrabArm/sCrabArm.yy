@@ -73,7 +73,7 @@
   ],
   "parent": {
     "name": "CONCEPT",
-    "path": "folders/Sprites/MiniGame/CONCEPT.yy",
+    "path": "folders/Sprites/Battle/MiniGame/Crab/CrabAttacks/CONCEPT.yy",
   },
   "resourceVersion": "1.0",
   "name": "sCrabArm",
