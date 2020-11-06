@@ -52,7 +52,7 @@ HelpText = "";
 
 MiniGameEndSeq = -1;
 
-MiniGameScreenSeq = scrRunSequence(MiniGameScreenOpenSeq);
+MiniGameScreenSeq = scrRunSequence(seqAttackEnter);
 
 /// @func CreateInstance(x, y, obj, layer = "Instances")
 /// @desc Create object for minigame sequence
