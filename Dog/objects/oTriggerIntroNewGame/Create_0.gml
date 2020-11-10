@@ -5,7 +5,9 @@ visible = false;
 
 CutScene = //A group of scenes
 [
-	[scrCutSceneTextBox, ["hello dog paddler, i am very sick. can you get me some cold medicine?"], [new TextInit(0.05, c_black, 0, oDog)]],
+	[scrCutSceneWait, 1],
+	[scrCutSceneTextBox, ["*Cough*"], [new TextInit(0.05, c_black, 0, oDogFriend)]],
+	[scrCutSceneTextBox, ["... *Cough*"], [new TextInit(0.05, c_black, 0, oDogFriend)]],
 	[scrCutSceneFinish]
 ];
 

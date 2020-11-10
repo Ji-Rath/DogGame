@@ -1,16 +1,10 @@
 {
-  "spriteId": {
-    "name": "sNPC",
-    "path": "sprites/sNPC/sNPC.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": {
-    "name": "oNPCBase",
-    "path": "objects/oNPCBase/oNPCBase.yy",
-  },
+  "parentObjectId": null,
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -24,8 +18,8 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"oDogFriend","path":"objects/oDogFriend/oDogFriend.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"parent":{"name":"oDogFriend","path":"objects/oDogFriend/oDogFriend.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"parent":{"name":"oSqueakyThrow","path":"objects/oSqueakyThrow/oSqueakyThrow.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"oSqueakyThrow","path":"objects/oSqueakyThrow/oSqueakyThrow.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
@@ -34,7 +28,7 @@
     "path": "folders/Objects/MainScene/Map Asset/DogPaddler'sHome.yy",
   },
   "resourceVersion": "1.0",
-  "name": "oDogFriend",
+  "name": "oSqueakyThrow",
   "tags": [],
   "resourceType": "GMObject",
 }
