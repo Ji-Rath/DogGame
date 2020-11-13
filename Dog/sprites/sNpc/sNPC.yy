@@ -8,9 +8,9 @@
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
   "bbox_left": 0,
-  "bbox_right": 0,
+  "bbox_right": 63,
   "bbox_top": 0,
-  "bbox_bottom": 0,
+  "bbox_bottom": 63,
   "HTile": false,
   "VTile": false,
   "For3D": false,
@@ -24,12 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"238ed9b9-ea74-40ca-ab76-12d7ffce980a","path":"sprites/Sprite131/Sprite131.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"238ed9b9-ea74-40ca-ab76-12d7ffce980a","path":"sprites/Sprite131/Sprite131.yy",},"LayerId":{"name":"b96be88e-714b-4b05-b2fd-db6550780308","path":"sprites/Sprite131/Sprite131.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"Sprite131","path":"sprites/Sprite131/Sprite131.yy",},"resourceVersion":"1.0","name":"238ed9b9-ea74-40ca-ab76-12d7ffce980a","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"ea152db9-2693-4cd0-91e4-e5c5b467d529","path":"sprites/sNPC/sNPC.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"ea152db9-2693-4cd0-91e4-e5c5b467d529","path":"sprites/sNPC/sNPC.yy",},"LayerId":{"name":"2ccf7d76-c063-4b67-b5d9-1cba16d6dfd6","path":"sprites/sNPC/sNPC.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sNPC","path":"sprites/sNPC/sNPC.yy",},"resourceVersion":"1.0","name":"ea152db9-2693-4cd0-91e4-e5c5b467d529","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"Sprite131","path":"sprites/Sprite131/Sprite131.yy",},
+    "spriteId": {"name":"sNPC","path":"sprites/sNPC/sNPC.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 24.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"c9fa56d4-d6d7-440c-b464-b7187a97857a","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"238ed9b9-ea74-40ca-ab76-12d7ffce980a","path":"sprites/Sprite131/Sprite131.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"457d68f5-304c-4ef1-b40a-7c87016dfdd1","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"ea152db9-2693-4cd0-91e4-e5c5b467d529","path":"sprites/sNPC/sNPC.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -58,21 +58,21 @@
     "yorigin": 32,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"Sprite131","path":"sprites/Sprite131/Sprite131.yy",},
+    "parent": {"name":"sNPC","path":"sprites/sNPC/sNPC.yy",},
     "resourceVersion": "1.3",
-    "name": "Sprite131",
+    "name": "sNPC",
     "tags": [],
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"b96be88e-714b-4b05-b2fd-db6550780308","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"2ccf7d76-c063-4b67-b5d9-1cba16d6dfd6","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Dog",
-    "path": "Dog.yyp",
+    "name": "NPC",
+    "path": "folders/Sprites/NPC.yy",
   },
   "resourceVersion": "1.0",
-  "name": "Sprite131",
+  "name": "sNPC",
   "tags": [],
   "resourceType": "GMSprite",
 }

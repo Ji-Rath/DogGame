@@ -7,10 +7,10 @@
   "edgeFiltering": false,
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
-  "bbox_left": 5,
-  "bbox_right": 441,
-  "bbox_top": 57,
-  "bbox_bottom": 375,
+  "bbox_left": 15,
+  "bbox_right": 437,
+  "bbox_top": 34,
+  "bbox_bottom": 376,
   "HTile": false,
   "VTile": false,
   "For3D": false,
@@ -26,6 +26,8 @@
   "frames": [
     {"compositeImage":{"FrameId":{"name":"14b4c718-1d5b-4e5e-8329-6be53c194118","path":"sprites/sTownHall/sTownHall.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
         {"FrameId":{"name":"14b4c718-1d5b-4e5e-8329-6be53c194118","path":"sprites/sTownHall/sTownHall.yy",},"LayerId":{"name":"2aa07fd3-a2d0-479e-895a-1032bde3a533","path":"sprites/sTownHall/sTownHall.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"14b4c718-1d5b-4e5e-8329-6be53c194118","path":"sprites/sTownHall/sTownHall.yy",},"LayerId":{"name":"0efca2ad-8ce4-4cf3-865a-af147265835a","path":"sprites/sTownHall/sTownHall.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"14b4c718-1d5b-4e5e-8329-6be53c194118","path":"sprites/sTownHall/sTownHall.yy",},"LayerId":{"name":"12be7c17-54c5-4c95-a962-5d21d544ec3c","path":"sprites/sTownHall/sTownHall.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"sTownHall","path":"sprites/sTownHall/sTownHall.yy",},"resourceVersion":"1.0","name":"14b4c718-1d5b-4e5e-8329-6be53c194118","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
@@ -65,7 +67,8 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"2aa07fd3-a2d0-479e-895a-1032bde3a533","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Layer 1","resourceVersion":"1.0","name":"0efca2ad-8ce4-4cf3-865a-af147265835a","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Layer 2","resourceVersion":"1.0","name":"12be7c17-54c5-4c95-a962-5d21d544ec3c","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
     "name": "Village",
