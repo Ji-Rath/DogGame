@@ -98,8 +98,8 @@
     "PhysicsWorldPixToMetres": 0.1,
   },
   "parent": {
-    "name": "Scenes",
-    "path": "folders/Rooms/Scenes.yy",
+    "name": "Village",
+    "path": "folders/Rooms/Scenes/Village.yy",
   },
   "resourceVersion": "1.0",
   "name": "rmSceneBridge",
