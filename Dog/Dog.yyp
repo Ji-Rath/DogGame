@@ -313,6 +313,7 @@
     "children": [],
   },
   "RoomOrder": [
+    {"name":"rmTitle","path":"rooms/rmTitle/rmTitle.yy",},
     {"name":"rmBattle","path":"rooms/rmBattle/rmBattle.yy",},
     {"name":"rmDebug","path":"rooms/rmDebug/rmDebug.yy",},
     {"name":"rmGameOver","path":"rooms/rmGameOver/rmGameOver.yy",},
@@ -325,7 +326,6 @@
     {"name":"rmSceneHousing","path":"rooms/rmSceneHousing/rmSceneHousing.yy",},
     {"name":"rmSceneShopCenter","path":"rooms/rmSceneShopCenter/rmSceneShopCenter.yy",},
     {"name":"rmSceneTownCenter","path":"rooms/rmSceneTownCenter/rmSceneTownCenter.yy",},
-    {"name":"rmTitle","path":"rooms/rmTitle/rmTitle.yy",},
   ],
   "Folders": [
     {"folderPath":"folders/Fonts.yy","order":0,"resourceVersion":"1.0","name":"Fonts","tags":[],"resourceType":"GMFolder",},
