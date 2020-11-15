@@ -334,8 +334,8 @@
     "PhysicsWorldPixToMetres": 0.1,
   },
   "parent": {
-    "name": "Village",
-    "path": "folders/Rooms/Scenes/Village.yy",
+    "name": "rmClinic",
+    "path": "folders/Rooms/Scenes/Village/rmClinic.yy",
   },
   "resourceVersion": "1.0",
   "name": "rmSceneClinic",
