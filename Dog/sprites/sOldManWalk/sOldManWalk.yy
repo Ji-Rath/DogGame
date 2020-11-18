@@ -68,8 +68,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"9bde6be1-60c1-422c-b738-4eb351febb2b","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "NPC",
-    "path": "folders/Sprites/NPC.yy",
+    "name": "oldman",
+    "path": "folders/Sprites/NPC/clinic/oldman.yy",
   },
   "resourceVersion": "1.0",
   "name": "sOldManWalk",

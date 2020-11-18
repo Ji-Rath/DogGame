@@ -68,8 +68,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"0cba870d-332f-46a7-ac89-2f11d03e0185","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "NPC",
-    "path": "folders/Sprites/NPC.yy",
+    "name": "clinic",
+    "path": "folders/Sprites/NPC/clinic.yy",
   },
   "resourceVersion": "1.0",
   "name": "sPepper",

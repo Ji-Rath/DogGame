@@ -1,4 +1,5 @@
 ///@description Spawn MiniGame objects
+
 //Switch to the specified minigame
 switch(GameType)
 {
@@ -38,6 +39,7 @@ switch(GameType)
         SmallScreenPosX = 250+50;
         SmallScreenPosY = 125+50;
         CreateInstance(SmallScreenPosX,SmallScreenPosY,oHighfive);
+		DrawSmall = true;
 		break;
     case Game.AnvilStruggle:
         HelpText = "Struggle/Save!";
@@ -61,3 +63,6 @@ switch(GameType)
 		CreateInstance(room_width/2-250, room_height/2, oFan);
 		break;
 }
+
+if (!DrawSmall)
+	MiniGameScreenSeq = scrRunSequence(seqAttackEnter);

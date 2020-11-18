@@ -6,9 +6,8 @@ SaveState = ds_map_create();
 //Datastructure of the current items the player has
 Items = ds_map_create();
 
-//Values for the BattleScene
-Enemy = noone;
-EnemyKey = 0;
+EnemyKey = 0; // Unique ID for encountered enemy
+EnemyBattle = oCrabBattle; // Obj of enemy when going to battle
 
 //The current slot for game saving
 CurrentSave = "Save1";
@@ -18,3 +17,10 @@ LoadGame = false;
 
 //Whether debug is enabled
 global.Debug = false;
+
+// Create keybinds instance for input
+if (!instance_exists(oKeybinds))
+	instance_create_layer(0, 0, "Instances", oKeybinds);
+	
+//Load Player Stats
+scrPlayerStats();

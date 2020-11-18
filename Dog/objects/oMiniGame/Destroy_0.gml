@@ -21,11 +21,14 @@ if(EndTurn)
 	}
 		
 }
-else if(oBattleMenuBase.AnimAlpha == 0) //Only show GUI fade in if it was invisible before
+else //Only show GUI fade in if it was invisible before
 {
 	oBattleManager.DrawGUI = true;
-	with(oBattleMenuBase)
-		scrAnimReinit(Animations.SmoothFlip, Animations.IntroScale);
+	if (oBattleMenuBase.AnimAlpha == 0)
+	{
+		with(oBattleMenuBase)
+			scrAnimReinit(Animations.SmoothFlip, Animations.IntroScale);
+	}
 }
 
 layer_sequence_destroy(MiniGameScreenSeq);

@@ -33,15 +33,17 @@ if(SaveVal != undefined)
 	y = ds_map_find_value(oAreaStats.SaveState,"PlayerY");
 }
 
-//Load Player Stats
-scrPlayerStats();
-
+// Set scaling of player
 image_yscale = Scale;
 image_xscale = Scale;
 
+// Create partners
 for(var i=0; i<array_length(global.PartnerArray);i++)
 {
 	var Partner = array_get(global.PartnerArray, i);
 	if(Partner != -1)
 		instance_create_layer(x, y, "Instances", Partner);
 }
+
+// Update player stats
+scrUpdateStats();

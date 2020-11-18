@@ -16,6 +16,10 @@ MaxNeglect = 30; // (seconds)
 
 //////////////////////////////////////////////////////////////////////////////////////////
 
+// Create 'data manager' in the event that it does not exist for some reason (debug)
+if (!instance_exists(oAreaStats))
+	instance_create_layer(0, 0, "Instances", oAreaStats);
+
 //Rage meter
 RageMeter = 0;
 
@@ -76,6 +80,7 @@ enum BattleSection
 }
 
 /// @func NextTurn(Delay = 0.1);
+/// @desc Swap turns and check HP of both opponents
 function NextTurn()
 {
 	var Delay = argument_count > 0 ? argument[0] : 0.1;
@@ -104,6 +109,7 @@ function NextTurn()
 	}
 }
 
+/// @desc Implementation of spawning minigame, showing UI on player turn, etc
 function RunBattleStage()
 {
 	switch(BattleStage)
