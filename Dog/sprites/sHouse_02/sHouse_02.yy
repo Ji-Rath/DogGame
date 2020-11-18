@@ -2,7 +2,7 @@
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
-  "origin": 9,
+  "origin": 4,
   "preMultiplyAlpha": false,
   "edgeFiltering": false,
   "collisionTolerance": 0,
@@ -24,15 +24,15 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"1efa7e26-a855-47c9-8169-69d362821482","path":"sprites/sHouse_02/sHouse_02.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"1efa7e26-a855-47c9-8169-69d362821482","path":"sprites/sHouse_02/sHouse_02.yy",},"LayerId":{"name":"1b6e110f-f693-4471-bc56-d3b9ca63498d","path":"sprites/sHouse_02/sHouse_02.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sHouse_02","path":"sprites/sHouse_02/sHouse_02.yy",},"resourceVersion":"1.0","name":"1efa7e26-a855-47c9-8169-69d362821482","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"77d61230-95cb-4c39-bd47-d3083a63cd57","path":"sprites/sHouse_02/sHouse_02.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"77d61230-95cb-4c39-bd47-d3083a63cd57","path":"sprites/sHouse_02/sHouse_02.yy",},"LayerId":{"name":"d3908b27-f346-41d0-b42b-304bf306b593","path":"sprites/sHouse_02/sHouse_02.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sHouse_02","path":"sprites/sHouse_02/sHouse_02.yy",},"resourceVersion":"1.0","name":"77d61230-95cb-4c39-bd47-d3083a63cd57","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"sHouse_02","path":"sprites/sHouse_02/sHouse_02.yy",},
     "timeUnits": 1,
     "playback": 1,
-    "playbackSpeed": 15.0,
+    "playbackSpeed": 24.0,
     "playbackSpeedType": 0,
     "autoRecord": true,
     "volume": 1.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"71287237-35da-4455-9a21-305eaada5252","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"1efa7e26-a855-47c9-8169-69d362821482","path":"sprites/sHouse_02/sHouse_02.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"c77e5ecb-d9cf-401d-af11-9de60d8815cd","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"77d61230-95cb-4c39-bd47-d3083a63cd57","path":"sprites/sHouse_02/sHouse_02.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -50,12 +50,12 @@
     "showBackdropImage": false,
     "backdropImagePath": "",
     "backdropImageOpacity": 0.5,
-    "backdropWidth": 1920,
-    "backdropHeight": 1080,
+    "backdropWidth": 1366,
+    "backdropHeight": 768,
     "backdropXOffset": 0.0,
     "backdropYOffset": 0.0,
-    "xorigin": 288,
-    "yorigin": 475,
+    "xorigin": 231,
+    "yorigin": 197,
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sHouse_02","path":"sprites/sHouse_02/sHouse_02.yy",},
@@ -65,7 +65,7 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"1b6e110f-f693-4471-bc56-d3b9ca63498d","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"d3908b27-f346-41d0-b42b-304bf306b593","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
     "name": "Village",
