@@ -68,8 +68,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"558f2b0a-bffb-4ffd-8b14-a41fc8cece9f","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "DogTan",
-    "path": "folders/Sprites/MiniGame/DogTan.yy",
+    "name": "Suntan",
+    "path": "folders/Sprites/Battle/MiniGame/General/Suntan.yy",
   },
   "resourceVersion": "1.0",
   "name": "sHand",

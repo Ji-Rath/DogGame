@@ -31,18 +31,18 @@ else if (timer[1] != -1)
         EnemyBattle.Health = round(EnemyBattle.Health);
 	}
 	
-    if(DrawSmall)
-    {
-        oBattleManager.DrawGUI = true;
-    }
-    else
-    {
-		layer_sequence_destroy(MiniGameScreenSeq);
-		layer_sequence_destroy(MiniGameEndSeq);
+	layer_sequence_destroy(MiniGameScreenSeq);
+	layer_sequence_destroy(MiniGameEndSeq);
 		
+	if (DrawSmall)
+	{
+		oBattleManager.DrawGUI = true;
+	}
+	else
+	{
 		MiniGameScreenSeq = scrRunSequence(MiniGameScreenCloseSeq);
-		var Len = layer_sequence_get_length(MiniGameScreenSeq);
-		var Spd = layer_sequence_get_speedscale(MiniGameScreenSeq);
-		alarm[2] = Len*Spd;
-    }
+	}
+	var Len = layer_sequence_get_length(MiniGameScreenSeq);
+	var Spd = layer_sequence_get_speedscale(MiniGameScreenSeq);
+	alarm[2] = Len*Spd;
 }
