@@ -33,7 +33,7 @@ if (state = DogState.normal)
 
 
 //Interaction
-if (global.KeyInteract)
+if (global.KeyInteractPress)
 {
 	
 	//Interact with NPC if in range

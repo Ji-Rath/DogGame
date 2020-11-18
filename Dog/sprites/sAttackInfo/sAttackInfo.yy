@@ -25,7 +25,7 @@
   "gridY": 0,
   "frames": [
     {"compositeImage":{"FrameId":{"name":"fcbff8f3-69e3-432c-b64e-a306aa43a9f0","path":"sprites/sAttackInfo/sAttackInfo.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"fcbff8f3-69e3-432c-b64e-a306aa43a9f0","path":"sprites/sAttackInfo/sAttackInfo.yy",},"LayerId":{"name":"9c3f145a-3c22-44a6-94ed-449b74f7bc7d","path":"sprites/sAttackInfo/sAttackInfo.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"fcbff8f3-69e3-432c-b64e-a306aa43a9f0","path":"sprites/sAttackInfo/sAttackInfo.yy",},"LayerId":{"name":"sAttackInfo","path":"sprites/sAttackInfo/sAttackInfo.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
         {"FrameId":{"name":"fcbff8f3-69e3-432c-b64e-a306aa43a9f0","path":"sprites/sAttackInfo/sAttackInfo.yy",},"LayerId":{"name":"dc134f85-4955-428d-b050-911352d1702d","path":"sprites/sAttackInfo/sAttackInfo.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"sAttackInfo","path":"sprites/sAttackInfo/sAttackInfo.yy",},"resourceVersion":"1.0","name":"fcbff8f3-69e3-432c-b64e-a306aa43a9f0","tags":[],"resourceType":"GMSpriteFrame",},
   ],
@@ -70,7 +70,7 @@
   ],
   "parent": {
     "name": "BattleMenu",
-    "path": "folders/Sprites/BattleMenu.yy",
+    "path": "folders/Sprites/Battle/BattleMenu.yy",
   },
   "resourceVersion": "1.0",
   "name": "sAttackInfo",

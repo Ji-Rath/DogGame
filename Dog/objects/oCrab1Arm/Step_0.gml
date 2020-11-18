@@ -35,10 +35,6 @@ switch(State)
     case Crab1State.Attack:
         Spd = 0;
         sprite_index = sMiniGameCrab1Bite;
-        if(oMiniGame.timer[1] > 0.5*60)
-        {
-            oMiniGame.timer[1] = 0.5*60;
-        }
         instance_destroy(ButtonPress);
     break;
 }

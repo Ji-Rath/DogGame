@@ -4,3 +4,34 @@ function scrRunMiniGame(GameType) {
 	var MiniGame = instance_create_layer(0,0,"GameManager",oMiniGame);
 	MiniGame.GameType = GameType;
 }
+
+function scrFinishMiniGame(bIsSuccess)
+{
+	if (instance_exists(oMiniGame) && !oMiniGame.bCompletedGame)
+	{
+		if(bIsSuccess)
+		{
+			with(oMiniGame)
+			{
+				if(MiniGameEndSeq != -1)
+				{
+					var Seq = scrRunSequence(MiniGameEndSeq, "TextBox");
+					var Len = layer_sequence_get_length(Seq);
+					var Spd = layer_sequence_get_speedscale(Seq);
+					MiniGameEndSeq = Seq;
+					timer[1] = ((Len*Spd)/30)*60; //Basically double time because of 60fps
+					Destroy = true;
+				}
+				else
+					timer[1] = 0.5*60;
+			
+			    scrMiniGameIcon(sCheckMark);
+			}
+		}
+		else
+		{
+			oMiniGame.timer[1] = 0.5*60;
+		}
+		oMiniGame.bCompletedGame = true;
+	}
+}

@@ -17,3 +17,6 @@ TextBoxX = x+100;
 TextBoxY = y-200;
 TextBoxWidth = 310;
 TextBoxHeight = string_height("I")+10;
+
+/** Menu background, can be a sprite */
+SelectMenuBackground = sAttackMenu;

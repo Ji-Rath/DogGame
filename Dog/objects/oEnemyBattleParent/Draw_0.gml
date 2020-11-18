@@ -9,17 +9,14 @@ var YDivision = 1;
 //Draw enemy if the minigame has the option enabled
 if(instance_exists(oMiniGame))
 {
-    if(!oMiniGame.DrawSmall)
+    if(EnemyVisibility.DrawSmall)
     {
-        if(oMiniGame.ShowEnemy)
-        {
-            Scale = 1-(oMiniGame.OpenEffect/1.75);
-        }
-        else
-        {
-            YPos = y + oMiniGame.OpenEffect*250;
-            Alpha = 1-(oMiniGame.OpenEffect);
-        }
+        Scale = 1-(OpenEffect/1.75);
+    }
+    else if (!EnemyVisibility.ShowEnemy)
+    {
+        YPos = y + OpenEffect*250;
+        Alpha = 1-(OpenEffect);
     }
     
     if(instance_exists(oPan))
@@ -29,6 +26,18 @@ if(instance_exists(oMiniGame))
             YDivision = 2;
         }
     }
+}
+else
+{
+	if(EnemyVisibility.DrawSmall)
+	{
+		Scale = 1-(OpenEffect/1.75);
+	}
+	else if (!EnemyVisibility.ShowEnemy)
+	{
+		YPos = y + OpenEffect*250;
+	    Alpha = 1-(OpenEffect);
+	}
 }
 
 //Draw enemy sprite at specified dimensions

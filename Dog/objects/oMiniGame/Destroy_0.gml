@@ -27,4 +27,8 @@ else if(oBattleMenuBase.AnimAlpha == 0) //Only show GUI fade in if it was invisi
 	with(oBattleMenuBase)
 		scrAnimReinit(Animations.SmoothFlip, Animations.IntroScale);
 }
+
+layer_sequence_destroy(MiniGameScreenSeq);
+layer_sequence_destroy(MiniGameEndSeq);
+
 	
