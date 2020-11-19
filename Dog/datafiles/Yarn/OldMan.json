@@ -2,11 +2,31 @@
 	{
 		"title": "Interact",
 		"tags": "",
-		"body": "OldMan: When I was younger, there weren't any clinics around.\nOldMan: I'm sure glad Dr. Doctor moved down to this small town.",
+		"body": "OldMan: When I was younger, there weren't any clinics around.\nOldMan: I'm sure glad Dr. Doctor moved down to this small town.\n [[Younger|When I was Young]]\n [[Farm|Tending the Farm]]",
 		"position": {
-			"x": 641,
-			"y": -132
+			"x": 630,
+			"y": -151
 		},
 		"colorID": 2
+	},
+	{
+		"title": "When I was Young",
+		"tags": "",
+		"body": "OldMan: When I was your age, I had to walk to school up hill both ways\nOldMan: Times are different now, y'all have it easy.",
+		"position": {
+			"x": 393,
+			"y": 107
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Tending the Farm",
+		"tags": "",
+		"body": "OldMan: I wake up everyday at the brink of dawn to tend to my tomato farm.\nOldMan: I don't get paid much, but its honest work.",
+		"position": {
+			"x": 876,
+			"y": 87
+		},
+		"colorID": 0
 	}
 ]

@@ -1,6 +1,10 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function HexToDec()
+
+/// @func HexToDec(hex)
+/// @arg {string} hex
+/// @return {real} decimal
+function HexToDec(hex)
 {
 	/// hex_to_dec(hex)
 	//
@@ -9,8 +13,7 @@ function HexToDec()
 	//      hex         hexadecimal digits, string
 	//
 	/// GMLscripts.com/license
-    var hex = argument0,
-        dec = 0;
+    var dec = 0;
  
     var dig = "0123456789ABCDEF";
     var len = string_length(hex);

@@ -1,5 +1,5 @@
 
-/// @func TextInit(TextSpeed, TextColor, TextCloseTime)
+/// @func TextInit(TextSpeed = 0.05, TextColor = c_black, TextCloseTime = 0);
 /// @desc Struct for storing initial textbox line values
 /// @arg TextSpeed=0.05
 /// @arg TextColor=c_black
