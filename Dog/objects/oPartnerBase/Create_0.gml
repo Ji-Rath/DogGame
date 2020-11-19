@@ -11,15 +11,9 @@ IntervalCheckDelay = 0.2; //Interval (seconds) to check distance from player
 
 /////////////////////////////////////////////////////////////////////////////////
 
-HSpeed = 0;
-VSpeed = 0;
-
 Speed = 0;
 
 image_xscale = Scale;
 image_yscale = Scale;
 
 timer[0] = IntervalCheckDelay;
-
-XPrevious = x;
-YPrevious = y;

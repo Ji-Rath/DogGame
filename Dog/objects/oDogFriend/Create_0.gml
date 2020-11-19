@@ -8,7 +8,6 @@ event_inherited();
 //textbox variables
 Voice				= sndSelect;
 Font				= fnt_dialogue;
-Name				= "Your Friend";
 
 //dialogue
 Text = [];

@@ -5,7 +5,7 @@ visible = false;
 
 CutScene = //A group of scenes
 [
-	[scrCutSceneTextBox, ["and some milk."], [new TextInit(0.05, c_black, 0, oDog)]],
+	[scrCutSceneTextBox, TextFile, TextNode],
 	[scrCutSceneFinish]
 ];
 

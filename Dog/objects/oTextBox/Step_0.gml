@@ -42,6 +42,12 @@ if (bDisplayOptions)
 		SelectedOption = clamp(--SelectedOption, 0, chatterbox_get_option_count(chatterbox)-1);
 }
 
+if (CurrentCloseTime != 0 && alarm[1] == -1)
+{
+	if (scribble_autotype_get(CurrentText) == 1)
+		alarm[1] = CurrentCloseTime * 60;
+}
+
 //Update position
 var Camera = view_camera[0];
 var ViewWidthHalf = camera_get_view_width(Camera) * 0.5;

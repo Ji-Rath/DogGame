@@ -1,12 +1,12 @@
 
 /// @func TextInit(TextSpeed = 0.05, TextColor = c_black, TextCloseTime = 0);
 /// @desc Struct for storing initial textbox line values
-/// @arg TextSpeed=0.05
+/// @arg TextSpeed=0.25
 /// @arg TextColor=c_black
 /// @arg TextCloseTime=0
 function TextInit() constructor
 {
-	var TextSpeed = argument_count > 0 ? argument[0] : 0.05;
+	var TextSpeed = argument_count > 0 ? argument[0] : 0.25;
 	var TextColor = argument_count > 1 ? argument[1] : c_black;
 	var TextCloseTime = argument_count > 2 ? argument[2] : 0;
 
@@ -29,7 +29,6 @@ function CreateTextEvent(filename, node)
 		with(TextInst)
 		{
 			// Initialize chatterbox file, nodes, and custom functions
-			chatterbox_add_function("SetExt", SetExt);
 			chatterbox_add_function("SetInit", SetInit);
 			if (!chatterbox_is_loaded(filename))
 				chatterbox_load(filename);
@@ -59,7 +58,6 @@ function CreateBattleTextEvent(filename, node)
     	with(TextInst)
     	{
 			// Initialize chatterbox file, nodes, and custom functions
-			chatterbox_add_function("SetExt", SetExt);
 			chatterbox_add_function("SetInit", SetInit);
 			if (!chatterbox_is_loaded(filename))
 				chatterbox_load(filename);
@@ -70,7 +68,6 @@ function CreateBattleTextEvent(filename, node)
     		EndTurn = EndsTurn;
     		Sequence = seqBattleTextIntro;
     		event_perform(ev_other, ev_user0);
-			NewLineCutOff = 40;
     	}
     }
 }
@@ -80,27 +77,26 @@ function InitLine()
 {
 	if (chatterbox_get_content(chatterbox, 0) == undefined) { return; }
 
-	CurrentChar = 0; //Store current character position
-	CurrentText = scribble_draw(0, 0, chatterbox_get_content(chatterbox, 0));
-	TextLen = string_length(CurrentText); //Get total length of text
-	DrawnText = "";
-
+	var DrawnText = chatterbox_get_content(chatterbox, 0);
+	
 	// Set initial values for text
-	CharSpeed = CurrentLineInit.Speed; //Store initial character speed
-	CurrentSpeaker = GetSpeaker(CurrentText);
-	CurrentColor = CurrentLineInit.Color; //Store initial color
-	CurrentCloseTime = CurrentLineInit.CloseTime; //Store auto closing time
-	CurrentFont = CurrentSpeaker.Font;
-
+	var CharSpeed = CurrentLineInit.Speed; //Store initial character speed
+	var CurrentSpeaker = GetSpeaker(DrawnText);
+	var CurrentColor = CurrentLineInit.Color; //Store initial color
+	var CurrentCloseTime = CurrentLineInit.CloseTime; //Store auto closing time
+	var CurrentFont = CurrentSpeaker.Font;
+	
 	// Remove name from dialogue
-	var ColonPos = string_pos(":", CurrentText);
-	CurrentText = string_delete(CurrentText, 0+1, ColonPos+1);
-
-	scribble_set_wrap(300, 200);
-	scribble_autotype_fade_in(CurrentText, 0.3, 0, false);
-	scribble_autotype_set_sound_per_char(CurrentText, CurrentSpeaker.Voice, 0.9, 1.1);
-
-	alarm_set(0, CharSpeed*30);
+	var ColonPos = string_pos(":", DrawnText);
+	DrawnText = string_delete(DrawnText, 0+1, ColonPos+1);
+	
+	scribble_set_starting_format(CurrentFont, CurrentColor, fa_left);
+	scribble_autotype_fade_in(DrawnText, CharSpeed, 0, false);
+	scribble_autotype_set_sound_per_char(DrawnText, CurrentSpeaker.Voice, 0.8, 1);
+	
+	CurrentText = scribble_draw(0, 0, DrawnText);
+	scribble_page_set(CurrentText, 0);
+	
 	alarm_set(1, -1);
 }
 

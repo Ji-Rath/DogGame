@@ -13,5 +13,3 @@ TextPositionRef = instance_find(oTextPosition, 0);
 
 // Initialize values to use current line of text
 InitLine();
-
-alarm_set(0, 1*30); //Initial text delay

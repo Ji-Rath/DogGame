@@ -538,6 +538,7 @@
     {"folderPath":"folders/Chatterbox/Flow.yy","order":3,"resourceVersion":"1.0","name":"Flow","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Chatterbox/Setup.yy","order":4,"resourceVersion":"1.0","name":"Setup","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Chatterbox.yy","order":0,"resourceVersion":"1.0","name":"Chatterbox","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Scribble.yy","order":0,"resourceVersion":"1.0","name":"Scribble","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":461609314234257646,"resourceVersion":"1.0","name":"audiogroup_default","resourceType":"GMAudioGroup",},
@@ -557,6 +558,15 @@
     {"CopyToMask":-1,"filePath":"datafiles/Yarn","resourceVersion":"1.0","name":"Crab.json","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles/Yarn","resourceVersion":"1.0","name":"OldMan.json","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles/Yarn","resourceVersion":"1.0","name":"TestingText.yarn","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/Fonts","resourceVersion":"1.0","name":"fnt_battle.yy","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/Fonts","resourceVersion":"1.0","name":"fnt_debug.yy","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/Fonts","resourceVersion":"1.0","name":"fnt_dialogue.yy","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/Fonts","resourceVersion":"1.0","name":"fnt_main.yy","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/Fonts","resourceVersion":"1.0","name":"fnt_stats.yy","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/Yarn","resourceVersion":"1.0","name":"Crab.json","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/Yarn","resourceVersion":"1.0","name":"OldMan.json","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/Yarn","resourceVersion":"1.0","name":"TestingText.yarn","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/Yarn","resourceVersion":"1.0","name":"DogHut.json","resourceType":"GMIncludedFile",},
   ],
   "MetaData": {
     "IDEVersion": "2.3.0.529",

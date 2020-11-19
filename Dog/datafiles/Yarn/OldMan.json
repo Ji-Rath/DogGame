@@ -2,7 +2,7 @@
 	{
 		"title": "Interact",
 		"tags": "",
-		"body": "OldMan: When I was younger, there weren't any clinics around.\nOldMan: I'm sure glad Dr. Doctor moved down to this small town.\n [[Younger|When I was Young]]\n [[Farm|Tending the Farm]]",
+		"body": "OldMan: When I was younger, there weren't any clinics around. Im [c_red]purposely[/c] creating a lot of text to test out the pages feature of Scribbles. Cool!\nOldMan: I'm sure glad Dr. Doctor moved down to this small town.\n [[Younger|When I was Young]]\n [[Farm|Tending the Farm]]",
 		"position": {
 			"x": 630,
 			"y": -151
