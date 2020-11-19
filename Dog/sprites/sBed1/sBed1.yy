@@ -70,8 +70,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Layer 1","resourceVersion":"1.0","name":"9dd5c005-ff01-4c05-82d2-27d2d61cd3f3","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "dogpaddler'shouse",
-    "path": "folders/Sprites/Map Assets/Interior/dogpaddler'shouse.yy",
+    "name": "home",
+    "path": "folders/Sprites/Map Assets/Interior/home.yy",
   },
   "resourceVersion": "1.0",
   "name": "sBed1",

@@ -70,8 +70,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Layer 1","resourceVersion":"1.0","name":"00a92b6c-c5ea-4e96-8668-40eca95bab35","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "dogpaddler'shouse",
-    "path": "folders/Sprites/Map Assets/Interior/dogpaddler'shouse.yy",
+    "name": "home",
+    "path": "folders/Sprites/Map Assets/Interior/home.yy",
   },
   "resourceVersion": "1.0",
   "name": "sSquareTable",

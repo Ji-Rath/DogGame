@@ -70,8 +70,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Layer 1","resourceVersion":"1.0","name":"a6c23148-8c53-43b8-9fe8-abbbae3ba906","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "dogpaddler'shouse",
-    "path": "folders/Sprites/Map Assets/Interior/dogpaddler'shouse.yy",
+    "name": "home",
+    "path": "folders/Sprites/Map Assets/Interior/home.yy",
   },
   "resourceVersion": "1.0",
   "name": "sSqueaktoy",

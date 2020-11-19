@@ -70,8 +70,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Layer 1","resourceVersion":"1.0","name":"592bc88f-95e7-48bd-bef6-cff7ca078cb1","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "dogpaddler'shouse",
-    "path": "folders/Sprites/Map Assets/Interior/dogpaddler'shouse.yy",
+    "name": "home",
+    "path": "folders/Sprites/Map Assets/Interior/home.yy",
   },
   "resourceVersion": "1.0",
   "name": "sDogBowl",

@@ -70,8 +70,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Layer 1","resourceVersion":"1.0","name":"805dd8f4-f989-40cc-80d1-e393db0f5151","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "dogpaddler'shouse",
-    "path": "folders/Sprites/Map Assets/Interior/dogpaddler'shouse.yy",
+    "name": "home",
+    "path": "folders/Sprites/Map Assets/Interior/home.yy",
   },
   "resourceVersion": "1.0",
   "name": "sSink",
