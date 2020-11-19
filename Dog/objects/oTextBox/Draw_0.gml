@@ -20,59 +20,66 @@ var CharWidth = string_width("M");
 var CharHeight = string_height("M");
 var VisibleText = ""; //Store text that is currently visible
 var CurrentIndex = 0; //Store current TextExt array index
-var Color = CurrentColor; //Store current text color
+var Color = HexToDec(CurrentColor); //Store current text color
 var SpecialPos = 0; //Get line position where special character was found
 var TempText = CurrentText; //Get current line of text to draw
 
-for(var i=1;i<=CurrentChar;i++) //Start at 1 since string functions index starts at 1
+if (bDisplayOptions)
 {
-	var X = 0;
-	var Y = 0;
-	VisibleText = string_copy(TempText, 1, i); //Get 1 character ahead of currently drawn text
-	SpecialPos = string_pos("%", VisibleText); //Try to get position of % character
-	while(SpecialPos != 0 && array_length(CurrentTextExt) > CurrentIndex)
+	for(var i=0;i<chatterbox_get_option_count(chatterbox);i++)
 	{
-		var NextChar = string_char_at(TempText, SpecialPos+1); //Get character after %
+		var Text = "";
+		if (SelectedOption == i)
+			Text += "* "
+		Text += chatterbox_get_option(chatterbox, i);
 		
-		//Execute special commands based on character after %
-		var CurrentVal = CurrentTextExt[CurrentIndex];
-		switch(NextChar)
-		{
-			case "c":
-				if(is_real(CurrentVal))
-					Color = CurrentVal; 
-				break;
-			case "s":
-				//Make sure command is only executed once
-				if(is_array(CurrentVal) && CurrentChar-1 == i && !bCompletedCommand[CurrentIndex])
-				{
-					bCompletedCommand[CurrentIndex] = true
-					scrExecuteAlt(CurrentVal);
-				}
-				break;
-			case "f":
-				if(is_real(CurrentVal))
-					CharSpeed = CurrentVal;
-				break;
-		}
-			
-		//Go to next TextExt array index
-		CurrentIndex++;
-		
-		TempText = string_delete(TempText, SpecialPos, 2);
-		
-		//Recheck if there is a % character
+		draw_text(PosX, PosY+(i*CharHeight), Text);
+	}
+}
+else
+{
+	for(var i=1;i<=CurrentChar;i++) //Start at 1 since string functions index starts at 1
+	{
+		var X = 0;
+		var Y = 0;
 		VisibleText = string_copy(TempText, 1, i); //Get 1 character ahead of currently drawn text
 		SpecialPos = string_pos("%", VisibleText); //Try to get position of % character
+		while(SpecialPos != 0 && array_length(CurrentTextExt) > CurrentIndex)
+		{
+			var NextChar = string_char_at(TempText, SpecialPos+1); //Get character after %
+		
+			//Execute special commands based on character after %
+			var CurrentVal = CurrentTextExt[CurrentIndex];
+			switch(NextChar)
+			{
+				case "c":
+					if(is_real(CurrentVal))
+						Color = CurrentVal;
+					if(is_string(CurrentVal))
+						Color = HexToDec(CurrentVal);
+					break;
+				case "f":
+					if(is_real(CurrentVal))
+						CharSpeed = CurrentVal;
+					break;
+			}
+			
+			//Go to next TextExt array index
+			CurrentIndex++;
+		
+			TempText = string_delete(TempText, SpecialPos, 2);
+		
+			//Recheck if there is a % character
+			VisibleText = string_copy(TempText, 1, i); //Get 1 character ahead of currently drawn text
+			SpecialPos = string_pos("%", VisibleText); //Try to get position of % character
+		}
+	
+		X = (((i-1)%NewLineCutOff)*CharWidth); //Increase x position to get ready for next character
+		Y = (floor((i-1)/NewLineCutOff))*CharHeight //Increase y position when there is a new line
+	
+		var DrawChar = string_char_at(TempText, i); //Get current character
+		draw_text_color(PosX + X, PosY + Y, DrawChar, Color, Color, Color, Color, 1); //Draw character
 	}
-	
-	X = (((i-1)%NewLineCutOff)*CharWidth); //Increase x position to get ready for next character
-	Y = (floor((i-1)/NewLineCutOff))*CharHeight //Increase y position when there is a new line
-	
-	var DrawChar = string_char_at(TempText, i); //Get current character
-	draw_text_color(PosX + X, PosY + Y, DrawChar, Color, Color, Color, Color, 1); //Draw character
-	
-	
-}
 
-DrawnText = TempText;
+	DrawnText = TempText;
+}

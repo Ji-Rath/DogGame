@@ -1,0 +1,11 @@
+title: CoolNode
+tags: 
+colorID: 1
+position: 691,-82
+---
+<< SetExt 0.1 "E35D6A" "6ae35d" >>
+DogPaddler: %f%cThis is a %ctest!
+<< SetInit 0.05 "5de3d6" >>
+DogPaddler: I Hope everything works out well.
+DogPaddler: If not, then darn it
+===

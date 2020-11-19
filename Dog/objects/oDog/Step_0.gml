@@ -40,29 +40,18 @@ if (global.KeyInteractPress)
 	var inst = collision_rectangle(x-InteractRadius,y-InteractRadius,x+InteractRadius,y+InteractRadius,oNPCBase,false,false);
 	if(inst != noone && !inst.TextCooldown)
 	{
-		CreateTextEvent(inst.Text, inst.TextInitialVal, inst.TextExt);
+		CreateTextEvent(inst.TextFile, "Interact");
 		with(inst)
-		{
 			path_end();
-		}
-		show_debug_message("Bruh");
 	}
 	
 	//Save game if interacting with SaveGame object
 	if(place_meeting(x,y,oGameSave))
-	{
 		scrGameSave(oAreaStats.CurrentSave);
-	}
 }
 
 //Go to menu
 if(keyboard_check_pressed(vk_escape))
 {
 	room_goto(rmTitle);
-}
-
-//Show current enemies in the map
-if(keyboard_check_pressed(ord("Q")))
-{
-	show_debug_message(string(instance_number(oEnemyBase)));
 }
