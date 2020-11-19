@@ -10,22 +10,6 @@ Scale = .5; //Sprite scaling
 //Textbox variables
 Voice				= sndSelect;
 Font				= fnt_dialogue;
-Name				= "OldMan";
-
-//Interact text (Documentation can be found on github wiki)
-Text = [];
-TextExt = []
-TextInitialVal = []
-Line = 0;
-
-Text[Line] = "When I was younger, there weren't any clinics around.";
-TextInitialVal[Line] = new TextInit(0.05, c_black, 0, oOldMan);
-TextExt[Line] = []
-
-Line++;
-Text[Line] = "I'm sure glad Dr. Doctor moved down to this small town.";
-TextInitialVal[Line] = new TextInit(0.05, c_black, 0, oOldMan);
-TextExt[Line] = []
 
 //Get player reference for use in cutscene
 // var Player = instance_find(oDog, 0);

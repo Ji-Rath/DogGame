@@ -13,7 +13,6 @@ RunPartInterval = 0.25; //Time (seconds) to spawn particles while running
 //Textbox variables
 Voice				= sndVoice_02;
 Font				= fnt_dialogue;
-Name				= "Dogpaddler";
 	
 //////////////////////////////////////////////////////////////////////////////////
 

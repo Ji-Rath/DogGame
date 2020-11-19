@@ -3,8 +3,8 @@
 
 if(!variable_instance_exists(self, "Seq")) exit;
 
-//Pause at end of sequence and reverse head direction to prep for fade out textbox
-//Destroy textbox if finished with text and fade out has completed
+// Pause at end of sequence and reverse head direction to prep for fade out textbox
+// Destroy textbox if finished with text and fade out has completed
 if(layer_sequence_is_finished(Seq) && !layer_sequence_is_paused(Seq))
 {
 	var CurrentDir = layer_sequence_get_headdir(Seq);
@@ -16,24 +16,30 @@ if(layer_sequence_is_finished(Seq) && !layer_sequence_is_paused(Seq))
 	{
 		instance_destroy();
 	}
+
 	layer_sequence_pause(Seq);
 }
 
-//Go to next line or skip to end of current line
-if(global.KeyInteract)
+// Skip to end of line or go to next line of text
+if(global.KeyInteractPress)
 {
-	if(scribble_autotype_get(CurrentText) < 1)
+	if (scribble_autotype_get(CurrentText) < 1 && !bDisplayOptions)
 	{
 		scribble_autotype_skip(CurrentText)
 	}
-	else if (scribble_autotype_get(CurrentText) == 1 && CurrentLine < array_length(TextBox.Text)-1)
-	{
-		InitLine(++CurrentLine);
-	}
 	else
 	{
-		layer_sequence_play(Seq);
+		TryNextLine();
 	}
+}
+
+// Allow the player to choose different options if available
+if (bDisplayOptions)
+{
+	if (global.KeyDown)
+		SelectedOption = clamp(++SelectedOption, 0, chatterbox_get_option_count(chatterbox)-1);
+	if (global.KeyUp)
+		SelectedOption = clamp(--SelectedOption, 0, chatterbox_get_option_count(chatterbox)-1);
 }
 
 //Update position
