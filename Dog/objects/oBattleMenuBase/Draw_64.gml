@@ -10,7 +10,9 @@ draw_set_color(c_black);
 //Draw interface
 if(Selected)
 {
-    draw_sprite(sAttackMenu,0,x,y);
+	if (sprite_exists(SelectMenuBackground))
+		draw_sprite(SelectMenuBackground,0,x,y);
+    
     
     //Draw text box for magic book
     if(ItemIndex != 2)
@@ -40,4 +42,8 @@ if(Selected)
             draw_text(x+80,y-420,DescArray[1]);
         }
     }
+}
+else if (sequence_exists(MenuSequence))
+{
+	sequence_destroy(MenuSequence);	
 }

@@ -28,7 +28,10 @@
     {"isDnD":false,"eventNum":0,"eventType":4,"collisionObjectId":{"name":"oDog","path":"objects/oDog/oDog.yy",},"parent":{"name":"oTriggerIntroNewGame","path":"objects/oTriggerIntroNewGame/oTriggerIntroNewGame.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
-  "overriddenProperties": [],
+  "overriddenProperties": [
+    {"propertyId":{"name":"TextFile","path":"objects/oTriggerBase/oTriggerBase.yy",},"objectId":{"name":"oTriggerBase","path":"objects/oTriggerBase/oTriggerBase.yy",},"value":"DogHut.json","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"TextNode","path":"objects/oTriggerBase/oTriggerBase.yy",},"objectId":{"name":"oTriggerBase","path":"objects/oTriggerBase/oTriggerBase.yy",},"value":"IntroNewGame","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+  ],
   "parent": {
     "name": "IntroScene",
     "path": "folders/Objects/CutScenes/IntroScene.yy",

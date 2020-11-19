@@ -38,8 +38,6 @@ function scrItems() {
 	CurrentItem = Item.Highfive;
 	ItemExecute[CurrentItem] = [scrSameScreenMiniGame, Game.Highfive];
 	ItemDescription[CurrentItem] = ["Broom","Metal Pan",sEnemydownrun, 4, ItemExecute[CurrentItem]];
-
-
 }
 
 /// @param GameType

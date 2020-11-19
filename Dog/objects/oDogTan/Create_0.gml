@@ -2,6 +2,7 @@
 // You can write your code in this editor
 
 SunscreenNeeded = 40;
+image_speed = 0;
 
 
 
@@ -21,5 +22,9 @@ function SunscreenCollision(SunscreenID)
 	{
 		bCompleted = true;
 		scrFinishMiniGame(true);
+		image_speed = 1;
+		
+		with (oSunscreen)
+			instance_destroy();
 	}	
 }

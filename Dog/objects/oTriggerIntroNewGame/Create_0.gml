@@ -6,8 +6,7 @@ visible = false;
 CutScene = //A group of scenes
 [
 	[scrCutSceneWait, 1],
-	[scrCutSceneTextBox, ["*Cough*"], [new TextInit(0.05, c_black, 0, oDogFriend)]],
-	[scrCutSceneTextBox, ["... *Cough*"], [new TextInit(0.05, c_black, 0, oDogFriend)]],
+	[scrCutSceneTextBox, TextFile, TextNode],
 	[scrCutSceneFinish]
 ];
 

@@ -1,7 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-TurnRate = 2; //Speed for turning cup when grabbed
+TurnRate = 3; //Speed for turning cup when grabbed
+IceSpawnRate = 0.25;
 
 /////////////////////////////////////////////////////////////////////////////
 
@@ -15,7 +16,7 @@ bGrabbed = false;
 for(var i=0;i<3;i++)
 {
 	YPos = (i+1)*128;
-	var NextInst = instance_create_layer(x,y+YPos,"Instances", oArm);
+	var NextInst = oMiniGame.CreateInstance(x,y+YPos, oArm, "Instances");
 	NextInst.AttachedTo = Inst;
 	physics_joint_rope_create(Inst, NextInst, NextInst.x, NextInst.y, NextInst.x, NextInst.y, 2, true);
 	Inst = NextInst;

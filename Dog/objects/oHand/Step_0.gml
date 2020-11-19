@@ -8,14 +8,14 @@ if (phy_rotation > 360)
 	phy_rotation = 0;
 
 /** spew out water when facing down */
-if(phy_rotation > 70 && phy_rotation < 290)
+if(bGrabbed && phy_rotation > 110 && phy_rotation < 250)
 {
 	/** make water spawn at the top of the cup */
 	spawnX = x + lengthdir_x(100, (-phy_rotation+360)+90+random_range(-20,20))
 	spawnY = y + lengthdir_y(100, (-phy_rotation+360)+90+random_range(-20,20))
 	
-	if(irandom(10) == 0)
-		instance_create_layer(spawnX, spawnY, "Instances", oIce);
+	if(alarm[0] == -1)
+		alarm[0] = IceSpawnRate * 60;
 	
 	//used to set the way each individual particle or "water" acts alone
 	var flags = phy_particle_flag_water | phy_particle_flag_viscous;
@@ -39,7 +39,7 @@ if(phy_rotation > 70 && phy_rotation < 290)
     //prevent instabilies in the physics, more specifically gravity for each particle or water
     physics_particle_set_gravity_scale(1);
     //say "hey this is the end of the group creation"
-    endGroup = physics_particle_group_end();
+    physics_particle_group_end();
 }
 
 if (bGrabbed)

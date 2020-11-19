@@ -1,4 +1,5 @@
 ///@description Spawn MiniGame objects
+
 //Switch to the specified minigame
 switch(GameType)
 {
@@ -38,6 +39,7 @@ switch(GameType)
         SmallScreenPosX = 250+50;
         SmallScreenPosY = 125+50;
         CreateInstance(SmallScreenPosX,SmallScreenPosY,oHighfive);
+		DrawSmall = true;
 		break;
     case Game.AnvilStruggle:
         HelpText = "Struggle/Save!";
@@ -47,6 +49,7 @@ switch(GameType)
 		Anvil.DogSave = DogHelp;
 		break;
 	case Game.ThirstyDoggo:
+		MiniGameEndSeq = sDehydratedMinigameEnd;
 		CreateInstance(room_width/2+400,room_height/2-250, oAnchorPoint);
 		CreateInstance(room_width/2+300,room_height/2-250, oHand);
 		CreateInstance(room_width/2,room_height/2+150, oThirstyDoggo);
@@ -55,7 +58,11 @@ switch(GameType)
 		CreateInstance(room_width/2, room_height/2, oDogTan);
 		break;
 	case Game.Lighthouse:
+		MiniGameEndSeq = seqFanMinigameEnd;
 		CreateInstance(room_width/2+250, room_height/2, oCampfire);
 		CreateInstance(room_width/2-250, room_height/2, oFan);
 		break;
 }
+
+if (!DrawSmall)
+	MiniGameScreenSeq = scrRunSequence(seqAttackEnter);

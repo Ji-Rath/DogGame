@@ -1,8 +1,12 @@
 
+/** Menu background, can be a sprite, or sequence */
+SelectMenuBackground = sAttackMenu;
+
 Selected = false;
 IsHovering = false;
 ItemMouseHover = false;
 ItemMouseHoverSelect = 0;
+MenuSequence = -1;
 
 enum BattleState
 {

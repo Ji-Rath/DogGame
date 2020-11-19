@@ -18,7 +18,8 @@ function scrFinishMiniGame(bIsSuccess)
 					var Seq = scrRunSequence(MiniGameEndSeq, "TextBox");
 					var Len = layer_sequence_get_length(Seq);
 					var Spd = layer_sequence_get_speedscale(Seq);
-					timer[1] = Len*Spd;
+					MiniGameEndSeq = Seq;
+					timer[1] = ((Len*Spd)/30)*60; //Basically double time because of 60fps
 					Destroy = true;
 				}
 				else

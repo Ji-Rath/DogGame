@@ -6,5 +6,6 @@ if (other.State == estates.Aggro)
 	scrFadeout(rmBattle, c_maroon, 0.05);
 	oAreaStats.EnemyBattle = other.BattleObject;
 	oAreaStats.EnemyKey = other.Key;
+	oAreaStats.TextFile = other.TextFile;
 }
 

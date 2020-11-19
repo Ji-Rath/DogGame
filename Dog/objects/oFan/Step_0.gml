@@ -3,9 +3,9 @@
 
 CurrentPosition = floor(image_index);
 
-if (mouse_y > y+100)
+if (mouse_y > y+NeutralFanSize/2)
 	image_index = 2;
-else if (mouse_y < y-100)
+else if (mouse_y < y-NeutralFanSize/2)
 	image_index = 1;
 else
 	image_index = 0;

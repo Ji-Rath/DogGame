@@ -6,6 +6,10 @@ if (!bFinishedGame && HydrationLevel >= HydrationNeeded)
 {
 	scrFinishMiniGame(true);
 	bFinishedGame = true;
+	oHand.bGrabbed = false;
+	
+	/** Destroy any liquid particles */
+	physics_particle_delete_region_box(room_width/2, room_height/2, 1000, 1000);
 }
 
 if (image_index >= MouthOpenIndex)

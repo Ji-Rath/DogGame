@@ -1,0 +1,22 @@
+[
+	{
+		"title": "IntroNewGame",
+		"tags": "",
+		"body": "DogFriend: *Cough*\nDogFriend: ... *Cough*",
+		"position": {
+			"x": 759,
+			"y": 49
+		},
+		"colorID": 0
+	},
+	{
+		"title": "LeavingHouse",
+		"tags": "",
+		"body": "DogPaddler: and some milk.",
+		"position": {
+			"x": 1065,
+			"y": 45
+		},
+		"colorID": 0
+	}
+]

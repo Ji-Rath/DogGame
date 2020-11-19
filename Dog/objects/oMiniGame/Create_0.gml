@@ -51,8 +51,7 @@ SmallScreenPosY = 0;
 HelpText = "";
 
 MiniGameEndSeq = -1;
-
-MiniGameScreenSeq = scrRunSequence(MiniGameScreenOpenSeq);
+MiniGameScreenSeq = -1;
 
 /// @func CreateInstance(x, y, obj, layer = "Instances")
 /// @desc Create object for minigame sequence

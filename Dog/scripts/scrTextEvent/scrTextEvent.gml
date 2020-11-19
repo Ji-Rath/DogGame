@@ -1,127 +1,116 @@
 
-/// @func TextArray(Text, TextInitStruct, TextExt)
-/// @desc Struct for storing main text, initial values, and special commands for textbox
-/// @arg Text {array}
-/// @arg TextInit {struct}
-/// @arg TextExt {array}
-function TextEvent() constructor
-{
-    var TextArray = argument[0];
-	var TextInitVal = argument_count > 1 ? argument[1] : [new TextInit()];
-	var TextExtArray = argument_count > 2 ? argument[2] : [];
-	
-	if(!is_array(TextArray))
-        TextArray = array_create(1, TextArray);
-        
-    if(!is_array(TextInitVal))
-        TextInitVal = array_create(array_length(TextArray), TextInitVal);
-        
-    if(!is_array(TextExtArray))
-        TextExtArray = array_create(array_length(TextArray), TextExtArray);
-	
-	Text = TextArray;
-	TextInitialVal = TextInitVal;
-	TextExt = TextExtArray;
-}
-
-/// @func TextInit(TextSpeed, TextColor, TextCloseTime, TextSpeaker)
+/// @func TextInit(TextSpeed = 0.05, TextColor = c_black, TextCloseTime = 0);
 /// @desc Struct for storing initial textbox line values
-/// @arg TextSpeed=0.05
+/// @arg TextSpeed=0.25
 /// @arg TextColor=c_black
 /// @arg TextCloseTime=0
-/// @arg TextSpeaker=oBattleTextBox
 function TextInit() constructor
 {
-	var TextSpeed = argument_count > 0 ? argument[0] : 0.05;
+	var TextSpeed = argument_count > 0 ? argument[0] : 0.25;
 	var TextColor = argument_count > 1 ? argument[1] : c_black;
 	var TextCloseTime = argument_count > 2 ? argument[2] : 0;
-	var TextSpeaker = argument_count > 3 ? argument[3] : oTextBox;
-	
-	Speaker = TextSpeaker;
+
 	Speed = TextSpeed;
 	Color = TextColor;
 	CloseTime = TextCloseTime;
 }
 
-/// @func CreateBattleTextEvent(Text, TextInitialVal = new TextInit(), TextExt = [])
+/// @func CreateTextEvent(filename, node)
 /// @desc Create textbox for the main scene
-/// @arg {array} Text
-/// @arg {struct} TextInitialVal
-/// @arg {array} TextExt
-function CreateTextEvent()
+/// @arg {string} filename
+/// @arg {string} node
+function CreateTextEvent(filename, node)
 {
-    var Text = argument[0];
-	var TextInitialVal = argument_count > 1 ? argument[1] : [new TextInit()];
-	var TextExt = argument_count > 2 ? argument[2] : [];
-	
 	if(!layer_exists(layer_get_id("TextBox"))) {show_debug_message("No TextBox layer found in room!"); return;}
-	
+
 	if(!instance_exists(oTextBox))
-	    {
-		var TextInst = instance_create_layer(view_xport[0], view_yport[0], "TextBox", oTextBox);
+	{
+		var TextInst = instance_create_layer(-2000, -2000, "TextBox", oTextBox);
 		with(TextInst)
 		{
-			TextBox = new TextEvent(Text, TextInitialVal, TextExt);
-			Sequence = seqTextIntro;
+			// Initialize chatterbox file, nodes, and custom functions
+			chatterbox_add_function("SetInit", SetInit);
+			if (!chatterbox_is_loaded(filename))
+				chatterbox_load(filename);
+
+			chatterbox = chatterbox_create(filename);
+			chatterbox_goto(chatterbox, node);
+
 			event_perform(ev_other, ev_user0);
-			InitLine(0);
-			alarm_set(0, 1*30); //Initial text delay
 		}
     }
 }
 
-/// @func CreateBattleTextEvent(Text, EndsTurn = false, TextInitialVal = new TextInit(), TextExt = [])
+/// @func CreateBattleTextEvent(filename, node, EndsTurn = false)
 /// @desc Create textbox for the battle scene
-/// @arg {array} Text
+/// @arg {string} filename
+/// @arg {string} node
 /// @arg {bool} EndsTurn=false
-/// @arg {struct} TextInitialVal
-/// @arg {array} TextExt
-function CreateBattleTextEvent()
+function CreateBattleTextEvent(filename, node)
 {
-    var Text = argument[0];
-	var EndsTurn = argument_count > 1 ? argument[1] : false;
-	var TextInitialVal = argument_count > 2 ? argument[2] : new TextInit();
-	var TextExt = argument_count > 3 ? argument[3] : [];
-    
+	var EndsTurn = argument_count > 2 ? argument[2] : false;
+
 	if(!layer_exists(layer_get_id("TextBox"))) {show_debug_message("No TextBox layer found in room!"); return;}
-	
+
     if(!instance_exists(oTextBox))
     {
         var TextInst = instance_create_layer(0, -1000, "TextBox", oTextBox);
     	with(TextInst)
     	{
-    		TextBox = new TextEvent(Text, TextInitialVal, TextExt);
+			// Initialize chatterbox file, nodes, and custom functions
+			chatterbox_add_function("SetInit", SetInit);
+			if (!chatterbox_is_loaded(filename))
+				chatterbox_load(filename);
+
+			chatterbox = chatterbox_create(filename);
+			chatterbox_goto(chatterbox, node);
+
     		EndTurn = EndsTurn;
     		Sequence = seqBattleTextIntro;
     		event_perform(ev_other, ev_user0);
-			NewLineCutOff = 40;
-    		InitLine(0);
-    		alarm_set(0, 1*30); //Initial text delay
     	}
     }
 }
 
 /// @desc Setup for each text line
-/// @arg {int} CurrentLine
-function InitLine(LineCurrent)
+function InitLine()
 {
-	if(!variable_instance_exists(self, "TextBox")) exit;
+	if (chatterbox_get_content(chatterbox, 0) == undefined) { return; }
+
+	var DrawnText = chatterbox_get_content(chatterbox, 0);
 	
-	CurrentChar = 0; //Store current character position
-	CurrentLine = LineCurrent; //Store current line
-	CurrentLineInit = TextBox.TextInitialVal[CurrentLine]; //Initial values struct
-	CurrentText = TextBox.Text[CurrentLine]; //Store current text
-	CurrentTextExt = TextBox.TextExt[CurrentLine]; //Store current Text Extended
-	TextLen = string_length(CurrentText); //Get total length of text
-	DrawnText = "";
-	bCompletedCommand = array_create(array_length(TextBox.TextExt[CurrentLine]), false); //Internal boolean to prevent repeated commands
+	// Set initial values for text
+	var CharSpeed = CurrentLineInit.Speed; //Store initial character speed
+	var CurrentSpeaker = GetSpeaker(DrawnText);
+	var CurrentColor = CurrentLineInit.Color; //Store initial color
+	var CurrentCloseTime = CurrentLineInit.CloseTime; //Store auto closing time
+	var CurrentFont = CurrentSpeaker.Font;
 	
-	CharSpeed = CurrentLineInit.Speed; //Store initial character speed
-	CurrentSpeaker = CurrentLineInit.Speaker; //Store current speaker
-	CurrentColor = CurrentLineInit.Color; //Store initial color
-	CurrentCloseTime = CurrentLineInit.CloseTime; //Store auto closing time
-	CurrentFont = CurrentSpeaker.Font;
+	// Remove name from dialogue
+	var ColonPos = string_pos(":", DrawnText);
+	DrawnText = string_delete(DrawnText, 0+1, ColonPos+1);
 	
-	alarm_set(0, CharSpeed*30);
+	scribble_set_starting_format(CurrentFont, CurrentColor, fa_left);
+	scribble_autotype_fade_in(DrawnText, CharSpeed, 0, false);
+	scribble_autotype_set_sound_per_char(DrawnText, CurrentSpeaker.Voice, 0.8, 1);
+	
+	CurrentText = scribble_draw(0, 0, DrawnText);
+	scribble_page_set(CurrentText, 0);
+	
 	alarm_set(1, -1);
+}
+
+/// @desc Get the speaker (instance) of the current line of text
+function GetSpeaker(Text)
+{
+	var NamePosition = string_pos(":", Text);
+	var SpeakerName = string_copy(Text, 0, NamePosition-1);
+	var Speaker = self;
+
+	with(oCharacter)
+	{
+		if (SpeakerName == Name)
+			Speaker = self;
+	}
+	return Speaker;
 }

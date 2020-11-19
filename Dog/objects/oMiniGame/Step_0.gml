@@ -8,9 +8,7 @@ if(!Destroy)
 else
 {
     if(OpenEffect >= 0)
-    {
         OpenFraction -= (oBattleManager.SpeedMultiplier/2)/(2*pi);
-    }
 }
 
 OpenEffect = sin(OpenFraction);
@@ -23,27 +21,28 @@ if(timer[1] > 0)
 else if (timer[1] != -1)
 {
 	timer[1] = -1;
-    if(DrawSmall)
+	Destroy = true;
+	
+	//Prevent decimals
+    with(oBattleManager)
     {
-        Destroy = true;
-        oBattleManager.DrawGUI = true;
-    }
-    else
-    {
-        //Prevent decimals
-        with(oBattleManager)
-        {
-            global.PlayerHP = round(global.PlayerHP);
-            global.PlayerPP = round(global.PlayerPP);
-            EnemyBattle.Health = round(EnemyBattle.Health);
-        }
+        global.PlayerHP = round(global.PlayerHP);
+        global.PlayerPP = round(global.PlayerPP);
+        EnemyBattle.Health = round(EnemyBattle.Health);
+	}
+	
+	layer_sequence_destroy(MiniGameScreenSeq);
+	layer_sequence_destroy(MiniGameEndSeq);
 		
-        Destroy = true;
-		layer_sequence_destroy(MiniGameScreenSeq);
+	if (DrawSmall)
+	{
+		oBattleManager.DrawGUI = true;
+	}
+	else
+	{
 		MiniGameScreenSeq = scrRunSequence(MiniGameScreenCloseSeq);
-		
-		var Len = layer_sequence_get_length(MiniGameScreenSeq);
-		var Spd = layer_sequence_get_speedscale(MiniGameScreenSeq);
-		alarm[2] = Len*Spd;
-    }
+	}
+	var Len = layer_sequence_get_length(MiniGameScreenSeq);
+	var Spd = layer_sequence_get_speedscale(MiniGameScreenSeq);
+	alarm[2] = Len*Spd;
 }
