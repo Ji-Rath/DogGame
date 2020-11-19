@@ -43,9 +43,6 @@ Alpha = 0;
 //Create Enemy Object
 EnemyBattle = instance_create_layer(640,390,"Instances",EnemyBattle);
 
-//INTRO TEXT - BATTLE STAGE 0
-CreateBattleTextEvent(["A "+string(EnemyBattle.Name) + " has attacked!"], false, new TextInit(0.05, c_black, 0.5/SpeedMultiplier));
-
 //Timer Bar
 BattleTimer = 0;
 
@@ -104,7 +101,7 @@ function NextTurn()
 	{
 		case BattleSection.EnemyAttack:
 			var EnemyText = EnemyBattle.TextDuring[random_range(0,array_length_1d(EnemyBattle.TextDuring))];
-			CreateBattleTextEvent(EnemyText, false, new TextInit(0.05, c_black, 1/SpeedMultiplier));
+			CreateBattleTextEvent(oAreaStats.TextFile, "Battle", true);
 			break;
 	}
 }

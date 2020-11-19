@@ -20,7 +20,7 @@ var CharWidth = string_width("M");
 var CharHeight = string_height("M");
 var VisibleText = ""; //Store text that is currently visible
 var CurrentIndex = 0; //Store current TextExt array index
-var Color = CurrentColor; //Store current text color
+var Color = HexToDec(CurrentColor); //Store current text color
 var SpecialPos = 0; //Get line position where special character was found
 var TempText = CurrentText; //Get current line of text to draw
 
@@ -40,15 +40,9 @@ for(var i=1;i<=CurrentChar;i++) //Start at 1 since string functions index starts
 		{
 			case "c":
 				if(is_real(CurrentVal))
-					Color = CurrentVal; 
-				break;
-			case "s":
-				//Make sure command is only executed once
-				if(is_array(CurrentVal) && CurrentChar-1 == i && !bCompletedCommand[CurrentIndex])
-				{
-					bCompletedCommand[CurrentIndex] = true
-					scrExecuteAlt(CurrentVal);
-				}
+					Color = CurrentVal;
+				if(is_string(CurrentVal))
+					Color = HexToDec(CurrentVal);
 				break;
 			case "f":
 				if(is_real(CurrentVal))
@@ -71,8 +65,6 @@ for(var i=1;i<=CurrentChar;i++) //Start at 1 since string functions index starts
 	
 	var DrawChar = string_char_at(TempText, i); //Get current character
 	draw_text_color(PosX + X, PosY + Y, DrawChar, Color, Color, Color, Color, 1); //Draw character
-	
-	
 }
 
 DrawnText = TempText;

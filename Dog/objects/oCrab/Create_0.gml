@@ -17,4 +17,3 @@ BattleObject = oCrabBattle;
 //Textbox variables
 Voice				= sndVoice_01;
 Font				= fnt_dialogue;
-Name				= "Dogpaddler";

@@ -1,0 +1,22 @@
+[
+	{
+		"title": "Battle",
+		"tags": "",
+		"body": "Crab: You don't stand a chance",
+		"position": {
+			"x": 553,
+			"y": -357
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Interact",
+		"tags": "",
+		"body": "Crab: Who do you think you are talking to?\nDogPaddler: that is a good question.",
+		"position": {
+			"x": 873,
+			"y": -355
+		},
+		"colorID": 0
+	}
+]

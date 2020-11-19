@@ -3,8 +3,8 @@
 
 if(!variable_instance_exists(self, "Seq")) exit;
 
-//Pause at end of sequence and reverse head direction to prep for fade out textbox
-//Destroy textbox if finished with text and fade out has completed
+// Pause at end of sequence and reverse head direction to prep for fade out textbox
+// Destroy textbox if finished with text and fade out has completed
 if(layer_sequence_is_finished(Seq) && !layer_sequence_is_paused(Seq))
 {
 	var CurrentDir = layer_sequence_get_headdir(Seq);
@@ -19,20 +19,16 @@ if(layer_sequence_is_finished(Seq) && !layer_sequence_is_paused(Seq))
 	layer_sequence_pause(Seq);
 }
 
-//Go to next line or skip to end of current line
-if(global.KeyInteract && CurrentChar > 0)
+if(global.KeyInteractPress && CurrentChar > 0)
 {
-	if(CurrentChar < string_length(DrawnText))
+	if (CurrentChar < string_length(DrawnText))
 	{
+		// Skip to end of line
 		CurrentChar = TextLen;
-	}
-	else if(CurrentLine < array_length(TextBox.Text)-1)
-	{
-		InitLine(++CurrentLine);
 	}
 	else
 	{
-		layer_sequence_play(Seq);
+		TryNextLine();
 	}
 }
 
