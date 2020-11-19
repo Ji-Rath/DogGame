@@ -110,9 +110,9 @@ function InitLine(LineCurrent)
 	CurrentChar = 0; //Store current character position
 	CurrentLine = LineCurrent; //Store current line
 	CurrentLineInit = TextBox.TextInitialVal[CurrentLine]; //Initial values struct
-	CurrentText = TextBox.Text[CurrentLine]; //Store current text
+	CurrentText = scribble_draw(0, 0, TextBox.Text[CurrentLine]); //Store current text
 	CurrentTextExt = TextBox.TextExt[CurrentLine]; //Store current Text Extended
-	TextLen = string_length(CurrentText); //Get total length of text
+	TextLen = string_length(TextBox.Text[CurrentLine]); //Get total length of text
 	DrawnText = "";
 	bCompletedCommand = array_create(array_length(TextBox.TextExt[CurrentLine]), false); //Internal boolean to prevent repeated commands
 	
@@ -121,6 +121,10 @@ function InitLine(LineCurrent)
 	CurrentColor = CurrentLineInit.Color; //Store initial color
 	CurrentCloseTime = CurrentLineInit.CloseTime; //Store auto closing time
 	CurrentFont = CurrentSpeaker.Font;
+	
+	scribble_set_wrap(300, 200);
+	scribble_autotype_fade_in(CurrentText, 0.3, 0, false);
+	scribble_autotype_set_sound_per_char(CurrentText, CurrentSpeaker.Voice, 0.9, 1.1);
 	
 	alarm_set(0, CharSpeed*30);
 	alarm_set(1, -1);

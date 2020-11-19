@@ -20,13 +20,13 @@ if(layer_sequence_is_finished(Seq) && !layer_sequence_is_paused(Seq))
 }
 
 //Go to next line or skip to end of current line
-if(global.KeyInteract && CurrentChar > 0)
+if(global.KeyInteract)
 {
-	if(CurrentChar < string_length(DrawnText))
+	if(scribble_autotype_get(CurrentText) < 1)
 	{
-		CurrentChar = TextLen;
+		scribble_autotype_skip(CurrentText)
 	}
-	else if(CurrentLine < array_length(TextBox.Text)-1)
+	else if (scribble_autotype_get(CurrentText) == 1 && CurrentLine < array_length(TextBox.Text)-1)
 	{
 		InitLine(++CurrentLine);
 	}
