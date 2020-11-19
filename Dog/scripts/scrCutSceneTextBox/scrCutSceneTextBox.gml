@@ -1,12 +1,8 @@
 
-/// @param Text
-/// @param TextInitialVal = array_create(array_length(Text), new TextInit())
-/// @param TextExt = []
-function scrCutSceneTextBox()
+/// @param {string} TextFile
+/// @param {string} Node
+function scrCutSceneTextBox(TextFile, Node)
 {
-	var Text = argument[0];
-var TextInitialVal = argument_count > 1 ? argument[1] : array_create(array_length(Text), new TextInit());
-var TextExt = argument_count > 2 ? argument[2] : [];
 	if(!instance_exists(oTextBox))
 	{
 		if(CreatedBox)
@@ -16,9 +12,8 @@ var TextExt = argument_count > 2 ? argument[2] : [];
 		}
 		else
 		{
-		    CreateTextEvent(Text, TextInitialVal, TextExt);
+		    CreateTextEvent(TextFile, Node);
 		    CreatedBox = true;
 		}
 	}
-	
 }

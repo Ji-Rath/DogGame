@@ -24,3 +24,6 @@ if (!instance_exists(oKeybinds))
 	
 //Load Player Stats
 scrPlayerStats();
+
+
+scribble_init("Fonts", "fnt_main", true);

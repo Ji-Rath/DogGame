@@ -2,11 +2,21 @@
 // You can write your code in this editor
 
 
-/// @desc Special modifiers that can change specific characters (See draw event #37)
-function SetExt(ExtArray)
-{
-	CurrentTextExt = ExtArray;
-}
+//Default values
+Voice				= sndVoice_01;
+Font				= fnt_dialogue;
+Name				= "???";
+
+Sequence = seqTextIntro;
+
+//Textbox variables
+PausePunctuation = true;
+PunctuationDelay = 0.5; // seconds
+
+// Initial values for text line
+CurrentLineInit = new TextInit();
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @desc Set initial values for line of text
 function SetInit(InitArray)
@@ -38,7 +48,17 @@ function GetVariable(VariableString)
 /// @desc Attempt to display next line of text, end text event if reached the end
 function TryNextLine()
 {
-	if (chatterbox_is_waiting(chatterbox))
+	/**
+	 * Go to the next page of text if available
+	 * If the line of text is finished, go to the next line
+	 * If there is no more text available, remove the textbox from the screen
+	 */
+	var CurrentPage = scribble_page_get(CurrentText);
+	if (CurrentPage < scribble_page_count(CurrentText)-1)
+	{
+		scribble_page_set(CurrentText, CurrentPage+1);
+	}
+	else if (chatterbox_is_waiting(chatterbox))
 	{
 		chatterbox_continue(chatterbox);
 		bDisplayOptions = false;
@@ -63,22 +83,17 @@ function TryNextLine()
 	}
 }
 
-// Initial values for default text
-CurrentLineInit = new TextInit();
-CurrentTextExt = [];
-
+//Variables for handling options in text
 bDisplayOptions = false;
 SelectedOption = 0;
 
-//Default values
-Voice				= sndVoice_01;
-Font				= fnt_dialogue;
-Name				= "???";
-CharSpeed			= 0.05;
-
-Sequence = seqTextIntro;
-
-//Textbox variables
-PausePunctuation = true;
-PunctuationDelay = 0.5;
-NewLineCutOff = 30;
+// Scribble text setup
+scribble_set_wrap(600, 150);
+if (PausePunctuation)
+{
+	var Delay = PunctuationDelay * 1000;
+	scribble_add_autotype_character_delay(".", Delay);
+	scribble_add_autotype_character_delay(",", Delay);
+	scribble_add_autotype_character_delay("!", Delay);
+	scribble_add_autotype_character_delay("?", Delay);
+}

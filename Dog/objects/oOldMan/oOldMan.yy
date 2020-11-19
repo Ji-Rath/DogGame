@@ -43,6 +43,8 @@
     {"propertyId":{"name":"SIdleDown","path":"objects/oCharacter/oCharacter.yy",},"objectId":{"name":"oCharacter","path":"objects/oCharacter/oCharacter.yy",},"value":"sOldMan","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
     {"propertyId":{"name":"Name","path":"objects/oCharacter/oCharacter.yy",},"objectId":{"name":"oCharacter","path":"objects/oCharacter/oCharacter.yy",},"value":"OldMan","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
     {"propertyId":{"name":"TextFile","path":"objects/oCharacter/oCharacter.yy",},"objectId":{"name":"oCharacter","path":"objects/oCharacter/oCharacter.yy",},"value":"OldMan.json","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"Font","path":"objects/oCharacter/oCharacter.yy",},"objectId":{"name":"oCharacter","path":"objects/oCharacter/oCharacter.yy",},"value":"fnt_dialogue","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"Voice","path":"objects/oCharacter/oCharacter.yy",},"objectId":{"name":"oCharacter","path":"objects/oCharacter/oCharacter.yy",},"value":"sndSelect","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],
   "parent": {
     "name": "NPC",

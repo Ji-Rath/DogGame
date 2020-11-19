@@ -16,7 +16,7 @@ CutScene = //A group of scenes
     [scrCutSceneMove, instance_find(oDog,0), 3, 2440, 1152, false],
     [scrCutSceneWait, 1],
     [scrCutSceneMove, instance_find(oCrab,0), 3, 2540, 1152, false],
-    [scrCutSceneTextBox, Text, TextInitial, TextExt],
+    //[scrCutSceneTextBox, Text, TextInitial, TextExt],
     [scrCutSceneWait, 0.5],
     [scrCutSceneBattle, oCrab],
     [scrCutSceneFinish]

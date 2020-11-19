@@ -9,10 +9,6 @@ RunSpeed = WalkSpeed*2; //Player run speed
 InteractRadius = 50; //Interaction radius
 Scale = 0.5; //Set scale of player
 RunPartInterval = 0.25; //Time (seconds) to spawn particles while running
-
-//Textbox variables
-Voice				= sndVoice_02;
-Font				= fnt_dialogue;
 	
 //////////////////////////////////////////////////////////////////////////////////
 

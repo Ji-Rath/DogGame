@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sNPC",
-    "path": "sprites/sNPC/sNPC.yy",
+    "name": "",
+    "path": "",
   },
   "solid": false,
   "visible": true,
@@ -28,7 +28,12 @@
     {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"parent":{"name":"oDogFriend","path":"objects/oDogFriend/oDogFriend.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
-  "overriddenProperties": [],
+  "overriddenProperties": [
+    {"propertyId":{"name":"Name","path":"objects/oCharacter/oCharacter.yy",},"objectId":{"name":"oCharacter","path":"objects/oCharacter/oCharacter.yy",},"value":"DogFriend","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"TextFile","path":"objects/oCharacter/oCharacter.yy",},"objectId":{"name":"oCharacter","path":"objects/oCharacter/oCharacter.yy",},"value":"OldMan.json","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"Font","path":"objects/oCharacter/oCharacter.yy",},"objectId":{"name":"oCharacter","path":"objects/oCharacter/oCharacter.yy",},"value":"fnt_dialogue","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"Voice","path":"objects/oCharacter/oCharacter.yy",},"objectId":{"name":"oCharacter","path":"objects/oCharacter/oCharacter.yy",},"value":"sndSelect","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+  ],
   "parent": {
     "name": "DogPaddler'sHome",
     "path": "folders/Objects/MainScene/Map Asset/DogPaddler'sHome.yy",
