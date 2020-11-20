@@ -20,16 +20,14 @@ function scrEnemyAggro()
 	{
 		State = estates.Idle;
 		timer[0] = choose(1,2,3)*60;
-		HSpeed = 0;
-		VSpeed = 0;
+		Velocity = new Vector2(0, 0);
 	}
 }
 
 function scrEnemyAlert()
 {
 	sprite_index = SAlert;
-	HSpeed = 0;
-	VSpeed = 0;
+	Velocity = new Vector2(0, 0);
 
 	if(TimerEnded)
 	{
@@ -54,8 +52,7 @@ function scrEnemyIdle()
 	scrEnemyDetect();
 
 	//Set speed to 0
-	HSpeed = 0;
-	VSpeed = 0;
+	Velocity = new Vector2(0, 0);
 
 	//Wander in a random direction if timer reaches 0
 	if (TimerEnded)
@@ -79,17 +76,16 @@ function scrEnemyWander()
 	scrEnemyDetect();
 	
 	Speed = WalkSpeed;
-	HSpeed = WanderDirectionX*Speed;
-	VSpeed = WanderDirectionY*Speed;
+	Velocity.X = WanderDirectionX*Speed;
+	Velocity.Y = WanderDirectionY*Speed;
 
 	//Movement animations
-	scrWalk();
+	scrWalk(Velocity);
 
 	if (TimerEnded)
 	{
 		State = estates.Idle;
 		timer[0] = choose(1,2,3)*60;
-		HSpeed = 0;
-		VSpeed = 0;
+		Velocity = new Vector2(0, 0);
 	}
 }

@@ -22,8 +22,7 @@ else
 	if(distance_to_object(FollowObject) <= Distance)
 	{
 	    path_end();
-	    HSpeed = 0;
-	    VSpeed = 0;
+		Velocity = new Vector2(0, 0);
 	}
 	else
 	{
@@ -38,5 +37,8 @@ else
     timer[0] = IntervalCheckDelay;
 }
 
-scrWalk();
-scrPathSpeed();
+if(path_index != -1)
+	Velocity = scrPathSpeed();
+
+scrWalk(Velocity);
+

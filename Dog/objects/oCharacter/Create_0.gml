@@ -8,6 +8,5 @@ event_inherited();
 XPrevious = x;
 YPrevious = y;
 
-HSpeed = 0;
-VSpeed = 0;
+Velocity = new Vector2(0, 0);
 Speed = 0;

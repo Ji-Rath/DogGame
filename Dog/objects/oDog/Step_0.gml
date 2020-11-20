@@ -1,7 +1,7 @@
 /// @description Insert description here
 
 //Set speed and animation while walking/running
-scrWalk();
+scrWalk(Velocity);
 
 scrPathSpeed();
 
@@ -24,10 +24,13 @@ if (state = DogState.normal)
 	var HMove = global.KeyRight - global.KeyLeft;
 	var VMove = global.KeyDown - global.KeyUp;
 	
-	HSpeed = HMove*Speed;
-	VSpeed = VMove*Speed;
+	Velocity.X = HMove*Speed;
+	Velocity.Y = VMove*Speed;
 	
-	scrMoveCollision(HSpeed, VSpeed);
+	
+	Velocity = scrMoveCollision(Velocity);
+	x += Velocity.X;
+	y += Velocity.Y;
 }
 
 
