@@ -1,8 +1,8 @@
 function scrPathSpeed(Velocity)
 {
-	Velocity.X = x-XPrevious;
-	Velocity.Y = y-YPrevious;
-	XPrevious = x;
-	YPrevious = y;
+	Velocity.X = x-PreviousPos.X;
+	Velocity.Y = y-PreviousPos.Y;
+	PreviousPos.X = x;
+	PreviousPos.Y = y;
 	return Velocity;
 }

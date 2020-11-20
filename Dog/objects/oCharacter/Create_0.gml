@@ -4,9 +4,6 @@
 // Inherit the parent event
 event_inherited();
 
-//Used for calculating path speed
-XPrevious = x;
-YPrevious = y;
-
+PreviousPos = new Vector2(x, y);
 Velocity = new Vector2(0, 0);
 Speed = 0;
