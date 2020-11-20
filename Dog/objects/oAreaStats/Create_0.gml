@@ -8,6 +8,7 @@ Items = ds_map_create();
 
 EnemyKey = 0; // Unique ID for encountered enemy
 EnemyBattle = oCrabBattle; // Obj of enemy when going to battle
+TextFile = "Crab.json";
 
 //The current slot for game saving
 CurrentSave = "Save1";
@@ -19,8 +20,8 @@ LoadGame = false;
 global.Debug = false;
 
 // Create keybinds instance for input
-if (!instance_exists(oKeybinds))
-	instance_create_layer(0, 0, "Instances", oKeybinds);
+if (!instance_exists(oKeybindManager))
+	instance_create_layer(0, 0, "Instances", oKeybindManager);
 	
 //Load Player Stats
 scrPlayerStats();

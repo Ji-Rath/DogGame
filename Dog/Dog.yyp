@@ -457,6 +457,7 @@
     "children": [],
   },
   "RoomOrder": [
+    {"name":"rmTitle","path":"rooms/rmTitle/rmTitle.yy",},
     {"name":"rmBattle","path":"rooms/rmBattle/rmBattle.yy",},
     {"name":"rmDebug","path":"rooms/rmDebug/rmDebug.yy",},
     {"name":"rmGameOver","path":"rooms/rmGameOver/rmGameOver.yy",},
@@ -471,7 +472,6 @@
     {"name":"rmSceneHousing","path":"rooms/rmSceneHousing/rmSceneHousing.yy",},
     {"name":"rmSceneShopCenter","path":"rooms/rmSceneShopCenter/rmSceneShopCenter.yy",},
     {"name":"rmSceneTownCenter","path":"rooms/rmSceneTownCenter/rmSceneTownCenter.yy",},
-    {"name":"rmTitle","path":"rooms/rmTitle/rmTitle.yy",},
   ],
   "Folders": [
     {"folderPath":"folders/Fonts.yy","order":0,"resourceVersion":"1.0","name":"Fonts","tags":[],"resourceType":"GMFolder",},
@@ -641,6 +641,15 @@
     {"CopyToMask":-1,"filePath":"datafiles/Yarn","resourceVersion":"1.0","name":"Crab.json","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles/Yarn","resourceVersion":"1.0","name":"OldMan.json","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles/Yarn","resourceVersion":"1.0","name":"DogHut.json","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/Fonts","resourceVersion":"1.0","name":"fnt_battle.yy","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/Fonts","resourceVersion":"1.0","name":"fnt_debug.yy","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/Fonts","resourceVersion":"1.0","name":"fnt_dialogue.yy","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/Fonts","resourceVersion":"1.0","name":"fnt_main.yy","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/Fonts","resourceVersion":"1.0","name":"fnt_stats.yy","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/Yarn","resourceVersion":"1.0","name":"Crab.json","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/Yarn","resourceVersion":"1.0","name":"DogHut.json","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/Yarn","resourceVersion":"1.0","name":"OldMan.json","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/Yarn","resourceVersion":"1.0","name":"TestingText.yarn","resourceType":"GMIncludedFile",},
   ],
   "MetaData": {
     "IDEVersion": "2.3.0.529",
