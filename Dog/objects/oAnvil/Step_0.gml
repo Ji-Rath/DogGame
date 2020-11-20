@@ -2,7 +2,7 @@
 
 if(Counter < CompleteCounter)
 {
-    if(global.KeyInteract)
+    if(input_check(EVerb.Interact))
     {
         if(!StruggleRight)
         {
@@ -14,7 +14,7 @@ if(Counter < CompleteCounter)
         }
 		
     }
-	else if(global.KeySprint)
+	else if(input_check(EVerb.Sprint))
     {
         if(StruggleRight)
         {

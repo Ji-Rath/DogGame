@@ -9,7 +9,7 @@ if(instance_exists(oCutScene) || instance_exists(oTextBox))
 	return;
 }
 
-if(global.KeySprint)
+if(input_check(EVerb.Sprint))
 {
 	Speed = RunSpeed;
 	if(alarm_get(0) == -1 && Velocity.Magnitude() > 0)
@@ -23,8 +23,8 @@ else
 //If player is in the normal state, update movement variables
 if (state = DogState.normal)
 {
-	var HMove = global.KeyRight - global.KeyLeft;
-	var VMove = global.KeyDown - global.KeyUp;
+	var HMove = input_check(EVerb.MoveRight) - input_check(EVerb.MoveLeft);
+	var VMove = input_check(EVerb.MoveDown) - input_check(EVerb.MoveUp);
 	
 	Velocity.X = HMove*Speed;
 	Velocity.Y = VMove*Speed;
@@ -35,7 +35,7 @@ if (state = DogState.normal)
 }
 
 //Interaction
-if (global.KeyInteractPress)
+if (input_check_press(EVerb.Interact))
 {
 	
 	//Interact with NPC if in range
