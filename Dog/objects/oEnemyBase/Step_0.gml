@@ -31,7 +31,7 @@ else
 
 //Movement
 if (path_index != -1)
-	Velocity = scrPathSpeed();
+	Velocity = scrPathSpeed(Velocity);
 scrMoveCollision(Velocity);
 scrWalk(Velocity);
 

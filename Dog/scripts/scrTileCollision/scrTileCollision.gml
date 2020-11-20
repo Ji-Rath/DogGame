@@ -4,6 +4,16 @@ function Vector2(XVal, YVal) constructor
 {
 	X = XVal;
 	Y = YVal;
+	
+	function Magnitude()
+	{
+		return sqrt(sqr(X)+sqr(Y));
+	}
+	function Set(Val)
+	{
+		X = Val;
+		Y = Val;
+	}
 }
 
 /// @desc Prevent the specified object from moving into collision tiles.

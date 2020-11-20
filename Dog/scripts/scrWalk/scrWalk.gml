@@ -1,7 +1,7 @@
 /// @desc Adjust sprite based on speed/direction
 /// @arg {struct} Vec2
-function scrWalk(Velocity) {
-
+function scrWalk(Velocity)
+{
 	//Set Walking/Running animation
 	var Buffer = 0.25;
 	if (abs(Velocity.X) > 0.8)
@@ -29,7 +29,7 @@ function scrWalk(Velocity) {
 	}
 
 	//Set Idle animation
-	if(Velocity.X == 0 && Velocity.Y == 0)
+	if(Velocity.Magnitude() == 0)
 	{
 		if(sprite_index == SWalkRight || sprite_index == SRunRight)
 		{

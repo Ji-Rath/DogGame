@@ -22,7 +22,7 @@ else
 	if(distance_to_object(FollowObject) <= Distance)
 	{
 	    path_end();
-		Velocity = new Vector2(0, 0);
+		Velocity.Set(0);
 	}
 	else
 	{
@@ -38,7 +38,7 @@ else
 }
 
 if(path_index != -1)
-	Velocity = scrPathSpeed();
+	Velocity = scrPathSpeed(Velocity);
 
 scrWalk(Velocity);
 

@@ -1,8 +1,8 @@
-function scrPathSpeed()
+function scrPathSpeed(Velocity)
 {
-	var HSpeed = x-XPrevious;
-	var VSpeed = y-YPrevious;
+	Velocity.X = x-XPrevious;
+	Velocity.Y = y-YPrevious;
 	XPrevious = x;
 	YPrevious = y;
-	return new Vector2(HSpeed, VSpeed);
+	return Velocity;
 }
