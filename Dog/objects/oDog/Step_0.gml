@@ -1,17 +1,19 @@
 /// @description Insert description here
 
 //Set speed and animation while walking/running
-scrWalk();
+scrWalk(Velocity);
 
-scrPathSpeed();
-
-if(instance_exists(oCutScene) || instance_exists(oTextBox)) return;
+if(instance_exists(oCutScene) || instance_exists(oTextBox))
+{
+	Velocity = scrPathSpeed(Velocity);
+	return;
+}
 
 if(global.KeySprint)
 {
 	Speed = RunSpeed;
-	if(alarm_get(0) == -1)
-		alarm_set(0, RunPartInterval*60);	
+	if(alarm_get(0) == -1 && Velocity.Magnitude() > 0)
+		alarm_set(0, RunPartInterval*60);
 }
 else
 {
@@ -24,13 +26,13 @@ if (state = DogState.normal)
 	var HMove = global.KeyRight - global.KeyLeft;
 	var VMove = global.KeyDown - global.KeyUp;
 	
-	HSpeed = HMove*Speed;
-	VSpeed = VMove*Speed;
+	Velocity.X = HMove*Speed;
+	Velocity.Y = VMove*Speed;
 	
-	scrMoveCollision();
+	Velocity = scrMoveCollision(Velocity);
+	x += Velocity.X;
+	y += Velocity.Y;
 }
-
-
 
 //Interaction
 if (global.KeyInteractPress)

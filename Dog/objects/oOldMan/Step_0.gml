@@ -29,7 +29,8 @@
 //}
 
 //Movement
-scrPathSpeed();
-scrMoveCollision();
-scrWalk();
+if (path_index != -1)
+	Velocity = scrPathSpeed();
+scrMoveCollision(Velocity);
+scrWalk(Velocity);
 

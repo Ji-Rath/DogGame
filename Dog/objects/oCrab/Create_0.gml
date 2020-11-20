@@ -13,7 +13,3 @@ WanderInterval = 3; //Interval (seconds) between wandering positions
 
 //Enemy object when in BattleScene
 BattleObject = oCrabBattle;
-
-//Textbox variables
-Voice				= sndVoice_01;
-Font				= fnt_dialogue;

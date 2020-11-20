@@ -1,33 +1,35 @@
-function scrWalk() {
-
+/// @desc Adjust sprite based on speed/direction
+/// @arg {struct} Vec2
+function scrWalk(Velocity)
+{
 	//Set Walking/Running animation
 	var Buffer = 0.25;
-	if (abs(HSpeed) > 0.8)
+	if (abs(Velocity.X) > 0.8)
 	{
-		image_xscale = sign(HSpeed)*Scale;
-		if(abs(HSpeed) > (WalkSpeed+Buffer))
+		image_xscale = sign(Velocity.X)*Scale;
+		if(abs(Velocity.X) > (WalkSpeed+Buffer))
 			sprite_index = SRunRight;
 		else
 			sprite_index = SWalkRight;
 	}
-	else if (VSpeed < 0)
+	else if (Velocity.Y < 0)
 	{
-		if(abs(VSpeed) > (WalkSpeed+Buffer))
+		if(abs(Velocity.Y) > (WalkSpeed+Buffer))
 			sprite_index = SRunUp;
 		else
 			sprite_index = SWalkUp;
 	
 	}
-	else if (VSpeed > 0)
+	else if (Velocity.Y > 0)
 	{
-		if(abs(VSpeed) > (WalkSpeed+Buffer))
+		if(abs(Velocity.Y) > (WalkSpeed+Buffer))
 			sprite_index = SRunDown;
 		else
 			sprite_index = SWalkDown;
 	}
 
 	//Set Idle animation
-	if(HSpeed == 0 && VSpeed == 0)
+	if(Velocity.Magnitude() == 0)
 	{
 		if(sprite_index == SWalkRight || sprite_index == SRunRight)
 		{
