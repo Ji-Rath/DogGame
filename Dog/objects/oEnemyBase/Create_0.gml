@@ -16,11 +16,6 @@ WanderInterval = 3*60;
 //Get battleobject of enemy
 BattleObject = oEnemyBattleParent;
 
-//Textbox variables
-Voice				= sndVoice_02;
-Font				= fnt_dialogue;
-Name				= "Dogpaddler";
-
 //////////////////////////////////////////////////////////////////////////////
 
 //Enemy States

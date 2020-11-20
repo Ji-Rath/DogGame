@@ -27,7 +27,7 @@ if (state = DogState.normal)
 	HSpeed = HMove*Speed;
 	VSpeed = VMove*Speed;
 	
-	scrMoveCollision();
+	scrMoveCollision(HSpeed, VSpeed);
 }
 
 

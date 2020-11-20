@@ -1,10 +1,8 @@
 /// @description Insert description here
-// You can write your code in this editor
-
 
 //Default values
 Voice				= sndVoice_01;
-Font				= fnt_dialogue;
+Font				= "fnt_dialogue";
 Name				= "???";
 
 Sequence = seqTextIntro;
@@ -13,10 +11,69 @@ Sequence = seqTextIntro;
 PausePunctuation = true;
 PunctuationDelay = 0.5; // seconds
 
-// Initial values for text line
+// Default values for each text line
 CurrentLineInit = new TextInit();
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
+
+/// @func TextInit(TextSpeed = 0.05, TextColor = c_black, TextCloseTime = 0);
+/// @desc Struct for storing initial textbox line values
+/// @arg TextSpeed=0.25
+/// @arg TextColor=c_black
+/// @arg TextCloseTime=0
+function TextInit() constructor
+{
+	var TextSpeed = argument_count > 0 ? argument[0] : 0.3;
+	var TextColor = argument_count > 1 ? argument[1] : c_black;
+	var TextCloseTime = argument_count > 2 ? argument[2] : 0;
+
+	Speed = TextSpeed;
+	Color = TextColor;
+	CloseTime = TextCloseTime;
+}
+
+/// @desc Setup for each text line
+function InitLine()
+{
+	if (chatterbox_get_content(chatterbox, 0) == undefined) { return; }
+
+	var DrawnText = chatterbox_get_content(chatterbox, 0);
+	
+	// Set initial values for text
+	var CharSpeed = CurrentLineInit.Speed; //Store initial character speed
+	var CurrentSpeaker = GetSpeaker(DrawnText);
+	var CurrentColor = CurrentLineInit.Color; //Store initial color
+	var CurrentFont = CurrentSpeaker.Font;
+	CurrentCloseTime = CurrentLineInit.CloseTime; //Store auto closing time
+	
+	// Remove name from dialogue
+	var ColonPos = string_pos(":", DrawnText);
+	DrawnText = string_delete(DrawnText, 0+1, ColonPos+1);
+	
+	scribble_set_starting_format(CurrentFont, CurrentColor, fa_left);
+	scribble_autotype_fade_in(DrawnText, CharSpeed, 0, false);
+	scribble_autotype_set_sound_per_char(DrawnText, CurrentSpeaker.Voice, 0.8, 1);
+	
+	CurrentText = scribble_draw(0, 0, DrawnText);
+	scribble_page_set(CurrentText, 0);
+	
+	alarm_set(1, -1);
+}
+
+/// @desc Get the speaker (instance) of the current line of text
+function GetSpeaker(Text)
+{
+	var NamePosition = string_pos(":", Text);
+	var SpeakerName = string_copy(Text, 0, NamePosition-1);
+	var Speaker = self;
+
+	with(oCharacter)
+	{
+		if (SpeakerName == Name)
+			Speaker = self;
+	}
+	return Speaker;
+}
 
 /// @desc Set initial values for line of text
 function SetInit(InitArray)
@@ -37,12 +94,6 @@ function SetInit(InitArray)
 			CurrentLineInit = new TextInit(InitArray[0], InitArray[1], InitArray[2]);
 			break;
 	}
-}
-
-/// @desc Returns the value of the variable
-function GetVariable(VariableString)
-{
-	return variable_instance_get(CurrentSpeaker, VariableString);
 }
 
 /// @desc Attempt to display next line of text, end text event if reached the end
@@ -91,9 +142,12 @@ SelectedOption = 0;
 scribble_set_wrap(600, 150);
 if (PausePunctuation)
 {
-	var Delay = PunctuationDelay * 1000;
+	var Delay = PunctuationDelay * 750;
 	scribble_add_autotype_character_delay(".", Delay);
 	scribble_add_autotype_character_delay(",", Delay);
 	scribble_add_autotype_character_delay("!", Delay);
 	scribble_add_autotype_character_delay("?", Delay);
 }
+
+// Post create event
+alarm[0] = 1;

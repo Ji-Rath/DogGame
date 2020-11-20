@@ -1,5 +1,5 @@
 ///@desc Prevent the specified object from moving into collision tiles. Then give the object speed otherwise.
-function scrMoveCollision() {
+function scrMoveCollision(HSpeed, VSpeed) {
 
 
 	var tilemap = layer_tilemap_get_id("Collision");
