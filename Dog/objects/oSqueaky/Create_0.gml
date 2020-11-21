@@ -5,5 +5,3 @@
 // ball picked up
 PickedUp = false;
 friction = 0.1;
-HSpeed = 0;
-VSpeed = 0;

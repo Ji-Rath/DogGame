@@ -8,7 +8,7 @@ if(ceil(ImageIndex) > sprite_get_number(sHandClap) && CanAttempt)
 }
 ImageIndex = ImageIndex % (sprite_get_number(sHandClap));
 
-if(CanAttempt && global.KeyInteract)
+if(CanAttempt && input_check_press(EVerb.Interact))
 {
     if(ceil(ImageIndex) > IndexCorrectMin && ceil(ImageIndex) < IndexCorrectMax)
     {

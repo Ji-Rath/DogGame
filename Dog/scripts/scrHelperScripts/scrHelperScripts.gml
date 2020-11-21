@@ -13,7 +13,8 @@ function scrFinishMiniGame(bIsSuccess)
 		{
 			with(oMiniGame)
 			{
-				if(MiniGameEndSeq != -1)
+				var bEndSequenceExists = MiniGameEndSeq != -1;
+				if(bEndSequenceExists)
 				{
 					var Seq = scrRunSequence(MiniGameEndSeq, "TextBox");
 					var Len = layer_sequence_get_length(Seq);
@@ -23,8 +24,9 @@ function scrFinishMiniGame(bIsSuccess)
 					Destroy = true;
 				}
 				else
+				{
 					timer[1] = 0.5*60;
-			
+				}
 			    scrMiniGameIcon(sCheckMark);
 			}
 		}

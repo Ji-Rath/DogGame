@@ -21,9 +21,9 @@ if(layer_sequence_is_finished(Seq) && !layer_sequence_is_paused(Seq))
 }
 
 // Skip to end of line or go to next line of text
-if(global.KeyInteractPress)
+if(input_check_press(EVerb.Interact))
 {
-	if (scribble_autotype_get(CurrentText) < 1 && !bDisplayOptions)
+	if (!bDisplayOptions && scribble_autotype_get(CurrentText) < 1)
 	{
 		scribble_autotype_skip(CurrentText)
 	}

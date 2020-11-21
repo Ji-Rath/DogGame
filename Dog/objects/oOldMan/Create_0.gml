@@ -7,10 +7,6 @@ WalkSpeed = 3; //NPC walk speed
 Scale = .5; //Sprite scaling
 //AlertDistance = 300; //Distance for seeing the player and starting the cutscene
 
-//Textbox variables
-Voice				= sndSelect;
-Font				= fnt_dialogue;
-
 //Get player reference for use in cutscene
 // var Player = instance_find(oDog, 0);
 

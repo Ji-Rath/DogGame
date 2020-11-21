@@ -24,7 +24,7 @@ switch(State)
     
     case 1:
         //Action part
-        if(global.KeyInteract)
+        if(input_check(EVerb.Interact))
         {
             AnimIndex = 1;
             AnimSwitch = choose(0,1);
@@ -33,7 +33,7 @@ switch(State)
                 EnemyBattle.Health -= 1;
             }
         }
-        if(global.KeyInteractRelease)
+        if(input_check_release(EVerb.Interact))
         {
             AnimIndex = 0;
         }

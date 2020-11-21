@@ -100,7 +100,6 @@ function NextTurn()
 	switch(BattleStage)
 	{
 		case BattleSection.EnemyAttack:
-			var EnemyText = EnemyBattle.TextDuring[random_range(0,array_length_1d(EnemyBattle.TextDuring))];
 			CreateBattleTextEvent(oAreaStats.TextFile, "Battle", true);
 			break;
 	}
