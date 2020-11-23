@@ -35,9 +35,12 @@ function CreateBattleTextEvent(filename, node)
 	var EndsTurn = argument_count > 2 ? argument[2] : false;
 
 	var TextInst = CreateTextEvent(filename, node);
-	with (TextInst)
+	if (TextInst != undefined)
 	{
-		EndTurn = EndsTurn;
-		Sequence = seqBattleTextIntro;
+		with (TextInst)
+		{
+			EndTurn = EndsTurn;
+			Sequence = seqBattleTextIntro;
+		}
 	}
 }

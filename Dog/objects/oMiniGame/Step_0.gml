@@ -28,7 +28,6 @@ else if (timer[1] != -1)
     {
         global.PlayerHP = round(global.PlayerHP);
         global.PlayerPP = round(global.PlayerPP);
-        EnemyBattle.Health = round(EnemyBattle.Health);
 	}
 	
 	layer_sequence_destroy(MiniGameScreenSeq);

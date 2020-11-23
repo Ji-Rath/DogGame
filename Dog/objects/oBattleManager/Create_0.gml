@@ -26,9 +26,16 @@ RageMeter = 0;
 //Initialize Itembar variables
 scrItems();
 
-//Assign enemy objects to variables and store unique id
-EnemyBattle = oAreaStats.EnemyBattle;
-EnemyKey = oAreaStats.EnemyKey;
+EnemyInfo = oAreaStats.EnemyInfo;
+FocusedEnemy = 0;
+
+for (var i=0;i<array_length(EnemyInfo);i++)
+{
+	//Create Enemy Object
+	EnemyBattle[i] = instance_create_layer(640,390,"Instances",EnemyInfo[i].BattleObject);
+	EnemyBattle[i].InstCount = array_length(EnemyInfo);
+}
+oEnemyBattleParent.CalculatePosition(true);
 
 //Current battle stage
 BattleStage = BattleSection.PlayerAttack;
@@ -40,9 +47,6 @@ DPoffy = 50;
 
 Alpha = 0;
 
-//Create Enemy Object
-EnemyBattle = instance_create_layer(640,390,"Instances",EnemyBattle);
-
 //Timer Bar
 BattleTimer = 0;
 
@@ -50,7 +54,6 @@ BattleTimer = 0;
 UpdateStats = false;
 DrawPlayerHealth = global.PlayerHP;
 DrawPlayerPP = global.PlayerPP;
-DrawEnemyHealth = EnemyBattle.Health;
 DrawTimer = BattleTimer;
 timer[0] = -1;
 
@@ -86,7 +89,15 @@ function NextTurn()
 		
 	switch(BattleStage)
 	{
-		case BattleSection.EnemyAttack: BattleStage = BattleSection.PlayerAttack; break;
+		case BattleSection.EnemyAttack:
+			FocusedEnemy++;
+			oEnemyBattleParent.ShiftEnemies();
+			if (FocusedEnemy >= array_length(EnemyBattle))
+			{
+				BattleStage = BattleSection.PlayerAttack;
+				FocusedEnemy = 0;
+			}
+			break;
 		case BattleSection.PlayerAttack: BattleStage = BattleSection.EnemyAttack; break;
 	}
 	
@@ -94,13 +105,15 @@ function NextTurn()
 	if(DrawPlayerHealth <= 0 && BattleStage != BattleSection.PlayerDead)
 		BattleStage = BattleSection.PlayerDead;
 	
+	/*
 	if(DrawEnemyHealth <= 0 && BattleStage != BattleSection.PlayerVictory && BattleStage != BattleSection.RoomTransition)
 		BattleStage = BattleSection.PlayerVictory;
+	*/
 		
 	switch(BattleStage)
 	{
 		case BattleSection.EnemyAttack:
-			CreateBattleTextEvent(oAreaStats.TextFile, "Battle", true);
+			CreateBattleTextEvent(EnemyInfo[FocusedEnemy].TextFile, "Battle", true);
 			break;
 	}
 }
@@ -112,7 +125,7 @@ function RunBattleStage()
 	{
 		case BattleSection.EnemyAttack: //Enemy turn, send enemy minigame
 			var MiniGame = instance_create_layer(0,0,"GameManager",oMiniGame);
-			MiniGame.GameType = EnemyBattle.EnemyAttacks[random_range(0,array_length_1d(EnemyBattle.EnemyAttacks))]
+			MiniGame.GameType = EnemyBattle[FocusedEnemy].PickRandomGame();
 			break;
 		
 		case BattleSection.PlayerAttack: //Player turn
@@ -163,6 +176,11 @@ function RunBattleStage()
 			scrFadeout(rmGameOver,c_red,0.01);
 			break;
 	}	
+}
+
+function GetFocusedEnemy()
+{
+	return EnemyBattle[FocusedEnemy];	
 }
 
 NextTurn(0.5);

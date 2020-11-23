@@ -3,6 +3,7 @@
 
 event_inherited();
 
+/*
 TextIntro = [
     ["SICKO MODE"],
     ["YOU GONNA GET CRABBED ON"],
@@ -12,9 +13,9 @@ TextDuring = [
     ["My right claw is a lot stronger than my left"],
     ["You don't stand a chance"]
 ];
+*/
 
 AttackDamage = 3;
-Health = 15;
 Name = "Crab"
 
 

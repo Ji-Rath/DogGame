@@ -2,23 +2,14 @@
 //Shake enemy if damaged
 var XPos = x + choose(oBattleManager.Shake[1],-oBattleManager.Shake[1]);
 var YPos = y;
-var Alpha = 1;
-var Scale = 1;
+var Dist = abs(0.5 - path_position) + 0.5;
+var Alpha = 1*Dist;
+var Scale = 1*Dist;
 var YDivision = 1;
 
 //Draw enemy if the minigame has the option enabled
 if(instance_exists(oMiniGame))
 {
-    if(EnemyVisibility.DrawSmall)
-    {
-        Scale = 1-(OpenEffect/1.75);
-    }
-    else if (!EnemyVisibility.ShowEnemy)
-    {
-        YPos = y + OpenEffect*250;
-        Alpha = 1-(OpenEffect);
-    }
-    
     if(instance_exists(oPan))
     {
         if(oPan.Hit)
@@ -27,36 +18,26 @@ if(instance_exists(oMiniGame))
         }
     }
 }
+if(EnemyVisibility.DrawSmall && oBattleManager.GetFocusedEnemy() == self)
+{
+	Scale = 1-(OpenEffect/1.75);
+}
 else
 {
-	if(EnemyVisibility.DrawSmall)
-	{
-		Scale = 1-(OpenEffect/1.75);
-	}
-	else if (!EnemyVisibility.ShowEnemy)
-	{
-		YPos = y + OpenEffect*250;
-	    Alpha = 1-(OpenEffect);
-	}
+	YPos = y + OpenEffect*250;
+	Alpha -= OpenEffect;
 }
+
+draw_set_alpha(Alpha);
 
 //Draw enemy sprite at specified dimensions
 draw_sprite_ext(sprite_index,image_index,XPos,YPos,Scale,Scale/YDivision,Angle,c_white,Alpha);
 
-//Update enemy health on screen if it has changed
-var HC = HealthChanged;
-with(oBattleManager)
-{
-    if (instance_exists(EnemyBattle) && DrawEnemyHealth != EnemyBattle.Health)
-    {
-        HC = true;
-    }
-	if(!UpdateStats)
-		HC = false;
-}
-HealthChanged = HC;
-
 //Draw enemy health if it has changed
-if(HealthChanged)
-    draw_healthbar(XPos-100,YPos-50,XPos+100,YPos-75,(oBattleManager.DrawEnemyHealth/MaxHealth)*100,c_gray,c_red,c_red,0,true,false);
+if(DrawEnemyHealth != Health)
+{
+	draw_healthbar(XPos-100,YPos-50,XPos+100,YPos-75,(round(DrawEnemyHealth)/MaxHealth)*100,c_gray,c_red,c_red,0,true,false);
+}
+//draw_path(pathEnemyTurn, 0,0, true);
+draw_set_alpha(1);
     

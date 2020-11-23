@@ -6,15 +6,14 @@ SaveState = ds_map_create();
 //Datastructure of the current items the player has
 Items = ds_map_create();
 
-EnemyKey = 0; // Unique ID for encountered enemy
-EnemyBattle = oCrabBattle; // Obj of enemy when going to battle
-TextFile = "Crab.json";
-
 //The current slot for game saving
 CurrentSave = "Save1";
 
 //Whether the player is loading the game or creating a new one
 LoadGame = false;
+
+// Array of enemies that will be in the battle scene
+EnemyInfo[0] = new EnemyBattleInfo(0, oCrabBattle, "Crab.json");
 
 //Whether debug is enabled
 global.Debug = false;
@@ -26,5 +25,18 @@ if (!instance_exists(oKeybindManager))
 //Load Player Stats
 scrPlayerStats();
 
-
 scribble_init("Fonts", "fnt_main", true);
+
+/// @func StoreEnemy(enemy1, enemy2, ...);
+/// @desc Pass enemies to initialize in the battle scene
+/// @arg {obj} Enemy
+function StoreEnemy()
+{
+	for (var i=0;i<argument_count;i++)
+	{
+		// Ensure that instance passed in contains battleinfo
+		var Enemy = argument[i];
+		if(variable_instance_exists(Enemy, "BattleInfo"))
+			EnemyInfo[i] = Enemy.BattleInfo;
+	}
+}
