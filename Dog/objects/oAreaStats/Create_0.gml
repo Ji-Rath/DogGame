@@ -13,7 +13,7 @@ CurrentSave = "Save1";
 LoadGame = false;
 
 // Array of enemies that will be in the battle scene
-EnemyInfo[0] = new EnemyBattleInfo(0, oCrabBattle, "Crab.json");
+EnemyInfo = ds_list_create();
 
 //Whether debug is enabled
 global.Debug = false;
@@ -32,11 +32,12 @@ scribble_init("Fonts", "fnt_main", true);
 /// @arg {obj} Enemy
 function StoreEnemy()
 {
+	ds_list_clear(EnemyInfo);
 	for (var i=0;i<argument_count;i++)
 	{
 		// Ensure that instance passed in contains battleinfo
 		var Enemy = argument[i];
 		if(variable_instance_exists(Enemy, "BattleInfo"))
-			EnemyInfo[i] = Enemy.BattleInfo;
+			ds_list_add(EnemyInfo, Enemy.BattleInfo);
 	}
 }

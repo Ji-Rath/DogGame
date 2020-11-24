@@ -33,9 +33,10 @@ function DrawEnemyInit(_ShowEnemy, _DrawSmall) constructor
 function ShiftEnemies()
 {
 	var bTeleport = argument_count > 0 ? argument[0] : false;
-	
+	var bHasFocus = false;
 	with (oEnemyBattleParent)
 	{
+		InstCount = instance_number(oEnemyBattleParent);
 		MoveInterval = 1 / InstCount;
 		PathPos = LoopValue(PathPos, MoveInterval, 0, 1);
 		if (PathPos == 1)
@@ -48,6 +49,13 @@ function ShiftEnemies()
 		{
 			path_speed = 10;
 		}
+		
+		if (PathPos == 0)
+			bHasFocus = true;
+	}
+	if (!bHasFocus)
+	{
+		CalculatePosition();	
 	}
 }
 
@@ -58,15 +66,20 @@ function PickRandomGame()
 	return 	EnemyAttacks[random_range(0,array_length(EnemyAttacks))];
 }
 
+/// @func CalculatePosition(bEnemyDeath=false);
 /// @desc Reposition enemies in appropriate position based on enemies alive
+/// @arg {bool} bEnemyDeath=false
 function CalculatePosition()
 {
-	for(var i=0;i<instance_number(oEnemyBattleParent);i++)
+	var bEnemyDeath = argument_count > 0 ? argument[0] : false;
+	var Count = instance_number(oEnemyBattleParent);
+	InstCount = bEnemyDeath ? Count-1 : Count;
+	MoveInterval = 1 / InstCount;
+	for(var i=0;i<InstCount;i++)
 	{
 		var Inst = instance_find(oEnemyBattleParent, i);
-		MoveInterval = 1 / InstCount;
 		Inst.PathPos = MoveInterval * i;
-		path_position = PathPos;
+		Inst.path_position = PathPos;
 	}
 }
 

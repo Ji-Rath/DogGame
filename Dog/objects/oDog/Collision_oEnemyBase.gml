@@ -4,6 +4,6 @@
 if (other.State == estates.Aggro)
 {
 	scrFadeout(rmBattle, c_maroon, 0.05);
-	oAreaStats.StoreEnemy(other, other);
+	oAreaStats.StoreEnemy(other);
 }
 

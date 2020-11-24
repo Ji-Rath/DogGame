@@ -1,17 +1,12 @@
 
-if (path_speed != 0 && round(PathPos*100) == round(path_position * 100))
+if (path_index == pathEnemyTurn && path_speed != 0 && round(PathPos*100) == round(path_position * 100))
 {
 	path_position = PathPos;
 	path_speed = 0;
 }
 
-if (keyboard_check_pressed(ord("F")))
-{
-	ShiftEnemies();
-}
-
 //Delay death animation
-if(Health <= 0 && timer[0] == -1 && oBattleManager.BattleStage == BattleSection.PlayerVictory && !IsDead && path_index == -1)
+if(Health <= 0 && timer[0] == -1 && !IsDead && path_index != pathEnemyDeath)
 {
     timer[0] = 1*60;
 }
@@ -21,7 +16,8 @@ if(!Angry && Health < MaxHealth/2)
 	with(oBattleManager)
 	{
 		SpeedMultiplier += 0.7;
-		BattleTimerInit = 20/SpeedMultiplier; //Time for player turn (seconds)	
+		BattleTimerInit = 20/SpeedMultiplier; //Time for player turn (seconds)
+		AddEnemy(oCrab, 2);
 	}
 	// CreateBattleTextEvent("Im Angry Now!", false, new TextInit(0.05, c_black, 1));
 	Angry = true;
@@ -34,29 +30,22 @@ if(timer[0] > 0)
 }
 else if(timer[0] != -1)
 {
-    path_start(pathEnemyDeath, 20, path_action_stop, false);
-    timer[0] = -1;
+	if (!IsDead)
+	{
+		path_start(pathEnemyDeath, 20, path_action_stop, false);
+		oBattleManager.DeleteEnemy(id);
+	    timer[0] = -1;
+		IsDead = true;
+	}
+    
 }
 
 //Show victory message
-if(path_index == pathEnemyTurn && path_position == 1)
+if(path_index == pathEnemyDeath && path_position >= 0.9)
 {
-	if(!instance_exists(oTextBox))
-	{
-		if(!IsDead)
-		{
-			// CreateBattleTextEvent("You Win!");
-			IsDead = true;
-		}
-		else
-		{
-			with(oBattleManager)
-			{
-				BattleStage = BattleSection.RoomTransition;
-				RunBattleStage();
-			}
-		}
-	}
+	// CreateBattleTextEvent("You Win!");
+	IsDead = true;
+	instance_destroy();
 }
 
 //Spin enemy while death animation is running
@@ -95,6 +84,14 @@ else
 	}
 }
 
-if (DrawEnemyHealth != Health)
-	DrawEnemyHealth = clamp(Health+(0.05*sign(Health - DrawEnemyHealth)), 0, MaxHealth);
+var bHealthChanged = (round(DrawEnemyHealth) != Health && !HealthChanged);
+var bHealthEqual = (round(DrawEnemyHealth) == Health && HealthChanged);
+if (bHealthChanged && alarm[0] = -1)
+	alarm[0] = 1;
+if (bHealthEqual && alarm[0] = -1)
+	alarm[0] = 0.5*60;
+
+if (HealthChanged)
+	DrawEnemyHealth = clamp(DrawEnemyHealth+(0.1*sign(Health - DrawEnemyHealth)), 0, MaxHealth);
+
 OpenEffect = sin(OpenFraction);

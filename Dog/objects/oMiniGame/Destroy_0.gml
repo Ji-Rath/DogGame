@@ -15,9 +15,15 @@ if(EndTurn)
 	with(oBattleManager)
 	{
 		if(BattleStage == BattleSection.EnemyAttack)
-			NextTurn();
+		{
+			if (GetFocusedEnemy().Health > 0)
+				NextTurn();
+		}
 		else
-			NextTurn(0.5);
+		{
+			if (GetFocusedEnemy().Health > 0)
+				NextTurn(0.5);
+		}	
 	}
 		
 }

@@ -2,23 +2,18 @@
 //Shake enemy if damaged
 var XPos = x + choose(oBattleManager.Shake[1],-oBattleManager.Shake[1]);
 var YPos = y;
-var Dist = abs(0.5 - path_position) + 0.5;
+var Dist = path_index == pathEnemyTurn ? abs(0.5 - path_position)*1.5 + 0.25 : 1;
 var Alpha = 1*Dist;
 var Scale = 1*Dist;
 var YDivision = 1;
 
-//Draw enemy if the minigame has the option enabled
+//Draw squashed enemy if hit with pan
 if(instance_exists(oMiniGame))
 {
-    if(instance_exists(oPan))
-    {
-        if(oPan.Hit)
-        {
-            YDivision = 2;
-        }
-    }
+    if(instance_exists(oPan) && oPan.Hit)
+        YDivision = 2;
 }
-if(EnemyVisibility.DrawSmall && oBattleManager.GetFocusedEnemy() == self)
+if(EnemyVisibility.DrawSmall && oBattleManager.GetFocusedEnemy() == id)
 {
 	Scale = 1-(OpenEffect/1.75);
 }
@@ -34,9 +29,9 @@ draw_set_alpha(Alpha);
 draw_sprite_ext(sprite_index,image_index,XPos,YPos,Scale,Scale/YDivision,Angle,c_white,Alpha);
 
 //Draw enemy health if it has changed
-if(DrawEnemyHealth != Health)
+if(HealthChanged)
 {
-	draw_healthbar(XPos-100,YPos-50,XPos+100,YPos-75,(round(DrawEnemyHealth)/MaxHealth)*100,c_gray,c_red,c_red,0,true,false);
+	draw_healthbar(XPos-100,YPos-50,XPos+100,YPos-75,(DrawEnemyHealth/MaxHealth)*100,c_gray,c_red,c_red,0,true,false);
 }
 //draw_path(pathEnemyTurn, 0,0, true);
 draw_set_alpha(1);
