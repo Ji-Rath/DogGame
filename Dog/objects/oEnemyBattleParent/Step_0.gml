@@ -6,9 +6,9 @@ if (path_index == pathEnemyTurn && path_speed != 0 && round(PathPos*100) == roun
 }
 
 //Delay death animation
-if(Health <= 0 && timer[0] == -1 && !IsDead && path_index != pathEnemyDeath)
+if(Health <= 0 && timer[0] == -1 && !IsDead && path_index != pathEnemyDeath && !instance_exists(oMiniGame))
 {
-    timer[0] = 1*60;
+    timer[0] = 0.1*60;
 }
 
 if(!Angry && Health < MaxHealth/2)
@@ -87,9 +87,19 @@ else
 var bHealthChanged = (round(DrawEnemyHealth) != Health && !HealthChanged);
 var bHealthEqual = (round(DrawEnemyHealth) == Health && HealthChanged);
 if (bHealthChanged && alarm[0] = -1)
+{
 	alarm[0] = 1;
+	//Enemy shake when damaged
+	if(DrawEnemyHealth > Health)
+		oBattleManager.Shake[1] = 8;
+}
 if (bHealthEqual && alarm[0] = -1)
+{
+	//If enemy is flipped, but them in correct position
+	if(Vulnerable)
+		Vulnerable = false;	
 	alarm[0] = 0.5*60;
+}
 
 if (HealthChanged)
 	DrawEnemyHealth = clamp(DrawEnemyHealth+(0.1*sign(Health - DrawEnemyHealth)), 0, MaxHealth);

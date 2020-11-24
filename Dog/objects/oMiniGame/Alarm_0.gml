@@ -13,6 +13,8 @@ switch(GameType)
         CreateInstance(room_width/2,room_height/2-50,oCrab1Player);
 		break;
     case Game.GlovesOff:
+		with(oEnemyBattleParent)
+				EnemyVisibility = new DrawEnemyInit(true, true);
         CreateInstance(room_width/2,room_height/2,oPlayerGloveSmack);
 		break;
     case Game.Chips:

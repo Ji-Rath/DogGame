@@ -26,20 +26,12 @@ if (bCanInteract)
 
 if(timer[0] == -1 && !UpdateStats)
 {
-	if (DrawPlayerHealth != global.PlayerHP)
+	var bCanDrawTimer = (DrawTimer != BattleTimer && !instance_exists(oMiniGame));
+	if (DrawPlayerHealth != global.PlayerHP || bCanDrawTimer)
 	{
 		DrawGUI = true;
 		timer[0] = 0.5*60;
 	}
-	
-	/*
-	var bCanDrawEnemyHP = (DrawTimer != BattleTimer && !instance_exists(oMiniGame));
-	if(DrawEnemyHealth != EnemyBattle.Health || bCanDrawEnemyHP)
-	{
-		DrawGUI = true;
-		timer[0] = 1;
-	}
-	*/
 }
 
 
@@ -99,17 +91,6 @@ else if(timer[0] != -1)
 	//Player UI shake when damaged
 	if(DrawPlayerHealth > global.PlayerHP)
 		Shake[0] = 8;
-	
-	/*
-	//Enemy shake when damaged
-	if(DrawEnemyHealth > EnemyBattle.Health)
-		Shake[1] = 8;
-	
-	//If enemy is flipped, but them in correct position
-	if(oEnemyBattleParent.Vulnerable && BattleStage == BattleSection.EnemyAttack)
-		oEnemyBattleParent.Vulnerable = false;
-	
-	*/
 }
 
 //Shake effect
