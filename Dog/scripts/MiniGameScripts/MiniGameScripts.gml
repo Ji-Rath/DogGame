@@ -21,3 +21,10 @@ function scrRunSequence(Sequence)
 	}
 	return AnimSeq;
 }
+
+function EnemyBattleInfo(EnemyKey, EnemyBattleObject, EnemyTextFile) constructor
+{
+	Key = EnemyKey;
+	BattleObject = EnemyBattleObject;
+	TextFile = EnemyTextFile;
+}

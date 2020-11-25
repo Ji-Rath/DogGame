@@ -3,16 +3,19 @@
 if(NeglectMeter <= MaxNeglect && !instance_exists(oTextBox))
 	NeglectMeter += (1/60);
 
-//Reduce battle timer, and end turn if at 0
-if(DrawGUI && oBattleMenuBase.AnimAlpha != 0 && !instance_exists(oMiniGame))
+// Only countdown timer when player can make a move during their turn
+// Go to enemy turn if out of time
+var bCanInteract = DrawGUI && oBattleMenuBase.AnimAlpha != 0 && !instance_exists(oMiniGame)
+if (bCanInteract)
 {
 	if(BattleTimer > 0)
+	{
 		BattleTimer -= 1;
-	
-	if (BattleTimer <= 0)
+	}
+	else
 	{
 		NextTurn();
-	
+		
 		with(oBattleMenuBase)
 		{
 			scrAnimReinit(Animations.Flip, Animations.FadeOut);
@@ -23,16 +26,11 @@ if(DrawGUI && oBattleMenuBase.AnimAlpha != 0 && !instance_exists(oMiniGame))
 
 if(timer[0] == -1 && !UpdateStats)
 {
-	if (DrawPlayerHealth != global.PlayerHP)
+	var bCanDrawTimer = (DrawTimer != BattleTimer && !instance_exists(oMiniGame));
+	if (DrawPlayerHealth != global.PlayerHP || bCanDrawTimer)
 	{
 		DrawGUI = true;
 		timer[0] = 0.5*60;
-	}
-	
-	if(DrawEnemyHealth != EnemyBattle.Health || (DrawTimer != BattleTimer && !instance_exists(oMiniGame)))
-	{
-		DrawGUI = true;
-		timer[0] = 1;
 	}
 }
 
@@ -55,11 +53,13 @@ if(UpdateStats)
 	if(DrawPlayerPP = global.PlayerPP)
 		Check++;
 	
+	/*
 	//Check enemy health for changes
 	DrawEnemyHealth += Increment*sign(EnemyBattle.Health-DrawEnemyHealth);
 	
 	if(DrawEnemyHealth = EnemyBattle.Health)
 		Check++;
+	*/
 	
 	if(!instance_exists(oMiniGame))
 	{
@@ -74,13 +74,13 @@ if(UpdateStats)
 	
 	
 	//If all checks done, go to next phase
-	if(Check == 4 && timer[0] == -1)
+	if(Check == 3 && timer[0] == -1)
 		timer[0] = 0.5*60;
 }
 
 //TIMER MANAGEMENT
 
-//Count how much time the player has left on their turn
+// Update visual effects for opponents
 if(timer[0] > 0)
 	timer[0] -= 1;
 else if(timer[0] != -1)
@@ -91,14 +91,6 @@ else if(timer[0] != -1)
 	//Player UI shake when damaged
 	if(DrawPlayerHealth > global.PlayerHP)
 		Shake[0] = 8;
-	
-	//Enemy shake when damaged
-	if(DrawEnemyHealth > EnemyBattle.Health)
-		Shake[1] = 8;
-	
-	//If enemy is flipped, but them in correct position
-	if(oEnemyBattleParent.Vulnerable && BattleStage == BattleSection.EnemyAttack)
-		oEnemyBattleParent.Vulnerable = false;
 }
 
 //Shake effect
@@ -109,9 +101,9 @@ for(i=0;i<array_length_1d(Shake);i++)
 }
 
 //Manage alpha fading for UI
-if(DrawGUI && Alpha <= 1)
-	Alpha += 0.06*SpeedMultiplier;
-else if(Alpha >= 0)
-	Alpha -= 0.06*SpeedMultiplier;
-	
-Alpha = clamp(Alpha, 0, 1);
+if (Alpha <= 1 && Alpha >= 0)
+{
+	var Val = 0.06*SpeedMultiplier;
+	Alpha += DrawGUI ? Val : -Val;
+	Alpha = clamp(Alpha, 0, 1);
+}

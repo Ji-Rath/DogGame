@@ -13,9 +13,6 @@ Health = 10;
 Scale = 0.5;
 WanderInterval = 3*60;
 
-//Get battleobject of enemy
-BattleObject = oEnemyBattleParent;
-
 //////////////////////////////////////////////////////////////////////////////
 
 //Enemy States
@@ -44,3 +41,5 @@ Key = room_get_name(room)+"Enemy"+string(x)+string(y);
 WanderDirectionX = 0;
 WanderDirectionY = 0;
 TimerEnded = false;
+
+BattleInfo = new EnemyBattleInfo(Key, BattleObject, TextFile);

@@ -23,7 +23,7 @@ if(Brushes > 16 && !Success)
 {
     scrFinishMiniGame(true);
 	
-    oEnemyBattleParent.Vulnerable = true;
+    oBattleManager.GetFocusedEnemy().Vulnerable = true;
     Success = true;
 }
 
