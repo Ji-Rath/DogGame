@@ -63,3 +63,8 @@ function CreateInstance(X, Y, Object)
 	
 	return Instance;
 }
+
+function CanCompleteGame()
+{
+	return timer[1] != -1;	
+}

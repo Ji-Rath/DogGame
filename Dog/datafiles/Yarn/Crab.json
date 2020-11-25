@@ -2,7 +2,7 @@
 	{
 		"title": "Battle",
 		"tags": "",
-		"body": "<< SetInit 0.05 000000 1 >> \nCrab: You don't stand a chance",
+		"body": "<< SetInit 0.3 000000 1 >> \nCrab: You don't stand a chance",
 		"position": {
 			"x": 553,
 			"y": -357
