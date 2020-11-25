@@ -1,5 +1,5 @@
 
-if(visible && scrAnimVisible())
+if (oBattleManager.DrawGUI && scrAnimVisible())
 {
     //Execute highfive minigame
     with(oBattleManager)
@@ -9,5 +9,5 @@ if(visible && scrAnimVisible())
         script_execute(ExecuteArray[0],ExecuteArray[1]);
         DrawGUI = false;
     }
-    CanHighfive = false;
+	AllyRef.bMiniGameWait = true;
 }

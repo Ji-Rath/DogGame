@@ -15,6 +15,8 @@ LoadGame = false;
 // Array of enemies that will be in the battle scene
 EnemyInfo = ds_list_create();
 
+AllyInfo = ds_list_create();
+
 //Whether debug is enabled
 global.Debug = false;
 
@@ -39,5 +41,11 @@ function StoreEnemy()
 		var Enemy = argument[i];
 		if(variable_instance_exists(Enemy, "BattleInfo"))
 			ds_list_add(EnemyInfo, Enemy.BattleInfo);
+	}
+	
+	ds_list_clear(AllyInfo);
+	with (oPartnerBase)
+	{
+		ds_list_add(oAreaStats.AllyInfo, BattleObject);
 	}
 }

@@ -5,5 +5,5 @@ CanPlayAnim = false;
 image_speed = 0;
 IsHovering = false;
 
-MaxNeglect = oBattleManager.MaxNeglect;
-CanHighfive = true;
+if (oBattleManager.DrawGUI)
+	scrAnimReinit(Animations.SmoothFlip, Animations.IntroScale);

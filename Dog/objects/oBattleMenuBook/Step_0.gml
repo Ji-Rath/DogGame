@@ -26,14 +26,8 @@ if(visible && Selected)
             {
                 if(TextBox == string_upper(Description[0]))
                 {
-                    if (oBattleManager.NeglectMeter >= oBattleManager.MaxNeglect)
+                    if (oBattleWitchGirl.CanPerformAbility())
                     {
-                        var Text = "Your ally is feeling neglected. He is too sad to attack!";
-                        CreateBattleTextEvent(Text, false, new TextInit(0.05, c_black, 1));
-                        Selected = false;
-                    }
-					else
-					{
 						ItemMouseHoverSelect = i;
 						alarm[0] = 0.5*60/oBattleManager.SpeedMultiplier;
                     
@@ -45,12 +39,19 @@ if(visible && Selected)
                     
 	            		with(oBattleManager)
 							DrawGUI = false;
+                        
+                    }
+					else
+					{
+						//var Text = "Your ally is feeling neglected. He is too sad to attack!";
+                        //CreateBattleTextEvent(Text, false, new TextInit(0.05, c_black, 1));
+                        Selected = false;
 					}
                 }
                 else
                 {
-                    var Text = "What the heck, '"+TextBox+"' aint no valid spell";
-                    CreateBattleTextEvent(Text, false, new TextInit(0.05, c_black, 1));
+                    //var Text = "What the heck, '"+TextBox+"' aint no valid spell";
+                    //CreateBattleTextEvent(Text, false, new TextInit(0.05, c_black, 1));
                     Selected = false;
                 }
                 
