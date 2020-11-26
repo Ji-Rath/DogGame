@@ -21,8 +21,8 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"oRedChoicePTWM","path":"objects/oRedChoicePTWM/oRedChoicePTWM.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":4,"eventType":6,"collisionObjectId":null,"parent":{"name":"oRedChoicePTWM","path":"objects/oRedChoicePTWM/oRedChoicePTWM.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"oBlueChoicePTWM","path":"objects/oBlueChoicePTWM/oBlueChoicePTWM.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":6,"collisionObjectId":null,"parent":{"name":"oBlueChoicePTWM","path":"objects/oBlueChoicePTWM/oBlueChoicePTWM.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
@@ -31,7 +31,7 @@
     "path": "folders/Objects/MiniGames/PartTimeWorkerMinigame.yy",
   },
   "resourceVersion": "1.0",
-  "name": "oRedChoicePTWM",
+  "name": "oBlueChoicePTWM",
   "tags": [],
   "resourceType": "GMObject",
 }

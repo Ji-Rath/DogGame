@@ -16,12 +16,18 @@ if layer_sequence_is_finished(FIN)
 
 if (CustomerOrder = true)
 	{
-		instance_create_layer((x - 5),(y- 10), "Instances2", oOrderPTWM)
-		instance_create_layer((oOrderPTWM.x),(oOrderPTWM.y),"Instances2",oFoodPTWM)
+		CreateInstance((x - 5),(y- 10),oOrderPTWM)
+		CreateInstance((oOrderPTWM.x),(oOrderPTWM.y),oFoodPTWM)
 	}
 	
 if (Upset = true)
 {
 	global.PlayerHP -= 10;
 	scrFinishMiniGame(false);
+	Upset = false;
+}
+
+if (Satisfied = true)
+{
+	scrFinishMiniGame(true)
 }
