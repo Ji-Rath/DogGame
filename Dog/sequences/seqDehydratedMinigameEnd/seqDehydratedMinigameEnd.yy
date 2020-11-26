@@ -167,7 +167,7 @@
     "path": "folders/Sequences/Battle/General.yy",
   },
   "resourceVersion": "1.3",
-  "name": "sDehydratedMinigameEnd",
+  "name": "seqDehydratedMinigameEnd",
   "tags": [],
   "resourceType": "GMSequence",
 }

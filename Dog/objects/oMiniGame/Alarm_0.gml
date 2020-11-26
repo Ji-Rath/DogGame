@@ -49,7 +49,7 @@ switch(GameType)
 		Anvil.DogSave = DogHelp;
 		break;
 	case Game.ThirstyDoggo:
-		MiniGameEndSeq = sDehydratedMinigameEnd;
+		MiniGameEndSeq = seqDehydratedMinigameEnd;
 		CreateInstance(room_width/2+400,room_height/2-250, oAnchorPoint);
 		CreateInstance(room_width/2+300,room_height/2-250, oHand);
 		CreateInstance(room_width/2,room_height/2+150, oThirstyDoggo);
@@ -61,6 +61,11 @@ switch(GameType)
 		MiniGameEndSeq = seqFanMinigameEnd;
 		CreateInstance(room_width/2+250, room_height/2, oCampfire);
 		CreateInstance(room_width/2-250, room_height/2, oFan);
+		break;
+	case Game.OrderingMinigame:
+		CreateInstance(room_height/2, room_width/2, oCustomerPTWM);
+		CreateInstance(room_height/2-250, room_width/2, oRedChoicePTWM);
+	
 		break;
 }
 

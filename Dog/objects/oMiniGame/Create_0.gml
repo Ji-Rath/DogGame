@@ -30,7 +30,6 @@ enum Game
     CrabAttack,
     Crab1,
     GlovesOff,
-    Hamburger,
     Chips,
     PanAttack,
     BroomAttack,
@@ -39,7 +38,8 @@ enum Game
     AnvilStruggle,
 	ThirstyDoggo,
 	DogTan,
-	Lighthouse
+	Lighthouse,
+	OrderingMinigame,
 }
 alarm[0] = 1;
 
