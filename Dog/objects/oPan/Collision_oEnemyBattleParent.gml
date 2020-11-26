@@ -4,7 +4,7 @@
 //Apply damage to enemy if the pan collides with the enemy
 if(!Hit)
 {
-	oEnemyBattleParent.Health -= clamp(abs(phy_speed_y),2,3);
+	oBattleManager.GetFocusedEnemy().Health -= clamp(abs(phy_speed_y),1.5,2.5);
 	Hit = true;
 	
 	with(oCamera)

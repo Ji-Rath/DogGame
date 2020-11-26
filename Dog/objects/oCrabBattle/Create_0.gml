@@ -3,6 +3,7 @@
 
 event_inherited();
 
+/*
 TextIntro = [
     ["SICKO MODE"],
     ["YOU GONNA GET CRABBED ON"],
@@ -12,13 +13,13 @@ TextDuring = [
     ["My right claw is a lot stronger than my left"],
     ["You don't stand a chance"]
 ];
+*/
 
 AttackDamage = 3;
-Health = 15;
 Name = "Crab"
 
 
 ////////////////////////////////////////////////////////////////////////////
 
 MaxHealth = Health;
-EnemyAttacks = [Game.AnvilStruggle, Game.CrabWeigh, Game.Crab1, Game.ThirstyDoggo, Game.DogTan];
+EnemyAttacks = [Game.AnvilStruggle, Game.CrabWeigh, Game.Crab1, Game.ThirstyDoggo, Game.DogTan, Game.Lighthouse];

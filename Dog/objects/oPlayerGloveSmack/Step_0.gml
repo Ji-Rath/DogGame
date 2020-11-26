@@ -30,7 +30,7 @@ switch(State)
             AnimSwitch = choose(0,1);
             with(oBattleManager)
             {
-                EnemyBattle.Health -= 1;
+                GetFocusedEnemy().Health -= 0.5;
             }
         }
         if(input_check_release(EVerb.Interact))

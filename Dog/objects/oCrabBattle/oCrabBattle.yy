@@ -32,7 +32,9 @@
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"oCrabBattle","path":"objects/oCrabBattle/oCrabBattle.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
-  "overriddenProperties": [],
+  "overriddenProperties": [
+    {"propertyId":{"name":"Health","path":"objects/oEnemyBattleParent/oEnemyBattleParent.yy",},"objectId":{"name":"oEnemyBattleParent","path":"objects/oEnemyBattleParent/oEnemyBattleParent.yy",},"value":"10","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+  ],
   "parent": {
     "name": "Enemies",
     "path": "folders/Objects/BattleScene/Enemies.yy",

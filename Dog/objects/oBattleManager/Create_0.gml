@@ -26,9 +26,17 @@ RageMeter = 0;
 //Initialize Itembar variables
 scrItems();
 
-//Assign enemy objects to variables and store unique id
-EnemyBattle = oAreaStats.EnemyBattle;
-EnemyKey = oAreaStats.EnemyKey;
+EnemyInfo = oAreaStats.EnemyInfo;
+FocusedEnemy = 0;
+
+EnemyBattle = ds_list_create();
+
+for (var i=0;i<ds_list_size(EnemyInfo);i++)
+{
+	//Create Enemy Object
+	ds_list_add(EnemyBattle, instance_create_layer(640, 390, "Instances", ds_list_find_value(EnemyInfo, i).BattleObject));
+}
+oEnemyBattleParent.CalculatePosition();
 
 //Current battle stage
 BattleStage = BattleSection.PlayerAttack;
@@ -40,9 +48,6 @@ DPoffy = 50;
 
 Alpha = 0;
 
-//Create Enemy Object
-EnemyBattle = instance_create_layer(640,390,"Instances",EnemyBattle);
-
 //Timer Bar
 BattleTimer = 0;
 
@@ -50,7 +55,6 @@ BattleTimer = 0;
 UpdateStats = false;
 DrawPlayerHealth = global.PlayerHP;
 DrawPlayerPP = global.PlayerPP;
-DrawEnemyHealth = EnemyBattle.Health;
 DrawTimer = BattleTimer;
 timer[0] = -1;
 
@@ -86,7 +90,15 @@ function NextTurn()
 		
 	switch(BattleStage)
 	{
-		case BattleSection.EnemyAttack: BattleStage = BattleSection.PlayerAttack; break;
+		case BattleSection.EnemyAttack:
+			FocusedEnemy++;
+			oEnemyBattleParent.ShiftEnemies();
+			if (FocusedEnemy >= ds_list_size(EnemyBattle))
+			{
+				BattleStage = BattleSection.PlayerAttack;
+				FocusedEnemy = 0;
+			}
+			break;
 		case BattleSection.PlayerAttack: BattleStage = BattleSection.EnemyAttack; break;
 	}
 	
@@ -94,13 +106,15 @@ function NextTurn()
 	if(DrawPlayerHealth <= 0 && BattleStage != BattleSection.PlayerDead)
 		BattleStage = BattleSection.PlayerDead;
 	
+	/*
 	if(DrawEnemyHealth <= 0 && BattleStage != BattleSection.PlayerVictory && BattleStage != BattleSection.RoomTransition)
 		BattleStage = BattleSection.PlayerVictory;
+	*/
 		
 	switch(BattleStage)
 	{
 		case BattleSection.EnemyAttack:
-			CreateBattleTextEvent(oAreaStats.TextFile, "Battle", true);
+			CreateBattleTextEvent(ds_list_find_value(EnemyInfo, FocusedEnemy).TextFile, "Battle", true);
 			break;
 	}
 }
@@ -112,7 +126,7 @@ function RunBattleStage()
 	{
 		case BattleSection.EnemyAttack: //Enemy turn, send enemy minigame
 			var MiniGame = instance_create_layer(0,0,"GameManager",oMiniGame);
-			MiniGame.GameType = EnemyBattle.EnemyAttacks[random_range(0,array_length_1d(EnemyBattle.EnemyAttacks))]
+			MiniGame.GameType = GetFocusedEnemy().PickRandomGame();
 			break;
 		
 		case BattleSection.PlayerAttack: //Player turn
@@ -141,20 +155,6 @@ function RunBattleStage()
 		case BattleSection.RoomTransition:
 			//PLAYER WINS
 			var Room = ds_map_find_value(oAreaStats.SaveState,"Room");
-			var EnemyGrid = ds_grid_create(0,0);
-			ds_grid_read(EnemyGrid, ds_map_find_value(oAreaStats.SaveState,Room+"Enemy"));
-			
-			//Find enemy to delete from the room
-			for(i=0;i<ds_grid_height(EnemyGrid);i++)
-			{
-				if(ds_grid_get(EnemyGrid,0,i) == EnemyKey)
-				{
-					ds_grid_set(EnemyGrid,3,i,0);
-					i = ds_grid_height(EnemyGrid);
-				}
-			}
-			ds_map_replace(oAreaStats.SaveState,Room+"Enemy",ds_grid_write(EnemyGrid));
-			
 			scrFadeout(asset_get_index(Room),c_black,0.05);
 			break;
 		
@@ -163,6 +163,49 @@ function RunBattleStage()
 			scrFadeout(rmGameOver,c_red,0.01);
 			break;
 	}	
+}
+
+function GetFocusedEnemy()
+{
+	var Inst = ds_list_find_value(EnemyBattle, FocusedEnemy);
+	if (Inst != undefined)
+		return Inst.id;
+	return undefined;
+}
+
+function GetEnemyIndex(Inst)
+{
+	return ds_list_find_index(EnemyInfo, Inst);
+}
+
+function DeleteEnemy(Enemy)
+{
+	var Index = ds_list_find_index(EnemyBattle, Enemy);
+	ds_list_delete(EnemyBattle, Index);
+	ds_list_delete(EnemyInfo, Index);
+}
+
+/// @func AddEnemy(Enemy, Count=1);
+/// @desc Add an enemy to the battle scene
+/// @arg {obj} Enemy
+/// @arg {int} Count=1
+function AddEnemy(Enemy)
+{
+	static CanAdd = true;
+	var Count = argument_count > 1 ? argument[1] : 1;
+	
+	if (CanAdd)
+	{
+		repeat(Count)
+		{
+			var Inst = instance_create_layer(-1000, -1000, "Instances", Enemy);
+			ds_list_add(EnemyInfo, Inst.BattleInfo);
+			ds_list_add(EnemyBattle, instance_create_layer(640, 390, "Instances", Inst.BattleInfo.BattleObject));
+			instance_destroy(Inst);
+		}
+		oEnemyBattleParent.CalculatePosition();
+		CanAdd = false;
+	}
 }
 
 NextTurn(0.5);

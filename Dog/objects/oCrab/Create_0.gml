@@ -10,6 +10,3 @@ BufferDistance = 100; //Additional range to lose aggro on player
 Health = 10; //enemy health
 Scale = 0.5; //sprite scale
 WanderInterval = 3; //Interval (seconds) between wandering positions
-
-//Enemy object when in BattleScene
-BattleObject = oCrabBattle;

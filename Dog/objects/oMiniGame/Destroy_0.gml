@@ -9,15 +9,23 @@ for(var i=0;i<ds_list_size(Instances);i++)
         instance_destroy(Instance);
     }
 }
-		
+
+
 if(EndTurn)
 {
 	with(oBattleManager)
 	{
+		// Allow oBattleEnemyParent to handle going to the next turn during death
 		if(BattleStage == BattleSection.EnemyAttack)
-			NextTurn();
+		{
+			if (GetFocusedEnemy().Health > 0)
+				NextTurn();
+		}
 		else
-			NextTurn(0.5);
+		{
+			if (GetFocusedEnemy().Health > 0)
+				NextTurn(0.5);
+		}	
 	}
 		
 }
