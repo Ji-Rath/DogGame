@@ -3,7 +3,6 @@
 SelectMenuBackground = sAttackMenu;
 
 Selected = false;
-IsHovering = false;
 ItemMouseHover = false;
 ItemMouseHoverSelect = 0;
 MenuSequence = -1;
@@ -26,7 +25,7 @@ scrAnimInit(-1, Animations.FadeOut);
 AnimAlpha = 0;
 
 //Add available items to ds list
-for(var i=0;i<Item.LastItem;i++)
+for (var i=0;i<Item.LastItem;i++)
 {
     if(i != Item.LastItem)
     {
@@ -40,3 +39,21 @@ for(var i=0;i<Item.LastItem;i++)
         }
     }
 }
+
+function SortMenu()
+{
+	var Width = 750;
+	var Interval = Width / instance_number(oBattleMenuBase);
+	
+	for	(var i=0;i<instance_number(oBattleMenuBase);i++)
+	{
+		// Appropriately distribute icons evenly
+		var Inst = instance_find(oBattleMenuBase, i);
+		var AlternatePos = (Interval * floor((i+1)/2)) * power(-1, i); //Start at center and alternate sign Interval
+		var AdjustPos = (instance_number(oBattleMenuBase)-1)%2 * (Interval/2); //Account for odd number offset
+		Inst.x = room_width/2 + (AlternatePos + AdjustPos);
+		Inst.y = room_height/1.25;
+	}
+}
+
+SortMenu();

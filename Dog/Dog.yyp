@@ -396,6 +396,7 @@
     {"id":{"name":"sLittlegirl","path":"sprites/sLittlegirl/sLittlegirl.yy",},"order":0,},
     {"id":{"name":"sMiniGameCrab1Bite","path":"sprites/sMiniGameCrab1Bite/sMiniGameCrab1Bite.yy",},"order":0,},
     {"id":{"name":"sMiniGameCrab1PlayerJump","path":"sprites/sMiniGameCrab1PlayerJump/sMiniGameCrab1PlayerJump.yy",},"order":1,},
+    {"id":{"name":"oButtonBase","path":"objects/oButtonBase/oButtonBase.yy",},"order":7,},
     {"id":{"name":"sMiniGameCrab1PlayerRun","path":"sprites/sMiniGameCrab1PlayerRun/sMiniGameCrab1PlayerRun.yy",},"order":2,},
     {"id":{"name":"sMiniGameCrab1Setup","path":"sprites/sMiniGameCrab1Setup/sMiniGameCrab1Setup.yy",},"order":3,},
     {"id":{"name":"sMiniGameCrab1Signal","path":"sprites/sMiniGameCrab1Signal/sMiniGameCrab1Signal.yy",},"order":4,},

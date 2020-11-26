@@ -10,7 +10,6 @@ if(visible && Selected)
         ItemMouseHoverSelect = ds_list_find_value(Contents,0);
 		alarm[0] = 0.3*60/oBattleManager.SpeedMultiplier;
 		
-		
 		//Fade out GUI icons
 		with(oBattleMenuBase)
 		{

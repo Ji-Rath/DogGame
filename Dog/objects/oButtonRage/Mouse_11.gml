@@ -1,2 +1,0 @@
-
-IsHovering = false;

@@ -23,7 +23,8 @@ EnemyBattle = ds_list_create();
 for (var i=0;i<ds_list_size(EnemyInfo);i++)
 {
 	//Create Enemy Object
-	ds_list_add(EnemyBattle, instance_create_layer(640, 390, "Instances", ds_list_find_value(EnemyInfo, i).BattleObject));
+	var Inst = instance_create_layer(640, 390, "Instances", ds_list_find_value(EnemyInfo, i).BattleObject);
+	ds_list_add(EnemyBattle, Inst);
 }
 oEnemyBattleParent.CalculatePosition();
 
@@ -35,6 +36,9 @@ for (var i=0;i<ds_list_size(oAreaStats.AllyInfo);i++)
 }
 oBattleCharBase.CalculatePosition();
 
+instance_create_layer(0, 0, "GUI", oBattleMenuAttack);
+instance_create_layer(0, 0, "GUI", oBattleMenuBag);
+
 //Current battle stage
 BattleStage = BattleSection.PlayerAttack;
 
@@ -44,7 +48,6 @@ Alpha = 0;
 BattleTimer = 0;
 
 //Update stats effect
-UpdateStats = false;
 DrawTimer = BattleTimer;
 timer[0] = -1;
 

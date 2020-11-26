@@ -1,7 +1,5 @@
 if(oBattleManager.DrawGUI && !instance_exists(oMiniGame))
 {
-	scrPlaySequence(seqIconPress);
-	
     //Disable other Menu's
     with(oBattleMenuBase)
     {
