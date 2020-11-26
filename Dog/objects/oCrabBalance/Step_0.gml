@@ -24,6 +24,7 @@ if(oMiniGame.timer[1] <= 0 && oMiniGame.timer[1] != -1 && !Complete)
 {
     global.PlayerHP -= 5;
     Complete = true;
+	scrFinishMiniGame(false);
 }
 
 if(Timer[0] > 0)

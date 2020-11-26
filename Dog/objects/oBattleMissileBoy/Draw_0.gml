@@ -4,7 +4,7 @@
 // Inherit the parent event
 event_inherited();
 
-instance_create_layer(0, 0, "GUI", oBattleMenuDefend);
-
-Blocks = 3;
-MaxBlocks = 3;
+for (var i=0;i<Blocks;i++)
+{
+	draw_sprite(sShield, 0, XPos-50 + (i*50) ,YPos+50)	
+}

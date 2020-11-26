@@ -56,4 +56,9 @@ function SortMenu()
 	}
 }
 
+function CanPress()
+{
+	return oBattleManager.DrawGUI && !instance_exists(oMiniGame);	
+}
+
 SortMenu();

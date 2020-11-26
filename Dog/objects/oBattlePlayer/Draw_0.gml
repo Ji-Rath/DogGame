@@ -13,4 +13,9 @@ scribble_set_box_align( fa_left, fa_middle);
 scribble_draw(XPos,YPos,round(DisplayHealth));
 scribble_draw(XPos,YPos,round(DisplayPP));
 
+for (i=0;i<BlockableAttacks;i++)
+{
+	draw_sprite(sShield, 0, XPos-50 + (i*50) ,YPos+50)	
+}
+
 draw_set_alpha(1);

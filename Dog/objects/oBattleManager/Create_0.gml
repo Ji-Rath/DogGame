@@ -73,8 +73,9 @@ enum BattleSection
 function NextTurn()
 {
 	var Delay = argument_count > 0 ? argument[0] : 0.1;
-	if (alarm[0] > Delay*60 || alarm[0] == -1)
+	//if (alarm[0] > Delay*60 || alarm[0] == -1)
 		alarm[0] = Delay*60/SpeedMultiplier;
+	show_debug_message("Next Turn!");
 		
 	switch(BattleStage)
 	{
@@ -115,8 +116,17 @@ function RunBattleStage()
 	switch(BattleStage)
 	{
 		case BattleSection.EnemyAttack: //Enemy turn, send enemy minigame
-			var MiniGame = instance_create_layer(0,0,"GameManager",oMiniGame);
-			MiniGame.GameType = GetFocusedEnemy().PickRandomGame();
+			if (oBattlePlayer.BlockableAttacks > 0)
+			{
+				oBattlePlayer.BlockableAttacks--;
+				scrRunSequence(seqShieldDefend);
+				NextTurn(1);
+			}
+			else
+			{
+				var MiniGame = instance_create_layer(0,0,"GameManager",oMiniGame);
+				MiniGame.GameType = GetFocusedEnemy().PickRandomGame();
+			}
 			break;
 		
 		case BattleSection.PlayerAttack: //Player turn
@@ -135,8 +145,6 @@ function RunBattleStage()
 			with(oBattleMenuBase)
 				scrAnimReinit(Animations.SmoothFlip, Animations.IntroScale);
 			break;
-		
-		break;
 		
 		case BattleSection.PlayerVictory:
 			//Handled in oEnemyBattleParent

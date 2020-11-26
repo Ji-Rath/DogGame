@@ -12,3 +12,5 @@ MaxRage = 4; //Increments every player turn
 
 DisplayHealth = global.PlayerHP;
 DisplayPP = global.PlayerPP;
+
+BlockableAttacks = 0;

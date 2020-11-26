@@ -1,4 +1,4 @@
-if(oBattleManager.DrawGUI && !instance_exists(oMiniGame))
+if(CanPress())
 {
     //Disable other Menu's
     with(oBattleMenuBase)
