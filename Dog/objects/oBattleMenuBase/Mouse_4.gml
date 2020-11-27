@@ -1,5 +1,6 @@
 if(CanPress())
 {
+	scrPlaySequence(seqIconPress);
     //Disable other Menu's
     with(oBattleMenuBase)
     {

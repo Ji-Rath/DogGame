@@ -1,4 +1,6 @@
 
+event_inherited();
+
 /** Menu background, can be a sprite, or sequence */
 SelectMenuBackground = sAttackMenu;
 
@@ -17,12 +19,12 @@ enum BattleState
 //Start invisible
 image_index = SpriteIndex;
 image_speed = 0;
+image_alpha = 0;
 
 //Contents of button
 Contents = ds_list_create();
 
 scrAnimInit(-1, Animations.FadeOut);
-AnimAlpha = 0;
 
 //Add available items to ds list
 for (var i=0;i<Item.LastItem;i++)
@@ -51,8 +53,12 @@ function SortMenu()
 		var Inst = instance_find(oBattleMenuBase, i);
 		var AlternatePos = (Interval * floor((i+1)/2)) * power(-1, i); //Start at center and alternate sign Interval
 		var AdjustPos = (instance_number(oBattleMenuBase)-1)%2 * (Interval/2); //Account for odd number offset
-		Inst.x = room_width/2 + (AlternatePos + AdjustPos);
-		Inst.y = room_height/1.25;
+		with (Inst)
+		{
+			x = room_width/2 + (AlternatePos + AdjustPos);
+			y = room_height/1.25;
+			scrAnimInit(-1, Animations.FadeOut);
+		}
 	}
 }
 
