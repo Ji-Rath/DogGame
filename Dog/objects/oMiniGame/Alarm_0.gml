@@ -66,9 +66,6 @@ switch(GameType)
 		break;
 	case Game.OrderingMinigame:
 		CreateInstance(room_width/2, room_height/2, oCustomerPTWM);
-		CreateInstance(room_width/2, room_height/2-100, oRedChoicePTWM);
-		CreateInstance(room_width/2+40, room_height/2-100, oBlueChoicePTWM);
-		CreateInstance(room_width/2-40, room_height/2-100, oYellowChoicePTWM);
 		break;
 }
 

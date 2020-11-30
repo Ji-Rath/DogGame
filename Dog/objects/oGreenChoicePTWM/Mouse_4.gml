@@ -1,4 +1,4 @@
-if (food == 0)
+if (food == 1)
 {
 	oCustomerPTWM.Satisfied = true;
 }
