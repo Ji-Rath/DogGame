@@ -26,7 +26,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "PlayerGloves",
-    "path": "folders/Objects/MiniGames/PlayerGloves.yy",
+    "path": "folders/Objects/MiniGames/Team and Player/PlayerGloves.yy",
   },
   "resourceVersion": "1.0",
   "name": "oPlayerGloveSmack",

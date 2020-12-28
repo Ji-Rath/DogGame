@@ -27,7 +27,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "PartTimeWorkerMinigame",
-    "path": "folders/Objects/MiniGames/PartTimeWorkerMinigame.yy",
+    "path": "folders/Objects/MiniGames/General/PartTimeWorkerMinigame.yy",
   },
   "resourceVersion": "1.0",
   "name": "oFoodPTWM",

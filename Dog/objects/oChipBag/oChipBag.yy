@@ -30,7 +30,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Chips",
-    "path": "folders/Objects/MiniGames/Chips.yy",
+    "path": "folders/Objects/MiniGames/Team and Player/Chips.yy",
   },
   "resourceVersion": "1.0",
   "name": "oChipBag",

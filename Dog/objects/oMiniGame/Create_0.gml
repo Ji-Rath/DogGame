@@ -40,6 +40,8 @@ enum Game
 	DogTan,
 	Lighthouse,
 	OrderingMinigame,
+	PingPong,
+	RedLightGreenLight,
 }
 alarm[0] = 1;
 

@@ -33,7 +33,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "CrabWeigh",
-    "path": "folders/Objects/MiniGames/CrabWeigh.yy",
+    "path": "folders/Objects/MiniGames/Crab/CrabWeigh.yy",
   },
   "resourceVersion": "1.0",
   "name": "oCrabWeigh",

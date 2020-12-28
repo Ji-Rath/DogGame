@@ -1,6 +1,3 @@
-///@description Spawn MiniGame objects
-
-//Switch to the specified minigame
 switch(GameType)
 {
     case Game.CrabAttack: //Deprecated mini game
@@ -66,6 +63,13 @@ switch(GameType)
 		break;
 	case Game.OrderingMinigame:
 		CreateInstance(room_width/2, room_height/2, oCustomerPTWM);
+		break;
+	case Game.PingPong:
+		CreateInstance(room_width/2, room_height/2, oPaddle);
+		break;
+	case Game.RedLightGreenLight:
+		CreateInstance(room_width/2 + 200, room_height/2, oRLGLstoplight);
+		CreateInstance(room_width/2 - 200, room_height/2, oRLGLrunner);
 		break;
 }
 

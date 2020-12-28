@@ -38,7 +38,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "AnvilStruggle",
-    "path": "folders/Objects/MiniGames/AnvilStruggle.yy",
+    "path": "folders/Objects/MiniGames/Crab/AnvilStruggle.yy",
   },
   "resourceVersion": "1.0",
   "name": "oAnvil",

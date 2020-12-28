@@ -28,7 +28,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "BroomAttack",
-    "path": "folders/Objects/MiniGames/BroomAttack.yy",
+    "path": "folders/Objects/MiniGames/Team and Player/BroomAttack.yy",
   },
   "resourceVersion": "1.0",
   "name": "oBroom",

@@ -41,7 +41,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "ThirstyDoggo",
-    "path": "folders/Objects/MiniGames/ThirstyDoggo.yy",
+    "path": "folders/Objects/MiniGames/General/ThirstyDoggo.yy",
   },
   "resourceVersion": "1.0",
   "name": "oHand",
