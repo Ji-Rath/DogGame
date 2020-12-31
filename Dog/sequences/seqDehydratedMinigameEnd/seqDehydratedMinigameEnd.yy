@@ -6,7 +6,7 @@
   "playbackSpeedType": 0,
   "autoRecord": true,
   "volume": 1.0,
-  "length": 38.0,
+  "length": 25.0,
   "events": {
     "Keyframes": [],
     "resourceVersion": "1.0",
