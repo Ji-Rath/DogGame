@@ -71,6 +71,20 @@ switch(GameType)
 		CreateInstance(room_width/2 + 200, room_height/2, oRLGLstoplight);
 		CreateInstance(room_width/2 - 200, room_height/2, oRLGLrunner);
 		break;
+	case Game.Golf:
+		CreateInstance(room_width/2, room_height/2, oGolf);
+		break;
+	case Game.SimonSays:
+		CreateInstance(room_width/2 -200, room_height/2 + 100, oSSChefBingo);
+		CreateInstance(room_width/2 + 200, room_height/2 + 100, oSSDogPaddler);
+		CreateInstance(room_width/2, room_height/2 - 100, oSSInputArrow);
+		break;
+	case Game.CrossRoad:
+		CreateInstance(room_width/2,room_height/2,oCRoad);
+		CreateInstance(room_width/2-250,room_height/2,oCCrosser);
+		CreateInstance(room_width/2-50,room_height/2,oCCar);
+		CreateInstance(room_width/2+50,room_height/2,oCLitter);
+		break;
 }
 
 if (!DrawSmall)

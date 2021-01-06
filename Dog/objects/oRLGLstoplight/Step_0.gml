@@ -1,7 +1,7 @@
 if (redlight = true)
 	{
-		image_xscale = -3;
-		image_yscale = 3;
+		image_xscale = -1;
+		image_yscale = 1;
 		image_index = 1;
 		stop -= 1;
 			if (stop == 0)
@@ -13,8 +13,8 @@ if (redlight = true)
 else
 	{
 		image_index = 0;
-		image_xscale = 3;
-		image_yscale = 3;
+		image_xscale = 1;
+		image_yscale = 1;
 		go -= 1;
 			if (go == 0)
 			{

@@ -7,8 +7,8 @@ if (NotHit = true)
 }
 else
 {
-	y-= 10;
-	image_xscale -= 0.05;
+	y-= 8;
+	image_xscale -= 1;
 	image_yscale = image_xscale;
 }
 

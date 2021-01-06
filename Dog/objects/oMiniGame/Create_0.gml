@@ -42,6 +42,9 @@ enum Game
 	OrderingMinigame,
 	PingPong,
 	RedLightGreenLight,
+	Golf,
+	SimonSays,
+	CrossRoad,
 }
 alarm[0] = 1;
 

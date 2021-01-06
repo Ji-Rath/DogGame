@@ -15,5 +15,7 @@ if (oRLGLstoplight.redlight = true) and (keyboard_check(vk_right))
 	
 if (place_meeting(x,y,oRLGLstoplight))
 	{
+		image_speed = 0;
+		hsp = 0;
 		scrFinishMiniGame(true);
 	}
