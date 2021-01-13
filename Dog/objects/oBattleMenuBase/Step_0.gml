@@ -21,17 +21,6 @@ if(CanPress() && Selected)
                 //Do delayed action based on item selected
                 alarm[0] = 0.3*60/oBattleManager.SpeedMultiplier;
                 
-				//Fade out GUI icons
-                with(oBattleMenuBase)
-				{
-					scrAnimReinit(-1, Animations.FadeOut);
-					Selected = false;
-				}
-                
-        		with(oBattleManager)
-					DrawGUI = false;
-                    
-                
                 //Decrease ItemCount if applicable and update icons
                 var ItemCount = ds_map_find_value(oAreaStats.Items, ItemMouseHoverSelect);
                 if(ItemCount > 0)

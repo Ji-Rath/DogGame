@@ -64,7 +64,7 @@ function SortMenu()
 
 function CanPress()
 {
-	return oBattleManager.DrawGUI && !instance_exists(oMiniGame);	
+	return oBattleManager.DrawGUI && !instance_exists(oMiniGame) && alarm[0] == -1;
 }
 
 SortMenu();
