@@ -37,7 +37,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Pan",
-    "path": "folders/Objects/MiniGames/Pan.yy",
+    "path": "folders/Objects/MiniGames/Team and Player/Pan.yy",
   },
   "resourceVersion": "1.0",
   "name": "oPan",

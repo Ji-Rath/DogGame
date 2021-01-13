@@ -30,7 +30,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "DogTan",
-    "path": "folders/Objects/MiniGames/DogTan.yy",
+    "path": "folders/Objects/MiniGames/General/DogTan.yy",
   },
   "resourceVersion": "1.0",
   "name": "oDogTan",

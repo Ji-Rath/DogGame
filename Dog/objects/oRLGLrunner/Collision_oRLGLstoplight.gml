@@ -1,0 +1,1 @@
+scrFinishMiniGame(true);

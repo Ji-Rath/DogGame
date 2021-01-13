@@ -1,6 +1,3 @@
-///@description Spawn MiniGame objects
-
-//Switch to the specified minigame
 switch(GameType)
 {
     case Game.CrabAttack: //Deprecated mini game
@@ -51,7 +48,7 @@ switch(GameType)
 		Anvil.DogSave = DogHelp;
 		break;
 	case Game.ThirstyDoggo:
-		MiniGameEndSeq = sDehydratedMinigameEnd;
+		MiniGameEndSeq = seqDehydratedMinigameEnd;
 		CreateInstance(room_width/2+400,room_height/2-250, oAnchorPoint);
 		CreateInstance(room_width/2+300,room_height/2-250, oHand);
 		CreateInstance(room_width/2,room_height/2+150, oThirstyDoggo);
@@ -63,6 +60,34 @@ switch(GameType)
 		MiniGameEndSeq = seqFanMinigameEnd;
 		CreateInstance(room_width/2+250, room_height/2, oCampfire);
 		CreateInstance(room_width/2-250, room_height/2, oFan);
+		break;
+	case Game.OrderingMinigame:
+		CreateInstance(room_width/2, room_height/2, oCustomerPTWM);
+		break;
+	case Game.PingPong:
+		CreateInstance(room_width/2, room_height/2, oPaddle);
+		break;
+	case Game.RedLightGreenLight:
+		CreateInstance(room_width/2 + 200, room_height/2, oRLGLstoplight);
+		CreateInstance(room_width/2 - 200, room_height/2, oRLGLrunner);
+		break;
+	case Game.Golf:
+		CreateInstance(room_width/2, room_height/2, oGolf);
+		break;
+	case Game.SimonSays:
+		CreateInstance(room_width/2 -200, room_height/2 + 100, oSSChefBingo);
+		CreateInstance(room_width/2 + 200, room_height/2 + 100, oSSDogPaddler);
+		CreateInstance(room_width/2, room_height/2 - 100, oSSInputArrow);
+		break;
+	case Game.CrossRoad:
+		CreateInstance(room_width/2,room_height,oCTSparent);
+		CreateInstance(room_width/2, room_height/2, oCTSrunner);
+		CreateInstance(room_width/2 + 150, room_height/2, oCTSlitter);
+		CreateInstance(room_width/2 - 150, room_height/2, oCTStruck);
+		CreateInstance(room_width/2 - 400, room_height/2, oCTSWall);
+		CreateInstance(room_width/2 + 395, room_height/2, oCTSWall);
+		CreateInstance(room_width/2 - 350, room_height/2, oCTSWall2);
+		CreateInstance(room_width/2 + 345, room_height/2, oCTSWall2);
 		break;
 }
 

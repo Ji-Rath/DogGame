@@ -1,8 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-TurnRate = 3; //Speed for turning cup when grabbed
-IceSpawnRate = 0.25;
+TurnRate = 5; //Speed for turning cup when grabbed
+IceSpawnRate = 1;
 
 /////////////////////////////////////////////////////////////////////////////
 

@@ -6,7 +6,7 @@
   "playbackSpeedType": 0,
   "autoRecord": true,
   "volume": 1.0,
-  "length": 38.0,
+  "length": 25.0,
   "events": {
     "Keyframes": [],
     "resourceVersion": "1.0",
@@ -167,7 +167,7 @@
     "path": "folders/Sequences/Battle/General.yy",
   },
   "resourceVersion": "1.3",
-  "name": "sDehydratedMinigameEnd",
+  "name": "seqDehydratedMinigameEnd",
   "tags": [],
   "resourceType": "GMSequence",
 }

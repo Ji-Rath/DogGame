@@ -6,7 +6,7 @@
   "playbackSpeedType": 0,
   "autoRecord": true,
   "volume": 1.0,
-  "length": 80.0,
+  "length": 30.0,
   "events": {
     "Keyframes": [],
     "resourceVersion": "1.0",
@@ -143,10 +143,7 @@
         {"resourceVersion":"1.0","resourceType":"LockedModifier",},
       ],"isCreationTrack":false,"resourceVersion":"1.0","name":"sFanBGFin","tags":[],"resourceType":"GMGraphicTrack",},
   ],
-  "visibleRange": {
-    "x": 0.0,
-    "y": 80.0,
-  },
+  "visibleRange": null,
   "lockOrigin": false,
   "showBackdrop": true,
   "showBackdropImage": false,

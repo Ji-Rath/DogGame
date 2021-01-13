@@ -29,7 +29,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Lighthouse",
-    "path": "folders/Objects/MiniGames/Lighthouse.yy",
+    "path": "folders/Objects/MiniGames/General/Lighthouse.yy",
   },
   "resourceVersion": "1.0",
   "name": "oCampfire",

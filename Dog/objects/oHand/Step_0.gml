@@ -45,7 +45,11 @@ if(bGrabbed && phy_rotation > 110 && phy_rotation < 250)
 if (bGrabbed)
 {
 	if (input_check(EVerb.Interact))
+	{
 		phy_rotation += TurnRate;
+	}
 	if (input_check(EVerb.Sprint))
+	{
 		phy_rotation -= TurnRate;
+	}
 }
