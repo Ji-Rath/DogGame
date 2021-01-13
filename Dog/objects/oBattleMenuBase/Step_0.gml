@@ -1,5 +1,5 @@
 
-scrAnimStep();
+//scrAnimStep();
 
 if(CanPress() && Selected)
 {   

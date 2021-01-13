@@ -8,7 +8,8 @@ scrExecuteAlt(ExecuteArray);
 with(oBattleMenuBase)
 {
 	Selected = false;
-	scrAnimReinit(-1, Animations.FadeOut);
+	//scrAnimReinit(-1, Animations.FadeOut);
+	TweenFire("$0.5", "image_alpha>", 0);
 }
 		
 with(oBattleManager)

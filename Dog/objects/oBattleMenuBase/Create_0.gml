@@ -19,7 +19,7 @@ enum BattleState
 //Start invisible
 image_index = SpriteIndex;
 image_speed = 0;
-image_alpha = 0;
+//image_alpha = 0;
 
 //Contents of button
 Contents = ds_list_create();
@@ -68,3 +68,4 @@ function CanPress()
 }
 
 SortMenu();
+TweenSet(TWEEN_DEFAULT, "delta", true);
