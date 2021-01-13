@@ -7,44 +7,40 @@ SpeedMultiplier = 0.7;
 BattleTimerInit = 15; //Time for player turn (seconds) - Multiplied by speed multiplier
 BarWidth = 400; //Width of timer rectangle
 
-//Value to trigger rage attack
-MaxRage = 4; //Increments every player turn
-
-//Value to trigger neglect effects
-MaxNeglect = 30; // (seconds)
-
-
 //////////////////////////////////////////////////////////////////////////////////////////
 
 // Create 'data manager' in the event that it does not exist for some reason (debug)
 if (!instance_exists(oAreaStats))
 	instance_create_layer(0, 0, "Instances", oAreaStats);
 
-//Rage meter
-RageMeter = 0;
-
 //Initialize Itembar variables
 scrItems();
 
+// Create Battle Enemies
 EnemyInfo = oAreaStats.EnemyInfo;
 FocusedEnemy = 0;
-
 EnemyBattle = ds_list_create();
-
 for (var i=0;i<ds_list_size(EnemyInfo);i++)
 {
 	//Create Enemy Object
-	ds_list_add(EnemyBattle, instance_create_layer(640, 390, "Instances", ds_list_find_value(EnemyInfo, i).BattleObject));
+	var Inst = instance_create_layer(640, 390, "Instances", ds_list_find_value(EnemyInfo, i).BattleObject);
+	ds_list_add(EnemyBattle, Inst);
 }
 oEnemyBattleParent.CalculatePosition();
 
+// Create Player and Allies
+instance_create_layer(0, 0, "GUI", oBattlePlayer);
+for (var i=0;i<ds_list_size(oAreaStats.AllyInfo);i++)
+{
+	instance_create_layer(0, 0, "GUI", ds_list_find_value(oAreaStats.AllyInfo, i));	
+}
+oBattleCharBase.CalculatePosition();
+
+instance_create_layer(0, 0, "GUI", oBattleMenuAttack);
+instance_create_layer(0, 0, "GUI", oBattleMenuBag);
+
 //Current battle stage
 BattleStage = BattleSection.PlayerAttack;
-
-//Mark player portrait position
-DPhpx = 170;
-DPhpy = 17;
-DPoffy = 50;
 
 Alpha = 0;
 
@@ -52,9 +48,6 @@ Alpha = 0;
 BattleTimer = 0;
 
 //Update stats effect
-UpdateStats = false;
-DrawPlayerHealth = global.PlayerHP;
-DrawPlayerPP = global.PlayerPP;
 DrawTimer = BattleTimer;
 timer[0] = -1;
 
@@ -64,12 +57,7 @@ for(i=0;i<2;i++)
 	Shake[i] = 0;
 }
 
-//Neglect meter
-NeglectMeter = 0;
-
 DrawGUI = false;
-
-image_speed = 0.1;
 
 enum BattleSection
 {
@@ -85,8 +73,9 @@ enum BattleSection
 function NextTurn()
 {
 	var Delay = argument_count > 0 ? argument[0] : 0.1;
-	if (alarm[0] > Delay*60 || alarm[0] == -1)
+	//if (alarm[0] > Delay*60 || alarm[0] == -1)
 		alarm[0] = Delay*60/SpeedMultiplier;
+	show_debug_message("Next Turn!");
 		
 	switch(BattleStage)
 	{
@@ -99,11 +88,13 @@ function NextTurn()
 				FocusedEnemy = 0;
 			}
 			break;
-		case BattleSection.PlayerAttack: BattleStage = BattleSection.EnemyAttack; break;
+		case BattleSection.PlayerAttack: 
+			BattleStage = BattleSection.EnemyAttack;
+			break;
 	}
 	
 	//Check enemy and player health
-	if(DrawPlayerHealth <= 0 && BattleStage != BattleSection.PlayerDead)
+	if(oBattlePlayer.DisplayHealth <= 0 && BattleStage != BattleSection.PlayerDead)
 		BattleStage = BattleSection.PlayerDead;
 	
 	/*
@@ -125,8 +116,17 @@ function RunBattleStage()
 	switch(BattleStage)
 	{
 		case BattleSection.EnemyAttack: //Enemy turn, send enemy minigame
-			var MiniGame = instance_create_layer(0,0,"GameManager",oMiniGame);
-			MiniGame.GameType = GetFocusedEnemy().PickRandomGame();
+			if (oBattlePlayer.BlockableAttacks > 0)
+			{
+				oBattlePlayer.BlockableAttacks--;
+				scrRunSequence(seqShieldDefend);
+				NextTurn(1);
+			}
+			else
+			{
+				var MiniGame = instance_create_layer(0,0,"GameManager",oMiniGame);
+				MiniGame.GameType = GetFocusedEnemy().PickRandomGame();
+			}
 			break;
 		
 		case BattleSection.PlayerAttack: //Player turn
@@ -137,7 +137,7 @@ function RunBattleStage()
 				global.PlayerHP -= 5;
 				
 			//Increase rage
-			oBattleManager.RageMeter += 1;
+			oBattlePlayer.Rage ++;
 			
 			//Player turn
 			DrawGUI = true;
@@ -145,8 +145,6 @@ function RunBattleStage()
 			with(oBattleMenuBase)
 				scrAnimReinit(Animations.SmoothFlip, Animations.IntroScale);
 			break;
-		
-		break;
 		
 		case BattleSection.PlayerVictory:
 			//Handled in oEnemyBattleParent

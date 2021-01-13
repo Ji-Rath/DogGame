@@ -13,9 +13,17 @@ if(instance_exists(oMiniGame))
     if(instance_exists(oPan) && oPan.Hit)
         YDivision = 2;
 }
-if(EnemyVisibility.DrawSmall && oBattleManager.GetFocusedEnemy() == id)
+if (oBattleManager.GetFocusedEnemy() == id)
 {
-	Scale = 1-(OpenEffect/1.75);
+	if(EnemyVisibility.DrawSmall)
+	{
+		Scale = 1-(OpenEffect/1.75);
+	}
+	else if (!EnemyVisibility.ShowEnemy)
+	{
+		YPos = y + OpenEffect*250;
+		Alpha -= OpenEffect;	
+	}
 }
 else
 {

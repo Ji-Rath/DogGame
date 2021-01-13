@@ -8,11 +8,10 @@ draw_set_font(fnt_battle);
 draw_set_color(c_black);
 
 //Draw interface
-if(Selected)
+if(Selected && ds_list_size(Contents) > 0)
 {
 	if (sprite_exists(SelectMenuBackground))
 		draw_sprite(SelectMenuBackground,0,x,y);
-    
     
     //Draw text box for magic book
     if(ItemIndex != 2)

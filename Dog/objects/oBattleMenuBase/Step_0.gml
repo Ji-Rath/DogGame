@@ -1,30 +1,8 @@
 
 scrAnimStep();
 
-if(visible && Selected)
+if(CanPress() && Selected)
 {   
-    //Go straight to attacking with attack button (Can probably be optimized in the future)
-    if(ItemIndex == 0 && !in_sequence)
-    {
-        //Do Action based on item selected
-        ItemMouseHoverSelect = ds_list_find_value(Contents,0);
-		alarm[0] = 0.3*60/oBattleManager.SpeedMultiplier;
-		
-		
-		//Fade out GUI icons
-		with(oBattleMenuBase)
-		{
-			scrAnimReinit(Animations.Flip, Animations.FadeOut);
-			Selected = false;
-		}
-		
-	    with(oBattleManager)
-			DrawGUI = false;
-	        
-    }
-    
-    
-    
     //If player clicks on one of the buttons
     for(i=0;i<ds_list_size(Contents);i++)
     {
@@ -42,17 +20,6 @@ if(visible && Selected)
             {
                 //Do delayed action based on item selected
                 alarm[0] = 0.3*60/oBattleManager.SpeedMultiplier;
-                
-				//Fade out GUI icons
-                with(oBattleMenuBase)
-				{
-					scrAnimReinit(-1, Animations.FadeOut);
-					Selected = false;
-				}
-                
-        		with(oBattleManager)
-					DrawGUI = false;
-                    
                 
                 //Decrease ItemCount if applicable and update icons
                 var ItemCount = ds_map_find_value(oAreaStats.Items, ItemMouseHoverSelect);

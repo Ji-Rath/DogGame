@@ -9,7 +9,7 @@ function scrFinishMiniGame(bIsSuccess)
 {
 	if (instance_exists(oMiniGame) && !oMiniGame.bCompletedGame)
 	{
-		if(bIsSuccess)
+		if(bIsSuccess && oMiniGame.CanCompleteGame())
 		{
 			with(oMiniGame)
 			{

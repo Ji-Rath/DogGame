@@ -35,7 +35,7 @@ function scrAnimInit()
 	XPosInit = x;
 	YPosInit = y;
 	
-	AnimAlpha = 1;
+	AnimAlpha = image_alpha;
 	InitAnimScale = image_xscale;
 	AnimScale = InitAnimScale;
 

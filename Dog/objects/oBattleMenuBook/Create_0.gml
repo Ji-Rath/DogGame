@@ -13,7 +13,7 @@ alarm[1] = 0.5*60;
 //If true, allow player to type
 IsFocused = false;
 
-TextBoxX = x+100;
+TextBoxX = x+200;
 TextBoxY = y-200;
 TextBoxWidth = 310;
 TextBoxHeight = string_height("I")+10;

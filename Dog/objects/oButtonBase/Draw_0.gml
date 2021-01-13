@@ -1,5 +1,7 @@
 /// @description Draw icon
 
+if (!variable_instance_exists(self, "IsHovering")) exit;
+
 if(IsHovering)
 	AnimScale *= 1.25;
 
