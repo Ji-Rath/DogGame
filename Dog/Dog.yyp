@@ -86,6 +86,7 @@
     {"id":{"name":"oPhysicsMouse","path":"objects/oPhysicsMouse/oPhysicsMouse.yy",},"order":14,},
     {"id":{"name":"oPlayerBoob","path":"objects/oPlayerBoob/oPlayerBoob.yy",},"order":1,},
     {"id":{"name":"TGMS_6_TweenSet","path":"scripts/TGMS_6_TweenSet/TGMS_6_TweenSet.yy",},"order":9,},
+    {"id":{"name":"oButtonAlly","path":"objects/oButtonAlly/oButtonAlly.yy",},"order":8,},
     {"id":{"name":"oPlayerGloveSmack","path":"objects/oPlayerGloveSmack/oPlayerGloveSmack.yy",},"order":0,},
     {"id":{"name":"oRoomTransition","path":"objects/oRoomTransition/oRoomTransition.yy",},"order":4,},
     {"id":{"name":"oSqueaky","path":"objects/oSqueaky/oSqueaky.yy",},"order":1,},

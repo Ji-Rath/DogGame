@@ -32,10 +32,12 @@ if(EndTurn)
 else //Only show GUI fade in if it was invisible before
 {
 	oBattleManager.DrawGUI = true;
-	if (oBattleMenuBase.AnimAlpha == 0)
+	if (oBattleMenuBase.image_alpha == 0)
 	{
 		with(oBattleMenuBase)
-			scrAnimReinit(Animations.SmoothFlip, Animations.IntroScale);
+			TweenPlay(FadeIn);
+		with(oBattleCharBase)
+			TweenPlay(FadeIn);
 	}
 }
 

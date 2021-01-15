@@ -23,7 +23,7 @@
   "eventList": [],
   "properties": [],
   "overriddenProperties": [
-    {"propertyId":{"name":"SpriteIndex","path":"objects/oBattleCharBase/oBattleCharBase.yy",},"objectId":{"name":"oBattleCharBase","path":"objects/oBattleCharBase/oBattleCharBase.yy",},"value":"1","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"image_index","path":"objects/oBattleCharBase/oBattleCharBase.yy",},"objectId":{"name":"oBattleCharBase","path":"objects/oBattleCharBase/oBattleCharBase.yy",},"value":"1","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],
   "parent": {
     "name": "Player",

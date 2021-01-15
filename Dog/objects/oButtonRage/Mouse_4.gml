@@ -2,7 +2,7 @@
 // You can write your code in this editor
 event_inherited();
 
-if(visible && scrAnimVisible())
+if(oBattleManager.DrawGUI)
 {
     //Execute Dogpaddler special mode
     with(oBattleManager)

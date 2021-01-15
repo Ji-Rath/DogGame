@@ -9,56 +9,6 @@ BarWidth = 400; //Width of timer rectangle
 
 //////////////////////////////////////////////////////////////////////////////////////////
 
-// Create 'data manager' in the event that it does not exist for some reason (debug)
-if (!instance_exists(oAreaStats))
-	instance_create_layer(0, 0, "Instances", oAreaStats);
-
-//Initialize Itembar variables
-scrItems();
-
-// Create Battle Enemies
-EnemyInfo = oAreaStats.EnemyInfo;
-FocusedEnemy = 0;
-EnemyBattle = ds_list_create();
-for (var i=0;i<ds_list_size(EnemyInfo);i++)
-{
-	//Create Enemy Object
-	var Inst = instance_create_layer(640, 390, "Instances", ds_list_find_value(EnemyInfo, i).BattleObject);
-	ds_list_add(EnemyBattle, Inst);
-}
-oEnemyBattleParent.CalculatePosition();
-
-// Create Player and Allies
-instance_create_layer(0, 0, "GUI", oBattlePlayer);
-for (var i=0;i<ds_list_size(oAreaStats.AllyInfo);i++)
-{
-	instance_create_layer(0, 0, "GUI", ds_list_find_value(oAreaStats.AllyInfo, i));	
-}
-oBattleCharBase.CalculatePosition();
-
-instance_create_layer(0, 0, "GUI", oBattleMenuAttack);
-instance_create_layer(0, 0, "GUI", oBattleMenuBag);
-
-//Current battle stage
-BattleStage = BattleSection.PlayerAttack;
-
-Alpha = 0;
-
-//Timer Bar
-BattleTimer = 0;
-
-//Update stats effect
-DrawTimer = BattleTimer;
-timer[0] = -1;
-
-//Shake effect
-for(i=0;i<2;i++)
-{
-	Shake[i] = 0;
-}
-
-DrawGUI = false;
-
 enum BattleSection
 {
 	EnemyAttack,
@@ -73,9 +23,7 @@ enum BattleSection
 function NextTurn()
 {
 	var Delay = argument_count > 0 ? argument[0] : 0.1;
-	//if (alarm[0] > Delay*60 || alarm[0] == -1)
-		alarm[0] = Delay*60/SpeedMultiplier;
-	show_debug_message("Next Turn!");
+	alarm[0] = Delay*60/SpeedMultiplier;
 		
 	switch(BattleStage)
 	{
@@ -96,11 +44,6 @@ function NextTurn()
 	//Check enemy and player health
 	if(oBattlePlayer.DisplayHealth <= 0 && BattleStage != BattleSection.PlayerDead)
 		BattleStage = BattleSection.PlayerDead;
-	
-	/*
-	if(DrawEnemyHealth <= 0 && BattleStage != BattleSection.PlayerVictory && BattleStage != BattleSection.RoomTransition)
-		BattleStage = BattleSection.PlayerVictory;
-	*/
 		
 	switch(BattleStage)
 	{
@@ -143,7 +86,10 @@ function RunBattleStage()
 			DrawGUI = true;
 			
 			with(oBattleMenuBase)
-				scrAnimReinit(Animations.SmoothFlip, Animations.IntroScale);
+				TweenPlay(FadeIn);
+				
+			with(oBattleCharBase)
+				TweenPlay(FadeIn);
 			break;
 		
 		case BattleSection.PlayerVictory:
@@ -206,4 +152,55 @@ function AddEnemy(Enemy)
 	}
 }
 
+// Create 'data manager' in the event that it does not exist for some reason (debug)
+if (!instance_exists(oAreaStats))
+	instance_create_layer(0, 0, "Instances", oAreaStats);
+
+//Initialize Itembar variables
+scrItems();
+
+// Create Battle Enemies
+EnemyInfo = oAreaStats.EnemyInfo;
+FocusedEnemy = 0;
+EnemyBattle = ds_list_create();
+for (var i=0;i<ds_list_size(EnemyInfo);i++)
+{
+	//Create Enemy Object
+	var Inst = instance_create_layer(640, 390, "Instances", ds_list_find_value(EnemyInfo, i).BattleObject);
+	ds_list_add(EnemyBattle, Inst);
+}
+oEnemyBattleParent.CalculatePosition();
+
+// Create Player and Allies
+instance_create_layer(0, 0, "GUI", oBattlePlayer);
+for (var i=0;i<ds_list_size(oAreaStats.AllyInfo);i++)
+{
+	instance_create_layer(0, 0, "GUI", ds_list_find_value(oAreaStats.AllyInfo, i));	
+}
+oBattleCharBase.CalculatePosition();
+
+instance_create_layer(0, 0, "GUI", oBattleMenuAttack);
+instance_create_layer(0, 0, "GUI", oBattleMenuBag);
+
+//Current battle stage
+BattleStage = BattleSection.PlayerAttack;
+
+Alpha = 0;
+
+//Timer Bar
+BattleTimer = 0;
+
+//Update stats effect
+DrawTimer = BattleTimer;
+timer[0] = -1;
+
+//Shake effect
+for(i=0;i<2;i++)
+{
+	Shake[i] = 0;
+}
+
+DrawGUI = false;
+
+//Proceed to start turn
 NextTurn(0.5);

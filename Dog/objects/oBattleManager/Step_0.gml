@@ -14,13 +14,16 @@ if (bCanInteract)
 		BattleTimer = -1;
 		with(oBattleMenuBase)
 		{
-			scrAnimReinit(Animations.Flip, Animations.FadeOut);
+			TweenPlay(FadeOut);
 			Selected = false;
 		}
+		
+		with(oBattleCharBase)
+				TweenPlay(FadeOut);
 	}
 }
 
-
+// Update Drawn Timer value
 var bCanDrawTimer = DrawTimer != BattleTimer && (DrawTimer != BattleTimer && !instance_exists(oMiniGame));
 if (bCanDrawTimer)
 {

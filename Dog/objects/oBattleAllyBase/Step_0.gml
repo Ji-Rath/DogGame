@@ -7,6 +7,8 @@ if (Neglect < MaxNeglect)
 }
 else if (!instance_exists(NeglectButton))
 {
-	NeglectButton = instance_create_layer(XPos+100, YPos, "GUI", oButtonHighFive);
+	var XOffset = 100;
+	NeglectButton = instance_create_layer(x+XOffset, y, "GUI", oButtonHighFive);
 	NeglectButton.AllyRef = self;
+	NeglectButton.XOffset = x+XOffset;
 }

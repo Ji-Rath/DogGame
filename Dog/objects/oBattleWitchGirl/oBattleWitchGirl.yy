@@ -24,7 +24,9 @@
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"oBattleWitchGirl","path":"objects/oBattleWitchGirl/oBattleWitchGirl.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
-  "overriddenProperties": [],
+  "overriddenProperties": [
+    {"propertyId":{"name":"image_index","path":"objects/oBattleCharBase/oBattleCharBase.yy",},"objectId":{"name":"oBattleCharBase","path":"objects/oBattleCharBase/oBattleCharBase.yy",},"value":"1","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+  ],
   "parent": {
     "name": "Player",
     "path": "folders/Objects/BattleScene/Player.yy",
