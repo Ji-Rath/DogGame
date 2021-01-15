@@ -35,7 +35,6 @@ ItemMouseHover = false;
 ItemMouseHoverSelect = 0;
 MenuSequence = -1;
 
-TweenSet(TWEEN_DEFAULT, "delta", true);
 FadeOut = TweenCreate("$0.25", "y>", room_height, "image_alpha>", 0);
 FadeIn = TweenCreate("$0.25", "y", room_height, y, "image_alpha>", 1);
 

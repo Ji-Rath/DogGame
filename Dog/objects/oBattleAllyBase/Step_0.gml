@@ -7,7 +7,7 @@ if (Neglect < MaxNeglect)
 }
 else if (!instance_exists(NeglectButton))
 {
-	var XOffset = 100;
+	var XOffset = 50;
 	NeglectButton = instance_create_layer(x+XOffset, y, "GUI", oButtonHighFive);
 	NeglectButton.AllyRef = self;
 	NeglectButton.XOffset = x+XOffset;

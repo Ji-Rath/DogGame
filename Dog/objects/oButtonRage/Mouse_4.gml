@@ -13,12 +13,15 @@ if(oBattleManager.DrawGUI)
 		
 		with(oBattleMenuBase)
 		{
-			scrAnimReinit(Animations.Flip, Animations.FadeOut);
+			TweenPlay(FadeOut);
 			Selected = false;
 		}
 		
 	    with(oBattleManager)
 			DrawGUI = false;
+		
+		with(oBattleCharBase)
+			TweenPlay(FadeOut);
         
         //Reset rage meter
         oBattlePlayer.Rage = 0;

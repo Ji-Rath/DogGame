@@ -49,3 +49,5 @@ function StoreEnemy()
 		ds_list_add(oAreaStats.AllyInfo, BattleObject);
 	}
 }
+
+TweenSet(TWEEN_DEFAULT, "delta", true);

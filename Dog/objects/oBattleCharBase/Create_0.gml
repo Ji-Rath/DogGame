@@ -3,7 +3,8 @@
 
 image_speed = 0;
 image_alpha = 0;
-x = 100; //XOffset
+var XOffset = 100;
+x = XOffset; //XOffset
 
 /// @desc Calculate the position for each Battle UI
 function CalculatePosition()
@@ -19,5 +20,5 @@ function CalculatePosition()
 	}
 }
 
-FadeIn = TweenCreate("$0.25", "x", 0, x, "image_alpha>", 1);
-FadeOut = TweenCreate("$0.25", "x", x, 0, "image_alpha>", 0);
+FadeIn = TweenCreate("$0.5", "x", 0, XOffset, "image_alpha>", 1);
+FadeOut = TweenCreate("$0.5", "x>", 0, "image_alpha>", 0);

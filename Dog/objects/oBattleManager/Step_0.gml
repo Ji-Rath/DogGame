@@ -19,7 +19,7 @@ if (bCanInteract)
 		}
 		
 		with(oBattleCharBase)
-				TweenPlay(FadeOut);
+			TweenPlay(FadeOut);
 	}
 }
 
