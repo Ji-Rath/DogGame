@@ -3,7 +3,7 @@
 
 event_inherited();
 
-if (oBattleManager.DrawGUI && scrAnimVisible())
+if (oBattleManager.DrawGUI)
 {
     //Execute highfive minigame
     with(oBattleManager)

@@ -2,7 +2,7 @@
 // You can write your code in this editor
 event_inherited();
 
-if(visible && scrAnimVisible())
+if(oBattleManager.DrawGUI)
 {
     //Execute Dogpaddler special mode
     with(oBattleManager)
@@ -13,12 +13,15 @@ if(visible && scrAnimVisible())
 		
 		with(oBattleMenuBase)
 		{
-			scrAnimReinit(Animations.Flip, Animations.FadeOut);
+			TweenPlay(FadeOut);
 			Selected = false;
 		}
 		
 	    with(oBattleManager)
 			DrawGUI = false;
+		
+		with(oBattleCharBase)
+			TweenPlay(FadeOut);
         
         //Reset rage meter
         oBattlePlayer.Rage = 0;

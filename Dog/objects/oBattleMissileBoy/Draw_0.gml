@@ -6,5 +6,5 @@ event_inherited();
 
 for (var i=0;i<Blocks;i++)
 {
-	draw_sprite(sShield, 0, XPos-50 + (i*50) ,YPos+50);
+	draw_sprite_ext(sShield, 0, x-50 + (i*50) ,y+50, image_xscale, image_yscale, image_angle, c_white, image_alpha);
 }

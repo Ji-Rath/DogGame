@@ -1,6 +1,4 @@
 
-scrAnimStep();
-
 if(visible && Selected)
 {
     //Update text if focused
@@ -33,9 +31,12 @@ if(visible && Selected)
                     
 	                    with(oBattleMenuBase)
 						{
-							scrAnimReinit(Animations.Flip, Animations.FadeOut);
+							TweenPlay(FadeOut);
 							Selected = false;
 						}
+						
+						with(oBattleCharBase)
+							TweenPlay(FadeOut);
                     
 	            		with(oBattleManager)
 							DrawGUI = false;

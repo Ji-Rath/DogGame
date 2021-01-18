@@ -8,8 +8,11 @@ scrExecuteAlt(ExecuteArray);
 with(oBattleMenuBase)
 {
 	Selected = false;
-	scrAnimReinit(-1, Animations.FadeOut);
+	TweenPlay(FadeOut);
 }
+
+with(oBattleCharBase)
+	TweenPlay(FadeOut);
 		
 with(oBattleManager)
 	DrawGUI = false;

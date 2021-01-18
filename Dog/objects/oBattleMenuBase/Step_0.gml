@@ -1,6 +1,4 @@
 
-scrAnimStep();
-
 if(CanPress() && Selected)
 {   
     //If player clicks on one of the buttons
