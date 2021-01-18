@@ -15,7 +15,7 @@ if(!Angry && Health < MaxHealth/2)
 {
 	with(oBattleManager)
 	{
-		SpeedMultiplier += 0.7;
+		SpeedMultiplier -= 0.25;
 		BattleTimerInit = 20/SpeedMultiplier; //Time for player turn (seconds)
 		AddEnemy(oCrab, 2);
 	}

@@ -19,7 +19,7 @@ if(EndTurn)
 		if(BattleStage == BattleSection.EnemyAttack)
 		{
 			if (GetFocusedEnemy().Health > 0)
-				NextTurn();
+				NextTurn(1);
 		}
 		else
 		{

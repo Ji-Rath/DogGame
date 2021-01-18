@@ -7,7 +7,7 @@ MiniGameScreenCloseSeq = seqAttackExit;
 
 /////////////////////////////////////////////////////////////////////////
 
-MiniGameTime /= oBattleManager.SpeedMultiplier;
+MiniGameTime *= oBattleManager.SpeedMultiplier;
 
 GameType = -1;
 

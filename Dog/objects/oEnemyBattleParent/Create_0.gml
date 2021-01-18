@@ -36,7 +36,7 @@ function ShiftEnemies()
 	var bHasFocus = false;
 	with (oEnemyBattleParent)
 	{
-		InstCount = instance_number(oEnemyBattleParent);
+		var InstCount = instance_number(oEnemyBattleParent);
 		MoveInterval = 1 / InstCount;
 		PathPos = LoopValue(PathPos, MoveInterval, 0, 1);
 		if (PathPos == 1)
@@ -71,15 +71,24 @@ function PickRandomGame()
 /// @arg {bool} bEnemyDeath=false
 function CalculatePosition()
 {
-	var bEnemyDeath = argument_count > 0 ? argument[0] : false;
 	var Count = instance_number(oEnemyBattleParent);
-	InstCount = bEnemyDeath ? Count-1 : Count;
-	MoveInterval = 1 / InstCount;
+	var InstCount = Count;
+	with (oEnemyBattleParent)
+	{
+		if (Health <= 0)
+			Count--;
+	}
+	MoveInterval = 1 / Count;
+	var CurrentPos = 0;
 	for(var i=0;i<InstCount;i++)
 	{
 		var Inst = instance_find(oEnemyBattleParent, i);
-		Inst.PathPos = MoveInterval * i;
-		Inst.path_position = PathPos;
+		if (Inst.Health >= 0)
+		{
+			Inst.PathPos = MoveInterval * CurrentPos;
+			Inst.path_position = PathPos;
+			CurrentPos++;
+		}
 	}
 }
 
