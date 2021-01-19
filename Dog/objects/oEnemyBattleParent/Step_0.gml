@@ -1,5 +1,5 @@
 
-if (path_index == pathEnemyTurn && path_speed != 0 && round(PathPos*100) == round(path_position * 100))
+if (path_index == pathEnemyTurn && path_speed != 0 && ceil(PathPos*100) == ceil(path_position*100))
 {
 	path_position = PathPos;
 	path_speed = 0;
@@ -9,18 +9,6 @@ if (path_index == pathEnemyTurn && path_speed != 0 && round(PathPos*100) == roun
 if(Health <= 0 && timer[0] == -1 && !IsDead && path_index != pathEnemyDeath && !instance_exists(oMiniGame))
 {
     timer[0] = 0.1*60;
-}
-
-if(!Angry && Health < MaxHealth/2)
-{
-	with(oBattleManager)
-	{
-		SpeedMultiplier -= 0.25;
-		BattleTimerInit = 20/SpeedMultiplier; //Time for player turn (seconds)
-		AddEnemy(oCrab, 2);
-	}
-	// CreateBattleTextEvent("Im Angry Now!", false, new TextInit(0.05, c_black, 1));
-	Angry = true;
 }
 
 //Perform enemy death animation

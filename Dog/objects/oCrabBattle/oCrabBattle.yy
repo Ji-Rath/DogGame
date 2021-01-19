@@ -33,7 +33,7 @@
   ],
   "properties": [],
   "overriddenProperties": [
-    {"propertyId":{"name":"Health","path":"objects/oEnemyBattleParent/oEnemyBattleParent.yy",},"objectId":{"name":"oEnemyBattleParent","path":"objects/oEnemyBattleParent/oEnemyBattleParent.yy",},"value":"10","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"Health","path":"objects/oEnemyBattleParent/oEnemyBattleParent.yy",},"objectId":{"name":"oEnemyBattleParent","path":"objects/oEnemyBattleParent/oEnemyBattleParent.yy",},"value":"5","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],
   "parent": {
     "name": "Enemies",

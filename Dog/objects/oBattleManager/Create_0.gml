@@ -37,10 +37,12 @@ function NextTurn()
 			break;
 		case BattleSection.PlayerAttack: 
 			BattleStage = BattleSection.EnemyAttack;
+			
+			// Wait slightly longer after enemy death
 			with (oEnemyBattleParent)
 			{
 				if (Health <= 0)
-					other.alarm[0] = 5*60;
+					other.alarm[0] = 1*60;
 			}
 			break;
 	}
@@ -72,8 +74,7 @@ function RunBattleStage()
 			}
 			else
 			{
-				var MiniGame = instance_create_layer(0,0,"GameManager",oMiniGame);
-				MiniGame.GameType = GetFocusedEnemy().PickRandomGame();
+				GetFocusedEnemy().PerformTurn();
 			}
 			break;
 		

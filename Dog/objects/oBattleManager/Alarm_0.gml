@@ -7,7 +7,6 @@ if (!bHasShiftedEnemies && BattleStage == BattleSection.EnemyAttack && instance_
 	oEnemyBattleParent.ShiftEnemies();
 	bHasShiftedEnemies = true;
 	alarm[0] = 0.75*60;
-	
 }
 else
 {

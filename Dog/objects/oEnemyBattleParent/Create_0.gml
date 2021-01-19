@@ -2,7 +2,6 @@
 MaxHealth = Health;
 AttackDamage = 0;
 Name = "";
-Angry = false;
 
 EnemyAttacks = [];
 
@@ -33,11 +32,12 @@ function DrawEnemyInit(_ShowEnemy, _DrawSmall) constructor
 function ShiftEnemies()
 {
 	var bTeleport = argument_count > 0 ? argument[0] : false;
+	var ShiftAmount = argument_count > 1 ? argument[1] : 1;
 	var bHasFocus = false;
 	with (oEnemyBattleParent)
 	{
 		var InstCount = instance_number(oEnemyBattleParent);
-		MoveInterval = 1 / InstCount;
+		MoveInterval = ShiftAmount / InstCount;
 		PathPos = LoopValue(PathPos, MoveInterval, 0, 1);
 		if (PathPos == 1)
 			PathPos = 0;
@@ -64,6 +64,12 @@ function ShiftEnemies()
 function PickRandomGame()
 {
 	return 	EnemyAttacks[random_range(0,array_length(EnemyAttacks))];
+}
+
+function PerformTurn()
+{
+	var MiniGame = instance_create_layer(0,0,"GameManager",oMiniGame);
+	MiniGame.GameType = PickRandomGame();
 }
 
 /// @func CalculatePosition(bEnemyDeath=false);
