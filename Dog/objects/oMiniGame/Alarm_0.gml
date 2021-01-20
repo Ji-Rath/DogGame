@@ -1,6 +1,15 @@
 
 with(oEnemyBattleParent)
+{
 	EnemyVisibility = new DrawEnemyInit(other.ShowEnemy, other.DrawSmall);
+	if (oBattleManager.GetFocusedEnemy() == id)
+		phy_active = other.ShowEnemy;
+	else
+	{
+		phy_active = false;	
+	}
+}
+	
 
 switch(GameType)
 {

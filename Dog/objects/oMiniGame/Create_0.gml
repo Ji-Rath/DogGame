@@ -1,7 +1,7 @@
 
 
 
-MiniGameTime = 5.5; //Time in seconds to complete minigame - is affected by speed multiplier
+MiniGameTime = 15 //5.5; //Time in seconds to complete minigame - is affected by speed multiplier
 MiniGameScreenOpenSeq = seqAttackEnter;
 MiniGameScreenCloseSeq = seqAttackExit;
 

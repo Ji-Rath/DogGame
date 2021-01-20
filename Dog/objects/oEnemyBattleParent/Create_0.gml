@@ -33,7 +33,6 @@ function ShiftEnemies()
 {
 	var bTeleport = argument_count > 0 ? argument[0] : false;
 	var ShiftAmount = argument_count > 1 ? argument[1] : 1;
-	var bHasFocus = false;
 	with (oEnemyBattleParent)
 	{
 		var InstCount = instance_number(oEnemyBattleParent);
@@ -49,13 +48,6 @@ function ShiftEnemies()
 		{
 			path_speed = 10;
 		}
-		
-		if (PathPos == 0)
-			bHasFocus = true;
-	}
-	if (!bHasFocus)
-	{
-		CalculatePosition();	
 	}
 }
 

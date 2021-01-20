@@ -43,4 +43,8 @@ if(HealthChanged)
 }
 //draw_path(pathEnemyTurn, 0,0, true);
 draw_set_alpha(1);
-    
+   
+if (global.Debug)
+{
+	physics_draw_debug();	
+}
