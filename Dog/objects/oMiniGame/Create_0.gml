@@ -24,6 +24,7 @@ OpenFraction = 0;
 Destroy = false;
 ShowEnemy = false;
 EndTurn = true;
+DrawWindow = true;
 
 enum Game
 {
@@ -45,6 +46,8 @@ enum Game
 	Golf,
 	SimonSays,
 	CrossRoad,
+	LemonadeLine,
+	Sandal
 }
 alarm[0] = 1;
 

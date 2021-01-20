@@ -34,16 +34,24 @@ else if (timer[1] != -1)
 	
 	layer_sequence_destroy(MiniGameScreenSeq);
 	layer_sequence_destroy(MiniGameEndSeq);
-		
-	if (DrawSmall)
+	
+	if (DrawWindow)
 	{
-		oBattleManager.DrawGUI = true;
+		if (DrawSmall)
+		{
+			oBattleManager.DrawGUI = true;
+		}
+		else
+		{
+			MiniGameScreenSeq = scrRunSequence(MiniGameScreenCloseSeq);
+		}
+		var Len = layer_sequence_get_length(MiniGameScreenSeq);
+		var Spd = layer_sequence_get_speedscale(MiniGameScreenSeq);
+		alarm[2] = Len*Spd;
 	}
 	else
 	{
-		MiniGameScreenSeq = scrRunSequence(MiniGameScreenCloseSeq);
+		alarm[2] = 0.1*60;	
 	}
-	var Len = layer_sequence_get_length(MiniGameScreenSeq);
-	var Spd = layer_sequence_get_speedscale(MiniGameScreenSeq);
-	alarm[2] = Len*Spd;
+	
 }

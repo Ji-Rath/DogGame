@@ -1,3 +1,7 @@
+
+with(oEnemyBattleParent)
+	EnemyVisibility = new DrawEnemyInit(other.ShowEnemy, other.DrawSmall);
+
 switch(GameType)
 {
     case Game.CrabAttack: //Deprecated mini game
@@ -89,7 +93,20 @@ switch(GameType)
 		CreateInstance(room_width/2 - 350, room_height/2, oCTSWall2);
 		CreateInstance(room_width/2 + 345, room_height/2, oCTSWall2);
 		break;
+	case Game.Sandal:
+		var Sandal = CreateInstance(0, 0, oSandal);
+		Sandal.SandalSequence = scrRunSequence(seqSandal);
+		EndTurn = true;
+		timer[1] = 1.5*60;
+		with(oEnemyBattleParent)
+			EnemyVisibility = new DrawEnemyInit(true, false);
+		DrawWindow = false;
+		break;
+	case Game.LemonadeLine:
+		with(oEnemyBattleParent)
+			path_start(pathEnemyLine, 5, path_action_restart, true);
+		break;
 }
 
-if (!DrawSmall)
+if (DrawWindow && !DrawSmall)
 	MiniGameScreenSeq = scrRunSequence(seqAttackEnter);

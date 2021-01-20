@@ -5,7 +5,7 @@ if(alarm[0] == -1)
     draw_set_color(c_ltgray);
 	draw_set_alpha(OpenEffect);
     
-    if(!DrawSmall)
+    if(DrawWindow && !DrawSmall)
     {
         //draw_roundrect(room_width/2+500,room_height/2+(250*OpenEffect),room_width/2-500,room_height/2-(250*OpenEffect),false)
         

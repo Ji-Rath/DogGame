@@ -1,5 +1,5 @@
 
-if (path_index == pathEnemyTurn && path_speed != 0 && ceil(PathPos*100) == ceil(path_position*100))
+if (path_index != pathEnemyDeath && path_speed != 0 && ceil(PathPos*10) == ceil(path_position*10))
 {
 	path_position = PathPos;
 	path_speed = 0;

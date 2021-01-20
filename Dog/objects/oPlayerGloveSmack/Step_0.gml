@@ -24,7 +24,7 @@ switch(State)
     
     case 1:
         //Action part
-        if(input_check(EVerb.Interact))
+        if(input_check_press(EVerb.Interact))
         {
             AnimIndex = 1;
             AnimSwitch = choose(0,1);
