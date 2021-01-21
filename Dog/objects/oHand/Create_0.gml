@@ -2,7 +2,7 @@
 // You can write your code in this editor
 
 TurnRate = 4; //Speed for turning cup when grabbed
-IceSpawnRate = 1;
+IceRate = 3; //Frequency to spawn ice (Every x water, spawn 1 ice)
 
 /////////////////////////////////////////////////////////////////////////////
 
@@ -35,7 +35,7 @@ function SpawnContents()
 	//	alarm[0] = IceSpawnRate * 60;
 	
 	static Spawn = 0;
-	if (Spawn == 6)
+	if (Spawn == IceRate)
 	{
 		oMiniGame.CreateInstance(spawnX, spawnY, oIce);
 		Spawn = 0;
@@ -51,13 +51,13 @@ function SpawnContents()
     physics_particle_group_begin(flags, groupflags, spawnX, spawnY, 0, 0, 0, 0, c_white, 1, 1, 2);
     //since it's a group, we have to add some sort of shape. 
     //usually you would have more than 1 object added, however not for this example.
-    physics_particle_group_circle(2);
+    physics_particle_group_circle(1);
     //set the collision (since it's a circle that's 16x16 in a 24x24 centered sprite, we set the radius
     //which is half of a circle to 6. Not 8, which is half, because we want them to overlap a bit to
     //create a "blending" effect
     physics_particle_set_radius(12);
     //set how heavy the object it (mass in physics)
-    physics_particle_set_density(0.001);
+    physics_particle_set_density(0.002);
     //set the waters velocity, or how far it will continue to move when 
     //acted upon and not acted upon (collision wise)
     physics_particle_set_damping(0.1);
@@ -100,5 +100,10 @@ CreateBoxFixture(-16, 0, 16, 0, 16, 128, -16, 128);
 
 #endregion
 
-repeat(30)
+repeat(20)
 	SpawnContents();
+
+RestingBox[0] = oMiniGame.CreateInstance(phy_position_x, phy_position_y + 110, oHandRest);
+RestingBox[1] = oMiniGame.CreateInstance(phy_position_x, phy_position_y - 75, oHandRest);
+RestingBox[2] = oMiniGame.CreateInstance(phy_position_x + 100, phy_position_y, oHandRest);
+RestingBox[2].phy_rotation = 90;

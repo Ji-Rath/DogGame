@@ -24,16 +24,12 @@ if (bCanInteract)
 }
 
 // Update Drawn Timer value
-var bCanDrawTimer = DrawTimer != BattleTimer && (DrawTimer != BattleTimer && !instance_exists(oMiniGame));
+var bCanDrawTimer = (DrawTimer != BattleTimer && !instance_exists(oMiniGame));
 if (bCanDrawTimer)
 {
 	var Increment = 0.25;
 	DrawTimer += clamp(Increment*16, 0, abs(DrawTimer-BattleTimer))*sign(BattleTimer-DrawTimer);
 }
-
-//Player UI shake when damaged
-//if(DrawPlayerHealth > global.PlayerHP)
-//	Shake[0] = 8;
 
 //Shake effect
 for(i=0;i<array_length_1d(Shake);i++)

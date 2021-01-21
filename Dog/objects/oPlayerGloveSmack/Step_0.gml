@@ -18,7 +18,7 @@ switch(State)
             AnimIndex = 0;
         }
         //Increment animation
-        AnimIndex += 0.5;
+        AnimIndex += 0.25;
         
     break;
     
@@ -27,10 +27,10 @@ switch(State)
         if(input_check_press(EVerb.Interact))
         {
             AnimIndex = 1;
-            AnimSwitch = choose(0,1);
             with(oBattleManager)
             {
                 GetFocusedEnemy().Health -= 0.5;
+				oCamera.ScreenShake(30, 100);
             }
         }
         if(input_check_release(EVerb.Interact))

@@ -74,6 +74,7 @@
     {"id":{"name":"oMissileBoy","path":"objects/oMissileBoy/oMissileBoy.yy",},"order":1,},
     {"id":{"name":"oNPCBase","path":"objects/oNPCBase/oNPCBase.yy",},"order":0,},
     {"id":{"name":"oBattleWitchGirl","path":"objects/oBattleWitchGirl/oBattleWitchGirl.yy",},"order":4,},
+    {"id":{"name":"oHandRest","path":"objects/oHandRest/oHandRest.yy",},"order":5,},
     {"id":{"name":"oOrderPTWM","path":"objects/oOrderPTWM/oOrderPTWM.yy",},"order":1,},
     {"id":{"name":"sHoleInOne","path":"sprites/sHoleInOne/sHoleInOne.yy",},"order":2,},
     {"id":{"name":"oOldMan","path":"objects/oOldMan/oOldMan.yy",},"order":1,},

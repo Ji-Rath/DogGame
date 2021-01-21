@@ -50,6 +50,8 @@ switch(GameType)
 			EnemyVisibility = new DrawEnemyInit(true, false);
         SmallScreenPosX = 250+50;
         SmallScreenPosY = 125+50;
+		var Signal = oMiniGame.CreateInstance(SmallScreenPosX, SmallScreenPosY, oButtonSignal);
+		Signal.sprite_index = sButtonPress;
         CreateInstance(SmallScreenPosX,SmallScreenPosY,oHighfive);
 		DrawSmall = true;
 		break;

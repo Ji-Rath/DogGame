@@ -23,15 +23,6 @@ else if (timer[1] != -1)
 	timer[1] = -1;
 	Destroy = true;
 	
-	//Prevent decimals
-    with(oBattleManager)
-    {
-        global.PlayerHP = round(global.PlayerHP);
-        global.PlayerPP = round(global.PlayerPP);
-	}
-	with(oEnemyBattleParent)
-		Health = floor(Health);
-	
 	layer_sequence_destroy(MiniGameScreenSeq);
 	layer_sequence_destroy(MiniGameEndSeq);
 	
@@ -49,9 +40,4 @@ else if (timer[1] != -1)
 		var Spd = layer_sequence_get_speedscale(MiniGameScreenSeq);
 		alarm[2] = Len*Spd;
 	}
-	else
-	{
-		alarm[2] = 0.1*60;	
-	}
-	
 }

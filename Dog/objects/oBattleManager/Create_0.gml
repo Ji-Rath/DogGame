@@ -80,6 +80,7 @@ function RunBattleStage()
 		
 		case BattleSection.PlayerAttack: //Player turn
 			BattleTimer = BattleTimerInit*60;
+			//BattleTimer *= SpeedMultiplier;
 			DrawTimer = BattleTimer;
 			
 			if(global.PlayerPP <= 0)
