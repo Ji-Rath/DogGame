@@ -2,7 +2,7 @@
 //Shake enemy if damaged
 var XPos = x + choose(oBattleManager.Shake[1],-oBattleManager.Shake[1]);
 var YPos = y;
-var Dist = path_index == pathEnemyTurn ? abs(0.5 - path_position)*1.5 + 0.25 : 1;
+var Dist = path_index != pathEnemyDeath ? abs(0.5 - path_position)*1.5 + 0.25 : 1;
 var Alpha = 1*Dist;
 var Scale = 1*Dist;
 var YDivision = 1;
@@ -13,7 +13,7 @@ if(instance_exists(oMiniGame))
     if(instance_exists(oPan) && oPan.Hit)
         YDivision = 2;
 }
-if (oBattleManager.GetFocusedEnemy() == id)
+if (oBattleManager.GetFocusedEnemy() == id || (instance_exists(oMiniGame) && !oMiniGame.DrawWindow))
 {
 	if(EnemyVisibility.DrawSmall)
 	{
@@ -43,4 +43,8 @@ if(HealthChanged)
 }
 //draw_path(pathEnemyTurn, 0,0, true);
 draw_set_alpha(1);
-    
+   
+if (global.Debug)
+{
+	physics_draw_debug();	
+}

@@ -3,6 +3,6 @@
 
 if (instance_exists(AllyRef))
 {
-	x = AllyRef.x + XOffset;
+	x = AllyRef.x + 75;
 	image_alpha = AllyRef.image_alpha;
 }

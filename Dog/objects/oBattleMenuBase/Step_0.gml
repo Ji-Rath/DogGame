@@ -17,7 +17,7 @@ if(CanPress() && Selected)
             if(mouse_check_button_pressed(mb_left))
             {
                 //Do delayed action based on item selected
-                alarm[0] = 0.3*60/oBattleManager.SpeedMultiplier;
+                alarm[0] = 0.3*60*oBattleManager.SpeedMultiplier;
                 
                 //Decrease ItemCount if applicable and update icons
                 var ItemCount = ds_map_find_value(oAreaStats.Items, ItemMouseHoverSelect);

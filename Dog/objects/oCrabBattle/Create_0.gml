@@ -22,4 +22,25 @@ Name = "Crab"
 ////////////////////////////////////////////////////////////////////////////
 
 MaxHealth = Health;
-EnemyAttacks = [Game.CrossRoad];
+EnemyAttacks = [Game.ThirstyDoggo];
+Angry = false;
+
+function PerformTurn()
+{
+	if (!Angry && Health < MaxHealth/2)
+	{
+		with (oBattleManager)
+		{
+			SpeedMultiplier -= 0.25;
+			BattleTimerInit = 20*SpeedMultiplier; //Time for player turn (seconds)
+			NextTurn(1);
+			AddEnemy(oCrab, 2);
+		}
+		Angry = true;
+	}
+	else
+	{
+		var MiniGame = instance_create_layer(0,0,"GameManager",oMiniGame);
+		MiniGame.GameType = PickRandomGame();
+	}
+}

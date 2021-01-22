@@ -8,6 +8,6 @@ event_inherited();
 if (CanPress())
 {
 	ItemMouseHoverSelect = ds_list_find_value(Contents,0);
-	alarm[0] = 0.3*60/oBattleManager.SpeedMultiplier;
+	alarm[0] = 0.3*60*oBattleManager.SpeedMultiplier;
 	Selected = false; //Prevent hidden menu from showing!
 }

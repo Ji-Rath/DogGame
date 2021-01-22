@@ -1,13 +1,13 @@
 
 
 
-MiniGameTime = 5.5; //Time in seconds to complete minigame - is affected by speed multiplier
+MiniGameTime = 6; //Time in seconds to complete minigame - is affected by speed multiplier
 MiniGameScreenOpenSeq = seqAttackEnter;
 MiniGameScreenCloseSeq = seqAttackExit;
 
 /////////////////////////////////////////////////////////////////////////
 
-MiniGameTime /= oBattleManager.SpeedMultiplier;
+MiniGameTime *= oBattleManager.SpeedMultiplier;
 
 GameType = -1;
 
@@ -24,6 +24,7 @@ OpenFraction = 0;
 Destroy = false;
 ShowEnemy = false;
 EndTurn = true;
+DrawWindow = true;
 
 enum Game
 {
@@ -45,6 +46,8 @@ enum Game
 	Golf,
 	SimonSays,
 	CrossRoad,
+	LemonadeLine,
+	Sandal
 }
 alarm[0] = 1;
 

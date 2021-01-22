@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-SpeedMultiplier = 0.7;
+SpeedMultiplier = 0.8;
 
 //Battle timer values
 BattleTimerInit = 15; //Time for player turn (seconds) - Multiplied by speed multiplier
@@ -23,13 +23,12 @@ enum BattleSection
 function NextTurn()
 {
 	var Delay = argument_count > 0 ? argument[0] : 0.1;
-	alarm[0] = Delay*60/SpeedMultiplier;
+	alarm[0] = (Delay*60)*SpeedMultiplier;
 		
 	switch(BattleStage)
 	{
 		case BattleSection.EnemyAttack:
 			FocusedEnemy++;
-			oEnemyBattleParent.ShiftEnemies();
 			if (FocusedEnemy >= ds_list_size(EnemyBattle))
 			{
 				BattleStage = BattleSection.PlayerAttack;
@@ -38,6 +37,13 @@ function NextTurn()
 			break;
 		case BattleSection.PlayerAttack: 
 			BattleStage = BattleSection.EnemyAttack;
+			
+			// Wait slightly longer after enemy death
+			with (oEnemyBattleParent)
+			{
+				if (Health <= 0)
+					other.alarm[0] = 1*60;
+			}
 			break;
 	}
 	
@@ -59,21 +65,22 @@ function RunBattleStage()
 	switch(BattleStage)
 	{
 		case BattleSection.EnemyAttack: //Enemy turn, send enemy minigame
-			if (oBattlePlayer.BlockableAttacks > 0)
+			// Handle MissileBoy blockable attacks
+			if (instance_exists(oBattleMissileBoy) && oBattleMissileBoy.CanBlockAttack())
 			{
-				oBattlePlayer.BlockableAttacks--;
+				oBattleMissileBoy.Blocks--;
 				scrRunSequence(seqShieldDefend);
 				NextTurn(1);
 			}
 			else
 			{
-				var MiniGame = instance_create_layer(0,0,"GameManager",oMiniGame);
-				MiniGame.GameType = GetFocusedEnemy().PickRandomGame();
+				GetFocusedEnemy().PerformTurn();
 			}
 			break;
 		
 		case BattleSection.PlayerAttack: //Player turn
 			BattleTimer = BattleTimerInit*60;
+			//BattleTimer *= SpeedMultiplier;
 			DrawTimer = BattleTimer;
 			
 			if(global.PlayerPP <= 0)
@@ -135,10 +142,9 @@ function DeleteEnemy(Enemy)
 /// @arg {int} Count=1
 function AddEnemy(Enemy)
 {
-	static CanAdd = true;
 	var Count = argument_count > 1 ? argument[1] : 1;
 	
-	if (CanAdd)
+	if (instance_number(oEnemyBattleParent)+Count <= 3)
 	{
 		repeat(Count)
 		{
@@ -148,7 +154,6 @@ function AddEnemy(Enemy)
 			instance_destroy(Inst);
 		}
 		oEnemyBattleParent.CalculatePosition();
-		CanAdd = false;
 	}
 }
 
@@ -201,6 +206,7 @@ for(i=0;i<2;i++)
 }
 
 DrawGUI = false;
+bHasShiftedEnemies = false;
 
 //Proceed to start turn
 NextTurn(0.5);

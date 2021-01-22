@@ -2,7 +2,6 @@
 MaxHealth = Health;
 AttackDamage = 0;
 Name = "";
-Angry = false;
 
 EnemyAttacks = [];
 
@@ -17,6 +16,8 @@ DrawEnemyHealth = Health;
 
 OpenFraction = 0;
 OpenEffect = 0;
+HealthLerp = 0;
+HealthTween = -1;
 
 path_start(pathEnemyTurn, 10, path_action_restart, true);
 PathPos = 0;
@@ -33,11 +34,11 @@ function DrawEnemyInit(_ShowEnemy, _DrawSmall) constructor
 function ShiftEnemies()
 {
 	var bTeleport = argument_count > 0 ? argument[0] : false;
-	var bHasFocus = false;
+	var ShiftAmount = argument_count > 1 ? argument[1] : 1;
 	with (oEnemyBattleParent)
 	{
-		InstCount = instance_number(oEnemyBattleParent);
-		MoveInterval = 1 / InstCount;
+		var InstCount = instance_number(oEnemyBattleParent);
+		MoveInterval = ShiftAmount / InstCount;
 		PathPos = LoopValue(PathPos, MoveInterval, 0, 1);
 		if (PathPos == 1)
 			PathPos = 0;
@@ -49,13 +50,6 @@ function ShiftEnemies()
 		{
 			path_speed = 10;
 		}
-		
-		if (PathPos == 0)
-			bHasFocus = true;
-	}
-	if (!bHasFocus)
-	{
-		CalculatePosition();	
 	}
 }
 
@@ -66,20 +60,35 @@ function PickRandomGame()
 	return 	EnemyAttacks[random_range(0,array_length(EnemyAttacks))];
 }
 
+function PerformTurn()
+{
+	var MiniGame = instance_create_layer(0,0,"GameManager",oMiniGame);
+	MiniGame.GameType = PickRandomGame();
+}
+
 /// @func CalculatePosition(bEnemyDeath=false);
 /// @desc Reposition enemies in appropriate position based on enemies alive
 /// @arg {bool} bEnemyDeath=false
 function CalculatePosition()
 {
-	var bEnemyDeath = argument_count > 0 ? argument[0] : false;
 	var Count = instance_number(oEnemyBattleParent);
-	InstCount = bEnemyDeath ? Count-1 : Count;
-	MoveInterval = 1 / InstCount;
+	var InstCount = Count;
+	with (oEnemyBattleParent)
+	{
+		if (Health <= 0)
+			Count--;
+	}
+	MoveInterval = 1 / Count;
+	var CurrentPos = 0;
 	for(var i=0;i<InstCount;i++)
 	{
 		var Inst = instance_find(oEnemyBattleParent, i);
-		Inst.PathPos = MoveInterval * i;
-		Inst.path_position = PathPos;
+		if (Inst.Health >= 0)
+		{
+			Inst.PathPos = MoveInterval * CurrentPos;
+			Inst.path_position = PathPos;
+			CurrentPos++;
+		}
 	}
 }
 

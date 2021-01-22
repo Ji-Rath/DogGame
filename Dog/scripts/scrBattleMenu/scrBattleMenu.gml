@@ -12,6 +12,8 @@ function scrItems() {
 	    Chips,
 	    BroomAttack,
 	    Highfive,
+		Sandal,
+		LemonadeLine,
 	    LastItem
 	}
 
@@ -34,10 +36,20 @@ function scrItems() {
 	ItemExecute[CurrentItem] = [scrItemMiniGame, Game.BroomAttack, 5, false, false];
 	ItemDescription[CurrentItem] = ["Broom","Metal Pan",sEnemydownrun, 2, ItemExecute[CurrentItem]];
 	ds_map_add(oAreaStats.Items, CurrentItem, -1);
+	
+	CurrentItem = Item.LemonadeLine;
+	ItemExecute[CurrentItem] = [scrItemMiniGame, Game.LemonadeLine, 5, false, false];
+	ItemDescription[CurrentItem] = ["Line","Line up for lemonade!",sEnemydownrun, 2, ItemExecute[CurrentItem]];
+	ds_map_add(oAreaStats.Items, CurrentItem, -1);
 
 	CurrentItem = Item.Highfive;
 	ItemExecute[CurrentItem] = [scrSameScreenMiniGame, Game.Highfive];
 	ItemDescription[CurrentItem] = ["Broom","Metal Pan",sEnemydownrun, 4, ItemExecute[CurrentItem]];
+	
+	CurrentItem = Item.Sandal;
+	ItemExecute[CurrentItem] = [scrSameScreenMiniGame, Game.Sandal];
+	ItemDescription[CurrentItem] = ["La Chancla", "Deliver a whooping", sEnemyalert, 1, ItemExecute[CurrentItem]];
+	ds_map_add(oAreaStats.Items, CurrentItem, 1);
 }
 
 /// @param GameType

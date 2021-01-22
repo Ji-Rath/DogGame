@@ -27,7 +27,7 @@ if(visible && Selected)
                     if (oBattleWitchGirl.CanPerformAbility())
                     {
 						ItemMouseHoverSelect = i;
-						alarm[0] = 0.5*60/oBattleManager.SpeedMultiplier;
+						alarm[0] = 0.5*60*oBattleManager.SpeedMultiplier;
                     
 	                    with(oBattleMenuBase)
 						{

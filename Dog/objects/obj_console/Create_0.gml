@@ -78,12 +78,12 @@ main_area_height = 40 // the height of the text area
 main_area_inner_padding_sides = 50 // how far away from the left side the text starts on the main area 
 history_line_height = 24
 predict_line_height = 22
-view_bottom_margin = 800
+view_bottom_margin = 500 //800
 view_bottom_padding = 10
-view_left_margin = 850
+view_left_margin = 500 //850
 view_left_padding = 60 // this is also the space the number data to go 
 view_data_height = 32
-view_data_width = 110
+view_data_width = 200
 view_each_height = 50
 #endregion
 #region animations 

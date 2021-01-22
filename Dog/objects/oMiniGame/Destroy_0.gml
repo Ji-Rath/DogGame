@@ -19,7 +19,7 @@ if(EndTurn)
 		if(BattleStage == BattleSection.EnemyAttack)
 		{
 			if (GetFocusedEnemy().Health > 0)
-				NextTurn();
+				NextTurn(1);
 		}
 		else
 		{
@@ -43,5 +43,4 @@ else //Only show GUI fade in if it was invisible before
 
 layer_sequence_destroy(MiniGameScreenSeq);
 layer_sequence_destroy(MiniGameEndSeq);
-
 	
