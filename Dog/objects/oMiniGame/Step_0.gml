@@ -40,4 +40,8 @@ else if (timer[1] != -1)
 		var Spd = layer_sequence_get_speedscale(MiniGameScreenSeq);
 		alarm[2] = Len*Spd;
 	}
+	else
+	{
+		alarm[2] = 0.1*60;	
+	}
 }

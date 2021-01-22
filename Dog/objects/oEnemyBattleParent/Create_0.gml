@@ -16,6 +16,8 @@ DrawEnemyHealth = Health;
 
 OpenFraction = 0;
 OpenEffect = 0;
+HealthLerp = 0;
+HealthTween = -1;
 
 path_start(pathEnemyTurn, 10, path_action_restart, true);
 PathPos = 0;

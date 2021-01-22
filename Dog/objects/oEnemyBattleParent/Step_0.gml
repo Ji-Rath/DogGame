@@ -72,8 +72,8 @@ else
 	}
 }
 
-var bHealthChanged = (round(DrawEnemyHealth) != Health && !HealthChanged);
-var bHealthEqual = (round(DrawEnemyHealth) == Health && HealthChanged);
+var bHealthChanged = (DrawEnemyHealth != Health && !HealthChanged);
+var bHealthEqual = (DrawEnemyHealth == Health && HealthChanged);
 if (bHealthChanged && alarm[0] = -1)
 {
 	alarm[0] = 1;
@@ -88,8 +88,14 @@ if (bHealthEqual && alarm[0] = -1)
 		Vulnerable = false;	
 	alarm[0] = 0.5*60;
 }
-
 if (HealthChanged)
-	DrawEnemyHealth = clamp(DrawEnemyHealth+(0.1*sign(Health - DrawEnemyHealth)), 0, MaxHealth);
+{
+	if (!TweenIsActive(HealthTween))
+	{
+		HealthTween = TweenFire("$1", "HealthLerp", 0, 1);
+	}
+	DrawEnemyHealth = lerp(DrawEnemyHealth, Health, HealthLerp);
+	//DrawEnemyHealth = clamp(DrawEnemyHealth+(0.1*sign(Health - DrawEnemyHealth)), 0, MaxHealth);
+}
 
 OpenEffect = sin(OpenFraction);
