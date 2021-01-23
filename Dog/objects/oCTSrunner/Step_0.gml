@@ -1,11 +1,11 @@
 ///movement
 
-if (keyboard_check(vk_right))
+if (input_check(EVerb.MoveRight))
 	{
 		image_speed = 1;
 	
 	}
-else if (keyboard_check(vk_left))
+else if (input_check(EVerb.MoveLeft))
 	{
 		image_speed = 1;	
 	}

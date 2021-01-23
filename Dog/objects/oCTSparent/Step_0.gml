@@ -1,8 +1,8 @@
-if (keyboard_check(vk_right))
+if (input_check(EVerb.MoveRight))
 	{
 	x -= hsp;	
 	}
-if (keyboard_check(vk_left))
+if (input_check(EVerb.MoveLeft))
 	{
 	x += hsp;	
 	}

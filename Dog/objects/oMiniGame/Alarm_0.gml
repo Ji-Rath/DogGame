@@ -82,12 +82,11 @@ switch(GameType)
 	case Game.CrossRoad:
 		CreateInstance(room_width/2,room_height,oCTSparent);
 		CreateInstance(room_width/2, room_height/2, oCTSrunner);
-		CreateInstance(room_width/2 + 150, room_height/2, oCTSlitter);
+		CreateInstance(room_width/2 - 150, room_height/2, oCTStruck);
 		CreateInstance(room_width/2 - 150, room_height/2, oCTStruck);
 		CreateInstance(room_width/2 - 400, room_height/2, oCTSWall);
 		CreateInstance(room_width/2 + 395, room_height/2, oCTSWall);
-		CreateInstance(room_width/2 - 350, room_height/2, oCTSWall2);
-		CreateInstance(room_width/2 + 345, room_height/2, oCTSWall2);
+
 		break;
 }
 

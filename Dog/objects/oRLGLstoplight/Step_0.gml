@@ -22,3 +22,5 @@ else
 				go =  irandom_range(6 * 30, 10 * 30);
 			}
 	}
+	
+// use an alarm to set red state
