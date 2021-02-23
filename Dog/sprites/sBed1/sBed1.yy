@@ -7,10 +7,10 @@
   "edgeFiltering": false,
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
-  "bbox_left": 11,
-  "bbox_right": 115,
-  "bbox_top": 3,
-  "bbox_bottom": 168,
+  "bbox_left": 14,
+  "bbox_right": 112,
+  "bbox_top": 5,
+  "bbox_bottom": 166,
   "HTile": false,
   "VTile": false,
   "For3D": false,
@@ -24,10 +24,9 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"76468367-e6b6-4dda-99af-628524c143de","path":"sprites/sBed1/sBed1.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"76468367-e6b6-4dda-99af-628524c143de","path":"sprites/sBed1/sBed1.yy",},"LayerId":{"name":"a2de19c8-6618-451b-b4a7-fd79357ba514","path":"sprites/sBed1/sBed1.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"76468367-e6b6-4dda-99af-628524c143de","path":"sprites/sBed1/sBed1.yy",},"LayerId":{"name":"9dd5c005-ff01-4c05-82d2-27d2d61cd3f3","path":"sprites/sBed1/sBed1.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sBed1","path":"sprites/sBed1/sBed1.yy",},"resourceVersion":"1.0","name":"76468367-e6b6-4dda-99af-628524c143de","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"f4fd0c7c-88ae-40c4-acb3-66bfd34e4cd6","path":"sprites/sBed1/sBed1.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"f4fd0c7c-88ae-40c4-acb3-66bfd34e4cd6","path":"sprites/sBed1/sBed1.yy",},"LayerId":{"name":"31389fa7-4098-4914-8bef-0a5fb713b059","path":"sprites/sBed1/sBed1.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sBed1","path":"sprites/sBed1/sBed1.yy",},"resourceVersion":"1.0","name":"f4fd0c7c-88ae-40c4-acb3-66bfd34e4cd6","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"sBed1","path":"sprites/sBed1/sBed1.yy",},
@@ -42,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"9c6ef2a7-6d02-44d4-a604-04d14bc1f4ca","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"76468367-e6b6-4dda-99af-628524c143de","path":"sprites/sBed1/sBed1.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"4ba24c08-7ea4-439f-a8e7-7a4578392934","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"f4fd0c7c-88ae-40c4-acb3-66bfd34e4cd6","path":"sprites/sBed1/sBed1.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -66,8 +65,7 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"a2de19c8-6618-451b-b4a7-fd79357ba514","tags":[],"resourceType":"GMImageLayer",},
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Layer 1","resourceVersion":"1.0","name":"9dd5c005-ff01-4c05-82d2-27d2d61cd3f3","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"31389fa7-4098-4914-8bef-0a5fb713b059","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
     "name": "dogpaddler'shouse",

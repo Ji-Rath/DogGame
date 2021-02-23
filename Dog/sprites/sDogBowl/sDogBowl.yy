@@ -24,10 +24,9 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"7f8badd0-ef41-48c7-bbb1-8b19fb65e455","path":"sprites/sDogBowl/sDogBowl.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"7f8badd0-ef41-48c7-bbb1-8b19fb65e455","path":"sprites/sDogBowl/sDogBowl.yy",},"LayerId":{"name":"66187dee-98c5-4d58-9150-494a4d786635","path":"sprites/sDogBowl/sDogBowl.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"7f8badd0-ef41-48c7-bbb1-8b19fb65e455","path":"sprites/sDogBowl/sDogBowl.yy",},"LayerId":{"name":"592bc88f-95e7-48bd-bef6-cff7ca078cb1","path":"sprites/sDogBowl/sDogBowl.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sDogBowl","path":"sprites/sDogBowl/sDogBowl.yy",},"resourceVersion":"1.0","name":"7f8badd0-ef41-48c7-bbb1-8b19fb65e455","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"bd6c4d4a-1c9c-4b29-9b55-2caf82c9b0a0","path":"sprites/sDogBowl/sDogBowl.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"bd6c4d4a-1c9c-4b29-9b55-2caf82c9b0a0","path":"sprites/sDogBowl/sDogBowl.yy",},"LayerId":{"name":"e9d91d34-6dcd-4405-bb7d-3372018ee273","path":"sprites/sDogBowl/sDogBowl.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sDogBowl","path":"sprites/sDogBowl/sDogBowl.yy",},"resourceVersion":"1.0","name":"bd6c4d4a-1c9c-4b29-9b55-2caf82c9b0a0","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"sDogBowl","path":"sprites/sDogBowl/sDogBowl.yy",},
@@ -42,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"aacd1608-b26e-49af-8d52-a4a9bac3cf6a","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"7f8badd0-ef41-48c7-bbb1-8b19fb65e455","path":"sprites/sDogBowl/sDogBowl.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"c9a4d756-0be5-4334-b8bb-324605040a2b","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"bd6c4d4a-1c9c-4b29-9b55-2caf82c9b0a0","path":"sprites/sDogBowl/sDogBowl.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -66,8 +65,7 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"66187dee-98c5-4d58-9150-494a4d786635","tags":[],"resourceType":"GMImageLayer",},
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Layer 1","resourceVersion":"1.0","name":"592bc88f-95e7-48bd-bef6-cff7ca078cb1","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"e9d91d34-6dcd-4405-bb7d-3372018ee273","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
     "name": "dogpaddler'shouse",

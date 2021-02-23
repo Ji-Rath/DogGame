@@ -8,9 +8,9 @@
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
   "bbox_left": 1,
-  "bbox_right": 63,
-  "bbox_top": 18,
-  "bbox_bottom": 58,
+  "bbox_right": 62,
+  "bbox_top": 19,
+  "bbox_bottom": 55,
   "HTile": false,
   "VTile": false,
   "For3D": false,
@@ -24,10 +24,9 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"b5dd8523-c7fa-469f-9919-7036af998520","path":"sprites/sStump/sStump.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"b5dd8523-c7fa-469f-9919-7036af998520","path":"sprites/sStump/sStump.yy",},"LayerId":{"name":"8146a13d-0d19-4f2f-a299-7ee121f7453f","path":"sprites/sStump/sStump.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"b5dd8523-c7fa-469f-9919-7036af998520","path":"sprites/sStump/sStump.yy",},"LayerId":{"name":"f05fe04f-0dd1-4446-9422-536386363feb","path":"sprites/sStump/sStump.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sStump","path":"sprites/sStump/sStump.yy",},"resourceVersion":"1.0","name":"b5dd8523-c7fa-469f-9919-7036af998520","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"5ca486cb-9714-4782-9832-2a2c35c94273","path":"sprites/sStump/sStump.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"5ca486cb-9714-4782-9832-2a2c35c94273","path":"sprites/sStump/sStump.yy",},"LayerId":{"name":"e927324b-30c9-4a79-8b8d-a8f277d1bb3b","path":"sprites/sStump/sStump.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sStump","path":"sprites/sStump/sStump.yy",},"resourceVersion":"1.0","name":"5ca486cb-9714-4782-9832-2a2c35c94273","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"sStump","path":"sprites/sStump/sStump.yy",},
@@ -42,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"02742797-350d-4075-89ce-05698479d778","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"b5dd8523-c7fa-469f-9919-7036af998520","path":"sprites/sStump/sStump.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"6d41e1d6-ed91-40d9-a9bb-2262174370a0","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"5ca486cb-9714-4782-9832-2a2c35c94273","path":"sprites/sStump/sStump.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -66,8 +65,7 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"8146a13d-0d19-4f2f-a299-7ee121f7453f","tags":[],"resourceType":"GMImageLayer",},
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Layer 1","resourceVersion":"1.0","name":"f05fe04f-0dd1-4446-9422-536386363feb","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"e927324b-30c9-4a79-8b8d-a8f277d1bb3b","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
     "name": "Foliage",

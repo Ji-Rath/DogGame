@@ -8,14 +8,14 @@
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
   "bbox_left": 64,
-  "bbox_right": 1128,
-  "bbox_top": 27,
-  "bbox_bottom": 831,
+  "bbox_right": 1087,
+  "bbox_top": 64,
+  "bbox_bottom": 959,
   "HTile": false,
   "VTile": false,
   "For3D": false,
-  "width": 1316,
-  "height": 897,
+  "width": 1189,
+  "height": 1015,
   "textureGroupId": {
     "name": "Default",
     "path": "texturegroups/Default",
@@ -24,9 +24,9 @@
   "gridX": 100,
   "gridY": 100,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"84c9e230-6c03-458e-9651-6e6447b376ce","path":"sprites/sOutdoors_01/sOutdoors_01.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"84c9e230-6c03-458e-9651-6e6447b376ce","path":"sprites/sOutdoors_01/sOutdoors_01.yy",},"LayerId":{"name":"031d9bd7-57bb-4f2d-8420-66219f3214a7","path":"sprites/sOutdoors_01/sOutdoors_01.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sOutdoors_01","path":"sprites/sOutdoors_01/sOutdoors_01.yy",},"resourceVersion":"1.0","name":"84c9e230-6c03-458e-9651-6e6447b376ce","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"9f677b8f-9975-4756-8404-635ea0ac3127","path":"sprites/sOutdoors_01/sOutdoors_01.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"9f677b8f-9975-4756-8404-635ea0ac3127","path":"sprites/sOutdoors_01/sOutdoors_01.yy",},"LayerId":{"name":"bdf7dd61-c598-416e-b0e3-8f5d3d4279e8","path":"sprites/sOutdoors_01/sOutdoors_01.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sOutdoors_01","path":"sprites/sOutdoors_01/sOutdoors_01.yy",},"resourceVersion":"1.0","name":"9f677b8f-9975-4756-8404-635ea0ac3127","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"sOutdoors_01","path":"sprites/sOutdoors_01/sOutdoors_01.yy",},
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"19d94927-c96a-42f7-b52b-b758955edfc9","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"84c9e230-6c03-458e-9651-6e6447b376ce","path":"sprites/sOutdoors_01/sOutdoors_01.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"20f2b6ff-ad67-48d1-bcb8-a3b0d5dc7696","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"9f677b8f-9975-4756-8404-635ea0ac3127","path":"sprites/sOutdoors_01/sOutdoors_01.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -65,7 +65,7 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"031d9bd7-57bb-4f2d-8420-66219f3214a7","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"bdf7dd61-c598-416e-b0e3-8f5d3d4279e8","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
     "name": "Tiles",

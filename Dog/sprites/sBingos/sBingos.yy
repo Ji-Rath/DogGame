@@ -7,10 +7,10 @@
   "edgeFiltering": false,
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
-  "bbox_left": 5,
-  "bbox_right": 441,
-  "bbox_top": 21,
-  "bbox_bottom": 375,
+  "bbox_left": 17,
+  "bbox_right": 432,
+  "bbox_top": 11,
+  "bbox_bottom": 366,
   "HTile": false,
   "VTile": false,
   "For3D": false,
@@ -24,11 +24,9 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"14b4c718-1d5b-4e5e-8329-6be53c194118","path":"sprites/sBingos/sBingos.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"14b4c718-1d5b-4e5e-8329-6be53c194118","path":"sprites/sBingos/sBingos.yy",},"LayerId":{"name":"2aa07fd3-a2d0-479e-895a-1032bde3a533","path":"sprites/sBingos/sBingos.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"14b4c718-1d5b-4e5e-8329-6be53c194118","path":"sprites/sBingos/sBingos.yy",},"LayerId":{"name":"f4cc17db-bfa2-45da-a785-95fab92d627a","path":"sprites/sBingos/sBingos.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"14b4c718-1d5b-4e5e-8329-6be53c194118","path":"sprites/sBingos/sBingos.yy",},"LayerId":{"name":"9a778c15-6abe-4b19-94dc-3b17f51effb3","path":"sprites/sBingos/sBingos.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sBingos","path":"sprites/sBingos/sBingos.yy",},"resourceVersion":"1.0","name":"14b4c718-1d5b-4e5e-8329-6be53c194118","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"e3e6cb34-6a33-4be0-b985-58c3847250c7","path":"sprites/sBingos/sBingos.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"e3e6cb34-6a33-4be0-b985-58c3847250c7","path":"sprites/sBingos/sBingos.yy",},"LayerId":{"name":"35c5ba83-c6c8-4832-a4f4-8bc5f536d7fd","path":"sprites/sBingos/sBingos.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sBingos","path":"sprites/sBingos/sBingos.yy",},"resourceVersion":"1.0","name":"e3e6cb34-6a33-4be0-b985-58c3847250c7","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"sBingos","path":"sprites/sBingos/sBingos.yy",},
@@ -43,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"07bd80ad-5685-4f06-9182-a5cc28e433b0","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"14b4c718-1d5b-4e5e-8329-6be53c194118","path":"sprites/sBingos/sBingos.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"cc79d512-1948-4ec3-ac56-c8d887ce9a3e","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"e3e6cb34-6a33-4be0-b985-58c3847250c7","path":"sprites/sBingos/sBingos.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -67,9 +65,7 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Layer 1","resourceVersion":"1.0","name":"f4cc17db-bfa2-45da-a785-95fab92d627a","tags":[],"resourceType":"GMImageLayer",},
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Layer 2","resourceVersion":"1.0","name":"9a778c15-6abe-4b19-94dc-3b17f51effb3","tags":[],"resourceType":"GMImageLayer",},
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":26.0,"displayName":"default","resourceVersion":"1.0","name":"2aa07fd3-a2d0-479e-895a-1032bde3a533","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"35c5ba83-c6c8-4832-a4f4-8bc5f536d7fd","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
     "name": "Village",

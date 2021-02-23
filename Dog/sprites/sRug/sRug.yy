@@ -8,7 +8,7 @@
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
   "bbox_left": 7,
-  "bbox_right": 124,
+  "bbox_right": 125,
   "bbox_top": 43,
   "bbox_bottom": 101,
   "HTile": false,
@@ -24,11 +24,9 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"98b30351-6a33-4367-9fb4-6b650c5533f5","path":"sprites/sRug/sRug.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"98b30351-6a33-4367-9fb4-6b650c5533f5","path":"sprites/sRug/sRug.yy",},"LayerId":{"name":"sRug","path":"sprites/sRug/sRug.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"98b30351-6a33-4367-9fb4-6b650c5533f5","path":"sprites/sRug/sRug.yy",},"LayerId":{"name":"59134d50-e649-4e8b-8d26-1150f9971aa4","path":"sprites/sRug/sRug.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"98b30351-6a33-4367-9fb4-6b650c5533f5","path":"sprites/sRug/sRug.yy",},"LayerId":{"name":"84255af1-b1a6-4993-808f-92221114687d","path":"sprites/sRug/sRug.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sRug","path":"sprites/sRug/sRug.yy",},"resourceVersion":"1.0","name":"98b30351-6a33-4367-9fb4-6b650c5533f5","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"4a240fd1-7b2d-4c3a-b93f-f98515e4fd4d","path":"sprites/sRug/sRug.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"4a240fd1-7b2d-4c3a-b93f-f98515e4fd4d","path":"sprites/sRug/sRug.yy",},"LayerId":{"name":"25df37eb-1801-4347-a5a4-b8e33155ff36","path":"sprites/sRug/sRug.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sRug","path":"sprites/sRug/sRug.yy",},"resourceVersion":"1.0","name":"4a240fd1-7b2d-4c3a-b93f-f98515e4fd4d","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"sRug","path":"sprites/sRug/sRug.yy",},
@@ -43,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"5fba5d09-ffeb-4d0e-b810-83a0aa011cab","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"98b30351-6a33-4367-9fb4-6b650c5533f5","path":"sprites/sRug/sRug.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"d030a112-a023-489c-afc5-e94a1a544bfb","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"4a240fd1-7b2d-4c3a-b93f-f98515e4fd4d","path":"sprites/sRug/sRug.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -67,8 +65,7 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Layer 1","resourceVersion":"1.0","name":"59134d50-e649-4e8b-8d26-1150f9971aa4","tags":[],"resourceType":"GMImageLayer",},
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Layer 2","resourceVersion":"1.0","name":"84255af1-b1a6-4993-808f-92221114687d","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"25df37eb-1801-4347-a5a4-b8e33155ff36","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
     "name": "dogpaddler'shouse",
