@@ -7,10 +7,10 @@
   "edgeFiltering": false,
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
-  "bbox_left": 0,
-  "bbox_right": 170,
-  "bbox_top": 23,
-  "bbox_bottom": 115,
+  "bbox_left": 12,
+  "bbox_right": 155,
+  "bbox_top": 24,
+  "bbox_bottom": 113,
   "HTile": false,
   "VTile": false,
   "For3D": false,
@@ -24,10 +24,9 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"76468367-e6b6-4dda-99af-628524c143de","path":"sprites/sBedclinic/sBedclinic.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"76468367-e6b6-4dda-99af-628524c143de","path":"sprites/sBedclinic/sBedclinic.yy",},"LayerId":{"name":"a2de19c8-6618-451b-b4a7-fd79357ba514","path":"sprites/sBedclinic/sBedclinic.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"76468367-e6b6-4dda-99af-628524c143de","path":"sprites/sBedclinic/sBedclinic.yy",},"LayerId":{"name":"9dd5c005-ff01-4c05-82d2-27d2d61cd3f3","path":"sprites/sBedclinic/sBedclinic.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sBedclinic","path":"sprites/sBedclinic/sBedclinic.yy",},"resourceVersion":"1.0","name":"76468367-e6b6-4dda-99af-628524c143de","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"47dbcb28-2726-404c-80c4-8625c7f48eed","path":"sprites/sBedclinic/sBedclinic.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"47dbcb28-2726-404c-80c4-8625c7f48eed","path":"sprites/sBedclinic/sBedclinic.yy",},"LayerId":{"name":"73c55fb1-2ca2-47fe-b4d8-aad7b26b3d18","path":"sprites/sBedclinic/sBedclinic.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sBedclinic","path":"sprites/sBedclinic/sBedclinic.yy",},"resourceVersion":"1.0","name":"47dbcb28-2726-404c-80c4-8625c7f48eed","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"sBedclinic","path":"sprites/sBedclinic/sBedclinic.yy",},
@@ -42,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"6f95dc0a-11dd-466a-bd30-2a34de4ee14e","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"76468367-e6b6-4dda-99af-628524c143de","path":"sprites/sBedclinic/sBedclinic.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"3d67210e-cf21-4697-a11a-e5dd49e8a085","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"47dbcb28-2726-404c-80c4-8625c7f48eed","path":"sprites/sBedclinic/sBedclinic.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -66,8 +65,7 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"a2de19c8-6618-451b-b4a7-fd79357ba514","tags":[],"resourceType":"GMImageLayer",},
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Layer 1","resourceVersion":"1.0","name":"9dd5c005-ff01-4c05-82d2-27d2d61cd3f3","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"73c55fb1-2ca2-47fe-b4d8-aad7b26b3d18","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
     "name": "clinic",

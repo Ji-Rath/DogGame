@@ -7,10 +7,10 @@
   "edgeFiltering": false,
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
-  "bbox_left": 7,
+  "bbox_left": 6,
   "bbox_right": 294,
-  "bbox_top": 13,
-  "bbox_bottom": 291,
+  "bbox_top": 12,
+  "bbox_bottom": 292,
   "HTile": false,
   "VTile": false,
   "For3D": false,
@@ -24,12 +24,9 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"98b30351-6a33-4367-9fb4-6b650c5533f5","path":"sprites/sBigRug/sBigRug.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"98b30351-6a33-4367-9fb4-6b650c5533f5","path":"sprites/sBigRug/sBigRug.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"98b30351-6a33-4367-9fb4-6b650c5533f5","path":"sprites/sBigRug/sBigRug.yy",},"LayerId":{"name":"59134d50-e649-4e8b-8d26-1150f9971aa4","path":"sprites/sBigRug/sBigRug.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"98b30351-6a33-4367-9fb4-6b650c5533f5","path":"sprites/sBigRug/sBigRug.yy",},"LayerId":{"name":"84255af1-b1a6-4993-808f-92221114687d","path":"sprites/sBigRug/sBigRug.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"98b30351-6a33-4367-9fb4-6b650c5533f5","path":"sprites/sBigRug/sBigRug.yy",},"LayerId":{"name":"269254c1-be73-404b-a228-4115f89d9ec2","path":"sprites/sBigRug/sBigRug.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sBigRug","path":"sprites/sBigRug/sBigRug.yy",},"resourceVersion":"1.0","name":"98b30351-6a33-4367-9fb4-6b650c5533f5","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"1374f00c-d9c1-4374-a69a-e513a2536d02","path":"sprites/sBigRug/sBigRug.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"1374f00c-d9c1-4374-a69a-e513a2536d02","path":"sprites/sBigRug/sBigRug.yy",},"LayerId":{"name":"f0d64869-4a11-49db-a854-ea592f079d95","path":"sprites/sBigRug/sBigRug.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sBigRug","path":"sprites/sBigRug/sBigRug.yy",},"resourceVersion":"1.0","name":"1374f00c-d9c1-4374-a69a-e513a2536d02","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"sBigRug","path":"sprites/sBigRug/sBigRug.yy",},
@@ -44,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"cfc855c2-a707-4aeb-acd3-15ea888bb55f","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"98b30351-6a33-4367-9fb4-6b650c5533f5","path":"sprites/sBigRug/sBigRug.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"f829821e-88da-4140-91be-aac6352e44c3","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"1374f00c-d9c1-4374-a69a-e513a2536d02","path":"sprites/sBigRug/sBigRug.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -68,11 +65,11 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Layer 1","resourceVersion":"1.0","name":"269254c1-be73-404b-a228-4115f89d9ec2","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"f0d64869-4a11-49db-a854-ea592f079d95","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "home",
-    "path": "folders/Sprites/Map Assets/Interior/home.yy",
+    "name": "Interior",
+    "path": "folders/Sprites/Map Assets/Interior.yy",
   },
   "resourceVersion": "1.0",
   "name": "sBigRug",

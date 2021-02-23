@@ -7,9 +7,9 @@
   "edgeFiltering": false,
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
-  "bbox_left": 15,
-  "bbox_right": 91,
-  "bbox_top": 10,
+  "bbox_left": 17,
+  "bbox_right": 92,
+  "bbox_top": 12,
   "bbox_bottom": 148,
   "HTile": false,
   "VTile": false,
@@ -24,10 +24,9 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"79fcd50c-e5d1-4b4c-9f15-99dcb71d73b6","path":"sprites/sVase/sVase.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"79fcd50c-e5d1-4b4c-9f15-99dcb71d73b6","path":"sprites/sVase/sVase.yy",},"LayerId":{"name":"c873f31b-5148-45a1-a998-7b30857fab3a","path":"sprites/sVase/sVase.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"79fcd50c-e5d1-4b4c-9f15-99dcb71d73b6","path":"sprites/sVase/sVase.yy",},"LayerId":{"name":"96eac86c-53f4-4c36-8f05-8d396822a48e","path":"sprites/sVase/sVase.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sVase","path":"sprites/sVase/sVase.yy",},"resourceVersion":"1.0","name":"79fcd50c-e5d1-4b4c-9f15-99dcb71d73b6","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"1aec538b-5776-4422-ba43-5659ff741a36","path":"sprites/sVase/sVase.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"1aec538b-5776-4422-ba43-5659ff741a36","path":"sprites/sVase/sVase.yy",},"LayerId":{"name":"7a35c9a0-e784-40eb-9e75-97ea77cd6011","path":"sprites/sVase/sVase.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sVase","path":"sprites/sVase/sVase.yy",},"resourceVersion":"1.0","name":"1aec538b-5776-4422-ba43-5659ff741a36","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"sVase","path":"sprites/sVase/sVase.yy",},
@@ -42,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"05ab072b-0b79-4324-b75f-8430e8f63d2d","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"79fcd50c-e5d1-4b4c-9f15-99dcb71d73b6","path":"sprites/sVase/sVase.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"e116dc32-3619-4862-9360-65ad979cb3dd","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"1aec538b-5776-4422-ba43-5659ff741a36","path":"sprites/sVase/sVase.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -66,8 +65,7 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"c873f31b-5148-45a1-a998-7b30857fab3a","tags":[],"resourceType":"GMImageLayer",},
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Layer 1","resourceVersion":"1.0","name":"96eac86c-53f4-4c36-8f05-8d396822a48e","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"7a35c9a0-e784-40eb-9e75-97ea77cd6011","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
     "name": "clinic",
