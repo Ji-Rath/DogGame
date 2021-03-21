@@ -7,15 +7,15 @@
   "edgeFiltering": false,
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
-  "bbox_left": 4,
-  "bbox_right": 320,
-  "bbox_top": 18,
-  "bbox_bottom": 590,
+  "bbox_left": 5,
+  "bbox_right": 316,
+  "bbox_top": 15,
+  "bbox_bottom": 280,
   "HTile": false,
   "VTile": false,
   "For3D": false,
   "width": 322,
-  "height": 600,
+  "height": 293,
   "textureGroupId": {
     "name": "Default",
     "path": "texturegroups/Default",
@@ -24,11 +24,9 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"7e6e3f77-0cd1-4ac1-844a-6bd252866f70","path":"sprites/sClinic/sClinic.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"7e6e3f77-0cd1-4ac1-844a-6bd252866f70","path":"sprites/sClinic/sClinic.yy",},"LayerId":{"name":"sClinic","path":"sprites/sClinic/sClinic.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"7e6e3f77-0cd1-4ac1-844a-6bd252866f70","path":"sprites/sClinic/sClinic.yy",},"LayerId":{"name":"86646e47-4df9-485c-98e5-c39217266873","path":"sprites/sClinic/sClinic.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"7e6e3f77-0cd1-4ac1-844a-6bd252866f70","path":"sprites/sClinic/sClinic.yy",},"LayerId":{"name":"4977cf1f-77cd-4520-9c69-8ae47ffe8f39","path":"sprites/sClinic/sClinic.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sClinic","path":"sprites/sClinic/sClinic.yy",},"resourceVersion":"1.0","name":"7e6e3f77-0cd1-4ac1-844a-6bd252866f70","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"72bda073-d665-41da-a30e-cc4aa2be4c67","path":"sprites/sClinic/sClinic.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"72bda073-d665-41da-a30e-cc4aa2be4c67","path":"sprites/sClinic/sClinic.yy",},"LayerId":{"name":"27a4b0e5-45c6-404e-b890-398cc5ae074c","path":"sprites/sClinic/sClinic.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sClinic","path":"sprites/sClinic/sClinic.yy",},"resourceVersion":"1.0","name":"72bda073-d665-41da-a30e-cc4aa2be4c67","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"sClinic","path":"sprites/sClinic/sClinic.yy",},
@@ -43,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"dd08fd2f-f599-4ebf-979a-177026b5a1e6","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"7e6e3f77-0cd1-4ac1-844a-6bd252866f70","path":"sprites/sClinic/sClinic.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"0d642b80-5938-4cb5-973d-a2334075bd04","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"72bda073-d665-41da-a30e-cc4aa2be4c67","path":"sprites/sClinic/sClinic.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -67,8 +65,7 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Layer 1","resourceVersion":"1.0","name":"86646e47-4df9-485c-98e5-c39217266873","tags":[],"resourceType":"GMImageLayer",},
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Layer 2","resourceVersion":"1.0","name":"4977cf1f-77cd-4520-9c69-8ae47ffe8f39","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"27a4b0e5-45c6-404e-b890-398cc5ae074c","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
     "name": "HospitalRoom",

@@ -417,7 +417,6 @@
     {"id":{"name":"sRopeCover","path":"sprites/sRopeCover/sRopeCover.yy",},"order":3,},
     {"id":{"name":"sRopeStruggle","path":"sprites/sRopeStruggle/sRopeStruggle.yy",},"order":4,},
     {"id":{"name":"sRug","path":"sprites/sRug/sRug.yy",},"order":5,},
-    {"id":{"name":"sSchool","path":"sprites/sSchool/sSchool.yy",},"order":7,},
     {"id":{"name":"sSign","path":"sprites/sSign/sSign.yy",},"order":9,},
     {"id":{"name":"sSink","path":"sprites/sSink/sSink.yy",},"order":6,},
     {"id":{"name":"sSmush","path":"sprites/sSmush/sSmush.yy",},"order":5,},
