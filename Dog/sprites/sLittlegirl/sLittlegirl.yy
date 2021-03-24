@@ -25,7 +25,6 @@
   "gridY": 0,
   "frames": [
     {"compositeImage":{"FrameId":{"name":"8c9afba4-0522-455a-8c5d-5a0c80e4eed0","path":"sprites/sLittlegirl/sLittlegirl.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"8c9afba4-0522-455a-8c5d-5a0c80e4eed0","path":"sprites/sLittlegirl/sLittlegirl.yy",},"LayerId":{"name":"6477ce7f-539f-42bc-807e-59d95303a970","path":"sprites/sLittlegirl/sLittlegirl.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
         {"FrameId":{"name":"8c9afba4-0522-455a-8c5d-5a0c80e4eed0","path":"sprites/sLittlegirl/sLittlegirl.yy",},"LayerId":{"name":"5be1e43f-792f-473e-8b5e-ee5d7ec3993e","path":"sprites/sLittlegirl/sLittlegirl.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
         {"FrameId":{"name":"8c9afba4-0522-455a-8c5d-5a0c80e4eed0","path":"sprites/sLittlegirl/sLittlegirl.yy",},"LayerId":{"name":"ee64ecb3-3c3f-48e0-bfc0-aafd7fe23d6b","path":"sprites/sLittlegirl/sLittlegirl.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"sLittlegirl","path":"sprites/sLittlegirl/sLittlegirl.yy",},"resourceVersion":"1.0","name":"8c9afba4-0522-455a-8c5d-5a0c80e4eed0","tags":[],"resourceType":"GMSpriteFrame",},
