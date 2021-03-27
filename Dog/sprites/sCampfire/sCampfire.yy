@@ -69,7 +69,7 @@
   ],
   "parent": {
     "name": "Lighthouse",
-    "path": "folders/Sprites/Battle/MiniGame/General/FanMinigame/Lighthouse.yy",
+    "path": "folders/Sprites/Battle/MiniGame/General/Lighthouse.yy",
   },
   "resourceVersion": "1.0",
   "name": "sCampfire",
