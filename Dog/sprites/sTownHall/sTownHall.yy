@@ -25,7 +25,6 @@
   "gridY": 0,
   "frames": [
     {"compositeImage":{"FrameId":{"name":"14b4c718-1d5b-4e5e-8329-6be53c194118","path":"sprites/sTownHall/sTownHall.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"14b4c718-1d5b-4e5e-8329-6be53c194118","path":"sprites/sTownHall/sTownHall.yy",},"LayerId":{"name":"2aa07fd3-a2d0-479e-895a-1032bde3a533","path":"sprites/sTownHall/sTownHall.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
         {"FrameId":{"name":"14b4c718-1d5b-4e5e-8329-6be53c194118","path":"sprites/sTownHall/sTownHall.yy",},"LayerId":{"name":"0efca2ad-8ce4-4cf3-865a-af147265835a","path":"sprites/sTownHall/sTownHall.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
         {"FrameId":{"name":"14b4c718-1d5b-4e5e-8329-6be53c194118","path":"sprites/sTownHall/sTownHall.yy",},"LayerId":{"name":"12be7c17-54c5-4c95-a962-5d21d544ec3c","path":"sprites/sTownHall/sTownHall.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"sTownHall","path":"sprites/sTownHall/sTownHall.yy",},"resourceVersion":"1.0","name":"14b4c718-1d5b-4e5e-8329-6be53c194118","tags":[],"resourceType":"GMSpriteFrame",},
