@@ -7,9 +7,9 @@
   "edgeFiltering": false,
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
-  "bbox_left": 1,
-  "bbox_right": 61,
-  "bbox_top": 10,
+  "bbox_left": 2,
+  "bbox_right": 62,
+  "bbox_top": 30,
   "bbox_bottom": 48,
   "HTile": false,
   "VTile": false,
@@ -24,12 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"3cc0740b-4692-4f9e-9e82-c98caa0ea2af","path":"sprites/sRock/sRock.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"3cc0740b-4692-4f9e-9e82-c98caa0ea2af","path":"sprites/sRock/sRock.yy",},"LayerId":{"name":"a695f055-909d-464b-b2d4-5d019ba6ff4d","path":"sprites/sRock/sRock.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sRock","path":"sprites/sRock/sRock.yy",},"resourceVersion":"1.0","name":"3cc0740b-4692-4f9e-9e82-c98caa0ea2af","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"1af9416b-ab6d-45ab-ba01-a530ec947176","path":"sprites/sSteppingStone/sSteppingStone.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"1af9416b-ab6d-45ab-ba01-a530ec947176","path":"sprites/sSteppingStone/sSteppingStone.yy",},"LayerId":{"name":"f4c90d12-e0b0-41d2-bfdc-71cd0aba286c","path":"sprites/sSteppingStone/sSteppingStone.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sSteppingStone","path":"sprites/sSteppingStone/sSteppingStone.yy",},"resourceVersion":"1.0","name":"1af9416b-ab6d-45ab-ba01-a530ec947176","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"sRock","path":"sprites/sRock/sRock.yy",},
+    "spriteId": {"name":"sSteppingStone","path":"sprites/sSteppingStone/sSteppingStone.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"7c88aa63-ad77-4c33-90f2-f7d5011b52b9","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"3cc0740b-4692-4f9e-9e82-c98caa0ea2af","path":"sprites/sRock/sRock.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"18fdb879-9780-4f1b-bebb-c1d003dd1678","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"1af9416b-ab6d-45ab-ba01-a530ec947176","path":"sprites/sSteppingStone/sSteppingStone.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -58,21 +58,21 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"sRock","path":"sprites/sRock/sRock.yy",},
+    "parent": {"name":"sSteppingStone","path":"sprites/sSteppingStone/sSteppingStone.yy",},
     "resourceVersion": "1.3",
-    "name": "sRock",
+    "name": "sSteppingStone",
     "tags": [],
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"a695f055-909d-464b-b2d4-5d019ba6ff4d","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"f4c90d12-e0b0-41d2-bfdc-71cd0aba286c","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
     "name": "SMALL",
     "path": "folders/Sprites/Map Assets/Foliage/SMALL.yy",
   },
   "resourceVersion": "1.0",
-  "name": "sRock",
+  "name": "sSteppingStone",
   "tags": [],
   "resourceType": "GMSprite",
 }

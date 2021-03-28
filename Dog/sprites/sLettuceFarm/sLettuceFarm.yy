@@ -7,15 +7,15 @@
   "edgeFiltering": false,
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
-  "bbox_left": 22,
-  "bbox_right": 127,
-  "bbox_top": 6,
-  "bbox_bottom": 153,
+  "bbox_left": 63,
+  "bbox_right": 338,
+  "bbox_top": 14,
+  "bbox_bottom": 150,
   "HTile": false,
   "VTile": false,
   "For3D": false,
-  "width": 143,
-  "height": 165,
+  "width": 406,
+  "height": 172,
   "textureGroupId": {
     "name": "Default",
     "path": "texturegroups/Default",
@@ -24,12 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"ab2e58ec-0393-4e9f-a815-cb83c3f77c20","path":"sprites/sWell/sWell.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"ab2e58ec-0393-4e9f-a815-cb83c3f77c20","path":"sprites/sWell/sWell.yy",},"LayerId":{"name":"2bcfc6f5-4f83-49e5-bef2-293a505846cd","path":"sprites/sWell/sWell.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sWell","path":"sprites/sWell/sWell.yy",},"resourceVersion":"1.0","name":"ab2e58ec-0393-4e9f-a815-cb83c3f77c20","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"f16e4cb9-a99b-411a-b3b5-b0b589d97a79","path":"sprites/sLettuceFarm/sLettuceFarm.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"f16e4cb9-a99b-411a-b3b5-b0b589d97a79","path":"sprites/sLettuceFarm/sLettuceFarm.yy",},"LayerId":{"name":"be28a207-e82d-4abb-96da-0c5bf14764d7","path":"sprites/sLettuceFarm/sLettuceFarm.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sLettuceFarm","path":"sprites/sLettuceFarm/sLettuceFarm.yy",},"resourceVersion":"1.0","name":"f16e4cb9-a99b-411a-b3b5-b0b589d97a79","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"sWell","path":"sprites/sWell/sWell.yy",},
+    "spriteId": {"name":"sLettuceFarm","path":"sprites/sLettuceFarm/sLettuceFarm.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"94f3eb0e-ac40-45ba-ba1a-adf4c391d871","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"ab2e58ec-0393-4e9f-a815-cb83c3f77c20","path":"sprites/sWell/sWell.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"367af7e3-431c-49d1-af9a-540afdd7febf","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"f16e4cb9-a99b-411a-b3b5-b0b589d97a79","path":"sprites/sLettuceFarm/sLettuceFarm.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -58,21 +58,21 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"sWell","path":"sprites/sWell/sWell.yy",},
+    "parent": {"name":"sLettuceFarm","path":"sprites/sLettuceFarm/sLettuceFarm.yy",},
     "resourceVersion": "1.3",
-    "name": "sWell",
+    "name": "sLettuceFarm",
     "tags": [],
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"2bcfc6f5-4f83-49e5-bef2-293a505846cd","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"be28a207-e82d-4abb-96da-0c5bf14764d7","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
     "name": "Decor",
     "path": "folders/Sprites/Map Assets/Decor.yy",
   },
   "resourceVersion": "1.0",
-  "name": "sWell",
+  "name": "sLettuceFarm",
   "tags": [],
   "resourceType": "GMSprite",
 }

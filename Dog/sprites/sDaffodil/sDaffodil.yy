@@ -8,14 +8,14 @@
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
   "bbox_left": 22,
-  "bbox_right": 127,
-  "bbox_top": 6,
-  "bbox_bottom": 153,
+  "bbox_right": 36,
+  "bbox_top": 28,
+  "bbox_bottom": 54,
   "HTile": false,
   "VTile": false,
   "For3D": false,
-  "width": 143,
-  "height": 165,
+  "width": 64,
+  "height": 64,
   "textureGroupId": {
     "name": "Default",
     "path": "texturegroups/Default",
@@ -24,12 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"ab2e58ec-0393-4e9f-a815-cb83c3f77c20","path":"sprites/sWell/sWell.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"ab2e58ec-0393-4e9f-a815-cb83c3f77c20","path":"sprites/sWell/sWell.yy",},"LayerId":{"name":"2bcfc6f5-4f83-49e5-bef2-293a505846cd","path":"sprites/sWell/sWell.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sWell","path":"sprites/sWell/sWell.yy",},"resourceVersion":"1.0","name":"ab2e58ec-0393-4e9f-a815-cb83c3f77c20","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"2fecfe4e-6a60-43bc-9783-44320dba1dce","path":"sprites/sDaffodil/sDaffodil.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"2fecfe4e-6a60-43bc-9783-44320dba1dce","path":"sprites/sDaffodil/sDaffodil.yy",},"LayerId":{"name":"2a3388fe-3093-417e-8ef9-8e939608c236","path":"sprites/sDaffodil/sDaffodil.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sDaffodil","path":"sprites/sDaffodil/sDaffodil.yy",},"resourceVersion":"1.0","name":"2fecfe4e-6a60-43bc-9783-44320dba1dce","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"sWell","path":"sprites/sWell/sWell.yy",},
+    "spriteId": {"name":"sDaffodil","path":"sprites/sDaffodil/sDaffodil.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"94f3eb0e-ac40-45ba-ba1a-adf4c391d871","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"ab2e58ec-0393-4e9f-a815-cb83c3f77c20","path":"sprites/sWell/sWell.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"9f2fa5ba-1f7b-4981-969a-00b0e9190d4c","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"2fecfe4e-6a60-43bc-9783-44320dba1dce","path":"sprites/sDaffodil/sDaffodil.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -58,21 +58,21 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"sWell","path":"sprites/sWell/sWell.yy",},
+    "parent": {"name":"sDaffodil","path":"sprites/sDaffodil/sDaffodil.yy",},
     "resourceVersion": "1.3",
-    "name": "sWell",
+    "name": "sDaffodil",
     "tags": [],
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"2bcfc6f5-4f83-49e5-bef2-293a505846cd","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"2a3388fe-3093-417e-8ef9-8e939608c236","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Decor",
-    "path": "folders/Sprites/Map Assets/Decor.yy",
+    "name": "SMALL",
+    "path": "folders/Sprites/Map Assets/Foliage/SMALL.yy",
   },
   "resourceVersion": "1.0",
-  "name": "sWell",
+  "name": "sDaffodil",
   "tags": [],
   "resourceType": "GMSprite",
 }

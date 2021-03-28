@@ -24,9 +24,9 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"48f371aa-aabc-4fc6-b0aa-18943b9c1877","path":"sprites/sSign/sSign.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"48f371aa-aabc-4fc6-b0aa-18943b9c1877","path":"sprites/sSign/sSign.yy",},"LayerId":{"name":"0ad1c620-2cb3-4181-8277-bcfb6dbe288f","path":"sprites/sSign/sSign.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sSign","path":"sprites/sSign/sSign.yy",},"resourceVersion":"1.0","name":"48f371aa-aabc-4fc6-b0aa-18943b9c1877","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"427f27da-09e6-4bc9-bb21-f5f8b17a07d6","path":"sprites/sSign/sSign.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"427f27da-09e6-4bc9-bb21-f5f8b17a07d6","path":"sprites/sSign/sSign.yy",},"LayerId":{"name":"bb2c83bf-7b9f-4540-86ef-a1fb539697db","path":"sprites/sSign/sSign.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sSign","path":"sprites/sSign/sSign.yy",},"resourceVersion":"1.0","name":"427f27da-09e6-4bc9-bb21-f5f8b17a07d6","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"sSign","path":"sprites/sSign/sSign.yy",},
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"5232664c-4993-4314-a3a1-298fa6301e60","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"48f371aa-aabc-4fc6-b0aa-18943b9c1877","path":"sprites/sSign/sSign.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"df7ba14a-7de8-4aa3-89b0-6b6122e2bd96","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"427f27da-09e6-4bc9-bb21-f5f8b17a07d6","path":"sprites/sSign/sSign.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -65,7 +65,7 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"0ad1c620-2cb3-4181-8277-bcfb6dbe288f","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"bb2c83bf-7b9f-4540-86ef-a1fb539697db","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
     "name": "Decor",
