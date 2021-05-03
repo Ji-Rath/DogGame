@@ -1,0 +1,20 @@
+Plans:
+
+- Refactor water minigame - make arm more responsive to mouse movement (DONE)
+- water minigame - add actual water to cup instead of spawning (DONE)
+- crab weigh - increase threshhold for speed success (DONE)
+- Update player health bar (DONE)
+- Special DP move - bug - holding down X (DONE)
+- Special DP move - camera shake on hit - absurd amount (DONE)
+- hand minigame - osu circle (DONE)
+- More transition time between multiple enemies (DONE)
+- Implement line formation - Also sandal move (DONE)
+- Press interact to go to transition room
+- Fix dp partners so they follow like a snake
+- look into better saving system
+
+- Add descriptive comments to implemented functions
+- Work on modular code, specifically on minigame system
+- Take a look at tile collision so it is easier to implement for other objects
+- Implement new sprites from art branch to develop
+- 

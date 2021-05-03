@@ -1,0 +1,56 @@
+Things to talk about:
+
+- Stair mechanic (Easier if stairs were in the 'forward' direction)
+- Features to focus on (for end-of-year deadline)
+- Battle Mechanic Status (Juicy effects, transitions, new attacks for other enemies, 
+	post-minigame cutscene, etc)
+- Future animations (SlideShow? Maybe with voice narration can work)
+- Main Scene mechanics (Houses with 2 floors, entering a house, etc)
+- 
+
+
+- fade in fade out transitions
+- Animation style is meant to be a bit janky or unsmooth
+- rocket kid should be able to 'block' minigames
+
+Work Deadline:
+- Speed of minigames will depend on the stage - which is based on health (Increase the speed of minigames/timers )
+- chip game - each chip heals, should have indicator (Bigger chips)
+- When enemy takes damage, show imediate feedback to prevent waiting time (for all attacks)
+- Pan minigame - increase pan weight and size
+
+- Multiple enemies (Player attacks, all enemies attack after)
+- when crab is low, call in reinforcements
+- Add new minigames if possible
+
+- Reduce crab physics size
+- Make every physics object heavier
+- Fix being able to grab multiple physics objects
+- Redo anvil minigame so dp is trapped, after he breaks free, drag dp out of harms way
+- Adjust minigame speed so transitions and timers can be sped up based on a value?
+
+
+NOTES 2:
+
+- Speed up transitions (From player pressing button, to pan attack) (DONE)
+- Move button interaction to points of interest (ex. button near dp on anvil game) (DONE)
+- Remove anvil damage from crab (DONE)
+- Rope physics (Kindof DONE)
+- streamlining sequences for simple implementation (when completing a minigame) (Kindof DONE)
+- 
+
+
+- Talk about running minigames through console
+- Talk about sequences being run in game through the console
+- Talk about the console in general
+- Talk about rope mechanics
+
+
+For anvil rope rescue, create rope explosion and transition sprite to freed position
+dp anvil when struggling will be alternating between sprites
+edit end-game minigame so sequence plays out fully then minigame ends (DONE)
+Changed minigame screen to allow for sequences to be played (DONE)
+
+work on new minigames (rope minigame)
+
+- Top left buttons can be pressed during chip minigame
