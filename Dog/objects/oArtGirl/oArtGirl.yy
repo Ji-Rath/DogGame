@@ -26,7 +26,7 @@
   "eventList": [],
   "properties": [],
   "overriddenProperties": [
-    {"propertyId":{"name":"FollowObject","path":"objects/oPartnerBase/oPartnerBase.yy",},"objectId":{"name":"oPartnerBase","path":"objects/oPartnerBase/oPartnerBase.yy",},"value":"oMissileBoy","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"StepsBehind","path":"objects/oPartnerBase/oPartnerBase.yy",},"objectId":{"name":"oPartnerBase","path":"objects/oPartnerBase/oPartnerBase.yy",},"value":"1","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
     {"propertyId":{"name":"BattleObject","path":"objects/oPartnerBase/oPartnerBase.yy",},"objectId":{"name":"oPartnerBase","path":"objects/oPartnerBase/oPartnerBase.yy",},"value":"oBattleArtGirl","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],
   "parent": {

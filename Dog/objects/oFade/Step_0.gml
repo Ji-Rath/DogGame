@@ -26,6 +26,12 @@ if(Target != -1)
 			oDog.image_xscale = SpriteXScale;
 			oCamera.x = XDest;
 			oCamera.y = YDest;
+			
+			with (oPartnerBase)
+			{
+				x = other.XDest;
+				y = other.YDest;
+			}
 		}
 	}
 }
