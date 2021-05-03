@@ -339,6 +339,7 @@
     {"id":{"name":"seqTextIntro","path":"sequences/seqTextIntro/seqTextIntro.yy",},"order":5,},
     {"id":{"name":"sShield","path":"sprites/sShield/sShield.yy",},"order":11,},
     {"id":{"name":"shd_scribble","path":"shaders/shd_scribble/shd_scribble.yy",},"order":0,},
+    {"id":{"name":"oFollowCrumbs","path":"objects/oFollowCrumbs/oFollowCrumbs.yy",},"order":7,},
     {"id":{"name":"o_SharedTweener","path":"objects/o_SharedTweener/o_SharedTweener.yy",},"order":0,},
     {"id":{"name":"seqHoleInOne","path":"sequences/seqHoleInOne/seqHoleInOne.yy",},"order":0,},
     {"id":{"name":"shd_scribble_bake_outline","path":"shaders/shd_scribble_bake_outline/shd_scribble_bake_outline.yy",},"order":1,},

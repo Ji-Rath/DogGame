@@ -42,3 +42,7 @@ for(var i=0; i<array_length(global.PartnerArray);i++)
 
 // Update player stats
 scrUpdateStats();
+
+DistanceTravelled = 0;
+CurrentCrumbDistance = 0;
+BreadCrumbInterval = 32;

@@ -32,6 +32,18 @@ if (state = DogState.normal)
 	Velocity = scrMoveCollision(Velocity);
 	x += Velocity.X;
 	y += Velocity.Y;
+	
+	CurrentCrumbDistance += abs(Velocity.X) + abs(Velocity.Y);
+	DistanceTravelled += CurrentCrumbDistance;
+	if (CurrentCrumbDistance > BreadCrumbInterval)
+	{
+		CurrentCrumbDistance = 0;
+		var Crumb = instance_create_layer(x, y, "Instances", oFollowCrumbs);
+		with (oPartnerBase)
+		{
+			ds_queue_enqueue(CrumbQueue, Crumb);
+		}
+	}
 }
 
 //Interaction

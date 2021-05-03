@@ -22,5 +22,9 @@ Current Work:
 - Complete prototype of brooming minigame (DONE)
 - Implement food points
 - First pass of crab balance minigame (DONE)
-- 
+
+
+3/20/21
+TODO:
+- Add room transitions/doors that can be interacted with to transition to next room
 
