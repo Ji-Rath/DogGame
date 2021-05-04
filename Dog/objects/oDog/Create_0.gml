@@ -21,14 +21,6 @@ enum DogState
 }
 state = DogState.normal;
 
-//Load Variables from ds map if available
-var SaveVal = ds_map_find_value(oAreaStats.SaveState,"PlayerX");
-if(SaveVal != undefined)
-{
-	x = ds_map_find_value(oAreaStats.SaveState,"PlayerX");
-	y = ds_map_find_value(oAreaStats.SaveState,"PlayerY");
-}
-
 // Set scaling of player
 image_yscale = Scale;
 image_xscale = Scale;
