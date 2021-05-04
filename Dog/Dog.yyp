@@ -61,7 +61,7 @@
     {"id":{"name":"oEnemyBase","path":"objects/oEnemyBase/oEnemyBase.yy",},"order":1,},
     {"id":{"name":"oEnemyBattleParent","path":"objects/oEnemyBattleParent/oEnemyBattleParent.yy",},"order":1,},
     {"id":{"name":"oEnemyCrabArm","path":"objects/oEnemyCrabArm/oEnemyCrabArm.yy",},"order":0,},
-    {"id":{"name":"oFade","path":"objects/oFade/oFade.yy",},"order":2,},
+    {"id":{"name":"oTransition","path":"objects/oTransition/oTransition.yy",},"order":2,},
     {"id":{"name":"oFan","path":"objects/oFan/oFan.yy",},"order":1,},
     {"id":{"name":"oGameSave","path":"objects/oGameSave/oGameSave.yy",},"order":5,},
     {"id":{"name":"oHand","path":"objects/oHand/oHand.yy",},"order":2,},
