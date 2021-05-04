@@ -153,6 +153,7 @@
     {"id":{"name":"input_assignment_tick","path":"scripts/input_assignment_tick/input_assignment_tick.yy",},"order":0,},
     {"id":{"name":"input_async_system_event","path":"scripts/input_async_system_event/input_async_system_event.yy",},"order":0,},
     {"id":{"name":"seqPingPong","path":"sequences/seqPingPong/seqPingPong.yy",},"order":0,},
+    {"id":{"name":"oImagePosition","path":"objects/oImagePosition/oImagePosition.yy",},"order":1,},
     {"id":{"name":"input_axis_threshold_get","path":"scripts/input_axis_threshold_get/input_axis_threshold_get.yy",},"order":0,},
     {"id":{"name":"sFeedArmPTWM","path":"sprites/sFeedArmPTWM/sFeedArmPTWM.yy",},"order":5,},
     {"id":{"name":"input_axis_threshold_set","path":"scripts/input_axis_threshold_set/input_axis_threshold_set.yy",},"order":1,},
@@ -787,7 +788,7 @@
     {"CopyToMask":-1,"filePath":"datafiles/Fonts","resourceVersion":"1.0","name":"fnt_debug.yy","resourceType":"GMIncludedFile",},
   ],
   "MetaData": {
-    "IDEVersion": "2.3.1.542",
+    "IDEVersion": "2.3.2.560",
   },
   "resourceVersion": "1.4",
   "name": "Dog",

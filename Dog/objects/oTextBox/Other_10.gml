@@ -28,6 +28,7 @@ function InitLine()
 	var CurrentSpeaker = GetSpeaker(DrawnText);
 	var CurrentColor = CurrentLineInit.Color; //Store initial color
 	var CurrentFont = CurrentSpeaker.Font;
+	SpriteList = CurrentSpeaker.SpriteList;
 	CurrentCloseTime = CurrentLineInit.CloseTime; //Store auto closing time
 	
 	// Remove name from dialogue
