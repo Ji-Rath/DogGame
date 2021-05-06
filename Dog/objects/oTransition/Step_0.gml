@@ -1,37 +1,21 @@
 /// @description Insert description here
 // You can write your code in this editor
-if(Target != -1)
+
+if (SequenceInstance != noone)
 {
-	if (FadeIn)
+	var SeqDir = layer_sequence_get_headdir(SequenceInstance);
+	if (layer_sequence_is_finished(SequenceInstance))
 	{
-		image_alpha += FadeSpeed;
-		if (image_alpha == 1)
+		if (SeqDir == 1)
 		{
-			room_goto(Target);
-			FadeIn = false;
+			// When sequence finishes, sync player pos and go to next room
+			room_goto(RoomTarget);
 		}
-	} 
-	else 
-	{
-		image_alpha -= FadeSpeed;
-		if (image_alpha < 0)
+		else if (SeqDir == -1)
 		{
-			instance_destroy();
-		}
-		if(XDest != 0 && YDest != 0 && image_alpha > 0.75)
-		{
-			oDog.x = XDest;
-			oDog.y = YDest;
-			oDog.sprite_index = Sprite;
-			oDog.image_xscale = SpriteXScale;
-			oCamera.x = XDest;
-			oCamera.y = YDest;
-			
-			with (oPartnerBase)
-			{
-				x = other.XDest;
-				y = other.YDest;
-			}
+			// When transition is finished, destroy self
+			layer_sequence_destroy(SequenceInstance);
+			instance_destroy();	
 		}
 	}
 }

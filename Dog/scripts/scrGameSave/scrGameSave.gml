@@ -17,10 +17,10 @@ function scrGameSave() {
 	SaveObject(oEnemyBase, ["x","y","Health"]);
 
 	// Save Trigger State
-	SaveObject(oTriggerBase, [Used]);
+	SaveObject(oTriggerBase, ["Used"]);
 	
 	// Save NPCs
-	SaveObject(oNPCBase, [Used]);
+	SaveObject(oNPCBase, ["Used"]);
 
 	//Save ds map to file
 	var SaveText = ds_map_write(oAreaStats.SaveState);

@@ -30,3 +30,6 @@ LoadObject(oDog);
 LoadObject(oEnemyBase);
 LoadObject(oNPCBase);
 LoadObject(oTriggerBase);
+
+layer_script_begin(layer_get_id("GUI"), sequence_transition_begin);
+layer_script_end(layer_get_id("GUI"), sequence_transition_end);

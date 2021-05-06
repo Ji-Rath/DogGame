@@ -1,32 +1,36 @@
 /// @func scrFadeout(room, fadecolor, fadespeed)
 /// @desc Fade into a different room
-/// @arg Room
-/// @arg Color
-/// @arg FadeSpeed
-/// @arg *XDest = 0
-/// @arg *YDest = 0
-/// @arg *Sprite = 0
-/// @arg *SpriteXScale = 0
+/// @arg {room} Room
+/// @arg {sequence} IntroSequence
+/// @arg {sequence} *OutroSequence
+/// @arg {struct} *CharInfo struct
 function scrFadeout() {
-	var Room = argument[0], Color = argument[1], FadeSpeed = argument[2];
-	var XDest = argument_count > 3 ? argument[3] : 0;
-	var YDest = argument_count > 4 ? argument[4] : 0;
-	var Sprite = argument_count > 5 ? argument[5] : 0;
-	var SpriteXScale = argument_count > 6 ? argument[6] : 0;
+	var Room = argument[0];
+	var IntroSeq = argument[1];
+	var OutroSeq = argument_count > 2 ? argument[2] : IntroSeq;
+	var PlayerData = argument_count > 3 ? argument[3] : noone;
 	
-	if(!instance_exists(oFade))
+	if(!instance_exists(oTransition))
 	{
-	    var Fade = instance_create_depth(0,0,0,oFade);
-    
-	    Fade.Target = Room;
-	    Fade.FadeColor = Color;
-	    Fade.FadeSpeed = FadeSpeed;
-	    if(XDest != 0)
-	    {
-	        Fade.XDest = XDest;
-	        Fade.YDest = YDest;
-	        Fade.Sprite = Sprite;
-	        Fade.SpriteXScale = SpriteXScale;
-	    }
+	    var Fade = instance_create_depth(0,0,0,oTransition);
+		with (Fade)
+		{
+			IntroSequence = IntroSeq;
+			OutroSequence = OutroSeq;
+		    RoomTarget = Room;
+		    if(is_struct(PlayerData))
+		    {
+		        PlayerInfo = PlayerData;
+		    }
+		}
 	}
 }
+
+
+function CharInfo(_X, _Y, _Sprite, _XScale) constructor
+{
+	X = _X;
+	Y = _Y;
+	Sprite = _Sprite;
+	XScale = _XScale;
+};
