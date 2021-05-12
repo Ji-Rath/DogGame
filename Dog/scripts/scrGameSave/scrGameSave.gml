@@ -12,6 +12,9 @@ function scrGameSave() {
 
 	// Save Items
 	ds_map_replace(oAreaStats.SaveState,"Items",ds_map_write(oAreaStats.Items));
+	
+	// Save Room
+	ds_map_replace(oAreaStats.SaveState,"Room",room_get_name(room));
 
 	// Save Enemy State
 	SaveObject(oEnemyBase, ["x","y","Health"]);
@@ -31,52 +34,71 @@ function scrGameSave() {
 
 }
 
+function CreateMissingObjects(Object)
+{
+	var InstanceData = GetInstanceData(Object);
+	var KeyList = ds_map_keys_to_array(InstanceData);
+	for(var i=0; i<array_length(KeyList);i++)
+	{
+		var Instance = KeyList[i];
+		// Check if instance doesnt exist on current map
+		if (!instance_exists(Instance))
+		{
+			// Create replacement instance with identical variable values
+			var ID = instance_create_layer(0, 0, "Instances", real(Object));
+			var VariableData = GetVariableData(Object, Instance);
+			ds_map_add(InstanceData, string(ID), VariableData);
+			ds_map_delete(InstanceData, Instance);
+		}
+	}
+	
+	//Update save state
+	SetInstanceData(Object, InstanceData);
+}
+
+///@desc Load a specified object
 function LoadObject(Object)
 {
+	CreateMissingObjects(Object);
+
 	with(Object)
 	{
-		// Find value corresponding values to object that we want to load
-	    var GridString = ds_map_find_value(oAreaStats.SaveState,room_get_name(room)+"_"+string(object_index));
-	    if(GridString != undefined)
-	    {
-	        var Grid = ds_grid_create(0,0);
-	        ds_grid_read(Grid,GridString);
-	        for(var i=0;i<ds_grid_height(Grid);i++)
-	        {
-				// Attempt to match instance ids
-	            if (ds_grid_get(Grid,0,i) == id)
-	            {
-					// Sync variable values
-					var VarValues = ds_list_create();
-					var VarNames = ds_list_create();
-					ds_list_read(VarNames, ds_grid_get(Grid, 2, i));
-					ds_list_read(VarValues, ds_grid_get(Grid, 1, i));
-					for (var i=0;i<ds_list_size(VarNames);i++)
-					{
-						if (variable_instance_exists(self, ds_list_find_value(VarNames, i)))
-						{
-							variable_instance_set(self, ds_list_find_value(VarNames, i), ds_list_find_value(VarValues, i));
-							//show_debug_message(string(ds_list_find_value(VarNames, i))+": "+ string(ds_list_find_value(VarValues, i)));
-						}
-					}
-	            }
-	        }
-	    }
+		// Get data list (contains name and value lists)
+		var DataList = GetVariableData(object_index, id);
+		
+		// Get variable names and value lists
+		var VarNames = ds_list_create();
+		var VarValues = ds_list_create();
+		var NameString = ds_map_find_value(DataList, "VarNames");
+		var NameValues = ds_map_find_value(DataList, "VarValues");
+		if (NameString && NameValues)
+		{
+			ds_list_read(VarNames, NameString);
+			ds_list_read(VarValues, NameValues);
+		
+			// Loop through all variables to sync
+		    for(var i=0;i<ds_list_size(VarNames);i++)
+		    {
+				// Ensure the variables exist
+				if (variable_instance_exists(self, ds_list_find_value(VarNames, i)))
+				{
+					// Update value
+					variable_instance_set(self, ds_list_find_value(VarNames, i), ds_list_find_value(VarValues, i));
+					show_debug_message(string(ds_list_find_value(VarNames, i))+": "+ string(ds_list_find_value(VarValues, i)));
+				}
+		    }
+		}
 	}
 }
 
 function SaveObject(Object, VariableArray)
 {
-	//Save Enemy State
-	var SaveGrid = ds_grid_create(array_length(VariableArray)+1,0);
-	var KeyName = room_get_name(room)+"_"+string(object_index); // Key to see which object we are working with
+	if (!instance_exists(Object)) { return; }
+	
 	with(Object)
 	{
 		var VarValues = ds_list_create(); // DS list to store variable values
 		var VarNames = ds_list_create();
-	    ds_grid_resize(SaveGrid,ds_grid_width(SaveGrid),ds_grid_height(SaveGrid)+1); // Accomodate for additional object to save
-	    var row = ds_grid_height(SaveGrid)-1; // Get last row index
-	    ds_grid_add(SaveGrid,0,row,id); // Add unique instance key to grid
 		
 		// Add all specified variables to array
 		for(var i=0;i<array_length(VariableArray);i++)
@@ -88,9 +110,15 @@ function SaveObject(Object, VariableArray)
 			}
 		}
 		
-		// Add variable values and names to grid
-		ds_grid_add(SaveGrid,1,row, ds_list_write(VarValues));
-		ds_grid_add(SaveGrid,2,row, ds_list_write(VarNames));
+		// Combine names and values together in a list
+		var VarMap = ds_map_create();
+		ds_map_add(VarMap, "VarNames", ds_list_write(VarNames));
+		ds_map_add(VarMap, "VarValues", ds_list_write(VarValues));
+		
+		// Add variable values and names to map
+		show_debug_message("Saved: "+object_get_name(object_index));
+		
+		// Update object map data
+		SetVariableData(object_index, id, VarMap);
 	}
-	ds_map_replace(oAreaStats.SaveState,KeyName,ds_grid_write(SaveGrid));
 }

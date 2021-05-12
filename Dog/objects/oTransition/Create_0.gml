@@ -19,7 +19,7 @@ function SyncVariables()
 			oDog.sprite_index = PlayerInfo.Sprite;
 			oDog.image_xscale = PlayerInfo.XScale;
 			oCamera.SnapCamera(PlayerInfo.X, PlayerInfo.Y); //Snap camera again to prevent graphical glitches
-		}		
+		}
 		with (oPartnerBase)
 		{
 			x = other.PlayerInfo.X;

@@ -37,3 +37,5 @@ if (PausePunctuation)
 
 // Post create event
 alarm[0] = 1;
+
+CurrentSprIndex = 0;

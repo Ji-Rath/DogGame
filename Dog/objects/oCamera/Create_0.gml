@@ -37,5 +37,7 @@ function SnapCamera(XCenter, YCenter)
 {
 	x = XCenter;
 	y = YCenter;
+	XDestination = x;
+	YDestination = y;
 	camera_set_view_pos(Camera, x-ViewWidthHalf, y-ViewHeightHalf);	
 }

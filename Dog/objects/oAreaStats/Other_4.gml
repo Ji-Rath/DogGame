@@ -26,10 +26,17 @@ if (LayerID)
     }
 }
 
-LoadObject(oDog);
-LoadObject(oEnemyBase);
-LoadObject(oNPCBase);
-LoadObject(oTriggerBase);
+// Load all object data
+var DataMap = GetObjectData();
+if (DataMap)
+{
+	var KeyList = ds_map_keys_to_array(DataMap);
+	for (var i=0;i<array_length(KeyList);i++)
+	{
+		LoadObject(KeyList[i]);
+		show_debug_message("Loaded: "+object_get_name(KeyList[i]));
+	}
+}
 
 layer_script_begin(layer_get_id("GUI"), sequence_transition_begin);
 layer_script_end(layer_get_id("GUI"), sequence_transition_end);

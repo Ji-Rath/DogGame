@@ -11,7 +11,7 @@ draw_sprite_ext(sprite_index, image_index, x-XView, y-YView, image_xscale, image
 
 //Draw Speaker
 if (instance_exists(ImagePositionRef) && array_length(SpriteList) > SpriteIndex)
-	draw_sprite_ext(SpriteList[SpriteIndex], image_index, ImagePositionRef.x-XView, ImagePositionRef.y-YView, 1, 1, 0, c_white, 1);
+	draw_sprite_ext(SpriteList[SpriteIndex], CurrentSprIndex, ImagePositionRef.x-XView, ImagePositionRef.y-YView, 1, 1, 0, c_white, 1);
 
 var PosX = TextPositionRef.x-XView; // Position to draw text x
 var PosY = TextPositionRef.y-YView; // Position to draw text y

@@ -5,3 +5,7 @@ if(instance_exists(Follow))
 {
 	SnapCamera(Follow.x, Follow.y);
 }
+else
+{
+	SnapCamera(room_width/2, room_height/2);	
+}
