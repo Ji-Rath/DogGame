@@ -3,7 +3,7 @@
 
 if(Fade)
 {
-	scrFadeout(TargetRoom,c_black,0.05);
+	scrFadeout(TargetRoom, seqCircleTransition);
 }
 else
 {

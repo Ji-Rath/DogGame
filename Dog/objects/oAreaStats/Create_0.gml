@@ -51,3 +51,38 @@ function StoreEnemy()
 }
 
 TweenSet(TWEEN_DEFAULT, "delta", true);
+
+GUISurface = surface_create(display_get_gui_width(), display_get_gui_height());
+
+function sequence_transition_begin()
+{
+    /// @func sequence_transition_begin()
+    if (event_type == ev_draw)
+    {
+        if (event_number == ev_gui)
+        {
+			if (!variable_instance_exists(self, "GUISurface"))
+				GUISurface = surface_create(display_get_gui_width(), display_get_gui_height());
+				
+            // create surface
+            if !surface_exists(GUISurface) GUISurface = surface_create(display_get_gui_width(), display_get_gui_height());
+         
+            // set target
+            surface_set_target(GUISurface);
+            draw_clear_alpha(c_black, 0);
+        }
+    }
+}
+
+function sequence_transition_end()
+{
+    /// @func sequence_transition_end()
+    if (event_type == ev_draw)
+    {
+        if (event_number == ev_gui)
+        {
+            surface_reset_target();
+        }
+    }
+}
+

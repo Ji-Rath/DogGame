@@ -61,7 +61,10 @@ if (input_check_press(EVerb.Interact))
 	
 	//Save game if interacting with SaveGame object
 	if(place_meeting(x,y,oGameSave))
+	{
+		show_debug_message("Game Saved!");
 		scrGameSave(oAreaStats.CurrentSave);
+	}
 }
 
 //Go to menu

@@ -11,21 +11,6 @@ ViewHeightHalf = camera_get_view_height(Camera) * 0.5;
 XDestination = 0;
 YDestination = 0;
 
-if(instance_exists(Follow))
-{
-	x = Follow.x;
-	y = Follow.y;
-	camera_set_view_pos(Camera,Follow.x-ViewWidthHalf,Follow.y-ViewHeightHalf);
-}
-else
-{
-	x = room_width/2;
-	y = room_height/2;
-	XDestination = x;
-	YDestination = y;
-	camera_set_view_pos(Camera,x - ViewWidthHalf,y - ViewHeightHalf);
-}
-
 //Camera States
 enum CameraState
 {
@@ -45,4 +30,14 @@ function ScreenShake(Length, Magnitude)
 	ShakeLength = Length;
 	ShakeMagnitude = Magnitude;
 	ShakeRemain = ShakeLength;
+}
+
+/// @func Snap the camera to a specified position
+function SnapCamera(XCenter, YCenter)
+{
+	x = XCenter;
+	y = YCenter;
+	XDestination = x;
+	YDestination = y;
+	camera_set_view_pos(Camera, x-ViewWidthHalf, y-ViewHeightHalf);	
 }

@@ -36,17 +36,21 @@ if(input_check_press(EVerb.Interact))
 // Allow the player to choose different options if available
 if (bDisplayOptions)
 {
-	if (global.KeyDown)
+	if (input_check_press(EVerb.MoveDown))
 		SelectedOption = clamp(++SelectedOption, 0, chatterbox_get_option_count(chatterbox)-1);
-	if (global.KeyUp)
+	if (input_check_press(EVerb.MoveUp))
 		SelectedOption = clamp(--SelectedOption, 0, chatterbox_get_option_count(chatterbox)-1);
 }
 
+// Handle automatically going to next line/finishing dialogue
 if (CurrentCloseTime != 0 && alarm[1] == -1)
 {
 	if (scribble_autotype_get(CurrentText) == 1)
 		alarm[1] = CurrentCloseTime * 60;
 }
+
+SpriteIndex = scribble_autotype_get(CurrentText) == 1 ? 0 : 1;
+CurrentSprIndex += 0.1;
 
 //Update position
 var Camera = view_camera[0];

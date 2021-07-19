@@ -6,11 +6,11 @@ var Room = ds_map_find_value(oAreaStats.SaveState,"Room");
 if(!oAreaStats.LoadGame)
 {
     ds_map_clear(oAreaStats.SaveState);
-    scrFadeout(rmSceneDogHut,c_black,0.05);
+    scrFadeout(rmSceneDogHut, seqCircleTransition);
     oAreaStats.CurrentSave = SaveName;
 }
 else if(Room != undefined && room_get_name(room) != Room)
 {
-    scrFadeout(asset_get_index(Room),c_black,0.05);
+    scrFadeout(asset_get_index(Room), seqCircleTransition);
     oAreaStats.CurrentSave = SaveName;
 }

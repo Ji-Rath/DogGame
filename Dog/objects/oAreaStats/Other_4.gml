@@ -11,7 +11,7 @@ global.AIGrid = mp_grid_create(0, 0, CellCountW, CellCountH, CellWidth, CellHeig
 
 //Avoid tiles that are within the 'Collision' layer
 var LayerID = layer_get_id("Collision");
-if(LayerID)
+if (LayerID)
 {
     var TileID = layer_tilemap_get_id(LayerID);
     for(var i=0;i<tilemap_get_width(TileID);i++)
@@ -26,57 +26,17 @@ if(LayerID)
     }
 }
 
-//Update the enemies position with what was saved
-with(oEnemyBase)
+// Load all object data
+var DataMap = GetObjectData();
+if (DataMap)
 {
-    var GridString = ds_map_find_value(oAreaStats.SaveState,room_get_name(room)+"Enemy");
-    if(GridString != undefined)
-    {
-        var Grid = ds_grid_create(0,0);
-        ds_grid_read(Grid,GridString);
-        for(var i=0;i<ds_grid_height(Grid);i++)
-        {
-            if (ds_grid_get(Grid,0,i) == Key)
-            {
-                x = ds_grid_get(Grid,1,i);
-                y = ds_grid_get(Grid,2,i);
-                Health = ds_grid_get(Grid,3,i);
-            }
-        }
-    }
+	var KeyList = ds_map_keys_to_array(DataMap);
+	for (var i=0;i<array_length(KeyList);i++)
+	{
+		LoadObject(KeyList[i]);
+		show_debug_message("Loaded: "+object_get_name(KeyList[i]));
+	}
 }
 
-//Update triggers that were already used
-with(oTriggerBase)
-{
-    var GridString = ds_map_find_value(oAreaStats.SaveState,room_get_name(room)+"Trigger");
-    if(GridString != undefined)
-    {
-        var Grid = ds_grid_create(0,0);
-        ds_grid_read(Grid,GridString);
-        for(var i=0;i<ds_grid_height(Grid);i++)
-        {
-            if (ds_grid_get(Grid,0,i) == Key)
-            {
-                Used = ds_grid_get(Grid,1,i);
-            }
-        }
-    }
-}
-//Update NPC's that were already interacted with
-with(oNPCBase)
-{
-    var GridString = ds_map_find_value(oAreaStats.SaveState,room_get_name(room)+"Trigger");
-    if(GridString != undefined)
-    {
-        var Grid = ds_grid_create(0,0);
-        ds_grid_read(Grid,GridString);
-        for(var i=0;i<ds_grid_height(Grid);i++)
-        {
-            if (ds_grid_get(Grid,0,i) == Key)
-            {
-                Used = ds_grid_get(Grid,1,i);
-            }
-        }
-    }
-}
+layer_script_begin(layer_get_id("GUI"), sequence_transition_begin);
+layer_script_end(layer_get_id("GUI"), sequence_transition_end);

@@ -7,3 +7,4 @@ event_inherited();
 PreviousPos = new Vector2(x, y);
 Velocity = new Vector2(0, 0);
 Speed = 0;
+SpriteList = [];

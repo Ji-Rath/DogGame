@@ -11,5 +11,7 @@ SeqInstance = layer_sequence_get_instance(Seq);
 sequence_instance_override_object(SeqInstance, oTextBox, self);
 TextPositionRef = instance_find(oTextPosition, 0);
 
+ImagePositionRef = instance_find(oImagePosition, 0);
+
 // Initialize values to use current line of text
 InitLine();

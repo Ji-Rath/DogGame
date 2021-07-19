@@ -9,6 +9,7 @@ RunSpeed = WalkSpeed*2; //Player run speed
 InteractRadius = 50; //Interaction radius
 Scale = 0.5; //Set scale of player
 RunPartInterval = 0.25; //Time (seconds) to spawn particles while running
+SpriteList = [sDogFace, sDogFaceTalk];
 	
 //////////////////////////////////////////////////////////////////////////////////
 
@@ -19,14 +20,6 @@ enum DogState
 	
 }
 state = DogState.normal;
-
-//Load Variables from ds map if available
-var SaveVal = ds_map_find_value(oAreaStats.SaveState,"PlayerX");
-if(SaveVal != undefined)
-{
-	x = ds_map_find_value(oAreaStats.SaveState,"PlayerX");
-	y = ds_map_find_value(oAreaStats.SaveState,"PlayerY");
-}
 
 // Set scaling of player
 image_yscale = Scale;

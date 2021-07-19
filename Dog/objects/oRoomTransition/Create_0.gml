@@ -3,5 +3,5 @@
 
 function RoomTransition()
 {
-	scrFadeout(Room, c_black, 0.05, XDest, YDest, oDog.sprite_index, oDog.image_xscale);
+	scrFadeout(Room, seqCircleTransition, seqCircleTransition, new CharInfo(XDest, YDest, oDog.sprite_index, oDog.image_xscale));
 }

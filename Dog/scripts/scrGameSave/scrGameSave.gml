@@ -1,59 +1,29 @@
 /// @param SaveName
-/// @param Room = room
 function scrGameSave() {
 	var SaveName = argument[0];
-var Room = argument_count > 1 ? argument[1] : room;
 
-	//Save Player position
-	with(oDog)
-	{
-	    ds_map_replace(oAreaStats.SaveState,"PlayerX",x);
-	    ds_map_replace(oAreaStats.SaveState,"PlayerY",y);
-	}
+	// Save Player position
+	SaveObject(oDog, ["x","y"]);
 
-	//Save Player Stats
+	// Save Player Stats
 	ds_map_replace(oAreaStats.SaveState,"PlayerHealth",global.PlayerHP);
 	ds_map_replace(oAreaStats.SaveState,"PlayerPP",global.PlayerPP);
 	ds_map_replace(oAreaStats.SaveState,"PlayerLevel",global.PlayerLevel);
 
-	//Save Room
-	ds_map_replace(oAreaStats.SaveState,"Room",room_get_name(Room));
-
-	//Save Items
+	// Save Items
 	ds_map_replace(oAreaStats.SaveState,"Items",ds_map_write(oAreaStats.Items));
+	
+	// Save Room
+	ds_map_replace(oAreaStats.SaveState,"Room",room_get_name(room));
 
-	//Save Enemy State
-	var Enemy = ds_grid_create(4,0);
-	var KeyName = room_get_name(Room)+"Enemy";
-	with(oEnemyBase)
-	{
-	    ds_grid_resize(Enemy,ds_grid_width(Enemy),ds_grid_height(Enemy)+1);
-	    var row = ds_grid_height(Enemy)-1;
-	    ds_grid_add(Enemy,0,row,Key);
-	    ds_grid_add(Enemy,1,row,x);
-	    ds_grid_add(Enemy,2,row,y);
-	    ds_grid_add(Enemy,3,row,Health);
-	}
-	ds_map_replace(oAreaStats.SaveState,KeyName,ds_grid_write(Enemy));
+	// Save Enemy State
+	SaveObject(oEnemyBase, ["x","y","Health"]);
 
-	//Save Trigger State
-	var Trigger = ds_grid_create(2,0);
-	var KeyName = room_get_name(Room)+"Trigger";
-	with(oTriggerBase)
-	{
-	    ds_grid_resize(Trigger,ds_grid_width(Trigger),ds_grid_height(Trigger)+1);
-	    var row = ds_grid_height(Trigger)-1;
-	    ds_grid_add(Trigger,0,row,Key);
-	    ds_grid_add(Trigger,1,row,Used);
-	}
-	with(oNPCBase)
-	{
-	    ds_grid_resize(Trigger,ds_grid_width(Trigger),ds_grid_height(Trigger)+1);
-	    var row = ds_grid_height(Trigger)-1;
-	    ds_grid_add(Trigger,0,row,Key);
-	    ds_grid_add(Trigger,1,row,Used);
-	}
-	ds_map_replace(oAreaStats.SaveState,KeyName,ds_grid_write(Trigger));
+	// Save Trigger State
+	SaveObject(oTriggerBase, ["Used"]);
+	
+	// Save NPCs
+	SaveObject(oNPCBase, ["Used"]);
 
 	//Save ds map to file
 	var SaveText = ds_map_write(oAreaStats.SaveState);
@@ -62,4 +32,93 @@ var Room = argument_count > 1 ? argument[1] : room;
 	ini_close();
 
 
+}
+
+function CreateMissingObjects(Object)
+{
+	var InstanceData = GetInstanceData(Object);
+	var KeyList = ds_map_keys_to_array(InstanceData);
+	for(var i=0; i<array_length(KeyList);i++)
+	{
+		var Instance = KeyList[i];
+		// Check if instance doesnt exist on current map
+		if (!instance_exists(Instance))
+		{
+			// Create replacement instance with identical variable values
+			var ID = instance_create_layer(0, 0, "Instances", real(Object));
+			var VariableData = GetVariableData(Object, Instance);
+			ds_map_add(InstanceData, string(ID), VariableData);
+			ds_map_delete(InstanceData, Instance);
+		}
+	}
+	
+	//Update save state
+	SetInstanceData(Object, InstanceData);
+}
+
+///@desc Load a specified object
+function LoadObject(Object)
+{
+	CreateMissingObjects(Object);
+
+	with(Object)
+	{
+		// Get data list (contains name and value lists)
+		var DataList = GetVariableData(object_index, id);
+		
+		// Get variable names and value lists
+		var VarNames = ds_list_create();
+		var VarValues = ds_list_create();
+		var NameString = ds_map_find_value(DataList, "VarNames");
+		var NameValues = ds_map_find_value(DataList, "VarValues");
+		if (NameString && NameValues)
+		{
+			ds_list_read(VarNames, NameString);
+			ds_list_read(VarValues, NameValues);
+		
+			// Loop through all variables to sync
+		    for(var i=0;i<ds_list_size(VarNames);i++)
+		    {
+				// Ensure the variables exist
+				if (variable_instance_exists(self, ds_list_find_value(VarNames, i)))
+				{
+					// Update value
+					variable_instance_set(self, ds_list_find_value(VarNames, i), ds_list_find_value(VarValues, i));
+					show_debug_message(string(ds_list_find_value(VarNames, i))+": "+ string(ds_list_find_value(VarValues, i)));
+				}
+		    }
+		}
+	}
+}
+
+function SaveObject(Object, VariableArray)
+{
+	if (!instance_exists(Object)) { return; }
+	
+	with(Object)
+	{
+		var VarValues = ds_list_create(); // DS list to store variable values
+		var VarNames = ds_list_create();
+		
+		// Add all specified variables to array
+		for(var i=0;i<array_length(VariableArray);i++)
+		{
+			if (variable_instance_exists(self, VariableArray[i]))
+			{
+				ds_list_add(VarNames, VariableArray[i]);
+				ds_list_add(VarValues, variable_instance_get(self, VariableArray[i]))
+			}
+		}
+		
+		// Combine names and values together in a list
+		var VarMap = ds_map_create();
+		ds_map_add(VarMap, "VarNames", ds_list_write(VarNames));
+		ds_map_add(VarMap, "VarValues", ds_list_write(VarValues));
+		
+		// Add variable values and names to map
+		show_debug_message("Saved: "+object_get_name(object_index));
+		
+		// Update object map data
+		SetVariableData(object_index, id, VarMap);
+	}
 }
