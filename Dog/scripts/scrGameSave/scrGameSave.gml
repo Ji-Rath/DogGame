@@ -62,7 +62,7 @@ function LoadObject(Object)
 	CreateMissingObjects(Object);
 
 	with(Object)
-	{
+	{	
 		// Get data list (contains name and value lists)
 		var DataList = GetVariableData(object_index, id);
 		
@@ -76,9 +76,11 @@ function LoadObject(Object)
 			ds_list_read(VarNames, NameString);
 			ds_list_read(VarValues, NameValues);
 		
+			show_debug_message("Variable List Size: "+string(ds_list_size(VarNames)));
 			// Loop through all variables to sync
 		    for(var i=0;i<ds_list_size(VarNames);i++)
 		    {
+				show_debug_message("Variable: "+string(ds_list_find_value(VarNames, i)) + " | "+string(ds_list_find_value(VarValues, i)));
 				// Ensure the variables exist
 				if (variable_instance_exists(self, ds_list_find_value(VarNames, i)))
 				{
@@ -107,6 +109,7 @@ function SaveObject(Object, VariableArray)
 			{
 				ds_list_add(VarNames, VariableArray[i]);
 				ds_list_add(VarValues, variable_instance_get(self, VariableArray[i]))
+				//show_debug_message("Added: "+string(VariableArray[i])+" | "+string(variable_instance_get(self, VariableArray[i])));
 			}
 		}
 		
@@ -115,8 +118,7 @@ function SaveObject(Object, VariableArray)
 		ds_map_add(VarMap, "VarNames", ds_list_write(VarNames));
 		ds_map_add(VarMap, "VarValues", ds_list_write(VarValues));
 		
-		// Add variable values and names to map
-		show_debug_message("Saved: "+object_get_name(object_index));
+		//show_debug_message("Saved: "+object_get_name(object_index));
 		
 		// Update object map data
 		SetVariableData(object_index, id, VarMap);

@@ -34,7 +34,7 @@ if (DataMap)
 	for (var i=0;i<array_length(KeyList);i++)
 	{
 		LoadObject(KeyList[i]);
-		show_debug_message("Loaded: "+object_get_name(KeyList[i]));
+		show_debug_message("Loaded "+object_get_name(KeyList[i]));
 	}
 }
 

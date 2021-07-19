@@ -10,7 +10,7 @@ function GetObjectData()
 	if (RoomString)
 	{
 		ds_map_read(RoomData, RoomString);
-		show_debug_message("Found Object Data: "+string(Room));
+		//show_debug_message("Found Object Data: "+string(room_get_name(Room)));
 	}
 	return RoomData;
 }
@@ -19,7 +19,7 @@ function GetObjectData()
 function GetInstanceData(Object)
 {
 	//Optional room argument
-	var Room = argument_count > 0 ? argument[0] : room;
+	var Room = argument_count > 1 ? argument[1] : room;
 	
 	// Get DS Object Data
 	var ObjectData = GetObjectData(Room);
@@ -29,7 +29,7 @@ function GetInstanceData(Object)
 	if (InstanceString)
 	{
 		ds_map_read(InstanceData, InstanceString);
-		show_debug_message("Found Instance Data: "+string(Object));
+		//show_debug_message("Found Instance Data: "+string(Object));
 	}
 	
 	return InstanceData;
@@ -48,7 +48,7 @@ function GetVariableData(Object, InstanceID)
 	if (VariableString)
 	{
 		ds_map_read(VariableData, VariableString);
-		show_debug_message("Found Variable Data: "+string(Object));
+		//show_debug_message("Found Variable Data: "+string(Object));
 	}
 	
 	return VariableData;
