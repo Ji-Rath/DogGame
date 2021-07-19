@@ -42,7 +42,7 @@ function CreateMissingObjects(Object)
 	{
 		var Instance = KeyList[i];
 		// Check if instance doesnt exist on current map
-		if (!instance_exists(Instance))
+		if (Instance != "undefined" && !instance_exists(Instance))
 		{
 			// Create replacement instance with identical variable values
 			var ID = instance_create_layer(0, 0, "Instances", real(Object));
