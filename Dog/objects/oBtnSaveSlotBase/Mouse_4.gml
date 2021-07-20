@@ -1,6 +1,6 @@
 
 //Load saved game, if it doesnt exist, create a new save
-scrGameLoad(SaveName);
+LoadGame(SaveName);
 
 var Room = ds_map_find_value(oAreaStats.SaveState,"Room");
 if(!oAreaStats.LoadGame)

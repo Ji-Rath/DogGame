@@ -22,9 +22,10 @@ function scrRunSequence(Sequence)
 	return AnimSeq;
 }
 
-function EnemyBattleInfo(EnemyKey, EnemyBattleObject, EnemyTextFile) constructor
+function EnemyBattleInfo(Object, ID, EnemyBattleObject, EnemyTextFile) constructor
 {
-	Key = EnemyKey;
+	InstanceID = ID;
+	ObjectIndex = Object;
 	BattleObject = EnemyBattleObject;
 	TextFile = EnemyTextFile;
 }

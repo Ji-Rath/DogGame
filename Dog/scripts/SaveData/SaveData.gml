@@ -10,7 +10,7 @@ function GetObjectData()
 	if (RoomString)
 	{
 		ds_map_read(RoomData, RoomString);
-		show_debug_message("Found Object Data: "+string(Room));
+		//show_debug_message("Found Object Data: "+string(room_get_name(Room)));
 	}
 	return RoomData;
 }
@@ -19,7 +19,7 @@ function GetObjectData()
 function GetInstanceData(Object)
 {
 	//Optional room argument
-	var Room = argument_count > 0 ? argument[0] : room;
+	var Room = argument_count > 1 ? argument[1] : room;
 	
 	// Get DS Object Data
 	var ObjectData = GetObjectData(Room);
@@ -29,7 +29,7 @@ function GetInstanceData(Object)
 	if (InstanceString)
 	{
 		ds_map_read(InstanceData, InstanceString);
-		show_debug_message("Found Instance Data: "+string(Object));
+		//show_debug_message("Found Instance Data: "+string(Object));
 	}
 	
 	return InstanceData;
@@ -48,7 +48,7 @@ function GetVariableData(Object, InstanceID)
 	if (VariableString)
 	{
 		ds_map_read(VariableData, VariableString);
-		show_debug_message("Found Variable Data: "+string(Object));
+		//show_debug_message("Found Variable Data: "+string(Object));
 	}
 	
 	return VariableData;
@@ -85,4 +85,47 @@ function SetVariableData(Object, InstanceID, VarData)
 	var InstanceData = GetInstanceData(Object, Room);
 	ds_map_replace(InstanceData, string(InstanceID), ds_map_write(VarData));
 	SetInstanceData(Object, InstanceData, Room);
+}
+
+///@desc Set variable data for specified instance of object in room
+///@arg Object Object Index
+///@arg InstanceID ID of instance
+///@arg VarData Variable data of instance
+function SetVariableValue(Object, InstanceID, VarName, Value)
+{
+	//Optional room argument
+	var Room = argument_count > 4 ? argument[4] : room;
+	var VariableData = GetVariableData(Object, InstanceID, Room);
+	
+	// Get variable names and value lists
+	var NameString = ds_map_find_value(VariableData, "VarNames");
+	var NameValues = ds_map_find_value(VariableData, "VarValues");
+	if (NameString && NameValues)
+	{
+		var VarNames = ds_list_create();
+		var VarValues = ds_list_create();
+		ds_list_read(VarNames, NameString);
+		ds_list_read(VarValues, NameValues);
+		
+		// Loop through all variables to sync
+		for(var i=0;i<ds_list_size(VarNames);i++)
+		{
+			if (ds_list_find_value(VarNames, i) == VarName)
+			{
+				ds_list_replace(VarValues, i, Value);
+			}
+		}
+		ds_map_replace(VariableData, "VarValues", ds_list_write(VarValues));
+	}
+	
+	SetVariableData(Object, InstanceID, VariableData, Room);
+}
+
+function DumpMap(DSMap)
+{
+	var KeyList = ds_map_keys_to_array(DSMap);
+	for(var i=0;i<array_length(KeyList);i++)
+	{
+		show_debug_message("Key: "+string(KeyList[i])+" | Value: "+string(ds_map_find_value(DSMap, KeyList[i])));	
+	}
 }

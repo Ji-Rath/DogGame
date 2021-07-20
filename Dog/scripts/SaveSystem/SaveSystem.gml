@@ -1,20 +1,21 @@
 /// @param SaveName
-function scrGameSave() {
+function SaveGame()
+{
 	var SaveName = argument[0];
-
+	
 	// Save Player position
 	SaveObject(oDog, ["x","y"]);
 
 	// Save Player Stats
-	ds_map_replace(oAreaStats.SaveState,"PlayerHealth",global.PlayerHP);
-	ds_map_replace(oAreaStats.SaveState,"PlayerPP",global.PlayerPP);
-	ds_map_replace(oAreaStats.SaveState,"PlayerLevel",global.PlayerLevel);
+	SaveValue("PlayerHealth",global.PlayerHP);
+	SaveValue("PlayerPP",global.PlayerPP);
+	SaveValue("PlayerLevel",global.PlayerLevel);
 
 	// Save Items
-	ds_map_replace(oAreaStats.SaveState,"Items",ds_map_write(oAreaStats.Items));
+	SaveValue("Items",ds_map_write(oAreaStats.Items));
 	
 	// Save Room
-	ds_map_replace(oAreaStats.SaveState,"Room",room_get_name(room));
+	SaveValue("Room",room_get_name(room));
 
 	// Save Enemy State
 	SaveObject(oEnemyBase, ["x","y","Health"]);
@@ -42,13 +43,12 @@ function CreateMissingObjects(Object)
 	{
 		var Instance = KeyList[i];
 		// Check if instance doesnt exist on current map
-		if (!instance_exists(Instance))
+		if (Instance != "undefined" && !instance_exists(Instance))
 		{
 			// Create replacement instance with identical variable values
-			var ID = instance_create_layer(0, 0, "Instances", real(Object));
-			var VariableData = GetVariableData(Object, Instance);
-			ds_map_add(InstanceData, string(ID), VariableData);
-			ds_map_delete(InstanceData, Instance);
+			var NewInstance = instance_create_layer(0, 0, "Instances", real(Object));
+			
+			SetID(NewInstance, Instance);
 		}
 	}
 	
@@ -63,8 +63,11 @@ function LoadObject(Object)
 
 	with(Object)
 	{
+		// Use Read-Write instanceid if possible, fall back to built-in otherwise
+		var ID = GetID(self);
+		
 		// Get data list (contains name and value lists)
-		var DataList = GetVariableData(object_index, id);
+		var DataList = GetVariableData(object_index, ID);
 		
 		// Get variable names and value lists
 		var VarNames = ds_list_create();
@@ -76,15 +79,17 @@ function LoadObject(Object)
 			ds_list_read(VarNames, NameString);
 			ds_list_read(VarValues, NameValues);
 		
+			//show_debug_message("Variable List Size: "+string(ds_list_size(VarNames)));
 			// Loop through all variables to sync
 		    for(var i=0;i<ds_list_size(VarNames);i++)
 		    {
+				show_debug_message("Variable: "+string(ds_list_find_value(VarNames, i)) + " | "+string(ds_list_find_value(VarValues, i)));
 				// Ensure the variables exist
 				if (variable_instance_exists(self, ds_list_find_value(VarNames, i)))
 				{
 					// Update value
 					variable_instance_set(self, ds_list_find_value(VarNames, i), ds_list_find_value(VarValues, i));
-					show_debug_message(string(ds_list_find_value(VarNames, i))+": "+ string(ds_list_find_value(VarValues, i)));
+					//show_debug_message(string(ds_list_find_value(VarNames, i))+": "+ string(ds_list_find_value(VarValues, i)));
 				}
 		    }
 		}
@@ -107,6 +112,7 @@ function SaveObject(Object, VariableArray)
 			{
 				ds_list_add(VarNames, VariableArray[i]);
 				ds_list_add(VarValues, variable_instance_get(self, VariableArray[i]))
+				//show_debug_message("Added: "+string(VariableArray[i])+" | "+string(variable_instance_get(self, VariableArray[i])));
 			}
 		}
 		
@@ -115,10 +121,48 @@ function SaveObject(Object, VariableArray)
 		ds_map_add(VarMap, "VarNames", ds_list_write(VarNames));
 		ds_map_add(VarMap, "VarValues", ds_list_write(VarValues));
 		
-		// Add variable values and names to map
-		show_debug_message("Saved: "+object_get_name(object_index));
+		//show_debug_message("Saved: "+object_get_name(object_index));
+		
+		// Use Read-Write instanceid if possible, fall back to built-in otherwise
+		var ID = GetID(self);
 		
 		// Update object map data
-		SetVariableData(object_index, id, VarMap);
+		SetVariableData(object_index, ID, VarMap);
+	}
+}
+
+function GetID(Instance)
+{
+	var ID = Instance.id;
+	
+	if (variable_instance_exists(Instance, "InstanceID"))
+		ID = Instance.InstanceID;
+	
+	return ID;
+}
+
+function SetID(Instance, NewID)
+{
+	if (variable_instance_exists(Instance, "InstanceID"))
+		Instance.InstanceID = NewID;
+}
+
+function SaveValue(KeyName, Value)
+{
+	ds_map_replace(oAreaStats.SaveState,KeyName,Value);
+}
+
+function LoadGame(argument0)
+{
+	
+	//Read from save-file
+	ini_open("GameSave.sav");
+	var LoadSave = ini_read_string("Saves",argument0,undefined);
+	ini_close();
+	
+	//Access ds map if successfully loaded save
+	if(LoadSave != undefined)
+	{
+	    ds_map_read(oAreaStats.SaveState,LoadSave);
 	}
 }

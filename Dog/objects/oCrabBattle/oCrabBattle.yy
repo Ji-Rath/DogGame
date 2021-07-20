@@ -29,11 +29,11 @@
     {"x":207.0,"y":306.0,},
   ],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"oCrabBattle","path":"objects/oCrabBattle/oCrabBattle.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [
-    {"propertyId":{"name":"Health","path":"objects/oEnemyBattleParent/oEnemyBattleParent.yy",},"objectId":{"name":"oEnemyBattleParent","path":"objects/oEnemyBattleParent/oEnemyBattleParent.yy",},"value":"10","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"Health","path":"objects/oEnemyBattleParent/oEnemyBattleParent.yy",},"objectId":{"name":"oEnemyBattleParent","path":"objects/oEnemyBattleParent/oEnemyBattleParent.yy",},"value":"2","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],
   "parent": {
     "name": "Enemies",

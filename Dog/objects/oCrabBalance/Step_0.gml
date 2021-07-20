@@ -5,9 +5,10 @@ CrabCount = collision_rectangle_list(x-80,y,x+80,y-150,oCrabWeigh,false,true,Cra
 
 with(oCrabWeigh)
 {
-    if(abs(phy_angular_velocity) > VelocityThreshold || Grabbed)
+	// Calculate whether the crab on the balance is 'balanced'
+    if(abs(phy_angular_velocity) > other.VelocityThreshold || Grabbed)
     {
-        other.Timer[0] = CompleteDelay*60;
+        other.Timer[0] = other.CompleteDelay*60;
         other.StillTimer = false;
     }
 }
@@ -35,4 +36,9 @@ else if (Timer[0] != -1)
 {
     StillTimer = true;
     Timer[0] = -1;
+}
+
+if (Grabbed)
+{
+	phy_rotation = 0;
 }

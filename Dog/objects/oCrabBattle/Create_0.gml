@@ -22,7 +22,7 @@ Name = "Crab"
 ////////////////////////////////////////////////////////////////////////////
 
 MaxHealth = Health;
-EnemyAttacks = [Game.ThirstyDoggo];
+EnemyAttacks = [Game.CrabWeigh, Game.DogTan];
 Angry = false;
 
 function PerformTurn()

@@ -63,7 +63,7 @@ if (input_check_press(EVerb.Interact))
 	if(place_meeting(x,y,oGameSave))
 	{
 		show_debug_message("Game Saved!");
-		scrGameSave(oAreaStats.CurrentSave);
+		SaveGame(oAreaStats.CurrentSave);
 	}
 }
 

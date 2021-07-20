@@ -3,8 +3,9 @@
 
 CalculatePosition();
 ShiftEnemies(true, 0);
-var Inst = ds_list_find_value(oBattleManager.EnemyInfo, oBattleManager.GetEnemyIndex(self));
-RemoveInstance("Enemy", Inst);
+var EnemyInfo = ds_list_find_value(oBattleManager.EnemyInfo, oBattleManager.GetEnemyIndex(id));
+RemoveInstance(EnemyInfo.ObjectIndex, EnemyInfo.InstanceID);
+oBattleManager.DeleteEnemy(id);
 
 if(instance_number(oEnemyBattleParent) <= 1)
 {
