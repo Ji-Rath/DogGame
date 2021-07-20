@@ -1,11 +1,13 @@
 
 event_inherited();
-	
+
 if (ds_queue_size(CrumbQueue) > StepsBehind)
 {
 	var CurrentCrumb = ds_queue_dequeue(CrumbQueue);
+	var CrumbDistance = distance_to_object(CurrentCrumb);
 	
-	Speed = distance_to_object(CurrentCrumb) > 16 || oDog.Speed == RunSpeed ? RunSpeed : WalkSpeed;
+	Speed = CrumbDistance > 32 || oDog.Speed == RunSpeed ? RunSpeed : WalkSpeed;
+	Speed += distance_to_object(CurrentCrumb)/8;
 	
 	if (instance_exists(CurrentCrumb))
 	{

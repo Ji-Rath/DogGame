@@ -4,7 +4,10 @@ function SaveGame()
 	var SaveName = argument[0];
 	
 	// Save Player position
-	SaveObject(oDog, ["x","y"]);
+	SaveObject(oDog, ["x","y","sprite_index","image_xscale"]);
+	
+	// Save Partner
+	SaveObject(oPartnerBase, ["x","y","sprite_index","image_xscale"]);
 
 	// Save Player Stats
 	SaveValue("PlayerHealth",global.PlayerHP);

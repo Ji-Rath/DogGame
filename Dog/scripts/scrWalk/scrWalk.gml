@@ -3,7 +3,7 @@
 function scrWalk(Velocity)
 {
 	//Set Walking/Running animation
-	var Buffer = 0.25;
+	var Buffer = 1.5;
 	if (abs(Velocity.X) > 0.8)
 	{
 		image_xscale = sign(Velocity.X)*Scale;
