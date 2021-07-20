@@ -1,20 +1,21 @@
 /// @param SaveName
-function scrGameSave() {
+function SaveGame()
+{
 	var SaveName = argument[0];
-
+	
 	// Save Player position
 	SaveObject(oDog, ["x","y"]);
 
 	// Save Player Stats
-	ds_map_replace(oAreaStats.SaveState,"PlayerHealth",global.PlayerHP);
-	ds_map_replace(oAreaStats.SaveState,"PlayerPP",global.PlayerPP);
-	ds_map_replace(oAreaStats.SaveState,"PlayerLevel",global.PlayerLevel);
+	SaveValue("PlayerHealth",global.PlayerHP);
+	SaveValue("PlayerPP",global.PlayerPP);
+	SaveValue("PlayerLevel",global.PlayerLevel);
 
 	// Save Items
-	ds_map_replace(oAreaStats.SaveState,"Items",ds_map_write(oAreaStats.Items));
+	SaveValue("Items",ds_map_write(oAreaStats.Items));
 	
 	// Save Room
-	ds_map_replace(oAreaStats.SaveState,"Room",room_get_name(room));
+	SaveValue("Room",room_get_name(room));
 
 	// Save Enemy State
 	SaveObject(oEnemyBase, ["x","y","Health"]);
@@ -144,4 +145,24 @@ function SetID(Instance, NewID)
 {
 	if (variable_instance_exists(Instance, "InstanceID"))
 		Instance.InstanceID = NewID;
+}
+
+function SaveValue(KeyName, Value)
+{
+	ds_map_replace(oAreaStats.SaveState,KeyName,Value);
+}
+
+function LoadGame(argument0)
+{
+	
+	//Read from save-file
+	ini_open("GameSave.sav");
+	var LoadSave = ini_read_string("Saves",argument0,undefined);
+	ini_close();
+	
+	//Access ds map if successfully loaded save
+	if(LoadSave != undefined)
+	{
+	    ds_map_read(oAreaStats.SaveState,LoadSave);
+	}
 }

@@ -7,7 +7,7 @@ if(keyboard_check_pressed(vk_f3))
 
 if(keyboard_check_pressed(vk_f2))
 {
-	var RandomIndex = random(1000);
+	var RandomIndex = date_current_datetime();
 	var Name = "Screenshot_"+string(RandomIndex);
 	
 	while(file_exists(Name+".png"))
