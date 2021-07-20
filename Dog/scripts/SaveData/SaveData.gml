@@ -120,3 +120,12 @@ function SetVariableValue(Object, InstanceID, VarName, Value)
 	
 	SetVariableData(Object, InstanceID, VariableData, Room);
 }
+
+function DumpMap(DSMap)
+{
+	var KeyList = ds_map_keys_to_array(DSMap);
+	for(var i=0;i<array_length(KeyList);i++)
+	{
+		show_debug_message("Key: "+string(KeyList[i])+" | Value: "+string(ds_map_find_value(DSMap, KeyList[i])));	
+	}
+}
