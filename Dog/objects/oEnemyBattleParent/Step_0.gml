@@ -21,7 +21,6 @@ else if(timer[0] != -1)
 	if (!IsDead)
 	{
 		path_start(pathEnemyDeath, 20, path_action_stop, false);
-		oBattleManager.DeleteEnemy(id);
 	    timer[0] = -1;
 		IsDead = true;
 	}

@@ -35,11 +35,8 @@ timer[0] = WanderInterval;
 image_xscale = Scale;
 image_yscale = Scale;
 
-//Give enemies a unique key - used for saving position, death, etc.
-Key = room_get_name(room)+"Enemy"+string(x)+string(y);
-
 WanderDirectionX = 0;
 WanderDirectionY = 0;
 TimerEnded = false;
 
-BattleInfo = new EnemyBattleInfo(Key, BattleObject, TextFile);
+BattleInfo = new EnemyBattleInfo(object_index, GetID(self), BattleObject, TextFile);

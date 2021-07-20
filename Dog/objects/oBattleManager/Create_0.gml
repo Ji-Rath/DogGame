@@ -126,7 +126,7 @@ function GetFocusedEnemy()
 
 function GetEnemyIndex(Inst)
 {
-	return ds_list_find_index(EnemyInfo, Inst);
+	return ds_list_find_index(EnemyBattle, Inst);
 }
 
 function DeleteEnemy(Enemy)

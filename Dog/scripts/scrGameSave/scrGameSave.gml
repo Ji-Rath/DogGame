@@ -45,10 +45,9 @@ function CreateMissingObjects(Object)
 		if (Instance != "undefined" && !instance_exists(Instance))
 		{
 			// Create replacement instance with identical variable values
-			var ID = instance_create_layer(0, 0, "Instances", real(Object));
-			var VariableData = GetVariableData(Object, Instance);
-			ds_map_add(InstanceData, string(ID), VariableData);
-			ds_map_delete(InstanceData, Instance);
+			var NewInstance = instance_create_layer(0, 0, "Instances", real(Object));
+			
+			SetID(NewInstance, Instance);
 		}
 	}
 	
@@ -62,9 +61,12 @@ function LoadObject(Object)
 	CreateMissingObjects(Object);
 
 	with(Object)
-	{	
+	{
+		// Use Read-Write instanceid if possible, fall back to built-in otherwise
+		var ID = GetID(self);
+		
 		// Get data list (contains name and value lists)
-		var DataList = GetVariableData(object_index, id);
+		var DataList = GetVariableData(object_index, ID);
 		
 		// Get variable names and value lists
 		var VarNames = ds_list_create();
@@ -76,7 +78,7 @@ function LoadObject(Object)
 			ds_list_read(VarNames, NameString);
 			ds_list_read(VarValues, NameValues);
 		
-			show_debug_message("Variable List Size: "+string(ds_list_size(VarNames)));
+			//show_debug_message("Variable List Size: "+string(ds_list_size(VarNames)));
 			// Loop through all variables to sync
 		    for(var i=0;i<ds_list_size(VarNames);i++)
 		    {
@@ -86,7 +88,7 @@ function LoadObject(Object)
 				{
 					// Update value
 					variable_instance_set(self, ds_list_find_value(VarNames, i), ds_list_find_value(VarValues, i));
-					show_debug_message(string(ds_list_find_value(VarNames, i))+": "+ string(ds_list_find_value(VarValues, i)));
+					//show_debug_message(string(ds_list_find_value(VarNames, i))+": "+ string(ds_list_find_value(VarValues, i)));
 				}
 		    }
 		}
@@ -120,7 +122,26 @@ function SaveObject(Object, VariableArray)
 		
 		//show_debug_message("Saved: "+object_get_name(object_index));
 		
+		// Use Read-Write instanceid if possible, fall back to built-in otherwise
+		var ID = GetID(self);
+		
 		// Update object map data
-		SetVariableData(object_index, id, VarMap);
+		SetVariableData(object_index, ID, VarMap);
 	}
+}
+
+function GetID(Instance)
+{
+	var ID = Instance.id;
+	
+	if (variable_instance_exists(Instance, "InstanceID"))
+		ID = Instance.InstanceID;
+	
+	return ID;
+}
+
+function SetID(Instance, NewID)
+{
+	if (variable_instance_exists(Instance, "InstanceID"))
+		Instance.InstanceID = NewID;
 }
