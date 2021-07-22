@@ -106,7 +106,7 @@ function RunBattleStage()
 		case BattleSection.RoomTransition:
 			//PLAYER WINS
 			var Room = ds_map_find_value(oAreaStats.SaveState,"Room");
-			scrFadeout(asset_get_index(Room),c_black,0.05);
+			scrFadeout(Room,c_black,0.05);
 			break;
 		
 		case BattleSection.PlayerDead:

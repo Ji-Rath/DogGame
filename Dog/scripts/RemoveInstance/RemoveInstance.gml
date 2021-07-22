@@ -4,5 +4,10 @@
 /// @todo refactor to support new saving system
 function RemoveInstance(Object, InstanceID)
 {
-	SetVariableValue(Object, InstanceID, "Health", 0, 1);
+	if (GetVariableData(Object, InstanceID))
+	{
+		
+	}
+	var Room = ds_map_find_value(oAreaStats.SaveState,"Room");
+		SetVariableValue(Object, InstanceID, "Health", 0, Room);
 }

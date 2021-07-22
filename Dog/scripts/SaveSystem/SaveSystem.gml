@@ -1,8 +1,6 @@
 /// @param SaveName
-function SaveGame()
+function SaveGame(SaveName)
 {
-	var SaveName = argument[0];
-	
 	// Save Player position
 	SaveObject(oDog, ["x","y","sprite_index","image_xscale"]);
 	
@@ -18,7 +16,7 @@ function SaveGame()
 	SaveValue("Items",ds_map_write(oAreaStats.Items));
 	
 	// Save Room
-	SaveValue("Room",room_get_name(room));
+	SaveValue("Room",room);
 
 	// Save Enemy State
 	SaveObject(oEnemyBase, ["x","y","Health"]);
@@ -68,6 +66,7 @@ function LoadObject(Object)
 	{
 		// Use Read-Write instanceid if possible, fall back to built-in otherwise
 		var ID = GetID(self);
+		show_debug_message("Loading "+object_get_name(object_index)+" - "+string(ID));
 		
 		// Get data list (contains name and value lists)
 		var DataList = GetVariableData(object_index, ID);
@@ -86,7 +85,7 @@ function LoadObject(Object)
 			// Loop through all variables to sync
 		    for(var i=0;i<ds_list_size(VarNames);i++)
 		    {
-				show_debug_message("Variable: "+string(ds_list_find_value(VarNames, i)) + " | "+string(ds_list_find_value(VarValues, i)));
+				show_debug_message("	Variable: "+string(ds_list_find_value(VarNames, i)) + " | "+string(ds_list_find_value(VarValues, i)));
 				// Ensure the variables exist
 				if (variable_instance_exists(self, ds_list_find_value(VarNames, i)))
 				{
@@ -155,17 +154,21 @@ function SaveValue(KeyName, Value)
 	ds_map_replace(oAreaStats.SaveState,KeyName,Value);
 }
 
-function LoadGame(argument0)
+function LoadGame(SaveName)
 {
 	
 	//Read from save-file
 	ini_open("GameSave.sav");
-	var LoadSave = ini_read_string("Saves",argument0,undefined);
+	var LoadSave = ini_read_string("Saves",SaveName,undefined);
 	ini_close();
 	
 	//Access ds map if successfully loaded save
 	if(LoadSave != undefined)
 	{
 	    ds_map_read(oAreaStats.SaveState,LoadSave);
+	}
+	else
+	{
+		show_debug_message("ERROR: Unable to read save file")
 	}
 }

@@ -23,15 +23,16 @@ Name = "Crab"
 
 MaxHealth = Health;
 EnemyAttacks = [Game.CrabWeigh, Game.DogTan];
-Angry = false;
+
 
 function PerformTurn()
 {
+	static Angry = false;
 	if (!Angry && Health < MaxHealth/2)
 	{
 		with (oBattleManager)
 		{
-			SpeedMultiplier -= 0.25;
+			SpeedMultiplier -= 0.1;
 			BattleTimerInit = 20*SpeedMultiplier; //Time for player turn (seconds)
 			NextTurn(1);
 			AddEnemy(oCrab, 2);

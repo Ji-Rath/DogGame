@@ -11,6 +11,6 @@ if(!oAreaStats.LoadGame)
 }
 else if(Room != undefined && room_get_name(room) != Room)
 {
-    scrFadeout(asset_get_index(Room), seqCircleTransition);
+    scrFadeout(Room, seqCircleTransition);
     oAreaStats.CurrentSave = SaveName;
 }

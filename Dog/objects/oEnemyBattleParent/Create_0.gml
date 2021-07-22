@@ -1,3 +1,4 @@
+/// @desc Create Event
 
 MaxHealth = Health;
 AttackDamage = 0;
@@ -31,10 +32,8 @@ function DrawEnemyInit(_ShowEnemy, _DrawSmall) constructor
 /// @func ShiftEnemies(bTeleport)
 /// @desc Shift enemies counter clockwise on an interval based on the enemy count
 /// @arg {bool} bTeleport=false
-function ShiftEnemies()
+function ShiftEnemies(bTeleport = false, ShiftAmount = 1)
 {
-	var bTeleport = argument_count > 0 ? argument[0] : false;
-	var ShiftAmount = argument_count > 1 ? argument[1] : 1;
 	with (oEnemyBattleParent)
 	{
 		var InstCount = instance_number(oEnemyBattleParent);
@@ -66,11 +65,11 @@ function PerformTurn()
 	MiniGame.GameType = PickRandomGame();
 }
 
-/// @func CalculatePosition(bEnemyDeath=false);
 /// @desc Reposition enemies in appropriate position based on enemies alive
-/// @arg {bool} bEnemyDeath=false
-function CalculatePosition()
+/// @arg bTeleport = true
+function CalculatePosition(bTeleport = true)
 {
+	oBattleManager.FocusedEnemy = 0;
 	var Count = instance_number(oEnemyBattleParent);
 	var InstCount = Count;
 	with (oEnemyBattleParent)
@@ -86,7 +85,15 @@ function CalculatePosition()
 		if (Inst.Health >= 0)
 		{
 			Inst.PathPos = MoveInterval * CurrentPos;
-			Inst.path_position = PathPos;
+			if (bTeleport)
+			{
+				Inst.path_position = PathPos;
+			}
+			else
+			{
+				Inst.path_speed = 10;
+			}
+			
 			CurrentPos++;
 		}
 	}
